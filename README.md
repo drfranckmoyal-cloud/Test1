@@ -64,11 +64,22 @@ Les sources de la maquette (canvas Claude Design) sont dans `design/` :
 un artboard `.dc.html` par écran, plus `canvas.json` pour la mise en page.
 `AltClair.dc.html` est la variante claire, non retenue.
 
+## Icône
+
+`tools/make_app_icon.py` génère `PompesChallenge/Assets.xcassets/AppIcon.appiconset/AppIcon.png`
+(1024×1024, RGB sans canal alpha comme l'exige iOS) : l'anneau de progression et l'étoile
+du jour validé, sur le dégradé orange de l'app. Pour la régénérer après une retouche des
+constantes en tête de fichier :
+
+```
+python3 tools/make_app_icon.py PompesChallenge/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+```
+
+Le script n'a aucune dépendance : le rendu et l'encodage PNG sont faits à la main.
+
 ## Points connus
 
 - Le projet n'a pas pu être compilé dans l'environnement où il a été écrit (pas de
   toolchain Swift) : une première ouverture dans Xcode reste à faire.
-- L'icône d'application est un emplacement vide dans `Assets.xcassets` — il reste à
-  fournir un PNG 1024×1024.
 - La maquette utilise la police Archivo ; l'app utilise l'équivalent système
   (`.system(weight: .black)`) pour éviter d'embarquer une police.
