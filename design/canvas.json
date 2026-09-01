@@ -1,0 +1,14 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "title": "Aujourd'hui", "is_interactive": true },
+    { "file": "Calendrier.dc.html", "x": 490, "y": 0, "w": 390, "h": 844, "title": "Calendrier 30 jours" },
+    { "file": "Rappels.dc.html", "x": 980, "y": 0, "w": 390, "h": 844, "title": "Rappels" },
+    { "file": "Celebration.dc.html", "x": 1470, "y": 0, "w": 390, "h": 844, "title": "Jour validé" },
+    { "file": "AltClair.dc.html", "x": 0, "y": 1000, "w": 390, "h": 844, "title": "Variante claire" }
+  ],
+  "annotations": [
+    { "id": "note-direction", "x": -330, "y": 0, "w": 280, "text": "Direction retenue : fond charbon chaud + orange vif.\n\nL'anneau du jour et la barre des 30 jours partagent le même dégradé orange, donc le progrès se lit d'un coup d'œil.\n\nL'écran Aujourd'hui est cliquable : les boutons +1 / +5 / +10 / +20 font vraiment bouger l'anneau." },
+    { "id": "note-alt", "x": -330, "y": 1000, "w": 280, "text": "Alternative claire (crème + orange brûlé), même structure.\n\nDis-moi laquelle tu gardes et je décline les 4 écrans dans cette direction." }
+  ],
+  "launch": { "view": "canvas" }
+}

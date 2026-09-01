@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap">
+  <style>
+    body { margin: 0; font-family: Archivo, 'Helvetica Neue', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #FF8A3D; text-decoration: none; }
+    a:hover { color: #FFB067; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: #14100E; color: #FCF3EA; display: flex; flex-direction: column; overflow: hidden;">
+
+  <!-- header -->
+  <div style="padding: 28px 22px 0 22px; display: flex; flex-direction: column; gap: 3px;">
+    <div style="font-family: 'Archivo Black', 'Helvetica Neue', system-ui, sans-serif; font-size: 24px; letter-spacing: -0.6px; line-height: 1;">SEPTEMBRE</div>
+    <div style="font-size: 12px; font-weight: 600; letter-spacing: 1.6px; color: #8E7A6C;">DÉFI 100 POMPES · 30 JOURS</div>
+  </div>
+
+  <!-- month progress -->
+  <div style="padding: 18px 22px 0 22px; display: flex; flex-direction: column; gap: 9px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <span style="font-family: 'Archivo Black', system-ui, sans-serif; font-size: 17px; color: #FF8A3D;">15 <span style="font-family: Archivo, system-ui, sans-serif; font-size: 13px; font-weight: 600; color: #8E7A6C;">jours validés</span></span>
+      <span style="font-size: 13px; font-weight: 700; color: #8E7A6C;">50 %</span>
+    </div>
+    <div style="height: 12px; border-radius: 6px; background: #251C17; overflow: hidden; display: flex;">
+      <div style="width: 50%; background: linear-gradient(90deg, #FF6B1A, #FFA33D); border-radius: 6px;"></div>
+    </div>
+  </div>
+
+  <!-- legend -->
+  <div style="padding: 18px 22px 0 22px; display: flex; align-items: center; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 14px; height: 14px; border-radius: 5px; background: linear-gradient(160deg, #FF6B1A, #E8460A);"></div>
+      <span style="font-size: 11px; font-weight: 600; color: #8E7A6C;">Validé</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 14px; height: 14px; border-radius: 5px; background: #221A15; border: 1px solid #2E231C;"></div>
+      <span style="font-size: 11px; font-weight: 600; color: #8E7A6C;">Manqué</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 14px; height: 14px; border-radius: 5px; background: #251C17; border: 2px solid #FF6B1A;"></div>
+      <span style="font-size: 11px; font-weight: 600; color: #8E7A6C;">En cours</span>
+    </div>
+  </div>
+
+  <!-- grid -->
+  <div style="padding: 14px 22px 0 22px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px;">
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">1</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">2</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">3</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #221A15; border: 1px solid #2E231C; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 700; color: #5C4C42;">4</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">5</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">6</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">7</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">8</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">9</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">10</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #221A15; border: 1px solid #2E231C; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 700; color: #5C4C42;">11</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">12</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">13</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">14</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">15</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">16</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: linear-gradient(160deg, #FF7A2E, #E8460A); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" style="fill: #FFF3E6;"><path d="M12 2.4l2.95 5.98 6.6.96-4.78 4.66 1.13 6.57L12 17.47l-5.9 3.1 1.13-6.57L2.45 9.34l6.6-.96z"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: rgba(20,16,14,0.7);">17</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #251C17; border: 2px solid #FF6B1A; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; position: relative; overflow: hidden;">
+      <span style="font-family: 'Archivo Black', system-ui, sans-serif; font-size: 17px; color: #FF8A3D;">18</span>
+      <span style="font-size: 9px; font-weight: 700; letter-spacing: 0.4px; color: #8E7A6C;">63 %</span>
+      <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: #2E231C; display: flex;"><div style="width: 63%; background: #FF6B1A;"></div></div>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">19</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">20</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">21</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">22</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">23</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">24</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">25</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">26</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">27</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">28</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">29</span>
+    </div>
+    <div style="aspect-ratio: 1; border-radius: 16px; background: #1A1411; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 15px; font-weight: 600; color: #463A32;">30</span>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1;"></div>
+
+  <!-- stats -->
+  <div style="padding: 0 22px 16px 22px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px;">
+    <div style="padding: 14px 12px; border-radius: 18px; background: #1D1611; border: 1px solid #2A201A; display: flex; flex-direction: column; gap: 3px;">
+      <span style="font-family: 'Archivo Black', system-ui, sans-serif; font-size: 20px; color: #FF8A3D;">6</span>
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: #8E7A6C;">SÉRIE EN COURS</span>
+    </div>
+    <div style="padding: 14px 12px; border-radius: 18px; background: #1D1611; border: 1px solid #2A201A; display: flex; flex-direction: column; gap: 3px;">
+      <span style="font-family: 'Archivo Black', system-ui, sans-serif; font-size: 20px; color: #FCF3EA;">6</span>
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: #8E7A6C;">MEILLEURE SÉRIE</span>
+    </div>
+    <div style="padding: 14px 12px; border-radius: 18px; background: #1D1611; border: 1px solid #2A201A; display: flex; flex-direction: column; gap: 3px;">
+      <span style="font-family: 'Archivo Black', system-ui, sans-serif; font-size: 20px; color: #FCF3EA;">1 563</span>
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: #8E7A6C;">POMPES AU TOTAL</span>
+    </div>
+  </div>
+
+  <!-- tab bar -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #251C17; background: #100C0A; padding: 10px 12px 22px 12px;">
+    <div style="height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="stroke: #6B5B50; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+        <path d="M4 13h3l2-5 3 9 2.5-6 1.5 2h4"></path>
+      </svg>
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: #6B5B50;">Aujourd'hui</span>
+    </div>
+    <div style="height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="stroke: #FF6B1A; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+        <rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M3 10h18M8 3v4M16 3v4"></path>
+      </svg>
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: #FF6B1A;">Calendrier</span>
+    </div>
+    <div style="height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="stroke: #6B5B50; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;">
+        <path d="M18 8a6 6 0 1 0-12 0c0 6-2 7-2 7h16s-2-1-2-7"></path><path d="M10.5 20a2 2 0 0 0 3 0"></path>
+      </svg>
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.6px; color: #6B5B50;">Rappels</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
