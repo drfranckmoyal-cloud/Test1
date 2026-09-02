@@ -4,6 +4,7 @@ import UserNotifications
 
 struct RemindersView: View {
     @EnvironmentObject private var store: ChallengeStore
+    @Environment(\.openURL) private var openURL
     @State private var notificationsAllowed = true
     @State private var showRestartAlert = false
 
@@ -79,7 +80,7 @@ struct RemindersView: View {
                     .fixedSize(horizontal: false, vertical: true)
                 Button("Ouvrir les réglages") {
                     if let url = URL(string: UIApplication.openSettingsURLString) {
-                        UIApplication.shared.open(url)
+                        openURL(url)
                     }
                 }
                 .font(.ui(13, .bold))

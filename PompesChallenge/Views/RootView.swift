@@ -26,6 +26,7 @@ enum Tab: String, CaseIterable, Identifiable {
 
 struct RootView: View {
     @EnvironmentObject private var store: ChallengeStore
+    @Environment(\.scenePhase) private var scenePhase
     @State private var tab: Tab = .today
 
     private let midnightTicker = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
@@ -48,6 +49,11 @@ struct RootView: View {
         .preferredColorScheme(.dark)
         .onReceive(midnightTicker) { _ in
             store.refreshDate()
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active {
+                store.refreshDate()
+            }
         }
         .fullScreenCover(item: $store.celebration) { celebration in
             CelebrationView(celebration: celebration)
