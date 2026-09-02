@@ -3,6 +3,7 @@ import SwiftUI
 struct TodayView: View {
     @EnvironmentObject private var store: ChallengeStore
     @State private var showDaySheet = false
+    @State private var showResetAlert = false
 
     var body: some View {
         ScrollView {
@@ -22,6 +23,15 @@ struct TodayView: View {
         }
         .scrollIndicators(.hidden)
         .background(Theme.background)
+        .alert("Remettre la journée à zéro ?", isPresented: $showResetAlert) {
+            Button("Annuler", role: .cancel) {}
+            Button("Remettre à zéro", role: .destructive) {
+                store.resetToday()
+                Haptics.tap()
+            }
+        } message: {
+            Text("Les compteurs du jour \(store.dayIndex) repartent de zéro. Les autres jours ne sont pas touchés.")
+        }
         .sheet(isPresented: $showDaySheet) {
             DayEditSheet(
                 title: "Jour \(store.dayIndex)",
@@ -132,8 +142,7 @@ struct TodayView: View {
 
     private var resetButton: some View {
         Button {
-            store.resetToday()
-            Haptics.tap()
+            showResetAlert = true
         } label: {
             HStack(spacing: 7) {
                 Image(systemName: "arrow.counterclockwise")

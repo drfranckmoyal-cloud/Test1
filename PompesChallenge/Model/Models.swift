@@ -102,6 +102,7 @@ enum MotivationTone: String, Codable, CaseIterable, Identifiable {
     case cash
     case coach
     case zen
+    case absurd
 
     var id: String { rawValue }
 
@@ -110,6 +111,7 @@ enum MotivationTone: String, Codable, CaseIterable, Identifiable {
         case .cash: return "Cash"
         case .coach: return "Coach"
         case .zen: return "Zen"
+        case .absurd: return "Absurde"
         }
     }
 }

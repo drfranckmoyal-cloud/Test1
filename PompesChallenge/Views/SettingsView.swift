@@ -212,6 +212,8 @@ struct SelectableChip: View {
             Text(label)
                 .font(.ui(13, selected ? .bold : .semibold))
                 .foregroundStyle(selected ? Theme.background : Theme.cream.opacity(0.75))
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
                 .frame(maxWidth: .infinity)
                 .frame(height: 46)
                 .background(

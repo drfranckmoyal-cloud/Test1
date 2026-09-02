@@ -41,12 +41,29 @@ même au jour 1 ; l'historique précédent est effacé après confirmation.
 
 ## Rappels
 
-Trois notifications locales répétées tous les jours (07:30, 13:00, 20:30 par défaut),
-reprogrammées à chaque modification d'horaire, d'objectif ou de ton. Chaque créneau porte
-une part de l'objectif (30 % / 35 % / 35 %) et la notification liste ce qu'il y a à faire
-pour tous les exercices : « 30 pompes, 6 tractions, 45 abdos ». Si les notifications sont
-refusées au niveau du système, l'écran Réglages affiche un bandeau et un raccourci vers
-les réglages iOS.
+Trois rappels quotidiens (07:30, 13:00, 20:30 par défaut). Chaque créneau porte une part
+de l'objectif (30 % / 35 % / 35 %) et la notification liste ce qu'il y a à faire pour tous
+les exercices : « 30 pompes, 6 tractions, 45 abdos ».
+
+Les notifications ne sont pas des rappels répétés — elles sont programmées une par jour
+sur une fenêtre glissante de 20 jours (60 notifications, sous la limite iOS de 64), et la
+fenêtre est repoussée à chaque lancement. C'est ce qui permet à chaque jour d'avoir son
+propre texte au lieu de répéter éternellement la même phrase. Toute modification
+d'horaire, d'objectif ou de ton reprogramme la fenêtre entière.
+
+Si les notifications sont refusées au niveau du système, l'écran Réglages affiche un
+bandeau et un raccourci vers les réglages iOS.
+
+## Tons de motivation
+
+Quatre tons, appliqués aussi bien aux textes de l'app qu'aux notifications :
+**Cash**, **Coach**, **Zen**, et **Absurde** — des promesses délirantes et
+disproportionnées (« Plus que 37 pompes et tu deviens officiellement milliardaire »,
+« Ton banquier vient d'appeler juste pour te féliciter »).
+
+Le ton absurde puise dans des listes de plusieurs dizaines de phrases. Le tirage est
+**déterministe** — il dépend du jour et du compteur, jamais d'un vrai hasard : une phrase
+tirée au sort à chaque rendu changerait à chaque redessin de l'écran SwiftUI.
 
 ## Apparence
 
