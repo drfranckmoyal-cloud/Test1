@@ -93,6 +93,15 @@ volume minuscule, aucune dépendance externe. Un défi enregistré par la premi�
 (un seul exercice, clé `…v1`) est repris automatiquement au lancement — l'historique de
 pompes est conservé.
 
+## Partager l'app
+
+- **Version web** — `web/`, un site statique sans compilation ni dépendance : la même app
+  en page à ajouter à l'écran d'accueil depuis Safari. Tout fonctionne sauf les rappels
+  automatiques, qu'iOS réserve aux vraies apps. Voir `web/README.md`.
+- **TestFlight** — pour distribuer la vraie app par lien, avec les notifications.
+  Compte développeur Apple à 99 €/an. Marche à suivre complète dans
+  `docs/TESTFLIGHT.md` ; le projet est déjà configuré pour (`ITSAppUsesNonExemptEncryption`).
+
 ## Maquette
 
 Les sources de la maquette (canvas Claude Design) sont dans `design/` :

@@ -1,0 +1,17 @@
+{
+  "name": "100 Pompes Challenge",
+  "short_name": "100 Pompes",
+  "description": "Le défi quotidien : pompes, tractions, abdos. Un compteur, un calendrier, et de la motivation franchement exagérée.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FDF4EB",
+  "theme_color": "#FDF4EB",
+  "lang": "fr",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
