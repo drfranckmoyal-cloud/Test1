@@ -10,7 +10,7 @@ struct CalendarScreen: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 header
-                monthProgress.padding(.top, 18)
+                challengeProgress.padding(.top, 18)
                 legend.padding(.top, 18)
                 grid.padding(.top, 14)
                 stats.padding(.top, 22)
@@ -22,15 +22,25 @@ struct CalendarScreen: View {
         .scrollIndicators(.hidden)
         .background(Theme.background)
         .sheet(item: $editedDay) { day in
-            CountSheet(
+            DayEditSheet(
                 title: "Jour \(day.id)",
                 subtitle: dateLabel(for: day.date),
-                goal: store.goal,
-                initialValue: day.count
-            ) { value in
-                store.setCount(value, for: day.date)
+                exercises: store.exercises,
+                initial: values(for: day.date)
+            ) { values in
+                for exercise in store.exercises {
+                    store.setCount(values[exercise.kind] ?? 0, kind: exercise.kind, for: day.date)
+                }
             }
         }
+    }
+
+    private func values(for date: Date) -> [ExerciseKind: Int] {
+        var result: [ExerciseKind: Int] = [:]
+        for exercise in store.exercises {
+            result[exercise.kind] = store.count(exercise.kind, on: date)
+        }
+        return result
     }
 
     // MARK: - Sections
@@ -40,14 +50,21 @@ struct CalendarScreen: View {
             Text(rangeLabel.uppercased())
                 .font(.display(24))
                 .foregroundStyle(Theme.cream)
-            Text("DÉFI \(store.goal) POMPES · \(store.durationDays) JOURS")
+            Text(subtitle)
                 .font(.ui(12, .semibold))
-                .kerning(1.6)
+                .kerning(1.4)
                 .foregroundStyle(Theme.muted)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 
-    private var monthProgress: some View {
+    private var subtitle: String {
+        let parts = store.exercises.map { "\($0.dailyGoal) \($0.kind.unit.uppercased())" }
+        return (parts + ["\(store.durationDays) JOURS"]).joined(separator: " · ")
+    }
+
+    private var challengeProgress: some View {
         VStack(spacing: 9) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text("\(store.validatedCount)")
@@ -57,11 +74,11 @@ struct CalendarScreen: View {
                     .font(.ui(13, .semibold))
                     .foregroundStyle(Theme.muted)
                 Spacer()
-                Text("\(Int((store.monthProgress * 100).rounded())) %")
+                Text("\(Int((store.challengeProgress * 100).rounded())) %")
                     .font(.ui(13, .bold))
                     .foregroundStyle(Theme.muted)
             }
-            ProgressBarView(value: store.monthProgress, height: 12)
+            ProgressBarView(value: store.challengeProgress, height: 12)
         }
     }
 
@@ -109,7 +126,7 @@ struct CalendarScreen: View {
         HStack(spacing: 10) {
             StatCard(value: "\(store.currentStreak)", label: "SÉRIE EN COURS", highlighted: true)
             StatCard(value: "\(store.bestStreak)", label: "MEILLEURE SÉRIE")
-            StatCard(value: store.totalPushups.formattedPushups, label: "POMPES AU TOTAL")
+            StatCard(value: store.totalReps.grouped, label: "RÉPÉTITIONS AU TOTAL")
         }
     }
 
@@ -209,9 +226,9 @@ struct DayCellView: View {
 
     private var accessibilityLabel: String {
         switch day.status {
-        case .validated: return "Jour \(day.id), validé, \(day.count) pompes"
-        case .today: return "Jour \(day.id), en cours, \(day.count) pompes"
-        case .missed: return "Jour \(day.id), manqué, \(day.count) pompes"
+        case .validated: return "Jour \(day.id), validé"
+        case .today: return "Jour \(day.id), en cours, \(Int((day.progress * 100).rounded())) pour cent"
+        case .missed: return "Jour \(day.id), manqué"
         case .upcoming: return "Jour \(day.id), à venir"
         }
     }

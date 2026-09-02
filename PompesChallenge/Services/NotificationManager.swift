@@ -18,14 +18,22 @@ enum NotificationManager {
     }
 
     /// Efface les rappels existants et reprogramme ceux qui sont actifs.
-    static func reschedule(reminders: [Reminder], tone: MotivationTone, goal: Int) async {
+    /// `shares` donne, par rappel, le texte de ce qu'il y a à faire.
+    static func reschedule(reminders: [Reminder], tone: MotivationTone, shares: [UUID: String]) async {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
 
-        for (slot, reminder) in reminders.enumerated() where reminder.isEnabled {
+        for slot in reminders.indices {
+            let reminder = reminders[slot]
+            guard reminder.isEnabled else { continue }
+
             let content = UNMutableNotificationContent()
             content.title = reminder.title
-            content.body = Motivation.reminderBody(tone: tone, share: reminder.share, slot: slot, goal: goal)
+            content.body = Motivation.reminderBody(
+                tone: tone,
+                shares: shares[reminder.id] ?? "",
+                slot: slot
+            )
             content.sound = .default
 
             var components = DateComponents()

@@ -2,17 +2,19 @@ import SwiftUI
 
 struct TodayView: View {
     @EnvironmentObject private var store: ChallengeStore
-    @State private var showSetSheet = false
+    @State private var showDaySheet = false
 
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
                 header
-                ring.padding(.top, 16)
-                quickAdd.padding(.top, 22)
-                actionRow.padding(.top, 10)
-                motivationCard.padding(.top, 18)
-                monthProgress.padding(.top, 26)
+                rings.padding(.top, 18)
+                motivationCard.padding(.top, 24)
+                SectionLabel(text: store.exercises.count > 1 ? "MES EXERCICES" : "AUJOURD'HUI")
+                    .padding(.top, 24)
+                exerciseCards.padding(.top, 10)
+                resetButton.padding(.top, 14)
+                challengeProgress.padding(.top, 24)
             }
             .padding(.horizontal, 22)
             .padding(.top, 8)
@@ -20,16 +22,26 @@ struct TodayView: View {
         }
         .scrollIndicators(.hidden)
         .background(Theme.background)
-        .sheet(isPresented: $showSetSheet) {
-            CountSheet(
-                title: "Total du jour",
-                subtitle: "Objectif : \(store.goal) pompes",
-                goal: store.goal,
-                initialValue: store.todayCount
-            ) { value in
-                store.setCount(value, for: store.today)
+        .sheet(isPresented: $showDaySheet) {
+            DayEditSheet(
+                title: "Jour \(store.dayIndex)",
+                subtitle: "Corrige les totaux d'aujourd'hui",
+                exercises: store.exercises,
+                initial: currentValues
+            ) { values in
+                for exercise in store.exercises {
+                    store.setCount(values[exercise.kind] ?? 0, kind: exercise.kind, for: store.today)
+                }
             }
         }
+    }
+
+    private var currentValues: [ExerciseKind: Int] {
+        var result: [ExerciseKind: Int] = [:]
+        for exercise in store.exercises {
+            result[exercise.kind] = store.todayCount(exercise.kind)
+        }
+        return result
     }
 
     // MARK: - Sections
@@ -40,7 +52,7 @@ struct TodayView: View {
                 Text("JOUR \(store.dayIndex)")
                     .font(.display(22))
                     .foregroundStyle(Theme.cream)
-                Text("SUR \(store.durationDays) · \(store.goal) POMPES / JOUR")
+                Text("SUR \(store.durationDays)")
                     .font(.ui(12, .semibold))
                     .kerning(1.6)
                     .foregroundStyle(Theme.muted)
@@ -50,74 +62,32 @@ struct TodayView: View {
         }
     }
 
-    private var ring: some View {
-        ZStack {
-            ProgressRing(progress: store.todayProgress, lineWidth: 20)
-            VStack(spacing: 2) {
-                Text("\(store.todayCount)")
-                    .font(.display(84))
-                    .foregroundStyle(Theme.orange)
-                    .contentTransition(.numericText())
-                    .animation(.spring(response: 0.4, dampingFraction: 0.8), value: store.todayCount)
-                Text("SUR \(store.goal) POMPES")
-                    .font(.ui(13, .bold))
-                    .kerning(2.4)
-                    .foregroundStyle(Theme.muted)
-                Text(store.remainingToday == 0
-                     ? "Objectif atteint"
-                     : "\(store.remainingToday) pompes restantes")
-                    .font(.ui(13, .semibold))
-                    .foregroundStyle(Theme.cream)
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 6)
-                    .background(Theme.surfaceAlt, in: Capsule())
-                    .padding(.top, 10)
-            }
-        }
-        .frame(width: 268, height: 268)
-    }
-
-    private var quickAdd: some View {
-        HStack(spacing: 10) {
-            ForEach([1, 5, 10, 20], id: \.self) { amount in
-                QuickAddButton(amount: amount) {
-                    store.add(amount)
-                    Haptics.tap()
-                }
+    private var rings: some View {
+        let count = max(store.exercises.count, 1)
+        let size: CGFloat = count == 1 ? 250 : (count == 2 ? 158 : 104)
+        return HStack(alignment: .top, spacing: count == 1 ? 0 : 12) {
+            ForEach(store.exercises) { exercise in
+                ExerciseRing(
+                    kind: exercise.kind,
+                    count: store.todayCount(exercise.kind),
+                    goal: exercise.dailyGoal,
+                    size: size
+                )
+                .frame(maxWidth: .infinity)
             }
         }
     }
 
-    private var actionRow: some View {
-        HStack(spacing: 10) {
-            Button {
-                showSetSheet = true
-            } label: {
-                Text("ENREGISTRER UNE SÉRIE")
-                    .font(.display(16))
-                    .foregroundStyle(Theme.background)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 58)
-                    .background(Theme.orange, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+    private var exerciseCards: some View {
+        VStack(spacing: 10) {
+            ForEach(store.exercises) { exercise in
+                ExerciseCard(
+                    exercise: exercise,
+                    count: store.todayCount(exercise.kind),
+                    onAdd: { amount in store.add(amount, to: exercise.kind) },
+                    onEdit: { showDaySheet = true }
+                )
             }
-            .buttonStyle(.plain)
-
-            Button {
-                store.resetToday()
-                Haptics.tap()
-            } label: {
-                Image(systemName: "arrow.counterclockwise")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundStyle(Theme.muted)
-                    .frame(width: 58, height: 58)
-                    .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
-                            .stroke(Theme.border, lineWidth: 1)
-                    )
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Remettre le compteur du jour à zéro")
         }
     }
 
@@ -127,18 +97,11 @@ struct TodayView: View {
                 .font(.ui(10, .bold))
                 .kerning(2)
                 .foregroundStyle(Theme.orangeLight)
-            Text(Motivation.daily(
-                tone: store.tone,
-                remaining: store.remainingToday,
-                count: store.todayCount,
-                goal: store.goal,
-                dayIndex: store.dayIndex,
-                duration: store.durationDays
-            ))
-            .font(.ui(15, .semibold))
-            .foregroundStyle(Theme.cream)
-            .lineSpacing(2)
-            .fixedSize(horizontal: false, vertical: true)
+            Text(motivationLine)
+                .font(.ui(15, .semibold))
+                .foregroundStyle(Theme.cream)
+                .lineSpacing(2)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 18)
@@ -154,7 +117,38 @@ struct TodayView: View {
         )
     }
 
-    private var monthProgress: some View {
+    private var motivationLine: String {
+        guard let focus = store.focusExercise else {
+            return Motivation.daily(tone: store.tone, unit: "", remaining: 0, count: 0, dayIndex: store.dayIndex)
+        }
+        return Motivation.daily(
+            tone: store.tone,
+            unit: focus.kind.unit,
+            remaining: store.remaining(focus, on: store.today),
+            count: store.todayCount(focus.kind),
+            dayIndex: store.dayIndex
+        )
+    }
+
+    private var resetButton: some View {
+        Button {
+            store.resetToday()
+            Haptics.tap()
+        } label: {
+            HStack(spacing: 7) {
+                Image(systemName: "arrow.counterclockwise")
+                    .font(.system(size: 12, weight: .semibold))
+                Text("Remettre la journée à zéro")
+                    .font(.ui(13, .semibold))
+            }
+            .foregroundStyle(Theme.muted)
+            .frame(maxWidth: .infinity)
+            .frame(height: 44)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var challengeProgress: some View {
         VStack(spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
                 Text("DÉFI \(store.durationDays) JOURS")
@@ -171,7 +165,7 @@ struct TodayView: View {
                         .foregroundStyle(Theme.muted)
                 }
             }
-            ProgressBarView(value: store.monthProgress)
+            ProgressBarView(value: store.challengeProgress)
         }
     }
 }

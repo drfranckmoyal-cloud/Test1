@@ -1,19 +1,22 @@
 import Foundation
 import SwiftUI
 
-/// Source de vérité de l'application : le défi, les jours, les rappels.
-/// Une journée court de minuit à minuit : chaque total est rangé sous la
-/// clé "yyyy-MM-dd" du jour local, donc le compteur repart de zéro tout seul.
+/// Source de vérité de l'application : le défi, ses exercices, les jours,
+/// les rappels. Une journée court de minuit à minuit : chaque total est rangé
+/// sous la clé "yyyy-MM-dd" du jour local, donc le compteur repart de zéro
+/// tout seul. Un jour est validé quand TOUS les exercices ont atteint
+/// leur objectif.
 @MainActor
 final class ChallengeStore: ObservableObject {
 
     @Published private(set) var state: ChallengeState
     /// Minuit du jour courant. Recalculé au retour au premier plan.
     @Published private(set) var today: Date
-    /// Non nil quand l'objectif du jour vient d'être atteint.
+    /// Non nil quand la journée vient d'être bouclée.
     @Published var celebration: Celebration?
 
-    private let storageKey = "pompes.challenge.state.v1"
+    private let storageKey = "pompes.challenge.state.v2"
+    private let legacyKey = "pompes.challenge.state.v1"
     private let defaults: UserDefaults
 
     private static let dayFormatter: DateFormatter = {
@@ -27,9 +30,13 @@ final class ChallengeStore: ObservableObject {
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
         let startOfToday = Calendar.current.startOfDay(for: Date())
+
         if let data = defaults.data(forKey: storageKey),
            let decoded = try? JSONDecoder().decode(ChallengeState.self, from: data) {
             self.state = decoded
+        } else if let data = defaults.data(forKey: legacyKey),
+                  let legacy = try? JSONDecoder().decode(LegacyState.self, from: data) {
+            self.state = legacy.migrated()
         } else {
             self.state = ChallengeState(startDate: startOfToday)
         }
@@ -54,26 +61,56 @@ final class ChallengeStore: ObservableObject {
 
     // MARK: - Lecture
 
-    var goal: Int { state.dailyGoal }
+    var exercises: [Exercise] { state.exercises }
     var durationDays: Int { state.durationDays }
     var reminders: [Reminder] { state.reminders }
     var tone: MotivationTone { state.tone }
+    var appearance: Appearance { state.appearance }
 
-    var todayCount: Int { state.logs[key(for: today)] ?? 0 }
-
-    var todayProgress: Double {
-        guard goal > 0 else { return 0 }
-        return min(1.0, Double(todayCount) / Double(goal))
+    func count(_ kind: ExerciseKind, on date: Date) -> Int {
+        state.logs[key(for: date)]?[kind.rawValue] ?? 0
     }
 
-    var remainingToday: Int { max(0, goal - todayCount) }
+    func todayCount(_ kind: ExerciseKind) -> Int { count(kind, on: today) }
 
-    /// Numéro du jour courant dans le défi (1...30), borné aux deux extrémités.
-    var dayIndex: Int {
-        min(max(rawDayIndex, 1), state.durationDays)
+    func remaining(_ exercise: Exercise, on date: Date) -> Int {
+        max(0, exercise.dailyGoal - count(exercise.kind, on: date))
     }
 
-    /// Vrai quand les 30 jours sont écoulés.
+    func progress(_ exercise: Exercise, on date: Date) -> Double {
+        guard exercise.dailyGoal > 0 else { return 1 }
+        return min(1.0, Double(count(exercise.kind, on: date)) / Double(exercise.dailyGoal))
+    }
+
+    /// Avancement de la journée : moyenne des exercices du défi.
+    func dayProgress(on date: Date) -> Double {
+        guard !state.exercises.isEmpty else { return 0 }
+        let sum = state.exercises.reduce(0.0) { $0 + progress($1, on: date) }
+        return sum / Double(state.exercises.count)
+    }
+
+    func isValidated(on date: Date) -> Bool {
+        guard !state.exercises.isEmpty else { return false }
+        return state.exercises.allSatisfy { count($0.kind, on: date) >= $0.dailyGoal }
+    }
+
+    func totalReps(on date: Date) -> Int {
+        state.exercises.reduce(0) { $0 + count($1.kind, on: date) }
+    }
+
+    var todayProgress: Double { dayProgress(on: today) }
+
+    /// L'exercice le plus en retard aujourd'hui, pour le message de motivation.
+    var focusExercise: Exercise? {
+        state.exercises
+            .filter { remaining($0, on: today) > 0 }
+            .max { remaining($0, on: today) < remaining($1, on: today) }
+    }
+
+    /// Numéro du jour courant dans le défi (1...durée), borné aux deux extrémités.
+    var dayIndex: Int { min(max(rawDayIndex, 1), state.durationDays) }
+
+    /// Vrai quand tous les jours du défi sont écoulés.
     var isFinished: Bool { rawDayIndex > state.durationDays }
 
     private var rawDayIndex: Int {
@@ -83,15 +120,14 @@ final class ChallengeStore: ObservableObject {
         return elapsed + 1
     }
 
-    /// Les 30 cases du calendrier, dans l'ordre.
+    /// Les cases du calendrier, dans l'ordre.
     var days: [DayCell] {
         let calendar = Calendar.current
         let start = calendar.startOfDay(for: state.startDate)
         return (0..<state.durationDays).map { offset in
             let date = calendar.date(byAdding: .day, value: offset, to: start) ?? start
-            let count = state.logs[key(for: date)] ?? 0
             let status: DayStatus
-            if count >= state.dailyGoal {
+            if isValidated(on: date) {
                 status = .validated
             } else if calendar.isDate(date, inSameDayAs: today) {
                 status = .today
@@ -100,21 +136,19 @@ final class ChallengeStore: ObservableObject {
             } else {
                 status = .upcoming
             }
-            let progress = state.dailyGoal > 0
-                ? min(1.0, Double(count) / Double(state.dailyGoal))
-                : 0
-            return DayCell(id: offset + 1, date: date, count: count, status: status, progress: progress)
+            return DayCell(id: offset + 1, date: date, totalReps: totalReps(on: date),
+                           status: status, progress: dayProgress(on: date))
         }
     }
 
     var validatedCount: Int { days.filter { $0.status == .validated }.count }
 
-    var monthProgress: Double {
+    var challengeProgress: Double {
         guard state.durationDays > 0 else { return 0 }
         return Double(validatedCount) / Double(state.durationDays)
     }
 
-    var totalPushups: Int { days.reduce(0) { $0 + $1.count } }
+    var totalReps: Int { days.reduce(0) { $0 + $1.totalReps } }
 
     /// Jours validés d'affilée jusqu'à aujourd'hui. Un jour en cours mais pas
     /// encore terminé ne casse pas la série — il ne la prolonge pas non plus.
@@ -148,15 +182,13 @@ final class ChallengeStore: ObservableObject {
         return best
     }
 
-    /// Les 7 derniers jours jusqu'à aujourd'hui (pour l'écran de célébration).
+    /// Les 7 derniers jours jusqu'à aujourd'hui (écran de célébration).
     var lastSevenDays: [DayCell] {
         let all = days
         let end = min(max(dayIndex, 1), all.count)
         let start = max(0, end - 7)
         return Array(all[start..<end])
     }
-
-    func count(for date: Date) -> Int { state.logs[key(for: date)] ?? 0 }
 
     func index(for date: Date) -> Int {
         let calendar = Calendar.current
@@ -165,40 +197,52 @@ final class ChallengeStore: ObservableObject {
         return elapsed + 1
     }
 
-    // MARK: - Écriture
-
-    func add(_ amount: Int) {
-        setCount(todayCount + amount, for: today)
+    /// « 30 pompes, 6 tractions, 45 abdos » pour un créneau donné.
+    func shareText(for reminder: Reminder) -> String {
+        state.exercises.map { exercise in
+            let share = max(1, Int((Double(exercise.dailyGoal) * reminder.weight).rounded()))
+            return "\(share) \(exercise.kind.unit)"
+        }
+        .joined(separator: ", ")
     }
 
-    func setCount(_ amount: Int, for date: Date) {
+    // MARK: - Écriture
+
+    func add(_ amount: Int, to kind: ExerciseKind) {
+        setCount(count(kind, on: today) + amount, kind: kind, for: today)
+    }
+
+    func setCount(_ amount: Int, kind: ExerciseKind, for date: Date) {
         let dayKey = key(for: date)
-        let previous = state.logs[dayKey] ?? 0
-        let value = min(max(amount, 0), 999)
-        state.logs[dayKey] = value
+        let wasValidated = isValidated(on: date)
+
+        var dayLog = state.logs[dayKey] ?? [:]
+        dayLog[kind.rawValue] = min(max(amount, 0), 9999)
+        state.logs[dayKey] = dayLog
         save()
 
-        let justCompleted = value >= state.dailyGoal && previous < state.dailyGoal
-        if justCompleted && !state.celebrated.contains(dayKey) {
+        if isValidated(on: date), !wasValidated, !state.celebrated.contains(dayKey) {
             state.celebrated.insert(dayKey)
             save()
             celebration = Celebration(
                 dayIndex: index(for: date),
-                count: value,
+                durationDays: state.durationDays,
                 streak: currentStreak,
-                total: totalPushups,
-                durationDays: state.durationDays
+                total: totalReps,
+                summary: state.exercises.map { "\(count($0.kind, on: date)) \($0.kind.unit)" }
             )
         }
     }
 
     func resetToday() {
-        setCount(0, for: today)
+        for exercise in state.exercises {
+            setCount(0, kind: exercise.kind, for: today)
+        }
     }
 
-    func setGoal(_ goal: Int) {
-        state.dailyGoal = min(max(goal, 10), 500)
-        rebalanceShares()
+    func setGoal(_ goal: Int, for kind: ExerciseKind) {
+        guard let index = state.exercises.firstIndex(where: { $0.kind == kind }) else { return }
+        state.exercises[index].dailyGoal = min(max(goal, 1), kind.maxGoal)
         save()
         syncNotifications()
     }
@@ -209,6 +253,11 @@ final class ChallengeStore: ObservableObject {
         syncNotifications()
     }
 
+    func setAppearance(_ appearance: Appearance) {
+        state.appearance = appearance
+        save()
+    }
+
     func update(_ reminder: Reminder) {
         guard let index = state.reminders.firstIndex(where: { $0.id == reminder.id }) else { return }
         state.reminders[index] = reminder
@@ -216,29 +265,17 @@ final class ChallengeStore: ObservableObject {
         syncNotifications()
     }
 
-    /// Repart à zéro à la date du jour, en gardant rappels et réglages.
-    func restart() {
+    /// Démarre un nouveau défi aujourd'hui. L'historique précédent est effacé.
+    func startChallenge(durationDays: Int, exercises: [Exercise]) {
+        guard !exercises.isEmpty else { return }
         state.startDate = Calendar.current.startOfDay(for: Date())
+        state.durationDays = min(max(durationDays, 1), 365)
+        state.exercises = exercises
         state.logs = [:]
         state.celebrated = []
         celebration = nil
         save()
-    }
-
-    /// Répartit l'objectif sur les trois créneaux (30 % / 35 % / 35 %).
-    private func rebalanceShares() {
-        let weights: [Double] = [0.30, 0.35, 0.35]
-        guard state.reminders.count == weights.count else { return }
-        var assigned = 0
-        for index in state.reminders.indices {
-            if index == state.reminders.count - 1 {
-                state.reminders[index].share = max(0, state.dailyGoal - assigned)
-            } else {
-                let share = Int((Double(state.dailyGoal) * weights[index]).rounded())
-                state.reminders[index].share = share
-                assigned += share
-            }
-        }
+        syncNotifications()
     }
 
     // MARK: - Rappels système
@@ -246,9 +283,11 @@ final class ChallengeStore: ObservableObject {
     func syncNotifications() {
         let reminders = state.reminders
         let tone = state.tone
-        let goal = state.dailyGoal
+        let shares = state.reminders.reduce(into: [UUID: String]()) { result, reminder in
+            result[reminder.id] = shareText(for: reminder)
+        }
         Task {
-            await NotificationManager.reschedule(reminders: reminders, tone: tone, goal: goal)
+            await NotificationManager.reschedule(reminders: reminders, tone: tone, shares: shares)
         }
     }
 
@@ -257,5 +296,52 @@ final class ChallengeStore: ObservableObject {
     private func save() {
         guard let data = try? JSONEncoder().encode(state) else { return }
         defaults.set(data, forKey: storageKey)
+    }
+}
+
+// MARK: - Reprise de l'ancien format (défi à un seul exercice)
+
+private struct LegacyReminder: Codable {
+    var id: UUID
+    var title: String
+    var hour: Int
+    var minute: Int
+    var share: Int
+    var isEnabled: Bool
+}
+
+private struct LegacyState: Codable {
+    var startDate: Date
+    var dailyGoal: Int
+    var durationDays: Int
+    var logs: [String: Int]
+    var reminders: [LegacyReminder]
+    var tone: MotivationTone
+    var celebrated: Set<String>
+
+    func migrated() -> ChallengeState {
+        let weights: [Double] = [0.30, 0.35, 0.35]
+        let fallbackWeight = 1.0 / Double(max(reminders.count, 1))
+        var converted: [Reminder] = []
+        for index in reminders.indices {
+            let reminder = reminders[index]
+            converted.append(
+                Reminder(id: reminder.id, title: reminder.title, hour: reminder.hour,
+                         minute: reminder.minute,
+                         weight: index < weights.count ? weights[index] : fallbackWeight,
+                         isEnabled: reminder.isEnabled)
+            )
+        }
+        let convertedLogs = logs.mapValues { [ExerciseKind.pushups.rawValue: $0] }
+        return ChallengeState(
+            startDate: startDate,
+            durationDays: durationDays,
+            exercises: [Exercise(kind: .pushups, dailyGoal: dailyGoal)],
+            logs: convertedLogs,
+            reminders: converted.isEmpty ? Reminder.defaults : converted,
+            tone: tone,
+            appearance: .light,
+            celebrated: celebrated
+        )
     }
 }

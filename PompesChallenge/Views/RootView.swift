@@ -11,7 +11,7 @@ enum Tab: String, CaseIterable, Identifiable {
         switch self {
         case .today: return "Aujourd'hui"
         case .calendar: return "Calendrier"
-        case .reminders: return "Rappels"
+        case .reminders: return "Réglages"
         }
     }
 
@@ -19,7 +19,7 @@ enum Tab: String, CaseIterable, Identifiable {
         switch self {
         case .today: return "chart.line.uptrend.xyaxis"
         case .calendar: return "calendar"
-        case .reminders: return "bell.fill"
+        case .reminders: return "gearshape.fill"
         }
     }
 }
@@ -39,14 +39,14 @@ struct RootView: View {
                 switch tab {
                 case .today: TodayView()
                 case .calendar: CalendarScreen()
-                case .reminders: RemindersView()
+                case .reminders: SettingsView()
                 }
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 TabBar(selection: $tab)
             }
         }
-        .preferredColorScheme(.dark)
+        .preferredColorScheme(store.appearance.colorScheme)
         .onReceive(midnightTicker) { _ in
             store.refreshDate()
         }

@@ -35,11 +35,15 @@ struct CelebrationView: View {
                 }
                 .padding(.top, 26)
 
-                HStack(spacing: 12) {
-                    celebrationStat(value: "\(celebration.count)", label: "POMPES AUJOURD'HUI")
-                    celebrationStat(value: "\(celebration.streak)", label: celebration.streak > 1 ? "JOURS D'AFFILÉE" : "JOUR D'AFFILÉE")
-                }
-                .padding(.top, 26)
+                summaryChips
+                    .padding(.top, 22)
+
+                celebrationStat(
+                    value: "\(celebration.streak)",
+                    label: celebration.streak > 1 ? "JOURS D'AFFILÉE" : "JOUR D'AFFILÉE"
+                )
+                .padding(.horizontal, 26)
+                .padding(.top, 12)
 
                 Text(Motivation.celebration(
                     tone: store.tone,
@@ -98,6 +102,22 @@ struct CelebrationView: View {
                 .font(.system(size: 76))
                 .foregroundStyle(Theme.creamOnOrange)
         }
+    }
+
+    private var summaryChips: some View {
+        HStack(spacing: 8) {
+            ForEach(celebration.summary, id: \.self) { line in
+                Text(line)
+                    .font(.ui(14, .bold))
+                    .foregroundStyle(Theme.ink)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                    .padding(.horizontal, 14)
+                    .frame(height: 40)
+                    .background(Theme.creamOnOrange.opacity(0.32), in: Capsule())
+            }
+        }
+        .padding(.horizontal, 26)
     }
 
     private func celebrationStat(value: String, label: String) -> some View {

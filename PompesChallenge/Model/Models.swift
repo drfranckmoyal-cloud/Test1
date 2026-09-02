@@ -1,21 +1,99 @@
 import Foundation
 
-/// Un des trois rappels quotidiens.
+/// Les exercices qu'un défi peut contenir.
+enum ExerciseKind: String, Codable, CaseIterable, Identifiable {
+    case pushups
+    case pullups
+    case abs
+
+    var id: String { rawValue }
+
+    var name: String {
+        switch self {
+        case .pushups: return "Pompes"
+        case .pullups: return "Tractions"
+        case .abs: return "Abdos"
+        }
+    }
+
+    /// Utilisé au fil du texte : « plus que 37 pompes ».
+    var unit: String {
+        switch self {
+        case .pushups: return "pompes"
+        case .pullups: return "tractions"
+        case .abs: return "abdos"
+        }
+    }
+
+    var symbol: String {
+        switch self {
+        case .pushups: return "figure.strengthtraining.functional"
+        case .pullups: return "figure.strengthtraining.traditional"
+        case .abs: return "figure.core.training"
+        }
+    }
+
+    var defaultGoal: Int {
+        switch self {
+        case .pushups: return 100
+        case .pullups: return 20
+        case .abs: return 150
+        }
+    }
+
+    /// Boutons d'ajout rapide, calibrés par exercice.
+    var quickAdds: [Int] {
+        switch self {
+        case .pushups: return [5, 10, 20]
+        case .pullups: return [1, 2, 5]
+        case .abs: return [10, 20, 30]
+        }
+    }
+
+    /// Pas du réglage d'objectif.
+    var goalStep: Int {
+        switch self {
+        case .pushups: return 10
+        case .pullups: return 1
+        case .abs: return 10
+        }
+    }
+
+    var maxGoal: Int {
+        switch self {
+        case .pushups: return 500
+        case .pullups: return 100
+        case .abs: return 600
+        }
+    }
+}
+
+/// Un exercice du défi, avec son objectif quotidien.
+/// Un même exercice ne peut apparaître qu'une fois : sa nature sert d'identité.
+struct Exercise: Identifiable, Codable, Equatable {
+    var kind: ExerciseKind
+    var dailyGoal: Int
+
+    var id: ExerciseKind { kind }
+    var name: String { kind.name }
+}
+
+/// Un des rappels quotidiens. `weight` est la part de l'objectif de chaque
+/// exercice à réaliser sur ce créneau (0,30 = 30 %).
 struct Reminder: Identifiable, Codable, Equatable {
     var id: UUID = UUID()
     var title: String
     var hour: Int
     var minute: Int
-    /// Nombre de pompes visé sur ce créneau (recalculé si l'objectif change).
-    var share: Int
+    var weight: Double
     var isEnabled: Bool = true
 
     var timeLabel: String { String(format: "%02d : %02d", hour, minute) }
 
     static let defaults: [Reminder] = [
-        Reminder(title: "Réveil musculaire", hour: 7, minute: 30, share: 30),
-        Reminder(title: "Pause déjeuner", hour: 13, minute: 0, share: 35),
-        Reminder(title: "Dernière ligne droite", hour: 20, minute: 30, share: 35)
+        Reminder(title: "Réveil musculaire", hour: 7, minute: 30, weight: 0.30),
+        Reminder(title: "Pause déjeuner", hour: 13, minute: 0, weight: 0.35),
+        Reminder(title: "Dernière ligne droite", hour: 20, minute: 30, weight: 0.35)
     ]
 }
 
@@ -46,9 +124,9 @@ enum DayStatus: Equatable {
 
 /// Une case du calendrier.
 struct DayCell: Identifiable, Equatable {
-    let id: Int          // numéro du jour dans le défi, 1...30
+    let id: Int          // numéro du jour dans le défi, 1...n
     let date: Date
-    let count: Int
+    let totalReps: Int
     let status: DayStatus
     let progress: Double
 }
@@ -56,12 +134,13 @@ struct DayCell: Identifiable, Equatable {
 /// Tout ce qui est persisté.
 struct ChallengeState: Codable {
     var startDate: Date
-    var dailyGoal: Int = 100
     var durationDays: Int = 30
-    /// "yyyy-MM-dd" -> nombre de pompes
-    var logs: [String: Int] = [:]
+    var exercises: [Exercise] = [Exercise(kind: .pushups, dailyGoal: 100)]
+    /// "yyyy-MM-dd" -> exercice -> répétitions
+    var logs: [String: [String: Int]] = [:]
     var reminders: [Reminder] = Reminder.defaults
     var tone: MotivationTone = .cash
+    var appearance: Appearance = .light
     /// Jours dont la célébration a déjà été affichée.
     var celebrated: Set<String> = []
 }
@@ -70,8 +149,9 @@ struct ChallengeState: Codable {
 struct Celebration: Identifiable, Equatable {
     let id = UUID()
     let dayIndex: Int
-    let count: Int
+    let durationDays: Int
     let streak: Int
     let total: Int
-    let durationDays: Int
+    /// « 100 pompes », « 20 tractions »…
+    let summary: [String]
 }
