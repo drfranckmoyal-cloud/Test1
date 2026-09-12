@@ -96,6 +96,12 @@ td.k{font-weight:600;white-space:nowrap}
   font-family:var(--display);font-size:12px}
 .prog dt{color:var(--faint);font-weight:600}
 .prog dd{margin:0;font-weight:600}
+.prog ol{margin:2px 0 0;padding:0;list-style:none;counter-reset:st;
+  font-family:var(--display);font-size:12px;line-height:1.5}
+.prog ol li{counter-increment:st;margin:0;color:var(--muted);display:flex;gap:8px}
+.prog ol li::before{content:counter(st);color:var(--faint);font-weight:700;
+  font-variant-numeric:tabular-nums;min-width:12px}
+.prog ol li:last-child{color:var(--ink);font-weight:700}
 
 /* encadré */
 .note{background:var(--surface-2);border-left:3px solid var(--accent);padding:16px 20px;
@@ -151,7 +157,7 @@ footer{padding-block:34px;font-family:var(--display);font-size:13px;color:var(--
     <div><span>1.3</span><p>La version web est gelée en l'état. Elle reprendra quand le jeu sera stable.</p></div>
     <div><span>2.2</span><p>Chaque programme <strong>déclare son matériel</strong>. Un filtre « ce que j'ai » masque ceux qui demandent autre chose.</p></div>
     <div><span>2.3</span><p>Test de niveau à l'arrivée, précédé d'une auto-déclaration sédentaire / actif / sportif pour choisir le palier de départ du test.</p></div>
-    <div><span>2.4</span><p>Trois paliers par programme : <strong>Novice, Confirmé, Classe S</strong>.</p></div>
+    <div><span>2.4</span><p>Trois paliers de calibrage par programme — <strong>Novice, Confirmé, Classe S</strong> — indépendants des étapes narratives, qui sont les mêmes pour tous.</p></div>
     <div><span>3.1</span><p>Séance guidée exercice par exercice, avec chrono de repos. Saisie libre possible à tout moment.</p></div>
     <div><span>3.2</span><p>Course à pied en saisie manuelle : distance et temps. Pas de GPS en v1.</p></div>
     <div><span>3.4</span><p>Échauffement <strong>proposé, jamais imposé</strong> : un bouton au départ de chaque séance.</p></div>
@@ -194,6 +200,11 @@ footer{padding-block:34px;font-family:var(--display);font-size:13px;color:var(--
   <h3>Les trois stats</h3>
   <p>Chaque exercice alimente une ou deux stats — <strong>Force</strong>, <strong>Vitesse</strong>, <strong>Endurance</strong> — de 1 à 3 points selon sa nature. Les stats montent plus lentement que l'XP et conditionnent les déblocages : « <em>Force 30 requise</em> » devant un programme verrouillé donne un objectif concret, là où un niveau global ne dit rien de ce qu'il faut travailler. Un radar sur la fiche de profil montre les déséquilibres — et c'est exactement ce qui pousse à ouvrir un programme d'endurance quand on n'a fait que de la force.</p>
 
+  <h3>Les étapes, et pourquoi elles portent des noms</h3>
+  <p>Un programme n'est pas une suite de semaines numérotées : c'est une <strong>échelle d'étapes nommées, tirées de l'arc du personnage</strong>. Franchir une étape, c'est franchir une porte de Rock Lee ou passer Super Saiyan, pas « terminer la semaine 4 ». La différence est mince à écrire et énorme à vivre : elle donne un nom à l'effort en cours et une image à celui qui vient.</p>
+  <p>La plupart des œuvres fournissent l'échelle toute faite, déjà ordonnée par leur auteur — les huit portes, les transformations, les Gears, les sept étoiles de Hokuto. C'est ce qui rend le procédé crédible plutôt que plaqué.</p>
+  <p><strong>Les étapes ne remplacent pas les paliers</strong> : le palier — Novice, Confirmé, Classe&nbsp;S — décide des chiffres, l'étape décide du récit. Un débutant traverse les huit mêmes portes qu'un confirmé, avec des charges plus basses. C'est ce qui permet de refaire un programme au palier supérieur sans le relire.</p>
+
   <h3>La quête de pénalité</h3>
   <p>Une séance manquée ne casse pas la série : elle décale le planning et déclenche une <strong>quête de pénalité</strong>, à faire avant minuit le lendemain. Faite, la série est sauvée. Ignorée, la série tombe. Le mécanisme vient de <em>Solo Leveling</em>, et il vaut mieux qu'une punition sèche : il transforme l'échec en rattrapage.</p>
   <div class="tw"><table>
@@ -213,69 +224,70 @@ footer{padding-block:34px;font-family:var(--display);font-size:13px;color:var(--
 
 <section>
   <h2><span class="num">03</span>Les huit programmes</h2>
-  <p class="intro">Chaque programme emprunte son nom et son identité visuelle à une œuvre, et son contenu à une méthode d'entraînement réelle et documentée. Quand le manga est physiquement impossible, l'adaptation est assumée dans le texte du programme.</p>
+  <p class="intro">Chaque programme emprunte son nom et son échelle d'étapes à une œuvre, et son contenu à une méthode d'entraînement réelle. Quand le manga est physiquement impossible, l'adaptation est assumée dans le texte du programme plutôt que dissimulée.</p>
 
   <div class="progs">
     <article class="prog"><div class="band" style="background:linear-gradient(90deg,#F5C518,#D6202A)"></div><div class="body">
-      <div class="fam" style="color:#D6202A">Endurance · Volume</div>
-      <h4>Défi Saitama</h4>
-      <p class="src">La routine canonique — 100 pompes, 100 abdos, 100 squats, 10 km — mais montée progressivement sur 30 jours au lieu du premier jour, parce que telle quelle elle blesse les débutants.</p>
-      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>30 jours, quotidien</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
+      <div class="fam" style="color:#D6202A">Transformation physique</div>
+      <h4>Saitama</h4>
+      <p class="src">Le programme d'entrée : remise en forme complète, du corps qui n'a rien fait depuis dix ans à celui qui encaisse tout. La routine canonique 100/100/100 et 10&nbsp;km en est l'ossature, montée progressivement.</p>
+      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>12 semaines</dd></dl>
+      <ol><li>Salaryman raté</li><li>Le déclic</li><li>Trois mois de discipline</li><li>La première année</li><li>La deuxième année</li><li>Les cheveux perdus</li><li>Héros de classe C</li><li>Demi-dieu</li></ol>
     </div></article>
-
-    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#F47B20,#1B4F8A)"></div><div class="body">
-      <div class="fam" style="color:#F47B20">Endurance · Course</div>
-      <h4>La Voie de Naruto</h4>
-      <p class="src">Passer de zéro à 5 km courus sans marcher. Adossé au plan <em>Couch to 5K</em> — 9 semaines, 3 sorties hebdomadaires, intervalles course/marche qui se résorbent.</p>
-      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>9 semaines · 3 séances</dd><dt>Palier</dt><dd>Novice</dd></dl>
-    </div></article>
-
-    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#1E8449,#F47B20)"></div><div class="body">
-      <div class="fam" style="color:#1E8449">Explosivité · Taijutsu</div>
-      <h4>Rock Lee</h4>
-      <p class="src">Pliométrie, corde à sauter et séries de pompes en 30/30/20, le schéma que le personnage répète. Deux séances hebdomadaires de pliométrie espacées de 72 h, comme l'exige la littérature.</p>
-      <dl><dt>Matériel</dt><dd>Corde à sauter</dd><dt>Durée</dt><dd>6 semaines · 5 séances</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
-    </div></article>
-
-    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#0B6E4F,#C9A227)"></div><div class="body">
-      <div class="fam" style="color:#0B6E4F">Force</div>
-      <h4>Trois Sabres — Zoro</h4>
-      <p class="src">Progression de force en charge croissante sur les tirages et les poussées, structure de la <em>Recommended Routine</em> de r/bodyweightfitness : 3 séances par semaine, on change d'exercice plutôt que d'ajouter du poids.</p>
-      <dl><dt>Matériel</dt><dd>Barre de traction</dd><dt>Durée</dt><dd>8 semaines · 3 séances</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
-    </div></article>
-
-    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#1A1A1A,#C0392B)"></div><div class="body">
-      <div class="fam" style="color:#C0392B">Vitesse</div>
-      <h4>Shunpo — Ichigo</h4>
-      <p class="src">Sprints courts, éducatifs de course et pliométrie, sur 8 semaines à deux séances hebdomadaires — la structure validée par les travaux de la NSCA sur le sprint chez le débutant.</p>
-      <dl><dt>Matériel</dt><dd>60 m de plat</dd><dt>Durée</dt><dd>8 semaines · 2 séances</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
-    </div></article>
-
-    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#4A5D4E,#D8D3C8)"></div><div class="body">
-      <div class="fam" style="color:#4A5D4E">Gainage · Puissance relative</div>
-      <h4>Bataillon d'Exploration — Levi</h4>
-      <p class="src">Gainage, tractions et puissance rapportée au poids de corps : ce que l'équipement tridimensionnel exigerait réellement. Le programme le plus court en durée de séance, le plus dur en intensité.</p>
-      <dl><dt>Matériel</dt><dd>Barre de traction</dd><dt>Durée</dt><dd>6 semaines · 4 séances</dd><dt>Palier</dt><dd>Classe S</dd></dl>
-    </div></article>
-
     <article class="prog"><div class="band" style="background:linear-gradient(90deg,#FF6B00,#1B6CA8)"></div><div class="body">
-      <div class="fam" style="color:#FF6B00">Force · Volume lesté</div>
-      <h4>Chambre de Gravité — Goku</h4>
-      <p class="src">La gravité ×10 devient un sac lesté. Volume élevé, charges modérées, dans l'esprit des 10 000 tractions — divisées par cent, et c'est écrit noir sur blanc dans le programme.</p>
-      <dl><dt>Matériel</dt><dd>Sac lesté ou kettlebell</dd><dt>Durée</dt><dd>8 semaines · 4 séances</dd><dt>Palier</dt><dd>Classe S</dd></dl>
+      <div class="fam" style="color:#FF6B00">Progression extrême</div>
+      <h4>Goku</h4>
+      <p class="src">Chaque transformation multiplie la charge de la précédente. Le Kaiō-ken ×4 est déjà un multiplicateur dans l'œuvre : il devient ici un coefficient de volume. Le programme le plus dur du catalogue, et il l'annonce.</p>
+      <dl><dt>Matériel</dt><dd>Sac lesté (facultatif)</dd><dt>Durée</dt><dd>10 semaines</dd></dl>
+      <ol><li>Base</li><li>Kaiō-ken</li><li>Kaiō-ken ×4</li><li>Super Saiyan</li><li>Super Saiyan 2</li><li>Super Saiyan 3</li><li>Super Saiyan Blue</li><li>Ultra Instinct</li></ol>
     </div></article>
-
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#1E8449,#F47B20)"></div><div class="body">
+      <div class="fam" style="color:#1E8449">Explosivité</div>
+      <h4>Rock Lee</h4>
+      <p class="src">Pliométrie, corde à sauter, séries de pompes en 30/30/20. Huit portes, huit crans d'intensité — deux séances de pliométrie par semaine espacées de 72&nbsp;heures, comme l'exige la littérature.</p>
+      <dl><dt>Matériel</dt><dd>Corde à sauter</dd><dt>Durée</dt><dd>8 semaines</dd></dl>
+      <ol><li>Porte de l'Ouverture</li><li>Porte du Repos</li><li>Porte de la Vie</li><li>Porte de la Blessure</li><li>Porte de la Limite</li><li>Porte de la Vue</li><li>Porte de la Merveille</li><li>Porte de la Mort</li></ol>
+    </div></article>
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#8B1A1A,#E0B44A)"></div><div class="body">
+      <div class="fam" style="color:#8B1A1A">Force pure</div>
+      <h4>Kenshiro</h4>
+      <p class="src">Force maximale au poids du corps : pompes archer puis à une main, squats pistol, tractions lestées. Peu de répétitions, beaucoup de tension. Sept étoiles, sept crans de difficulté.</p>
+      <dl><dt>Matériel</dt><dd>Barre de traction</dd><dt>Durée</dt><dd>8 semaines</dd></dl>
+      <ol><li>Dubhe</li><li>Merak</li><li>Phecda</li><li>Megrez</li><li>Alioth</li><li>Mizar</li><li>Alkaid</li></ol>
+    </div></article>
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#1A1A1A,#C0392B)"></div><div class="body">
+      <div class="fam" style="color:#C0392B">Objectifs</div>
+      <h4>Révèle ton Bankai — Ichigo</h4>
+      <p class="src">Pas de planning : une cible unique à la fois, énorme et nette, qu'on poursuit le temps qu'il faut. On ne passe à la suivante qu'une fois celle-ci tombée.</p>
+      <dl><dt>Matériel</dt><dd>Barre de traction</dd><dt>Durée</dt><dd>Libre</dd></dl>
+      <ol><li>100 pompes dans la journée</li><li>200 abdos dans la journée</li><li>100 squats dans la journée</li><li>10 tractions d'affilée</li><li>50 pompes d'affilée</li><li>5 km sans marcher</li><li>Bankai : tout le même jour</li></ol>
+    </div></article>
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#F5D547,#2C4A8C)"></div><div class="body">
+      <div class="fam" style="color:#B89400">Vitesse</div>
+      <h4>Minato</h4>
+      <p class="src">L'Éclair Jaune de Konoha. Sprints courts, éducatifs de course, pliométrie horizontale. Deux séances par semaine, 72&nbsp;heures d'écart, sur la structure validée par les travaux de la NSCA.</p>
+      <dl><dt>Matériel</dt><dd>60 m de plat</dd><dt>Durée</dt><dd>8 semaines</dd></dl>
+      <ol><li>Genin</li><li>Chūnin</li><li>Jōnin</li><li>ANBU</li><li>L'Éclair Jaune</li><li>Hiraishin</li><li>Yondaime Hokage</li></ol>
+    </div></article>
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#4A5D4E,#D8D3C8)"></div><div class="body">
+      <div class="fam" style="color:#4A5D4E">Gainage</div>
+      <h4>Levi</h4>
+      <p class="src">Puissance rapportée au poids de corps : gainage, tractions, suspensions, rotations. Ce que l'équipement tridimensionnel exigerait réellement d'un corps humain. Séances courtes, intensité haute.</p>
+      <dl><dt>Matériel</dt><dd>Barre de traction</dd><dt>Durée</dt><dd>6 semaines</dd></dl>
+      <ol><li>Recrue</li><li>Bataillon d'exploration</li><li>Escouade d'élite</li><li>Caporal-chef</li><li>Le plus fort de l'humanité</li></ol>
+    </div></article>
     <article class="prog"><div class="band" style="background:linear-gradient(90deg,#D62828,#F6C453)"></div><div class="body">
       <div class="fam" style="color:#D62828">Souplesse · Mobilité</div>
-      <h4>Homme Élastique — Luffy</h4>
-      <p class="src">Le seul personnage dont le pouvoir <em>est</em> la souplesse. Mobilité articulaire quotidienne, étirements tenus, ouverture de hanches et d'épaules. Dix minutes par jour, le programme qu'on garde en fond pendant les autres.</p>
-      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>4 semaines · quotidien</dd><dt>Palier</dt><dd>Novice</dd></dl>
+      <h4>Luffy</h4>
+      <p class="src">Le seul personnage dont le pouvoir <em>est</em> l'élasticité. Mobilité articulaire, étirements tenus, ouverture de hanches et d'épaules. Dix minutes par jour — le programme qu'on garde en fond pendant les autres.</p>
+      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>5 semaines</dd></dl>
+      <ol><li>Gomu Gomu</li><li>Gear 2</li><li>Gear 3</li><li>Gear 4</li><li>Gear 5</li></ol>
     </div></article>
   </div>
 
   <div class="note">
-    <span class="lbl">Reportés en v2</span>
-    <p><strong>Baki</strong> (puissance et combat) et <strong>Kenshiro</strong> (frappe) attendent la deuxième vague — non par manque d'intérêt, mais parce que huit programmes suffisent à couvrir les six familles et qu'un neuvième repousserait la date de test.</p>
+    <span class="lbl">Écartés de la v1</span>
+    <p><strong>Naruto</strong> et <strong>Zoro</strong> sortent — Minato reprend la vitesse, Kenshiro la force. <strong>Baki</strong> et <strong>Deku</strong> attendent la deuxième vague. Huit programmes suffisent à tester le jeu ; un neuvième ne ferait que repousser la date.</p>
   </div>
 </section>
 
@@ -341,7 +353,8 @@ footer{padding-block:34px;font-family:var(--display);font-size:13px;color:var(--
   <div class="q"><b>Combien de séances par semaine peux-tu réellement tenir ?</b><p>Ça décide du rythme par défaut des programmes. Trois, quatre, cinq ? Réponds pour toi, pas pour l'utilisateur idéal.</p></div>
   <div class="q"><b>Le délai de la quête de pénalité</b><p>Avant minuit le lendemain, ou jusqu'à la séance suivante ? Le premier est plus tendu, le second plus tenable en semaine chargée.</p></div>
   <div class="q"><b>Un joker hebdomadaire</b><p>Une séance sautée par semaine sans pénalité, pour les imprévus. Ça protège la motivation — ou ça vide le système de son sel ?</p></div>
-  <div class="q"><b>Luffy pour la souplesse</b><p>C'est le seul de ta liste dont le pouvoir est littéralement l'élasticité, donc c'est logique et c'est drôle. Mais si tu préfères garder Luffy pour l'explosivité, il faut un autre personnage pour la souplesse.</p></div>
+  <div class="q"><b>Personne ne porte l'endurance</b><p>Avec les huit programmes actuels, la course longue n'existe que par morceaux : les 10&nbsp;km de Saitama, les 5&nbsp;km d'Ichigo. Soit on l'assume comme répartie, soit il faut un neuvième programme dédié — et Naruto serait le candidat évident, lui qui court tout le temps.</p></div>
+  <div class="q"><b>Levi sur le gainage</b><p>Je l'ai posé sans te le demander, parce que c'était le seul créneau qui restait et qu'il colle parfaitement. À confirmer.</p></div>
 </section>
 
 <footer>Document de cadrage — révisable. La version 1 de l'app reste disponible sur la branche <strong>v1-defi-100-pompes</strong>.</footer>
