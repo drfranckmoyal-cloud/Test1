@@ -66,7 +66,8 @@ struct TodayView: View {
                 ForEach(due.indices, id: \.self) { index in
                     let entry = due[index]
                     if opened == entry.program.id {
-                        sessionCard(program: entry.program, session: entry.session)
+                        sessionCard(program: entry.program, session: entry.session,
+                                    collapsible: true)
                     } else {
                         compactCard(program: entry.program, session: entry.session)
                     }
@@ -204,7 +205,8 @@ struct TodayView: View {
         .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Theme.border, lineWidth: 1))
     }
 
-    private func sessionCard(program: Program, session: PlannedSession) -> some View {
+    private func sessionCard(program: Program, session: PlannedSession,
+                             collapsible: Bool = false) -> some View {
         let status = store.stageStatus(program)
         let stageName = program.stages[min(status.index, program.stages.count - 1)]
         let ratio = status.total > 0 ? Double(status.done) / Double(status.total) : 0
@@ -231,6 +233,28 @@ struct TodayView: View {
                         .minimumScaleFactor(0.7)
                 }
                 .padding(.horizontal, 18)
+
+                if collapsible {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button {
+                                Haptics.tap()
+                                withAnimation(.easeInOut(duration: 0.2)) { opened = nil }
+                            } label: {
+                                Image(systemName: "chevron.up")
+                                    .font(.system(size: 13, weight: .bold))
+                                    .foregroundStyle(Theme.cream)
+                                    .frame(width: 34, height: 34)
+                                    .background(Color.black.opacity(0.32), in: Circle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("Replier \(program.name)")
+                        }
+                        Spacer()
+                    }
+                    .padding(10)
+                }
             }
             .frame(height: 104)
 
