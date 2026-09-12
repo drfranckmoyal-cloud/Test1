@@ -66,7 +66,16 @@ final class GameStore: ObservableObject {
     var todayKey: String { key(today) }
 
     /// À appeler au lancement, au retour au premier plan et chaque minute.
+    /// Remet d'aplomb ce qu'une version antérieure a pu laisser incohérent.
+    /// Un historique vide ne peut pas porter de caractéristiques.
+    private func healIfNeeded() {
+        guard state.history.isEmpty, !state.stats.isEmpty else { return }
+        state.stats = [:]
+        save()
+    }
+
     func refreshDate() {
+        healIfNeeded()
         let startOfToday = Calendar.current.startOfDay(for: Date())
         guard startOfToday != today else { return }
         today = startOfToday
@@ -571,7 +580,6 @@ final class GameStore: ObservableObject {
         let record = state.history.remove(at: position)
 
         state.xp = max(0, state.xp - record.xp)
-        subtract(record.statGains)
 
         if let programID = ProgramID(rawValue: record.programID) {
             var progress = state.progress(programID)
@@ -582,6 +590,7 @@ final class GameStore: ObservableObject {
         }
 
         recomputeStreak()
+        reconcileStats()
         save()
         syncNotifications()
     }
@@ -598,7 +607,6 @@ final class GameStore: ObservableObject {
 
         state.history.removeAll { $0.programID == id.rawValue && $0.sessionIndex >= index }
         state.xp = max(0, state.xp - removed.reduce(0) { $0 + $1.xp })
-        for record in removed { subtract(record.statGains) }
 
         var progress = state.progress(id)
         progress.completedSessions = max(0, index - 1)
@@ -607,6 +615,7 @@ final class GameStore: ObservableObject {
         state.programs[id.rawValue] = progress
 
         recomputeStreak()
+        reconcileStats()
         save()
         syncNotifications()
     }
@@ -616,11 +625,20 @@ final class GameStore: ObservableObject {
         state.history.filter { $0.programID == id.rawValue && $0.sessionIndex >= index }.count
     }
 
-    /// Retire d'un coup les caractéristiques d'une séance effacée.
-    private func subtract(_ gains: [String: Int]) {
-        for (name, value) in gains {
-            state.stats[name] = max(0, (state.stats[name] ?? 0) - value)
+    /// Remet les caractéristiques d'accord avec l'historique, après une
+    /// suppression.
+    ///
+    /// Plus d'historique, plus de caractéristiques : c'est la seule lecture
+    /// cohérente. Tant qu'il reste des séances d'avant la mémorisation des
+    /// gains, on ne retire que ce qu'on sait retirer, et le rattrapage reste
+    /// proposé dans l'historique.
+    private func reconcileStats() {
+        if state.history.isEmpty {
+            state.stats = [:]
+            return
         }
+        guard !hasUntrackedStatGains else { return }
+        recomputeStats(persist: false)
     }
 
     /// Recalcule les caractéristiques à partir de tout l'historique.
@@ -628,7 +646,7 @@ final class GameStore: ObservableObject {
     /// Sert de rattrapage : les séances enregistrées avant que l'app ne garde
     /// leurs gains n'en portent aucun, et ne peuvent donc pas être défaites
     /// une par une. Ce recalcul remet le compteur d'aplomb sur ce qui reste.
-    func recomputeStats() {
+    func recomputeStats(persist: Bool = true) {
         var totals: [String: Int] = [:]
         for record in state.history {
             for (name, value) in record.statGains {
@@ -636,7 +654,7 @@ final class GameStore: ObservableObject {
             }
         }
         state.stats = totals
-        save()
+        if persist { save() }
     }
 
     /// Vrai quand l'historique contient des séances d'avant la correction :
