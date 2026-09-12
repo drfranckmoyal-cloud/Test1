@@ -20,9 +20,25 @@ struct ProgramContentView: View {
     @State private var rewinding: PlannedSession?
 
     private var sessions: [PlannedSession] {
-        Catalog.sessions(for: program.id,
-                         tier: asWritten ? .confirme : store.state.tier,
-                         intensity: asWritten ? 1.0 : store.intensity(program.id))
+        // Saitama ne vient plus du catalogue figé : son plan est calculé.
+        if program.id == .saitama {
+            let plan = store.saitamaPlan()
+            if !plan.isEmpty { return plan }
+        }
+        return Catalog.sessions(for: program.id,
+                                tier: asWritten ? .confirme : store.state.tier,
+                                intensity: asWritten ? 1.0 : store.intensity(program.id))
+    }
+
+    /// Vrai quand le programme est fabriqué à la demande : les étapes du
+    /// catalogue ne décrivent alors plus son découpage réel.
+    private var isGenerated: Bool {
+        program.id == .saitama && !store.saitamaPlan().isEmpty
+    }
+
+    /// Les blocs de Saitama remplacent les étapes du catalogue.
+    private var blockTitles: [String] {
+        isGenerated ? SaitamaBlocks.all.map(\.title) : program.stages
     }
 
     var body: some View {
@@ -31,7 +47,7 @@ struct ProgramContentView: View {
                 VStack(alignment: .leading, spacing: 14) {
                     summary
                     lens
-                    ForEach(program.stages.indices, id: \.self) { stage in
+                    ForEach(blockTitles.indices, id: \.self) { stage in
                         stageBlock(stage)
                     }
                 }
@@ -81,7 +97,7 @@ struct ProgramContentView: View {
 
         return HStack(spacing: 10) {
             tally("\(all.count)", "SÉANCES")
-            tally("\(program.stages.count)", "ÉTAPES")
+            tally("\(blockTitles.count)", isGenerated ? "BLOCS" : "ÉTAPES")
             tally("\(minutes / 60) h", "AU TOTAL")
             if reps > 0 { tally(reps.grouped, "RÉPÉTITIONS") }
         }
@@ -132,9 +148,13 @@ struct ProgramContentView: View {
     // MARK: - Une étape
 
     private func stageBlock(_ stage: Int) -> some View {
-        let first = program.firstSession(ofStage: stage)
-        let count = program.sessionsPerStage[stage]
-        let inStage = sessions.filter { $0.index > first && $0.index <= first + count }
+        let inStage = isGenerated
+            ? sessions.filter { $0.stageIndex == stage }
+            : sessions.filter {
+                $0.index > program.firstSession(ofStage: stage)
+                    && $0.index <= program.firstSession(ofStage: stage) + program.sessionsPerStage[stage]
+            }
+        let count = inStage.count
         let isOpen = openStage == stage
 
         return VStack(spacing: 0) {
@@ -152,7 +172,7 @@ struct ProgramContentView: View {
                         .background(program.light, in: Circle())
 
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(program.stages[stage])
+                        Text(blockTitles[stage])
                             .font(.ui(15, .bold))
                             .foregroundStyle(Theme.text)
                             .multilineTextAlignment(.leading)

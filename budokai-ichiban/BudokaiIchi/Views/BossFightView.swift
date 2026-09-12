@@ -39,7 +39,7 @@ struct BossFightView: View {
         }
         .confirmationDialog("Le combat est gagné ?", isPresented: $confirmVictory,
                             titleVisibility: .visible) {
-            Button("J'ai tout validé", role: .destructive) {
+            Button("C'est validé", role: .destructive) {
                 store.defeatSaitamaBoss()
                 dismiss()
             }
@@ -115,37 +115,65 @@ struct BossFightView: View {
     // MARK: - Le jour du combat
 
     private var components: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        let open = store.openSession(of: .saitama)
+        return VStack(alignment: .leading, spacing: 10) {
             SectionLabel(text: "LES QUATRE COMPTEURS")
-            ForEach(fight.components) { component in
-                HStack(alignment: .top, spacing: 12) {
-                    VStack(alignment: .leading, spacing: 3) {
-                        Text(component.name.uppercased())
-                            .font(.display(16))
-                            .foregroundStyle(Theme.text)
-                        Text(component.policy.instruction)
-                            .font(.ui(11, .semibold))
-                            .foregroundStyle(component.policy == .continuous ? Theme.gold : Theme.muted)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    Spacer(minLength: 8)
-                    Text(component.unit.format(component.targetValue))
-                        .font(.ui(15, .bold))
-                        .foregroundStyle(program.light)
+
+            if open == nil {
+                Text("Ouvre la journée du combat quand tu commences. Les compteurs restent ouverts jusqu'à minuit.")
+                    .font(.ui(12))
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            ForEach(store.bossPrescriptions(fight)) { item in
+                if let progress = open?.objectives[item.id] {
+                    DailyProgressObjective(
+                        prescription: item, progress: progress,
+                        tint: item.completionPolicy == .continuous ? Theme.gold : program.light,
+                        onAdd: { store.addProgress($0, to: item.id, of: .saitama) },
+                        onDeclareComplete: { store.declareComplete(item.id, of: .saitama) },
+                        onRemoveEntry: { store.removeProgress($0, from: item.id, of: .saitama) },
+                        onEditEntry: { store.updateProgress($0, to: $1, in: item.id, of: .saitama) })
+                } else {
+                    preview(item)
                 }
-                .padding(15)
-                .frame(maxWidth: .infinity)
-                .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(component.policy == .continuous ? Theme.gold.opacity(0.5) : Theme.border,
-                            lineWidth: 1))
             }
         }
     }
 
+    private func preview(_ item: ExercisePrescription) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            VStack(alignment: .leading, spacing: 3) {
+                Text(item.name.uppercased())
+                    .font(.display(16))
+                    .foregroundStyle(Theme.text)
+                Text(item.completionPolicy.instruction)
+                    .font(.ui(11, .semibold))
+                    .foregroundStyle(item.completionPolicy == .continuous ? Theme.gold : Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 8)
+            Text(item.unit.format(item.targetValue))
+                .font(.ui(15, .bold))
+                .foregroundStyle(program.light)
+        }
+        .padding(15)
+        .frame(maxWidth: .infinity)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+            .stroke(item.completionPolicy == .continuous ? Theme.gold.opacity(0.5) : Theme.border,
+                    lineWidth: 1))
+    }
+
     private var victoryBar: some View {
-        PrimaryButton(title: "J'AI RÉUSSI LE COMBAT", tint: Theme.gold) {
-            confirmVictory = true
+        let open = store.bossDayOpen
+        let complete = store.bossComplete(fight)
+        return PrimaryButton(
+            title: !open ? "COMMENCER LE COMBAT"
+                 : (complete ? "VALIDER LE COMBAT" : "LES QUATRE COMPTEURS D'ABORD"),
+            tint: Theme.gold, enabled: !open || complete) {
+            if !open { store.beginBoss(fight) } else { confirmVictory = true }
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 12)

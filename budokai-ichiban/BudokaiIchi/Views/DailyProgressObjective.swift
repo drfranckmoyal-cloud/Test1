@@ -75,6 +75,13 @@ struct DailyProgressObjective: View {
                         .foregroundStyle(Theme.dim)
                         .fixedSize(horizontal: false, vertical: true)
                 }
+                if let easier = prescription.easierVariantId,
+                   let exercise = SaitamaLibrary.exercise(easier) {
+                    Text("Trop dur ? Reviens à : \(exercise.name)")
+                        .font(.ui(10, .semibold))
+                        .foregroundStyle(Theme.dim)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
 
             Spacer(minLength: 6)

@@ -54,6 +54,7 @@ struct SessionSheetView: View {
             ScrollView {
                 VStack(spacing: 18) {
                     if let story = narrative { narrativeCard(story) }
+                    if let note = engineNote { engineCard(note) }
                     if tuned.prescribed == nil { intensityDial }
                     exercises
                     if !program.equipment.isEmpty && program.equipment != "Aucun" {
@@ -151,6 +152,53 @@ struct SessionSheetView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Theme.border, lineWidth: 1))
+    }
+
+    /// Ce que le moteur a décidé, dit en clair. Le cadrage veut que le
+    /// pratiquant voie **pourquoi** l'exercice change, jamais les
+    /// coefficients qui le décident.
+    private var engineNote: (icon: String, title: String, body: String)? {
+        guard session.programID == .saitama else { return nil }
+
+        if let consolidation = store.saitamaConsolidation {
+            let names = consolidation.domains.map { $0.label.lowercased() }.joined(separator: " et ")
+            return ("arrow.triangle.2.circlepath",
+                    "Microcycle de consolidation",
+                    "Le bloc n'est pas encore tenu sur \(names). \(consolidation.remaining) séance\(consolidation.remaining > 1 ? "s" : "") ciblée\(consolidation.remaining > 1 ? "s" : "") avant de le rejuger. Rien n'est perdu, le récit continue.")
+        }
+        if tuned.title.contains("décharge") {
+            return ("moon.zzz.fill", "Semaine allégée",
+                    "Volume réduit exprès. C'est pendant ces semaines que l'adaptation se fait.")
+        }
+        if let move = store.lastMove(of: .saitama), move != .hold {
+            return (move.isProgression ? "arrow.up.right" : "arrow.down.right",
+                    move.label, move.explanation)
+        }
+        return nil
+    }
+
+    private func engineCard(_ note: (icon: String, title: String, body: String)) -> some View {
+        HStack(alignment: .top, spacing: 11) {
+            Image(systemName: note.icon)
+                .font(.system(size: 15))
+                .foregroundStyle(program.light)
+                .frame(width: 22)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(note.title)
+                    .font(.ui(13, .bold))
+                    .foregroundStyle(Theme.text)
+                Text(note.body)
+                    .font(.ui(12))
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(15)
+        .frame(maxWidth: .infinity)
+        .background(program.light.opacity(0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+            .stroke(program.light.opacity(0.32), lineWidth: 1))
     }
 
     // MARK: - Le curseur d'intensité
@@ -464,15 +512,17 @@ struct SessionSheetView: View {
         let ratio = openRatio ?? 1.0
 
         store.record(report, for: done.programID, completedRatio: ratio)
-        store.closeSession(of: done.programID)
 
         if alreadyRecorded {
+            store.closeSession(of: done.programID)
             dismiss()
             return
         }
         var achieved: [Int: Int] = [:]
         for item in done.steps { achieved[item.id] = item.goal.value }
+        // l'enregistrement lit les contributions : la séance se referme après
         outcome = store.complete(session: done, achieved: achieved)
+        store.closeSession(of: done.programID)
         step = .outcome
     }
 

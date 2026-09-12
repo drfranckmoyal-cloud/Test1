@@ -46,6 +46,18 @@ struct SessionRecord: Identifiable, Codable, Equatable {
     /// mémoire, l'effacer ne pouvait pas les rendre : on ne savait pas quoi
     /// retirer. Vide pour les séances enregistrées avant cette correction.
     var statGains: [String: Int] = [:]
+
+    /// Volume réellement réalisé, domaine par domaine. Sans cette mesure, les
+    /// prérequis du combat final reposaient sur une division par trois.
+    var domainVolume: [String: Int] = [:]
+    /// Les domaines travaillés en séance structurée — les seuls qui comptent
+    /// pour le standard du combat final.
+    var structuredDomains: [String] = []
+    /// L'échelon du mouvement utilisé, domaine par domaine. Quatre-vingt-dix
+    /// pompes inclinées ne valent pas quatre-vingt-dix pompes au sol.
+    var domainLevel: [String: Int] = [:]
+    /// Distance parcourue d'une seule traite, en mètres.
+    var continuousMeters: Int = 0
 }
 
 /// Avancement dans un programme.
@@ -92,8 +104,21 @@ struct ProgramProgress: Codable, Equatable {
     var deloadWeeksServed: [Int] = []
     /// Microcycles de consolidation insérés avant le combat final.
     var consolidationCycles: Int = 0
+    /// Les domaines que le microcycle de consolidation en cours cible.
+    /// Vide quand aucune consolidation ne tourne.
+    var consolidationDomains: [String] = []
+    /// Séances restantes dans le microcycle de consolidation.
+    var consolidationRemaining: Int = 0
     /// Le combat final a été gagné.
     var bossDefeated: Bool = false
+    /// Expositions consécutives propres par famille : deux ouvrent la
+    /// variante suivante.
+    var cleanExposures: [String: Int] = [:]
+    /// Expositions consécutives dégradées : deux font redescendre d'un cran.
+    var poorExposures: [String: Int] = [:]
+    /// Familles dont la variante vient de changer : le premier contact se
+    /// fait à volume réduit.
+    var freshVariants: [String] = []
 
     /// La dernière mesure d'un test donné.
     func latest(_ testId: String) -> CalibrationResult? {

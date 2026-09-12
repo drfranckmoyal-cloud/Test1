@@ -149,6 +149,9 @@ enum SaitamaEngine {
         var calibration: SaitamaCalibration
         /// Échelon courant par famille, qui peut avoir dépassé la calibration.
         var levels: [String: Int]
+        /// Familles dont la variante vient de changer : premier contact à
+        /// volume réduit, chapitre 4.
+        var freshVariants: Set<String> = []
         var isDeload: Bool
         var sessionIndex: Int
         var narrativeId: String?
@@ -169,6 +172,9 @@ enum SaitamaEngine {
     /// 70–80 % du volume habituel.
     private static let deloadStrength = 0.65
     private static let deloadRunning = 0.75
+    /// Réduction au premier contact avec une nouvelle variante : 15 à 30 %
+    /// selon la spécification, on retient 20 %.
+    private static let freshVariantFactor = 0.80
 
     static func session(_ context: Context) -> PlannedSession {
         let spec = SaitamaBlocks.spec(context.blockIndex)
@@ -219,19 +225,19 @@ enum SaitamaEngine {
 
         let push = context.exercise(.push)
         let pushSets = spec.pushSets.lowerBound
-        let pushPerSet = max(3, scale(spec.pushTotalReps.lowerBound / max(1, pushSets), context))
+        let pushPerSet = max(3, scale(spec.pushTotalReps.lowerBound / max(1, pushSets), context, domain: .push))
         items.append(work(name: push?.name ?? "Pompes", exercise: push,
                           sets: pushSets, perSet: pushPerSet, rest: 90,
                           rir: spec.workingRIR, context: context))
 
         let squat = context.exercise(.squat)
         items.append(work(name: squat?.name ?? "Squats", exercise: squat,
-                          sets: spec.squatSets, perSet: scale(spec.squatReps.lowerBound, context),
+                          sets: spec.squatSets, perSet: scale(spec.squatReps.lowerBound, context, domain: .squat),
                           rest: 75, rir: spec.workingRIR + 1, context: context))
 
         let core = context.exercise(.core)
         items.append(work(name: core?.name ?? "Tronc", exercise: core,
-                          sets: spec.coreSets, perSet: scale(spec.coreReps.lowerBound, context),
+                          sets: spec.coreSets, perSet: scale(spec.coreReps.lowerBound, context, domain: .core),
                           rest: 60, rir: spec.workingRIR, context: context))
 
         // chaîne postérieure et scapulaire : assistance, hors routine
@@ -248,15 +254,13 @@ enum SaitamaEngine {
     private static func forceB(_ spec: SaitamaBlockSpec, _ context: Context) -> [ExercisePrescription] {
         var items = warmupStrength(context, short: true)
 
-        let volume = context.isDeload
-            ? Int(Double(spec.routineVolume) * deloadStrength)
-            : spec.routineVolume
         let sets = spec.routineSets
-        let perSet = max(1, volume / max(1, sets))
         let policy = spec.routinePolicy
         let rest = policy == .structuredSession ? 90 : 0
 
         for domain in [SaitamaDomain.push, .squat, .core] {
+            let volume = scale(spec.routineVolume, context, domain: domain)
+            let perSet = max(1, volume / max(1, sets))
             let exercise = context.exercise(domain)
             var item = ExercisePrescription(
                 exerciseId: exercise?.id,
@@ -387,8 +391,14 @@ enum SaitamaEngine {
     // MARK: - Fabrication
 
     /// Applique la décharge au volume de renforcement.
-    private static func scale(_ value: Int, _ context: Context) -> Int {
-        context.isDeload ? max(1, Int(Double(value) * deloadStrength)) : value
+    private static func scale(_ value: Int, _ context: Context,
+                              domain: SaitamaDomain? = nil) -> Int {
+        var result = Double(value)
+        if context.isDeload { result *= deloadStrength }
+        if let family = domain?.familyId, context.freshVariants.contains(family) {
+            result *= freshVariantFactor
+        }
+        return max(1, Int(result))
     }
 
     private static func work(name: String, exercise: Exercise?, sets: Int, perSet: Int,

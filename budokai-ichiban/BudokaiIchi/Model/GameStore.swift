@@ -151,6 +151,45 @@ final class GameStore: ObservableObject {
         save()
     }
 
+    /// Le plan complet de Saitama, séance par séance, tel qu'il sera servi.
+    ///
+    /// Sert l'écran « tout le contenu » : sans cela il montrerait encore les
+    /// 84 séances de l'ancien générateur, qui n'ont plus cours.
+    func saitamaPlan() -> [PlannedSession] {
+        let progress = state.progress(.saitama)
+        guard let calibration = progress.saitama, calibration.isComplete else { return [] }
+        let perWeek = progress.schedule?.sessionsPerWeek
+            ?? SchedulingCatalog.rules(for: .saitama)?.recommendedSessionsPerWeek ?? 5
+        let totalWeeks = (1...SaitamaBlocks.all.count).reduce(0) { $0 + SaitamaPlan.weeks(inBlock: $1) }
+
+        return (0..<(totalWeeks * perWeek)).map { index in
+            let position = SaitamaPlan.position(sessionIndex: index, sessionsPerWeek: perWeek)
+            // un microcycle de consolidation prend le pas sur la semaine type
+        var type = SaitamaPlan.sessionType(slot: position.slot, sessionsPerWeek: perWeek)
+        let consolidating = progress.consolidationRemaining > 0
+        if consolidating {
+            let domains = progress.consolidationDomains.compactMap(SaitamaDomain.init(rawValue:))
+            type = domains.contains(.endurance) && position.slot % 2 == 1 ? .easyEndurance : .strength
+        }
+            let routine = SaitamaPlan.isRoutineSlot(position.slot, sessionsPerWeek: perWeek)
+            let context = SaitamaEngine.Context(
+                blockIndex: position.blockIndex,
+                sessionType: type,
+                calibration: calibration,
+                levels: progress.exerciseLevel,
+                freshVariants: [],
+                isDeload: progress.deloadWeeksServed.contains(position.week),
+                sessionIndex: routine ? 1 : 0,
+                narrativeId: SaitamaNarrative.content(sessionIndex: index)?.id,
+                scheduling: nil)
+            var session = SaitamaEngine.session(context)
+            session.index = index + 1
+            session.id = "saitama-plan-\(index + 1)"
+            session.title = "Semaine \(position.week) · \(session.title)"
+            return session
+        }
+    }
+
     /// La séance du jour de Saitama, fabriquée à la demande.
     private func saitamaSession() -> PlannedSession? {
         let progress = state.progress(.saitama)
@@ -165,7 +204,13 @@ final class GameStore: ObservableObject {
                                               servedWeeks: progress.deloadWeeksServed,
                                               recentReports: recentReports(of: .saitama))
 
-        let type = SaitamaPlan.sessionType(slot: position.slot, sessionsPerWeek: perWeek)
+        // un microcycle de consolidation prend le pas sur la semaine type
+        var type = SaitamaPlan.sessionType(slot: position.slot, sessionsPerWeek: perWeek)
+        let consolidating = progress.consolidationRemaining > 0
+        if consolidating {
+            let domains = progress.consolidationDomains.compactMap(SaitamaDomain.init(rawValue:))
+            type = domains.contains(.endurance) && position.slot % 2 == 1 ? .easyEndurance : .strength
+        }
         // le créneau de routine porte un index impair pour que le moteur
         // choisisse Force B plutôt que Force A
         let slotParity = SaitamaPlan.isRoutineSlot(position.slot, sessionsPerWeek: perWeek) ? 1 : 0
@@ -178,6 +223,7 @@ final class GameStore: ObservableObject {
             sessionType: type,
             calibration: calibration,
             levels: progress.exerciseLevel,
+            freshVariants: Set(progress.freshVariants),
             isDeload: deload,
             sessionIndex: done + slotParity - (done % 2),
             narrativeId: SaitamaNarrative.content(sessionIndex: done)?.id,
@@ -186,14 +232,135 @@ final class GameStore: ObservableObject {
         var session = SaitamaEngine.session(context)
         session.index = done + 1
         session.id = "saitama-\(done + 1)"
+        if consolidating {
+            session.title = "Consolidation · \(session.title)"
+        }
         return session
     }
 
-    /// Fait avancer Saitama après une séance : note la décharge servie,
-    /// valide le bloc s'il est tenu, et débloque sa vignette.
-    private func advanceSaitama() {
+    /// Le microcycle de consolidation en cours, s'il y en a un.
+    var saitamaConsolidation: (domains: [SaitamaDomain], remaining: Int)? {
+        let progress = state.progress(.saitama)
+        guard progress.consolidationRemaining > 0 else { return nil }
+        return (progress.consolidationDomains.compactMap(SaitamaDomain.init(rawValue:)),
+                progress.consolidationRemaining)
+    }
+
+    /// Ce qui a réellement été fait, domaine par domaine.
+    ///
+    /// Repose sur les contributions enregistrées quand la séance a été
+    /// suivie ; à défaut, sur la prescription, ce qui revient à considérer la
+    /// séance faite comme prévue.
+    private func measureDomains(_ session: PlannedSession)
+        -> (volume: [String: Int], structured: [String], level: [String: Int], continuousMeters: Int) {
+        var volume: [String: Int] = [:]
+        var structured: Set<String> = []
+        var level: [String: Int] = [:]
+        var continuousMeters = 0
+
+        let objectives = openSession(of: session.programID)?.objectives ?? [:]
+
+        for item in session.prescriptions {
+            guard let domain = item.saitamaDomain else { continue }
+            let done = objectives[item.id]?.completedValue ?? item.targetValue
+            guard done > 0 else { continue }
+
+            if domain == .endurance {
+                if item.unit == .meters {
+                    volume["endurance", default: 0] += done
+                    if item.completionPolicy == .continuous {
+                        continuousMeters = max(continuousMeters, done)
+                    }
+                }
+                continue
+            }
+
+            volume[domain.rawValue, default: 0] += done
+            if item.completionPolicy == .structuredSession { structured.insert(domain.rawValue) }
+            if let itemLevel = item.exerciseLevel {
+                level[domain.rawValue] = max(level[domain.rawValue] ?? 0, itemLevel)
+            }
+        }
+        return (volume, Array(structured), level, continuousMeters)
+    }
+
+    /// Fait progresser ou régresser les variantes, famille par famille.
+    ///
+    /// Règle du chapitre 4 : deux expositions propres — technique bonne,
+    /// RPE ≤ 7, séance terminée — ouvrent la variante suivante. Deux
+    /// expositions dégradées ou inachevées font redescendre d'un cran. Le
+    /// premier contact avec une nouvelle variante se fait à volume réduit.
+    private func adjustVariants(_ progress: inout ProgramProgress, session: PlannedSession) {
+        guard let report = recentReports(of: .saitama).first else { return }
+
+        let clean = (report.quality ?? .correct) != .degraded
+            && (report.rpe ?? 7) <= 7
+            && (report.completion ?? .entirely) == .entirely
+        let poor = (report.quality ?? .correct) == .degraded
+            || (report.completion ?? .entirely) != .entirely
+
+        var fresh = Set(progress.freshVariants)
+
+        for domain in [SaitamaDomain.push, .squat, .core] {
+            guard let family = domain.familyId,
+                  session.prescriptions.contains(where: { $0.saitamaDomain == domain })
+            else { continue }
+
+            // la séance de première exposition ne compte pas : elle était allégée
+            if fresh.contains(family) {
+                fresh.remove(family)
+                progress.cleanExposures[family] = 0
+                continue
+            }
+
+            if clean {
+                progress.cleanExposures[family, default: 0] += 1
+                progress.poorExposures[family] = 0
+            } else if poor {
+                progress.poorExposures[family, default: 0] += 1
+                progress.cleanExposures[family] = 0
+            }
+
+            let current = progress.exerciseLevel[family] ?? 1
+            if progress.cleanExposures[family] ?? 0 >= 2,
+               current < SaitamaLibrary.maxLevel(family) {
+                progress.exerciseLevel[family] = current + 1
+                progress.cleanExposures[family] = 0
+                fresh.insert(family)
+            } else if progress.poorExposures[family] ?? 0 >= 2, current > 1 {
+                progress.exerciseLevel[family] = current - 1
+                progress.poorExposures[family] = 0
+                fresh.insert(family)
+            }
+        }
+        progress.freshVariants = Array(fresh)
+    }
+
+    /// Fait avancer Saitama après une séance : ajuste les variantes, note la
+    /// décharge servie, valide le bloc s'il est tenu, et débloque sa vignette.
+    private func advanceSaitama(_ session: PlannedSession) {
         var progress = state.progress(.saitama)
         guard progress.saitama?.isComplete == true else { return }
+        adjustVariants(&progress, session: session)
+
+        // un microcycle de consolidation se consomme séance après séance
+        if progress.consolidationRemaining > 0 {
+            progress.consolidationRemaining -= 1
+            if progress.consolidationRemaining == 0 {
+                // le bloc est rejugé : s'il passe, sa vignette se débloque enfin
+                let block = SaitamaBlocks.spec(
+                    SaitamaPlan.position(sessionIndex: max(0, progress.completedSessions - 1),
+                                         sessionsPerWeek: progress.schedule?.sessionsPerWeek ?? 5).blockIndex)
+                progress.consolidationDomains = []
+                state.programs[ProgramID.saitama.rawValue] = progress
+                if SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBlockBest).unlocksReward {
+                    completeBlock(block.id, of: .saitama)
+                }
+                return
+            }
+            state.programs[ProgramID.saitama.rawValue] = progress
+            return
+        }
         let perWeek = progress.schedule?.sessionsPerWeek ?? 5
         let done = progress.completedSessions
         let position = SaitamaPlan.position(sessionIndex: max(0, done - 1), sessionsPerWeek: perWeek)
@@ -216,14 +383,16 @@ final class GameStore: ObservableObject {
         state.programs[ProgramID.saitama.rawValue] = progress
 
         guard isLastSessionOfBlock, !progress.completedBlocks.contains(block.id) else { return }
-        let outcome = SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBest)
+        let outcome = SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBlockBest)
         switch outcome {
         case .advance, .advanceWithCorrective:
             completeBlock(block.id, of: .saitama)
-        case .consolidate:
+        case .consolidate(let domains):
             // pas de vignette tant que le seuil minimal n'est pas atteint :
-            // on insère un microcycle de consolidation
+            // on insère un microcycle ciblé sur les domaines en retard
             progress.consolidationCycles += 1
+            progress.consolidationDomains = domains.map(\.rawValue)
+            progress.consolidationRemaining = perWeek
             state.programs[ProgramID.saitama.rawValue] = progress
         }
     }
@@ -237,15 +406,40 @@ final class GameStore: ObservableObject {
     }
 
     /// Le meilleur résultat atteint par domaine, mesuré sur l'historique.
+    /// Le meilleur résultat atteint par domaine, mesuré sur l'historique.
+    ///
+    /// Ne compte que ce que le standard accepte : pour les trois familles
+    /// musculaires, le volume réalisé **en séance structurée** et **à
+    /// l'échelon du combat final ou au-dessus** ; pour l'endurance, la plus
+    /// longue sortie faite **d'une seule traite**.
     var saitamaBest: [String: Int] {
         var best: [String: Int] = [:]
         for record in state.history where record.programID == ProgramID.saitama.rawValue {
-            best["endurance"] = max(best["endurance"] ?? 0, record.meters)
-            // les répétitions d'une séance de routine se répartissent sur les
-            // trois familles : on retient le tiers, qui est le volume par famille
-            let perFamily = record.reps / 3
-            for domain in ["push", "squat", "core"] {
-                best[domain] = max(best[domain] ?? 0, perFamily)
+            best["endurance"] = max(best["endurance"] ?? 0, record.continuousMeters)
+            for domain in [SaitamaDomain.push, .squat, .core] {
+                let key = domain.rawValue
+                guard record.structuredDomains.contains(key),
+                      let family = domain.familyId,
+                      let bossLevel = SaitamaLibrary.bossLevels[family],
+                      (record.domainLevel[key] ?? 0) >= bossLevel,
+                      let volume = record.domainVolume[key] else { continue }
+                best[key] = max(best[key] ?? 0, volume)
+            }
+        }
+        return best
+    }
+
+    /// Le meilleur volume par domaine **sans condition d'échelon** : sert au
+    /// passage de bloc, qui juge la progression, pas le standard final.
+    var saitamaBlockBest: [String: Int] {
+        var best: [String: Int] = [:]
+        for record in state.history where record.programID == ProgramID.saitama.rawValue {
+            best["endurance"] = max(best["endurance"] ?? 0,
+                                    max(record.continuousMeters, record.domainVolume["endurance"] ?? 0))
+            for key in ["push", "squat", "core"] {
+                if let volume = record.domainVolume[key] {
+                    best[key] = max(best[key] ?? 0, volume)
+                }
             }
         }
         return best
@@ -264,7 +458,7 @@ final class GameStore: ObservableObject {
     /// Ce que le moteur décide en fin de bloc.
     var saitamaBlockOutcome: SaitamaPlan.BlockOutcome? {
         guard let block = saitamaBlock else { return nil }
-        return SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBest)
+        return SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBlockBest)
     }
 
     /// L'éligibilité au combat final.
@@ -272,8 +466,53 @@ final class GameStore: ObservableObject {
         SaitamaPlan.eligibility(best: saitamaBest, lastReport: recentReports(of: .saitama).first)
     }
 
+    /// La journée du combat final, suivie comme une séance ouverte.
+    ///
+    /// Les quatre composantes ont leur compteur : les trois cents répétitions
+    /// s'additionnent dans la journée, les dix kilomètres non.
+    func bossPrescriptions(_ fight: ProgramStructures.BossFight) -> [ExercisePrescription] {
+        fight.components.map { component in
+            var item = ExercisePrescription(
+                name: component.name,
+                detail: component.policy.instruction,
+                targetValue: component.targetValue,
+                unit: component.unit,
+                characteristic: component.unit == .meters ? .endurance : .force,
+                completionPolicy: component.policy)
+            item.id = component.id
+            return item
+        }
+    }
+
+    /// Ouvre la journée du combat, ou retrouve celle déjà ouverte.
+    @discardableResult
+    func beginBoss(_ fight: ProgramStructures.BossFight) -> OpenSession {
+        if let existing = openSession(of: .saitama) { return existing }
+        var fresh = OpenSession(programID: ProgramID.saitama.rawValue,
+                                sessionIndex: -1, day: todayKey)
+        for item in bossPrescriptions(fight) {
+            fresh.objectives[item.id] = DailyObjectiveProgress(
+                prescriptionId: item.id, day: todayKey,
+                targetValue: item.targetValue, unit: item.unit,
+                completionPolicy: item.completionPolicy)
+        }
+        state.openSessions.append(fresh)
+        save()
+        return fresh
+    }
+
+    /// Vrai quand la journée du combat est ouverte.
+    var bossDayOpen: Bool { openSession(of: .saitama)?.sessionIndex == -1 }
+
+    /// Vrai quand les quatre compteurs sont atteints.
+    func bossComplete(_ fight: ProgramStructures.BossFight) -> Bool {
+        guard let open = openSession(of: .saitama) else { return false }
+        return bossPrescriptions(fight).allSatisfy { open.objectives[$0.id]?.status.isDone ?? false }
+    }
+
     /// Enregistre la victoire sur le combat final et ouvre le Serious Mode.
     func defeatSaitamaBoss() {
+        closeSession(of: .saitama)
         var progress = state.progress(.saitama)
         progress.bossDefeated = true
         progress.standardValidated = true
@@ -458,14 +697,19 @@ final class GameStore: ObservableObject {
             gainsByName[kind.rawValue] = value
         }
 
+        let measured = measureDomains(session)
         state.history.append(SessionRecord(
             programID: program.id.rawValue, sessionIndex: session.index,
             stageIndex: session.stageIndex, day: todayKey,
             xp: gained, reps: reps, seconds: seconds, meters: meters,
-            statGains: gainsByName))
+            statGains: gainsByName,
+            domainVolume: measured.volume,
+            structuredDomains: measured.structured,
+            domainLevel: measured.level,
+            continuousMeters: measured.continuousMeters))
         state.lastCompletedDay = todayKey
         state.penalty = nil
-        if program.id == .saitama { advanceSaitama() }
+        if program.id == .saitama { advanceSaitama(session) }
         save()
         syncNotifications()
 

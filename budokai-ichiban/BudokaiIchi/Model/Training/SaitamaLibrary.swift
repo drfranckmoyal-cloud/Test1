@@ -162,3 +162,22 @@ struct SaitamaCalibration: Codable, Equatable {
         return SaitamaLibrary.exercise(family: family, level: level(domain))
     }
 }
+
+
+extension ExercisePrescription {
+    /// Le domaine Saitama auquel cette prescription se rattache, quand elle
+    /// compte dans la routine ou l'endurance.
+    var saitamaDomain: SaitamaDomain? {
+        guard countsTowardAdaptation else { return nil }
+        if let id = exerciseId, let exercise = SaitamaLibrary.exercise(id) {
+            switch exercise.familyId {
+            case "sai.push": return .push
+            case "sai.squat": return .squat
+            case "sai.core": return .core
+            default: return nil
+            }
+        }
+        if characteristic == .endurance { return .endurance }
+        return nil
+    }
+}
