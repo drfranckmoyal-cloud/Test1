@@ -1,0 +1,5930 @@
+{
+  "program": "luffy",
+  "version": "2026-09-12",
+  "families": [
+    {
+      "id": "luffy.ankle",
+      "name": "Cheville",
+      "function": "Dorsiflexion",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "rocks",
+          "name": "Ankle rocks",
+          "detail": "Base"
+        },
+        {
+          "id": "kneeWall",
+          "name": "Knee-to-wall",
+          "detail": "Mesurable"
+        },
+        {
+          "id": "soleus",
+          "name": "Soleus stretch",
+          "detail": "Genou fléchi"
+        },
+        {
+          "id": "activeDF",
+          "name": "Active dorsiflexion",
+          "detail": "Contrôle actif"
+        }
+      ]
+    },
+    {
+      "id": "luffy.hip",
+      "name": "Hanche / squat",
+      "function": "Amplitude profonde",
+      "bossLevel": 7,
+      "ladder": [
+        {
+          "id": "supportedSquat",
+          "name": "Squat assisté",
+          "detail": "Base"
+        },
+        {
+          "id": "pry",
+          "name": "Squat pry",
+          "detail": "Amplitude"
+        },
+        {
+          "id": "9090",
+          "name": "90/90",
+          "detail": "Rotation hanche"
+        },
+        {
+          "id": "cossack",
+          "name": "Cossack assisté",
+          "detail": "Latéral"
+        },
+        {
+          "id": "deepSquat",
+          "name": "Deep squat",
+          "detail": "Boss"
+        }
+      ]
+    },
+    {
+      "id": "luffy.posterior",
+      "name": "Postérieur",
+      "function": "Ischios / hinge",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "supineHam",
+          "name": "Hamstring supine",
+          "detail": "Base"
+        },
+        {
+          "id": "dynamicLeg",
+          "name": "Dynamic leg raise",
+          "detail": "Actif"
+        },
+        {
+          "id": "hinge",
+          "name": "Hinge drill",
+          "detail": "Contrôle"
+        },
+        {
+          "id": "activeSLR",
+          "name": "Active SLR",
+          "detail": "Boss prep"
+        }
+      ]
+    },
+    {
+      "id": "luffy.shoulder",
+      "name": "Épaule",
+      "function": "Flexion overhead",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "wallSlide",
+          "name": "Wall slide",
+          "detail": "Base"
+        },
+        {
+          "id": "latStretch",
+          "name": "Lat stretch",
+          "detail": "Amplitude"
+        },
+        {
+          "id": "wallFlex",
+          "name": "Wall flexion",
+          "detail": "Contrôle ribs"
+        },
+        {
+          "id": "liftOff",
+          "name": "Lift-off",
+          "detail": "Actif"
+        }
+      ]
+    },
+    {
+      "id": "luffy.thoracic",
+      "name": "Thorax",
+      "function": "Rotation",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "openBook",
+          "name": "Open book",
+          "detail": "Base"
+        },
+        {
+          "id": "quadRot",
+          "name": "Quadruped rotation",
+          "detail": "Contrôle"
+        },
+        {
+          "id": "halfKneel",
+          "name": "Half-kneeling rotation",
+          "detail": "Intermédiaire"
+        },
+        {
+          "id": "activeRot",
+          "name": "Active rotation hold",
+          "detail": "Boss prep"
+        }
+      ]
+    }
+  ],
+  "calibration": [
+    {
+      "id": "ankle",
+      "label": "Knee-to-wall",
+      "family": "luffy.ankle",
+      "referenceLevel": 2,
+      "unit": "meters",
+      "max": 0.2,
+      "cue": "Mesure la distance gros orteil-mur avec talon au sol."
+    },
+    {
+      "id": "squat",
+      "label": "Deep squat",
+      "family": "luffy.hip",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 60,
+      "cue": "Tiens la position confortable, talons au sol."
+    },
+    {
+      "id": "posterior",
+      "label": "Chaîne postérieure",
+      "family": "luffy.posterior",
+      "referenceLevel": 2,
+      "unit": "reps",
+      "max": 10,
+      "cue": "Active leg raise contrôlé, compare gauche/droite."
+    },
+    {
+      "id": "shoulder",
+      "label": "Flexion épaule",
+      "family": "luffy.shoulder",
+      "referenceLevel": 2,
+      "unit": "reps",
+      "max": 10,
+      "cue": "Wall flexion avec côtes contrôlées."
+    },
+    {
+      "id": "thoracic",
+      "label": "Rotation thoracique",
+      "family": "luffy.thoracic",
+      "referenceLevel": 2,
+      "unit": "reps",
+      "max": 10,
+      "cue": "Rotation active symétrique, sans compensation."
+    }
+  ],
+  "weeks": [
+    {
+      "stage": "EASTBLUE",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "EASTBLUE",
+      "frequency": 5,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "EASTBLUE",
+      "frequency": 6,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "EASTBLUE",
+      "frequency": 7,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 6,
+          "title": "Integrated Flow",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Integrated ankle",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Overhead",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "GRANDLINE",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "GRANDLINE",
+      "frequency": 5,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "GRANDLINE",
+      "frequency": 6,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "GRANDLINE",
+      "frequency": 7,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 6,
+          "title": "Integrated Flow",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Integrated ankle",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Overhead",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ENIES",
+      "frequency": 4,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ENIES",
+      "frequency": 5,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ENIES",
+      "frequency": 6,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ENIES",
+      "frequency": 7,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 6,
+          "title": "Integrated Flow",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Integrated ankle",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Overhead",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "NEWWORLD",
+      "frequency": 4,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "NEWWORLD",
+      "frequency": 5,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "NEWWORLD",
+      "frequency": 6,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "NEWWORLD",
+      "frequency": 7,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 6,
+          "title": "Integrated Flow",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Integrated ankle",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Overhead",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "WANO",
+      "frequency": 4,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "WANO",
+      "frequency": 5,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "WANO",
+      "frequency": 6,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "WANO",
+      "frequency": 7,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Augmente soit la durée/amplitude, soit la difficulté active, jamais les deux ensemble. Aucune progression par douleur."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Ankle + Squat",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Knee-to-wall",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat assisté",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Shoulder + Thoracic",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Wall flexion",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Open book",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Posterior + Hip",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active leg raise",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "90/90",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Ankle + Posterior",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Soleus / dorsiflexion",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Hinge / hamstring",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Shoulder + Rotation",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Lift-off",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Half-kneeling rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 5,
+          "title": "Hip Active",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Cossack",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Active SLR",
+              "family": "luffy.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 6,
+          "title": "Integrated Flow",
+          "type": "mobility",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et mobilité douce",
+              "unit": "seconds",
+              "value": 120,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Integrated ankle",
+              "family": "luffy.ankle",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 30,
+              "rpe": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Deep squat",
+              "family": "luffy.hip",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Overhead",
+              "family": "luffy.shoulder",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Rotation",
+              "family": "luffy.thoracic",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 30,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "cooldown",
+              "name": "Respiration calme",
+              "unit": "seconds",
+              "value": 90,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

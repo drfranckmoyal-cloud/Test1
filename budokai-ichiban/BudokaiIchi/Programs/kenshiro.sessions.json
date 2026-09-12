@@ -1,0 +1,3089 @@
+{
+  "program": "kenshiro",
+  "version": "2026-09-12",
+  "families": [
+    {
+      "id": "kenshiro.push",
+      "name": "Push",
+      "function": "Poussée relative",
+      "bossLevel": 9,
+      "ladder": [
+        {
+          "id": "wall",
+          "name": "Pompe murale",
+          "detail": "Base"
+        },
+        {
+          "id": "incline",
+          "name": "Pompe inclinée",
+          "detail": "Support haut"
+        },
+        {
+          "id": "standard",
+          "name": "Pompe standard",
+          "detail": "Amplitude complète"
+        },
+        {
+          "id": "feetElevated",
+          "name": "Pompe pieds surélevés",
+          "detail": "Plus exigeant"
+        },
+        {
+          "id": "archer",
+          "name": "Pompe archer",
+          "detail": "Transfert unilatéral"
+        },
+        {
+          "id": "assistedOAP",
+          "name": "One-arm assistée",
+          "detail": "Main secondaire sur support"
+        },
+        {
+          "id": "eccOAP",
+          "name": "One-arm eccentric",
+          "detail": "3–5 s descente"
+        },
+        {
+          "id": "oapSingle",
+          "name": "One-arm single",
+          "detail": "1 rep propre"
+        },
+        {
+          "id": "oapVolume",
+          "name": "One-arm volume",
+          "detail": "2–5/côté"
+        }
+      ]
+    },
+    {
+      "id": "kenshiro.pull",
+      "name": "Pull",
+      "function": "Traction relative",
+      "bossLevel": 8,
+      "ladder": [
+        {
+          "id": "hang",
+          "name": "Dead hang",
+          "detail": "Suspension"
+        },
+        {
+          "id": "scap",
+          "name": "Scap pull",
+          "detail": "Contrôle scapulaire"
+        },
+        {
+          "id": "footAssist",
+          "name": "Foot-assisted pull-up",
+          "detail": "Assistance pieds"
+        },
+        {
+          "id": "negative",
+          "name": "Negative pull-up",
+          "detail": "Descente lente"
+        },
+        {
+          "id": "single",
+          "name": "Traction single",
+          "detail": "1 rep stricte"
+        },
+        {
+          "id": "volume3",
+          "name": "Tractions 3 reps",
+          "detail": "Volume"
+        },
+        {
+          "id": "volume5",
+          "name": "Tractions 5 reps",
+          "detail": "Volume"
+        },
+        {
+          "id": "boss8",
+          "name": "8 tractions strictes",
+          "detail": "Boss"
+        }
+      ]
+    },
+    {
+      "id": "kenshiro.squat",
+      "name": "Squat unilatéral",
+      "function": "Jambes",
+      "bossLevel": 9,
+      "ladder": [
+        {
+          "id": "sitStand",
+          "name": "Sit-to-stand",
+          "detail": "Base"
+        },
+        {
+          "id": "squat",
+          "name": "Squat",
+          "detail": "Bilatéral"
+        },
+        {
+          "id": "split",
+          "name": "Split squat",
+          "detail": "Unilatéral"
+        },
+        {
+          "id": "boxPistol",
+          "name": "Pistol assistée box",
+          "detail": "Support"
+        },
+        {
+          "id": "eccPistol",
+          "name": "Pistol eccentric",
+          "detail": "Descente lente"
+        },
+        {
+          "id": "counterPistol",
+          "name": "Pistol contrebalancée",
+          "detail": "Assistance légère"
+        },
+        {
+          "id": "fullPistol",
+          "name": "Pistol complète",
+          "detail": "1 rep"
+        },
+        {
+          "id": "pistolVolume",
+          "name": "Pistol volume",
+          "detail": "3–5/côté"
+        },
+        {
+          "id": "pistolTempo",
+          "name": "Pistol tempo",
+          "detail": "Contrôle avancé"
+        }
+      ]
+    },
+    {
+      "id": "kenshiro.core",
+      "name": "Core",
+      "function": "Transmission de force",
+      "bossLevel": 5,
+      "ladder": [
+        {
+          "id": "deadBug",
+          "name": "Dead bug",
+          "detail": "Base"
+        },
+        {
+          "id": "plank",
+          "name": "Planche",
+          "detail": "Anti-extension"
+        },
+        {
+          "id": "hollowTuck",
+          "name": "Hollow tuck",
+          "detail": "Compact"
+        },
+        {
+          "id": "hollow",
+          "name": "Hollow hold",
+          "detail": "Standard"
+        },
+        {
+          "id": "hangingKnee",
+          "name": "Hanging knee raise",
+          "detail": "Suspendu"
+        }
+      ]
+    }
+  ],
+  "calibration": [
+    {
+      "id": "push",
+      "label": "Poussée",
+      "family": "kenshiro.push",
+      "referenceLevel": 3,
+      "unit": "reps",
+      "max": 20,
+      "cue": "Trouve une variante à 5–12 reps avec 2–3 RIR."
+    },
+    {
+      "id": "pull",
+      "label": "Traction",
+      "family": "kenshiro.pull",
+      "referenceLevel": 3,
+      "unit": "reps",
+      "max": 12,
+      "cue": "Trouve une variante à 3–8 reps avec 2–3 RIR."
+    },
+    {
+      "id": "squat",
+      "label": "Jambes",
+      "family": "kenshiro.squat",
+      "referenceLevel": 3,
+      "unit": "reps",
+      "max": 15,
+      "cue": "Trouve une variante unilatérale propre à 5–10 reps/côté."
+    },
+    {
+      "id": "core",
+      "label": "Tronc",
+      "family": "kenshiro.core",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 90,
+      "cue": "Choisis une variante tenable 20–40 s avec qualité good."
+    }
+  ],
+  "weeks": [
+    {
+      "stage": "SCARS",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Augmente le volume seulement après deux expositions propres."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SCARS",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Augmente le volume seulement après deux expositions propres."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Technique / Faiblesse",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SHIN",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Ajoute des reps dans la plage avant de changer de variante."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SHIN",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Ajoute des reps dans la plage avant de changer de variante."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Technique / Faiblesse",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "REI",
+      "frequency": 3,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Passe à une variante plus unilatérale à volume stable."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "REI",
+      "frequency": 4,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Passe à une variante plus unilatérale à volume stable."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Technique / Faiblesse",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "TOKI",
+      "frequency": 3,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente uniquement le temps sous tension/tempo."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "TOKI",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente uniquement le temps sous tension/tempo."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Technique / Faiblesse",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "RAOH",
+      "frequency": 3,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.05,
+        "note": "Augmente la difficulté mécanique à faible plage de reps."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "RAOH",
+      "frequency": 4,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.05,
+        "note": "Augmente la difficulté mécanique à faible plage de reps."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Technique / Faiblesse",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SOUTHER",
+      "frequency": 3,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Change la variante pour contourner le plateau, sans ajouter de volume."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SOUTHER",
+      "frequency": 4,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Change la variante pour contourner le plateau, sans ajouter de volume."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Technique / Faiblesse",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "FINAL",
+      "frequency": 3,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Réduis progressivement les repos ou rapproche-toi des standards boss sans augmenter le volume."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "FINAL",
+      "frequency": 4,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Réduis progressivement les repos ou rapproche-toi des standards boss sans augmenter le volume."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Push + Pull",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push principal",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull principal",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Legs + Core",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pistol progression",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Core",
+              "family": "kenshiro.core",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Full Body Skill",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Technique / Faiblesse",
+          "type": "strength",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Poignets, épaules, hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Push skill",
+              "family": "kenshiro.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pull skill",
+              "family": "kenshiro.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Pistol skill",
+              "family": "kenshiro.squat",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

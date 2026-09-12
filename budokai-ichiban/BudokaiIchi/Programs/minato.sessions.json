@@ -1,0 +1,4255 @@
+{
+  "program": "minato",
+  "version": "2026-09-12",
+  "families": [
+    {
+      "id": "minato.accel",
+      "name": "Accélération",
+      "function": "0–30 m",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "drill",
+          "name": "Drills",
+          "detail": "March/A-skip"
+        },
+        {
+          "id": "10m",
+          "name": "10 m",
+          "detail": "Départ"
+        },
+        {
+          "id": "20m",
+          "name": "20 m",
+          "detail": "Accélération"
+        },
+        {
+          "id": "30m",
+          "name": "30 m",
+          "detail": "Boss prep"
+        }
+      ]
+    },
+    {
+      "id": "minato.maxv",
+      "name": "Vitesse max",
+      "function": "30–60 m",
+      "bossLevel": 5,
+      "ladder": [
+        {
+          "id": "stride",
+          "name": "Strides",
+          "detail": "Progressif"
+        },
+        {
+          "id": "fly10",
+          "name": "Fly 10",
+          "detail": "Build-up + 10 m rapide"
+        },
+        {
+          "id": "fly20",
+          "name": "Fly 20",
+          "detail": "Build-up + 20 m"
+        },
+        {
+          "id": "60m",
+          "name": "60 m",
+          "detail": "Test"
+        }
+      ]
+    },
+    {
+      "id": "minato.cod",
+      "name": "Réactivité",
+      "function": "Départs / changement de direction",
+      "bossLevel": 4,
+      "ladder": [
+        {
+          "id": "staticStart",
+          "name": "Départ statique",
+          "detail": "Standard"
+        },
+        {
+          "id": "variedStart",
+          "name": "Départ varié",
+          "detail": "Positions diverses"
+        },
+        {
+          "id": "reactiveStart",
+          "name": "Départ réactif",
+          "detail": "Signal simple"
+        }
+      ]
+    },
+    {
+      "id": "minato.support",
+      "name": "Support force",
+      "function": "Jambes / mollets / ischios",
+      "bossLevel": 4,
+      "ladder": [
+        {
+          "id": "basic",
+          "name": "Support de base",
+          "detail": "Split squat, calf, bridge"
+        },
+        {
+          "id": "single",
+          "name": "Unilatéral",
+          "detail": "Single-leg"
+        },
+        {
+          "id": "advanced",
+          "name": "Support avancé",
+          "detail": "Hamstring walkout, calf genou fléchi"
+        }
+      ]
+    }
+  ],
+  "calibration": [
+    {
+      "id": "10m",
+      "label": "10 m",
+      "family": "minato.accel",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 10,
+      "cue": "3 essais, récupération complète."
+    },
+    {
+      "id": "30m",
+      "label": "30 m",
+      "family": "minato.accel",
+      "referenceLevel": 3,
+      "unit": "seconds",
+      "max": 15,
+      "cue": "2–3 essais, garde le meilleur."
+    },
+    {
+      "id": "60m",
+      "label": "60 m",
+      "family": "minato.maxv",
+      "referenceLevel": 3,
+      "unit": "seconds",
+      "max": 20,
+      "cue": "2 essais seulement si niveau et terrain adaptés."
+    }
+  ],
+  "weeks": [
+    {
+      "stage": "ACADEMY",
+      "frequency": 2,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Vitesse / Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ACADEMY",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Technique / Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ACADEMY",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "JIRAIYA",
+      "frequency": 2,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Vitesse / Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "JIRAIYA",
+      "frequency": 3,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Technique / Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "JIRAIYA",
+      "frequency": 4,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "YELLOW",
+      "frequency": 2,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Vitesse / Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "YELLOW",
+      "frequency": 3,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Technique / Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "YELLOW",
+      "frequency": 4,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "KANNABI",
+      "frequency": 2,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Vitesse / Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "KANNABI",
+      "frequency": 3,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Technique / Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 40,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "KANNABI",
+      "frequency": 4,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 40,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "AB",
+      "frequency": 2,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Vitesse / Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "AB",
+      "frequency": 3,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Technique / Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 40,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "AB",
+      "frequency": 4,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 40,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HOKAGE",
+      "frequency": 2,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Vitesse / Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HOKAGE",
+      "frequency": 3,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Technique / Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HOKAGE",
+      "frequency": 4,
+      "progression": {
+        "rule": "intensity",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "WAR",
+      "frequency": 2,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Vitesse / Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "WAR",
+      "frequency": 3,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Technique / Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "WAR",
+      "frequency": 4,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.03,
+        "note": "Une seule variable de sprint progresse; récupération complète obligatoire. Stopper le travail maximal après deux baisses >3 %."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Accélération",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints accélération",
+              "family": "minato.accel",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 30,
+              "restSeconds": 180,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Support",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Split squat",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 8,
+              "restSeconds": 75,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Mollets",
+              "family": "minato.support",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 12,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Réactivité",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Départs réactifs",
+              "family": "minato.cod",
+              "unit": "meters",
+              "sets": 6,
+              "perSet": 10,
+              "restSeconds": 120,
+              "rpe": 8,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Vitesse",
+          "type": "speed",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "A-march / A-skip",
+              "unit": "meters",
+              "sets": 2,
+              "perSet": 20,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Sprints vitesse",
+              "family": "minato.maxv",
+              "unit": "meters",
+              "sets": 4,
+              "perSet": 60,
+              "restSeconds": 300,
+              "rpe": 9,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Marche lente",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

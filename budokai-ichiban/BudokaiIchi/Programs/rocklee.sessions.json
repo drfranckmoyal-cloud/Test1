@@ -1,0 +1,2716 @@
+{
+ "program": "rocklee",
+ "version": "2026-09-12",
+ "families": [
+  {
+   "id": "rocklee.landing",
+   "name": "Landing",
+   "function": "Contrôle de réception",
+   "bossLevel": 5,
+   "ladder": [
+    {
+     "id": "snapDown",
+     "name": "Snap-down",
+     "detail": "Atterrissage bilatéral contrôlé"
+    },
+    {
+     "id": "dropStick",
+     "name": "Drop to stick",
+     "detail": "Petite hauteur, réception silencieuse"
+    },
+    {
+     "id": "singleStick",
+     "name": "Single-leg stick",
+     "detail": "Réception unilatérale"
+    },
+    {
+     "id": "lateralStick",
+     "name": "Lateral bound stick",
+     "detail": "Bond latéral + stabilisation"
+    },
+    {
+     "id": "reactiveStick",
+     "name": "Reactive landing",
+     "detail": "Réception après action rapide"
+    }
+   ]
+  },
+  {
+   "id": "rocklee.pogo",
+   "name": "Pogo",
+   "function": "Réactivité cheville",
+   "bossLevel": 5,
+   "ladder": [
+    {
+     "id": "ankleBounce",
+     "name": "Ankle bounce",
+     "detail": "Faible amplitude"
+    },
+    {
+     "id": "pogoLow",
+     "name": "Pogo bas",
+     "detail": "Contacts courts"
+    },
+    {
+     "id": "pogoMedium",
+     "name": "Pogo moyen",
+     "detail": "Plus de raideur cheville"
+    },
+    {
+     "id": "pogoReactive",
+     "name": "Pogo réactif",
+     "detail": "Qualité maximale"
+    },
+    {
+     "id": "pogoSingle",
+     "name": "Pogo unilatéral",
+     "detail": "Contrôle avancé"
+    }
+   ]
+  },
+  {
+   "id": "rocklee.jump",
+   "name": "Jump",
+   "function": "Puissance horizontale/verticale",
+   "bossLevel": 5,
+   "ladder": [
+    {
+     "id": "countermovement",
+     "name": "CMJ",
+     "detail": "Saut vertical contrôlé"
+    },
+    {
+     "id": "broad",
+     "name": "Broad jump",
+     "detail": "Saut horizontal"
+    },
+    {
+     "id": "repeatedBroad",
+     "name": "Broad jump répété",
+     "detail": "Faible nombre de contacts"
+    },
+    {
+     "id": "bound",
+     "name": "Bounds",
+     "detail": "Alternés contrôlés"
+    },
+    {
+     "id": "maxJump",
+     "name": "Max jump",
+     "detail": "Effort maximal, volume faible"
+    }
+   ]
+  },
+  {
+   "id": "rocklee.sprint",
+   "name": "Sprint",
+   "function": "Accélération",
+   "bossLevel": 5,
+   "ladder": [
+    {
+     "id": "march",
+     "name": "March/A-skip",
+     "detail": "Technique"
+    },
+    {
+     "id": "accel10",
+     "name": "Accélération 10 m",
+     "detail": "Départ propre"
+    },
+    {
+     "id": "accel20",
+     "name": "Accélération 20 m",
+     "detail": "Accélération prolongée"
+    },
+    {
+     "id": "accel30",
+     "name": "Accélération 30 m",
+     "detail": "Rapide, complet"
+    },
+    {
+     "id": "max30",
+     "name": "30 m maximal",
+     "detail": "Full recovery"
+    }
+   ]
+  },
+  {
+   "id": "rocklee.cod",
+   "name": "COD",
+   "function": "Changement de direction",
+   "bossLevel": 4,
+   "ladder": [
+    {
+     "id": "shuffle",
+     "name": "Shuffle technique",
+     "detail": "Décélération contrôlée"
+    },
+    {
+     "id": "505prep",
+     "name": "505 prep",
+     "detail": "Freinage et relance"
+    },
+    {
+     "id": "lateralCut",
+     "name": "Lateral cut",
+     "detail": "Angle modéré"
+    },
+    {
+     "id": "reactiveCut",
+     "name": "Reactive cut",
+     "detail": "Signal simple"
+    }
+   ]
+  }
+ ],
+ "calibration": [
+  {
+   "id": "broad",
+   "label": "Saut horizontal",
+   "family": "rocklee.jump",
+   "referenceLevel": 2,
+   "unit": "meters",
+   "max": 4,
+   "cue": "Trois essais, garde le meilleur saut propre."
+  },
+  {
+   "id": "tenM",
+   "label": "Accélération 10 m",
+   "family": "rocklee.sprint",
+   "referenceLevel": 2,
+   "unit": "seconds",
+   "max": 10,
+   "cue": "Trois essais avec récupération complète."
+  },
+  {
+   "id": "pogo",
+   "label": "Pogos 10 s",
+   "family": "rocklee.pogo",
+   "referenceLevel": 2,
+   "unit": "reps",
+   "max": 50,
+   "cue": "Compte seulement les contacts réactifs propres."
+  },
+  {
+   "id": "lateral",
+   "label": "Lateral bound stick",
+   "family": "rocklee.landing",
+   "referenceLevel": 2,
+   "unit": "reps",
+   "max": 10,
+   "cue": "Cinq essais par côté, qualité avant distance."
+  }
+ ],
+ "weeks": [
+  {
+   "stage": "ORIGINES",
+   "frequency": 3,
+   "progression": {
+    "rule": "volume",
+    "perWeek": 0.05,
+    "note": "Augmente légèrement le nombre total de contacts, jamais l’intensité et le volume la même semaine."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 20,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "ORIGINES",
+   "frequency": 4,
+   "progression": {
+    "rule": "volume",
+    "perWeek": 0.05,
+    "note": "Augmente légèrement le nombre total de contacts, jamais l’intensité et le volume la même semaine."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 20,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "title": "Technique légère",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 3,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "CHŪNIN",
+   "frequency": 3,
+   "progression": {
+    "rule": "variant",
+    "perWeek": 0.0,
+    "note": "Progresse par variantes de saut/réception plus exigeantes à volume stable."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 20,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "CHŪNIN",
+   "frequency": 4,
+   "progression": {
+    "rule": "variant",
+    "perWeek": 0.0,
+    "note": "Progresse par variantes de saut/réception plus exigeantes à volume stable."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 20,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "title": "Technique légère",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 3,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "BLESSURE",
+   "frequency": 3,
+   "progression": {
+    "rule": "volume",
+    "perWeek": 0.05,
+    "note": "Reconstruis le volume de contacts propres progressivement, sans maximalité systématique."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 30,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "BLESSURE",
+   "frequency": 4,
+   "progression": {
+    "rule": "volume",
+    "perWeek": 0.05,
+    "note": "Reconstruis le volume de contacts propres progressivement, sans maximalité systématique."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 30,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "title": "Technique légère",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 3,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "SHIPPUDEN",
+   "frequency": 3,
+   "progression": {
+    "rule": "intensity",
+    "perWeek": 0.05,
+    "note": "Augmente l’intensité des sprints/sauts en gardant le volume bas."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 30,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "SHIPPUDEN",
+   "frequency": 4,
+   "progression": {
+    "rule": "intensity",
+    "perWeek": 0.05,
+    "note": "Augmente l’intensité des sprints/sauts en gardant le volume bas."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 6,
+       "perSet": 30,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "title": "Technique légère",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 3,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "GUERRE",
+   "frequency": 3,
+   "progression": {
+    "rule": "density",
+    "perWeek": 0.05,
+    "note": "Réduis légèrement les repos uniquement si la qualité reste intacte."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 4,
+       "perSet": 30,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "stage": "GUERRE",
+   "frequency": 4,
+   "progression": {
+    "rule": "density",
+    "perWeek": 0.05,
+    "note": "Réduis légèrement les repos uniquement si la qualité reste intacte."
+   },
+   "sessions": [
+    {
+     "slot": 0,
+     "title": "Plyométrie / Réception",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Landing drill",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 5,
+       "restSeconds": 60,
+       "rpe": 5,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Pogo réactif",
+       "family": "rocklee.pogo",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 10,
+       "restSeconds": 75,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 4,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 1,
+     "title": "Sprint / COD",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Accélération",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 4,
+       "perSet": 30,
+       "restSeconds": 150,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Changement de direction",
+       "family": "rocklee.cod",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 2,
+     "title": "Puissance intégrée",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 3,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 5,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    },
+    {
+     "slot": 3,
+     "title": "Technique légère",
+     "type": "power",
+     "exercises": [
+      {
+       "role": "warmup",
+       "name": "Mobilité dynamique chevilles/hanches",
+       "unit": "reps",
+       "sets": 1,
+       "perSet": 8,
+       "rir": 4,
+       "policy": "structuredSession",
+       "characteristic": "mobility"
+      },
+      {
+       "role": "warmup",
+       "name": "A-march / A-skip",
+       "unit": "meters",
+       "sets": 2,
+       "perSet": 20,
+       "rpe": 3,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "work",
+       "name": "Broad jump",
+       "family": "rocklee.jump",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 3,
+       "restSeconds": 120,
+       "rpe": 7,
+       "policy": "structuredSession",
+       "characteristic": "power"
+      },
+      {
+       "role": "work",
+       "name": "Lateral bound stick",
+       "family": "rocklee.landing",
+       "unit": "reps",
+       "sets": 2,
+       "perSet": 4,
+       "restSeconds": 90,
+       "rpe": 6,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      },
+      {
+       "role": "work",
+       "name": "Accélération 10 m",
+       "family": "rocklee.sprint",
+       "unit": "meters",
+       "sets": 3,
+       "perSet": 10,
+       "restSeconds": 120,
+       "rpe": 8,
+       "policy": "structuredSession",
+       "characteristic": "speed"
+      },
+      {
+       "role": "cooldown",
+       "name": "Marche et respiration",
+       "unit": "seconds",
+       "value": 180,
+       "rpe": 2,
+       "policy": "structuredSession",
+       "characteristic": "control"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

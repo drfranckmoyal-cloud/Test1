@@ -1,0 +1,3764 @@
+{
+  "program": "levi",
+  "version": "2026-09-12",
+  "families": [
+    {
+      "id": "levi.antiExtension",
+      "name": "Anti-extension",
+      "function": "Hollow / tronc antérieur",
+      "bossLevel": 7,
+      "ladder": [
+        {
+          "id": "deadBug",
+          "name": "Dead bug",
+          "detail": "Base"
+        },
+        {
+          "id": "plank",
+          "name": "Forearm plank",
+          "detail": "Standard"
+        },
+        {
+          "id": "hollowTuck",
+          "name": "Hollow tuck",
+          "detail": "Compact"
+        },
+        {
+          "id": "oneLegHollow",
+          "name": "One-leg hollow",
+          "detail": "Intermédiaire"
+        },
+        {
+          "id": "hollow",
+          "name": "Hollow body",
+          "detail": "Boss prep"
+        }
+      ]
+    },
+    {
+      "id": "levi.lateral",
+      "name": "Lateral",
+      "function": "Anti-inclinaison",
+      "bossLevel": 5,
+      "ladder": [
+        {
+          "id": "sideKnees",
+          "name": "Side plank genoux",
+          "detail": "Base"
+        },
+        {
+          "id": "sideShort",
+          "name": "Side plank court",
+          "detail": "Intermédiaire"
+        },
+        {
+          "id": "sideFull",
+          "name": "Side plank complet",
+          "detail": "Standard"
+        },
+        {
+          "id": "sideStar",
+          "name": "Star plank",
+          "detail": "Avancé"
+        }
+      ]
+    },
+    {
+      "id": "levi.cross",
+      "name": "Cross-body",
+      "function": "Anti-rotation",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "birdDog",
+          "name": "Bird dog",
+          "detail": "Base"
+        },
+        {
+          "id": "bearTap",
+          "name": "Bear shoulder tap",
+          "detail": "Compact"
+        },
+        {
+          "id": "wideTap",
+          "name": "Shoulder tap pieds larges",
+          "detail": "Contrôle"
+        },
+        {
+          "id": "standardTap",
+          "name": "Shoulder tap standard",
+          "detail": "Boss prep"
+        },
+        {
+          "id": "narrowTap",
+          "name": "Shoulder tap pieds serrés",
+          "detail": "Avancé"
+        }
+      ]
+    },
+    {
+      "id": "levi.posterior",
+      "name": "Posterior",
+      "function": "Chaîne postérieure",
+      "bossLevel": 5,
+      "ladder": [
+        {
+          "id": "bridge",
+          "name": "Glute bridge",
+          "detail": "Base"
+        },
+        {
+          "id": "singleBridge",
+          "name": "Single-leg bridge",
+          "detail": "Unilatéral"
+        },
+        {
+          "id": "walkout",
+          "name": "Hamstring walkout",
+          "detail": "Ischios"
+        },
+        {
+          "id": "reversePlank",
+          "name": "Reverse plank",
+          "detail": "Chaîne postérieure"
+        }
+      ]
+    },
+    {
+      "id": "levi.hang",
+      "name": "Hang",
+      "function": "Suspension / grip",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "assistHang",
+          "name": "Hang assisté",
+          "detail": "Pieds partiels"
+        },
+        {
+          "id": "dead20",
+          "name": "Dead hang 20–30 s",
+          "detail": "Base"
+        },
+        {
+          "id": "dead45",
+          "name": "Dead hang 30–45 s",
+          "detail": "Intermédiaire"
+        },
+        {
+          "id": "dead60",
+          "name": "Dead hang 60 s",
+          "detail": "Boss"
+        },
+        {
+          "id": "activeHang",
+          "name": "Active hang",
+          "detail": "Scapulaire"
+        }
+      ]
+    },
+    {
+      "id": "levi.pull",
+      "name": "Pull",
+      "function": "Traction",
+      "bossLevel": 8,
+      "ladder": [
+        {
+          "id": "scap",
+          "name": "Scap pull",
+          "detail": "Base"
+        },
+        {
+          "id": "footAssist",
+          "name": "Foot-assisted",
+          "detail": "Assistance"
+        },
+        {
+          "id": "negative",
+          "name": "Negative pull-up",
+          "detail": "3–5 s"
+        },
+        {
+          "id": "single",
+          "name": "1 traction",
+          "detail": "Strict"
+        },
+        {
+          "id": "three",
+          "name": "3 tractions",
+          "detail": "Volume"
+        },
+        {
+          "id": "five",
+          "name": "5 tractions",
+          "detail": "Boss"
+        }
+      ]
+    }
+  ],
+  "calibration": [
+    {
+      "id": "hollow",
+      "label": "Anti-extension",
+      "family": "levi.antiExtension",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 60,
+      "cue": "Choisis une variante tenable 20–40 s sans perdre la position."
+    },
+    {
+      "id": "side",
+      "label": "Lateral",
+      "family": "levi.lateral",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 60,
+      "cue": "Teste chaque côté séparément."
+    },
+    {
+      "id": "hang",
+      "label": "Hang",
+      "family": "levi.hang",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 60,
+      "cue": "Suspension confortable, cap 60 s."
+    },
+    {
+      "id": "pull",
+      "label": "Pull-up",
+      "family": "levi.pull",
+      "referenceLevel": 3,
+      "unit": "reps",
+      "max": 12,
+      "cue": "Arrête dès dégradation technique."
+    }
+  ],
+  "weeks": [
+    {
+      "stage": "UNDERGROUND",
+      "frequency": 3,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente les holds de quelques secondes avant de changer de variante."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension + Posterior",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 3,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "UNDERGROUND",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente les holds de quelques secondes avant de changer de variante."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 3,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "UNDERGROUND",
+      "frequency": 5,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Augmente les holds de quelques secondes avant de changer de variante."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 3,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Skill / Recovery",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "NOREGRETS",
+      "frequency": 3,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Progresse vers des variantes dynamiques à durée stable."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension + Posterior",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 3,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "NOREGRETS",
+      "frequency": 4,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Progresse vers des variantes dynamiques à durée stable."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 3,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "NOREGRETS",
+      "frequency": 5,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Progresse vers des variantes dynamiques à durée stable."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 3,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Skill / Recovery",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SPECIALOPS",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Ajoute une série uniquement si toutes les familles restent good."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension + Posterior",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SPECIALOPS",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Ajoute une série uniquement si toutes les familles restent good."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SPECIALOPS",
+      "frequency": 5,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Ajoute une série uniquement si toutes les familles restent good."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Skill / Recovery",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ACKERMAN",
+      "frequency": 3,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente la difficulté mécanique, pas la durée infiniment."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension + Posterior",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ACKERMAN",
+      "frequency": 4,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente la difficulté mécanique, pas la durée infiniment."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "ACKERMAN",
+      "frequency": 5,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Augmente la difficulté mécanique, pas la durée infiniment."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Skill / Recovery",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "STRONGEST",
+      "frequency": 3,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Approche les durées boss en réduisant le volume total."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension + Posterior",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "STRONGEST",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Approche les durées boss en réduisant le volume total."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "STRONGEST",
+      "frequency": 5,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.05,
+        "note": "Approche les durées boss en réduisant le volume total."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Anti-extension",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 40,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Hang + Pull",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hang",
+              "family": "levi.hang",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 45,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 5,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Lateral + Cross-body",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Cross-body control",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Integrated Core",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Side plank",
+              "family": "levi.lateral",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 30,
+              "restSeconds": 45,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Pull progression",
+              "family": "levi.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "Shoulder taps",
+              "family": "levi.cross",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Skill / Recovery",
+          "type": "control",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Respiration et contrôle scapulaire",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Hollow / anti-extension",
+              "family": "levi.antiExtension",
+              "unit": "seconds",
+              "sets": 2,
+              "perSet": 40,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "control"
+            },
+            {
+              "role": "work",
+              "name": "Posterior chain",
+              "family": "levi.posterior",
+              "unit": "reps",
+              "sets": 2,
+              "perSet": 10,
+              "restSeconds": 60,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Mobilité thoracique",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 6,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

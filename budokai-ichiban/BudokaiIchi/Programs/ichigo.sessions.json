@@ -1,0 +1,5404 @@
+{
+  "program": "ichigo",
+  "version": "2026-09-12",
+  "families": [
+    {
+      "id": "ichigo.push",
+      "name": "Pompes",
+      "function": "Endurance de poussée",
+      "bossLevel": 7,
+      "ladder": [
+        {
+          "id": "incline",
+          "name": "Pompe inclinée",
+          "detail": "Base"
+        },
+        {
+          "id": "standard",
+          "name": "Pompe standard",
+          "detail": "Continue"
+        },
+        {
+          "id": "volumeSets",
+          "name": "Pompes volume",
+          "detail": "Sets sous-max"
+        },
+        {
+          "id": "density",
+          "name": "Pompes densité",
+          "detail": "Repos réduit"
+        },
+        {
+          "id": "continuous25",
+          "name": "25 continues",
+          "detail": "Benchmark intermédiaire"
+        },
+        {
+          "id": "continuous40",
+          "name": "40 continues",
+          "detail": "Avancé"
+        },
+        {
+          "id": "continuous50",
+          "name": "50 continues",
+          "detail": "Target"
+        }
+      ]
+    },
+    {
+      "id": "ichigo.pull",
+      "name": "Tractions",
+      "function": "Traction",
+      "bossLevel": 7,
+      "ladder": [
+        {
+          "id": "hang",
+          "name": "Hang",
+          "detail": "Base"
+        },
+        {
+          "id": "scap",
+          "name": "Scap pull",
+          "detail": "Contrôle"
+        },
+        {
+          "id": "assist",
+          "name": "Traction assistée",
+          "detail": "Assistance"
+        },
+        {
+          "id": "negative",
+          "name": "Negative",
+          "detail": "Lente"
+        },
+        {
+          "id": "three",
+          "name": "3 strictes",
+          "detail": "Volume"
+        },
+        {
+          "id": "six",
+          "name": "6 strictes",
+          "detail": "Intermédiaire"
+        },
+        {
+          "id": "ten",
+          "name": "10 strictes",
+          "detail": "Target"
+        }
+      ]
+    },
+    {
+      "id": "ichigo.squat",
+      "name": "Squats",
+      "function": "Endurance jambes",
+      "bossLevel": 5,
+      "ladder": [
+        {
+          "id": "sitStand",
+          "name": "Sit-to-stand",
+          "detail": "Base"
+        },
+        {
+          "id": "squat",
+          "name": "Squat poids du corps",
+          "detail": "Standard"
+        },
+        {
+          "id": "volume",
+          "name": "Squat volume",
+          "detail": "Sets cumulés"
+        },
+        {
+          "id": "day100",
+          "name": "100 squats/jour",
+          "detail": "Target"
+        }
+      ]
+    },
+    {
+      "id": "ichigo.abs",
+      "name": "Abdos",
+      "function": "Endurance tronc",
+      "bossLevel": 5,
+      "ladder": [
+        {
+          "id": "curlUp",
+          "name": "Curl-up contrôlé",
+          "detail": "Base"
+        },
+        {
+          "id": "volume",
+          "name": "Curl-up volume",
+          "detail": "Sets cumulés"
+        },
+        {
+          "id": "day200",
+          "name": "200 abdos/jour",
+          "detail": "Target"
+        }
+      ]
+    },
+    {
+      "id": "ichigo.run",
+      "name": "Course 5 km",
+      "function": "Endurance continue",
+      "bossLevel": 6,
+      "ladder": [
+        {
+          "id": "runWalk",
+          "name": "Run/walk",
+          "detail": "Débutant"
+        },
+        {
+          "id": "run20",
+          "name": "20 min continu",
+          "detail": "Facile"
+        },
+        {
+          "id": "run30",
+          "name": "30 min continu",
+          "detail": "Facile"
+        },
+        {
+          "id": "run4k",
+          "name": "4 km continu",
+          "detail": "Prépa"
+        },
+        {
+          "id": "run5k",
+          "name": "5 km continu",
+          "detail": "Target"
+        }
+      ]
+    }
+  ],
+  "calibration": [
+    {
+      "id": "push",
+      "label": "Pompes",
+      "family": "ichigo.push",
+      "referenceLevel": 2,
+      "unit": "reps",
+      "max": 40,
+      "cue": "Max propre avec arrêt à la première dégradation."
+    },
+    {
+      "id": "pull",
+      "label": "Tractions",
+      "family": "ichigo.pull",
+      "referenceLevel": 2,
+      "unit": "reps",
+      "max": 15,
+      "cue": "Max strict sans kipping."
+    },
+    {
+      "id": "squat",
+      "label": "Squats",
+      "family": "ichigo.squat",
+      "referenceLevel": 2,
+      "unit": "reps",
+      "max": 60,
+      "cue": "Cap 60 reps propres."
+    },
+    {
+      "id": "abs",
+      "label": "Abdos",
+      "family": "ichigo.abs",
+      "referenceLevel": 2,
+      "unit": "reps",
+      "max": 60,
+      "cue": "Curl-up contrôlé, cap 60."
+    },
+    {
+      "id": "run",
+      "label": "Course continue",
+      "family": "ichigo.run",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 3600,
+      "cue": "Course facile continue, pas de test max obligatoire."
+    }
+  ],
+  "weeks": [
+    {
+      "stage": "SUBSTITUTE",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — SUBSTITUTE",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 100,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — SUBSTITUTE",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — SUBSTITUTE",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SUBSTITUTE",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — SUBSTITUTE",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 100,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — SUBSTITUTE",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SUBSTITUTE",
+      "frequency": 5,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — SUBSTITUTE",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 100,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — SUBSTITUTE",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SOULSOCIETY",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — SOULSOCIETY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 200,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — SOULSOCIETY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 120,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — SOULSOCIETY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 120,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SOULSOCIETY",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — SOULSOCIETY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 200,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — SOULSOCIETY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 120,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SOULSOCIETY",
+      "frequency": 5,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — SOULSOCIETY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 200,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — SOULSOCIETY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 120,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "BANKAI",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — BANKAI",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 100,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — BANKAI",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — BANKAI",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "BANKAI",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — BANKAI",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 100,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — BANKAI",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "BANKAI",
+      "frequency": 5,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — BANKAI",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 100,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — BANKAI",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 60,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "VIZARD",
+      "frequency": 3,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — VIZARD",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Tractions progression",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 5,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — VIZARD",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Tractions progression",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 5,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — VIZARD",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Tractions progression",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 5,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "VIZARD",
+      "frequency": 4,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — VIZARD",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Tractions progression",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 5,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — VIZARD",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Tractions progression",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 5,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "VIZARD",
+      "frequency": 5,
+      "progression": {
+        "rule": "variant",
+        "perWeek": 0.0,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — VIZARD",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Tractions progression",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 5,
+              "perSet": 6,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — VIZARD",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Tractions progression",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 5,
+              "perSet": 4,
+              "restSeconds": 150,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HUECO",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — HUECO",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes endurance continue",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 20,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — HUECO",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes endurance continue",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 15,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — HUECO",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes endurance continue",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 15,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HUECO",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — HUECO",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes endurance continue",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 20,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — HUECO",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes endurance continue",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 15,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HUECO",
+      "frequency": 5,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — HUECO",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes endurance continue",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 20,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — HUECO",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes endurance continue",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 4,
+              "perSet": 15,
+              "restSeconds": 120,
+              "rir": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "AIZEN",
+      "frequency": 3,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — AIZEN",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course continue",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 5000,
+              "rpe": 4,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — AIZEN",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course continue",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 3000,
+              "rpe": 4,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — AIZEN",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course continue",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 3000,
+              "rpe": 4,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "AIZEN",
+      "frequency": 4,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — AIZEN",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course continue",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 5000,
+              "rpe": 4,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — AIZEN",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course continue",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 3000,
+              "rpe": 4,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "AIZEN",
+      "frequency": 5,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — AIZEN",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course continue",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 5000,
+              "rpe": 4,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — AIZEN",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course continue",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 3000,
+              "rpe": 4,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "FULLBRING",
+      "frequency": 3,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — FULLBRING",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — FULLBRING",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — FULLBRING",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "FULLBRING",
+      "frequency": 4,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — FULLBRING",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — FULLBRING",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "FULLBRING",
+      "frequency": 5,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — FULLBRING",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — FULLBRING",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "TYBW",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — TYBW",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 150,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Target — TYBW",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 150,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — TYBW",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 150,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "TYBW",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — TYBW",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 150,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — TYBW",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 150,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "TYBW",
+      "frequency": 5,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Target — TYBW",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 150,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Target — TYBW",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes cumulées",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Abdos cumulés",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 150,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Squats cumulés",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 75,
+              "rir": 3,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Maintenance",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "BANKAIDAY",
+      "frequency": 3,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "BANKAI DAY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "100 pompes journée",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 100,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "200 abdos journée",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 200,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "100 squats journée",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 100,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "10 tractions continues",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "value": 10,
+              "rir": 0,
+              "policy": "continuous",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "50 pompes continues",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 50,
+              "rir": 0,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "5 km continu",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 5000,
+              "rpe": 7,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "BANKAIDAY",
+      "frequency": 4,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "BANKAI DAY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "100 pompes journée",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 100,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "200 abdos journée",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 200,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "100 squats journée",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 100,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "10 tractions continues",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "value": 10,
+              "rir": 0,
+              "policy": "continuous",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "50 pompes continues",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 50,
+              "rir": 0,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "5 km continu",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 5000,
+              "rpe": 7,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "BANKAIDAY",
+      "frequency": 5,
+      "progression": {
+        "rule": "density",
+        "perWeek": 0.05,
+        "note": "Une seule cible prioritaire progresse. Les autres capacités restent en maintien; ne jamais augmenter simultanément deux qualités principales."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Préparation légère",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Pompes maintenance",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 15,
+              "restSeconds": 90,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Tractions maintenance",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "sets": 3,
+              "perSet": 4,
+              "restSeconds": 120,
+              "rir": 3,
+              "policy": "structuredSession",
+              "characteristic": "force"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "BANKAI DAY",
+          "type": "hybrid",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Mobilité générale",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "100 pompes journée",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 100,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "200 abdos journée",
+              "family": "ichigo.abs",
+              "unit": "reps",
+              "value": 200,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "100 squats journée",
+              "family": "ichigo.squat",
+              "unit": "reps",
+              "value": 100,
+              "rir": 2,
+              "policy": "dayCumulative",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "10 tractions continues",
+              "family": "ichigo.pull",
+              "unit": "reps",
+              "value": 10,
+              "rir": 0,
+              "policy": "continuous",
+              "characteristic": "force"
+            },
+            {
+              "role": "work",
+              "name": "50 pompes continues",
+              "family": "ichigo.push",
+              "unit": "reps",
+              "value": 50,
+              "rir": 0,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "5 km continu",
+              "family": "ichigo.run",
+              "unit": "meters",
+              "value": 5000,
+              "rpe": 7,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

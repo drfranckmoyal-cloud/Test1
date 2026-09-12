@@ -37,6 +37,12 @@ enum Weekday: Int, Codable, CaseIterable, Identifiable, Comparable {
 enum SessionType: String, Codable, CaseIterable, Identifiable {
     case strength, easyEndurance, longEndurance, qualityEndurance
     case speed, power, mobility, recovery, benchmark
+    /// Contrôle corporel : le gainage de Levi n'est ni du renforcement pur ni
+    /// de la mobilité.
+    case control
+    /// Séance mixte : les objectifs d'Ichigo mêlent volume musculaire et
+    /// course dans la même journée.
+    case hybrid
 
     var id: String { rawValue }
 
@@ -51,14 +57,17 @@ enum SessionType: String, Codable, CaseIterable, Identifiable {
         case .mobility: return "Mobilité"
         case .recovery: return "Récupération"
         case .benchmark: return "Test"
+        case .control: return "Contrôle corporel"
+        case .hybrid: return "Séance mixte"
         }
     }
 
     /// Une séance dure laisse des traces : le planificateur les espace.
     var isHard: Bool {
         switch self {
-        case .strength, .qualityEndurance, .longEndurance, .speed, .power, .benchmark: return true
-        case .easyEndurance, .mobility, .recovery: return false
+        case .strength, .qualityEndurance, .longEndurance, .speed, .power, .benchmark, .hybrid:
+            return true
+        case .easyEndurance, .mobility, .recovery, .control: return false
         }
     }
 }
