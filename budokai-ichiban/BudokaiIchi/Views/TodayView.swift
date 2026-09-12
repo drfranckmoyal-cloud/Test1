@@ -6,6 +6,7 @@ struct TodayView: View {
     /// Quand plusieurs séances tombent le même jour, une seule est dépliée :
     /// sinon la page fait trois écrans de haut.
     @State private var opened: ProgramID?
+    @State private var setting: Program?
 
     var body: some View {
         ScrollView {
@@ -24,6 +25,9 @@ struct TodayView: View {
         .background(Theme.ground)
         .fullScreenCover(item: $running) { session in
             SessionSheetView(session: session)
+        }
+        .sheet(item: $setting) { program in
+            ProgramLaunchView(program: program) { store.startProgram(program.id) }
         }
     }
 
@@ -80,6 +84,9 @@ struct TodayView: View {
             ForEach(store.programsResting) { program in
                 restCard(program)
             }
+            ForEach(store.programsNeedingSetup) { program in
+                setupCard(program)
+            }
             ForEach(store.programsFinished) { program in
                 finishedCard(program)
             }
@@ -101,6 +108,32 @@ struct TodayView: View {
         .frame(maxWidth: .infinity)
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Theme.border, lineWidth: 1))
+    }
+
+    /// Un programme lancé mais jamais réglé. Il était affiché comme
+    /// « terminé », ce qui n'avait aucun sens.
+    private func setupCard(_ program: Program) -> some View {
+        VStack(spacing: 13) {
+            Image(systemName: "slider.horizontal.3")
+                .font(.system(size: 28))
+                .foregroundStyle(program.light)
+            Text(program.name.uppercased())
+                .font(.display(19))
+                .foregroundStyle(Theme.text)
+            Text("Il manque ton point de départ. Sans tes disponibilités et tes mesures, l'app ne peut rien te prescrire.")
+                .font(.ui(13))
+                .foregroundStyle(Theme.muted)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+            PrimaryButton(title: "RÉGLER LE PROGRAMME", tint: program.light) {
+                setting = program
+            }
+        }
+        .padding(22)
+        .frame(maxWidth: .infinity)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+            .stroke(program.light.opacity(0.4), lineWidth: 1))
     }
 
     private func finishedCard(_ program: Program) -> some View {

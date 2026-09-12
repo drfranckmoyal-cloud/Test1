@@ -16,6 +16,7 @@ struct ProgramJourneyView: View {
 
     @State private var opened: Int?
     @State private var showDetail = false
+    @State private var showSetup = false
 
     private var tint: Color { program.light }
     private var blocks: [SaitamaBlockSpec] { program.id == .saitama ? SaitamaBlocks.all : [] }
@@ -43,7 +44,9 @@ struct ProgramJourneyView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     banner
-                    if blocks.isEmpty {
+                    if store.needsSetup(program.id) {
+                        setupCall
+                    } else if blocks.isEmpty {
                         unavailable
                     } else {
                         start
@@ -68,6 +71,9 @@ struct ProgramJourneyView: View {
             }
         }
         .sheet(isPresented: $showDetail) { ProgramDetailView(program: program) }
+        .sheet(isPresented: $showSetup) {
+            ProgramLaunchView(program: program) { store.startProgram(program.id) }
+        }
         .onAppear { if isIntroduction { opened = currentBlock } }
     }
 
@@ -414,6 +420,34 @@ struct ProgramJourneyView: View {
         if store.progress(program.id).completedBlocks.contains(block.id) { return .done }
         if block.index == currentBlock { return .current }
         return block.index < currentBlock ? .done : .locked
+    }
+
+    /// Le programme tourne mais n'a jamais été réglé : il faut ses
+    /// disponibilités et ses mesures avant de pouvoir prescrire quoi que ce
+    /// soit.
+    private var setupCall: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Il manque ton point de départ")
+                .font(.display(21))
+                .foregroundStyle(Theme.text)
+            Text("Ce programme a été lancé avant que l'app ne sache mesurer ton niveau. Sans tes disponibilités et tes quatre mesures, elle ne peut rien te prescrire de sensé.")
+                .font(.ui(14))
+                .foregroundStyle(Theme.muted)
+                .fixedSize(horizontal: false, vertical: true)
+            Text("Deux minutes, et la route s'ouvre.")
+                .font(.ui(13, .semibold))
+                .foregroundStyle(tint)
+            PrimaryButton(title: "RÉGLER LE PROGRAMME", tint: tint) {
+                showSetup = true
+            }
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+            .stroke(tint.opacity(0.4), lineWidth: 1))
+        .padding(.horizontal, 20)
+        .padding(.top, 22)
     }
 
     private var unavailable: some View {

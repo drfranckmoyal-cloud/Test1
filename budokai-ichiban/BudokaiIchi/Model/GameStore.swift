@@ -579,7 +579,22 @@ final class GameStore: ObservableObject {
     var programsResting: [Program] { activePrograms.filter { isResting($0.id) } }
 
     /// Les programmes suivis arrivés à leur terme.
-    var programsFinished: [Program] { activePrograms.filter { session(of: $0.id) == nil } }
+    var programsFinished: [Program] {
+        activePrograms.filter { session(of: $0.id) == nil && !needsSetup($0.id) }
+    }
+
+    /// Les programmes suivis qui réclament encore leur réglage.
+    ///
+    /// Cas réel : Saitama lancé avant que la calibration n'existe. Sans
+    /// mesures, le moteur ne peut rien prescrire — et l'app le prenait pour un
+    /// programme terminé.
+    var programsNeedingSetup: [Program] { activePrograms.filter { needsSetup($0.id) } }
+
+    func needsSetup(_ id: ProgramID) -> Bool {
+        if needsScheduling(id) { return true }
+        if id == .saitama { return saitamaNeedsCalibration }
+        return false
+    }
 
     // Conservés pour les écrans qui ne parlent que du premier programme.
     var currentSession: PlannedSession? { activeProgram.flatMap { session(of: $0.id) } }

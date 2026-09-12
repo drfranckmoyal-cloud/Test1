@@ -33,8 +33,7 @@ struct ProgramsView: View {
                             Haptics.tap()
                             // un programme lancé s'ouvre sur sa route ; les
                             // autres sur leur présentation
-                            if store.isActive(program.id), program.id == .saitama,
-                               store.saitamaCalibration?.isComplete == true {
+                            if store.isActive(program.id), program.id == .saitama {
                                 journey = program
                             } else {
                                 selected = program
