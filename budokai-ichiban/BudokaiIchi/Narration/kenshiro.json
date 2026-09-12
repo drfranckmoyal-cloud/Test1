@@ -1,0 +1,1504 @@
+{
+  "program": "kenshiro",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "fieldsRequired": [
+      "title",
+      "openingMessage",
+      "storyRecap",
+      "references",
+      "senseiMessage",
+      "closingMessage"
+    ],
+    "noPlaceholderAllowed": true,
+    "canonicalQuoteOptional": true,
+    "canonicalQuoteRule": "null par défaut ; n’ajouter qu’après vérification éditoriale",
+    "dynamicSchedulingRule": "Consommer les événements principaux dans l’ordre. Les consolidations/deloads utilisent les interludes sans avancer la chronologie."
+  },
+  "sourceNotes": [
+    "Contrôle narratif prioritaire : site officiel Hokuto no Ken.",
+    "Les textes storyRecap/opening/closing/sensei sont des textes Budokai originaux.",
+    "Aucune citation canonique exacte n’est requise pour le fonctionnement."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "KEN-N001",
+      "stage": "SCARS",
+      "chronologyIndex": 1,
+      "title": "La défaite contre Shin",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Shin terrasse Kenshiro et lui laisse les sept cicatrices avant d’emporter Yuria. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La défaite contre Shin"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N002",
+      "stage": "SCARS",
+      "chronologyIndex": 2,
+      "title": "L’errance dans le désert",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Kenshiro traverse un monde détruit où la force est souvent utilisée contre les plus faibles. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "L’errance dans le désert"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N003",
+      "stage": "SCARS",
+      "chronologyIndex": 3,
+      "title": "Rencontre avec Bat",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Bat croise la route de Kenshiro et comprend rapidement que ce voyageur silencieux n’est pas ordinaire. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Rencontre avec Bat"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N004",
+      "stage": "SCARS",
+      "chronologyIndex": 4,
+      "title": "Rencontre avec Lin",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Lin, marquée par la violence du monde, rencontre Kenshiro et retrouve progressivement une voix et une confiance. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Rencontre avec Lin"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N005",
+      "stage": "SCARS",
+      "chronologyIndex": 5,
+      "title": "Zeed",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Kenshiro révèle pour la première fois à Bat et Lin ce que le Hokuto Shinken peut accomplir. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Zeed"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N006",
+      "stage": "SCARS",
+      "chronologyIndex": 6,
+      "title": "Protéger plutôt que dominer",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "La puissance de Kenshiro prend son sens lorsqu’elle sert à défendre ceux qui ne peuvent pas se défendre. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Protéger plutôt que dominer"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N007",
+      "stage": "SCARS",
+      "chronologyIndex": 7,
+      "title": "Premiers pas vers KING",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Les traces de l’organisation KING rapprochent Kenshiro de l’homme qui l’a autrefois vaincu. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Premiers pas vers KING"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N008",
+      "stage": "SCARS",
+      "chronologyIndex": 8,
+      "title": "Les sept cicatrices deviennent un repère",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Ce qui rappelait une défaite devient le signe visible d’un chemin de reconstruction. La reconstruction commence par des variantes simples que tu peux réellement contrôler. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Les sept cicatrices deviennent un repère"
+      ],
+      "senseiMessage": "Ne cherche pas à effacer une faiblesse en une séance : transforme-la en base.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N009",
+      "stage": "SHIN",
+      "chronologyIndex": 9,
+      "title": "KING",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Kenshiro affronte les différents lieutenants de KING en remontant progressivement vers Shin. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "KING"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N010",
+      "stage": "SHIN",
+      "chronologyIndex": 10,
+      "title": "Southern Cross",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "La ville bâtie par Shin représente tout ce que sa quête de Yuria a transformé en obsession. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Southern Cross"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N011",
+      "stage": "SHIN",
+      "chronologyIndex": 11,
+      "title": "Le souvenir de Yuria",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Kenshiro avance moins pour la vengeance que pour retrouver celle qu’il a perdue. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le souvenir de Yuria"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N012",
+      "stage": "SHIN",
+      "chronologyIndex": 12,
+      "title": "Revoir Shin",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Kenshiro retrouve l’adversaire qui l’avait dominé lorsque sa détermination était encore insuffisante. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Revoir Shin"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N013",
+      "stage": "SHIN",
+      "chronologyIndex": 13,
+      "title": "La revanche",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Cette fois, Kenshiro n’est plus le même combattant : il a transformé la défaite en maîtrise. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La revanche"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N014",
+      "stage": "SHIN",
+      "chronologyIndex": 14,
+      "title": "La vérité sur Yuria",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Shin révèle que l’histoire de Yuria est plus complexe que ce que Kenshiro imaginait. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La vérité sur Yuria"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N015",
+      "stage": "SHIN",
+      "chronologyIndex": 15,
+      "title": "Après Southern Cross",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "La victoire ne clôt pas le voyage ; elle ouvre un monde de rivalités et d’héritages plus vastes. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Après Southern Cross"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N016",
+      "stage": "SHIN",
+      "chronologyIndex": 16,
+      "title": "Une force sans triomphalisme",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Kenshiro repart sans célébration excessive : le prochain problème compte déjà davantage que le précédent. Une revanche utile n’est pas un retour en arrière : c’est la preuve que le niveau a changé. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Une force sans triomphalisme"
+      ],
+      "senseiMessage": "Travaille avec assez de marge pour que la prochaine répétition ressemble encore à la précédente.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N017",
+      "stage": "REI",
+      "chronologyIndex": 17,
+      "title": "Mamiya",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Kenshiro rencontre Mamiya et découvre un village vivant sous la menace. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Mamiya"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N018",
+      "stage": "REI",
+      "chronologyIndex": 18,
+      "title": "Rei",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Le maître du Nanto Suichō Ken apparaît d’abord comme un combattant aussi dangereux qu’ambigu. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Rei"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N019",
+      "stage": "REI",
+      "chronologyIndex": 19,
+      "title": "Airi",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "La recherche de la sœur de Rei donne un sens personnel à sa violence et rapproche les deux hommes. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Airi"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N020",
+      "stage": "REI",
+      "chronologyIndex": 20,
+      "title": "Deux écoles, un même but",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Hokuto et Nanto cessent d’être seulement rivaux lorsque leurs héritiers choisissent de protéger les mêmes personnes. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Deux écoles, un même but"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N021",
+      "stage": "REI",
+      "chronologyIndex": 21,
+      "title": "Jagi",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Le passé de Kenshiro refait surface à travers Jagi, l’un des frères du Hokuto. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Jagi"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N022",
+      "stage": "REI",
+      "chronologyIndex": 22,
+      "title": "Le poids du nom",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Être héritier ne suffit pas : les actes de chaque frère montrent ce que chacun fait de l’enseignement reçu. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le poids du nom"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N023",
+      "stage": "REI",
+      "chronologyIndex": 23,
+      "title": "Rei choisit son camp",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Rei devient un véritable allié de Kenshiro. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Rei choisit son camp"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N024",
+      "stage": "REI",
+      "chronologyIndex": 24,
+      "title": "La force au service d’autrui",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Le programme entre dans une phase où la technique devient plus unilatérale et plus exigeante, comme le parcours de Rei. Le travail devient plus unilatéral et demande davantage de précision. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La force au service d’autrui"
+      ],
+      "senseiMessage": "Commence par ton côté faible et ne donne jamais au côté fort un volume qu’il n’a pas mérité.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N025",
+      "stage": "TOKI",
+      "chronologyIndex": 25,
+      "title": "Cassandra",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Kenshiro se dirige vers la prison où Toki est détenu. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Cassandra"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N026",
+      "stage": "TOKI",
+      "chronologyIndex": 26,
+      "title": "Retrouver Toki",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Le frère que Kenshiro respecte pour sa maîtrise et sa compassion retrouve enfin la liberté. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Retrouver Toki"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N027",
+      "stage": "TOKI",
+      "chronologyIndex": 27,
+      "title": "Le geste de Toki",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Toki incarne une version du Hokuto moins brutale, où précision et contrôle comptent autant que puissance. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le geste de Toki"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N028",
+      "stage": "TOKI",
+      "chronologyIndex": 28,
+      "title": "La maladie",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "La fragilité physique de Toki rappelle qu’un grand niveau technique n’abolit jamais les limites du corps. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La maladie"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N029",
+      "stage": "TOKI",
+      "chronologyIndex": 29,
+      "title": "Apprendre par le contrôle",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Kenshiro observe une maîtrise où chaque mouvement possède une intention claire. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Apprendre par le contrôle"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N030",
+      "stage": "TOKI",
+      "chronologyIndex": 30,
+      "title": "Tempo",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Le travail lent et les pauses de ce bloc traduisent sportivement cette recherche de précision. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Tempo"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N031",
+      "stage": "TOKI",
+      "chronologyIndex": 31,
+      "title": "La douceur peut être forte",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Toki montre qu’une force maîtrisée n’a pas besoin d’être démonstrative. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La douceur peut être forte"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N032",
+      "stage": "TOKI",
+      "chronologyIndex": 32,
+      "title": "Préparer la rencontre avec Raoh",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "La présence de Raoh transforme désormais chaque progrès en préparation à un adversaire supérieur. Ici, la maîtrise compte davantage que le nombre brut de répétitions. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Préparer la rencontre avec Raoh"
+      ],
+      "senseiMessage": "Ralentis lorsque c’est demandé : le contrôle est une forme de force.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N033",
+      "stage": "RAOH",
+      "chronologyIndex": 33,
+      "title": "Ken-Oh",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Raoh règne par la puissance et cherche à imposer son ordre au monde. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Ken-Oh"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N034",
+      "stage": "RAOH",
+      "chronologyIndex": 34,
+      "title": "Kokuoh",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Le cheval gigantesque de Raoh devient l’un des symboles de son poids et de sa domination. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Kokuoh"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N035",
+      "stage": "RAOH",
+      "chronologyIndex": 35,
+      "title": "Premier choc",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Kenshiro et Raoh se rencontrent enfin dans un affrontement où aucun ne peut simplement imposer sa force. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Premier choc"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N036",
+      "stage": "RAOH",
+      "chronologyIndex": 36,
+      "title": "Le niveau supérieur",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Raoh oblige Kenshiro à comprendre que les bases déjà solides ne suffisent plus. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le niveau supérieur"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N037",
+      "stage": "RAOH",
+      "chronologyIndex": 37,
+      "title": "Rei face à Raoh",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Rei mesure brutalement l’écart qui existe avec Ken-Oh. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Rei face à Raoh"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N038",
+      "stage": "RAOH",
+      "chronologyIndex": 38,
+      "title": "Toki face à Raoh",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Toki affronte son frère en sachant que son corps ne lui permet plus d’exprimer tout son potentiel. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Toki face à Raoh"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N039",
+      "stage": "RAOH",
+      "chronologyIndex": 39,
+      "title": "Force et marge",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Ce bloc privilégie les faibles plages de répétitions et les longues récupérations : la qualité doit rester intacte. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Force et marge"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N040",
+      "stage": "RAOH",
+      "chronologyIndex": 40,
+      "title": "Ne pas confondre lourdeur et maîtrise",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Raoh incarne la force absolue ; Kenshiro doit construire une force qui reste contrôlée. La phase de force demande moins de répétitions mais davantage de qualité et de récupération. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Ne pas confondre lourdeur et maîtrise"
+      ],
+      "senseiMessage": "Prends tout le repos nécessaire pour produire une vraie répétition forte.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N041",
+      "stage": "SOUTHER",
+      "chronologyIndex": 41,
+      "title": "Le Saint Empereur",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Souther apparaît comme un adversaire dont la particularité rend inefficaces les solutions habituelles. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le Saint Empereur"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N042",
+      "stage": "SOUTHER",
+      "chronologyIndex": 42,
+      "title": "Premier affrontement",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Kenshiro découvre qu’un geste habituellement décisif ne fonctionne pas comme prévu. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Premier affrontement"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N043",
+      "stage": "SOUTHER",
+      "chronologyIndex": 43,
+      "title": "Échec de la stratégie habituelle",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "La force seule ne résout pas un problème dont la mécanique a changé. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Échec de la stratégie habituelle"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N044",
+      "stage": "SOUTHER",
+      "chronologyIndex": 44,
+      "title": "Shu",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Le destin de Shu donne au combat contre Souther une dimension qui dépasse la simple rivalité. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Shu"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N045",
+      "stage": "SOUTHER",
+      "chronologyIndex": 45,
+      "title": "Observer avant d’agir",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Kenshiro doit comprendre le secret du corps de Souther avant de pouvoir adapter son art. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Observer avant d’agir"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N046",
+      "stage": "SOUTHER",
+      "chronologyIndex": 46,
+      "title": "Changer l’angle",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Ce bloc utilise exactement la même idée : si une progression bloque, on modifie assistance, tempo ou variante. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Changer l’angle"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N047",
+      "stage": "SOUTHER",
+      "chronologyIndex": 47,
+      "title": "Tenha Kassatsu",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Une fois le problème compris, Kenshiro peut employer une solution adaptée plutôt que forcer davantage. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Tenha Kassatsu"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N048",
+      "stage": "SOUTHER",
+      "chronologyIndex": 48,
+      "title": "La victoire par compréhension",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Souther tombe lorsque Kenshiro cesse d’appliquer aveuglément la même réponse. Lorsqu’une progression bloque, répéter plus fort la même erreur n’est pas une stratégie. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La victoire par compréhension"
+      ],
+      "senseiMessage": "Observe la mécanique, ajuste la variante, puis recommence avec précision.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N049",
+      "stage": "FINAL",
+      "chronologyIndex": 49,
+      "title": "Yuria",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "La véritable place de Yuria dans l’histoire devient centrale à mesure que l’affrontement final approche. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Yuria"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N050",
+      "stage": "FINAL",
+      "chronologyIndex": 50,
+      "title": "Les Cinq Étoiles",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Les derniers protecteurs de Yuria se dressent sur le chemin de Raoh. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Les Cinq Étoiles"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N051",
+      "stage": "FINAL",
+      "chronologyIndex": 51,
+      "title": "Fudoh",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Fudoh révèle une forme de courage que même Raoh ne peut réduire à la seule puissance. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Fudoh"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N052",
+      "stage": "FINAL",
+      "chronologyIndex": 52,
+      "title": "La peur de Raoh",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Le conquérant découvre qu’une force immense peut encore rencontrer quelque chose qu’elle ne contrôle pas. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La peur de Raoh"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N053",
+      "stage": "FINAL",
+      "chronologyIndex": 53,
+      "title": "Le retour de Kenshiro",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Kenshiro arrive au terme d’un voyage où chaque rival a transformé son art. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le retour de Kenshiro"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N054",
+      "stage": "FINAL",
+      "chronologyIndex": 54,
+      "title": "Musō Tensei apparaît",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Kenshiro atteint une compréhension ultime nourrie par les êtres aimés et les adversaires perdus. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Musō Tensei apparaît"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N055",
+      "stage": "FINAL",
+      "chronologyIndex": 55,
+      "title": "Dernier combat contre Raoh",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Les deux héritiers s’affrontent une dernière fois pour déterminer qui porte réellement l’avenir du Hokuto. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Dernier combat contre Raoh"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N056",
+      "stage": "FINAL",
+      "chronologyIndex": 56,
+      "title": "La victoire",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Kenshiro vainc Raoh sans réduire tout son parcours à un simple rapport de force. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "La victoire"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N057",
+      "stage": "FINAL",
+      "chronologyIndex": 57,
+      "title": "Le véritable héritier",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "La fin du duel confirme Kenshiro comme celui qui poursuit l’héritage du Hokuto Shinken. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le véritable héritier"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N058",
+      "stage": "FINAL",
+      "chronologyIndex": 58,
+      "title": "Après Raoh",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "La victoire n’efface ni les pertes ni la responsabilité qui accompagne désormais cette puissance. Le pic ne construit plus la force : il laisse apparaître celle qui a déjà été construite. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Après Raoh"
+      ],
+      "senseiMessage": "N’ajoute rien aujourd’hui. Exécute seulement ce que ton niveau permet réellement.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N059",
+      "stage": "SPLUS",
+      "chronologyIndex": 59,
+      "title": "L’héritage des douleurs",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Musō Tensei naît symboliquement de tout ce que Kenshiro a traversé plutôt que d’une simple technique supplémentaire. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "L’héritage des douleurs"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N060",
+      "stage": "SPLUS",
+      "chronologyIndex": 60,
+      "title": "Marcher sans chercher l’adversaire",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Après Raoh, Kenshiro continue son chemin avec une force moins démonstrative et plus intégrée. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Marcher sans chercher l’adversaire"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N061",
+      "stage": "SPLUS",
+      "chronologyIndex": 61,
+      "title": "L’armée du Hokuto",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Bat et Lin devenus plus âgés incarnent l’héritage que Kenshiro a laissé derrière lui. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "L’armée du Hokuto"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N062",
+      "stage": "SPLUS",
+      "chronologyIndex": 62,
+      "title": "Falco",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Le général de l’Empire confronte Kenshiro à une autre forme de force et de devoir. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Falco"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N063",
+      "stage": "SPLUS",
+      "chronologyIndex": 63,
+      "title": "Vers le pays de Shura",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Kenshiro traverse la mer en poursuivant Lin et entre dans une terre où le combat structure toute la société. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Vers le pays de Shura"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N064",
+      "stage": "SPLUS",
+      "chronologyIndex": 64,
+      "title": "Le pays de Shura",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "La densité d’adversaires puissants impose une maîtrise constante plutôt qu’un unique pic de performance. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Le pays de Shura"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N065",
+      "stage": "SPLUS",
+      "chronologyIndex": 65,
+      "title": "Hyo",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Kenshiro retrouve un lien direct avec son passé et ses origines. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Hyo"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N066",
+      "stage": "SPLUS",
+      "chronologyIndex": 66,
+      "title": "Kaioh",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Kaioh représente le nouvel adversaire ultime de cette partie du voyage. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Kaioh"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N067",
+      "stage": "SPLUS",
+      "chronologyIndex": 67,
+      "title": "Hokuto Ryūken",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Une autre branche du Hokuto oblige Kenshiro à confronter une logique de combat différente. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Hokuto Ryūken"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N068",
+      "stage": "SPLUS",
+      "chronologyIndex": 68,
+      "title": "Maîtriser sans forme",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Le thème du S+ devient la capacité à rester fort quelle que soit la variante imposée. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Maîtriser sans forme"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N069",
+      "stage": "SPLUS",
+      "chronologyIndex": 69,
+      "title": "Dépasser Kaioh",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Kenshiro triomphe après avoir intégré davantage que de la force brute. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Dépasser Kaioh"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N070",
+      "stage": "SPLUS",
+      "chronologyIndex": 70,
+      "title": "Ryû",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Kenshiro transmet ensuite à la génération suivante une compréhension de ce que signifie porter cet héritage. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Ryû"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N071",
+      "stage": "SPLUS",
+      "chronologyIndex": 71,
+      "title": "Retour au désert",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "La trajectoire revient à sa forme la plus simple : avancer sans avoir besoin de prouver constamment sa puissance. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Retour au désert"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "KEN-N072",
+      "stage": "SPLUS",
+      "chronologyIndex": 72,
+      "title": "Musō Tensei Master",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Le dernier benchmark ne célèbre pas la souffrance : il célèbre une force relative devenue disponible, propre et maîtrisée. Musō Tensei transforme la force visible en maîtrise disponible sans tension inutile. Dans Budokai, ce moment n’est pas reproduit comme une épreuve de fiction : il sert à donner un sens au travail de force relative du jour. Reste propre même lorsque la variante devient plus exigeante.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "Musō Tensei Master"
+      ],
+      "senseiMessage": "Reste propre même lorsque la variante devient plus exigeante.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "KEN-INT-01",
+      "title": "Le poing invisible",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Le poing invisible. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-02",
+      "title": "Une répétition propre",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "Une répétition propre. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-03",
+      "title": "Le côté faible",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Le côté faible. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-04",
+      "title": "La marge",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "La marge. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-05",
+      "title": "Le contrôle du bassin",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "Le contrôle du bassin. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-06",
+      "title": "Le verrouillage",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Le verrouillage. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-07",
+      "title": "Respirer entre les séries",
+      "openingMessage": "Entre dans la séance avec de la marge. Une répétition propre vaut mieux qu’une répétition forcée.",
+      "storyRecap": "Respirer entre les séries. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Tu peux t’arrêter ici : une bonne séance se termine avant que la technique ne disparaisse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-08",
+      "title": "La variante juste",
+      "openingMessage": "Aujourd’hui, travaille comme un héritier : précis, régulier et sans démonstration inutile.",
+      "storyRecap": "La variante juste. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Étape posée. Le moteur utilisera cette séance pour choisir la prochaine difficulté.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-09",
+      "title": "Ne pas forcer le passage",
+      "openingMessage": "Ne prouve rien au premier set. Construis la séance jusqu’au dernier.",
+      "storyRecap": "Ne pas forcer le passage. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Rien à ajouter aujourd’hui. Laisse cette adaptation devenir disponible.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-10",
+      "title": "Le prochain niveau",
+      "openingMessage": "Choisis la maîtrise avant la difficulté : le niveau supérieur viendra ensuite.",
+      "storyRecap": "Le prochain niveau. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "C’est terminé. La force gagnée aujourd’hui n’a pas besoin d’être retestée immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-11",
+      "title": "La force silencieuse",
+      "openingMessage": "Aucun geste inutile aujourd’hui. Trouve d’abord la variante que tu peux dominer.",
+      "storyRecap": "La force silencieuse. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Fin de séance. Garde la marge : c’est elle qui te permettra de progresser au prochain passage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "KEN-INT-12",
+      "title": "Revenir plus fort",
+      "openingMessage": "Commence avec calme : la force du jour se mesure à la qualité, pas au bruit.",
+      "storyRecap": "Revenir plus fort. Cette séance est un interlude Budokai utilisé lorsque le moteur prolonge un bloc, programme une consolidation ou ajoute une décharge. Elle n’invente pas un nouvel événement canonique et ne fait pas avancer artificiellement la chronologie. Le thème reste celui de Kenshiro : une force efficace vient d’un geste maîtrisé, répété avec suffisamment de marge pour progresser.",
+      "references": [
+        "Kenshiro",
+        "Hokuto Shinken",
+        "entraînement"
+      ],
+      "senseiMessage": "La progression ne disparaît pas parce qu’un bloc dure plus longtemps. Maîtrise ce niveau avant de chercher le suivant.",
+      "closingMessage": "Le travail est fait. Enregistre la qualité réelle, puis récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    }
+  ]
+}

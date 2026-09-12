@@ -1,0 +1,1223 @@
+{
+  "program": "minato",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "noPlaceholderAllowed": true,
+    "dynamicSchedulingRule": "Narration chronologique; prolongations utilisent interludes."
+  },
+  "sourceNotes": [
+    "Sources narratives prioritaires : naruto-official.com Minato columns + Flying Raijin database.",
+    "Textes Budokai originaux."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "MIN-N001",
+      "stage": "ACADEMY",
+      "chronologyIndex": 1,
+      "title": "Le rêve de Hokage",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Jeune, Minato affirme déjà l'ambition de devenir Hokage. La vitesse commence par une bonne position de départ et un premier pas efficace. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Le rêve de Hokage"
+      ],
+      "senseiMessage": "Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N002",
+      "stage": "ACADEMY",
+      "chronologyIndex": 2,
+      "title": "Kushina arrive à Konoha",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Kushina rejoint l'Académie et rencontre Minato. La vitesse commence par une bonne position de départ et un premier pas efficace. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Kushina arrive à Konoha"
+      ],
+      "senseiMessage": "Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N003",
+      "stage": "ACADEMY",
+      "chronologyIndex": 3,
+      "title": "Les cheveux rouges",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Lorsque Kushina est enlevée, elle laisse derrière elle des mèches de cheveux pour créer une piste. La vitesse commence par une bonne position de départ et un premier pas efficace. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Les cheveux rouges"
+      ],
+      "senseiMessage": "Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N004",
+      "stage": "ACADEMY",
+      "chronologyIndex": 4,
+      "title": "Minato retrouve Kushina",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "Minato est le seul à suivre les indices et la ramène à Konoha. La vitesse commence par une bonne position de départ et un premier pas efficace. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Minato retrouve Kushina"
+      ],
+      "senseiMessage": "Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N005",
+      "stage": "ACADEMY",
+      "chronologyIndex": 5,
+      "title": "Une vitesse déjà utile",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Sa rapidité n'est pas montrée comme un spectacle isolé mais comme une capacité au service d'un objectif. La vitesse commence par une bonne position de départ et un premier pas efficace. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Une vitesse déjà utile"
+      ],
+      "senseiMessage": "Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N006",
+      "stage": "ACADEMY",
+      "chronologyIndex": 6,
+      "title": "Grandir à Konoha",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Minato construit sa réputation bien avant d'obtenir un titre. La vitesse commence par une bonne position de départ et un premier pas efficace. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Grandir à Konoha"
+      ],
+      "senseiMessage": "Ne cherche pas encore la vitesse maximale : produis un départ propre.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N007",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 7,
+      "title": "Élève de Jiraiya",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Minato devient l'un des élèves de Jiraiya. La technique devient plus précise, comme une marque placée avant le déplacement. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Élève de Jiraiya"
+      ],
+      "senseiMessage": "Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N008",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 8,
+      "title": "Observer les sceaux",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Son style se développe autour de précision, marquage et décision rapide. La technique devient plus précise, comme une marque placée avant le déplacement. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Observer les sceaux"
+      ],
+      "senseiMessage": "Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N009",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 9,
+      "title": "Créer le Rasengan",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Minato cherche une technique compacte inspirée de la rotation du chakra. La technique devient plus précise, comme une marque placée avant le déplacement. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Créer le Rasengan"
+      ],
+      "senseiMessage": "Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N010",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 10,
+      "title": "Protéger Kushina",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "La création du Rasengan est reliée à son désir de disposer d'une technique efficace en situation réelle. La technique devient plus précise, comme une marque placée avant le déplacement. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Protéger Kushina"
+      ],
+      "senseiMessage": "Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N011",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 11,
+      "title": "Nommer les techniques",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Même un génie peut compliquer ce qui devrait rester simple. La technique devient plus précise, comme une marque placée avant le déplacement. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Nommer les techniques"
+      ],
+      "senseiMessage": "Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N012",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 12,
+      "title": "La précision avant la quantité",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Le parcours de Minato devient un bon miroir du sprint : peu d'actions, mais exécutées exactement. La technique devient plus précise, comme une marque placée avant le déplacement. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "La précision avant la quantité"
+      ],
+      "senseiMessage": "Chaque répétition doit avoir une intention claire et une récupération complète.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N013",
+      "stage": "YELLOW",
+      "chronologyIndex": 13,
+      "title": "Troisième Guerre Ninja",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Minato devient une figure majeure du champ de bataille. Le travail cible maintenant l'accélération maximale sans accumuler de fatigue inutile. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Troisième Guerre Ninja"
+      ],
+      "senseiMessage": "Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N014",
+      "stage": "YELLOW",
+      "chronologyIndex": 14,
+      "title": "Éclair jaune de Konoha",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Sa réputation se construit sur une capacité à apparaître là où l'ennemi ne l'attend pas. Le travail cible maintenant l'accélération maximale sans accumuler de fatigue inutile. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Éclair jaune de Konoha"
+      ],
+      "senseiMessage": "Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N015",
+      "stage": "YELLOW",
+      "chronologyIndex": 15,
+      "title": "Kunai marqués",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Les marques du Hiraishin permettent de transformer l'espace en réseau de points d'accès. Le travail cible maintenant l'accélération maximale sans accumuler de fatigue inutile. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Kunai marqués"
+      ],
+      "senseiMessage": "Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N016",
+      "stage": "YELLOW",
+      "chronologyIndex": 16,
+      "title": "Décider avant l'adversaire",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "La vitesse utile vient autant de la préparation que de l'exécution. Le travail cible maintenant l'accélération maximale sans accumuler de fatigue inutile. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Décider avant l'adversaire"
+      ],
+      "senseiMessage": "Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N017",
+      "stage": "YELLOW",
+      "chronologyIndex": 17,
+      "title": "Ordres de fuite",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Les autres villages apprennent à redouter directement sa présence. Le travail cible maintenant l'accélération maximale sans accumuler de fatigue inutile. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Ordres de fuite"
+      ],
+      "senseiMessage": "Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N018",
+      "stage": "YELLOW",
+      "chronologyIndex": 18,
+      "title": "Une action, un résultat",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Le style de Minato évite les échanges inutiles. Le travail cible maintenant l'accélération maximale sans accumuler de fatigue inutile. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Une action, un résultat"
+      ],
+      "senseiMessage": "Si tu es essoufflé au point de ralentir, la série de vitesse est déjà terminée.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N019",
+      "stage": "KANNABI",
+      "chronologyIndex": 19,
+      "title": "Team Minato",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Kakashi, Obito et Rin combattent sous son commandement. La transition vers 30–40 m demande de conserver la forme après les premiers pas. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne gagne pas le départ pour perdre les mètres suivants.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Team Minato"
+      ],
+      "senseiMessage": "Ne gagne pas le départ pour perdre les mètres suivants.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N020",
+      "stage": "KANNABI",
+      "chronologyIndex": 20,
+      "title": "Mission du pont Kannabi",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Détruire la ligne de ravitaillement d'Iwa devient un objectif stratégique. La transition vers 30–40 m demande de conserver la forme après les premiers pas. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne gagne pas le départ pour perdre les mètres suivants.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Mission du pont Kannabi"
+      ],
+      "senseiMessage": "Ne gagne pas le départ pour perdre les mètres suivants.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N021",
+      "stage": "KANNABI",
+      "chronologyIndex": 21,
+      "title": "Kakashi Jōnin",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Minato confie une partie de la mission à son élève nouvellement promu. La transition vers 30–40 m demande de conserver la forme après les premiers pas. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne gagne pas le départ pour perdre les mètres suivants.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Kakashi Jōnin"
+      ],
+      "senseiMessage": "Ne gagne pas le départ pour perdre les mètres suivants.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N022",
+      "stage": "KANNABI",
+      "chronologyIndex": 22,
+      "title": "Obito",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "La mission tourne au drame et Obito est considéré mort. La transition vers 30–40 m demande de conserver la forme après les premiers pas. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne gagne pas le départ pour perdre les mètres suivants.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Obito"
+      ],
+      "senseiMessage": "Ne gagne pas le départ pour perdre les mètres suivants.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N023",
+      "stage": "KANNABI",
+      "chronologyIndex": 23,
+      "title": "Rin",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "La perte de l'équipe laisse des conséquences que la seule réussite stratégique ne peut effacer. La transition vers 30–40 m demande de conserver la forme après les premiers pas. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne gagne pas le départ pour perdre les mètres suivants.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Rin"
+      ],
+      "senseiMessage": "Ne gagne pas le départ pour perdre les mètres suivants.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N024",
+      "stage": "KANNABI",
+      "chronologyIndex": 24,
+      "title": "Le pont tombe",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "La mission réussit, mais son coût montre que vitesse et puissance ne résolvent pas toutes les variables. La transition vers 30–40 m demande de conserver la forme après les premiers pas. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne gagne pas le départ pour perdre les mètres suivants.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Le pont tombe"
+      ],
+      "senseiMessage": "Ne gagne pas le départ pour perdre les mètres suivants.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N025",
+      "stage": "AB",
+      "chronologyIndex": 25,
+      "title": "Ay",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Minato affronte le futur Quatrième Raikage, connu pour sa vitesse exceptionnelle. Réagir vite reste inutile si la position de sprint se désorganise. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Attends d'être frais avant chaque essai.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Ay"
+      ],
+      "senseiMessage": "Attends d'être frais avant chaque essai.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N026",
+      "stage": "AB",
+      "chronologyIndex": 26,
+      "title": "A/B Combo",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Ay et Bee combattent comme une paire extrêmement coordonnée. Réagir vite reste inutile si la position de sprint se désorganise. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Attends d'être frais avant chaque essai.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "A/B Combo"
+      ],
+      "senseiMessage": "Attends d'être frais avant chaque essai.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N027",
+      "stage": "AB",
+      "chronologyIndex": 27,
+      "title": "Éviter le coup d'Ay",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Minato utilise le Hiraishin pour disparaître de la trajectoire d'une attaque lancée à très grande vitesse. Réagir vite reste inutile si la position de sprint se désorganise. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Attends d'être frais avant chaque essai.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Éviter le coup d'Ay"
+      ],
+      "senseiMessage": "Attends d'être frais avant chaque essai.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N028",
+      "stage": "AB",
+      "chronologyIndex": 28,
+      "title": "Contre-attaque immédiate",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "La valeur de la vitesse est dans le temps gagné entre perception et action. Réagir vite reste inutile si la position de sprint se désorganise. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Attends d'être frais avant chaque essai.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Contre-attaque immédiate"
+      ],
+      "senseiMessage": "Attends d'être frais avant chaque essai.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N029",
+      "stage": "AB",
+      "chronologyIndex": 29,
+      "title": "Killer Bee",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Bee montre lui aussi qu'il peut anticiper la position où Minato réapparaîtra. Réagir vite reste inutile si la position de sprint se désorganise. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Attends d'être frais avant chaque essai.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Killer Bee"
+      ],
+      "senseiMessage": "Attends d'être frais avant chaque essai.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N030",
+      "stage": "AB",
+      "chronologyIndex": 30,
+      "title": "Respect entre adversaires",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Minato reconnaît les qualités de ses adversaires même au milieu du combat. Réagir vite reste inutile si la position de sprint se désorganise. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Attends d'être frais avant chaque essai.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Respect entre adversaires"
+      ],
+      "senseiMessage": "Attends d'être frais avant chaque essai.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N031",
+      "stage": "HOKAGE",
+      "chronologyIndex": 31,
+      "title": "Quatrième Hokage",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Minato devient le Quatrième Hokage de Konoha. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Quatrième Hokage"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N032",
+      "stage": "HOKAGE",
+      "chronologyIndex": 32,
+      "title": "Kushina",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Sa vie personnelle et son rôle de Hokage se rejoignent autour de la protection du village. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Kushina"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N033",
+      "stage": "HOKAGE",
+      "chronologyIndex": 33,
+      "title": "Naissance de Naruto",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Le 10 octobre, Naruto vient au monde pendant que le sceau de Kushina est fragilisé. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Naissance de Naruto"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N034",
+      "stage": "HOKAGE",
+      "chronologyIndex": 34,
+      "title": "Obito attaque",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "Un homme masqué profite de la naissance pour libérer Kyūbi. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Obito attaque"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N035",
+      "stage": "HOKAGE",
+      "chronologyIndex": 35,
+      "title": "Hiraishin contre Kamui",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Minato doit comprendre et exploiter une fenêtre extrêmement courte. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Hiraishin contre Kamui"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N036",
+      "stage": "HOKAGE",
+      "chronologyIndex": 36,
+      "title": "Marquer Obito",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Une marque placée au bon moment change tout l'affrontement. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Marquer Obito"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N037",
+      "stage": "HOKAGE",
+      "chronologyIndex": 37,
+      "title": "Téléporter la Bijūdama",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Minato déplace une attaque massive loin du village. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Téléporter la Bijūdama"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N038",
+      "stage": "HOKAGE",
+      "chronologyIndex": 38,
+      "title": "Protéger Konoha",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "La vitesse n'est jamais séparée de la responsabilité. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Protéger Konoha"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N039",
+      "stage": "HOKAGE",
+      "chronologyIndex": 39,
+      "title": "Le sceau",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Minato et Kushina donnent leur vie pour sauver Naruto et contenir Kyūbi. Les distances s'allongent et le volume diminue. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Le sceau"
+      ],
+      "senseiMessage": "Un 60 m rapide exige plus de récupération, pas plus de volonté.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N040",
+      "stage": "WAR",
+      "chronologyIndex": 40,
+      "title": "Réincarnation",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "Minato revient lors de la Quatrième Grande Guerre Ninja. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Réincarnation"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N041",
+      "stage": "WAR",
+      "chronologyIndex": 41,
+      "title": "Rejoindre le champ",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Il détecte le chakra de Naruto et part avec les anciens Hokage. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Rejoindre le champ"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N042",
+      "stage": "WAR",
+      "chronologyIndex": 42,
+      "title": "Téléporter la Bijūdama de Jûbi",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Son arrivée sur le champ de bataille se fait immédiatement par une action décisive. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Téléporter la Bijūdama de Jûbi"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N043",
+      "stage": "WAR",
+      "chronologyIndex": 43,
+      "title": "Naruto",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Père et fils combattent enfin côte à côte. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Naruto"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N044",
+      "stage": "WAR",
+      "chronologyIndex": 44,
+      "title": "Tobirama",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Les deux utilisateurs du Hiraishin coordonnent leurs marques et leurs déplacements. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Tobirama"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N045",
+      "stage": "WAR",
+      "chronologyIndex": 45,
+      "title": "Flying Raijin en réseau",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "La technique devient une architecture de positions plutôt qu'un simple sprint. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Flying Raijin en réseau"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N046",
+      "stage": "WAR",
+      "chronologyIndex": 46,
+      "title": "Obito Jinchūriki",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "Même une vitesse exceptionnelle doit s'adapter à un adversaire dont les règles changent. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Obito Jinchūriki"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N047",
+      "stage": "WAR",
+      "chronologyIndex": 47,
+      "title": "Kurama",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Minato utilise la moitié Yin de Kurama et augmente encore sa capacité d'action. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Kurama"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N048",
+      "stage": "WAR",
+      "chronologyIndex": 48,
+      "title": "Rasengan père-fils",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Minato et Naruto combinent leurs pouvoirs. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Rasengan père-fils"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N049",
+      "stage": "WAR",
+      "chronologyIndex": 49,
+      "title": "Rin",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Face à Obito, Minato mesure aussi ce qu'il n'a pas pu protéger autrefois. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Rin"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N050",
+      "stage": "WAR",
+      "chronologyIndex": 50,
+      "title": "Sauver Naruto",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Lorsque Naruto est en danger de mort, Minato tente encore de remplir son rôle de père. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Sauver Naruto"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N051",
+      "stage": "WAR",
+      "chronologyIndex": 51,
+      "title": "Anniversaire",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Avant de disparaître, Minato félicite Naruto pour son anniversaire. La maîtrise vient de la capacité à reproduire des efforts très rapides avec peu de dispersion. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Anniversaire"
+      ],
+      "senseiMessage": "Le meilleur chrono n'est pas suffisant si les essais suivants s'effondrent.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N052",
+      "stage": "BOSS",
+      "chronologyIndex": 52,
+      "title": "Hiraishin Test",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "Le boss Budokai ne cherche pas à imiter une téléportation : il mesure accélération, vitesse et répétabilité sous un protocole stable. Le Hiraishin Test mesure ce que les blocs ont réellement construit. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Ne cours pas contre le chrono au premier mètre : exécute ton accélération.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Hiraishin Test"
+      ],
+      "senseiMessage": "Ne cours pas contre le chrono au premier mètre : exécute ton accélération.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N053",
+      "stage": "SPLUS",
+      "chronologyIndex": 53,
+      "title": "Flying Raijin Level 2",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Le S+ exige moins de dispersion entre les essais et des gains plus fins. À haut niveau, les progrès deviennent plus petits et la précision du protocole devient essentielle. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Compare seulement ce qui est réellement comparable.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Flying Raijin Level 2"
+      ],
+      "senseiMessage": "Compare seulement ce qui est réellement comparable.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N054",
+      "stage": "SPLUS",
+      "chronologyIndex": 54,
+      "title": "Marques multiples",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Les départs variables représentent sportivement la capacité à produire vite depuis plusieurs positions. À haut niveau, les progrès deviennent plus petits et la précision du protocole devient essentielle. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Compare seulement ce qui est réellement comparable.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Marques multiples"
+      ],
+      "senseiMessage": "Compare seulement ce qui est réellement comparable.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N055",
+      "stage": "SPLUS",
+      "chronologyIndex": 55,
+      "title": "Flying 20",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "La vitesse maximale devient une qualité distincte de l'accélération. À haut niveau, les progrès deviennent plus petits et la précision du protocole devient essentielle. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Compare seulement ce qui est réellement comparable.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Flying 20"
+      ],
+      "senseiMessage": "Compare seulement ce qui est réellement comparable.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N056",
+      "stage": "SPLUS",
+      "chronologyIndex": 56,
+      "title": "Réactivité",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Le signal de départ peut varier, mais le sprint reste préparé et sécurisé. À haut niveau, les progrès deviennent plus petits et la précision du protocole devient essentielle. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Compare seulement ce qui est réellement comparable.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Réactivité"
+      ],
+      "senseiMessage": "Compare seulement ce qui est réellement comparable.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "MIN-N057",
+      "stage": "SPLUS",
+      "chronologyIndex": 57,
+      "title": "Yellow Flash Mastery",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Le dernier test réunit 10, 30 et 60 m avec une répétabilité supérieure. À haut niveau, les progrès deviennent plus petits et la précision du protocole devient essentielle. Budokai traduit ce passage en logique de sprint sans prétendre reproduire le Hiraishin. Compare seulement ce qui est réellement comparable.",
+      "references": [
+        "Minato Namikaze",
+        "Konoha",
+        "Yellow Flash Mastery"
+      ],
+      "senseiMessage": "Compare seulement ce qui est réellement comparable.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "MIN-INT-01",
+      "title": "Le départ",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Le départ. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-02",
+      "title": "Récupération complète",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "Récupération complète. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-03",
+      "title": "Dix mètres propres",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Dix mètres propres. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-04",
+      "title": "Une rep de moins",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Une rep de moins. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-05",
+      "title": "Même surface",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Même surface. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-06",
+      "title": "Même protocole",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Même protocole. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-07",
+      "title": "Ne pas courir fatigué",
+      "openingMessage": "Un seul sprint propre vaut mieux que trois sprints fatigués.",
+      "storyRecap": "Ne pas courir fatigué. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Fin de séance : la qualité s'arrête avant la fatigue.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-08",
+      "title": "Le prochain chrono",
+      "openingMessage": "Prépare le départ, regarde la ligne, puis accélère.",
+      "storyRecap": "Le prochain chrono. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Tu as assez couru vite aujourd'hui. Le reste serait du conditionnement, pas de la vitesse.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-09",
+      "title": "Technique avant temps",
+      "openingMessage": "Récupère complètement. La vitesse ne se négocie pas avec la fatigue.",
+      "storyRecap": "Technique avant temps. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Mission terminée. La prochaine amélioration viendra d'un corps frais.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-10",
+      "title": "Jour de décharge",
+      "openingMessage": "Aujourd'hui, le chrono ne compte que si la technique reste intacte.",
+      "storyRecap": "Jour de décharge. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Séance terminée. Ne rajoute pas un sprint pour te rassurer.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-11",
+      "title": "Vitesse disponible",
+      "openingMessage": "Tout doit être rapide, sauf ta préparation.",
+      "storyRecap": "Vitesse disponible. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "C'est fini : conserve la vitesse pour la prochaine exposition.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "MIN-INT-12",
+      "title": "Répétabilité",
+      "openingMessage": "Prends ton temps avant de courir vite.",
+      "storyRecap": "Répétabilité. Cet interlude est utilisé lorsqu'un bloc de vitesse doit être prolongé ou déchargé. Il n'ajoute pas artificiellement un événement canonique. Le principe reste celui de Minato : préparation précise, action brève, récupération complète.",
+      "references": [
+        "Minato Namikaze",
+        "Hiraishin",
+        "sprint"
+      ],
+      "senseiMessage": "Ne transforme jamais une séance de vitesse en séance de fatigue.",
+      "closingMessage": "Les chronos sont enregistrés. Récupère avant de chercher mieux.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    }
+  ]
+}

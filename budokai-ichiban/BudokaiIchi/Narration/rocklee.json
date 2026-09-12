@@ -1,0 +1,1659 @@
+{
+  "program": "rock_lee",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "fieldsRequired": [
+      "title",
+      "openingMessage",
+      "storyRecap",
+      "references",
+      "senseiMessage",
+      "closingMessage"
+    ],
+    "noPlaceholderAllowed": true,
+    "canonicalQuoteOptional": true,
+    "canonicalQuoteRule": "null par défaut ; n’ajouter qu’après vérification éditoriale",
+    "dynamicSchedulingRule": "Consommer la banque principale dans l’ordre chronologique. Pour toute séance supplémentaire générée par consolidation/deload/prolongation, utiliser les interludes en rotation sans avancer artificiellement la chronologie canonique."
+  },
+  "sourceNotes": [
+    "Contrôle éditorial : NARUTO OFFICIAL SITE, rétrospectives Rock Lee/Might Guy et arcs Lee vs Gaara / Huit Portes.",
+    "Les messages de début et de fin sont originaux Budokai et ne sont jamais présentés comme des citations."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "LEE-N001",
+      "stage": "ORIGINES",
+      "chronologyIndex": 1,
+      "title": "Lee enfant est incapable d’utiliser correctement ninjutsu",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Lee enfant est incapable d’utiliser correctement ninjutsu et genjutsu. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N002",
+      "stage": "ORIGINES",
+      "chronologyIndex": 2,
+      "title": "Il décide de devenir un splendide ninja",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Il décide de devenir un splendide ninja uniquement grâce au taijutsu. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Pour ta séance, la traduction est volontairement concrète : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N003",
+      "stage": "ORIGINES",
+      "chronologyIndex": 3,
+      "title": "Neji apparaît comme le génie naturel opposé",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Neji apparaît comme le génie naturel opposé au travailleur. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Le lien avec l’entraînement du jour est simple : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N004",
+      "stage": "ORIGINES",
+      "chronologyIndex": 4,
+      "title": "Might Guy reconnaît le potentiel de Lee.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Might Guy reconnaît le potentiel de Lee. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Aujourd’hui, ne poursuis pas le symbole : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N005",
+      "stage": "ORIGINES",
+      "chronologyIndex": 5,
+      "title": "Lee adopte sa propre règle de travail.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Lee adopte sa propre règle de travail. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N006",
+      "stage": "ORIGINES",
+      "chronologyIndex": 6,
+      "title": "Entraînements physiques incessants avec Guy.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Entraînements physiques incessants avec Guy. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Pour ta séance, la traduction est volontairement concrète : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N007",
+      "stage": "ORIGINES",
+      "chronologyIndex": 7,
+      "title": "Rivalité Lee/Neji.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Rivalité Lee/Neji. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Le lien avec l’entraînement du jour est simple : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N008",
+      "stage": "ORIGINES",
+      "chronologyIndex": 8,
+      "title": "Formation de l’équipe Guy avec Neji et Tenten.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Formation de l’équipe Guy avec Neji et Tenten. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Aujourd’hui, ne poursuis pas le symbole : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N009",
+      "stage": "ORIGINES",
+      "chronologyIndex": 9,
+      "title": "Rencontre avec l’équipe 7.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Rencontre avec l’équipe 7. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N010",
+      "stage": "ORIGINES",
+      "chronologyIndex": 10,
+      "title": "Lee défie Sasuke.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Lee défie Sasuke. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Pour ta séance, la traduction est volontairement concrète : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N011",
+      "stage": "ORIGINES",
+      "chronologyIndex": 11,
+      "title": "Lee surprend Sasuke grâce à son taijutsu.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Lee surprend Sasuke grâce à son taijutsu. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Le lien avec l’entraînement du jour est simple : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N012",
+      "stage": "ORIGINES",
+      "chronologyIndex": 12,
+      "title": "Guy interrompt le combat.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Guy interrompt le combat. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Lee ne dispose pas des mêmes armes que les autres ; il construit donc méthodiquement ce qu’il peut maîtriser. Aujourd’hui, ne poursuis pas le symbole : commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "ORIGINES"
+      ],
+      "senseiMessage": "Commence frais, réceptionne proprement et fais de chaque contact une répétition utile.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N013",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 13,
+      "title": "Entrée dans l’Examen Chūnin.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Entrée dans l’Examen Chūnin. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N014",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 14,
+      "title": "Forêt de la Mort.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Forêt de la Mort. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Pour ta séance, la traduction est volontairement concrète : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N015",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 15,
+      "title": "Lee intervient pour protéger Sakura.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Lee intervient pour protéger Sakura. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Le lien avec l’entraînement du jour est simple : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N016",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 16,
+      "title": "Lotus Recto.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Lotus Recto. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Aujourd’hui, ne poursuis pas le symbole : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N017",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 17,
+      "title": "Préliminaires.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Préliminaires. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N018",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 18,
+      "title": "Lee est opposé à Gaara.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Lee est opposé à Gaara. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Pour ta séance, la traduction est volontairement concrète : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N019",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 19,
+      "title": "Le sable bloque d’abord automatiquement ses attaques.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Le sable bloque d’abord automatiquement ses attaques. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Le lien avec l’entraînement du jour est simple : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N020",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 20,
+      "title": "Guy autorise Lee à retirer ses poids.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Guy autorise Lee à retirer ses poids. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Aujourd’hui, ne poursuis pas le symbole : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N021",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 21,
+      "title": "La vitesse de Lee change complètement le combat.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "La vitesse de Lee change complètement le combat. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N022",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 22,
+      "title": "Gaara utilise son armure de sable.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Gaara utilise son armure de sable. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Pour ta séance, la traduction est volontairement concrète : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N023",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 23,
+      "title": "Lee ouvre la Première Porte.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Lee ouvre la Première Porte. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Le lien avec l’entraînement du jour est simple : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N024",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 24,
+      "title": "Lotus.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Lotus. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Aujourd’hui, ne poursuis pas le symbole : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N025",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 25,
+      "title": "Ouverture de plusieurs Portes.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Ouverture de plusieurs Portes. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N026",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 26,
+      "title": "Quatrième Porte.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Quatrième Porte. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Pour ta séance, la traduction est volontairement concrète : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N027",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 27,
+      "title": "Cinquième Porte.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Cinquième Porte. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Le lien avec l’entraînement du jour est simple : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N028",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 28,
+      "title": "Lotus Verso.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Lotus Verso. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Aujourd’hui, ne poursuis pas le symbole : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N029",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 29,
+      "title": "Gaara survit à l’assaut.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Gaara survit à l’assaut. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N030",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 30,
+      "title": "Lee tente encore de se relever inconscient.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Lee tente encore de se relever inconscient. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Pour ta séance, la traduction est volontairement concrète : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N031",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 31,
+      "title": "Guy arrête finalement le combat.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Guy arrête finalement le combat. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Le lien avec l’entraînement du jour est simple : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N032",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 32,
+      "title": "La conviction de Lee impressionne même ses adversaires.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "La conviction de Lee impressionne même ses adversaires. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Face à Gaara, la vitesse de Lee devient spectaculaire seulement après des années de préparation invisible. Aujourd’hui, ne poursuis pas le symbole : ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Ne cherche pas encore à retirer les poids symboliques : gagne d’abord le droit d’aller plus vite.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N033",
+      "stage": "BLESSURE",
+      "chronologyIndex": 33,
+      "title": "Les blessures de Lee menacent sa carrière de ninja.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Les blessures de Lee menacent sa carrière de ninja. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N034",
+      "stage": "BLESSURE",
+      "chronologyIndex": 34,
+      "title": "Tsunade lui annonce qu’une chirurgie risquée est",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Tsunade lui annonce qu’une chirurgie risquée est sa seule chance. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Pour ta séance, la traduction est volontairement concrète : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N035",
+      "stage": "BLESSURE",
+      "chronologyIndex": 35,
+      "title": "Lee doute pour la première fois de son nindô.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Lee doute pour la première fois de son nindô. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Le lien avec l’entraînement du jour est simple : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N036",
+      "stage": "BLESSURE",
+      "chronologyIndex": 36,
+      "title": "Guy promet de rester à ses côtés.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Guy promet de rester à ses côtés. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Aujourd’hui, ne poursuis pas le symbole : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N037",
+      "stage": "BLESSURE",
+      "chronologyIndex": 37,
+      "title": "Lee choisit l’opération.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Lee choisit l’opération. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N038",
+      "stage": "BLESSURE",
+      "chronologyIndex": 38,
+      "title": "La chirurgie réussit.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "La chirurgie réussit. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Pour ta séance, la traduction est volontairement concrète : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N039",
+      "stage": "BLESSURE",
+      "chronologyIndex": 39,
+      "title": "Lee quitte prématurément sa convalescence pour aider",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Lee quitte prématurément sa convalescence pour aider ses camarades. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Le lien avec l’entraînement du jour est simple : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N040",
+      "stage": "BLESSURE",
+      "chronologyIndex": 40,
+      "title": "Combat contre Kimimaro.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Combat contre Kimimaro. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Aujourd’hui, ne poursuis pas le symbole : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N041",
+      "stage": "BLESSURE",
+      "chronologyIndex": 41,
+      "title": "Le médicament confondu avec du saké déclenche",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Le médicament confondu avec du saké déclenche le Drunken Fist. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N042",
+      "stage": "BLESSURE",
+      "chronologyIndex": 42,
+      "title": "Lee continue son combat jusqu’à l’arrivée de Gaara.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Lee continue son combat jusqu’à l’arrivée de Gaara. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Pour ta séance, la traduction est volontairement concrète : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N043",
+      "stage": "BLESSURE",
+      "chronologyIndex": 43,
+      "title": "Le retour au village marque le début",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Le retour au village marque le début d’une reconstruction réelle. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. La blessure de Lee rappelle qu’une carrière ne se résume jamais à pousser plus loin au mauvais moment. Le lien avec l’entraînement du jour est simple : la maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "BLESSURE"
+      ],
+      "senseiMessage": "La maîtrise inclut le freinage : arrête la série dès que la qualité baisse.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N044",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 44,
+      "title": "Lee retrouve Naruto après l’ellipse.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Lee retrouve Naruto après l’ellipse. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Aujourd’hui, ne poursuis pas le symbole : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N045",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 45,
+      "title": "Équipe Guy part sauver Gaara.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Équipe Guy part sauver Gaara. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N046",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 46,
+      "title": "Combat contre leur propre double.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Combat contre leur propre double. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Pour ta séance, la traduction est volontairement concrète : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N047",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 47,
+      "title": "Lee affronte une copie de lui-même.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Lee affronte une copie de lui-même. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Le lien avec l’entraînement du jour est simple : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N048",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 48,
+      "title": "Comprendre qu’un “Lee d’hier” doit être dépassé.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Comprendre qu’un “Lee d’hier” doit être dépassé. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Aujourd’hui, ne poursuis pas le symbole : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N049",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 49,
+      "title": "Soutien durant les combats contre l’Akatsuki.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Soutien durant les combats contre l’Akatsuki. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N050",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 50,
+      "title": "Guy continue à montrer l’exemple.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Guy continue à montrer l’exemple. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Pour ta séance, la traduction est volontairement concrète : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N051",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 51,
+      "title": "Kisame affronte plusieurs fois Guy.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Kisame affronte plusieurs fois Guy. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Le lien avec l’entraînement du jour est simple : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N052",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 52,
+      "title": "Sixième Porte et Asakujaku.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Sixième Porte et Asakujaku. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Aujourd’hui, ne poursuis pas le symbole : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N053",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 53,
+      "title": "L’entraînement des Portes prend une nouvelle dimension.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "L’entraînement des Portes prend une nouvelle dimension. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N054",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 54,
+      "title": "Septième Porte et Hirudora.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Septième Porte et Hirudora. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Pour ta séance, la traduction est volontairement concrète : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N055",
+      "stage": "SHIPPUDEN",
+      "chronologyIndex": 55,
+      "title": "La maîtrise de Guy montre ce que",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "La maîtrise de Guy montre ce que des années de travail peuvent produire. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le retour de Lee montre que la progression peut reprendre après une interruption sans effacer les bases. Le lien avec l’entraînement du jour est simple : reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SHIPPUDEN"
+      ],
+      "senseiMessage": "Reviens à la vitesse que tu peux contrôler et laisse la qualité remonter avant le volume.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N056",
+      "stage": "GUERRE",
+      "chronologyIndex": 56,
+      "title": "Quatrième Grande Guerre Ninja.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Quatrième Grande Guerre Ninja. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Aujourd’hui, ne poursuis pas le symbole : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N057",
+      "stage": "GUERRE",
+      "chronologyIndex": 57,
+      "title": "Lee combat aux côtés de l’Alliance.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Lee combat aux côtés de l’Alliance. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N058",
+      "stage": "GUERRE",
+      "chronologyIndex": 58,
+      "title": "Mort de Neji et impact sur l’équipe Guy.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Mort de Neji et impact sur l’équipe Guy. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Pour ta séance, la traduction est volontairement concrète : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N059",
+      "stage": "GUERRE",
+      "chronologyIndex": 59,
+      "title": "Lee continue malgré la perte.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Lee continue malgré la perte. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Le lien avec l’entraînement du jour est simple : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N060",
+      "stage": "GUERRE",
+      "chronologyIndex": 60,
+      "title": "Madara atteint un niveau presque inaccessible.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Madara atteint un niveau presque inaccessible. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Aujourd’hui, ne poursuis pas le symbole : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N061",
+      "stage": "GUERRE",
+      "chronologyIndex": 61,
+      "title": "Guy ouvre la Septième Porte.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Guy ouvre la Septième Porte. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N062",
+      "stage": "GUERRE",
+      "chronologyIndex": 62,
+      "title": "Hirudora reste insuffisant face à Madara.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Hirudora reste insuffisant face à Madara. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Pour ta séance, la traduction est volontairement concrète : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N063",
+      "stage": "GUERRE",
+      "chronologyIndex": 63,
+      "title": "Guy décide d’ouvrir la Huitième Porte.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Guy décide d’ouvrir la Huitième Porte. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Le lien avec l’entraînement du jour est simple : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N064",
+      "stage": "GUERRE",
+      "chronologyIndex": 64,
+      "title": "Souvenir de Might Dai.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Souvenir de Might Dai. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Aujourd’hui, ne poursuis pas le symbole : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N065",
+      "stage": "GUERRE",
+      "chronologyIndex": 65,
+      "title": "La règle de Guy",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "La règle de Guy : protéger ce qui compte. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N066",
+      "stage": "GUERRE",
+      "chronologyIndex": 66,
+      "title": "Apparition de la Bête Rouge.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Apparition de la Bête Rouge. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Pour ta séance, la traduction est volontairement concrète : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N067",
+      "stage": "GUERRE",
+      "chronologyIndex": 67,
+      "title": "Sekizô.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Sekizô. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Le lien avec l’entraînement du jour est simple : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N068",
+      "stage": "GUERRE",
+      "chronologyIndex": 68,
+      "title": "Night Guy.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Night Guy. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Aujourd’hui, ne poursuis pas le symbole : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N069",
+      "stage": "GUERRE",
+      "chronologyIndex": 69,
+      "title": "Madara reconnaît la puissance de Guy.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Madara reconnaît la puissance de Guy. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N070",
+      "stage": "GUERRE",
+      "chronologyIndex": 70,
+      "title": "Naruto intervient après l’attaque finale.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Naruto intervient après l’attaque finale. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Pour ta séance, la traduction est volontairement concrète : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N071",
+      "stage": "GUERRE",
+      "chronologyIndex": 71,
+      "title": "Guy survit mais paie le prix physique du combat.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Guy survit mais paie le prix physique du combat. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Le lien avec l’entraînement du jour est simple : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N072",
+      "stage": "GUERRE",
+      "chronologyIndex": 72,
+      "title": "Lee hérite symboliquement de cette volonté de travail.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Lee hérite symboliquement de cette volonté de travail. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Les Huit Portes représentent une puissance extrême dans l’œuvre ; Budokai en retient la progression et la précision, jamais l’autodestruction. Aujourd’hui, ne poursuis pas le symbole : fais peu, fais vite, fais propre, puis récupère.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "GUERRE"
+      ],
+      "senseiMessage": "Fais peu, fais vite, fais propre, puis récupère.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N073",
+      "stage": "SPLUS",
+      "chronologyIndex": 73,
+      "title": "Héritage de Might Guy.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Héritage de Might Guy. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N074",
+      "stage": "SPLUS",
+      "chronologyIndex": 74,
+      "title": "Lee adulte continue à représenter le taijutsu.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Lee adulte continue à représenter le taijutsu. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Pour ta séance, la traduction est volontairement concrète : cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N075",
+      "stage": "SPLUS",
+      "chronologyIndex": 75,
+      "title": "La nouvelle génération observe les méthodes de",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "La nouvelle génération observe les méthodes de l’équipe Guy. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Le lien avec l’entraînement du jour est simple : cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N076",
+      "stage": "SPLUS",
+      "chronologyIndex": 76,
+      "title": "Entraînement et transmission plutôt que recherche de",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Entraînement et transmission plutôt que recherche de destruction. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Aujourd’hui, ne poursuis pas le symbole : cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N077",
+      "stage": "SPLUS",
+      "chronologyIndex": 77,
+      "title": "Le principe de jeunesse devient maîtrise, pas",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Le principe de jeunesse devient maîtrise, pas simple excès. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N078",
+      "stage": "SPLUS",
+      "chronologyIndex": 78,
+      "title": "Night Guy comme symbole narratif de puissance ultime.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Night Guy comme symbole narratif de puissance ultime. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Pour ta séance, la traduction est volontairement concrète : cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N079",
+      "stage": "SPLUS",
+      "chronologyIndex": 79,
+      "title": "Revenir à la technique après le pic.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Revenir à la technique après le pic. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Le lien avec l’entraînement du jour est simple : cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "LEE-N080",
+      "stage": "SPLUS",
+      "chronologyIndex": 80,
+      "title": "Dépasser son ancien benchmark plutôt que son corps.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Dépasser son ancien benchmark plutôt que son corps. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Night Guy symbolise le sommet narratif de l’explosivité, pas une permission de sacrifier le corps. Aujourd’hui, ne poursuis pas le symbole : cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "SPLUS"
+      ],
+      "senseiMessage": "Cherche ton meilleur saut ou sprint frais, puis arrête avant que la qualité disparaisse.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "ROCK_LEE-INT-01",
+      "title": "Réception silencieuse",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Réception silencieuse : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-02",
+      "title": "Fraîcheur avant vitesse",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Fraîcheur avant vitesse : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-03",
+      "title": "Un saut propre",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Un saut propre : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-04",
+      "title": "Le travail invisible",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Le travail invisible : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-05",
+      "title": "Deux pieds stables",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Deux pieds stables : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-06",
+      "title": "Réagir sans se crisper",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Réagir sans se crisper : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-07",
+      "title": "Repos de jeunesse",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Repos de jeunesse : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-08",
+      "title": "Vitesse contrôlée",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Vitesse contrôlée : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-09",
+      "title": "Freiner avant de repartir",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Freiner avant de repartir : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-10",
+      "title": "Une répétition explosive",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Une répétition explosive : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-11",
+      "title": "Le côté faible travaille",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Le côté faible travaille : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "ROCK_LEE-INT-12",
+      "title": "Arrêter avant la dégradation",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Arrêter avant la dégradation : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Rock Lee progresse parce qu’il transforme chaque limite en travail technique, pas parce qu’il accumule des répétitions mauvaises. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "references": [
+        "Rock Lee",
+        "Might Guy",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la meilleure répétition compte davantage que la dernière répétition.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    }
+  ]
+}

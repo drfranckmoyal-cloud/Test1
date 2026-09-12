@@ -42,7 +42,7 @@ struct SessionSheetView: View {
             case .feedback: feedbackScreen
             case .outcome:
                 if let outcome = outcome {
-                    OutcomeView(outcome: outcome) { dismiss() }
+                    OutcomeView(outcome: outcome, closing: narrative?.closingMessage) { dismiss() }
                 }
             }
         }
@@ -125,9 +125,9 @@ struct SessionSheetView: View {
     /// Le récit de la séance, quand il existe et que le réglage de spoilers
     /// l'autorise.
     private var narrative: NarrativeContent? {
-        guard session.programID == .saitama,
-              let id = tuned.narrativeId,
-              let content = SaitamaNarrative.beats.first(where: { $0.id == id }),
+        let index = store.progress(session.programID).completedSessions
+        guard let content = NarrativeCatalog.content(program: session.programID,
+                                                     sessionIndex: index),
               content.isVisible(at: store.state.spoilerLevel) else { return nil }
         return content
     }
@@ -161,6 +161,28 @@ struct SessionSheetView: View {
                     .lineSpacing(3)
                     .foregroundStyle(Theme.text.opacity(0.88))
                     .fixedSize(horizontal: false, vertical: true)
+
+                if let opening = story.openingMessage, opening != story.senseiMessage {
+                    Text(opening)
+                        .font(.ui(13, .semibold))
+                        .foregroundStyle(program.light)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.top, 2)
+                }
+
+                if !(story.references ?? []).isEmpty {
+                    HStack(spacing: 6) {
+                        ForEach(story.references, id: \.self) { reference in
+                            Text(reference)
+                                .font(.ui(10, .semibold))
+                                .foregroundStyle(Theme.muted)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 3)
+                                .background(Theme.surfaceAlt, in: Capsule())
+                        }
+                    }
+                    .padding(.top, 2)
+                }
 
                 if let sensei = story.senseiMessage {
                     HStack(alignment: .top, spacing: 10) {

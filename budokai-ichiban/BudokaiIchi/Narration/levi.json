@@ -1,0 +1,1773 @@
+{
+  "program": "levi",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "fieldsRequired": [
+      "title",
+      "openingMessage",
+      "storyRecap",
+      "references",
+      "senseiMessage",
+      "closingMessage"
+    ],
+    "noPlaceholderAllowed": true,
+    "canonicalQuoteOptional": true,
+    "dynamicSchedulingRule": "La banque principale suit la chronologie. Consolidation/deload/prolongation utilisent les interludes sans avancer la narration canonique."
+  },
+  "sourceNotes": [
+    "Sources narratives prioritaires : shingeki.tv, site officiel de l’anime Attack on Titan.",
+    "Les storyRecap, openingMessage, senseiMessage et closingMessage sont des textes Budokai originaux.",
+    "Aucune citation canonique exacte n’est nécessaire au fonctionnement."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "LEV-N001",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 1,
+      "title": "Sous la capitale",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Levi grandit dans les bas-fonds de la capitale, un environnement où chaque ressource et chaque mouvement doivent être économisés. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Sous la capitale"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N002",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 2,
+      "title": "Kuchel",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "L’enfance de Levi est marquée par la perte de sa mère et une survie précaire dans l’Underground. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Kuchel"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N003",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 3,
+      "title": "Kenny apparaît",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Kenny Ackerman recueille brièvement Levi et lui transmet des moyens de survivre dans un monde violent. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Kenny apparaît"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N004",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 4,
+      "title": "Apprendre à se débrouiller",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Levi développe très tôt une autonomie et une précision qui deviendront sa signature. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Apprendre à se débrouiller"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N005",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 5,
+      "title": "Furlan",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Furlan devient l’un des rares compagnons auxquels Levi accorde réellement sa confiance. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Furlan"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N006",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 6,
+      "title": "Isabel",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Isabel rejoint leur groupe et transforme le duo en petite équipe. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Isabel"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N007",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 7,
+      "title": "Équipement tridimensionnel",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Le groupe apprend à utiliser un équipement qui exige contrôle du tronc, grip et orientation dans l’espace. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Équipement tridimensionnel"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N008",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 8,
+      "title": "Quitter les bas-fonds",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Une mission pousse Levi, Furlan et Isabel vers la surface et le Corps d’exploration. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Quitter les bas-fonds"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N009",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 9,
+      "title": "Premier contact avec Erwin",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Erwin Smith voit chez Levi autre chose qu’un criminel doué : un potentiel militaire exceptionnel. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Premier contact avec Erwin"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N010",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 10,
+      "title": "La surface",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Levi découvre un monde plus vaste sans pour autant perdre ses réflexes de survie. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La surface"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N011",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 11,
+      "title": "Discipline",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Entrer dans le Corps signifie désormais contrôler sa force au sein d’une structure. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Discipline"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N012",
+      "stage": "UNDERGROUND",
+      "chronologyIndex": 12,
+      "title": "Le premier verrou",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Le travail de base du programme reflète cette étape : apprendre à fixer le corps avant de demander davantage de mouvement. Dans les bas-fonds, tout mouvement inutile coûte de l’énergie. Le travail du jour commence donc par la stabilité la plus simple. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le premier verrou"
+      ],
+      "senseiMessage": "Verrouille d’abord la position. Tu n’as pas besoin d’aller plus loin si elle n’est pas propre.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N013",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 13,
+      "title": "No Regrets",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Levi accepte une mission dont les intentions initiales ne correspondent pas encore à celles du Corps. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "No Regrets"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N014",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 14,
+      "title": "Erwin observe",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Erwin mesure rapidement les capacités hors norme de Levi. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Erwin observe"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N015",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 15,
+      "title": "Première expédition",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Levi découvre le coût réel d’une opération menée hors des murs. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Première expédition"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N016",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 16,
+      "title": "Furlan et Isabel",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Levi reste lié à ses deux compagnons alors que les décisions deviennent plus lourdes. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Furlan et Isabel"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N017",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 17,
+      "title": "Le choix",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Séparer l’équipe ou rester ensemble devient une décision impossible à garantir. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le choix"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N018",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 18,
+      "title": "La perte",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Furlan et Isabel meurent au cours de l’expédition. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La perte"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N019",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 19,
+      "title": "La colère",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Levi transforme immédiatement sa douleur en une précision de combat terrifiante. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La colère"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N020",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 20,
+      "title": "Erwin",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Levi choisit finalement de poursuivre avec Erwin plutôt que de rester prisonnier de sa vengeance. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Erwin"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N021",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 21,
+      "title": "Choisir sans certitude",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Ce qui définit Levi n’est pas de toujours connaître la bonne réponse, mais d’assumer ensuite le choix fait. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Choisir sans certitude"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N022",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 22,
+      "title": "Contrôle dynamique",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Le bloc sportif quitte progressivement la stabilité pure pour introduire des mouvements croisés. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Contrôle dynamique"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N023",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 23,
+      "title": "Ne pas regretter",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Le thème devient la capacité à avancer sans répéter compulsivement un test déjà réussi. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Ne pas regretter"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N024",
+      "stage": "NOREGRETS",
+      "chronologyIndex": 24,
+      "title": "Entrer réellement dans le Corps",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Levi appartient désormais au Corps d’exploration et sa maîtrise devient une ressource pour les autres. Le contrôle devient dynamique : il faut conserver une ligne stable pendant que les bras ou les jambes bougent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Entrer réellement dans le Corps"
+      ],
+      "senseiMessage": "Choisis la variante que tu peux contrôler sans regretter la dernière répétition.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N025",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 25,
+      "title": "Caporal Levi",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Levi est désormais reconnu comme le soldat le plus fort de l’humanité. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Caporal Levi"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N026",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 26,
+      "title": "Escouade spéciale",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Petra, Eld, Oluo et Gunther composent l’escouade chargée de protéger Eren. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Escouade spéciale"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N027",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 27,
+      "title": "La confiance",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Levi demande à Eren de choisir entre agir seul ou faire confiance à l’équipe. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La confiance"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N028",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 28,
+      "title": "Forêt des arbres géants",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "La mission contre le Titan Féminin place le Levi Squad sous une pression extrême. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Forêt des arbres géants"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N029",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 29,
+      "title": "Continuer à cheval",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Alors que d’autres soldats combattent derrière eux, l’escouade respecte le plan et poursuit sa mission. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Continuer à cheval"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N030",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 30,
+      "title": "Gunther",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Le premier membre de l’escouade tombe lorsque l’ennemi réapparaît. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Gunther"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N031",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 31,
+      "title": "Petra, Eld et Oluo",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Les trois vétérans coordonnent leurs attaques contre le Titan Féminin. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Petra, Eld et Oluo"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N032",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 32,
+      "title": "L’escouade tombe",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Le Titan Féminin détruit l’unité spéciale malgré son expérience. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "L’escouade tombe"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N033",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 33,
+      "title": "Le silence de Levi",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Levi découvre les corps de ses hommes sans pouvoir modifier ce qui vient d’arriver. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le silence de Levi"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N034",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 34,
+      "title": "Eren capturé",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "La priorité change immédiatement : récupérer Eren. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Eren capturé"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N035",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 35,
+      "title": "Levi et Mikasa",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Levi rejoint Mikasa et concentre l’action sur le sauvetage plutôt que sur une victoire inutile. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Levi et Mikasa"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N036",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 36,
+      "title": "Neutraliser sans gaspiller",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Levi attaque précisément les zones nécessaires pour arrêter le Titan Féminin. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Neutraliser sans gaspiller"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N037",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 37,
+      "title": "Une cheville sacrifiée",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Une mauvaise coordination au mauvais moment rappelle que même les meilleurs paient les erreurs de mouvement. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Une cheville sacrifiée"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N038",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 38,
+      "title": "Retour",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Le programme intégré reflète cette phase : maintenir la qualité malgré plusieurs tâches successives. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Retour"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N039",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 39,
+      "title": "Les insignes",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "La perte de l’escouade reste présente dans la mémoire de Levi. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Les insignes"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N040",
+      "stage": "SPECIALOPS",
+      "chronologyIndex": 40,
+      "title": "Contrôle sous fatigue",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "La progression sportive exige désormais de conserver le bassin et les épaules stables après plusieurs séries. Une équipe fonctionne lorsque chaque élément reste fiable sous pression. Ici, chaque famille du tronc doit continuer à tenir lorsque la séance avance. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Contrôle sous fatigue"
+      ],
+      "senseiMessage": "Ne compense pas pour terminer. Une série arrêtée proprement reste une bonne décision.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N041",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 41,
+      "title": "Uprising",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Le Corps d’exploration devient la cible d’ennemis humains et doit changer sa manière de combattre. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Uprising"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N042",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 42,
+      "title": "Kenny l’Éventreur",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Kenny Ackerman réapparaît à la tête d’une unité anti-personnel. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Kenny l’Éventreur"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N043",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 43,
+      "title": "Levi contre Kenny",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "La poursuite dans la ville exige de Levi une adaptation instantanée à un adversaire qui comprend ses réflexes. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Levi contre Kenny"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N044",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 44,
+      "title": "Un nom partagé",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Le lien entre Kenny, Mikasa et Levi met en lumière l’histoire des Ackerman. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Un nom partagé"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N045",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 45,
+      "title": "Pas un pouvoir magique",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "L’héritage Ackerman n’annule jamais la nécessité du jugement, de l’entraînement et de l’expérience. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Pas un pouvoir magique"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N046",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 46,
+      "title": "Historia",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Le changement politique autour d’Historia transforme aussi le rôle du Corps d’exploration. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Historia"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N047",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 47,
+      "title": "Rod Reiss",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "La menace du Titan de Rod Reiss oblige l’équipe à agir à très grande échelle. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Rod Reiss"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N048",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 48,
+      "title": "Kenny blessé",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Kenny révèle une partie de son histoire alors qu’il arrive à la fin de son parcours. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Kenny blessé"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N049",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 49,
+      "title": "L’injection",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Levi récupère un sérum qui deviendra plus tard le centre d’une décision impossible. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "L’injection"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N050",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 50,
+      "title": "Retour à Shiganshina",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Le Corps prépare l’opération décisive pour reprendre le Mur Maria. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Retour à Shiganshina"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N051",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 51,
+      "title": "Préparer plutôt que tester",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Le bloc Ackerman sportif n’a plus besoin de max quotidiens : il prépare une performance spécifique. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Préparer plutôt que tester"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N052",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 52,
+      "title": "Contrôle scapulaire",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "La traction devient plus forte, mais le mouvement doit rester initié et contrôlé par l’épaule. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Contrôle scapulaire"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N053",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 53,
+      "title": "Asymétrie",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Levi ne peut pas se permettre qu’un côté du corps dicte toute la trajectoire. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Asymétrie"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N054",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 54,
+      "title": "Précision",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "La mécanique du programme devient plus exigeante sans augmenter inutilement les durées. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Précision"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N055",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 55,
+      "title": "Le choix approche",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Chaque progression prépare la phase où aucune faiblesse majeure ne pourra être masquée. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le choix approche"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N056",
+      "stage": "ACKERMAN",
+      "chronologyIndex": 56,
+      "title": "Ackerman",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Le nom devient moins un mystère qu’une responsabilité : disposer d’une capacité n’explique pas comment l’utiliser. À ce niveau, les durées seules ne suffisent plus : la mécanique devient plus exigeante. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Ackerman"
+      ],
+      "senseiMessage": "Réduis le mouvement parasite avant d’augmenter la difficulté.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N057",
+      "stage": "STRONGEST",
+      "chronologyIndex": 57,
+      "title": "Retour à Shiganshina",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Le Corps d’exploration atteint enfin le district où l’histoire avait commencé. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Retour à Shiganshina"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N058",
+      "stage": "STRONGEST",
+      "chronologyIndex": 58,
+      "title": "Le Titan Bestial",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Zeke contrôle le champ de bataille à distance et bloque toute retraite. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le Titan Bestial"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N059",
+      "stage": "STRONGEST",
+      "chronologyIndex": 59,
+      "title": "Erwin et Levi",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Erwin demande à Levi s’il peut atteindre le Titan Bestial pendant que les autres créent l’ouverture. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Erwin et Levi"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N060",
+      "stage": "STRONGEST",
+      "chronologyIndex": 60,
+      "title": "La charge",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Erwin mène les recrues dans une charge presque sans espoir pour détourner l’attention de Zeke. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La charge"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N061",
+      "stage": "STRONGEST",
+      "chronologyIndex": 61,
+      "title": "Approche",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Levi utilise les Titans environnants pour se rapprocher sans offrir une trajectoire facile. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Approche"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N062",
+      "stage": "STRONGEST",
+      "chronologyIndex": 62,
+      "title": "Levi contre le Titan Bestial",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Une fois à portée, Levi neutralise Zeke avec une vitesse et une précision extrêmes. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Levi contre le Titan Bestial"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N063",
+      "stage": "STRONGEST",
+      "chronologyIndex": 63,
+      "title": "La promesse",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Levi veut accomplir la mission confiée par Erwin, mais Zeke lui échappe. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La promesse"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N064",
+      "stage": "STRONGEST",
+      "chronologyIndex": 64,
+      "title": "Le sérum",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Levi doit choisir qui sauver entre Erwin et Armin. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le sérum"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N065",
+      "stage": "STRONGEST",
+      "chronologyIndex": 65,
+      "title": "Laisser partir Erwin",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Levi renonce finalement à ramener son commandant dans ce monde de sacrifices. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Laisser partir Erwin"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N066",
+      "stage": "STRONGEST",
+      "chronologyIndex": 66,
+      "title": "Le sous-sol",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Les survivants découvrent enfin les informations cachées dans la maison des Yeager. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le sous-sol"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N067",
+      "stage": "STRONGEST",
+      "chronologyIndex": 67,
+      "title": "Humanity's Strongest",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Le titre de Levi n’est pas un test unique : il résulte de capacités différentes disponibles au même moment. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Humanity's Strongest"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N068",
+      "stage": "STRONGEST",
+      "chronologyIndex": 68,
+      "title": "Rehearsal",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Comme avant une opération, la semaine de boss réduit le volume et conserve seulement les gestes nécessaires. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Rehearsal"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N069",
+      "stage": "STRONGEST",
+      "chronologyIndex": 69,
+      "title": "Hollow",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Le tronc doit empêcher le corps de s’ouvrir lorsqu’une force cherche à l’étendre. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Hollow"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N070",
+      "stage": "STRONGEST",
+      "chronologyIndex": 70,
+      "title": "Side plank",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Le contrôle latéral empêche la ligne du corps de s’effondrer sur un seul côté. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Side plank"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N071",
+      "stage": "STRONGEST",
+      "chronologyIndex": 71,
+      "title": "Pull",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "La traction mesure la capacité à déplacer le corps sans élan parasite. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Pull"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N072",
+      "stage": "STRONGEST",
+      "chronologyIndex": 72,
+      "title": "Hang",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "La suspension termine le test par une exigence simple : rester accroché sans compensation. Le titre n’est pas gagné par une qualité unique. Le boss demande plusieurs capacités disponibles dans la même semaine. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Hang"
+      ],
+      "senseiMessage": "Ne cherche plus à construire aujourd’hui : exécute précisément ce que tu possèdes déjà.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N073",
+      "stage": "SPLUS",
+      "chronologyIndex": 73,
+      "title": "La forêt",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Levi garde Zeke sous surveillance après les événements de Marley. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La forêt"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N074",
+      "stage": "SPLUS",
+      "chronologyIndex": 74,
+      "title": "Zeke tente de fuir",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Le Titan Bestial transforme ses gardes en Titans pour créer une ouverture. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Zeke tente de fuir"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N075",
+      "stage": "SPLUS",
+      "chronologyIndex": 75,
+      "title": "Levi poursuit Zeke",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Même après la transformation de ses hommes, Levi continue à poursuivre son objectif. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Levi poursuit Zeke"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N076",
+      "stage": "SPLUS",
+      "chronologyIndex": 76,
+      "title": "Nouvel affrontement",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Levi neutralise encore Zeke mais choisit une méthode destinée à empêcher une nouvelle fuite. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Nouvel affrontement"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N077",
+      "stage": "SPLUS",
+      "chronologyIndex": 77,
+      "title": "La lance foudroyante",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Le choix de maintenir Zeke avec un explosif se retourne brutalement contre Levi. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La lance foudroyante"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N078",
+      "stage": "SPLUS",
+      "chronologyIndex": 78,
+      "title": "Après l’explosion",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Levi survit mais son corps porte désormais clairement les conséquences de la guerre. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Après l’explosion"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N079",
+      "stage": "SPLUS",
+      "chronologyIndex": 79,
+      "title": "Hansi",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Hansi protège Levi alors que la situation politique s’effondre. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Hansi"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N080",
+      "stage": "SPLUS",
+      "chronologyIndex": 80,
+      "title": "Revenir diminué",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "La narration n’assimile jamais blessure et entraînement : le programme retient seulement la capacité à reconstruire après une interruption. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Revenir diminué"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N081",
+      "stage": "SPLUS",
+      "chronologyIndex": 81,
+      "title": "Alliance finale",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Levi rejoint ceux qui veulent arrêter le Grand Terrassement malgré les anciennes divisions. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Alliance finale"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N082",
+      "stage": "SPLUS",
+      "chronologyIndex": 82,
+      "title": "La promesse à Erwin",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Zeke reste lié à la promesse que Levi n’a jamais considérée comme terminée. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "La promesse à Erwin"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N083",
+      "stage": "SPLUS",
+      "chronologyIndex": 83,
+      "title": "Dernière confrontation avec Zeke",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Lorsque Zeke se rend visible, Levi accomplit enfin l’objectif resté ouvert depuis Shiganshina. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Dernière confrontation avec Zeke"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N084",
+      "stage": "SPLUS",
+      "chronologyIndex": 84,
+      "title": "Le combat final",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Même diminué, Levi continue à utiliser son expérience et sa précision dans la bataille finale. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Le combat final"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N085",
+      "stage": "SPLUS",
+      "chronologyIndex": 85,
+      "title": "Les camarades disparus",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "La fin de la guerre rassemble symboliquement tous ceux que Levi a vus tomber. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Les camarades disparus"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N086",
+      "stage": "SPLUS",
+      "chronologyIndex": 86,
+      "title": "Après la guerre",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Levi survit à une histoire qui lui a demandé bien plus que de gagner des combats. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Après la guerre"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LEV-N087",
+      "stage": "SPLUS",
+      "chronologyIndex": 87,
+      "title": "Ackerman Mode",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Le boss S+ représente la maîtrise complète des qualités travaillées, pas une imitation des blessures ou sacrifices de l’œuvre. Ackerman Mode signifie conserver le contrôle lorsque plusieurs contraintes se cumulent. Dans Budokai, ce passage sert de cadre narratif au travail du jour sans transformer les événements de l’œuvre en consigne physique. Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "references": [
+        "Levi Ackerman",
+        "Survey Corps",
+        "Ackerman Mode"
+      ],
+      "senseiMessage": "Reste précis. La difficulté n’a aucune valeur si elle détruit la position.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "LEV-INT-01",
+      "title": "Nettoyer le mouvement",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Nettoyer le mouvement. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-02",
+      "title": "Une ligne stable",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Une ligne stable. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-03",
+      "title": "Respirer sous tension",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Respirer sous tension. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-04",
+      "title": "Le côté faible",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Le côté faible. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-05",
+      "title": "Grip sans crispation",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Grip sans crispation. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-06",
+      "title": "Scapula en place",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Scapula en place. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-07",
+      "title": "Pas de seconde inutile",
+      "openingMessage": "Aujourd’hui, le tronc ne bouge que lorsque tu décides qu’il doit bouger.",
+      "storyRecap": "Pas de seconde inutile. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Tu peux t’arrêter ici. La qualité restante est une réserve pour la prochaine séance.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-08",
+      "title": "Réduire avant de compenser",
+      "openingMessage": "Ne cherche pas le tremblement. Cherche le contrôle.",
+      "storyRecap": "Réduire avant de compenser. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Séance validée. La maîtrise se construit aussi en sachant quand arrêter.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-09",
+      "title": "Une série de moins",
+      "openingMessage": "Accroche-toi seulement aussi longtemps que la position reste nette.",
+      "storyRecap": "Une série de moins. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Rien à ajouter. Le prochain niveau dépend de ce que tu viens d’exécuter proprement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-10",
+      "title": "Maintenir la position",
+      "openingMessage": "Fais moins si nécessaire, mais ne laisse pas la technique décider à ta place.",
+      "storyRecap": "Maintenir la position. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "C’est terminé. Une position propre de plus vaut mieux qu’une minute sale.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-11",
+      "title": "Le choix du jour",
+      "openingMessage": "Pas de mouvement inutile. Verrouille la position avant de commencer.",
+      "storyRecap": "Le choix du jour. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Fin de mission. Enregistre ce que tu as réellement contrôlé aujourd’hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LEV-INT-12",
+      "title": "Revenir disponible",
+      "openingMessage": "Commence proprement. La qualité du premier set doit encore exister au dernier.",
+      "storyRecap": "Revenir disponible. Cette séance est un interlude Budokai destiné aux consolidations, décharges ou prolongations. Elle ne consomme aucun nouvel événement canonique. L’objectif reste fidèle à Levi : supprimer le mouvement inutile, conserver une position reproductible et quitter la série avant que le contrôle ne disparaisse.",
+      "references": [
+        "Levi Ackerman",
+        "entraînement",
+        "contrôle"
+      ],
+      "senseiMessage": "La mission ne demande pas toujours d’avancer. Parfois, tenir proprement le niveau actuel est exactement la bonne décision.",
+      "closingMessage": "Le travail est fait. Laisse le tronc récupérer avant la prochaine contrainte.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    }
+  ]
+}

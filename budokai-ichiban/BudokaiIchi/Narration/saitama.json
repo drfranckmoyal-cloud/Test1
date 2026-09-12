@@ -1,0 +1,1371 @@
+{
+  "program": "saitama",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "fieldsRequired": [
+      "title",
+      "openingMessage",
+      "storyRecap",
+      "references",
+      "senseiMessage",
+      "closingMessage"
+    ],
+    "noPlaceholderAllowed": true,
+    "canonicalQuoteOptional": true,
+    "canonicalQuoteRule": "null par défaut ; n’ajouter qu’après vérification éditoriale",
+    "dynamicSchedulingRule": "Consommer la banque principale dans l’ordre chronologique. Pour toute séance supplémentaire générée par consolidation/deload/prolongation, utiliser les interludes en rotation sans avancer artificiellement la chronologie canonique."
+  },
+  "sourceNotes": [
+    "Contrôle éditorial : site officiel TV anime One Punch Man, résumés/archives officiels.",
+    "Aucune citation canonique longue n'est incluse dans ce pack ; les opening/closing/sensei messages sont des textes Budokai originaux."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "SAI-B1-N01",
+      "stage": "Le Déclic",
+      "chronologyIndex": 1,
+      "title": "Avant le héros",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Avant le héros : Saitama est encore un jeune homme ordinaire en recherche d'emploi. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B1-N02",
+      "stage": "Le Déclic",
+      "chronologyIndex": 2,
+      "title": "Crablante",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Crablante : première confrontation qui réveille l'envie de devenir héros. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Pour ta séance, la traduction est volontairement concrète : entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B1-N03",
+      "stage": "Le Déclic",
+      "chronologyIndex": 3,
+      "title": "Le choix",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Le choix : devenir héros par passion plutôt que par statut. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Le lien avec l’entraînement du jour est simple : entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B1-N04",
+      "stage": "Le Déclic",
+      "chronologyIndex": 4,
+      "title": "Le premier jour d'entraînement",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Le premier jour d'entraînement : commencer sans garantie de résultat. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Aujourd’hui, ne poursuis pas le symbole : entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B1-N05",
+      "stage": "Le Déclic",
+      "chronologyIndex": 5,
+      "title": "Répéter la routine",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Répéter la routine : l'idée simple qui deviendra son obsession. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B1-N06",
+      "stage": "Le Déclic",
+      "chronologyIndex": 6,
+      "title": "Les jours sans gloire",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Les jours sans gloire : aucun classement, aucun témoin, seulement la régularité. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Pour ta séance, la traduction est volontairement concrète : entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B1-N07",
+      "stage": "Le Déclic",
+      "chronologyIndex": 7,
+      "title": "La transformation commence avant qu'elle ne soit",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "La transformation commence avant qu'elle ne soit visible. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Le lien avec l’entraînement du jour est simple : entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B1-N08",
+      "stage": "Le Déclic",
+      "chronologyIndex": 8,
+      "title": "Premier jalon",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Premier jalon : la décision vaut moins que les répétitions réellement accomplies. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Tout commence par une décision, mais une décision n’a de valeur sportive que si elle devient une action répétée. Aujourd’hui, ne poursuis pas le symbole : entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Déclic"
+      ],
+      "senseiMessage": "Entre dans la séance sans chercher à impressionner : pose simplement la première pierre.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N01",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 9,
+      "title": "Trois années d'entraînement",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Trois années d'entraînement : la force de Saitama vient d'une répétition obstinée. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N02",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 10,
+      "title": "La routine emblématique est révélée comme quelque",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "La routine emblématique est révélée comme quelque chose de volontairement extrême. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Pour ta séance, la traduction est volontairement concrète : répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N03",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 11,
+      "title": "La perte des cheveux devient le symbole",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "La perte des cheveux devient le symbole comique de sa transformation. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Le lien avec l’entraînement du jour est simple : répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N04",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 12,
+      "title": "Vaccine Man",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Vaccine Man : le monde est déjà rempli de menaces avant que Saitama ne soit reconnu. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Aujourd’hui, ne poursuis pas le symbole : répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N05",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 13,
+      "title": "Beefcake",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Beefcake : puissance gigantesque contre simplicité absolue. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N06",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 14,
+      "title": "Le rêve des Subterraneans",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le rêve des Subterraneans : Saitama cherche enfin un combat qui lui fasse ressentir quelque chose. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Pour ta séance, la traduction est volontairement concrète : répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N07",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 15,
+      "title": "Le réveil",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Le réveil : contraste entre fantasme d'adversité et réalité de son invincibilité. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Le lien avec l’entraînement du jour est simple : répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B2-N08",
+      "stage": "L’Entraînement",
+      "chronologyIndex": 16,
+      "title": "La routine devient un repère, pas encore",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "La routine devient un repère, pas encore un challenge à reproduire chaque jour. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. La routine de Saitama est devenue mythique, mais Budokai en retient la discipline plutôt que l’excès. Aujourd’hui, ne poursuis pas le symbole : répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "L’Entraînement"
+      ],
+      "senseiMessage": "Répète ce qui est prévu, avec la bonne dose, puis laisse l’adaptation faire son travail.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N01",
+      "stage": "Le Disciple",
+      "chronologyIndex": 17,
+      "title": "Mosquito Girl",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Mosquito Girl : entrée de Genos dans l'histoire. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N02",
+      "stage": "Le Disciple",
+      "chronologyIndex": 18,
+      "title": "Genos observe une force qu'il ne comprend pas encore.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Genos observe une force qu'il ne comprend pas encore. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Pour ta séance, la traduction est volontairement concrète : utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N03",
+      "stage": "Le Disciple",
+      "chronologyIndex": 19,
+      "title": "La demande de devenir disciple transforme Saitama",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "La demande de devenir disciple transforme Saitama malgré lui en maître. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Le lien avec l’entraînement du jour est simple : utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N04",
+      "stage": "Le Disciple",
+      "chronologyIndex": 20,
+      "title": "L'attaque de la Maison de l'Évolution rapproche",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "L'attaque de la Maison de l'Évolution rapproche la théorie de la pratique. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Aujourd’hui, ne poursuis pas le symbole : utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N05",
+      "stage": "Le Disciple",
+      "chronologyIndex": 21,
+      "title": "Armored Gorilla",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Armored Gorilla : la puissance ne suffit pas à rendre un combat intéressant. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N06",
+      "stage": "Le Disciple",
+      "chronologyIndex": 22,
+      "title": "Dr Genus",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Dr Genus : obsession de l'évolution artificielle face à la simplicité de Saitama. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Pour ta séance, la traduction est volontairement concrète : utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N07",
+      "stage": "Le Disciple",
+      "chronologyIndex": 23,
+      "title": "Carnage Kabuto",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Carnage Kabuto : l'entraînement de Saitama devient lui-même un mystère. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Le lien avec l’entraînement du jour est simple : utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B3-N08",
+      "stage": "Le Disciple",
+      "chronologyIndex": 24,
+      "title": "Genos apprend que copier une routine n'est",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Genos apprend que copier une routine n'est pas comprendre une progression. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Genos cherche une formule immédiate ; Saitama montre malgré lui qu’une progression ne se copie pas, elle se construit. Aujourd’hui, ne poursuis pas le symbole : utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Disciple"
+      ],
+      "senseiMessage": "Utilise la séance pour comprendre ton niveau du jour plutôt que pour imiter celui de quelqu’un d’autre.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N01",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 25,
+      "title": "Examen de la Hero Association",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Examen de la Hero Association : Saitama doit enfin être mesuré par un système extérieur. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N02",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 26,
+      "title": "L'épreuve physique",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "L'épreuve physique : contraste entre capacités réelles et classement administratif. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Pour ta séance, la traduction est volontairement concrète : aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N03",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 27,
+      "title": "Classe C",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Classe C : être le plus fort ne signifie pas être reconnu. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Le lien avec l’entraînement du jour est simple : aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N04",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 28,
+      "title": "Genos entre en Classe S pendant que",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Genos entre en Classe S pendant que Saitama commence tout en bas. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Aujourd’hui, ne poursuis pas le symbole : aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N05",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 29,
+      "title": "Le nom Caped Baldy rappelle que le",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Le nom Caped Baldy rappelle que le statut public ne reflète pas la performance. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N06",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 30,
+      "title": "La règle d'activité hebdomadaire impose de la",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "La règle d'activité hebdomadaire impose de la constance, même à Saitama. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Pour ta séance, la traduction est volontairement concrète : aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N07",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 31,
+      "title": "Sonic réapparaît comme rival autoproclamé et obsédé",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Sonic réapparaît comme rival autoproclamé et obsédé par la vitesse. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Le lien avec l’entraînement du jour est simple : aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B4-N08",
+      "stage": "Héros professionnel",
+      "chronologyIndex": 32,
+      "title": "Premier vrai palier Budokai",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Premier vrai palier Budokai : la moitié de la routine canonique devient accessible. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le classement extérieur n’est pas toujours le reflet exact du niveau réel. Aujourd’hui, ne poursuis pas le symbole : aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Héros professionnel"
+      ],
+      "senseiMessage": "Aujourd’hui, laisse les données de la séance parler : exécution, effort et régularité.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N01",
+      "stage": "La Météorite",
+      "chronologyIndex": 33,
+      "title": "Une météorite géante menace Z-City.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Une météorite géante menace Z-City. Une grosse performance isolée ne remplace jamais des semaines de préparation. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N02",
+      "stage": "La Météorite",
+      "chronologyIndex": 34,
+      "title": "La Hero Association appelle les héros de Classe S.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "La Hero Association appelle les héros de Classe S. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Une grosse performance isolée ne remplace jamais des semaines de préparation. Pour ta séance, la traduction est volontairement concrète : fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N03",
+      "stage": "La Météorite",
+      "chronologyIndex": 35,
+      "title": "Genos se prépare à utiliser tout ce qu'il possède.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Genos se prépare à utiliser tout ce qu'il possède. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Une grosse performance isolée ne remplace jamais des semaines de préparation. Le lien avec l’entraînement du jour est simple : fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N04",
+      "stage": "La Météorite",
+      "chronologyIndex": 36,
+      "title": "Silver Fang apparaît comme repère de maîtrise",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Silver Fang apparaît comme repère de maîtrise plutôt que de panique. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Une grosse performance isolée ne remplace jamais des semaines de préparation. Aujourd’hui, ne poursuis pas le symbole : fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N05",
+      "stage": "La Météorite",
+      "chronologyIndex": 37,
+      "title": "Metal Knight choisit sa propre logique d'intervention.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Metal Knight choisit sa propre logique d'intervention. Une grosse performance isolée ne remplace jamais des semaines de préparation. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N06",
+      "stage": "La Météorite",
+      "chronologyIndex": 38,
+      "title": "Saitama arrive avec sa simplicité habituelle face",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Saitama arrive avec sa simplicité habituelle face à une menace démesurée. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Une grosse performance isolée ne remplace jamais des semaines de préparation. Pour ta séance, la traduction est volontairement concrète : fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N07",
+      "stage": "La Météorite",
+      "chronologyIndex": 39,
+      "title": "Détruire la météorite ne supprime pas toutes",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Détruire la météorite ne supprime pas toutes les conséquences : puissance et résultat ne sont pas identiques. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Une grosse performance isolée ne remplace jamais des semaines de préparation. Le lien avec l’entraînement du jour est simple : fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B5-N08",
+      "stage": "La Météorite",
+      "chronologyIndex": 40,
+      "title": "Le bloc rappelle qu'une grosse séance ne",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Le bloc rappelle qu'une grosse séance ne remplace jamais la progression accumulée. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Une grosse performance isolée ne remplace jamais des semaines de préparation. Aujourd’hui, ne poursuis pas le symbole : fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "La Météorite"
+      ],
+      "senseiMessage": "Fais ce qui est prévu, ni plus ni moins : la maîtrise vaut mieux que le spectaculaire.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N01",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 41,
+      "title": "Les Deep Sea Folk envahissent la surface.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Les Deep Sea Folk envahissent la surface. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N02",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 42,
+      "title": "Pri-Pri Prisoner affronte le Deep Sea King.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Pri-Pri Prisoner affronte le Deep Sea King. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Pour ta séance, la traduction est volontairement concrète : termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N03",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 43,
+      "title": "Sonic mise sur sa vitesse mais le",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Sonic mise sur sa vitesse mais le contexte change le rapport de force. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Le lien avec l’entraînement du jour est simple : termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N04",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 44,
+      "title": "Genos intervient malgré un combat qui se dégrade.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Genos intervient malgré un combat qui se dégrade. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Aujourd’hui, ne poursuis pas le symbole : termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N05",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 45,
+      "title": "L'abri devient le centre de la tension",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "L'abri devient le centre de la tension : la puissance des héros est comparée à l'attente du public. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N06",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 46,
+      "title": "Mumen Rider arrive sans disposer de la",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Mumen Rider arrive sans disposer de la puissance nécessaire. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Pour ta séance, la traduction est volontairement concrète : termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N07",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 47,
+      "title": "Son intervention incarne l'engagement malgré l'écart de",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Son intervention incarne l'engagement malgré l'écart de niveau. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Le lien avec l’entraînement du jour est simple : termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B6-N08",
+      "stage": "Justice indomptable",
+      "chronologyIndex": 48,
+      "title": "Saitama conclut le combat, mais laisse volontairement",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Saitama conclut le combat, mais laisse volontairement la place aux autres héros dans le regard du public. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le courage n’efface pas l’écart de niveau, mais il donne un sens à l’effort. Aujourd’hui, ne poursuis pas le symbole : termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Justice indomptable"
+      ],
+      "senseiMessage": "Termine proprement ce que tu peux réellement soutenir aujourd’hui.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N01",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 49,
+      "title": "La prophétie de Shibabawa annonce une menace",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "La prophétie de Shibabawa annonce une menace d'une autre échelle. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N02",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 50,
+      "title": "Les héros de Classe S sont rassemblés.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Les héros de Classe S sont rassemblés. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Pour ta séance, la traduction est volontairement concrète : conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N03",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 51,
+      "title": "Le vaisseau de Dark Matter transforme A-City",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Le vaisseau de Dark Matter transforme A-City en champ de bataille. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Le lien avec l’entraînement du jour est simple : conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N04",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 52,
+      "title": "Melzargard retient plusieurs héros à l'extérieur.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Melzargard retient plusieurs héros à l'extérieur. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Aujourd’hui, ne poursuis pas le symbole : conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N05",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 53,
+      "title": "Saitama entre seul dans le vaisseau.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Saitama entre seul dans le vaisseau. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N06",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 54,
+      "title": "Geryuganshoop illustre encore le contraste entre démonstration",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Geryuganshoop illustre encore le contraste entre démonstration spectaculaire et efficacité. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Pour ta séance, la traduction est volontairement concrète : conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N07",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 55,
+      "title": "Boros apparaît enfin comme adversaire capable de",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Boros apparaît enfin comme adversaire capable de survivre au premier échange. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Le lien avec l’entraînement du jour est simple : conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B7-N08",
+      "stage": "Conquérant de l’Univers",
+      "chronologyIndex": 56,
+      "title": "Le Serious Series annonce le dernier niveau",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le Serious Series annonce le dernier niveau de spécificité avant ton propre challenge final. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Face à une menace supérieure, la différence vient moins du bruit que de l’efficacité. Aujourd’hui, ne poursuis pas le symbole : conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Conquérant de l’Univers"
+      ],
+      "senseiMessage": "Conserve ton énergie pour les répétitions qui comptent vraiment.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N01",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 57,
+      "title": "Après Boros, l'ennui de Saitama ne disparaît pas",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Après Boros, l'ennui de Saitama ne disparaît pas : être le plus fort n'est pas une fin en soi. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N02",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 58,
+      "title": "King est présenté comme l'homme le plus",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "King est présenté comme l'homme le plus fort aux yeux du public. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Pour ta séance, la traduction est volontairement concrète : entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N03",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 59,
+      "title": "La relation Saitama",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "La relation Saitama–King montre le décalage entre réputation et réalité. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Le lien avec l’entraînement du jour est simple : entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N04",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 60,
+      "title": "Garou déclare la guerre au monde des héros.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Garou déclare la guerre au monde des héros. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Aujourd’hui, ne poursuis pas le symbole : entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N05",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 61,
+      "title": "Le tournoi Super Fight offre à Saitama",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Le tournoi Super Fight offre à Saitama un autre moyen de chercher du défi. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N06",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 62,
+      "title": "Les monstres et les héros continuent de",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Les monstres et les héros continuent de s'affronter pendant que Saitama reste en marge des classements. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Pour ta séance, la traduction est volontairement concrète : entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N07",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 63,
+      "title": "La dernière semaine Budokai ne cherche plus",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "La dernière semaine Budokai ne cherche plus à construire : elle cherche à laisser apparaître le travail déjà fait. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Le lien avec l’entraînement du jour est simple : entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "SAI-B8-N08",
+      "stage": "Le Plus Fort",
+      "chronologyIndex": 64,
+      "title": "Boss Final",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Boss Final : tu ne copies pas l'entraînement quotidien de Saitama ; tu prouves une fois que ton propre parcours t'a rendu capable de sa routine. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Au sommet, il ne reste plus à construire dans l’urgence : il faut laisser apparaître le travail déjà accumulé. Aujourd’hui, ne poursuis pas le symbole : entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Le Plus Fort"
+      ],
+      "senseiMessage": "Entre dans cette séance avec calme ; la forme se révèle mieux qu’elle ne se force.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "SAITAMA-INT-01",
+      "title": "La régularité invisible",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "La régularité invisible : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-02",
+      "title": "Le jour ordinaire",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Le jour ordinaire : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-03",
+      "title": "Le classement ne compte pas",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Le classement ne compte pas : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-04",
+      "title": "Faire simple",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Faire simple : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-05",
+      "title": "Répéter sans ennui",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Répéter sans ennui : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-06",
+      "title": "Le calme avant le prochain palier",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le calme avant le prochain palier : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-07",
+      "title": "Technique avant volume",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Technique avant volume : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-08",
+      "title": "Une séance de plus",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Une séance de plus : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-09",
+      "title": "La récupération du héros",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "La récupération du héros : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-10",
+      "title": "Le travail sans témoin",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Le travail sans témoin : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-11",
+      "title": "Le prochain pourcentage",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Le prochain pourcentage : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "SAITAMA-INT-12",
+      "title": "Rester disponible",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Rester disponible : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. La progression de Saitama rappelle qu’un résultat spectaculaire repose d’abord sur une constance presque banale. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "references": [
+        "Saitama",
+        "Hero Association",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, la séance doit rester simple, mesurable et propre : le travail compte davantage que l’effet de scène.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    }
+  ]
+}

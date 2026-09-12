@@ -1,0 +1,1947 @@
+{
+  "program": "naruto",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "fieldsRequired": [
+      "title",
+      "openingMessage",
+      "storyRecap",
+      "references",
+      "senseiMessage",
+      "closingMessage"
+    ],
+    "noPlaceholderAllowed": true,
+    "canonicalQuoteOptional": true,
+    "canonicalQuoteRule": "null par défaut ; n’ajouter qu’après vérification éditoriale",
+    "dynamicSchedulingRule": "Consommer la banque principale dans l’ordre chronologique. Pour toute séance supplémentaire générée par consolidation/deload/prolongation, utiliser les interludes en rotation sans avancer artificiellement la chronologie canonique."
+  },
+  "sourceNotes": [
+    "Contrôle éditorial : NARUTO OFFICIAL SITE, chroniques 20e anniversaire, pages Jiraiya/Mode Sennin et base de données Mode Baryon.",
+    "Les textes de motivation sont originaux Budokai ; aucune citation exacte n'est requise pour afficher une séance."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "NAR-GENIN-01",
+      "stage": "GENIN",
+      "chronologyIndex": 1,
+      "title": "Naissance de Naruto, attaque de Kyûbi et",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naissance de Naruto, attaque de Kyûbi et choix de Minato et Kushina. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-02",
+      "stage": "GENIN",
+      "chronologyIndex": 2,
+      "title": "Naruto enfant cherche la reconnaissance du village",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Naruto enfant cherche la reconnaissance du village par ses farces. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Pour ta séance, la traduction est volontairement concrète : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-03",
+      "stage": "GENIN",
+      "chronologyIndex": 3,
+      "title": "Mizuki manipule Naruto pour voler le rouleau",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Mizuki manipule Naruto pour voler le rouleau des techniques interdites. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Le lien avec l’entraînement du jour est simple : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-04",
+      "stage": "GENIN",
+      "chronologyIndex": 4,
+      "title": "Iruka reconnaît Naruto",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Iruka reconnaît Naruto ; obtention du bandeau de Konoha. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Aujourd’hui, ne poursuis pas le symbole : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-05",
+      "stage": "GENIN",
+      "chronologyIndex": 5,
+      "title": "Formation de l’Équipe 7 avec Sasuke, Sakura et Kakashi.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Formation de l’Équipe 7 avec Sasuke, Sakura et Kakashi. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-06",
+      "stage": "GENIN",
+      "chronologyIndex": 6,
+      "title": "Épreuve des clochettes",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Épreuve des clochettes : comprendre que la mission ne se résume pas à la performance individuelle. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Pour ta séance, la traduction est volontairement concrète : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-07",
+      "stage": "GENIN",
+      "chronologyIndex": 7,
+      "title": "Premières missions de rang D et impatience de Naruto.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Premières missions de rang D et impatience de Naruto. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Le lien avec l’entraînement du jour est simple : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-08",
+      "stage": "GENIN",
+      "chronologyIndex": 8,
+      "title": "Mission d’escorte de Tazuna",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Mission d’escorte de Tazuna : premier départ réel hors de Konoha. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Aujourd’hui, ne poursuis pas le symbole : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-09",
+      "stage": "GENIN",
+      "chronologyIndex": 9,
+      "title": "Attaque des Frères Démons et découverte du danger réel.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Attaque des Frères Démons et découverte du danger réel. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-10",
+      "stage": "GENIN",
+      "chronologyIndex": 10,
+      "title": "Premier affrontement contre Zabuza.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Premier affrontement contre Zabuza. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Pour ta séance, la traduction est volontairement concrète : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-11",
+      "stage": "GENIN",
+      "chronologyIndex": 11,
+      "title": "Entraînement au contrôle du chakra dans les arbres.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Entraînement au contrôle du chakra dans les arbres. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Le lien avec l’entraînement du jour est simple : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-12",
+      "stage": "GENIN",
+      "chronologyIndex": 12,
+      "title": "Rencontre avec Haku et découverte d’un adversaire",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Rencontre avec Haku et découverte d’un adversaire guidé par un lien profond. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Aujourd’hui, ne poursuis pas le symbole : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-13",
+      "stage": "GENIN",
+      "chronologyIndex": 13,
+      "title": "Combat sur le pont",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Combat sur le pont : Naruto dépasse ses premières limites. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-GENIN-14",
+      "stage": "GENIN",
+      "chronologyIndex": 14,
+      "title": "Le pont devient symbole de reconnaissance",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le pont devient symbole de reconnaissance ; Naruto affirme son propre nindô. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Naruto commence loin du niveau qu’il rêve d’atteindre ; sa première victoire est de revenir encore et encore. Pour ta séance, la traduction est volontairement concrète : cours facile, reste patient et accumule les minutes utiles.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "GENIN"
+      ],
+      "senseiMessage": "Cours facile, reste patient et accumule les minutes utiles.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-01",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 15,
+      "title": "Retour à Konoha et annonce de l’Examen Chūnin.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Retour à Konoha et annonce de l’Examen Chūnin. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Le lien avec l’entraînement du jour est simple : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-02",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 16,
+      "title": "Épreuve écrite et pression de la dixième question.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Épreuve écrite et pression de la dixième question. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Aujourd’hui, ne poursuis pas le symbole : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-03",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 17,
+      "title": "Entrée dans la Forêt de la Mort.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Entrée dans la Forêt de la Mort. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-04",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 18,
+      "title": "Rencontre avec Orochimaru et confrontation à un",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Rencontre avec Orochimaru et confrontation à un niveau très supérieur. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Pour ta séance, la traduction est volontairement concrète : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-05",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 19,
+      "title": "Naruto refuse de laisser Sasuke céder à la peur.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto refuse de laisser Sasuke céder à la peur. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Le lien avec l’entraînement du jour est simple : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-06",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 20,
+      "title": "Préliminaires",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Préliminaires : Naruto affronte Kiba. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Aujourd’hui, ne poursuis pas le symbole : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-07",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 21,
+      "title": "Hinata affronte Neji et son courage marque Naruto.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Hinata affronte Neji et son courage marque Naruto. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-08",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 22,
+      "title": "Jiraiya apparaît et commence à corriger le",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Jiraiya apparaît et commence à corriger le contrôle du chakra de Naruto. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Pour ta séance, la traduction est volontairement concrète : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-09",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 23,
+      "title": "Entraînement sur l’eau et gestion plus fine du chakra.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Entraînement sur l’eau et gestion plus fine du chakra. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Le lien avec l’entraînement du jour est simple : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-10",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 24,
+      "title": "Apprentissage de l’invocation",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Apprentissage de l’invocation ; Naruto finit par appeler Gamabunta. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Aujourd’hui, ne poursuis pas le symbole : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-11",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 25,
+      "title": "Finales",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Finales : Naruto affronte Neji et refuse l’idée d’un destin figé. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-12",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 26,
+      "title": "L’offensive sur Konoha bouleverse l’examen.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "L’offensive sur Konoha bouleverse l’examen. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Pour ta séance, la traduction est volontairement concrète : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-13",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 27,
+      "title": "Naruto affronte Gaara et Shukaku.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Naruto affronte Gaara et Shukaku. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Le lien avec l’entraînement du jour est simple : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-CHŪNIN-14",
+      "stage": "CHŪNIN",
+      "chronologyIndex": 28,
+      "title": "Après la crise, Naruto est reconnu comme",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Après la crise, Naruto est reconnu comme un ninja capable de changer l’issue d’un combat. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Examen Chūnin impose de gérer l’effort, l’incertitude et la durée plutôt que de partir trop vite. Aujourd’hui, ne poursuis pas le symbole : garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "CHŪNIN"
+      ],
+      "senseiMessage": "Garde de la réserve : une séance bien dosée vaut mieux qu’un départ héroïque suivi d’un effondrement.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-01",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 29,
+      "title": "Jiraiya emmène Naruto à la recherche de Tsunade.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Jiraiya emmène Naruto à la recherche de Tsunade. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-02",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 30,
+      "title": "Rasengan",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Rasengan — première étape : faire éclater le ballon d’eau. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Pour ta séance, la traduction est volontairement concrète : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-03",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 31,
+      "title": "Rasengan",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Rasengan — deuxième étape : maîtriser la rotation dans la balle en caoutchouc. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Le lien avec l’entraînement du jour est simple : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-04",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 32,
+      "title": "Rasengan",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Rasengan — troisième étape : conserver puissance et contrôle. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Aujourd’hui, ne poursuis pas le symbole : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-05",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 33,
+      "title": "Naruto engage sa parole face à Tsunade.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Naruto engage sa parole face à Tsunade. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-06",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 34,
+      "title": "Affrontement contre Kabuto",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Affrontement contre Kabuto : le Rasengan devient une arme réellement maîtrisée. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Pour ta séance, la traduction est volontairement concrète : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-07",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 35,
+      "title": "Tsunade confie à Naruto le pendentif du Premier Hokage.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Tsunade confie à Naruto le pendentif du Premier Hokage. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Le lien avec l’entraînement du jour est simple : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-08",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 36,
+      "title": "Rivalité renouvelée avec Sasuke sur le toit",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Rivalité renouvelée avec Sasuke sur le toit de l’hôpital. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Aujourd’hui, ne poursuis pas le symbole : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-09",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 37,
+      "title": "Naruto promet à Sakura de ramener Sasuke.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto promet à Sakura de ramener Sasuke. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-10",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 38,
+      "title": "Mission de récupération de Sasuke",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Mission de récupération de Sasuke : Naruto poursuit malgré les pertes du groupe. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Pour ta séance, la traduction est volontairement concrète : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-11",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 39,
+      "title": "Vallée de la Fin",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Vallée de la Fin : Naruto échoue à ramener Sasuke mais refuse d’abandonner sa promesse. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Le lien avec l’entraînement du jour est simple : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-12",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 40,
+      "title": "Départ de Konoha pour un long voyage",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Départ de Konoha pour un long voyage d’entraînement avec Jiraiya. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Aujourd’hui, ne poursuis pas le symbole : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-13",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 41,
+      "title": "Retour à Konoha après l’ellipse",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Retour à Konoha après l’ellipse : Naruto est plus mature et plus solide. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-14",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 42,
+      "title": "Sauvetage de Gaara et reprise du combat",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Sauvetage de Gaara et reprise du combat contre l’Akatsuki. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Pour ta séance, la traduction est volontairement concrète : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-15",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 43,
+      "title": "Entraînement à l’affinité Futon avec les clones.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Entraînement à l’affinité Futon avec les clones. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Le lien avec l’entraînement du jour est simple : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-16",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 44,
+      "title": "Développement du Fûton",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Développement du Fûton : Orbe Shuriken et nouvelle compréhension du travail fractionné. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Aujourd’hui, ne poursuis pas le symbole : respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-JIRAIYA-17",
+      "stage": "JIRAIYA",
+      "chronologyIndex": 45,
+      "title": "Jiraiya poursuit seul son enquête sur Pain",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Jiraiya poursuit seul son enquête sur Pain ; son héritage devient central pour Naruto. Avec Jiraiya, Naruto apprend qu’une technique puissante se construit en étapes et par répétitions ciblées. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "JIRAIYA"
+      ],
+      "senseiMessage": "Respecte les blocs et les récupérations : chaque répétition doit préparer la suivante.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-01",
+      "stage": "SENNIN",
+      "chronologyIndex": 46,
+      "title": "Jiraiya affronte Pain et laisse derrière lui",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Jiraiya affronte Pain et laisse derrière lui un message décisif. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Pour ta séance, la traduction est volontairement concrète : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-02",
+      "stage": "SENNIN",
+      "chronologyIndex": 47,
+      "title": "Naruto aide à décoder le message de son maître.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Naruto aide à décoder le message de son maître. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Le lien avec l’entraînement du jour est simple : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-03",
+      "stage": "SENNIN",
+      "chronologyIndex": 48,
+      "title": "Départ pour le Mont Myôboku.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Départ pour le Mont Myôboku. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Aujourd’hui, ne poursuis pas le symbole : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-04",
+      "stage": "SENNIN",
+      "chronologyIndex": 49,
+      "title": "Première leçon de Fukasaku",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Première leçon de Fukasaku : apprendre à rester parfaitement immobile. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-05",
+      "stage": "SENNIN",
+      "chronologyIndex": 50,
+      "title": "Découverte de l’énergie naturelle.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Découverte de l’énergie naturelle. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Pour ta séance, la traduction est volontairement concrète : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-06",
+      "stage": "SENNIN",
+      "chronologyIndex": 51,
+      "title": "Le risque de se transformer en pierre",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Le risque de se transformer en pierre rappelle que la maîtrise prime sur la quantité. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Le lien avec l’entraînement du jour est simple : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-07",
+      "stage": "SENNIN",
+      "chronologyIndex": 52,
+      "title": "Naruto apprend à équilibrer ses propres chakras",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Naruto apprend à équilibrer ses propres chakras avec l’énergie naturelle. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Aujourd’hui, ne poursuis pas le symbole : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-08",
+      "stage": "SENNIN",
+      "chronologyIndex": 53,
+      "title": "Entraînement au Frog Kumite.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Entraînement au Frog Kumite. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-09",
+      "stage": "SENNIN",
+      "chronologyIndex": 54,
+      "title": "Naruto prépare des clones au Mont Myôboku",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Naruto prépare des clones au Mont Myôboku pour prolonger l’usage du Mode Sennin. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Pour ta séance, la traduction est volontairement concrète : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-10",
+      "stage": "SENNIN",
+      "chronologyIndex": 55,
+      "title": "Pain attaque Konoha pendant l’entraînement.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Pain attaque Konoha pendant l’entraînement. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Le lien avec l’entraînement du jour est simple : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-11",
+      "stage": "SENNIN",
+      "chronologyIndex": 56,
+      "title": "Naruto revient à Konoha en Mode Sennin.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Naruto revient à Konoha en Mode Sennin. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Aujourd’hui, ne poursuis pas le symbole : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-12",
+      "stage": "SENNIN",
+      "chronologyIndex": 57,
+      "title": "Combat contre les Six Chemins de Pain",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Combat contre les Six Chemins de Pain et usage maîtrisé du Rasen Shuriken. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-13",
+      "stage": "SENNIN",
+      "chronologyIndex": 58,
+      "title": "Le Mode Sennin s’épuise",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Le Mode Sennin s’épuise : Naruto doit gérer ses ressources et ses relais. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Pour ta séance, la traduction est volontairement concrète : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-14",
+      "stage": "SENNIN",
+      "chronologyIndex": 59,
+      "title": "Hinata intervient lorsque Naruto est immobilisé.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Hinata intervient lorsque Naruto est immobilisé. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Le lien avec l’entraînement du jour est simple : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-15",
+      "stage": "SENNIN",
+      "chronologyIndex": 60,
+      "title": "Minato apparaît dans l’espace intérieur de Naruto",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Minato apparaît dans l’espace intérieur de Naruto et révèle leur lien. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Aujourd’hui, ne poursuis pas le symbole : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-16",
+      "stage": "SENNIN",
+      "chronologyIndex": 61,
+      "title": "Naruto retrouve Nagato et choisit une autre",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto retrouve Nagato et choisit une autre réponse au cycle de haine. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-SENNIN-17",
+      "stage": "SENNIN",
+      "chronologyIndex": 62,
+      "title": "Retour à Konoha",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Retour à Konoha : Naruto est accueilli comme le héros du village. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Sennin exige équilibre et maîtrise : trop forcer détruit précisément ce que l’on cherche à contrôler. Pour ta séance, la traduction est volontairement concrète : reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "SENNIN"
+      ],
+      "senseiMessage": "Reste précis sur l’allure et économise ce qui devra encore servir sur la fin.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-01",
+      "stage": "HOKAGE",
+      "chronologyIndex": 63,
+      "title": "Naruto refuse d’abandonner Sasuke malgré les décisions",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Naruto refuse d’abandonner Sasuke malgré les décisions du sommet des Cinq Kage. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Le lien avec l’entraînement du jour est simple : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-02",
+      "stage": "HOKAGE",
+      "chronologyIndex": 64,
+      "title": "Entraînement avec Killer B pour affronter directement",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Entraînement avec Killer B pour affronter directement le pouvoir de Kyûbi. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Aujourd’hui, ne poursuis pas le symbole : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-03",
+      "stage": "HOKAGE",
+      "chronologyIndex": 65,
+      "title": "Rencontre avec Kushina et compréhension de l’histoire",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Rencontre avec Kushina et compréhension de l’histoire de sa naissance. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-04",
+      "stage": "HOKAGE",
+      "chronologyIndex": 66,
+      "title": "Acquisition du Mode Chakra de Kyûbi.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Acquisition du Mode Chakra de Kyûbi. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Pour ta séance, la traduction est volontairement concrète : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-05",
+      "stage": "HOKAGE",
+      "chronologyIndex": 67,
+      "title": "Naruto quitte l’île pour rejoindre la Quatrième",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto quitte l’île pour rejoindre la Quatrième Grande Guerre Ninja. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Le lien avec l’entraînement du jour est simple : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-06",
+      "stage": "HOKAGE",
+      "chronologyIndex": 68,
+      "title": "Affrontements contre le Raikage, Itachi et Nagato",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Affrontements contre le Raikage, Itachi et Nagato réincarnés. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Aujourd’hui, ne poursuis pas le symbole : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-07",
+      "stage": "HOKAGE",
+      "chronologyIndex": 69,
+      "title": "Naruto appelle enfin Kyûbi par son nom",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Naruto appelle enfin Kyûbi par son nom : Kurama. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-08",
+      "stage": "HOKAGE",
+      "chronologyIndex": 70,
+      "title": "Le partenariat avec Kurama permet une nouvelle",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Le partenariat avec Kurama permet une nouvelle maîtrise du chakra. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Pour ta séance, la traduction est volontairement concrète : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-09",
+      "stage": "HOKAGE",
+      "chronologyIndex": 71,
+      "title": "Naruto partage son chakra avec l’Alliance Shinobi.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Naruto partage son chakra avec l’Alliance Shinobi. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Le lien avec l’entraînement du jour est simple : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-10",
+      "stage": "HOKAGE",
+      "chronologyIndex": 72,
+      "title": "Mort de Neji et soutien de Hinata",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Mort de Neji et soutien de Hinata : continuer malgré la perte. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Aujourd’hui, ne poursuis pas le symbole : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-11",
+      "stage": "HOKAGE",
+      "chronologyIndex": 73,
+      "title": "Naruto confronte Obito sur ce que signifie",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto confronte Obito sur ce que signifie réellement devenir Hokage. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-12",
+      "stage": "HOKAGE",
+      "chronologyIndex": 74,
+      "title": "Obtention du pouvoir de Rikudô et retour au combat.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Obtention du pouvoir de Rikudô et retour au combat. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Pour ta séance, la traduction est volontairement concrète : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-13",
+      "stage": "HOKAGE",
+      "chronologyIndex": 75,
+      "title": "Réunion de l’Équipe 7 face à Kaguya.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Réunion de l’Équipe 7 face à Kaguya. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Le lien avec l’entraînement du jour est simple : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-14",
+      "stage": "HOKAGE",
+      "chronologyIndex": 76,
+      "title": "Naruto et Sasuke se retrouvent une dernière",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Naruto et Sasuke se retrouvent une dernière fois à la Vallée de la Fin. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Aujourd’hui, ne poursuis pas le symbole : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-15",
+      "stage": "HOKAGE",
+      "chronologyIndex": 77,
+      "title": "Le signe de réconciliation met fin à leur conflit.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Le signe de réconciliation met fin à leur conflit. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-HOKAGE-16",
+      "stage": "HOKAGE",
+      "chronologyIndex": 78,
+      "title": "Naruto réalise enfin son rêve et devient",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Naruto réalise enfin son rêve et devient le Septième Hokage. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Devenir Hokage est l’aboutissement de milliers d’efforts ordinaires accumulés sur des années. Pour ta séance, la traduction est volontairement concrète : aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "HOKAGE"
+      ],
+      "senseiMessage": "Aujourd’hui, exécute le plan ; le symbole viendra après la distance.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-01",
+      "stage": "BARYON",
+      "chronologyIndex": 79,
+      "title": "Naruto assume désormais quotidiennement la charge du",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto assume désormais quotidiennement la charge du Septième Hokage. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Le lien avec l’entraînement du jour est simple : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-02",
+      "stage": "BARYON",
+      "chronologyIndex": 80,
+      "title": "Boruto vit difficilement dans l’ombre d’un père",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Boruto vit difficilement dans l’ombre d’un père devenu symbole du village. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Aujourd’hui, ne poursuis pas le symbole : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-03",
+      "stage": "BARYON",
+      "chronologyIndex": 81,
+      "title": "Nouvel Examen Chūnin",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Nouvel Examen Chūnin : Naruto observe la génération suivante. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-04",
+      "stage": "BARYON",
+      "chronologyIndex": 82,
+      "title": "Momoshiki et Kinshiki attaquent Konoha.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Momoshiki et Kinshiki attaquent Konoha. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Pour ta séance, la traduction est volontairement concrète : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-05",
+      "stage": "BARYON",
+      "chronologyIndex": 83,
+      "title": "Naruto protège le village puis combat aux",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Naruto protège le village puis combat aux côtés de Sasuke et Boruto. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Le lien avec l’entraînement du jour est simple : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-06",
+      "stage": "BARYON",
+      "chronologyIndex": 84,
+      "title": "Kawaki arrive à Konoha et Naruto choisit",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Kawaki arrive à Konoha et Naruto choisit de l’accueillir. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Aujourd’hui, ne poursuis pas le symbole : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-07",
+      "stage": "BARYON",
+      "chronologyIndex": 85,
+      "title": "Naruto transmet à Kawaki une expérience qu’il",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto transmet à Kawaki une expérience qu’il n’avait lui-même jamais reçue enfant. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-08",
+      "stage": "BARYON",
+      "chronologyIndex": 86,
+      "title": "La marque Karma devient une menace centrale.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "La marque Karma devient une menace centrale. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Pour ta séance, la traduction est volontairement concrète : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-09",
+      "stage": "BARYON",
+      "chronologyIndex": 87,
+      "title": "Jigen révèle une puissance qui dépasse les",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Jigen révèle une puissance qui dépasse les cadres habituels. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Le lien avec l’entraînement du jour est simple : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-10",
+      "stage": "BARYON",
+      "chronologyIndex": 88,
+      "title": "Naruto et Sasuke affrontent Jigen et mesurent",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Naruto et Sasuke affrontent Jigen et mesurent l’écart à combler. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Aujourd’hui, ne poursuis pas le symbole : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-11",
+      "stage": "BARYON",
+      "chronologyIndex": 89,
+      "title": "Isshiki Ôtsutsuki force Naruto à envisager un",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Isshiki Ôtsutsuki force Naruto à envisager un dernier recours. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-12",
+      "stage": "BARYON",
+      "chronologyIndex": 90,
+      "title": "Kurama présente une méthode qui transforme complètement",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Kurama présente une méthode qui transforme complètement l’utilisation de leur énergie. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Pour ta séance, la traduction est volontairement concrète : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-13",
+      "stage": "BARYON",
+      "chronologyIndex": 91,
+      "title": "Naruto accepte le prix potentiel du Mode Baryon.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Naruto accepte le prix potentiel du Mode Baryon. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Le lien avec l’entraînement du jour est simple : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-14",
+      "stage": "BARYON",
+      "chronologyIndex": 92,
+      "title": "Le Mode Baryon repose sur la fusion",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le Mode Baryon repose sur la fusion des chakras de Naruto et Kurama. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Aujourd’hui, ne poursuis pas le symbole : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-15",
+      "stage": "BARYON",
+      "chronologyIndex": 93,
+      "title": "Chaque échange avec Isshiki devient une bataille",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Chaque échange avec Isshiki devient une bataille contre le temps. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-16",
+      "stage": "BARYON",
+      "chronologyIndex": 94,
+      "title": "Le combat contre Isshiki atteint son point de rupture.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Le combat contre Isshiki atteint son point de rupture. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Pour ta séance, la traduction est volontairement concrète : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-17",
+      "stage": "BARYON",
+      "chronologyIndex": 95,
+      "title": "Naruto découvre que Kurama a assumé seul le prix final.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Naruto découvre que Kurama a assumé seul le prix final. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Le lien avec l’entraînement du jour est simple : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "NAR-BARYON-18",
+      "stage": "BARYON",
+      "chronologyIndex": 96,
+      "title": "La disparition de Kurama clôt une époque",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "La disparition de Kurama clôt une époque entière de la vie de Naruto. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Mode Baryon représente une puissance immense mais limitée par le temps : parfait rappel que le marathon se gagne par gestion. Aujourd’hui, ne poursuis pas le symbole : économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "BARYON"
+      ],
+      "senseiMessage": "Économise ton énergie, alimente l’effort et garde le contrôle assez longtemps pour atteindre la fin.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "NARUTO-INT-01",
+      "title": "Le prochain pas",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Le prochain pas : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-02",
+      "title": "Conserver son chakra",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Conserver son chakra : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-03",
+      "title": "Le chemin du ninja",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Le chemin du ninja : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-04",
+      "title": "Courir facile pour courir loin",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Courir facile pour courir loin : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-05",
+      "title": "Le souffle régulier",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Le souffle régulier : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-06",
+      "title": "Le long chemin vers Konoha",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le long chemin vers Konoha : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-07",
+      "title": "Maîtriser l’allure",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Maîtriser l’allure : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-08",
+      "title": "Une mission sans précipitation",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Une mission sans précipitation : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-09",
+      "title": "Le relais de Jiraiya",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Le relais de Jiraiya : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-10",
+      "title": "Accumuler sans gaspiller",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Accumuler sans gaspiller : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-11",
+      "title": "Rester dans le plan",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Rester dans le plan : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "NARUTO-INT-12",
+      "title": "Préparer le prochain combat",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Préparer le prochain combat : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Le parcours de Naruto transforme l’endurance en succession de petites preuves, jamais en raccourci. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "references": [
+        "Naruto Uzumaki",
+        "Konoha",
+        "Interlude"
+      ],
+      "senseiMessage": "Aujourd’hui, avance au rythme qui te permet encore de construire demain.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    }
+  ]
+}

@@ -1,0 +1,1457 @@
+{
+  "program": "luffy",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "noPlaceholderAllowed": true,
+    "dynamicSchedulingRule": "Narration chronologique; prolongations utilisent interludes."
+  },
+  "sourceNotes": [
+    "Sources narratives prioritaires : ONE PIECE.com official story/anime pages.",
+    "Textes Budokai originaux."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "LUF-N001",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 1,
+      "title": "Shanks à Fuchsia",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Luffy enfant rencontre Shanks et découvre une liberté qui deviendra son modèle. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Shanks à Fuchsia"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N002",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 2,
+      "title": "Le fruit",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Luffy mange par accident le fruit qui transforme son corps. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Le fruit"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N003",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 3,
+      "title": "Le chapeau de paille",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Shanks confie son chapeau à Luffy et lui demande de le rendre lorsqu'il sera devenu un grand pirate. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Le chapeau de paille"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N004",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 4,
+      "title": "Dix ans plus tard",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Luffy quitte seul Fuchsia pour devenir Roi des Pirates. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Dix ans plus tard"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N005",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 5,
+      "title": "Coby",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Luffy rencontre Coby et lui montre qu'un rêve exige parfois de quitter la position confortable. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Coby"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N006",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 6,
+      "title": "Zoro",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "À Shells Town, Luffy décide de recruter Zoro. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Zoro"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N007",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 7,
+      "title": "Nami",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Nami rejoint provisoirement le groupe tandis que leurs trajectoires commencent à se lier. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Nami"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N008",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 8,
+      "title": "Usopp",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "À Syrup Village, Luffy rencontre Usopp et défend le village contre Kuro. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Usopp"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N009",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 9,
+      "title": "Going Merry",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Le premier vrai navire donne au groupe un espace commun. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Going Merry"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N010",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 10,
+      "title": "Sanji",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Baratie ajoute Sanji à l'équipage. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Sanji"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N011",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 11,
+      "title": "Arlong Park",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Luffy choisit de répondre à l'appel de Nami. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Arlong Park"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N012",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 12,
+      "title": "Loguetown",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Le groupe atteint la ville du commencement et de la fin. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Loguetown"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N013",
+      "stage": "EASTBLUE",
+      "chronologyIndex": 13,
+      "title": "Grand Line",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Chaque membre affirme son rêve avant l'entrée dans Grand Line. La mobilité commence par découvrir l'amplitude réellement disponible sans la forcer. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Respire dans la position et reste loin de la douleur.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Grand Line"
+      ],
+      "senseiMessage": "Respire dans la position et reste loin de la douleur.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N014",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 14,
+      "title": "Reverse Mountain",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "La Grand Line commence par une route qui refuse déjà les habitudes du monde ordinaire. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Reverse Mountain"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N015",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 15,
+      "title": "Laboon",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Luffy transforme une rencontre impossible en promesse future. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Laboon"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N016",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 16,
+      "title": "Whisky Peak",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "L'équipage découvre que les apparences de la Grand Line sont trompeuses. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Whisky Peak"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N017",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 17,
+      "title": "Vivi",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "La mission d'Alabasta se construit autour de Vivi. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Vivi"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N018",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 18,
+      "title": "Little Garden",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Les géants montrent à Luffy une autre échelle de temps et de combat. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Little Garden"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N019",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 19,
+      "title": "Drum",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "La traversée vers Drum met l'endurance du groupe à l'épreuve. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Drum"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N020",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 20,
+      "title": "Chopper",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Chopper rejoint l'équipage. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Chopper"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N021",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 21,
+      "title": "Alabasta",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Luffy affronte Crocodile et apprend que perdre plusieurs fois ne condamne pas le résultat final. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Alabasta"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N022",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 22,
+      "title": "Skypiea",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "La route vers le ciel élargit littéralement l'espace de l'aventure. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Skypiea"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N023",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 23,
+      "title": "Enel",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Le corps élastique de Luffy devient une réponse inattendue à la foudre. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Enel"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N024",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 24,
+      "title": "Retour sur la mer bleue",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "L'équipage revient avec un niveau de confiance différent. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Retour sur la mer bleue"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N025",
+      "stage": "GRANDLINE",
+      "chronologyIndex": 25,
+      "title": "Long Ring Long Land",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Le voyage continue avec des défis moins linéaires que les grands combats. Chaque nouvelle zone demande une amplitude un peu plus grande, mais toujours contrôlée. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Augmente le ROM seulement si tu peux conserver la position.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Long Ring Long Land"
+      ],
+      "senseiMessage": "Augmente le ROM seulement si tu peux conserver la position.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N026",
+      "stage": "ENIES",
+      "chronologyIndex": 26,
+      "title": "Water 7",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "La crise du Merry et le départ de Robin fracturent l'équipage. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Water 7"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N027",
+      "stage": "ENIES",
+      "chronologyIndex": 27,
+      "title": "Franky",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Un adversaire devient progressivement allié. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Franky"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N028",
+      "stage": "ENIES",
+      "chronologyIndex": 28,
+      "title": "Robin",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Luffy refuse que Robin considère sa disparition comme la solution. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Robin"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N029",
+      "stage": "ENIES",
+      "chronologyIndex": 29,
+      "title": "Enies Lobby",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "L'équipage déclare la guerre au Gouvernement mondial pour la récupérer. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Enies Lobby"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N030",
+      "stage": "ENIES",
+      "chronologyIndex": 30,
+      "title": "Gear 2",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Luffy développe une transformation qui change son rythme de combat. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Gear 2"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N031",
+      "stage": "ENIES",
+      "chronologyIndex": 31,
+      "title": "Gear 3",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Une autre transformation modifie cette fois l'échelle de ses attaques. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Gear 3"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N032",
+      "stage": "ENIES",
+      "chronologyIndex": 32,
+      "title": "Lucci",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Face à Lucci, Luffy doit conserver assez longtemps ses nouvelles capacités. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Lucci"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N033",
+      "stage": "ENIES",
+      "chronologyIndex": 33,
+      "title": "Going Merry revient",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Le Merry sauve une dernière fois l'équipage. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Going Merry revient"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N034",
+      "stage": "ENIES",
+      "chronologyIndex": 34,
+      "title": "Adieu au Merry",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "La fin du navire rappelle qu'une structure peut avoir une limite même lorsqu'elle a porté très loin. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Adieu au Merry"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N035",
+      "stage": "ENIES",
+      "chronologyIndex": 35,
+      "title": "Thousand Sunny",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Franky construit un nouveau navire pour la suite du voyage. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Thousand Sunny"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N036",
+      "stage": "ENIES",
+      "chronologyIndex": 36,
+      "title": "Brook",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Thriller Bark ajoute Brook à l'équipage. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Brook"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N037",
+      "stage": "ENIES",
+      "chronologyIndex": 37,
+      "title": "Kuma",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Sabaody révèle brutalement l'écart entre l'équipage et le niveau du Nouveau Monde. Les gains passifs doivent maintenant devenir actifs. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Kuma"
+      ],
+      "senseiMessage": "Utilise tes muscles pour entrer et sortir de l'amplitude, pas seulement la gravité.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N038",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 38,
+      "title": "Séparation",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Kuma disperse l'équipage et force chacun à progresser séparément. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Séparation"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N039",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 39,
+      "title": "Marineford",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Luffy traverse Impel Down et Marineford pour tenter de sauver Ace. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Marineford"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N040",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 40,
+      "title": "Ace",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "La perte d'Ace transforme la manière dont Luffy envisage la suite. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Ace"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N041",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 41,
+      "title": "3D2Y",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Luffy accepte de différer le voyage pour devenir réellement prêt. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "3D2Y"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N042",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 42,
+      "title": "Rayleigh",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Deux années d'entraînement structurent les bases du Haki. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Rayleigh"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N043",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 43,
+      "title": "Retour à Sabaody",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "L'équipage se reforme avec des capacités nouvelles. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Retour à Sabaody"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N044",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 44,
+      "title": "Fish-Man Island",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Le Nouveau Monde commence avec un équipage plus solide. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Fish-Man Island"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N045",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 45,
+      "title": "Punk Hazard",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "L'alliance avec Law ouvre une stratégie à plus long terme. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Punk Hazard"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N046",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 46,
+      "title": "Dressrosa",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Doflamingo devient le premier grand obstacle du plan. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Dressrosa"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N047",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 47,
+      "title": "Gear 4",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Luffy révèle une forme qui combine puissance, Haki et élasticité. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Gear 4"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N048",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 48,
+      "title": "Boundman",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "La mobilité de Gear 4 est différente de tout ce qu'il utilisait auparavant. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Boundman"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N049",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 49,
+      "title": "Whole Cake Island",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "La mission de récupération de Sanji met le corps et la volonté de Luffy à rude épreuve. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Whole Cake Island"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N050",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 50,
+      "title": "Katakuri",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Le combat pousse Luffy à améliorer son observation et sa capacité d'adaptation. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Katakuri"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N051",
+      "stage": "NEWWORLD",
+      "chronologyIndex": 51,
+      "title": "Vers Wano",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "L'équipage rejoint enfin la guerre préparée contre Kaido. Le mouvement devient intégré entre plusieurs articulations. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Vers Wano"
+      ],
+      "senseiMessage": "Ne gagne pas de mobilité à un endroit en compensant ailleurs.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N052",
+      "stage": "WANO",
+      "chronologyIndex": 52,
+      "title": "Wano",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Luffy entre dans un pays fermé où les conséquences du règne de Kaido sont visibles partout. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Wano"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N053",
+      "stage": "WANO",
+      "chronologyIndex": 53,
+      "title": "Kaido",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Le premier affrontement montre immédiatement l'écart restant. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Kaido"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N054",
+      "stage": "WANO",
+      "chronologyIndex": 54,
+      "title": "Udon",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Luffy transforme son emprisonnement en phase d'entraînement. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Udon"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N055",
+      "stage": "WANO",
+      "chronologyIndex": 55,
+      "title": "Ryuo",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Le travail du Haki avancé devient une nouvelle manière d'utiliser une force existante. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Ryuo"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N056",
+      "stage": "WANO",
+      "chronologyIndex": 56,
+      "title": "Onigashima",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "La bataille finale rassemble plusieurs générations et plusieurs équipages. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Onigashima"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N057",
+      "stage": "WANO",
+      "chronologyIndex": 57,
+      "title": "Roof Piece",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Luffy combat Kaido au sommet avec les autres Supernova. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Roof Piece"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N058",
+      "stage": "WANO",
+      "chronologyIndex": 58,
+      "title": "Conqueror coating",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Une nouvelle utilisation du Haki réduit encore l'écart. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Conqueror coating"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N059",
+      "stage": "WANO",
+      "chronologyIndex": 59,
+      "title": "Défaite",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Luffy tombe encore, mais la bataille n'est pas terminée. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Défaite"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N060",
+      "stage": "WANO",
+      "chronologyIndex": 60,
+      "title": "Le battement",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Un rythme inattendu marque son retour. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Le battement"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N061",
+      "stage": "WANO",
+      "chronologyIndex": 61,
+      "title": "Gear 5",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Luffy atteint ce que l'anime officiel décrit comme son plus haut niveau. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Gear 5"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N062",
+      "stage": "WANO",
+      "chronologyIndex": 62,
+      "title": "Nika",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Le nouveau pouvoir donne au mouvement une liberté presque absurde. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Nika"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N063",
+      "stage": "WANO",
+      "chronologyIndex": 63,
+      "title": "Kaido final",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "La liberté du mouvement reste orientée vers un but concret : terminer le combat. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Kaido final"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N064",
+      "stage": "WANO",
+      "chronologyIndex": 64,
+      "title": "Aube de Wano",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "La victoire ouvre enfin le pays à un nouvel avenir. La liberté du mouvement vient d'une amplitude que le corps peut réellement contrôler. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Cherche la facilité, pas l'extrême.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Aube de Wano"
+      ],
+      "senseiMessage": "Cherche la facilité, pas l'extrême.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N065",
+      "stage": "BOSS",
+      "chronologyIndex": 65,
+      "title": "Freedom of Movement",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Le boss Budokai mesure cinq familles d'amplitude et de contrôle plutôt qu'une flexibilité spectaculaire unique. Le test ne demande pas d'être le plus flexible : il demande cinq fonctions suffisamment disponibles. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Reste dans ton protocole et compare avec ta propre baseline.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Freedom of Movement"
+      ],
+      "senseiMessage": "Reste dans ton protocole et compare avec ta propre baseline.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N066",
+      "stage": "SPLUS",
+      "chronologyIndex": 66,
+      "title": "Nika Rhythm",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Gear 5 S+ cherche la liberté de mouvement sans perdre le contrôle actif. Gear 5 représente la liberté, pas l'absence de contrôle. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Fais de l'amplitude une capacité active.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Nika Rhythm"
+      ],
+      "senseiMessage": "Fais de l'amplitude une capacité active.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N067",
+      "stage": "SPLUS",
+      "chronologyIndex": 67,
+      "title": "Active Range",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Une amplitude gagnée passivement doit maintenant pouvoir être utilisée activement. Gear 5 représente la liberté, pas l'absence de contrôle. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Fais de l'amplitude une capacité active.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Active Range"
+      ],
+      "senseiMessage": "Fais de l'amplitude une capacité active.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N068",
+      "stage": "SPLUS",
+      "chronologyIndex": 68,
+      "title": "Five Families",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Le standard final exige que les cinq familles deviennent fonctionnelles. Gear 5 représente la liberté, pas l'absence de contrôle. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Fais de l'amplitude une capacité active.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Five Families"
+      ],
+      "senseiMessage": "Fais de l'amplitude une capacité active.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N069",
+      "stage": "SPLUS",
+      "chronologyIndex": 69,
+      "title": "Integrated Flow",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Les mouvements s'enchaînent sans compensation ni recherche de douleur. Gear 5 représente la liberté, pas l'absence de contrôle. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Fais de l'amplitude une capacité active.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Integrated Flow"
+      ],
+      "senseiMessage": "Fais de l'amplitude une capacité active.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "LUF-N070",
+      "stage": "SPLUS",
+      "chronologyIndex": 70,
+      "title": "Gear 5 Boss",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Le dernier test célèbre une mobilité disponible, contrôlée et adaptable. Gear 5 représente la liberté, pas l'absence de contrôle. Budokai utilise ce passage comme métaphore de liberté de mouvement sans prétendre reproduire l'élasticité fictive de Luffy. Fais de l'amplitude une capacité active.",
+      "references": [
+        "Monkey D. Luffy",
+        "Straw Hat Pirates",
+        "Gear 5 Boss"
+      ],
+      "senseiMessage": "Fais de l'amplitude une capacité active.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "LUF-INT-01",
+      "title": "Respirer dans l'amplitude",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Respirer dans l'amplitude. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-02",
+      "title": "Cheville disponible",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Cheville disponible. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-03",
+      "title": "Hanche libre",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Hanche libre. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-04",
+      "title": "Épaule sans compensation",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Épaule sans compensation. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-05",
+      "title": "Rotation calme",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Rotation calme. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-06",
+      "title": "Le côté limité",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Le côté limité. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-07",
+      "title": "Jour de reset",
+      "openingMessage": "Ne pousse pas plus loin que ce que tu peux contrôler.",
+      "storyRecap": "Jour de reset. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Amplitude enregistrée. Reviens demain avec moins de tension inutile.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-08",
+      "title": "Amplitude active",
+      "openingMessage": "Aujourd'hui, la meilleure position est celle dont tu peux ressortir proprement.",
+      "storyRecap": "Amplitude active. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Tu peux t'arrêter ici. La mobilité se construit mieux sans douleur.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-09",
+      "title": "Ne pas forcer",
+      "openingMessage": "Mobilité ne veut pas dire relâcher tout contrôle.",
+      "storyRecap": "Ne pas forcer. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Le mouvement est plus libre aujourd'hui ; laisse-le devenir familier.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-10",
+      "title": "Dix minutes utiles",
+      "openingMessage": "Va lentement : le progrès se mesure en amplitude utile.",
+      "storyRecap": "Dix minutes utiles. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Séance terminée. Garde cette amplitude disponible sans la retester immédiatement.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-11",
+      "title": "Conserver le ROM",
+      "openingMessage": "Aucune douleur à gagner aujourd'hui. Cherche de l'espace, pas de la contrainte.",
+      "storyRecap": "Conserver le ROM. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "C'est fait. Le ROM gagné aujourd'hui doit maintenant être récupéré et consolidé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "LUF-INT-12",
+      "title": "Liberté contrôlée",
+      "openingMessage": "Respire et laisse l'amplitude venir progressivement.",
+      "storyRecap": "Liberté contrôlée. Cet interlude accompagne une semaine prolongée, une décharge ou une famille en retard sans inventer un nouvel événement canonique. Le principe reste simple : gagner une amplitude que le corps sait réellement utiliser.",
+      "references": [
+        "Luffy",
+        "mobilité",
+        "Grand Line"
+      ],
+      "senseiMessage": "Ne collectionne pas des degrés d'amplitude. Construis des positions utilisables.",
+      "closingMessage": "Fin de séance : aucune nécessité de forcer davantage.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    }
+  ]
+}

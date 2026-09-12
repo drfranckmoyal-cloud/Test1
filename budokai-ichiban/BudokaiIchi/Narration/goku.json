@@ -1,0 +1,2055 @@
+{
+  "program": "goku",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "fieldsRequired": [
+      "title",
+      "openingMessage",
+      "storyRecap",
+      "references",
+      "senseiMessage",
+      "closingMessage"
+    ],
+    "noPlaceholderAllowed": true,
+    "canonicalQuoteOptional": true,
+    "canonicalQuoteRule": "null par défaut ; n’ajouter qu’après vérification éditoriale",
+    "dynamicSchedulingRule": "Consommer la banque principale dans l’ordre chronologique. Pour toute séance supplémentaire générée par consolidation/deload/prolongation, utiliser les interludes en rotation sans avancer artificiellement la chronologie canonique."
+  },
+  "sourceNotes": [
+    "Contrôle éditorial : DRAGON BALL OFFICIAL SITE, pages Kaio/Bubbles, entraînement gravité, Ultra Instinct/Jiren.",
+    "Les textes de motivation sont originaux Budokai."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "GOK-N001",
+      "stage": "Tortue",
+      "chronologyIndex": 1,
+      "title": "Goku rencontre Bulma et quitte le Mont Paozu.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Goku rencontre Bulma et quitte le Mont Paozu. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N002",
+      "stage": "Tortue",
+      "chronologyIndex": 2,
+      "title": "Première quête des Dragon Balls.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Première quête des Dragon Balls. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Pour ta séance, la traduction est volontairement concrète : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N003",
+      "stage": "Tortue",
+      "chronologyIndex": 3,
+      "title": "Rencontre avec Oolong.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Rencontre avec Oolong. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Le lien avec l’entraînement du jour est simple : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N004",
+      "stage": "Tortue",
+      "chronologyIndex": 4,
+      "title": "Première rencontre avec Yamcha.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Première rencontre avec Yamcha. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Aujourd’hui, ne poursuis pas le symbole : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N005",
+      "stage": "Tortue",
+      "chronologyIndex": 5,
+      "title": "Kame House et Tortue Géniale.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Kame House et Tortue Géniale. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N006",
+      "stage": "Tortue",
+      "chronologyIndex": 6,
+      "title": "Goku rencontre Krillin.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Goku rencontre Krillin. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Pour ta séance, la traduction est volontairement concrète : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N007",
+      "stage": "Tortue",
+      "chronologyIndex": 7,
+      "title": "Livraison de lait avec carapace.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Livraison de lait avec carapace. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Le lien avec l’entraînement du jour est simple : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N008",
+      "stage": "Tortue",
+      "chronologyIndex": 8,
+      "title": "Travaux agricoles et tâches physiques.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Travaux agricoles et tâches physiques. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Aujourd’hui, ne poursuis pas le symbole : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N009",
+      "stage": "Tortue",
+      "chronologyIndex": 9,
+      "title": "Recherche de la pierre marquée.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Recherche de la pierre marquée. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N010",
+      "stage": "Tortue",
+      "chronologyIndex": 10,
+      "title": "Retrait des carapaces avant le Tenkaichi Budokai.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Retrait des carapaces avant le Tenkaichi Budokai. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Pour ta séance, la traduction est volontairement concrète : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N011",
+      "stage": "Tortue",
+      "chronologyIndex": 11,
+      "title": "21e Tenkaichi Budokai.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "21e Tenkaichi Budokai. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Le lien avec l’entraînement du jour est simple : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N012",
+      "stage": "Tortue",
+      "chronologyIndex": 12,
+      "title": "Jackie Chun empêche Goku de croire qu’il",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Jackie Chun empêche Goku de croire qu’il n’a plus rien à apprendre. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’école de Tortue Géniale transforme des tâches simples en fondation physique durable. Aujourd’hui, ne poursuis pas le symbole : travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Tortue"
+      ],
+      "senseiMessage": "Travaille proprement : le niveau suivant se gagne par la maîtrise des bases.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N013",
+      "stage": "Kaio",
+      "chronologyIndex": 13,
+      "title": "Combat contre Raditz.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Combat contre Raditz. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N014",
+      "stage": "Kaio",
+      "chronologyIndex": 14,
+      "title": "Mort de Goku et départ sur la Route du Serpent.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Mort de Goku et départ sur la Route du Serpent. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Pour ta séance, la traduction est volontairement concrète : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N015",
+      "stage": "Kaio",
+      "chronologyIndex": 15,
+      "title": "Arrivée sur la planète de Kaio.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Arrivée sur la planète de Kaio. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Le lien avec l’entraînement du jour est simple : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N016",
+      "stage": "Kaio",
+      "chronologyIndex": 16,
+      "title": "Gravité 10G.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Gravité 10G. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Aujourd’hui, ne poursuis pas le symbole : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N017",
+      "stage": "Kaio",
+      "chronologyIndex": 17,
+      "title": "Attraper Bubbles.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Attraper Bubbles. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N018",
+      "stage": "Kaio",
+      "chronologyIndex": 18,
+      "title": "Frapper Gregory.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Frapper Gregory. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Pour ta séance, la traduction est volontairement concrète : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N019",
+      "stage": "Kaio",
+      "chronologyIndex": 19,
+      "title": "Apprentissage du Kaio-ken.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Apprentissage du Kaio-ken. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Le lien avec l’entraînement du jour est simple : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N020",
+      "stage": "Kaio",
+      "chronologyIndex": 20,
+      "title": "Apprentissage du Genki-dama.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Apprentissage du Genki-dama. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Aujourd’hui, ne poursuis pas le symbole : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N021",
+      "stage": "Kaio",
+      "chronologyIndex": 21,
+      "title": "Retour sur Terre.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Retour sur Terre. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N022",
+      "stage": "Kaio",
+      "chronologyIndex": 22,
+      "title": "Combat contre Nappa.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Combat contre Nappa. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Pour ta séance, la traduction est volontairement concrète : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N023",
+      "stage": "Kaio",
+      "chronologyIndex": 23,
+      "title": "Goku utilise le Kaio-ken contre Vegeta.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Goku utilise le Kaio-ken contre Vegeta. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Le lien avec l’entraînement du jour est simple : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N024",
+      "stage": "Kaio",
+      "chronologyIndex": 24,
+      "title": "Kaio-ken multiple",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Kaio-ken multiple : puissance contre coût énergétique. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Chez Kaio, la gravité rend chaque mouvement plus exigeant et oblige Goku à s’adapter progressivement. Aujourd’hui, ne poursuis pas le symbole : ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Kaio"
+      ],
+      "senseiMessage": "Ne combats pas la charge : organise ton mouvement pour la dominer.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N025",
+      "stage": "Namek",
+      "chronologyIndex": 25,
+      "title": "Départ vers Namek.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Départ vers Namek. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N026",
+      "stage": "Namek",
+      "chronologyIndex": 26,
+      "title": "Dr Brief équipe le vaisseau d’un système de gravité.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Dr Brief équipe le vaisseau d’un système de gravité. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Pour ta séance, la traduction est volontairement concrète : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N027",
+      "stage": "Namek",
+      "chronologyIndex": 27,
+      "title": "Entraînement progressif en gravité élevée pendant le",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Entraînement progressif en gravité élevée pendant le voyage. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Le lien avec l’entraînement du jour est simple : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N028",
+      "stage": "Namek",
+      "chronologyIndex": 28,
+      "title": "Goku utilise les senzu pour récupérer entre",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Goku utilise les senzu pour récupérer entre phases extrêmes dans l’œuvre. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Aujourd’hui, ne poursuis pas le symbole : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N029",
+      "stage": "Namek",
+      "chronologyIndex": 29,
+      "title": "Arrivée sur Namek.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Arrivée sur Namek. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N030",
+      "stage": "Namek",
+      "chronologyIndex": 30,
+      "title": "Goku dépasse le commando Ginyu.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Goku dépasse le commando Ginyu. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Pour ta séance, la traduction est volontairement concrète : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N031",
+      "stage": "Namek",
+      "chronologyIndex": 31,
+      "title": "Corps échangé avec Ginyu.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Corps échangé avec Ginyu. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Le lien avec l’entraînement du jour est simple : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N032",
+      "stage": "Namek",
+      "chronologyIndex": 32,
+      "title": "Récupération en cuve médicale.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Récupération en cuve médicale. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Aujourd’hui, ne poursuis pas le symbole : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N033",
+      "stage": "Namek",
+      "chronologyIndex": 33,
+      "title": "Combat contre Freezer.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Combat contre Freezer. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N034",
+      "stage": "Namek",
+      "chronologyIndex": 34,
+      "title": "Mort de Krillin.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Mort de Krillin. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Pour ta séance, la traduction est volontairement concrète : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N035",
+      "stage": "Namek",
+      "chronologyIndex": 35,
+      "title": "Première transformation Super Saiyan.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Première transformation Super Saiyan. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Le lien avec l’entraînement du jour est simple : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N036",
+      "stage": "Namek",
+      "chronologyIndex": 36,
+      "title": "Goku contre Freezer à pleine puissance.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Goku contre Freezer à pleine puissance. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le voyage vers Namek associe surcharge, récupération et adaptation jusqu’à changer complètement le niveau de Goku. Aujourd’hui, ne poursuis pas le symbole : augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Namek"
+      ],
+      "senseiMessage": "Augmente seulement ce que ta technique et ton RIR autorisent aujourd’hui.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N037",
+      "stage": "Salle",
+      "chronologyIndex": 37,
+      "title": "Retour de Goku après Yardrat.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Retour de Goku après Yardrat. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N038",
+      "stage": "Salle",
+      "chronologyIndex": 38,
+      "title": "Téléportation instantanée.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Téléportation instantanée. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Pour ta séance, la traduction est volontairement concrète : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N039",
+      "stage": "Salle",
+      "chronologyIndex": 39,
+      "title": "Apparition des Cyborgs.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Apparition des Cyborgs. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Le lien avec l’entraînement du jour est simple : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N040",
+      "stage": "Salle",
+      "chronologyIndex": 40,
+      "title": "Maladie cardiaque de Goku.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Maladie cardiaque de Goku. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Aujourd’hui, ne poursuis pas le symbole : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N041",
+      "stage": "Salle",
+      "chronologyIndex": 41,
+      "title": "Cell devient la menace centrale.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Cell devient la menace centrale. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N042",
+      "stage": "Salle",
+      "chronologyIndex": 42,
+      "title": "Goku et Gohan entrent dans la Salle",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Goku et Gohan entrent dans la Salle de l’Esprit et du Temps. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Pour ta séance, la traduction est volontairement concrète : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N043",
+      "stage": "Salle",
+      "chronologyIndex": 43,
+      "title": "Gravité et environnement extrêmes de la Salle.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Gravité et environnement extrêmes de la Salle. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Le lien avec l’entraînement du jour est simple : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N044",
+      "stage": "Salle",
+      "chronologyIndex": 44,
+      "title": "Goku comprend qu’il ne suffit pas de",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Goku comprend qu’il ne suffit pas de forcer constamment la transformation. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Aujourd’hui, ne poursuis pas le symbole : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N045",
+      "stage": "Salle",
+      "chronologyIndex": 45,
+      "title": "Maîtrise du Super Saiyan “Full Power”.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Maîtrise du Super Saiyan “Full Power”. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N046",
+      "stage": "Salle",
+      "chronologyIndex": 46,
+      "title": "Goku et Gohan sortent volontairement avant d’utiliser",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Goku et Gohan sortent volontairement avant d’utiliser tout le temps disponible. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Pour ta séance, la traduction est volontairement concrète : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N047",
+      "stage": "Salle",
+      "chronologyIndex": 47,
+      "title": "Cell Games.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Cell Games. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Le lien avec l’entraînement du jour est simple : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N048",
+      "stage": "Salle",
+      "chronologyIndex": 48,
+      "title": "Goku transmet le relais à Gohan.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Goku transmet le relais à Gohan. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Dans la Salle de l’Esprit et du Temps, Goku comprend que progresser ne signifie pas rester constamment au maximum. Aujourd’hui, ne poursuis pas le symbole : maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Salle"
+      ],
+      "senseiMessage": "Maîtrise la variante et le tempo avant d’ajouter davantage de charge.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N049",
+      "stage": "SSJ2",
+      "chronologyIndex": 49,
+      "title": "Sept années d’entraînement dans l’Au-delà.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Sept années d’entraînement dans l’Au-delà. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N050",
+      "stage": "SSJ2",
+      "chronologyIndex": 50,
+      "title": "Retour de Goku pour le tournoi.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Retour de Goku pour le tournoi. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Pour ta séance, la traduction est volontairement concrète : chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N051",
+      "stage": "SSJ2",
+      "chronologyIndex": 51,
+      "title": "Goku dévoile Super Saiyan 2 face à Vegeta.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Goku dévoile Super Saiyan 2 face à Vegeta. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Le lien avec l’entraînement du jour est simple : chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N052",
+      "stage": "SSJ2",
+      "chronologyIndex": 52,
+      "title": "Rivalité Goku/Vegeta.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Rivalité Goku/Vegeta. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Aujourd’hui, ne poursuis pas le symbole : chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N053",
+      "stage": "SSJ2",
+      "chronologyIndex": 53,
+      "title": "Majin Vegeta.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Majin Vegeta. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N054",
+      "stage": "SSJ2",
+      "chronologyIndex": 54,
+      "title": "Goku garde encore une transformation en réserve.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Goku garde encore une transformation en réserve. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Pour ta séance, la traduction est volontairement concrète : chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N055",
+      "stage": "SSJ2",
+      "chronologyIndex": 55,
+      "title": "Buu se libère.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Buu se libère. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Le lien avec l’entraînement du jour est simple : chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N056",
+      "stage": "SSJ2",
+      "chronologyIndex": 56,
+      "title": "Goku adapte son niveau à la menace.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Goku adapte son niveau à la menace. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. À ce stade, la puissance devient plus spécifique : moins de répétitions, plus de qualité et davantage de récupération. Aujourd’hui, ne poursuis pas le symbole : chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ2"
+      ],
+      "senseiMessage": "Chaque série lourde doit rester nette ; garde une répétition propre en réserve.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N057",
+      "stage": "SSJ3",
+      "chronologyIndex": 57,
+      "title": "Première apparition du Super Saiyan 3 face à Buu.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Première apparition du Super Saiyan 3 face à Buu. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N058",
+      "stage": "SSJ3",
+      "chronologyIndex": 58,
+      "title": "Transformation extrêmement coûteuse en énergie.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Transformation extrêmement coûteuse en énergie. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Pour ta séance, la traduction est volontairement concrète : cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N059",
+      "stage": "SSJ3",
+      "chronologyIndex": 59,
+      "title": "Goku constate que puissance maximale ne signifie",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Goku constate que puissance maximale ne signifie pas efficacité maximale. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Le lien avec l’entraînement du jour est simple : cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N060",
+      "stage": "SSJ3",
+      "chronologyIndex": 60,
+      "title": "Entraînement de Goten et Trunks à la fusion.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Entraînement de Goten et Trunks à la fusion. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Aujourd’hui, ne poursuis pas le symbole : cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N061",
+      "stage": "SSJ3",
+      "chronologyIndex": 61,
+      "title": "Retour dans l’Au-delà.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Retour dans l’Au-delà. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N062",
+      "stage": "SSJ3",
+      "chronologyIndex": 62,
+      "title": "Goku revient pour la bataille finale.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Goku revient pour la bataille finale. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Pour ta séance, la traduction est volontairement concrète : cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N063",
+      "stage": "SSJ3",
+      "chronologyIndex": 63,
+      "title": "Kid Buu.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Kid Buu. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Le lien avec l’entraînement du jour est simple : cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N064",
+      "stage": "SSJ3",
+      "chronologyIndex": 64,
+      "title": "Genki-dama final.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Genki-dama final. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Aujourd’hui, ne poursuis pas le symbole : cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N065",
+      "stage": "SSJ3",
+      "chronologyIndex": 65,
+      "title": "Mr Satan permet à la Terre de fournir son énergie.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Mr Satan permet à la Terre de fournir son énergie. Le Super Saiyan 3 illustre parfaitement le coût d’une puissance énorme mal gérée. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche la force utile, pas la fatigue spectaculaire.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "SSJ3"
+      ],
+      "senseiMessage": "Cherche la force utile, pas la fatigue spectaculaire.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N066",
+      "stage": "God",
+      "chronologyIndex": 66,
+      "title": "Beerus apparaît.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Beerus apparaît. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Pour ta séance, la traduction est volontairement concrète : reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N067",
+      "stage": "God",
+      "chronologyIndex": 67,
+      "title": "Goku affronte Beerus sur la planète de Kaio.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Goku affronte Beerus sur la planète de Kaio. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Le lien avec l’entraînement du jour est simple : reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N068",
+      "stage": "God",
+      "chronologyIndex": 68,
+      "title": "Recherche du Super Saiyan God.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Recherche du Super Saiyan God. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Aujourd’hui, ne poursuis pas le symbole : reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N069",
+      "stage": "God",
+      "chronologyIndex": 69,
+      "title": "Rituel du Super Saiyan God.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Rituel du Super Saiyan God. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N070",
+      "stage": "God",
+      "chronologyIndex": 70,
+      "title": "Goku découvre une forme de puissance différente",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Goku découvre une forme de puissance différente de la simple force brute. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Pour ta séance, la traduction est volontairement concrète : reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N071",
+      "stage": "God",
+      "chronologyIndex": 71,
+      "title": "Combat contre Beerus.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Combat contre Beerus. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Le lien avec l’entraînement du jour est simple : reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N072",
+      "stage": "God",
+      "chronologyIndex": 72,
+      "title": "Goku absorbe progressivement les sensations de cette",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Goku absorbe progressivement les sensations de cette nouvelle puissance. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Aujourd’hui, ne poursuis pas le symbole : reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N073",
+      "stage": "God",
+      "chronologyIndex": 73,
+      "title": "Whis devient une nouvelle référence d’entraînement.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Whis devient une nouvelle référence d’entraînement. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N074",
+      "stage": "God",
+      "chronologyIndex": 74,
+      "title": "Entraînement avec Vegeta sous Whis.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Entraînement avec Vegeta sous Whis. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Super Saiyan God introduit une puissance différente, plus maîtrisée que simplement brutale. Pour ta séance, la traduction est volontairement concrète : reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "God"
+      ],
+      "senseiMessage": "Reste fluide et stable sous charge ; la qualité est aujourd’hui ton indicateur principal.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N075",
+      "stage": "Blue",
+      "chronologyIndex": 75,
+      "title": "Retour de Freezer.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Retour de Freezer. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Le lien avec l’entraînement du jour est simple : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N076",
+      "stage": "Blue",
+      "chronologyIndex": 76,
+      "title": "Super Saiyan Blue.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Super Saiyan Blue. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Aujourd’hui, ne poursuis pas le symbole : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N077",
+      "stage": "Blue",
+      "chronologyIndex": 77,
+      "title": "Entraînement Goku/Vegeta sous Whis.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Entraînement Goku/Vegeta sous Whis. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N078",
+      "stage": "Blue",
+      "chronologyIndex": 78,
+      "title": "Tournoi Univers 6.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Tournoi Univers 6. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Pour ta séance, la traduction est volontairement concrète : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N079",
+      "stage": "Blue",
+      "chronologyIndex": 79,
+      "title": "Hit et le Time-Skip.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Hit et le Time-Skip. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Le lien avec l’entraînement du jour est simple : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N080",
+      "stage": "Blue",
+      "chronologyIndex": 80,
+      "title": "Goku combine Blue et Kaio-ken.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Goku combine Blue et Kaio-ken. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Aujourd’hui, ne poursuis pas le symbole : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N081",
+      "stage": "Blue",
+      "chronologyIndex": 81,
+      "title": "Arc Goku Black.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Arc Goku Black. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N082",
+      "stage": "Blue",
+      "chronologyIndex": 82,
+      "title": "Fusion Zamasu.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Fusion Zamasu. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Pour ta séance, la traduction est volontairement concrète : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N083",
+      "stage": "Blue",
+      "chronologyIndex": 83,
+      "title": "Préparation du Tournoi du Pouvoir.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Préparation du Tournoi du Pouvoir. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Le lien avec l’entraînement du jour est simple : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N084",
+      "stage": "Blue",
+      "chronologyIndex": 84,
+      "title": "Blue Kaio-ken contre des adversaires de haut niveau.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Blue Kaio-ken contre des adversaires de haut niveau. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Aujourd’hui, ne poursuis pas le symbole : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N085",
+      "stage": "Blue",
+      "chronologyIndex": 85,
+      "title": "Jiren apparaît comme plafond de puissance.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Jiren apparaît comme plafond de puissance. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N086",
+      "stage": "Blue",
+      "chronologyIndex": 86,
+      "title": "Le Blue/Kaio-ken atteint ses limites.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le Blue/Kaio-ken atteint ses limites. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. Le Blue et le Kaio-ken montrent ce qui arrive lorsque puissance et contrôle doivent coexister au plus haut niveau. Pour ta séance, la traduction est volontairement concrète : approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Blue"
+      ],
+      "senseiMessage": "Approche le benchmark avec précision : rien n’a besoin d’être forcé si le travail est prêt.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N087",
+      "stage": "Ultra",
+      "chronologyIndex": 87,
+      "title": "Tournoi du Pouvoir",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Tournoi du Pouvoir : gestion d’un temps limité. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Le lien avec l’entraînement du jour est simple : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N088",
+      "stage": "Ultra",
+      "chronologyIndex": 88,
+      "title": "Premier affrontement Goku/Jiren.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Premier affrontement Goku/Jiren. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Aujourd’hui, ne poursuis pas le symbole : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N089",
+      "stage": "Ultra",
+      "chronologyIndex": 89,
+      "title": "Genki-dama contre Jiren.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Genki-dama contre Jiren. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N090",
+      "stage": "Ultra",
+      "chronologyIndex": 90,
+      "title": "Apparition d’Ultra Instinct -Sign-.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Apparition d’Ultra Instinct -Sign-. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Pour ta séance, la traduction est volontairement concrète : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N091",
+      "stage": "Ultra",
+      "chronologyIndex": 91,
+      "title": "Le corps commence à réagir sans réflexion consciente.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Le corps commence à réagir sans réflexion consciente. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Le lien avec l’entraînement du jour est simple : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N092",
+      "stage": "Ultra",
+      "chronologyIndex": 92,
+      "title": "Goku ne peut pas maintenir longtemps l’état.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Goku ne peut pas maintenir longtemps l’état. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Aujourd’hui, ne poursuis pas le symbole : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N093",
+      "stage": "Ultra",
+      "chronologyIndex": 93,
+      "title": "Combat contre Kefla.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Combat contre Kefla. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N094",
+      "stage": "Ultra",
+      "chronologyIndex": 94,
+      "title": "Kamehameha à bout portant en mouvement.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Kamehameha à bout portant en mouvement. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Pour ta séance, la traduction est volontairement concrète : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N095",
+      "stage": "Ultra",
+      "chronologyIndex": 95,
+      "title": "Nouvelle apparition de -Sign-.",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Nouvelle apparition de -Sign-. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Le lien avec l’entraînement du jour est simple : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N096",
+      "stage": "Ultra",
+      "chronologyIndex": 96,
+      "title": "Whis explique la dissociation pensée/mouvement.",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Whis explique la dissociation pensée/mouvement. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Aujourd’hui, ne poursuis pas le symbole : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N097",
+      "stage": "Ultra",
+      "chronologyIndex": 97,
+      "title": "Goku atteint l’Ultra Instinct complet.",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Goku atteint l’Ultra Instinct complet. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N098",
+      "stage": "Ultra",
+      "chronologyIndex": 98,
+      "title": "Jiren pousse l’état à sa limite.",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Jiren pousse l’état à sa limite. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Pour ta séance, la traduction est volontairement concrète : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N099",
+      "stage": "Ultra",
+      "chronologyIndex": 99,
+      "title": "L’Ultra Instinct disparaît sous la contrainte.",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "L’Ultra Instinct disparaît sous la contrainte. La scène change le niveau du personnage parce qu’elle s’appuie sur tout le travail antérieur. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Le lien avec l’entraînement du jour est simple : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N100",
+      "stage": "Ultra",
+      "chronologyIndex": 100,
+      "title": "Goku et Freezer coopèrent dans le final.",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Goku et Freezer coopèrent dans le final. Ce jalon rappelle qu’une transformation visible arrive souvent après une longue phase moins spectaculaire. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Aujourd’hui, ne poursuis pas le symbole : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N101",
+      "stage": "Ultra",
+      "chronologyIndex": 101,
+      "title": "Après le tournoi, Goku ne sait pas",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Après le tournoi, Goku ne sait pas simplement réactiver l’état à volonté. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Dans Budokai, ce passage sert de miroir à la séance : on ne copie pas la fiction, on en retient le principe de progression. Cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    },
+    {
+      "id": "GOK-N102",
+      "stage": "Ultra",
+      "chronologyIndex": 102,
+      "title": "Entraînement ultérieur pour mieux comprendre Ultra Instinct",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Entraînement ultérieur pour mieux comprendre Ultra Instinct — contenu manga si spoilers autorisés. Ce moment marque une étape du parcours, mais il n’est jamais isolé de ce qui l’a précédé. L’Ultra Instinct déplace l’objectif : moins penser à lutter contre la charge, mieux exécuter automatiquement. Pour ta séance, la traduction est volontairement concrète : cherche un mouvement net, rapide et sans tension inutile.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Ultra"
+      ],
+      "senseiMessage": "Cherche un mouvement net, rapide et sans tension inutile.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Texte Budokai original basé sur le jalon narratif validé ; ne pas présenter comme citation de l’œuvre."
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "GOKU-INT-01",
+      "title": "Une répétition plus propre",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Une répétition plus propre : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-02",
+      "title": "Le poids du jour",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "Le poids du jour : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-03",
+      "title": "Adapter la gravité",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "Adapter la gravité : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-04",
+      "title": "Rester sous contrôle",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Rester sous contrôle : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-05",
+      "title": "Une charge à la fois",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "Une charge à la fois : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-06",
+      "title": "Le repos fait progresser",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le repos fait progresser : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-07",
+      "title": "Maîtriser avant d’ajouter",
+      "openingMessage": "Pas besoin d’en faire trop : exécute exactement ce qui est prévu.",
+      "storyRecap": "Maîtriser avant d’ajouter : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Le travail du jour est posé. Récupère assez pour revenir meilleur, pas simplement plus fatigué.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-08",
+      "title": "RIR : garder de la marge",
+      "openingMessage": "Aujourd’hui, gagne la séance répétition après répétition.",
+      "storyRecap": "RIR : garder de la marge : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Objectif accompli. La prochaine progression dépendra de la qualité que tu viens réellement de produire.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-09",
+      "title": "La technique sous pression",
+      "openingMessage": "Fais simple : technique propre, effort juste, progression mesurable.",
+      "storyRecap": "La technique sous pression : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Tu n’as rien à rattraper aujourd’hui : récupère et laisse cette séance faire son effet.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-10",
+      "title": "Un palier de plus",
+      "openingMessage": "Ton niveau du jour n’a pas besoin d’être héroïque ; il doit être exploitable.",
+      "storyRecap": "Un palier de plus : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Séance terminée. Garde cette progression : elle comptera davantage que n’importe quel excès isolé.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-11",
+      "title": "La force sans gaspillage",
+      "openingMessage": "Entre dans la séance avec calme : aujourd’hui, une seule chose compte, la qualité.",
+      "storyRecap": "La force sans gaspillage : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "C’est fait. Enregistre tes sensations et laisse le moteur préparer la prochaine étape.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    },
+    {
+      "id": "GOKU-INT-12",
+      "title": "Le prochain niveau",
+      "openingMessage": "Commence sans te précipiter. Le premier objectif est de trouver le bon niveau du jour.",
+      "storyRecap": "Le prochain niveau : cette séance n’ajoute pas artificiellement un nouvel événement canonique. Elle sert d’interlude lorsque le moteur prolonge un bloc pour respecter l’adaptation réelle de l’utilisateur. Chez Goku, chaque nouveau niveau de puissance n’a de sens que parce qu’un niveau précédent a été réellement maîtrisé. La narration reste volontairement sobre afin de préserver la chronologie sans inventer de scène. Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "references": [
+        "Son Goku",
+        "entraînement",
+        "Interlude"
+      ],
+      "senseiMessage": "Charge ce que tu peux contrôler aujourd’hui ; la surcharge viendra ensuite.",
+      "closingMessage": "Fin de séance : ce que tu viens de faire devient maintenant une donnée pour progresser.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "editorialNote": "Interlude Budokai original destiné aux consolidations, décharges ou semaines ajoutées dynamiquement."
+    }
+  ]
+}

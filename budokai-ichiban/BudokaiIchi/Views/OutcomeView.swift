@@ -5,6 +5,8 @@ import SwiftUI
 struct OutcomeView: View {
     @EnvironmentObject private var store: GameStore
     let outcome: SessionOutcome
+    /// Le mot de fin de séance, quand le pack éditorial en fournit un.
+    var closing: String?
     let onContinue: () -> Void
 
     @State private var appeared = false
@@ -40,6 +42,16 @@ struct OutcomeView: View {
                             .multilineTextAlignment(.center)
                             .lineLimit(3)
                             .minimumScaleFactor(0.7)
+
+                        if let closing = closing {
+                            Text(closing)
+                                .font(.system(size: 14, weight: .regular, design: .serif))
+                                .foregroundStyle(Theme.ink.opacity(0.8))
+                                .multilineTextAlignment(.center)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding(.horizontal, 26)
+                                .padding(.top, 6)
+                        }
                     }
                     .padding(.horizontal, 26)
                     .padding(.top, 24)

@@ -1,0 +1,1368 @@
+{
+  "program": "ichigo",
+  "version": "2026-09-12",
+  "contract": {
+    "sessionCopyRequired": true,
+    "noPlaceholderAllowed": true,
+    "canonicalQuoteOptional": true,
+    "dynamicSchedulingRule": "Narration principale chronologique; prolongations utilisent interludes sans avancer le canon."
+  },
+  "sourceNotes": [
+    "Source narrative prioritaire : bleach-anime.com officiel TYBW.",
+    "Les textes Budokai sont originaux."
+  ],
+  "narrativeSessions": [
+    {
+      "id": "ICH-N001",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 1,
+      "title": "Ichigo voit les esprits",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Depuis l'enfance, Ichigo Kurosaki perçoit les âmes et vit avec un monde que les autres ne voient pas. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Ichigo voit les esprits"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N002",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 2,
+      "title": "Rukia Kuchiki",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "La rencontre avec Rukia transforme une nuit ordinaire en premier contact réel avec les Hollows. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Rukia Kuchiki"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N003",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 3,
+      "title": "Pouvoir emprunté",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Pour protéger sa famille, Ichigo reçoit le pouvoir de Rukia et devient Shinigami remplaçant. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Pouvoir emprunté"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N004",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 4,
+      "title": "Premier Hollow",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Ichigo découvre qu'une grande puissance n'a de sens que si elle peut être contrôlée au moment utile. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Premier Hollow"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N005",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 5,
+      "title": "Karakura",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Les premières missions installent une routine : protéger la ville, revenir, apprendre. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Karakura"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N006",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 6,
+      "title": "Orihime",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Les liens avec Orihime rappellent que chaque combat est relié à quelqu'un qu'Ichigo veut protéger. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Orihime"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N007",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 7,
+      "title": "Chad",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Chad révèle lui aussi une force inhabituelle tandis que le groupe commence à prendre forme. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Chad"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N008",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 8,
+      "title": "Uryū Ishida",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "La rivalité avec Uryū pousse Ichigo à se mesurer à quelqu'un qui comprend les esprits autrement. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Uryū Ishida"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N009",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 9,
+      "title": "Menos Grande",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Face à une menace plus grande, Ichigo découvre qu'une puissance brute ne suffit pas sans maîtrise. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Menos Grande"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N010",
+      "stage": "SUBSTITUTE",
+      "chronologyIndex": 10,
+      "title": "Rukia arrêtée",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Le départ forcé de Rukia donne à Ichigo un objectif concret : aller la chercher. Tout commence par une capacité encore instable qu'il faut rendre disponible régulièrement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Rukia arrêtée"
+      ],
+      "senseiMessage": "Ne cherche pas déjà le Bankai : rends d'abord la base fiable.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N011",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 11,
+      "title": "Urahara",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Kisuke Urahara prépare Ichigo à entrer dans la Soul Society. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Urahara"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N012",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 12,
+      "title": "Retrouver Zangetsu",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "L'entraînement oblige Ichigo à retrouver son propre pouvoir plutôt qu'à dépendre de celui de Rukia. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Retrouver Zangetsu"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N013",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 13,
+      "title": "Zangetsu",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Le nom de son Zanpakutō devient un repère central de son identité. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Zangetsu"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N014",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 14,
+      "title": "Entrée dans le Seireitei",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Le groupe franchit la frontière d'un monde où chaque adversaire peut être supérieur. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Entrée dans le Seireitei"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N015",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 15,
+      "title": "Ikkaku",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Le duel contre Ikkaku montre qu'Ichigo peut progresser au contact d'adversaires expérimentés. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Ikkaku"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N016",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 16,
+      "title": "Renji",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Renji devient un test brutal du chemin restant à parcourir. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Renji"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N017",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 17,
+      "title": "Kenpachi",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Face à Kenpachi, survivre et comprendre sa propre peur deviennent plus importants qu'une technique parfaite. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Kenpachi"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N018",
+      "stage": "SOULSOCIETY",
+      "chronologyIndex": 18,
+      "title": "Yoruichi",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Yoruichi prépare Ichigo à un apprentissage beaucoup plus rapide que la norme. La mission devient plus exigeante et chaque faiblesse apparaît plus clairement. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Yoruichi"
+      ],
+      "senseiMessage": "Travaille la cible active sans abandonner totalement les qualités déjà acquises.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N019",
+      "stage": "BANKAI",
+      "chronologyIndex": 19,
+      "title": "Trois jours",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Ichigo doit atteindre le Bankai dans un délai impossible selon les standards habituels. Le Bankai exige plusieurs étapes préparées séparément avant d'être réunies. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Trois jours"
+      ],
+      "senseiMessage": "Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N020",
+      "stage": "BANKAI",
+      "chronologyIndex": 20,
+      "title": "Matérialiser Zangetsu",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "L'entraînement transforme une capacité abstraite en confrontation répétée avec des formes concrètes. Le Bankai exige plusieurs étapes préparées séparément avant d'être réunies. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Matérialiser Zangetsu"
+      ],
+      "senseiMessage": "Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N021",
+      "stage": "BANKAI",
+      "chronologyIndex": 21,
+      "title": "Tensa Zangetsu",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Ichigo obtient un Bankai compact qui concentre sa puissance plutôt que de l'étaler. Le Bankai exige plusieurs étapes préparées séparément avant d'être réunies. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Tensa Zangetsu"
+      ],
+      "senseiMessage": "Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N022",
+      "stage": "BANKAI",
+      "chronologyIndex": 22,
+      "title": "Byakuya",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Le combat contre Byakuya met le Bankai à l'épreuve dans une vraie confrontation. Le Bankai exige plusieurs étapes préparées séparément avant d'être réunies. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Byakuya"
+      ],
+      "senseiMessage": "Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N023",
+      "stage": "BANKAI",
+      "chronologyIndex": 23,
+      "title": "Vitesse",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Le nouveau niveau d'Ichigo ne repose pas uniquement sur plus de puissance, mais sur une puissance utilisable plus vite. Le Bankai exige plusieurs étapes préparées séparément avant d'être réunies. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Vitesse"
+      ],
+      "senseiMessage": "Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N024",
+      "stage": "BANKAI",
+      "chronologyIndex": 24,
+      "title": "Hollow intérieur",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Un autre pouvoir apparaît lorsque le contrôle d'Ichigo vacille. Le Bankai exige plusieurs étapes préparées séparément avant d'être réunies. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Hollow intérieur"
+      ],
+      "senseiMessage": "Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N025",
+      "stage": "BANKAI",
+      "chronologyIndex": 25,
+      "title": "Sauver Rukia",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Le résultat final compte parce que toute la préparation servait un objectif concret. Le Bankai exige plusieurs étapes préparées séparément avant d'être réunies. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Sauver Rukia"
+      ],
+      "senseiMessage": "Ne teste pas le résultat final chaque jour : construis la composante du jour.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N026",
+      "stage": "VIZARD",
+      "chronologyIndex": 26,
+      "title": "Arrancar",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Une nouvelle génération d'ennemis pousse Ichigo hors du niveau qui suffisait auparavant. Une puissance supplémentaire n'est utile que si elle reste sous contrôle. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Arrancar"
+      ],
+      "senseiMessage": "Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N027",
+      "stage": "VIZARD",
+      "chronologyIndex": 27,
+      "title": "Shinji Hirako",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Shinji montre qu'Ichigo n'est pas le seul à porter une frontière entre Shinigami et Hollow. Une puissance supplémentaire n'est utile que si elle reste sous contrôle. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Shinji Hirako"
+      ],
+      "senseiMessage": "Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N028",
+      "stage": "VIZARD",
+      "chronologyIndex": 28,
+      "title": "Masque",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Le masque Hollow devient une puissance qu'Ichigo doit apprendre à limiter plutôt qu'à subir. Une puissance supplémentaire n'est utile que si elle reste sous contrôle. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Masque"
+      ],
+      "senseiMessage": "Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N029",
+      "stage": "VIZARD",
+      "chronologyIndex": 29,
+      "title": "Entraînement Vizard",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Le contrôle s'obtient par répétitions ciblées et exposition graduelle. Une puissance supplémentaire n'est utile que si elle reste sous contrôle. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Entraînement Vizard"
+      ],
+      "senseiMessage": "Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N030",
+      "stage": "VIZARD",
+      "chronologyIndex": 30,
+      "title": "Grimmjow",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Les affrontements avec Grimmjow donnent une mesure concrète des progrès. Une puissance supplémentaire n'est utile que si elle reste sous contrôle. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Grimmjow"
+      ],
+      "senseiMessage": "Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N031",
+      "stage": "VIZARD",
+      "chronologyIndex": 31,
+      "title": "Orihime emmenée",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Hueco Mundo transforme de nouveau la progression en mission de sauvetage. Une puissance supplémentaire n'est utile que si elle reste sous contrôle. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Orihime emmenée"
+      ],
+      "senseiMessage": "Arrête la série avant que la technique ne prenne le dessus sur ton intention.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N032",
+      "stage": "HUECO",
+      "chronologyIndex": 32,
+      "title": "Hueco Mundo",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Ichigo entre dans un environnement entièrement hostile avec son groupe. La répétabilité devient importante : être capable une fois ne suffit plus. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Conserve assez de marge pour reproduire la qualité.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Hueco Mundo"
+      ],
+      "senseiMessage": "Conserve assez de marge pour reproduire la qualité.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N033",
+      "stage": "HUECO",
+      "chronologyIndex": 33,
+      "title": "Nel",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Une rencontre inattendue rappelle que le monde ennemi n'est jamais aussi simple qu'il paraît. La répétabilité devient importante : être capable une fois ne suffit plus. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Conserve assez de marge pour reproduire la qualité.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Nel"
+      ],
+      "senseiMessage": "Conserve assez de marge pour reproduire la qualité.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N034",
+      "stage": "HUECO",
+      "chronologyIndex": 34,
+      "title": "Grimmjow final",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Ichigo doit maintenir assez longtemps sa forme contrôlée pour terminer le combat. La répétabilité devient importante : être capable une fois ne suffit plus. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Conserve assez de marge pour reproduire la qualité.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Grimmjow final"
+      ],
+      "senseiMessage": "Conserve assez de marge pour reproduire la qualité.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N035",
+      "stage": "HUECO",
+      "chronologyIndex": 35,
+      "title": "Ulquiorra",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "La confrontation avec Ulquiorra montre les limites du niveau qu'Ichigo pensait maîtriser. La répétabilité devient importante : être capable une fois ne suffit plus. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Conserve assez de marge pour reproduire la qualité.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Ulquiorra"
+      ],
+      "senseiMessage": "Conserve assez de marge pour reproduire la qualité.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N036",
+      "stage": "HUECO",
+      "chronologyIndex": 36,
+      "title": "Perte de contrôle",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Un pouvoir plus grand peut devenir inutile s'il n'est plus réellement dirigé. La répétabilité devient importante : être capable une fois ne suffit plus. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Conserve assez de marge pour reproduire la qualité.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Perte de contrôle"
+      ],
+      "senseiMessage": "Conserve assez de marge pour reproduire la qualité.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N037",
+      "stage": "HUECO",
+      "chronologyIndex": 37,
+      "title": "Retour à soi",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "La progression suivante exige de retrouver une intention consciente plutôt que de poursuivre l'escalade. La répétabilité devient importante : être capable une fois ne suffit plus. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Conserve assez de marge pour reproduire la qualité.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Retour à soi"
+      ],
+      "senseiMessage": "Conserve assez de marge pour reproduire la qualité.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N038",
+      "stage": "AIZEN",
+      "chronologyIndex": 38,
+      "title": "Aizen",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "L'affrontement final contre Aizen exige une préparation différente de tout ce qui précède. Le pic se prépare en réduisant l'inutile et en concentrant ce qui reste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Aizen"
+      ],
+      "senseiMessage": "N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N039",
+      "stage": "AIZEN",
+      "chronologyIndex": 39,
+      "title": "Dangai",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Ichigo utilise le Dangai comme période d'entraînement concentrée. Le pic se prépare en réduisant l'inutile et en concentrant ce qui reste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Dangai"
+      ],
+      "senseiMessage": "N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N040",
+      "stage": "AIZEN",
+      "chronologyIndex": 40,
+      "title": "Tensa Zangetsu intérieur",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Pour apprendre la technique finale, Ichigo doit de nouveau affronter ce qui constitue son propre pouvoir. Le pic se prépare en réduisant l'inutile et en concentrant ce qui reste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Tensa Zangetsu intérieur"
+      ],
+      "senseiMessage": "N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N041",
+      "stage": "AIZEN",
+      "chronologyIndex": 41,
+      "title": "Final Getsuga Tenshō",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "La puissance ultime arrive avec un coût réel plutôt qu'avec une simple augmentation gratuite. Le pic se prépare en réduisant l'inutile et en concentrant ce qui reste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Final Getsuga Tenshō"
+      ],
+      "senseiMessage": "N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N042",
+      "stage": "AIZEN",
+      "chronologyIndex": 42,
+      "title": "Mugetsu",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Ichigo termine le combat au prix de ses pouvoirs de Shinigami. Le pic se prépare en réduisant l'inutile et en concentrant ce qui reste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Mugetsu"
+      ],
+      "senseiMessage": "N'ajoute rien au plan aujourd'hui : exécute-le.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N043",
+      "stage": "FULLBRING",
+      "chronologyIndex": 43,
+      "title": "Vie normale",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Privé de ses pouvoirs, Ichigo découvre ce que signifie perdre une capacité qu'il considérait acquise. Reconstruire une capacité demande parfois de repartir d'un volume plus modeste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Vie normale"
+      ],
+      "senseiMessage": "Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N044",
+      "stage": "FULLBRING",
+      "chronologyIndex": 44,
+      "title": "Xcution",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Le Fullbring ouvre une autre manière de reconstruire sa capacité d'action. Reconstruire une capacité demande parfois de repartir d'un volume plus modeste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Xcution"
+      ],
+      "senseiMessage": "Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N045",
+      "stage": "FULLBRING",
+      "chronologyIndex": 45,
+      "title": "Ginjō",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "La confiance donnée à Ginjō devient une nouvelle épreuve. Reconstruire une capacité demande parfois de repartir d'un volume plus modeste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Ginjō"
+      ],
+      "senseiMessage": "Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N046",
+      "stage": "FULLBRING",
+      "chronologyIndex": 46,
+      "title": "Pouvoir restauré",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Rukia et la Soul Society rendent à Ichigo l'accès à ses pouvoirs. Reconstruire une capacité demande parfois de repartir d'un volume plus modeste. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Pouvoir restauré"
+      ],
+      "senseiMessage": "Ce qui a déjà été acquis reviendra plus vite si tu respectes la progression.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N047",
+      "stage": "TYBW",
+      "chronologyIndex": 47,
+      "title": "Wandenreich",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Une nouvelle guerre place la Soul Society face à une menace capable de voler les Bankai. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Wandenreich"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N048",
+      "stage": "TYBW",
+      "chronologyIndex": 48,
+      "title": "Quilge",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Ichigo rejoint Hueco Mundo et découvre la nouvelle puissance Quincy. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Quilge"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N049",
+      "stage": "TYBW",
+      "chronologyIndex": 49,
+      "title": "Prison dans la Garganta",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Bloqué loin du champ de bataille, Ichigo entend la Soul Society tomber sans pouvoir intervenir. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Prison dans la Garganta"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N050",
+      "stage": "TYBW",
+      "chronologyIndex": 50,
+      "title": "Bankai brisé",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Tensa Zangetsu est détruit et ne peut pas simplement être réparé comme avant. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Bankai brisé"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N051",
+      "stage": "TYBW",
+      "chronologyIndex": 51,
+      "title": "Palais Royal",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Squad Zero emmène Ichigo vers un nouvel environnement d'entraînement. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Palais Royal"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N052",
+      "stage": "TYBW",
+      "chronologyIndex": 52,
+      "title": "Nimaiya",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Ichigo échoue d'abord au test des Asauchi. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Nimaiya"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N053",
+      "stage": "TYBW",
+      "chronologyIndex": 53,
+      "title": "Everything But The Rain",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Isshin révèle à Ichigo l'histoire de Masaki et la vérité sur sa naissance. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Everything But The Rain"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N054",
+      "stage": "TYBW",
+      "chronologyIndex": 54,
+      "title": "Héritage Shinigami et Quincy",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Comprendre d'où vient son pouvoir change la manière dont Ichigo peut l'utiliser. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Héritage Shinigami et Quincy"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N055",
+      "stage": "TYBW",
+      "chronologyIndex": 55,
+      "title": "The Blade Is Me",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Ichigo accepte finalement que Zangetsu n'est pas extérieur à lui. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "The Blade Is Me"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N056",
+      "stage": "TYBW",
+      "chronologyIndex": 56,
+      "title": "Deux lames",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Le nouveau Zanpakutō matérialise une identité plus complète. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Deux lames"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N057",
+      "stage": "TYBW",
+      "chronologyIndex": 57,
+      "title": "Retour au Seireitei",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Après le Palais Royal, Ichigo revient avec un pouvoir reconstruit plutôt que simplement réparé. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Retour au Seireitei"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N058",
+      "stage": "TYBW",
+      "chronologyIndex": 58,
+      "title": "Uryū",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Le conflit avec Uryū oblige Ichigo à distinguer l'adversaire apparent de l'intention réelle. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Uryū"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N059",
+      "stage": "TYBW",
+      "chronologyIndex": 59,
+      "title": "Yhwach",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Le combat final place la totalité de l'héritage d'Ichigo face à son origine. Comprendre la structure de ses propres capacités permet à Ichigo de les reconstruire plus intelligemment. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Utilise les données de tes targets au lieu de repartir au hasard.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Yhwach"
+      ],
+      "senseiMessage": "Utilise les données de tes targets au lieu de repartir au hasard.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N060",
+      "stage": "BANKAIDAY",
+      "chronologyIndex": 60,
+      "title": "Révèle ton Bankai",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Le boss Budokai rassemble toutes les capacités préparées séparément au cours du programme. Toutes les qualités sont enfin réunies dans une même journée. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Gère l'ordre, l'effort et les récupérations : le Bankai est un assemblage, pas un sprint.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Révèle ton Bankai"
+      ],
+      "senseiMessage": "Gère l'ordre, l'effort et les récupérations : le Bankai est un assemblage, pas un sprint.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N061",
+      "stage": "SPLUS",
+      "chronologyIndex": 61,
+      "title": "Inner Hollow",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Le S+ reprend le thème du pouvoir intérieur, mais sportivement il signifie conserver les capacités déjà gagnées en augmentant les standards. Mugetsu augmente les standards sans changer les règles de qualité. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Inner Hollow"
+      ],
+      "senseiMessage": "Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N062",
+      "stage": "SPLUS",
+      "chronologyIndex": 62,
+      "title": "Vizard Control",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Le volume supérieur ne compte que s'il reste fractionné et maîtrisé. Mugetsu augmente les standards sans changer les règles de qualité. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Vizard Control"
+      ],
+      "senseiMessage": "Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N063",
+      "stage": "SPLUS",
+      "chronologyIndex": 63,
+      "title": "Dangai Training",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Une phase concentrée prépare les standards Mugetsu sans test maximal quotidien. Mugetsu augmente les standards sans changer les règles de qualité. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Dangai Training"
+      ],
+      "senseiMessage": "Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N064",
+      "stage": "SPLUS",
+      "chronologyIndex": 64,
+      "title": "Final Getsuga",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Les dernières semaines diminuent le bruit et augmentent la spécificité. Mugetsu augmente les standards sans changer les règles de qualité. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Final Getsuga"
+      ],
+      "senseiMessage": "Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    },
+    {
+      "id": "ICH-N065",
+      "stage": "SPLUS",
+      "chronologyIndex": 65,
+      "title": "Mugetsu Day",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Le boss S+ rassemble 150/300/150, 15 tractions, 65 pompes continues et 8 km dans une seule journée maîtrisée. Mugetsu augmente les standards sans changer les règles de qualité. Dans Budokai, ce moment sert de cadre au travail de la target active sans transformer le récit en consigne physique. Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "references": [
+        "Ichigo Kurosaki",
+        "Zangetsu",
+        "Mugetsu Day"
+      ],
+      "senseiMessage": "Plus n'a de valeur que si les composantes restent maîtrisées.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy",
+      "spoilerLevel": "full"
+    }
+  ],
+  "dynamicInterludes": [
+    {
+      "id": "ICH-INT-01",
+      "title": "Une seule cible",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Une seule cible. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-02",
+      "title": "Volume sous contrôle",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Volume sous contrôle. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-03",
+      "title": "Maintenir sans tester",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Maintenir sans tester. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-04",
+      "title": "Une série de moins",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Une série de moins. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-05",
+      "title": "Le prochain palier",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Le prochain palier. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-06",
+      "title": "Jour de consolidation",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Jour de consolidation. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-07",
+      "title": "Récupérer le pull",
+      "openingMessage": "Aujourd'hui, construis seulement la composante active.",
+      "storyRecap": "Récupérer le pull. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Objectif du jour rempli. Laisse le moteur décider de la prochaine dose.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-08",
+      "title": "Course facile",
+      "openingMessage": "Ne confonds pas test et entraînement. Travaille ce qui manque.",
+      "storyRecap": "Course facile. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Tu peux t'arrêter ici. Bankai se construit par accumulation, pas par surenchère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-09",
+      "title": "Répartir le volume",
+      "openingMessage": "Reste propre. Une répétition qui ne respecte plus le standard ne rapproche pas du Bankai.",
+      "storyRecap": "Répartir le volume. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Progression enregistrée. La prochaine étape dépendra de cette exécution réelle.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-10",
+      "title": "Ne pas cumuler la fatigue",
+      "openingMessage": "Fais le volume prévu, puis arrête.",
+      "storyRecap": "Ne pas cumuler la fatigue. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Session terminée. La cible active vient de gagner un peu de terrain.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-11",
+      "title": "Préparer sans prouver",
+      "openingMessage": "Une cible à la fois. Ne dilue pas ton énergie.",
+      "storyRecap": "Préparer sans prouver. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "C'est fait. Garde les autres qualités en réserve et récupère.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    },
+    {
+      "id": "ICH-INT-12",
+      "title": "Revenir au standard",
+      "openingMessage": "Commence avec de la marge : le Bankai ne se gagne pas sur le premier set.",
+      "storyRecap": "Revenir au standard. Cet interlude sert lorsqu'une target exige plus de temps, une décharge ou une semaine de maintien. Aucun événement canonique supplémentaire n'est inventé. Le principe reste celui d'Ichigo : concentrer l'effort sur l'objectif actuel tout en préservant ce qui a déjà été gagné.",
+      "references": [
+        "Ichigo Kurosaki",
+        "entraînement",
+        "Bankai"
+      ],
+      "senseiMessage": "Ne change pas de cible parce qu'elle résiste. Change seulement la dose ou la méthode.",
+      "closingMessage": "Fin de séance : aucune nécessité de retester aujourd'hui.",
+      "canonicalQuote": null,
+      "contentStatus": "final_copy"
+    }
+  ]
+}

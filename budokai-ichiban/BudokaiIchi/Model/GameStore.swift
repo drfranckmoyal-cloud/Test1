@@ -192,7 +192,7 @@ final class GameStore: ObservableObject {
                 freshVariants: [],
                 isDeload: progress.deloadWeeksServed.contains(position.week),
                 sessionIndex: routine ? 1 : 0,
-                narrativeId: SaitamaNarrative.content(sessionIndex: index)?.id,
+                narrativeId: NarrationLibrary.session(.saitama, index: index)?.id,
                 scheduling: nil)
             var session = SaitamaEngine.session(context)
             session.index = index + 1
@@ -238,7 +238,7 @@ final class GameStore: ObservableObject {
             freshVariants: Set(progress.freshVariants),
             isDeload: deload,
             sessionIndex: done + slotParity - (done % 2),
-            narrativeId: SaitamaNarrative.content(sessionIndex: done)?.id,
+            narrativeId: NarrationLibrary.session(.saitama, index: done)?.id,
             scheduling: scheduling)
 
         var session = SaitamaEngine.session(context)

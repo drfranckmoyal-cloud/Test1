@@ -234,7 +234,8 @@ struct ProgramJourneyView: View {
 
     /// L'histoire de l'arc, en clair. C'est ce qu'on venait chercher.
     private func story(_ block: SaitamaBlockSpec) -> some View {
-        let beats = SaitamaNarrative.beats(inBlock: block.index)
+        let beats = NarrationLibrary.sessions(program.id, stage: block.title)
+            .map { NarrativeContent($0, program: program) }
             .filter { $0.isVisible(at: store.state.spoilerLevel) }
 
         return VStack(alignment: .leading, spacing: 9) {

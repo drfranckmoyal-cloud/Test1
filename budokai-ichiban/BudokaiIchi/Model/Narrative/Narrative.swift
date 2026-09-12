@@ -59,23 +59,18 @@ struct NarrativeContent: Identifiable, Codable, Equatable {
 
     var spoilerLevel: SpoilerLevel = .anime
 
+    /// Ce qui se dit avant la séance, et ce qui se dit une fois finie.
+    var openingMessage: String?
+    var closingMessage: String?
+
     /// Vrai quand ce contenu peut être montré au réglage choisi.
     func isVisible(at level: SpoilerLevel) -> Bool { spoilerLevel <= level }
 }
 
-/// Le catalogue narratif.
-///
-/// **Vide à dessein.** Le cadrage renvoie l'écriture des récits au livrable 6
-/// et interdit d'inventer des citations. La structure est prête, les vues
-/// savent l'afficher, et un contenu déposé ici apparaîtra sans toucher au
-/// moteur.
+/// Le récit d'une séance, pris dans le pack éditorial.
 enum NarrativeCatalog {
-    static var entries: [String: NarrativeContent] = [:]
-
-    /// Le récit d'une séance donnée, s'il a été écrit.
     static func content(program: ProgramID, sessionIndex: Int) -> NarrativeContent? {
-        entries["\(program.rawValue)-\(sessionIndex)"]
+        guard let session = NarrationLibrary.session(program, index: sessionIndex) else { return nil }
+        return NarrativeContent(session, program: Catalog.program(program))
     }
-
-    static func content(id: String) -> NarrativeContent? { entries[id] }
 }
