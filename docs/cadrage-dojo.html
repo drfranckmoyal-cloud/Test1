@@ -1,0 +1,349 @@
+<title>Cadrage du Dojo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+:root{
+  --ground:#F6F5F2; --surface:#FFFFFF; --surface-2:#EFEDE8;
+  --ink:#1A1714; --muted:#6E6761; --faint:#98908A; --rule:#E2DED7;
+  --accent:#D9500F; --accent-soft:#FBEAE0;
+  --ok:#2E7D52; --warn:#B4701A;
+  --rE:#8A8A8F; --rD:#3F7D5B; --rC:#2E6FA8; --rB:#7A4BA8; --rA:#C0431E; --rS:#B98514; --rSS:#1A1714;
+  --display:Archivo,"Helvetica Neue",system-ui,sans-serif;
+  --body:Newsreader,Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#131211; --surface:#1C1A18; --surface-2:#242120;
+    --ink:#F2EEE9; --muted:#A49B93; --faint:#7A716A; --rule:#2E2A27;
+    --accent:#FF7A34; --accent-soft:#3A2116;
+    --ok:#5FBF8C; --warn:#E0A252;
+    --rE:#9B9BA0; --rD:#5AA97C; --rC:#5A9BD4; --rB:#A97ED4; --rA:#E8714B; --rS:#E0B44A; --rSS:#F2EEE9;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#131211; --surface:#1C1A18; --surface-2:#242120;
+  --ink:#F2EEE9; --muted:#A49B93; --faint:#7A716A; --rule:#2E2A27;
+  --accent:#FF7A34; --accent-soft:#3A2116;
+  --ok:#5FBF8C; --warn:#E0A252;
+  --rE:#9B9BA0; --rD:#5AA97C; --rC:#5A9BD4; --rB:#A97ED4; --rA:#E8714B; --rS:#E0B44A; --rSS:#F2EEE9;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding-inline:24px;padding-block:0 80px}
+h1,h2,h3,h4,.ui{font-family:var(--display)}
+a{color:var(--accent)}
+
+/* en-tête */
+header{padding-block:56px 34px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(38px,7vw,62px);font-weight:900;letter-spacing:-.035em;line-height:1;
+  margin:12px 0 0;text-wrap:balance}
+.lede{font-size:19px;color:var(--muted);margin:16px 0 0;max-width:60ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:24px;
+  font-family:var(--display);font-size:12px;font-weight:600;color:var(--faint)}
+.meta b{color:var(--ink);font-weight:700}
+
+/* sections numérotées : la numérotation sert de repère de réponse */
+section{padding-block:44px;border-bottom:1px solid var(--rule)}
+section>h2{display:flex;align-items:baseline;gap:14px;margin:0 0 6px;
+  font-size:clamp(24px,4vw,31px);font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+section>h2 .num{font-size:14px;font-weight:700;color:var(--accent);
+  font-variant-numeric:tabular-nums;flex-shrink:0}
+.intro{color:var(--muted);margin:0 0 26px;max-width:62ch}
+h3{font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:.01em;
+  margin:32px 0 10px}
+p{margin:0 0 14px;max-width:66ch}
+ul{margin:0 0 14px;padding-left:20px;max-width:66ch}
+li{margin-bottom:7px}
+strong{font-weight:600}
+.ui strong,table strong{font-weight:700}
+
+/* tableaux */
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--rule);border-radius:4px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-family:var(--display);font-size:14px;
+  font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);padding:12px 16px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:12px 16px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.k{font-weight:600;white-space:nowrap}
+
+/* décisions */
+.dec{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.dec div{background:var(--surface);padding:14px 16px;display:flex;gap:14px;align-items:baseline}
+.dec span{font-family:var(--display);font-size:11px;font-weight:700;color:var(--accent);
+  min-width:30px;font-variant-numeric:tabular-nums}
+.dec p{margin:0;font-size:15px}
+
+/* rangs */
+.ranks{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.rank{font-family:var(--display);font-weight:900;font-size:15px;color:#fff;
+  width:44px;height:44px;display:grid;place-items:center;border-radius:3px}
+.rank small{display:block;font-size:8px;font-weight:700;letter-spacing:.06em;opacity:.85}
+
+/* programmes */
+.progs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:8px}
+.prog{background:var(--surface);border:1px solid var(--rule);border-radius:5px;overflow:hidden;
+  display:flex;flex-direction:column}
+.prog .band{height:5px}
+.prog .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prog h4{margin:0;font-size:18px;font-weight:800;letter-spacing:-.02em}
+.prog .fam{font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase}
+.prog .src{font-size:14px;color:var(--muted);line-height:1.5;flex:1}
+.prog dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;
+  font-family:var(--display);font-size:12px}
+.prog dt{color:var(--faint);font-weight:600}
+.prog dd{margin:0;font-weight:600}
+
+/* encadré */
+.note{background:var(--surface-2);border-left:3px solid var(--accent);padding:16px 20px;
+  margin:22px 0;border-radius:0 4px 4px 0}
+.note p:last-child{margin-bottom:0}
+.note .lbl{font-family:var(--display);font-size:10px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
+
+/* étapes : vraie séquence */
+.steps{counter-reset:s;display:grid;gap:12px;margin-top:8px}
+.steps li{list-style:none;counter-increment:s;display:grid;grid-template-columns:34px 1fr;
+  gap:16px;align-items:start;background:var(--surface);border:1px solid var(--rule);
+  border-radius:4px;padding:14px 18px;margin:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:20px;
+  color:var(--accent);line-height:1.1}
+.steps h4{margin:0 0 4px;font-size:15px;font-weight:700}
+.steps p{margin:0;font-size:15px;color:var(--muted)}
+.steps ul{padding-left:0;list-style:none;margin:0}
+
+/* questions ouvertes */
+.q{border-top:1px solid var(--rule);padding-top:14px;margin-top:14px}
+.q:first-of-type{border-top:none;padding-top:0;margin-top:0}
+.q b{font-family:var(--display);font-size:15px;display:block;margin-bottom:4px}
+.q p{margin:0;color:var(--muted);font-size:15px}
+
+footer{padding-block:34px;font-family:var(--display);font-size:13px;color:var(--faint)}
+@media (max-width:520px){
+  body{font-size:16px}
+  .dec div{flex-direction:column;gap:4px}
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Cahier des charges · 12 septembre 2026</div>
+  <h1>Cadrage du Dojo</h1>
+  <p class="lede">L'app du défi 100 pompes devient un jeu de progression : des programmes d'entraînement tirés d'animés japonais, de l'XP, des rangs, des stats et des déblocages. Ce document fige ce qui est décidé avant qu'une ligne de code soit écrite.</p>
+  <div class="meta">
+    <span><b>Version figée</b> branche v1-defi-100-pompes</span>
+    <span><b>Plateforme</b> iPhone, SwiftUI</span>
+    <span><b>Mode</b> solo, hors ligne</span>
+    <span><b>Nom de travail</b> Dojo — à valider</span>
+  </div>
+</header>
+
+<section>
+  <h2><span class="num">01</span>Ce qui est décidé</h2>
+  <p class="intro">Arrêté lors du cadrage. Ces points ne sont plus rediscutés sauf demande explicite.</p>
+  <div class="dec">
+    <div><span>1.1</span><p>Le défi 100 pompes actuel devient un programme parmi les autres. L'historique en cours est repris sans perte.</p></div>
+    <div><span>1.2</span><p><strong>Huit programmes</strong> dans la première version jouable, couvrant six familles d'entraînement.</p></div>
+    <div><span>1.3</span><p>La version web est gelée en l'état. Elle reprendra quand le jeu sera stable.</p></div>
+    <div><span>2.2</span><p>Chaque programme <strong>déclare son matériel</strong>. Un filtre « ce que j'ai » masque ceux qui demandent autre chose.</p></div>
+    <div><span>2.3</span><p>Test de niveau à l'arrivée, précédé d'une auto-déclaration sédentaire / actif / sportif pour choisir le palier de départ du test.</p></div>
+    <div><span>2.4</span><p>Trois paliers par programme : <strong>Novice, Confirmé, Classe S</strong>.</p></div>
+    <div><span>3.1</span><p>Séance guidée exercice par exercice, avec chrono de repos. Saisie libre possible à tout moment.</p></div>
+    <div><span>3.2</span><p>Course à pied en saisie manuelle : distance et temps. Pas de GPS en v1.</p></div>
+    <div><span>3.4</span><p>Échauffement <strong>proposé, jamais imposé</strong> : un bouton au départ de chaque séance.</p></div>
+    <div><span>4.2</span><p>Déblocage par <strong>carte de progression</strong> et par <strong>seuils de stat</strong>. Les deux.</p></div>
+    <div><span>4.4</span><p>Un programme terminé est rejouable au palier supérieur, avec un bonus d'XP dégressif.</p></div>
+    <div><span>4.5</span><p>Les rappels deviennent des rappels de séance, plus une alerte le soir quand la série est en danger.</p></div>
+    <div><span>6.1</span><p>Chaque programme porte les couleurs de son œuvre.</p></div>
+    <div><span>6.2</span><p>Iconographie vectorielle originale, dessinée ici. Pas d'illustration de personnage.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span>Le moteur de jeu</h2>
+  <p class="intro">Trois monnaies distinctes, qui ne se remplacent pas : l'XP mesure l'activité, les stats mesurent les qualités physiques, la série mesure la régularité. C'est la séparation des trois qui rend la progression lisible.</p>
+
+  <h3>L'expérience</h3>
+  <p>Cinq sources, avec des poids différents, pour qu'une grosse séance rapporte plus qu'une petite sans jamais qu'une séance bâclée rapporte zéro :</p>
+  <div class="tw"><table>
+    <tr><th>Source</th><th>Gain</th><th>Pourquoi</th></tr>
+    <tr><td class="k">Séance terminée</td><td>100 XP × palier<br>(×1 · ×1,5 · ×2)</td><td>Le socle. Terminer, c'est ce qui compte.</td></tr>
+    <tr><td class="k">Dépassement</td><td>+1 XP par répétition au-delà, plafonné à +50</td><td>Récompense l'effort sans encourager le surmenage.</td></tr>
+    <tr><td class="k">Record personnel</td><td>+150 XP</td><td>Le pic rare, celui dont on se souvient.</td></tr>
+    <tr><td class="k">Série</td><td>multiplicateur ×1 → ×1,5</td><td>3 j : ×1,1 — 7 j : ×1,25 — 14 j et + : ×1,5</td></tr>
+    <tr><td class="k">Programme bouclé</td><td>+1 500 XP, un badge, une pièce d'équipement</td><td>La récompense qui justifie d'aller au bout.</td></tr>
+  </table></div>
+  <p>Le niveau <em>n</em> demande <strong>250 × n<sup>1,6</sup></strong> XP cumulés : niveau 5 vers 3 300 XP, niveau 10 vers 9 950, niveau 20 vers 30 200. La courbe ralentit assez pour que le rang S se mérite sur des mois, pas sur trois semaines.</p>
+
+  <h3>Les rangs</h3>
+  <p>On démarre tout en bas, volontairement.</p>
+  <div class="ranks">
+    <div class="rank" style="background:var(--rE)">E<small>1–4</small></div>
+    <div class="rank" style="background:var(--rD)">D<small>5–9</small></div>
+    <div class="rank" style="background:var(--rC)">C<small>10–17</small></div>
+    <div class="rank" style="background:var(--rB)">B<small>18–27</small></div>
+    <div class="rank" style="background:var(--rA)">A<small>28–40</small></div>
+    <div class="rank" style="background:var(--rS)">S<small>41–60</small></div>
+    <div class="rank" style="background:var(--rSS);color:var(--ground)">S+<small>61+</small></div>
+  </div>
+
+  <h3>Les trois stats</h3>
+  <p>Chaque exercice alimente une ou deux stats — <strong>Force</strong>, <strong>Vitesse</strong>, <strong>Endurance</strong> — de 1 à 3 points selon sa nature. Les stats montent plus lentement que l'XP et conditionnent les déblocages : « <em>Force 30 requise</em> » devant un programme verrouillé donne un objectif concret, là où un niveau global ne dit rien de ce qu'il faut travailler. Un radar sur la fiche de profil montre les déséquilibres — et c'est exactement ce qui pousse à ouvrir un programme d'endurance quand on n'a fait que de la force.</p>
+
+  <h3>La quête de pénalité</h3>
+  <p>Une séance manquée ne casse pas la série : elle décale le planning et déclenche une <strong>quête de pénalité</strong>, à faire avant minuit le lendemain. Faite, la série est sauvée. Ignorée, la série tombe. Le mécanisme vient de <em>Solo Leveling</em>, et il vaut mieux qu'une punition sèche : il transforme l'échec en rattrapage.</p>
+  <div class="tw"><table>
+    <tr><th>Rang</th><th>Quête de pénalité</th></tr>
+    <tr><td class="k" style="color:var(--rE)">E</td><td>20 squats</td></tr>
+    <tr><td class="k" style="color:var(--rD)">D</td><td>30 squats · 20 abdos</td></tr>
+    <tr><td class="k" style="color:var(--rC)">C</td><td>40 pompes · 40 abdos</td></tr>
+    <tr><td class="k" style="color:var(--rB)">B</td><td>60 pompes · 60 abdos · 60 squats</td></tr>
+    <tr><td class="k" style="color:var(--rA)">A</td><td>100 pompes · 100 abdos · 100 squats</td></tr>
+    <tr><td class="k" style="color:var(--rS)">S</td><td>La routine complète : 100 · 100 · 100 et 10 km</td></tr>
+  </table></div>
+  <p>Ce barème est un premier jet. Il sera réglé à l'étape 4, sur des chiffres d'usage réels : une pénalité trop douce ne fait pas peur, une pénalité trop dure fait abandonner la série plutôt que la sauver.</p>
+
+  <h3>L'équipement</h3>
+  <p>Purement cosmétique, affiché sur la fiche de profil, gagné en bouclant un programme : bandeau frontal, gants lestés, ceinture de sabres, poids de cheville, cape. Rien qui modifie le jeu — c'est une collection, et c'est précisément pour ça que ça marche : ça donne envie de finir un programme les jours où la motivation sportive ne suffit pas.</p>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Les huit programmes</h2>
+  <p class="intro">Chaque programme emprunte son nom et son identité visuelle à une œuvre, et son contenu à une méthode d'entraînement réelle et documentée. Quand le manga est physiquement impossible, l'adaptation est assumée dans le texte du programme.</p>
+
+  <div class="progs">
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#F5C518,#D6202A)"></div><div class="body">
+      <div class="fam" style="color:#D6202A">Endurance · Volume</div>
+      <h4>Défi Saitama</h4>
+      <p class="src">La routine canonique — 100 pompes, 100 abdos, 100 squats, 10 km — mais montée progressivement sur 30 jours au lieu du premier jour, parce que telle quelle elle blesse les débutants.</p>
+      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>30 jours, quotidien</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
+    </div></article>
+
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#F47B20,#1B4F8A)"></div><div class="body">
+      <div class="fam" style="color:#F47B20">Endurance · Course</div>
+      <h4>La Voie de Naruto</h4>
+      <p class="src">Passer de zéro à 5 km courus sans marcher. Adossé au plan <em>Couch to 5K</em> — 9 semaines, 3 sorties hebdomadaires, intervalles course/marche qui se résorbent.</p>
+      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>9 semaines · 3 séances</dd><dt>Palier</dt><dd>Novice</dd></dl>
+    </div></article>
+
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#1E8449,#F47B20)"></div><div class="body">
+      <div class="fam" style="color:#1E8449">Explosivité · Taijutsu</div>
+      <h4>Rock Lee</h4>
+      <p class="src">Pliométrie, corde à sauter et séries de pompes en 30/30/20, le schéma que le personnage répète. Deux séances hebdomadaires de pliométrie espacées de 72 h, comme l'exige la littérature.</p>
+      <dl><dt>Matériel</dt><dd>Corde à sauter</dd><dt>Durée</dt><dd>6 semaines · 5 séances</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
+    </div></article>
+
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#0B6E4F,#C9A227)"></div><div class="body">
+      <div class="fam" style="color:#0B6E4F">Force</div>
+      <h4>Trois Sabres — Zoro</h4>
+      <p class="src">Progression de force en charge croissante sur les tirages et les poussées, structure de la <em>Recommended Routine</em> de r/bodyweightfitness : 3 séances par semaine, on change d'exercice plutôt que d'ajouter du poids.</p>
+      <dl><dt>Matériel</dt><dd>Barre de traction</dd><dt>Durée</dt><dd>8 semaines · 3 séances</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
+    </div></article>
+
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#1A1A1A,#C0392B)"></div><div class="body">
+      <div class="fam" style="color:#C0392B">Vitesse</div>
+      <h4>Shunpo — Ichigo</h4>
+      <p class="src">Sprints courts, éducatifs de course et pliométrie, sur 8 semaines à deux séances hebdomadaires — la structure validée par les travaux de la NSCA sur le sprint chez le débutant.</p>
+      <dl><dt>Matériel</dt><dd>60 m de plat</dd><dt>Durée</dt><dd>8 semaines · 2 séances</dd><dt>Palier</dt><dd>Confirmé</dd></dl>
+    </div></article>
+
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#4A5D4E,#D8D3C8)"></div><div class="body">
+      <div class="fam" style="color:#4A5D4E">Gainage · Puissance relative</div>
+      <h4>Bataillon d'Exploration — Levi</h4>
+      <p class="src">Gainage, tractions et puissance rapportée au poids de corps : ce que l'équipement tridimensionnel exigerait réellement. Le programme le plus court en durée de séance, le plus dur en intensité.</p>
+      <dl><dt>Matériel</dt><dd>Barre de traction</dd><dt>Durée</dt><dd>6 semaines · 4 séances</dd><dt>Palier</dt><dd>Classe S</dd></dl>
+    </div></article>
+
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#FF6B00,#1B6CA8)"></div><div class="body">
+      <div class="fam" style="color:#FF6B00">Force · Volume lesté</div>
+      <h4>Chambre de Gravité — Goku</h4>
+      <p class="src">La gravité ×10 devient un sac lesté. Volume élevé, charges modérées, dans l'esprit des 10 000 tractions — divisées par cent, et c'est écrit noir sur blanc dans le programme.</p>
+      <dl><dt>Matériel</dt><dd>Sac lesté ou kettlebell</dd><dt>Durée</dt><dd>8 semaines · 4 séances</dd><dt>Palier</dt><dd>Classe S</dd></dl>
+    </div></article>
+
+    <article class="prog"><div class="band" style="background:linear-gradient(90deg,#D62828,#F6C453)"></div><div class="body">
+      <div class="fam" style="color:#D62828">Souplesse · Mobilité</div>
+      <h4>Homme Élastique — Luffy</h4>
+      <p class="src">Le seul personnage dont le pouvoir <em>est</em> la souplesse. Mobilité articulaire quotidienne, étirements tenus, ouverture de hanches et d'épaules. Dix minutes par jour, le programme qu'on garde en fond pendant les autres.</p>
+      <dl><dt>Matériel</dt><dd>Aucun</dd><dt>Durée</dt><dd>4 semaines · quotidien</dd><dt>Palier</dt><dd>Novice</dd></dl>
+    </div></article>
+  </div>
+
+  <div class="note">
+    <span class="lbl">Reportés en v2</span>
+    <p><strong>Baki</strong> (puissance et combat) et <strong>Kenshiro</strong> (frappe) attendent la deuxième vague — non par manque d'intérêt, mais parce que huit programmes suffisent à couvrir les six familles et qu'un neuvième repousserait la date de test.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Une séance, de bout en bout</h2>
+  <p class="intro">Le déroulé est le même pour les huit programmes. C'est ce qui permet d'en ajouter un neuvième sans retoucher le moteur.</p>
+  <ol class="steps">
+    <li><div><h4>Le choix de l'échauffement</h4><p>« Tu t'échauffes ? » — Oui ouvre trois à cinq mouvements articulaires guidés. Non passe directement à la séance. Le choix n'est jamais imposé, et il est mémorisé sans être verrouillé.</p></div></li>
+    <li><div><h4>Les exercices, un par un</h4><p>Nom, séries, répétitions cibles, démonstration schématique. Un bouton pour valider la série, un chrono de repos qui démarre seul, le prochain exercice qui s'annonce.</p></div></li>
+    <li><div><h4>La saisie réelle</h4><p>Le nombre réellement effectué, pas le nombre visé. C'est lui qui alimente l'XP, les stats et les records. Une séance peut se solder en dessous de l'objectif sans être un échec.</p></div></li>
+    <li><div><h4>Le bilan</h4><p>XP gagné détaillé ligne par ligne, points de stat, série, et le cas échéant le niveau ou le rang franchi — l'écran de célébration actuel, augmenté.</p></div></li>
+  </ol>
+</section>
+
+<section>
+  <h2><span class="num">05</span>Ce qui change dans l'app actuelle</h2>
+  <p class="intro">L'existant n'est pas jeté. Voici ce qui survit, ce qui se transforme, ce qui disparaît.</p>
+  <div class="tw"><table>
+    <tr><th>Aujourd'hui</th><th>Demain</th></tr>
+    <tr><td class="k">Un défi unique paramétrable</td><td>Un catalogue de programmes, dont le défi 100 pompes. L'historique en cours est converti.</td></tr>
+    <tr><td class="k">Calendrier de tous les jours</td><td>Calendrier des séances prévues : les jours de repos ne sont plus des jours manqués.</td></tr>
+    <tr><td class="k">Trois rappels quotidiens fixes</td><td>Rappel avant la séance du jour, plus une alerte de série en danger le soir.</td></tr>
+    <tr><td class="k">Compteur libre par exercice</td><td>Séance guidée, saisie libre conservée en secours.</td></tr>
+    <tr><td class="k">Série et total de répétitions</td><td>Série, XP, niveau, rang, trois stats, badges, équipement.</td></tr>
+    <tr><td class="k">Quatre tons de motivation</td><td>Conservés tels quels, le ton absurde compris.</td></tr>
+    <tr><td class="k">Thème clair / sombre</td><td>Conservé. L'ambiance générale du jeu reste à trancher devant la maquette.</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="num">06</span>Sur quoi reposent les programmes</h2>
+  <p class="intro">Les routines des personnages viennent de ce que les œuvres montrent réellement. Les progressions viennent de méthodes publiées. Voici les sources consultées à ce stade ; chaque programme citera les siennes dans l'app.</p>
+  <ul>
+    <li><a href="https://www.healthline.com/health/fitness/one-punch-man-workout-review">Healthline — revue clinique du One Punch Man workout</a> et <a href="https://www.thebioneer.com/one-punch-man-workout/">The Bioneer</a> : la routine canonique, et pourquoi elle doit être progressive.</li>
+    <li><a href="https://www.boostcamp.app/coaches/r-bodyweightfitness/r-bodyweight-recommended-routine">Recommended Routine de r/bodyweightfitness</a> : 3 séances hebdomadaires, progression par difficulté d'exercice plutôt que par charge.</li>
+    <li><a href="https://marathonhandbook.com/couch-to-5k-training-plan/">Couch to 5K</a> : 9 semaines, 3 sorties, intervalles course/marche décroissants.</li>
+    <li><a href="https://www.myworkout.com/en/4x4-intervals">Protocole norvégien 4×4</a> : 4 × 4 min à haute intensité, 3 min de récupération — 7 à 13 % de VO₂max en 8 semaines dans les essais.</li>
+    <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8508367/">Essai 8 semaines pliométrie + sprint</a> et <a href="https://journals.lww.com/nsca-jscr/Fulltext/2012/02000/The_Effects_of_Plyometric_Training_on_Sprint.35.aspx">méta-analyse NSCA sur pliométrie et sprint</a> : 2 séances par semaine, 72 h d'écart.</li>
+    <li><a href="https://actionheroflex.com/anime-training/one-punch-man-training-plan-train-like-saitama-in-real-life">Action Hero Athletics</a> et <a href="https://superherojacked.com/2020/02/25/rock-lee-workout/">SuperHeroJacked</a> : adaptations existantes des routines d'animés, utiles comme points de comparaison.</li>
+  </ul>
+  <div class="note">
+    <span class="lbl">Reste à faire</span>
+    <p>La recherche détaillée programme par programme — séances, séries, répétitions, semaines — se fera à l'écriture du contenu, après validation de ce cadrage. Inutile de chercher les huit en détail si l'un d'eux saute maintenant.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">07</span>Les étapes, et ce qu'on teste à chacune</h2>
+  <ol class="steps">
+    <li><div><h4>Maquette</h4><p>Les écrans du jeu en deux ambiances, sombre et claire, sur canvas manipulable. Tu tranches l'ambiance et la disposition avant que le code existe.</p></div></li>
+    <li><div><h4>Moteur de jeu, deux programmes</h4><p>XP, stats, rangs, déblocages, quête de pénalité, avec Saitama et Naruto. Assez pour jouer vraiment pendant deux semaines et sentir si la courbe est juste.</p></div></li>
+    <li><div><h4>Les six autres programmes</h4><p>Contenu sportif complet, sourcé, avec l'équipement et les badges associés.</p></div></li>
+    <li><div><h4>Réglage</h4><p>On ajuste la courbe d'XP et les seuils de stat sur tes chiffres réels d'usage. Cette étape est inévitable : aucun équilibrage ne tombe juste du premier coup.</p></div></li>
+  </ol>
+  <p style="margin-top:18px">À chaque étape, l'app est compilée, installée sur ton téléphone et testée par toi avant de passer à la suivante.</p>
+</section>
+
+<section style="border-bottom:none">
+  <h2><span class="num">08</span>Ce qu'il reste à trancher</h2>
+  <p class="intro">Rien ici ne bloque le démarrage de la maquette. Mais il faudra répondre avant l'étape 2.</p>
+  <div class="q"><b>Le nom de l'app</b><p>« Dojo » est un nom de travail, posé pour avoir quelque chose à écrire. Il te va, ou tu as une idée ?</p></div>
+  <div class="q"><b>Le rang S+</b><p>Je l'ai mis au-dessus de S, comme dans One Punch Man. Utile comme horizon lointain, ou superflu ?</p></div>
+  <div class="q"><b>Combien de séances par semaine peux-tu réellement tenir ?</b><p>Ça décide du rythme par défaut des programmes. Trois, quatre, cinq ? Réponds pour toi, pas pour l'utilisateur idéal.</p></div>
+  <div class="q"><b>Le délai de la quête de pénalité</b><p>Avant minuit le lendemain, ou jusqu'à la séance suivante ? Le premier est plus tendu, le second plus tenable en semaine chargée.</p></div>
+  <div class="q"><b>Un joker hebdomadaire</b><p>Une séance sautée par semaine sans pénalité, pour les imprévus. Ça protège la motivation — ou ça vide le système de son sel ?</p></div>
+  <div class="q"><b>Luffy pour la souplesse</b><p>C'est le seul de ta liste dont le pouvoir est littéralement l'élasticité, donc c'est logique et c'est drôle. Mais si tu préfères garder Luffy pour l'explosivité, il faut un autre personnage pour la souplesse.</p></div>
+</section>
+
+<footer>Document de cadrage — révisable. La version 1 de l'app reste disponible sur la branche <strong>v1-defi-100-pompes</strong>.</footer>
+
+</div>
