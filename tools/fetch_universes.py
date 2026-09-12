@@ -36,6 +36,7 @@ UNIVERSES = [
     ("minato",   36967,  "Hiroshige sudden shower",       ["shower", "rain", "storm"], "#101E3C", "#F5D547"),
     ("levi",     55628,  "Hiroshige snow mountain gorge", ["snow", "gorge", "pass"],   "#131A15", "#B9C4BC"),
     ("luffy",    39799,  "Hokusai great wave Kanagawa",   ["wave"],                    "#3A0A0A", "#F6C453"),
+    ("naruto",   36932,  "Hiroshige Hakone pass",         ["hakone", "pass", "mountain"], "#0E2340", "#F5A03C"),
 ]
 
 # Département 6 = Asian Art. Sans ce filtre la recherche ramène des objets

@@ -5,11 +5,11 @@ s'il est absent, le fond graphique dessiné en CSS prend le relais.** Rien ne ca
 dans un cas comme dans l'autre — tu peux en déposer une, huit, ou aucune, et en
 changer quand tu veux sans toucher au code.
 
-**Les huit fichiers sont déjà là**, composés à partir d'estampes japonaises du
+**Les neuf fichiers sont déjà là**, composés à partir d'estampes japonaises du
 domaine public traitées dans la palette de chaque programme — voir `CREDITS.md`.
 Déposer un fichier du même nom remplace celui d'origine.
 
-## Les huit fichiers attendus
+## Les neuf fichiers attendus
 
 | Fichier | Programme | Dominantes de la palette |
 |---|---|---|
@@ -21,6 +21,7 @@ Déposer un fichier du même nom remplace celui d'origine.
 | `minato.jpg` | Vitesse | jaune `#F5D547` · bleu `#2C4A8C` |
 | `levi.jpg` | Gainage | vert-de-gris `#4A5D4E` · blanc `#D8D3C8` |
 | `luffy.jpg` | Souplesse | rouge `#D62828` · jaune `#F6C453` |
+| `naruto.jpg` | Résilience | orange `#F47B20` · bleu `#0E2340` |
 
 Les noms doivent être exactement ceux-là, en minuscules. `.jpg` ou `.png`,
 les deux fonctionnent.

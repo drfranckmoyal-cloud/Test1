@@ -22,13 +22,13 @@
   </style>
 </helmet>
 
-<div style="width: 390px; height: 844px; background: #0B0A0C; color: #F4F1EC; display: flex; flex-direction: column; overflow: hidden;">
+<div style="width: 390px; height: 844px; background: #0B0A0C; color: #F4F1EC; overflow: hidden; position: relative;">
 
   <!-- en-tête -->
   <div style="padding: 30px 20px 0 20px; display: flex; align-items: center; justify-content: space-between;">
     <div>
       <div style="font-family: 'Dela Gothic One', sans-serif; font-size: 24px; letter-spacing: 0.01em;">PROGRAMMES</div>
-      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #8E8894; margin-top: 4px;">3 OUVERTS · 5 VERROUILLÉS</div>
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #8E8894; margin-top: 4px;">4 OUVERTS · 5 VERROUILLÉS</div>
     </div>
     <div style="display: flex; align-items: center; gap: 8px;">
       <div style="width: 44px; height: 44px; border-radius: 4px; background: linear-gradient(160deg, #E0B44A, #A97C17); display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 19px; color: #17140F;">C</div>
@@ -110,12 +110,18 @@
       </div>
     </div>
 
+    <div class="tile" style="grid-column: span 2; height: 132px; background: linear-gradient(120deg, #F47B20 0%, #0E2340 100%);">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(102deg, rgba(255,255,255,0.14) 0 2px, rgba(255,255,255,0) 2px 15px);"></div>
+      <div style="position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,0,0,0.22) 1px, transparent 1.1px); background-size: 7px 7px;"></div>
+      <div class="nm">NARUTO</div>
+      <div class="fam" style="color: #FFD9A8;">RÉSILIENCE</div>
+      <div class="bar"><i style="width: 8%; background: #F5A03C;"></i></div>
+    </div>
+
   </div>
 
-  <div style="flex-grow: 1;"></div>
-
   <!-- barre d'onglets -->
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #1E1B22; background: #0F0E11; padding: 10px 12px 26px 12px;">
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #1E1B22; background: #0F0E11; padding: 10px 12px 26px 12px;">
     <div style="height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
       <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="stroke: #6E6875; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M4 13h3l2-5 3 9 2.5-6 1.5 2h4"></path></svg>
       <span style="font-size: 10px; font-weight: 700; color: #6E6875;">Séance</span>

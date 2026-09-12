@@ -1,6 +1,6 @@
 # Crédits des fonds d'univers
 
-Les huit fonds livrés avec l'app sont des **estampes japonaises du domaine
+Les neuf fonds livrés avec l'app sont des **estampes japonaises du domaine
 public**, issues de l'Open Access du Metropolitan Museum of Art (licence CC0).
 Chacune est passée en bichromie dans la palette de son programme, recadrée et
 assombrie du bas — le traitement est dans `tools/fetch_universes.py`, et les
@@ -17,6 +17,7 @@ reproductible.
 | `minato.jpg` | Utagawa Hiroshige | *Sudden Shower in Shōno* | ca. 1833–34 | [None](https://www.metmuseum.org/art/collection/search/36967) |
 | `levi.jpg` | Utagawa Hiroshige | *River Gorge in Snow* | — | [None](https://www.metmuseum.org/art/collection/search/55628) |
 | `luffy.jpg` | Katsushika Hokusai | *Under the Wave off Kanagawa (Kanagawa oki nami ura), or The Grea* | ca. 1830–32 | [None](https://www.metmuseum.org/art/collection/search/39799) |
+| `naruto.jpg` | Utagawa Hiroshige | *Hakone; Kosui* | ca. 1833–34 | [None](https://www.metmuseum.org/art/collection/search/36932) |
 
 ## Pourquoi celles-ci
 
@@ -28,6 +29,7 @@ reproductible.
 - **Minato** — *L'averse soudaine à Shōno* : l'image la plus célèbre de la vitesse dans tout l'art japonais.
 - **Levi** — une gorge sous la neige. L'austérité, le froid, la tenue.
 - **Luffy** — la Grande Vague. L'eau qui plie sans rompre.
+- **Naruto** — le col de Hakone, l'étape la plus dure du Tōkaidō. Des voyageurs minuscules face à une montagne qui ne finit pas.
 
 ## Les remplacer
 
