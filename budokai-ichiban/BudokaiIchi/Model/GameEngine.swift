@@ -111,7 +111,13 @@ enum GameEngine {
 
     // MARK: - Déblocages
 
+    /// Tous les programmes sont ouverts, le temps d'éprouver le contenu.
+    /// Repasser à `false` rend leurs conditions aux programmes : elles sont
+    /// toujours décrites dans le catalogue, rien n'a été effacé.
+    static let allProgramsOpen = true
+
     static func isUnlocked(_ program: Program, state: PlayerState) -> Bool {
+        if allProgramsOpen { return true }
         switch program.unlock {
         case .open:
             return true

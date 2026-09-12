@@ -14,7 +14,9 @@ struct ProgramsView: View {
                         Text("PROGRAMMES")
                             .font(.display(24))
                             .foregroundStyle(Theme.text)
-                        Text("\(openCount) OUVERTS · \(Catalog.programs.count - openCount) VERROUILLÉS")
+                        Text(openCount == Catalog.programs.count
+                             ? "LES \(openCount) SONT OUVERTS"
+                             : "\(openCount) OUVERTS · \(Catalog.programs.count - openCount) VERROUILLÉS")
                             .font(.ui(11, .bold))
                             .kerning(1.8)
                             .foregroundStyle(Theme.muted)
@@ -39,7 +41,9 @@ struct ProgramsView: View {
                     }
                 }
 
-                Text("Les neuf programmes sont écrits. Ceux qui restent verrouillés s'ouvrent en montant tes stats et ton rang.")
+                Text(openCount == Catalog.programs.count
+                     ? "Tous les maîtres sont accessibles, le temps d'éprouver le contenu. Tu peux en suivre plusieurs à la fois."
+                     : "Les programmes verrouillés s'ouvrent en montant tes caractéristiques et ton rang.")
                     .font(.ui(12))
                     .foregroundStyle(Theme.muted)
                     .fixedSize(horizontal: false, vertical: true)
