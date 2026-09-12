@@ -43,16 +43,35 @@ enum BudokaiHero: String, Codable, CaseIterable, Identifiable {
     }
 }
 
-/// Le moment où le héros intervient.
-///
-/// Les visuels de fin de séance ne sont pas encore produits ; le moteur les
-/// attend déjà, et les servira sans une ligne de code de plus le jour où les
-/// images seront déposées dans le catalogue.
+/// Le moment où le héros intervient : il lance la séance, puis il revient
+/// une fois qu'elle est faite.
 enum HeroPopupPhase: String, Codable, CaseIterable {
     case sessionStart
     case sessionComplete
 
     var assetKey: String { self == .sessionStart ? "start" : "complete" }
+
+    /// Ce qu'un lecteur d'écran annonce. Le texte de la bulle est dans
+    /// l'image, donc hors de sa portée.
+    func accessibilityLabel(_ hero: BudokaiHero) -> String {
+        self == .sessionStart
+            ? "\(hero.displayName), début de séance"
+            : "\(hero.displayName), fin de séance"
+    }
+}
+
+/// Ce qu'une intervention salue.
+///
+/// Les quatre variantes de fin sont des félicitations générales, valables
+/// pour n'importe quelle séance terminée. Le moteur n'essaie donc pas de
+/// choisir une phrase selon la performance — les phrases sont dans les
+/// images. Cette distinction existe pour le jour où des visuels propres au
+/// combat final ou au passage de jalon seront produits.
+enum HeroPopupContext: String, Codable, CaseIterable {
+    case standard
+    case milestone
+    case bossComplete
+    case personalBest
 }
 
 /// Un visuel : un héros, un moment, une variante.
@@ -115,19 +134,39 @@ enum HeroPopupLibrary {
 
 /// Choisit la variante à montrer.
 ///
-/// La règle est simple et tient en une phrase : jamais deux fois de suite la
-/// même, et les quatre passent à peu près autant. Un vrai tirage au sort
-/// répéterait une image une fois sur quatre, ce qui se remarque tout de suite.
+/// Un tirage au sort simple répéterait une image une fois sur quatre et en
+/// oublierait une autre pendant dix séances — ça se remarque tout de suite.
+/// On tire donc dans un **sac** : les quatre variantes y sont mélangées, on
+/// les sort une à une, et on ne rebat les cartes qu'une fois le sac vide. Les
+/// quatre passent alors exactement autant, et jamais deux fois de suite.
 enum HeroPopupSelector {
 
-    static func next(hero: BudokaiHero,
-                     phase: HeroPopupPhase = .sessionStart,
-                     excluding last: Int?) -> HeroPopupAsset? {
+    /// Ce qui sort du sac, et le sac tel qu'il reste ensuite.
+    ///
+    /// `bag` est ce qu'il restait à sortir ; `last` la dernière variante
+    /// montrée **pour ce moment**, le début et la fin de séance ayant chacun
+    /// leur mémoire. Rien n'est conservé ici : c'est à l'appelant de ranger
+    /// le sac, pour que le tirage reste sans effet de bord.
+    static func draw(hero: BudokaiHero,
+                     phase: HeroPopupPhase,
+                     bag: [Int],
+                     last: Int?) -> (asset: HeroPopupAsset, bag: [Int])? {
         let all = HeroPopupLibrary.assets(hero, phase: phase)
         guard !all.isEmpty else { return nil }
-        guard all.count > 1 else { return all[0] }
+        let variants = all.map(\.variant)
 
-        let candidates = all.filter { $0.variant != last }
-        return candidates.randomElement() ?? all[0]
+        // on rebat quand le sac est vide, en évitant de recommencer par la
+        // variante qui vient de sortir
+        var remaining = bag.filter(variants.contains)
+        if remaining.isEmpty {
+            remaining = variants.shuffled()
+            if remaining.count > 1, remaining.first == last {
+                remaining.swapAt(0, remaining.count - 1)
+            }
+        }
+
+        let variant = remaining.removeFirst()
+        guard let asset = all.first(where: { $0.variant == variant }) else { return nil }
+        return (asset, remaining)
     }
 }

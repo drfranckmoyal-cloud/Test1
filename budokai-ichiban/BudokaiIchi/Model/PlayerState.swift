@@ -244,6 +244,10 @@ struct PlayerState: Codable {
     /// La dernière variante montrée, par héros et par moment, pour ne jamais
     /// servir deux fois de suite la même image.
     var lastHeroVariant: [String: Int] = [:]
+    /// Les variantes qu'il reste à sortir avant de rebattre les cartes. C'est
+    /// ce qui garantit que les quatre passent autant, au lieu d'un tirage au
+    /// sort qui en répéterait une et en oublierait une autre.
+    var heroVariantBag: [String: [Int]] = [:]
 
     /// Relit une sauvegarde écrite quand un seul programme était suivi.
     init(from decoder: Decoder) throws {
@@ -274,6 +278,7 @@ struct PlayerState: Codable {
         spoilerLevel = read(.spoilerLevel, .anime)
         heroPopups = read(.heroPopups, true)
         lastHeroVariant = read(.lastHeroVariant, [:])
+        heroVariantBag = read(.heroVariantBag, [:])
 
         if let many = try? box.decode([String].self, forKey: .activePrograms) {
             activePrograms = many

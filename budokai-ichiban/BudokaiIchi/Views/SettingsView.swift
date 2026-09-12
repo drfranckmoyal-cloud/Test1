@@ -57,10 +57,10 @@ struct SettingsView: View {
                     SectionLabel(text: "TON HÉROS").padding(.top, 26)
                     HStack(alignment: .top, spacing: 12) {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Il te lance la séance")
+                            Text("Il te lance la séance, et te félicite après")
                                 .font(.ui(14, .semibold))
                                 .foregroundStyle(Theme.text)
-                            Text("Le personnage du programme apparaît deux secondes avant la séance.")
+                            Text("Le personnage du programme apparaît deux secondes avant la séance, puis revient une fois qu'elle est faite.")
                                 .font(.ui(12))
                                 .foregroundStyle(Theme.muted)
                                 .fixedSize(horizontal: false, vertical: true)

@@ -892,8 +892,7 @@ final class GameStore: ObservableObject {
             return ready
         }
         guard let hero = BudokaiHero(program: program) else { return nil }
-        return HeroPopupSelector.next(hero: hero, phase: phase,
-                                      excluding: state.lastHeroVariant[key(hero, phase)])
+        return draw(hero, phase)
     }
 
     /// Choisit le visuel à l'avance et le charge en mémoire.
@@ -907,11 +906,21 @@ final class GameStore: ObservableObject {
         guard state.heroPopups, let hero = BudokaiHero(program: program) else { return }
         let slot = pendingKey(program, phase)
         guard pendingHeroPopups[slot] == nil else { return }
-        guard let asset = HeroPopupSelector.next(hero: hero, phase: phase,
-                                                 excluding: state.lastHeroVariant[key(hero, phase)])
-        else { return }
+        guard let asset = draw(hero, phase) else { return }
         pendingHeroPopups[slot] = asset
         HeroPopupLibrary.preload(asset)
+    }
+
+    /// Pioche une variante et range le sac.
+    private func draw(_ hero: BudokaiHero, _ phase: HeroPopupPhase) -> HeroPopupAsset? {
+        let slot = key(hero, phase)
+        guard let result = HeroPopupSelector.draw(hero: hero, phase: phase,
+                                                  bag: state.heroVariantBag[slot] ?? [],
+                                                  last: state.lastHeroVariant[slot])
+        else { return nil }
+        state.heroVariantBag[slot] = result.bag
+        save()
+        return result.asset
     }
 
     private func pendingKey(_ program: ProgramID, _ phase: HeroPopupPhase) -> String {

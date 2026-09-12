@@ -19,8 +19,11 @@ struct SessionSheetView: View {
     @State private var step: Step = .card
     @State private var outcome: SessionOutcome?
     @State private var report = SessionReport()
-    /// Le héros qui intervient avant la séance, tant qu'il est à l'écran.
+    /// Le héros qui intervient, avant la séance ou après elle.
     @State private var hero: HeroPopupAsset?
+    /// Ce qu'on fait une fois le héros parti : ouvrir la séance, ou passer au
+    /// bilan. Le popup ne décide de rien, il ne fait que retarder.
+    @State private var afterHero: () -> Void = {}
     /// La séance n'est ouverte qu'une fois le héros parti : tant qu'il parle,
     /// rien n'est enregistré.
     @State private var started = false
@@ -51,13 +54,14 @@ struct SessionSheetView: View {
                 }
             }
         }
-        .heroPopup($hero) { begin() }
+        .heroPopup($hero) { afterHero(); afterHero = {} }
         .onAppear {
             guard !started else { return }
             // le héros d'abord, la séance ensuite : rien ne s'enregistre
             // pendant qu'il parle
             if let asset = store.heroPopup(for: session.programID) {
                 store.rememberHeroPopup(asset)
+                afterHero = begin
                 hero = asset
             } else {
                 begin()
@@ -75,6 +79,9 @@ struct SessionSheetView: View {
         guard !started else { return }
         started = true
         store.beginSession(tuned)
+        // le visuel de fin est choisi et décodé pendant la séance : au moment
+        // de valider, il est déjà prêt
+        store.prepareHeroPopup(for: session.programID, phase: .sessionComplete)
     }
 
     // MARK: - La fiche
@@ -639,7 +646,7 @@ struct SessionSheetView: View {
 
         if alreadyRecorded {
             store.closeSession(of: done.programID)
-            dismiss()
+            congratulate { dismiss() }
             return
         }
         var achieved: [Int: Int] = [:]
@@ -647,7 +654,24 @@ struct SessionSheetView: View {
         // l'enregistrement lit les contributions : la séance se referme après
         outcome = store.complete(session: done, achieved: achieved)
         store.closeSession(of: done.programID)
-        step = .outcome
+
+        // tout est enregistré : le héros peut venir féliciter, puis le bilan
+        congratulate { step = .outcome }
+    }
+
+    /// Fait revenir le héros après l'effort, puis passe à la suite.
+    ///
+    /// Le popup n'est qu'une couche de présentation : la séance est déjà
+    /// enregistrée quand il s'affiche. S'il n'y a pas de visuel — héros sans
+    /// image, interventions coupées — on enchaîne directement.
+    private func congratulate(then next: @escaping () -> Void) {
+        guard let asset = store.heroPopup(for: session.programID, phase: .sessionComplete) else {
+            next()
+            return
+        }
+        store.rememberHeroPopup(asset)
+        afterHero = next
+        hero = asset
     }
 
     // MARK: - Regroupement des étapes
