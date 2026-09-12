@@ -33,7 +33,14 @@ struct ProgramLaunchView: View {
     @State private var showJourney = false
 
     private var rules: ProgramSchedulingRules? { store.schedulingRules(of: program.id) }
+    /// Saitama a sa calibration à quatre domaines ; les autres suivent les
+    /// tests que leur coach a écrits.
     private var needsCalibration: Bool { program.id == .saitama }
+    private var coachTests: [SessionLibrary.CalibrationTest] {
+        program.id == .saitama ? [] : SessionLibrary.calibration(program.id)
+    }
+    /// Les réponses aux tests du coach, par identifiant.
+    @State private var coachAnswers: [String: Int] = [:]
     private var tint: Color { program.light }
 
     // MARK: - Les étapes
@@ -41,6 +48,7 @@ struct ProgramLaunchView: View {
     private enum Stage: Hashable {
         case welcome, frequency, days, keyDay, duration, week
         case calibrationIntro, push, squat, core, endurance
+        case coachTest(Int)
         case summary
     }
 
@@ -48,6 +56,10 @@ struct ProgramLaunchView: View {
         var list: [Stage] = [.welcome]
         if rules != nil { list += [.frequency, .days, .keyDay, .duration, .week] }
         if needsCalibration { list += [.calibrationIntro, .push, .squat, .core, .endurance] }
+        if !coachTests.isEmpty {
+            list.append(.calibrationIntro)
+            list += coachTests.indices.map { Stage.coachTest($0) }
+        }
         list.append(.summary)
         return list
     }
@@ -124,6 +136,7 @@ struct ProgramLaunchView: View {
                                  level: $coreLevel, reps: $coreReps, max: 30,
                                  cue: "Remontée contrôlée, sans tirer sur la nuque ni s'aider d'un élan.")
         case .endurance: enduranceScreen
+        case .coachTest(let index): coachTestScreen(index)
         case .summary: summaryScreen
         }
     }
@@ -220,14 +233,86 @@ struct ProgramLaunchView: View {
     }
 
     private var calibrationIntroScreen: some View {
-        screen(eyebrow: "TON POINT DE DÉPART", title: "Quatre mesures",
+        let tests = coachTests
+        return screen(eyebrow: "TON POINT DE DÉPART",
+               title: tests.isEmpty ? "Quatre mesures" : "\(tests.count) mesures",
                help: "Ce ne sont pas des tests maximaux. On cherche ton niveau actuel pour que la première séance tombe juste — ni ridicule, ni hors de portée.") {
             VStack(alignment: .leading, spacing: 12) {
-                bullet("figure.arms.open", "Poussée", "La variante de pompe que tu tiens proprement.")
-                bullet("figure.strengthtraining.functional", "Jambes", "Ton squat, et combien tu en fais.")
-                bullet("figure.core.training", "Tronc", "La variante d'abdominaux que tu contrôles.")
-                bullet("figure.run", "Endurance", "Six minutes, en courant ou en marchant.")
+                if tests.isEmpty {
+                    bullet("figure.arms.open", "Poussée", "La variante de pompe que tu tiens proprement.")
+                    bullet("figure.strengthtraining.functional", "Jambes", "Ton squat, et combien tu en fais.")
+                    bullet("figure.core.training", "Tronc", "La variante d'abdominaux que tu contrôles.")
+                    bullet("figure.run", "Endurance", "Six minutes, en courant ou en marchant.")
+                } else {
+                    ForEach(tests) { test in
+                        bullet("target", test.label, test.cue)
+                    }
+                }
             }
+        }
+    }
+
+    /// Un test écrit par le coach : son intitulé, sa consigne, une valeur.
+    private func coachTestScreen(_ index: Int) -> some View {
+        let tests = coachTests
+        guard index < tests.count else { return AnyView(EmptyView()) }
+        let test = tests[index]
+        let step = test.objectiveUnit == .meters ? 100 : (test.objectiveUnit == .seconds ? 30 : 1)
+
+        return AnyView(screen(eyebrow: "MESURE \(index + 1) SUR \(tests.count)",
+                              title: test.label, help: nil) {
+            VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("CE QU'ON MESURE")
+                        .font(.ui(9, .bold))
+                        .kerning(1.8)
+                        .foregroundStyle(tint)
+                    Text(test.cue)
+                        .font(.ui(14))
+                        .foregroundStyle(Theme.text)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Theme.surface, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 15, style: .continuous)
+                    .stroke(Theme.border, lineWidth: 1))
+
+                stepper(unitLabel(test.objectiveUnit),
+                        value: Binding(
+                            get: { coachAnswers[test.id] ?? defaultAnswer(test) },
+                            set: { coachAnswers[test.id] = $0 }),
+                        range: 0...test.max, stride: step)
+
+                Button {
+                    Haptics.tap()
+                    coachAnswers[test.id] = 0
+                } label: {
+                    Text("Je ne sais pas / je n'ai pas cette donnée")
+                        .font(.ui(12, .semibold))
+                        .foregroundStyle(Theme.muted)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 44)
+                }
+                .buttonStyle(.plain)
+            }
+        })
+    }
+
+    private func unitLabel(_ unit: ObjectiveUnit) -> String {
+        switch unit {
+        case .reps: return "Répétitions"
+        case .seconds: return "Secondes"
+        case .meters: return "Mètres"
+        case .kg: return "Kilos"
+        }
+    }
+
+    private func defaultAnswer(_ test: SessionLibrary.CalibrationTest) -> Int {
+        switch test.objectiveUnit {
+        case .seconds: return min(test.max, 1800)
+        case .meters: return min(test.max, 5000)
+        default: return min(test.max, 10)
         }
     }
 
@@ -361,6 +446,10 @@ struct ProgramLaunchView: View {
                     recap("Rythme", "\(schedule.sessionsPerWeek) séances par semaine")
                     recap("Durée estimée", "environ \(schedule.estimatedWeeks) semaines")
                     recap("Jours", schedule.sessions.map { $0.day.label }.joined(separator: ", "))
+                }
+                ForEach(coachTests) { test in
+                    let value = coachAnswers[test.id] ?? 0
+                    recap(test.label, value == 0 ? "non renseigné" : test.objectiveUnit.format(value))
                 }
                 if needsCalibration {
                     recap("Poussée", "\(SaitamaLibrary.exercise(family: "sai.push", level: pushLevel)?.name ?? "") · \(pushReps)")
@@ -673,6 +762,9 @@ struct ProgramLaunchView: View {
             calibration.sixMinuteMeters = meters
             calibration.runRatio = runRatio
             store.setSaitamaCalibration(calibration)
+        }
+        if !coachTests.isEmpty {
+            store.setCoachCalibration(coachAnswers, tests: coachTests, for: program.id)
         }
         Haptics.success()
         onStart()

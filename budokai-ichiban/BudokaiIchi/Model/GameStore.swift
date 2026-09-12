@@ -140,6 +140,85 @@ final class GameStore: ObservableObject {
                                intensity: state.progress(id).intensity)
     }
 
+    // MARK: - Avancement générique
+
+    /// Fait avancer un programme décrit par sa définition : franchit les
+    /// jalons, débloque leurs vignettes, et fait bouger les variantes.
+    ///
+    /// Saitama garde sa logique propre — il juge quatre domaines contre un
+    /// repère chiffré. Les autres avancent sur le volume de séances prévu par
+    /// leurs jalons, et le coach place ses conditions de sortie dans la
+    /// définition.
+    private func advanceProgram(_ id: ProgramID, _ session: PlannedSession) {
+        var progress = state.progress(id)
+        let stages = ProgramLibrary.stages(id)
+        guard !stages.isEmpty else { return }
+
+        adjustCoachVariants(&progress, program: id, session: session)
+
+        let perWeek = progress.schedule?.sessionsPerWeek
+            ?? SchedulingCatalog.rules(for: id)?.recommendedSessionsPerWeek ?? 4
+        // le jalon que la séance qui vient d'être faite refermait
+        var cumulative = 0
+        var finished: ProgramDefinition.Stage?
+        for stage in stages {
+            cumulative += max(1, stage.weeksMin * perWeek)
+            if progress.completedSessions == cumulative { finished = stage; break }
+            if progress.completedSessions < cumulative { break }
+        }
+
+        state.programs[id.rawValue] = progress
+        if let stage = finished {
+            completeBlock(blockId(id, stage: stage.key), of: id)
+        }
+    }
+
+    /// Fait progresser ou régresser les variantes d'un programme du coach.
+    ///
+    /// Même règle que Saitama : deux expositions propres ouvrent l'échelon
+    /// suivant, deux expositions dégradées font redescendre.
+    private func adjustCoachVariants(_ progress: inout ProgramProgress,
+                                     program id: ProgramID, session: PlannedSession) {
+        guard let report = recentReports(of: id).first else { return }
+        let clean = (report.quality ?? .correct) != .degraded
+            && (report.rpe ?? 7) <= 7
+            && (report.completion ?? .entirely) == .entirely
+        let poor = (report.quality ?? .correct) == .degraded
+            || (report.completion ?? .entirely) != .entirely
+
+        var fresh = Set(progress.freshVariants)
+        let families = Set(session.prescriptions.compactMap { $0.variantId })
+
+        for familyId in families {
+            guard let family = SessionLibrary.family(id, familyId) else { continue }
+
+            if fresh.contains(familyId) {
+                fresh.remove(familyId)
+                progress.cleanExposures[familyId] = 0
+                continue
+            }
+            if clean {
+                progress.cleanExposures[familyId, default: 0] += 1
+                progress.poorExposures[familyId] = 0
+            } else if poor {
+                progress.poorExposures[familyId, default: 0] += 1
+                progress.cleanExposures[familyId] = 0
+            }
+
+            let current = progress.exerciseLevel[familyId] ?? family.bossLevel ?? 1
+            if progress.cleanExposures[familyId] ?? 0 >= 2, current < family.ladder.count {
+                progress.exerciseLevel[familyId] = current + 1
+                progress.cleanExposures[familyId] = 0
+                fresh.insert(familyId)
+            } else if progress.poorExposures[familyId] ?? 0 >= 2, current > 1 {
+                progress.exerciseLevel[familyId] = current - 1
+                progress.poorExposures[familyId] = 0
+                fresh.insert(familyId)
+            }
+        }
+        progress.freshVariants = Array(fresh)
+    }
+
     // MARK: - Programmes écrits par le coach
 
     /// La séance du jour d'un programme dont les semaines type sont livrées.
@@ -192,6 +271,27 @@ final class GameStore: ObservableObject {
     /// Vrai tant que les quatre domaines ne sont pas mesurés.
     var saitamaNeedsCalibration: Bool {
         !(saitamaCalibration?.isComplete ?? false)
+    }
+
+    /// Enregistre les réponses aux tests écrits par le coach.
+    ///
+    /// Chaque mesure est historisée — on n'écrase jamais — et fixe l'échelon
+    /// de départ dans la famille que le test désigne.
+    func setCoachCalibration(_ answers: [String: Int],
+                             tests: [SessionLibrary.CalibrationTest],
+                             for id: ProgramID) {
+        var progress = state.progress(id)
+        for test in tests {
+            guard let value = answers[test.id], value > 0 else { continue }
+            progress.calibration.append(CalibrationResult(
+                testId: test.id, value: value, unit: test.objectiveUnit))
+            if let family = test.family, let level = test.referenceLevel,
+               progress.exerciseLevel[family] == nil {
+                progress.exerciseLevel[family] = level
+            }
+        }
+        state.programs[id.rawValue] = progress
+        save()
     }
 
     func setSaitamaCalibration(_ calibration: SaitamaCalibration) {
@@ -412,7 +512,7 @@ final class GameStore: ObservableObject {
                 progress.consolidationDomains = []
                 state.programs[ProgramID.saitama.rawValue] = progress
                 if SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBlockBest).unlocksReward {
-                    completeBlock(block.id, of: .saitama)
+                    completeBlock(blockId(.saitama, stage: block.title), of: .saitama)
                 }
                 return
             }
@@ -444,7 +544,7 @@ final class GameStore: ObservableObject {
         let outcome = SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBlockBest)
         switch outcome {
         case .advance, .advanceWithCorrective:
-            completeBlock(block.id, of: .saitama)
+            completeBlock(blockId(.saitama, stage: block.title), of: .saitama)
         case .consolidate(let domains):
             // pas de vignette tant que le seuil minimal n'est pas atteint :
             // on insère un microcycle ciblé sur les domaines en retard
@@ -803,7 +903,7 @@ final class GameStore: ObservableObject {
             continuousMeters: measured.continuousMeters))
         state.lastCompletedDay = todayKey
         state.penalty = nil
-        if program.id == .saitama { advanceSaitama(session) }
+        if program.id == .saitama { advanceSaitama(session) } else { advanceProgram(program.id, session) }
         save()
         syncNotifications()
 
@@ -1053,11 +1153,17 @@ final class GameStore: ObservableObject {
         guard !progress.completedBlocks.contains(blockId) else { return }
         progress.completedBlocks.append(blockId)
         state.programs[id.rawValue] = progress
-        if let reward = RewardCatalog.reward(forBlock: blockId) {
+        // un jalon porte souvent plusieurs vignettes : on les débloque toutes
+        for reward in RewardCatalog.all
+        where reward.unlockCondition == .blockCompleted(blockId: blockId) {
             state.rewards.unlock(reward.rewardId)
         }
         save()
     }
+
+    /// L'identifiant d'un jalon, tel que les conditions de déblocage
+    /// l'attendent.
+    func blockId(_ id: ProgramID, stage: String) -> String { "\(id.rawValue).\(stage)" }
 
     /// Les vignettes obtenues, les plus récentes d'abord.
     var unlockedRewards: [Reward] {
