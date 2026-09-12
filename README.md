@@ -21,11 +21,12 @@ Sélectionner un simulateur iPhone (ou un appareil) puis `⌘R`.
   fichiers : les fichiers ajoutés dans `PompesChallenge/` sont pris en compte
   automatiquement, sans passer par le `.pbxproj`).
 - iOS 17 minimum, iPhone uniquement, portrait, apparence sombre forcée.
-- L'app s'identifie comme `com.franckmoyal.DefiPompes` et s'affiche « 100 Pompes ».
-  Cet identifiant lui est propre : il la distingue de Budokai Ichi, qui a grandi à
-  partir du même projet sur la branche `claude/100-pushups-challenge-app-0aj91w` et
-  garde `com.franckmoyal.PompesChallenge`. Les deux cohabitent sur un même téléphone
-  tant qu'elles ne partagent pas d'identifiant — si on les réunifie, l'une écrase
+- L'app s'identifie comme `com.franckmoyal.PompesChallenge` et s'affiche « 100 Pompes ».
+  C'est son identifiant depuis le premier jour, et il lui reste : c'est lui qui désigne le
+  coffre où sont rangés l'historique, les séries et les records sur le téléphone. Budokai
+  Ichi, né du même projet sur la branche `claude/100-pushups-challenge-app-0aj91w`, a le
+  sien (`com.franckmoyal.BudokaiIchi`). Les deux apps cohabitent sur un même téléphone
+  tant que leurs identifiants restent distincts — si on les réunifie, l'une écrase
   l'autre à l'installation.
 - Pour compiler sous un autre compte Apple, remplacer `PRODUCT_BUNDLE_IDENTIFIER` et
   `DEVELOPMENT_TEAM` par les vôtres, ou choisir votre équipe dans l'onglet

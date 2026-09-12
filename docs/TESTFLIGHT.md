@@ -10,13 +10,15 @@ Ce dépôt contient deux apps issues du même projet :
 
 | | Identifiant | Nom affiché | Branche |
 |---|---|---|---|
-| Le défi 100 pompes | `com.franckmoyal.DefiPompes` | 100 Pompes | `v1-defi-100-pompes` |
-| Le jeu | `com.franckmoyal.PompesChallenge` | Budokai Ichi | `claude/100-pushups-challenge-app-0aj91w` |
+| Le défi 100 pompes | `com.franckmoyal.PompesChallenge` | 100 Pompes | `v1-defi-100-pompes` |
+| Le jeu | `com.franckmoyal.BudokaiIchi` | Budokai Ichi | `claude/100-pushups-challenge-app-0aj91w` |
 
-L'identifiant — pas le nom — est ce qui définit une app pour Apple. Les deux en portaient
-le même au départ, parce que Budokai Ichi devait **remplacer** le 100 pompes sur le
-téléphone et reprendre ses données. Pour les distribuer séparément, il en fallait deux
-distincts : c'est pour ça que le 100 pompes a pris `com.franckmoyal.DefiPompes`.
+L'identifiant — pas le nom — est ce qui définit une app pour Apple, et c'est lui qui
+désigne le coffre où l'app range ses données sur le téléphone.
+
+Le défi garde `com.franckmoyal.PompesChallenge`, le sien depuis le premier jour : c'est
+ce qui lui rend tout son historique — calendrier, séries, records. Budokai Ichi, qui avait
+un temps pris cet identifiant pour remplacer le défi, a désormais le sien.
 
 **Ne jamais les réunifier.** Deux apps qui partagent un identifiant s'écrasent l'une
 l'autre à l'installation, chez toi comme chez tes testeurs.
@@ -39,7 +41,7 @@ Une fiche par app. Celle-ci est **nouvelle** : ne réutilise pas celle de Budoka
 
 1. <https://appstoreconnect.apple.com> → **Mes apps** → **+** → **Nouvelle app**.
 2. Plateforme **iOS**, nom « 100 Pompes Challenge », langue **Français**.
-3. **Identifiant de bundle** : `com.franckmoyal.DefiPompes`. S'il n'apparaît pas dans la
+3. **Identifiant de bundle** : `com.franckmoyal.PompesChallenge`. S'il n'apparaît pas dans la
    liste, c'est qu'il n'existe pas encore côté Apple — va le créer dans
    *Certificates, Identifiers & Profiles* → **Identifiers** → **+** → *App IDs* → *App*,
    puis reviens.
@@ -60,7 +62,7 @@ exporte et transmet à App Store Connect. Pour un premier passage sans rien envo
 ./tools/envoie-testflight.sh --essai
 ```
 
-Il s'arrête de lui-même si l'identifiant n'est pas `com.franckmoyal.DefiPompes` —
+Il s'arrête de lui-même si l'identifiant n'est pas `com.franckmoyal.PompesChallenge` —
 archiver depuis l'autre branche enverrait Budokai Ichi sous l'identité du défi, et les
 deux apps s'écraseraient.
 

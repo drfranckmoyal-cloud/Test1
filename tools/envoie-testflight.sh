@@ -29,7 +29,7 @@ cd "$(dirname "$0")/.."
 PROJET="PompesChallenge.xcodeproj"
 SCHEME="PompesChallenge"
 EQUIPE="A7H8D53DKZ"
-BUNDLE="com.franckmoyal.DefiPompes"
+BUNDLE="com.franckmoyal.PompesChallenge"
 TRAVAIL="build"
 ARCHIVE="$TRAVAIL/$SCHEME.xcarchive"
 
