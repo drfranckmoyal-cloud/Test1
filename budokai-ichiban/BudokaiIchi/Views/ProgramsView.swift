@@ -3,6 +3,7 @@ import SwiftUI
 struct ProgramsView: View {
     @EnvironmentObject private var store: GameStore
     @State private var selected: Program?
+    @State private var journey: Program?
 
     private let columns = [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)]
 
@@ -30,7 +31,14 @@ struct ProgramsView: View {
                     ForEach(Catalog.programs) { program in
                         Button {
                             Haptics.tap()
-                            selected = program
+                            // un programme lancé s'ouvre sur sa route ; les
+                            // autres sur leur présentation
+                            if store.isActive(program.id), program.id == .saitama,
+                               store.saitamaCalibration?.isComplete == true {
+                                journey = program
+                            } else {
+                                selected = program
+                            }
                         } label: {
                             ProgramTile(program: program,
                                         progress: ratio(program),
@@ -57,6 +65,9 @@ struct ProgramsView: View {
         .background(Theme.ground)
         .sheet(item: $selected) { program in
             ProgramDetailView(program: program)
+        }
+        .sheet(item: $journey) { program in
+            ProgramJourneyView(program: program)
         }
     }
 

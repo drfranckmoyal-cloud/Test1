@@ -31,6 +31,7 @@ struct ProgramLaunchView: View {
     @State private var runRatio = 0.5
 
     @State private var cursor = 0
+    @State private var showJourney = false
 
     private var rules: ProgramSchedulingRules? { store.schedulingRules(of: program.id) }
     private var needsCalibration: Bool { program.id == .saitama }
@@ -82,6 +83,12 @@ struct ProgramLaunchView: View {
             }
         }
         .onAppear(perform: prepare)
+        .fullScreenCover(isPresented: $showJourney) {
+            ProgramJourneyView(program: program, isIntroduction: true)
+        }
+        .onChange(of: showJourney) { _, presented in
+            if !presented { dismiss() }
+        }
     }
 
     private var progressBar: some View {
@@ -605,6 +612,6 @@ struct ProgramLaunchView: View {
         }
         Haptics.success()
         onStart()
-        dismiss()
+        showJourney = true
     }
 }
