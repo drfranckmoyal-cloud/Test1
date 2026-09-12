@@ -1,0 +1,19 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 390, "h": 844, "title": "Identité" },
+    { "file": "Carte.dc.html", "x": 470, "y": 0, "w": 390, "h": 844, "title": "Carte des programmes" },
+    { "file": "Programme.dc.html", "x": 940, "y": 0, "w": 390, "h": 844, "title": "Programme — Rock Lee" },
+    { "file": "Seance.dc.html", "x": 1410, "y": 0, "w": 390, "h": 844, "title": "Séance du jour" },
+    { "file": "SeanceGuidee.dc.html", "x": 0, "y": 1000, "w": 390, "h": 844, "title": "Séance guidée" },
+    { "file": "Etape.dc.html", "x": 470, "y": 1000, "w": 390, "h": 844, "title": "Porte franchie" },
+    { "file": "Profil.dc.html", "x": 940, "y": 1000, "w": 390, "h": 844, "title": "Profil" },
+    { "file": "Penalite.dc.html", "x": 1410, "y": 1000, "w": 390, "h": 844, "title": "Quête de pénalité" },
+    { "file": "SeanceClaire.dc.html", "x": 0, "y": 2000, "w": 390, "h": 844, "title": "Séance du jour — variante claire" }
+  ],
+  "annotations": [
+    { "id": "note-ambiance", "x": -330, "y": 0, "w": 280, "text": "Direction : sombre, langage manga.\n\nTous les fonds sont dessinés en CSS — rayons, trames de points, lignes de vitesse, dégradés. Aucune image : ils se recolorisent et se redimensionnent tout seuls.\n\nChaque programme porte les couleurs de son œuvre." },
+    { "id": "note-claire", "x": -330, "y": 2000, "w": 280, "text": "La même séance en clair, pour comparer.\n\nL'orange y perd de sa force et les couleurs par programme se distinguent moins. À toi de trancher." },
+    { "id": "note-images", "x": 1880, "y": 0, "w": 280, "text": "Emplacements d'images.\n\nChaque tuile et chaque fiche de programme accepte une image de fond par-dessus le graphisme. Si le fichier existe, il s'affiche ; sinon le fond dessiné reste. Rien ne casse dans un cas comme dans l'autre." }
+  ],
+  "launch": { "view": "canvas" }
+}

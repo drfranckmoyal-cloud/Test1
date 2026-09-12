@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; font-family: Archivo, "Helvetica Neue", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #B96F08; text-decoration: none; } a:hover { color: #FFD08A; }
+    * { box-sizing: border-box; }
+    .ex { display: flex; align-items: center; gap: 13px; height: 54px; padding: 0 14px; border-radius: 9px; background: #FFFFFF; border: 1px solid #E6E0D8; }
+    .ex .i { width: 30px; height: 30px; border-radius: 8px; background: rgba(245,176,65,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ex .t { flex-grow: 1; font-size: 14px; font-weight: 700; }
+    .ex .r { font-family: 'Dela Gothic One', sans-serif; font-size: 14px; color: #B96F08; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: #F7F4EF; color: #17141A; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+
+  <div style="position: absolute; top: -60px; left: 50%; width: 520px; height: 520px; transform: translateX(-50%); background: radial-gradient(circle, rgba(30,132,73,0.16) 0%, rgba(30,132,73,0) 66%); pointer-events: none;"></div>
+
+  <!-- en-tête -->
+  <div style="position: relative; padding: 28px 20px 0 20px; display: flex; align-items: flex-start; justify-content: space-between;">
+    <div>
+      <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.26em; color: #B96F08;">ROCK LEE</div>
+      <div style="font-family: 'Dela Gothic One', sans-serif; font-size: 21px; margin-top: 6px;">PORTE DE LA VIE</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 12px; border-radius: 17px; background: rgba(224,43,32,0.14); border: 1px solid rgba(224,43,32,0.34);">
+      <svg width="13" height="13" viewBox="0 0 24 24" style="fill: #E02B20;"><path d="M12 2c.6 3 2.3 4.2 3.6 5.7 1.4 1.6 2.2 3.1 2.2 5.1a5.8 5.8 0 0 1-11.6 0c0-1.9.8-3.3 2-4.8C9.7 6.3 10.4 4.5 12 2Z"></path></svg>
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 13px; color: #E02B20;">17</span>
+      <span style="font-size: 11px; font-weight: 600; color: #7C7486;">jours</span>
+    </div>
+  </div>
+
+  <!-- anneau -->
+  <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 14px;">
+    <div style="position: relative; width: 206px; height: 206px;">
+      <svg width="206" height="206" viewBox="0 0 206 206" style="transform: rotate(-90deg);">
+        <circle cx="103" cy="103" r="88" fill="none" style="stroke: #E6E0D8; stroke-width: 16px;"></circle>
+        <circle cx="103" cy="103" r="88" fill="none" style="stroke: #F5A623; stroke-width: 16px; stroke-linecap: round; stroke-dasharray: 552.9; stroke-dashoffset: 221.2;"></circle>
+      </svg>
+      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="font-family: 'Dela Gothic One', sans-serif; font-size: 62px; line-height: 1; color: #B96F08;">24</div>
+        <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.2em; color: #7C7486; margin-top: 6px;">SÉANCE 24 / 40</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- exercices -->
+  <div style="position: relative; padding: 22px 20px 0 20px; display: flex; flex-direction: column; gap: 8px;">
+    <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.24em; color: #A49BAE; margin-bottom: 2px;">AU PROGRAMME AUJOURD'HUI</div>
+
+    <div class="ex">
+      <div class="i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: #B96F08; stroke-width: 2; stroke-linecap: round;"><path d="M3 12h3M18 12h3M6 8v8M18 8v8M6 12h12"></path></svg></div>
+      <div class="t">Pompes déclinées</div>
+      <div class="r">4 × 12</div>
+    </div>
+
+    <div class="ex">
+      <div class="i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: #B96F08; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 20l4-9 3 4 3-8 4 13"></path></svg></div>
+      <div class="t">Sauts groupés</div>
+      <div class="r">4 × 15</div>
+    </div>
+
+    <div class="ex">
+      <div class="i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: #B96F08; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><circle cx="12" cy="12" r="8"></circle><path d="M12 7v5l3 2"></path></svg></div>
+      <div class="t">Corde à sauter</div>
+      <div class="r">3 × 90 s</div>
+    </div>
+
+    <div class="ex">
+      <div class="i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="stroke: #B96F08; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M4 18h16M7 18V9M12 18V5M17 18v-6"></path></svg></div>
+      <div class="t">Fentes sautées</div>
+      <div class="r">3 × 10</div>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1;"></div>
+
+  <!-- xp + action -->
+  <div style="position: relative; padding: 0 20px 0 20px; display: flex; align-items: center; justify-content: space-between; height: 52px; border-radius: 9px; margin: 0 20px; background: rgba(245,176,65,0.09); border: 1px solid rgba(245,176,65,0.24);">
+    <span style="font-size: 12px; font-weight: 700; color: #6B6252;">À gagner</span>
+    <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 17px; color: #B96F08;">+225 XP</span>
+  </div>
+
+  <div style="position: relative; padding: 14px 20px 22px 20px;">
+    <div style="height: 60px; border-radius: 12px; background: #F5A623; color: #2A1D05; display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 18px;">COMMENCER</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #E6E0D8; background: #FFFFFF; padding: 10px 12px 26px 12px;">
+    <div style="height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="stroke: #E02B20; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M4 13h3l2-5 3 9 2.5-6 1.5 2h4"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #E02B20;">Séance</span>
+    </div>
+    <div style="height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="stroke: #A49BAE; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="3" y="4" width="7" height="7" rx="1.5"></rect><rect x="14" y="4" width="7" height="7" rx="1.5"></rect><rect x="3" y="15" width="7" height="7" rx="1.5"></rect><rect x="14" y="15" width="7" height="7" rx="1.5"></rect></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #A49BAE;">Programmes</span>
+    </div>
+    <div style="height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="stroke: #A49BAE; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #A49BAE;">Profil</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

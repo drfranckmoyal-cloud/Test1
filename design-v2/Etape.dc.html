@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; font-family: Archivo, "Helvetica Neue", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #1A2E20; text-decoration: none; } a:hover { color: #000; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: linear-gradient(168deg, #2FA45C 0%, #1E8449 40%, #0C3F24 100%); color: #F4F1EC; display: flex; flex-direction: column; align-items: center; overflow: hidden; position: relative;">
+
+  <div style="position: absolute; top: 60px; left: 50%; width: 820px; height: 820px; transform: translateX(-50%); background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(245,176,65,0.20) 0deg 5deg, rgba(245,176,65,0) 5deg 14deg); pointer-events: none;"></div>
+  <div style="position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,0,0,0.16) 1px, transparent 1.1px); background-size: 7px 7px; pointer-events: none;"></div>
+
+  <div style="height: 92px;"></div>
+
+  <!-- le chiffre de la porte -->
+  <div style="position: relative; width: 176px; height: 176px; display: flex; align-items: center; justify-content: center;">
+    <div style="position: absolute; inset: 0; border-radius: 50%; background: rgba(245,176,65,0.22);"></div>
+    <div style="position: absolute; inset: 18px; border-radius: 50%; background: rgba(245,176,65,0.32);"></div>
+    <span style="position: relative; font-family: 'Dela Gothic One', sans-serif; font-size: 104px; line-height: 1; color: #FFF7E6;">3</span>
+  </div>
+
+  <div style="position: relative; text-align: center; padding: 30px 26px 0 26px;">
+    <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.34em; color: rgba(255,247,230,0.72);">TROISIÈME PORTE</div>
+    <div style="font-family: 'Dela Gothic One', 'Hiragino Sans', sans-serif; font-size: 42px; line-height: 1.06; margin-top: 14px;">PORTE DE<br>LA VIE</div>
+    <div style="font-family: 'Dela Gothic One', sans-serif; font-size: 26px; color: #F5C518; margin-top: 10px; letter-spacing: 0.1em;">OUVERTE</div>
+  </div>
+
+  <!-- gains -->
+  <div style="position: relative; width: 100%; padding: 0 26px; margin-top: 34px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px;">
+    <div style="padding: 14px 10px; border-radius: 12px; background: rgba(255,247,230,0.20); display: flex; flex-direction: column; gap: 3px;">
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 20px;">+850</span>
+      <span style="font-size: 9px; font-weight: 800; letter-spacing: 0.1em; color: rgba(255,247,230,0.8);">XP</span>
+    </div>
+    <div style="padding: 14px 10px; border-radius: 12px; background: rgba(255,247,230,0.20); display: flex; flex-direction: column; gap: 3px;">
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 20px;">+4</span>
+      <span style="font-size: 9px; font-weight: 800; letter-spacing: 0.1em; color: rgba(255,247,230,0.8);">EXPLOSIVITÉ</span>
+    </div>
+    <div style="padding: 14px 10px; border-radius: 12px; background: rgba(255,247,230,0.20); display: flex; flex-direction: column; gap: 3px;">
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 20px;">17</span>
+      <span style="font-size: 9px; font-weight: 800; letter-spacing: 0.1em; color: rgba(255,247,230,0.8);">JOURS D'AFFILÉE</span>
+    </div>
+  </div>
+
+  <!-- montée de rang -->
+  <div style="position: relative; margin-top: 20px; display: flex; align-items: center; gap: 14px; padding: 14px 22px; border-radius: 999px; background: rgba(11,10,12,0.42);">
+    <div style="width: 38px; height: 38px; border-radius: 4px; background: #4A4652; display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 16px; color: #B6AFC0;">C</div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="stroke: #F5C518; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round;"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    <div style="width: 38px; height: 38px; border-radius: 4px; background: linear-gradient(160deg, #E0B44A, #A97C17); display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 16px; color: #17140F;">B</div>
+    <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; color: #F5C518;">NOUVEAU RANG</span>
+  </div>
+
+  <div style="flex-grow: 1;"></div>
+
+  <div style="position: relative; width: 100%; padding: 0 26px 36px 26px;">
+    <div style="height: 60px; border-radius: 12px; background: #0C2F1B; color: #F4F1EC; display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 17px;">PORTE SUIVANTE</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

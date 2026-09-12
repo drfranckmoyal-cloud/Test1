@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; font-family: Archivo, "Helvetica Neue", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #F5B041; text-decoration: none; } a:hover { color: #FFD08A; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: #0B0A0C; color: #F4F1EC; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+
+  <div style="position: absolute; inset: 0; background: repeating-linear-gradient(76deg, rgba(245,176,65,0.05) 0 2px, rgba(245,176,65,0) 2px 16px); pointer-events: none;"></div>
+
+  <!-- progression de la séance -->
+  <div style="position: relative; padding: 28px 20px 0 20px; display: flex; align-items: center; gap: 14px;">
+    <div style="display: flex; gap: 5px; flex-grow: 1;">
+      <div style="flex: 1; height: 5px; border-radius: 3px; background: #F5B041;"></div>
+      <div style="flex: 1; height: 5px; border-radius: 3px; background: #F5B041;"></div>
+      <div style="flex: 1; height: 5px; border-radius: 3px; background: #2A2630;"></div>
+      <div style="flex: 1; height: 5px; border-radius: 3px; background: #2A2630;"></div>
+    </div>
+    <div style="width: 44px; height: 44px; border-radius: 22px; background: #151318; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="stroke: #8E8894; stroke-width: 2.4; stroke-linecap: round;"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+    </div>
+  </div>
+
+  <!-- exercice courant -->
+  <div style="position: relative; padding: 30px 24px 0 24px; text-align: center;">
+    <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.3em; color: #F5B041;">EXERCICE 2 SUR 4</div>
+    <div style="font-family: 'Dela Gothic One', 'Hiragino Sans', sans-serif; font-size: 34px; line-height: 1.08; margin-top: 12px;">SAUTS<br>GROUPÉS</div>
+  </div>
+
+  <!-- repos en cours -->
+  <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 26px;">
+    <div style="position: relative; width: 228px; height: 228px;">
+      <svg width="228" height="228" viewBox="0 0 228 228" style="transform: rotate(-90deg);">
+        <circle cx="114" cy="114" r="100" fill="none" style="stroke: #1E1B22; stroke-width: 14px;"></circle>
+        <circle cx="114" cy="114" r="100" fill="none" style="stroke: #4A9BD6; stroke-width: 14px; stroke-linecap: round; stroke-dasharray: 628.3; stroke-dashoffset: 251.3;"></circle>
+      </svg>
+      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.28em; color: #4A9BD6;">REPOS</div>
+        <div style="font-family: 'Dela Gothic One', sans-serif; font-size: 64px; line-height: 1; margin-top: 8px; font-variant-numeric: tabular-nums;">0:45</div>
+        <div style="font-size: 12px; font-weight: 600; color: #8E8894; margin-top: 10px;">Série 3 sur 4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- séries faites -->
+  <div style="position: relative; padding: 26px 24px 0 24px; display: flex; gap: 9px; justify-content: center;">
+    <div style="width: 62px; height: 62px; border-radius: 10px; background: rgba(245,176,65,0.14); border: 1px solid rgba(245,176,65,0.36); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;">
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 20px; color: #F5B041;">15</span>
+      <span style="font-size: 9px; font-weight: 700; color: #8E8894;">SÉRIE 1</span>
+    </div>
+    <div style="width: 62px; height: 62px; border-radius: 10px; background: rgba(245,176,65,0.14); border: 1px solid rgba(245,176,65,0.36); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;">
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 20px; color: #F5B041;">15</span>
+      <span style="font-size: 9px; font-weight: 700; color: #8E8894;">SÉRIE 2</span>
+    </div>
+    <div style="width: 62px; height: 62px; border-radius: 10px; background: #151318; border: 1px dashed #2E2A36; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;">
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 20px; color: #4E4956;">15</span>
+      <span style="font-size: 9px; font-weight: 700; color: #4E4956;">CIBLE</span>
+    </div>
+    <div style="width: 62px; height: 62px; border-radius: 10px; background: #151318; border: 1px dashed #2E2A36; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;">
+      <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 20px; color: #4E4956;">15</span>
+      <span style="font-size: 9px; font-weight: 700; color: #4E4956;">CIBLE</span>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1;"></div>
+
+  <div style="position: relative; padding: 0 20px 34px 20px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="height: 60px; border-radius: 12px; background: #F5B041; color: #1A1206; display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 17px;">PASSER LE REPOS</div>
+    <div style="height: 50px; border-radius: 12px; background: #151318; border: 1px solid #2A2630; color: #8E8894; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">Corriger la série précédente</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

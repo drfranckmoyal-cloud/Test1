@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; font-family: Archivo, "Helvetica Neue", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #E02B20; text-decoration: none; } a:hover { color: #FF5A4A; }
+    * { box-sizing: border-box; }
+    .tile { position: relative; height: 156px; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 12px; }
+    .tile .nm { position: relative; font-family: 'Dela Gothic One', 'Hiragino Sans', sans-serif; font-size: 17px; line-height: 1.05; color: #F4F1EC; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+    .tile .fam { position: relative; font-size: 9px; font-weight: 800; letter-spacing: 0.16em; margin-top: 5px; text-shadow: 0 1px 4px rgba(0,0,0,0.7); }
+    .tile .bar { position: relative; height: 4px; border-radius: 2px; background: rgba(0,0,0,0.45); margin-top: 9px; overflow: hidden; }
+    .tile .bar i { display: block; height: 100%; }
+    .lock { position: absolute; inset: 0; background: rgba(11,10,12,0.76); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+    .lock span { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; color: #A49BAE; text-align: center; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: #0B0A0C; color: #F4F1EC; display: flex; flex-direction: column; overflow: hidden;">
+
+  <!-- en-tête -->
+  <div style="padding: 30px 20px 0 20px; display: flex; align-items: center; justify-content: space-between;">
+    <div>
+      <div style="font-family: 'Dela Gothic One', sans-serif; font-size: 24px; letter-spacing: 0.01em;">PROGRAMMES</div>
+      <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #8E8894; margin-top: 4px;">3 OUVERTS · 5 VERROUILLÉS</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 44px; height: 44px; border-radius: 4px; background: linear-gradient(160deg, #E0B44A, #A97C17); display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 19px; color: #17140F;">C</div>
+    </div>
+  </div>
+
+  <!-- grille -->
+  <div style="padding: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+
+    <div class="tile" style="background: linear-gradient(150deg, #F5C518 0%, #D6202A 100%);">
+      <div style="position: absolute; inset: 0; background: repeating-conic-gradient(from 0deg at 70% 20%, rgba(255,255,255,0.18) 0deg 4deg, rgba(255,255,255,0) 4deg 11deg);"></div>
+      <div style="position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,0,0,0.28) 1px, transparent 1.1px); background-size: 6px 6px;"></div>
+      <div class="nm">SAITAMA</div>
+      <div class="fam" style="color: #3A0D0D;">TRANSFORMATION</div>
+      <div class="bar"><i style="width: 38%; background: #FFF3E0;"></i></div>
+    </div>
+
+    <div class="tile" style="background: linear-gradient(150deg, #1E8449 0%, #0C3F24 100%);">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(72deg, rgba(255,255,255,0.16) 0 2px, rgba(255,255,255,0) 2px 11px);"></div>
+      <div class="nm">ROCK LEE</div>
+      <div class="fam" style="color: #F5B041;">EXPLOSIVITÉ</div>
+      <div class="bar"><i style="width: 62%; background: #F5B041;"></i></div>
+    </div>
+
+    <div class="tile" style="background: linear-gradient(150deg, #D62828 0%, #7A1010 100%);">
+      <div style="position: absolute; inset: 0; background: repeating-conic-gradient(from 200deg at 30% 90%, rgba(246,196,83,0.22) 0deg 6deg, rgba(246,196,83,0) 6deg 15deg);"></div>
+      <div class="nm">LUFFY</div>
+      <div class="fam" style="color: #F6C453;">SOUPLESSE</div>
+      <div class="bar"><i style="width: 15%; background: #F6C453;"></i></div>
+    </div>
+
+    <div class="tile" style="background: linear-gradient(150deg, #FF6B00 0%, #12406B 100%);">
+      <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 35%, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0) 58%);"></div>
+      <div class="nm">GOKU</div>
+      <div class="fam" style="color: #FFD9A8;">PROGRESSION EXTRÊME</div>
+      <div class="lock">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="stroke: #A49BAE; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+        <span>FORCE 30 REQUISE</span>
+      </div>
+    </div>
+
+    <div class="tile" style="background: linear-gradient(150deg, #8B1A1A 0%, #2A0A0A 100%);">
+      <div style="position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(224,180,74,0.5) 1.4px, transparent 1.5px); background-size: 26px 26px;"></div>
+      <div class="nm">KENSHIRO</div>
+      <div class="fam" style="color: #E0B44A;">FORCE PURE</div>
+      <div class="lock">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="stroke: #A49BAE; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+        <span>FORCE 45 REQUISE</span>
+      </div>
+    </div>
+
+    <div class="tile" style="background: linear-gradient(150deg, #F5D547 0%, #2C4A8C 100%);">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(96deg, rgba(255,255,255,0.22) 0 1px, rgba(255,255,255,0) 1px 7px);"></div>
+      <div class="nm">MINATO</div>
+      <div class="fam" style="color: #1B2A4A;">VITESSE</div>
+      <div class="lock">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="stroke: #A49BAE; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+        <span>VITESSE 25 REQUISE</span>
+      </div>
+    </div>
+
+    <div class="tile" style="background: linear-gradient(150deg, #1A1A1A 0%, #4A0E0E 100%);">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(180deg, rgba(192,57,43,0.35) 0 2px, rgba(192,57,43,0) 2px 14px);"></div>
+      <div class="nm">ICHIGO</div>
+      <div class="fam" style="color: #C0392B;">OBJECTIFS</div>
+      <div class="lock">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="stroke: #A49BAE; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+        <span>RANG B REQUIS</span>
+      </div>
+    </div>
+
+    <div class="tile" style="background: linear-gradient(150deg, #4A5D4E 0%, #1C241E 100%);">
+      <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(216,211,200,0.12) 0 1px, rgba(216,211,200,0) 1px 9px);"></div>
+      <div class="nm">LEVI</div>
+      <div class="fam" style="color: #D8D3C8;">GAINAGE</div>
+      <div class="lock">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="stroke: #A49BAE; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+        <span>GAINAGE 20 REQUIS</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="flex-grow: 1;"></div>
+
+  <!-- barre d'onglets -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid #1E1B22; background: #0F0E11; padding: 10px 12px 26px 12px;">
+    <div style="height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="stroke: #6E6875; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M4 13h3l2-5 3 9 2.5-6 1.5 2h4"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #6E6875;">Séance</span>
+    </div>
+    <div style="height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="stroke: #E02B20; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="3" y="4" width="7" height="7" rx="1.5"></rect><rect x="14" y="4" width="7" height="7" rx="1.5"></rect><rect x="3" y="15" width="7" height="7" rx="1.5"></rect><rect x="14" y="15" width="7" height="7" rx="1.5"></rect></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #E02B20;">Programmes</span>
+    </div>
+    <div style="height: 48px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" style="stroke: #6E6875; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg>
+      <span style="font-size: 10px; font-weight: 700; color: #6E6875;">Profil</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

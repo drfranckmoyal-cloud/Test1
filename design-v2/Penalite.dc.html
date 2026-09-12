@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body { margin: 0; font-family: Archivo, "Helvetica Neue", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #FF6B5A; text-decoration: none; } a:hover { color: #FF9A8C; }
+    * { box-sizing: border-box; }
+    .task { display: flex; align-items: center; gap: 14px; height: 62px; padding: 0 16px; border-radius: 10px; background: rgba(11,10,12,0.46); border: 1px solid rgba(255,107,90,0.26); }
+    .task .q { font-family: 'Dela Gothic One', sans-serif; font-size: 22px; color: #FFD9D2; min-width: 44px; }
+    .task .n { flex-grow: 1; font-size: 15px; font-weight: 700; color: #FFD9D2; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: linear-gradient(172deg, #3D0A0A 0%, #1A0405 55%, #0B0A0C 100%); color: #F4F1EC; display: flex; flex-direction: column; align-items: center; overflow: hidden; position: relative;">
+
+  <div style="position: absolute; top: 40px; left: 50%; width: 760px; height: 760px; transform: translateX(-50%); background: repeating-conic-gradient(from 12deg at 50% 50%, rgba(224,43,32,0.26) 0deg 4deg, rgba(224,43,32,0) 4deg 12deg); pointer-events: none;"></div>
+  <div style="position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(224,43,32,0.14) 1px, transparent 1.1px); background-size: 8px 8px; pointer-events: none;"></div>
+
+  <div style="height: 76px;"></div>
+
+  <!-- éclair -->
+  <div style="position: relative; width: 132px; height: 132px; display: flex; align-items: center; justify-content: center;">
+    <div style="position: absolute; inset: 0; border-radius: 50%; background: rgba(224,43,32,0.24);"></div>
+    <div style="position: absolute; inset: 14px; border-radius: 50%; background: rgba(224,43,32,0.36);"></div>
+    <svg width="62" height="62" viewBox="0 0 24 24" style="position: relative; fill: #FFE8E4;"><path d="M13.5 2L4 13.6h6.2L9.4 22 20 9.9h-6.6z"></path></svg>
+  </div>
+
+  <div style="position: relative; text-align: center; padding: 26px 30px 0 30px;">
+    <div style="font-family: 'Dela Gothic One', 'Hiragino Sans', sans-serif; font-size: 38px; line-height: 1.08; color: #FF4433;">SÉRIE EN<br>DANGER</div>
+    <div style="font-size: 15px; font-weight: 600; line-height: 1.45; color: #E0BDB8; margin-top: 16px; text-wrap: pretty;">Séance manquée hier. Ta série de 17 jours tient encore — elle tombe à minuit si la quête n'est pas accomplie.</div>
+  </div>
+
+  <!-- compte à rebours -->
+  <div style="position: relative; margin-top: 22px; display: flex; align-items: baseline; gap: 8px;">
+    <span style="font-family: 'Dela Gothic One', sans-serif; font-size: 44px; color: #FFD9D2; font-variant-numeric: tabular-nums;">4 : 12</span>
+    <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #B07A74;">RESTANTES</span>
+  </div>
+
+  <!-- la quête -->
+  <div style="position: relative; width: 100%; padding: 26px 26px 0 26px; display: flex; flex-direction: column; gap: 9px;">
+    <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.26em; color: #B07A74;">QUÊTE DE PÉNALITÉ · RANG B</div>
+    <div class="task"><span class="q">60</span><span class="n">Pompes</span></div>
+    <div class="task"><span class="q">60</span><span class="n">Abdos</span></div>
+    <div class="task"><span class="q">60</span><span class="n">Squats</span></div>
+  </div>
+
+  <div style="flex-grow: 1;"></div>
+
+  <div style="position: relative; width: 100%; padding: 0 26px 34px 26px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="height: 62px; border-radius: 12px; background: #E02B20; color: #FFF2F0; display: flex; align-items: center; justify-content: center; font-family: 'Dela Gothic One', sans-serif; font-size: 18px;">ACCEPTER LA QUÊTE</div>
+    <div style="height: 50px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #8A6560;">Laisser tomber la série</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
