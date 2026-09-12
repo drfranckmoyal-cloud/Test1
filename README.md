@@ -25,15 +25,29 @@ départ.
 
 ## Où en est le projet
 
-**Le moteur de jeu est écrit, avec deux programmes jouables.** Les sept autres
-figurent au catalogue, verrouillés, avec leur condition d'ouverture — ils
-existent pour qu'on voie où l'on va.
+**Le moteur de jeu est écrit et les neuf programmes ont leur contenu.** Deux
+sont ouverts dès le départ ; les sept autres restent verrouillés derrière une
+condition de caractéristique ou de rang, pour qu'on voie où l'on va avant d'y
+avoir droit.
 
-| Programme | Famille | Contenu |
-|---|---|---|
-| **Saitama** | Transformation physique | 84 séances quotidiennes, 8 étapes |
-| **Naruto** | Résilience | 27 sorties sur 9 semaines, 5 étapes |
-| Rock Lee · Kenshiro · Ichigo · Minato · Levi · Luffy · Goku | — | contenu à écrire |
+| Programme | Famille | Contenu | Ouverture | Matériel |
+|---|---|---|---|---|
+| **Saitama** | Transformation physique | 84 séances quotidiennes, 8 étapes | dès le départ | aucun |
+| **Naruto** | Résilience | 27 sorties sur 9 semaines, 5 étapes | dès le départ | aucun |
+| **Rock Lee** | Explosivité | 40 séances, 8 étapes — pliométrie, corde, 30-30-20 | Force 20 | corde à sauter |
+| **Levi** | Gainage | 24 séances, 5 étapes — gainage, tractions, suspension | Force 30 | barre de traction |
+| **Kenshiro** | Force pure | 28 séances, 7 étapes — progression par variante de mouvement | Force 45 | barre de traction |
+| **Minato** | Vitesse | 18 séances, 7 étapes — éducatifs, bondissements, sprints | Vitesse 25 | 60 m de plat |
+| **Luffy** | Souplesse | 35 séances quotidiennes de 10 min, 5 étapes | rang D | aucun |
+| **Ichigo** | Objectifs | 7 cibles uniques, une par étape | rang B | barre de traction |
+| **Goku** | Progression extrême | 40 séances, 8 étapes — circuit lesté multiplié | rang A | sac lesté |
+
+La progression d'un programme n'est pas la même chose d'un programme à l'autre,
+et c'est voulu : Rock Lee et Minato montent en charge séance après séance,
+Kenshiro monte en *difficulté de mouvement* (pompes → pompes une main, squats
+bulgares → pistol lesté), Goku multiplie un circuit qui ne change pas de forme,
+et Ichigo ne planifie rien du tout — une cible énorme, et on ne passe à la
+suivante qu'une fois celle-ci tombée.
 
 ## Le moteur
 
@@ -64,7 +78,7 @@ BudokaiIchi/
 ├── Design/Theme.swift            palette clair/sombre, rangs, typographie
 ├── Model/
 │   ├── Program.swift             rangs, paliers, étapes de séance, programmes
-│   ├── Content.swift             le catalogue et les deux programmes jouables
+│   ├── Content.swift             le catalogue et les séances des neuf programmes
 │   ├── PlayerState.swift         ce qui est conservé d'une ouverture à l'autre
 │   ├── GameEngine.swift          les règles, sans état
 │   ├── GameStore.swift           source de vérité, persistance, reprise de v1
