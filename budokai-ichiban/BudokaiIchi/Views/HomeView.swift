@@ -197,6 +197,9 @@ struct HomeView: View {
         return VStack(spacing: 0) {
             ZStack {
                 program.gradient
+                ArtworkFill(name: program.stageImage(status.index))
+                LinearGradient(colors: [Color.black.opacity(0.62), Color.black.opacity(0.18)],
+                               startPoint: .leading, endPoint: .trailing)
                 HStack(spacing: 14) {
                     ZStack {
                         ProgressRing(progress: ratio, lineWidth: 7, tint: Theme.cream)
@@ -343,7 +346,8 @@ struct HomeView: View {
                             ProgramTile(program: program,
                                         progress: ratio(program),
                                         locked: !store.isUnlocked(program),
-                                        height: 132)
+                                        height: 132,
+                                        stage: store.stageStatus(program).index)
                                 .frame(width: 128)
                                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                         }

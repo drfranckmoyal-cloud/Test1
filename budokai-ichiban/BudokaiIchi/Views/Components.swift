@@ -216,17 +216,36 @@ struct StatRadar: View {
 
 // MARK: - Tuile de programme
 
+/// Une image qui remplit son cadre sans le faire grandir.
+///
+/// `scaledToFill` seul laisse l'image imposer sa taille au conteneur ; on la
+/// pose donc en surcouche d'un fond transparent, puis on rogne.
+struct ArtworkFill: View {
+    let name: String
+    var body: some View {
+        Color.clear
+            .overlay { Image(name).resizable().scaledToFill() }
+            .clipped()
+    }
+}
+
 struct ProgramTile: View {
     let program: Program
     var progress: Double
     var locked: Bool
     var height: CGFloat = 152
+    /// L'étape à montrer, comptée à partir de zéro : le personnage suit
+    /// l'avancement du joueur.
+    var stage: Int = 0
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             program.gradient
-            LinearGradient(colors: [Color.clear, Color.black.opacity(0.55)],
-                           startPoint: .center, endPoint: .bottom)
+            ArtworkFill(name: program.stageImage(stage))
+                .opacity(0.92)
+            // le texte du bas doit rester lisible sur n'importe quelle image
+            LinearGradient(colors: [Color.black.opacity(0.10), Color.clear, Color.black.opacity(0.78)],
+                           startPoint: .top, endPoint: .bottom)
 
             VStack(alignment: .leading, spacing: 6) {
                 Text(program.name.uppercased())

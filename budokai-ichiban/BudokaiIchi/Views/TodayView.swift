@@ -146,6 +146,11 @@ struct TodayView: View {
             // bandeau de l'univers
             ZStack {
                 program.gradient
+                ArtworkFill(name: program.environmentImage)
+                    .opacity(0.5)
+                // le décor pose l'ambiance sans gêner la lecture
+                LinearGradient(colors: [Color.black.opacity(0.30), Color.black.opacity(0.62)],
+                               startPoint: .top, endPoint: .bottom)
                 VStack(spacing: 4) {
                     Text(program.name.uppercased())
                         .font(.ui(11, .bold))

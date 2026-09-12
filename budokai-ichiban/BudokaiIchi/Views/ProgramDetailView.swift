@@ -13,6 +13,21 @@ struct ProgramDetailView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     ZStack(alignment: .bottomLeading) {
                         program.gradient.frame(height: 192)
+                        ArtworkFill(name: program.stageImage(store.stageStatus(program).index))
+                            .frame(height: 192)
+                        // le logo de l'univers, en filigrane dans le coin
+                        HStack {
+                            Spacer()
+                            Image(program.logoImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 92)
+                                .opacity(0.5)
+                                .blendMode(.screen)
+                                .padding(.trailing, 16)
+                                .padding(.top, 14)
+                        }
+                        .frame(height: 192, alignment: .top)
                         LinearGradient(colors: [.clear, Theme.ground], startPoint: .center, endPoint: .bottom)
                             .frame(height: 192)
                         VStack(alignment: .leading, spacing: 6) {
