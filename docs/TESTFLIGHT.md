@@ -1,14 +1,30 @@
-# Partager l'app avec des amis (TestFlight)
+# Partager le 100 Pompes avec des amis (TestFlight)
 
 TestFlight est le service d'Apple qui permet de distribuer une app **avant** (ou sans)
 publication sur l'App Store. Tu obtiens un **lien public** à partager : la personne
 installe l'app TestFlight depuis l'App Store, ouvre ton lien, et l'app s'installe.
 
-## Ce qu'il faut savoir avant de commencer
+## Deux apps, deux identités
+
+Ce dépôt contient deux apps issues du même projet :
+
+| | Identifiant | Nom affiché | Branche |
+|---|---|---|---|
+| Le défi 100 pompes | `com.franckmoyal.DefiPompes` | 100 Pompes | `v1-defi-100-pompes` |
+| Le jeu | `com.franckmoyal.PompesChallenge` | Budokai Ichi | `claude/100-pushups-challenge-app-0aj91w` |
+
+L'identifiant — pas le nom — est ce qui définit une app pour Apple. Les deux en portaient
+le même au départ, parce que Budokai Ichi devait **remplacer** le 100 pompes sur le
+téléphone et reprendre ses données. Pour les distribuer séparément, il en fallait deux
+distincts : c'est pour ça que le 100 pompes a pris `com.franckmoyal.DefiPompes`.
+
+**Ne jamais les réunifier.** Deux apps qui partagent un identifiant s'écrasent l'une
+l'autre à l'installation, chez toi comme chez tes testeurs.
+
+## Ce qu'il faut savoir
 
 | | |
 |---|---|
-| Coût | **99 € / an** (Apple Developer Program) |
 | Testeurs | jusqu'à **10 000** via un lien public |
 | Première mise en ligne | une **revue Apple** de 24 à 48 h, une seule fois |
 | Durée de vie d'un build | **90 jours** — il faut en renvoyer un nouveau tous les 3 mois |
@@ -17,25 +33,23 @@ installe l'app TestFlight depuis l'App Store, ouvre ton lien, et l'app s'install
 Ces règles sont celles d'Apple et peuvent changer : vérifie sur
 <https://developer.apple.com/testflight/> en cas de doute.
 
-## 1. Compte développeur
+## 1. Créer la fiche dans App Store Connect
 
-1. <https://developer.apple.com/programs/> → **Enroll**.
-2. Choisis **Individual** : c'est immédiat. *Organization* demande un numéro D-U-N-S et
-   plusieurs jours de vérification — inutile ici, sauf si tu veux que le nom de CEMEDIS
-   apparaisse comme éditeur.
-3. Paie les 99 €. L'accès est actif en quelques heures à un jour.
-
-## 2. Créer l'app dans App Store Connect
+Une fiche par app. Celle-ci est **nouvelle** : ne réutilise pas celle de Budokai Ichi.
 
 1. <https://appstoreconnect.apple.com> → **Mes apps** → **+** → **Nouvelle app**.
-2. Plateforme **iOS**, nom (ex. « 100 Pompes Challenge »), langue **Français**.
-3. **Identifiant de bundle** : il doit être identique à celui du projet Xcode. Le projet
-   utilise `com.franckmoyal.PompesChallenge` — garde-le, ou change-le des deux côtés.
-4. SKU : ce que tu veux, par exemple `pompes-challenge`.
+2. Plateforme **iOS**, nom « 100 Pompes Challenge », langue **Français**.
+3. **Identifiant de bundle** : `com.franckmoyal.DefiPompes`. S'il n'apparaît pas dans la
+   liste, c'est qu'il n'existe pas encore côté Apple — va le créer dans
+   *Certificates, Identifiers & Profiles* → **Identifiers** → **+** → *App IDs* → *App*,
+   puis reviens.
+4. SKU : ce que tu veux, par exemple `defi-pompes`.
 
-## 3. Envoyer un build depuis Xcode
+## 2. Envoyer un build depuis Xcode
 
-1. Ouvre `PompesChallenge.xcodeproj`.
+1. Place-toi sur la branche `v1-defi-100-pompes`, puis ouvre
+   `PompesChallenge.xcodeproj`. Depuis l'autre branche tu archiverais Budokai Ichi
+   sans t'en rendre compte.
 2. Onglet **Signing & Capabilities** : ton équipe est sélectionnée, *Automatically manage
    signing* est coché.
 3. En haut de la fenêtre, choisis la destination **Any iOS Device (arm64)** — pas un
@@ -50,7 +64,7 @@ Le projet déclare déjà `ITSAppUsesNonExemptEncryption = NO` : l'app n'utilise
 chiffrement soumis à restriction, donc App Store Connect ne te posera pas la question de
 conformité à l'exportation à chaque envoi.
 
-## 4. Ouvrir le lien public
+## 3. Ouvrir le lien public
 
 1. Dans App Store Connect → **TestFlight** → **Tests externes** → créer un groupe
    (ex. « Amis »).
@@ -62,7 +76,7 @@ conformité à l'exportation à chaque envoi.
 Tes amis : installer **TestFlight** depuis l'App Store, ouvrir ton lien, appuyer sur
 **Accepter** puis **Installer**.
 
-## 5. Envoyer une mise à jour
+## 4. Envoyer une mise à jour
 
 À chaque nouvelle version :
 
@@ -75,8 +89,10 @@ Tes amis : installer **TestFlight** depuis l'App Store, ouvrir ton lien, appuyer
 Pas de nouvelle revue pour les mises à jour d'un groupe déjà approuvé : tes testeurs
 reçoivent la notification dans les minutes qui suivent.
 
-## Si tu ne veux pas payer
+## La version web, en complément
 
-La version web dans `web/` fait presque tout — compteur, calendrier, motivation, thèmes —
-et s'ajoute à l'écran d'accueil depuis Safari. Seuls les rappels automatiques manquent :
-iOS ne les autorise pas hors d'une vraie app. Voir `web/README.md`.
+Le dossier `web/` contient la même app en version site, publiée sur
+<https://defi-100-pompes.netlify.app> — elle s'ajoute à l'écran d'accueil depuis Safari,
+sans TestFlight et sans rien installer. Pratique pour quelqu'un qui veut juste essayer :
+tout y est sauf les rappels automatiques, qu'iOS n'autorise pas hors d'une vraie app.
+Voir `web/README.md`.
