@@ -176,12 +176,24 @@ struct HomeView: View {
                 }
             }
 
-            VStack(spacing: 6) {
-                ProgressBar(value: store.levelProgress, height: 6, tint: Theme.gold)
-                Text("Encore \(store.xpToNextLevel.grouped) XP pour le niveau \(store.level + 1).")
-                    .font(.ui(11, .semibold))
-                    .foregroundStyle(Theme.muted)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            VStack(spacing: 10) {
+                VStack(spacing: 5) {
+                    ProgressBar(value: store.levelProgress, height: 6, tint: Theme.gold)
+                    Text("Encore \(store.xpToNextLevel.grouped) XP pour le niveau \(store.level + 1).")
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(Theme.muted)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                if let next = store.nextRank {
+                    VStack(spacing: 5) {
+                        ProgressBar(value: store.rankProgress, height: 6, tint: Theme.rankColor(next.rank))
+                        Text("Rang \(next.rank.label) dans \(next.missing.grouped) XP — environ \(programsLeft(next.missing)).")
+                            .font(.ui(11, .semibold))
+                            .foregroundStyle(Theme.muted)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
             }
         }
         .padding(18)
@@ -408,6 +420,17 @@ struct HomeView: View {
     }
 
     // MARK: Outils
+
+    /// Traduit un reste d'expérience en programmes, la seule échelle
+    /// parlante : « il te reste deux programmes » se comprend, « 45 000 XP »
+    /// non.
+    private func programsLeft(_ missing: Int) -> String {
+        let programs = Double(missing) / Double(GameEngine.programXPReference)
+        if programs < 0.25 { return "la fin de ce jalon" }
+        if programs < 0.75 { return "un demi-programme" }
+        if programs < 1.25 { return "un programme complet" }
+        return "\(Int(programs.rounded())) programmes complets"
+    }
 
     private var unlockedCount: Int {
         Catalog.programs.filter { store.isUnlocked($0) }.count

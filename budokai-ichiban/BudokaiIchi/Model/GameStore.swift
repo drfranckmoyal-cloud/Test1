@@ -90,6 +90,18 @@ final class GameStore: ObservableObject {
     var levelProgress: Double { GameEngine.levelProgress(forXP: state.xp) }
     var xpToNextLevel: Int { max(0, GameEngine.xpNeeded(forLevel: level + 1) - state.xp) }
 
+    /// Le rang suivant et ce qu'il reste à gagner pour l'atteindre.
+    var nextRank: (rank: Rank, missing: Int)? { GameEngine.nextRank(forXP: state.xp) }
+
+    /// Part du chemin parcouru vers le rang suivant, de 0 à 1.
+    var rankProgress: Double {
+        guard let next = nextRank else { return 1 }
+        let floorXP = GameEngine.xpNeeded(for: rank)
+        let ceiling = GameEngine.xpNeeded(for: next.rank)
+        guard ceiling > floorXP else { return 1 }
+        return min(1, max(0, Double(state.xp - floorXP) / Double(ceiling - floorXP)))
+    }
+
     /// Les programmes suivis en parallèle, dans l'ordre où ils ont été pris.
     var activePrograms: [Program] {
         state.activePrograms.compactMap(ProgramID.init(rawValue:)).map(Catalog.program)
