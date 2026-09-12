@@ -98,27 +98,29 @@ struct HomeView: View {
     // MARK: Bandeau de marque
 
     private var banner: some View {
-        VStack(spacing: 10) {
-            SealMark(size: 96)
+        VStack(spacing: 14) {
+            // La calligraphie 武道会, tracée au pinceau. Elle porte la marque à
+            // elle seule : pas de titre en lettres par-dessus.
+            Image("LogoBudokai")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 300)
+                .frame(height: 116)
+                .accessibilityLabel("Budokai Ichiban")
 
-            Text("BUDOKAI ICHIBAN")
-                .font(.display(27))
-                .kerning(1.2)
-                .foregroundStyle(Theme.text)
-                .lineLimit(1)
-                .minimumScaleFactor(0.6)
-
-            Rectangle()
-                .fill(Theme.crimson)
-                .frame(width: 96, height: 4)
-                .rotationEffect(.degrees(-3))
+            Text("ICHIBAN")
+                .font(.display(15))
+                .kerning(6)
+                .foregroundStyle(Theme.muted)
 
             Text("Neuf maîtres, une seule échelle.")
                 .font(.ui(14))
                 .foregroundStyle(Theme.muted)
+                .padding(.top, 2)
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 22)
+        .padding(.top, 14)
+        .padding(.bottom, 20)
     }
 
     // MARK: Où j'en suis
