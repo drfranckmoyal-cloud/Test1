@@ -1,11 +1,11 @@
-# Budokai Ichi
+# Budokai Ichiban
 
 武道会一 — jeu de progression sportive. Des programmes d'entraînement tirés
 d'animés japonais, de l'expérience, des rangs, des caractéristiques et des
 déblocages. Voir `README.md` pour le moteur et les neuf programmes,
 `docs/cadrage-budokai-chi.html` pour le cadrage.
 
-**Identifiant : `com.franckmoyal.BudokaiIchi`. Nom affiché : Budokai Ichi.**
+**Identifiant : `com.franckmoyal.BudokaiIchiban`. Nom affiché : Budokai Ichiban.**
 
 ## Le périmètre de ce dossier
 

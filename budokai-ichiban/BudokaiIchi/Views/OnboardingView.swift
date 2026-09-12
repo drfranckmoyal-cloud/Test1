@@ -28,7 +28,7 @@ struct OnboardingView: View {
                 .rotationEffect(.degrees(-3))
                 .padding(.top, 22)
 
-            Text("BUDOKAI ICHI")
+            Text("BUDOKAI ICHIBAN")
                 .font(.display(28))
                 .foregroundStyle(Theme.text)
                 .padding(.top, 18)

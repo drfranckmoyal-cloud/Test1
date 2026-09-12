@@ -12,14 +12,14 @@ jour et des phrases de motivation. Il existe aussi en version web, publiée sur
 
 `com.franckmoyal.PompesChallenge`
 
-## [`budokai-ichi/`](budokai-ichi/) — **Budokai Ichi**
+## [`budokai-ichiban/`](budokai-ichiban/) — **Budokai Ichiban**
 
 武道会一, le jeu. Neuf programmes d'entraînement tirés d'animés japonais —
 Saitama, Naruto, Rock Lee, Kenshiro, Ichigo, Minato, Levi, Luffy, Goku — avec de
 l'expérience, des niveaux, des rangs de E à S+, trois caractéristiques et des
 programmes qui se débloquent.
 
-`com.franckmoyal.BudokaiIchi`
+`com.franckmoyal.BudokaiIchiban`
 
 ---
 

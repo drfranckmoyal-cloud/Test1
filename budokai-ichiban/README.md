@@ -1,4 +1,4 @@
-# Budokai Ichi
+# Budokai Ichiban
 
 武道会一 — jeu de progression sportive. Des programmes d'entraînement tirés
 d'animés japonais, de l'expérience, des rangs, des caractéristiques et des
@@ -18,7 +18,7 @@ Xcode 16 ou plus récent, iOS 17 minimum, iPhone, portrait. Le groupe de fichier
 est synchronisé avec le système de fichiers : ajouter un fichier dans
 `BudokaiIchi/` suffit, sans passer par le `.pbxproj`.
 
-L'app s'identifie comme `com.franckmoyal.BudokaiIchi` et s'affiche « Budokai
+L'app s'identifie comme `com.franckmoyal.BudokaiIchiban` et s'affiche « Budokai
 Ichi ». Elle a porté un temps l'identifiant du défi, pour le remplacer sur le
 téléphone ; les deux sont désormais indépendantes et cohabitent côte à côte.
 L'app démarre donc sur un état vierge — elle ne reprend plus les répétitions

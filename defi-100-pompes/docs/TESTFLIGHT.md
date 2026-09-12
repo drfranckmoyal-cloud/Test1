@@ -11,13 +11,13 @@ Ce dépôt contient deux apps issues du même projet :
 | | Identifiant | Nom affiché | Dossier |
 |---|---|---|---|
 | Le défi 100 pompes | `com.franckmoyal.PompesChallenge` | 100 Pompes | `defi-100-pompes/` |
-| Le jeu | `com.franckmoyal.BudokaiIchi` | Budokai Ichi | `budokai-ichi/` |
+| Le jeu | `com.franckmoyal.BudokaiIchiban` | Budokai Ichiban | `budokai-ichiban/` |
 
 L'identifiant — pas le nom — est ce qui définit une app pour Apple, et c'est lui qui
 désigne le coffre où l'app range ses données sur le téléphone.
 
 Le défi garde `com.franckmoyal.PompesChallenge`, le sien depuis le premier jour : c'est
-ce qui lui rend tout son historique — calendrier, séries, records. Budokai Ichi, qui avait
+ce qui lui rend tout son historique — calendrier, séries, records. Budokai Ichiban, qui avait
 un temps pris cet identifiant pour remplacer le défi, a désormais le sien.
 
 **Ne jamais les réunifier.** Deux apps qui partagent un identifiant s'écrasent l'une
@@ -37,7 +37,7 @@ Ces règles sont celles d'Apple et peuvent changer : vérifie sur
 
 ## 1. Créer la fiche dans App Store Connect
 
-Une fiche par app. Celle-ci est **nouvelle** : ne réutilise pas celle de Budokai Ichi.
+Une fiche par app. Celle-ci est **nouvelle** : ne réutilise pas celle de Budokai Ichiban.
 
 1. <https://appstoreconnect.apple.com> → **Mes apps** → **+** → **Nouvelle app**.
 2. Plateforme **iOS**, nom « 100 Pompes Challenge », langue **Français**.
@@ -63,7 +63,7 @@ exporte et transmet à App Store Connect. Pour un premier passage sans rien envo
 ```
 
 Il s'arrête de lui-même si l'identifiant n'est pas `com.franckmoyal.PompesChallenge` —
-archiver depuis l'autre branche enverrait Budokai Ichi sous l'identité du défi, et les
+archiver depuis l'autre branche enverrait Budokai Ichiban sous l'identité du défi, et les
 deux apps s'écraseraient.
 
 Il utilise par défaut le compte Apple connecté dans Xcode. Pour un envoi sans aucune
@@ -78,7 +78,7 @@ committer.
 Les mêmes étapes, dans l'interface de Xcode.
 
 1. Place-toi dans le dossier `defi-100-pompes/`, puis ouvre
-   `PompesChallenge.xcodeproj`. Depuis l'autre dossier tu archiverais Budokai Ichi
+   `PompesChallenge.xcodeproj`. Depuis l'autre dossier tu archiverais Budokai Ichiban
    sans t'en rendre compte.
 2. Onglet **Signing & Capabilities** : ton équipe est sélectionnée, *Automatically manage
    signing* est coché.

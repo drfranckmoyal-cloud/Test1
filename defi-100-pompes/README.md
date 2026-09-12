@@ -24,8 +24,8 @@ Sélectionner un simulateur iPhone (ou un appareil) puis `⌘R`.
 - L'app s'identifie comme `com.franckmoyal.PompesChallenge` et s'affiche « 100 Pompes ».
   C'est son identifiant depuis le premier jour, et il lui reste : c'est lui qui désigne le
   coffre où sont rangés l'historique, les séries et les records sur le téléphone. Budokai
-  Ichi, né de ce code et devenu une autre app dans `../budokai-ichi/`, a le sien
-  (`com.franckmoyal.BudokaiIchi`). Les deux cohabitent sur un même téléphone tant que
+  Ichi, né de ce code et devenu une autre app dans `../budokai-ichiban/`, a le sien
+  (`com.franckmoyal.BudokaiIchiban`). Les deux cohabitent sur un même téléphone tant que
   leurs identifiants restent distincts — si on les réunifie, l'une écrase l'autre à
   l'installation.
 - Pour compiler sous un autre compte Apple, remplacer `PRODUCT_BUNDLE_IDENTIFIER` et

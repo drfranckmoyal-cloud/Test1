@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Icône de Budokai Ichi : le sceau et le trait 一.
+"""Icône de Budokai Ichiban : le sceau et le trait 一.
 
 Un carré vermillon incliné, comme un sceau japonais, et dedans le trait
 unique de « ichi » tracé au pinceau — épais à l'attaque, gonflé à la

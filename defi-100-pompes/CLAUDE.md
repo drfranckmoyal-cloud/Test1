@@ -13,11 +13,11 @@ les records.
 
 ## Le périmètre de ce dossier
 
-Tout ce qui concerne le défi est ici, et rien d'autre. Budokai Ichi vit dans
-`../budokai-ichi/` : c'est une **autre app**, née de ce code mais devenue un
+Tout ce qui concerne le défi est ici, et rien d'autre. Budokai Ichiban vit dans
+`../budokai-ichiban/` : c'est une **autre app**, née de ce code mais devenue un
 autre produit. Ne jamais modifier les deux dans la même session.
 
-Budokai Ichi a un temps porté l'identifiant de cette app, pour la remplacer sur
+Budokai Ichiban a un temps porté l'identifiant de cette app, pour la remplacer sur
 le téléphone. Ce n'est plus le cas : chacune a le sien, et les deux s'installent
 côte à côte.
 

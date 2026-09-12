@@ -20,7 +20,7 @@ xcuserdata/
 Packages/
 
 # Sortie assemblée de la maquette (2 Mo d'éditeur embarqué) — les sources sont les .dc.html
-budokai-ichi/design-v2/budokai-ichi.html
+budokai-ichiban/design-v2/budokai-ichi.html
 
 # Python
 __pycache__/
@@ -33,3 +33,6 @@ __pycache__/
 # Secrets
 .env
 *.db
+
+# Réglages locaux de Claude Code (propres à cette machine)
+.claude/settings.local.json

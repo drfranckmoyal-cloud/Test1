@@ -7,7 +7,7 @@ s'installent côte à côte sur le même téléphone.
 | Dossier | App | Identifiant | Ce que c'est |
 |---|---|---|---|
 | `defi-100-pompes/` | 100 Pompes | `com.franckmoyal.PompesChallenge` | Le défi quotidien : compteur, calendrier, rappels |
-| `budokai-ichi/` | Budokai Ichi | `com.franckmoyal.BudokaiIchi` | Le jeu : programmes d'animés, XP, rangs, déblocages |
+| `budokai-ichiban/` | Budokai Ichiban | `com.franckmoyal.BudokaiIchiban` | Le jeu : programmes d'animés, XP, rangs, déblocages |
 
 ## La règle
 
