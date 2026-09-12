@@ -120,6 +120,14 @@ struct SessionStep: Identifiable, Equatable {
     var goal: Goal
     var restSeconds: Int
     var stat: StatKind
+
+    /// Faux pour l'échauffement et le retour au calme, qui ne se durcissent
+    /// pas avec le reste.
+    var isWork: Bool {
+        let soft = ["échauffement", "retour au calme", "marche", "récupération"]
+        let lowered = name.lowercased()
+        return !soft.contains { lowered.contains($0) }
+    }
 }
 
 struct PlannedSession: Identifiable, Equatable {
@@ -132,6 +140,25 @@ struct PlannedSession: Identifiable, Equatable {
 
     var totalReps: Int {
         steps.reduce(0) { $0 + ($1.goal.unit == .reps ? $1.goal.value : 0) }
+    }
+
+    /// La même séance, allégée ou durcie par le curseur d'intensité.
+    /// L'échauffement et le retour au calme n'en dépendent pas : ils durent
+    /// ce qu'ils durent, quelle que soit la forme du jour.
+    func scaled(by intensity: Double) -> PlannedSession {
+        var copy = self
+        copy.steps = steps.map { step in
+            guard step.isWork else { return step }
+            var changed = step
+            let raw = Double(step.goal.value) * intensity
+            switch step.goal.unit {
+            case .reps: changed.goal.value = max(1, Int(raw.rounded()))
+            case .seconds: changed.goal.value = max(5, Int((raw / 5).rounded()) * 5)
+            case .meters: changed.goal.value = max(50, Int((raw / 50).rounded()) * 50)
+            }
+            return changed
+        }
+        return copy
     }
 
     var estimatedMinutes: Int {

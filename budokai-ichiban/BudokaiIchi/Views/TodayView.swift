@@ -20,7 +20,7 @@ struct TodayView: View {
         .scrollIndicators(.hidden)
         .background(Theme.ground)
         .fullScreenCover(item: $running) { session in
-            GuidedSessionView(session: session)
+            SessionSheetView(session: session)
         }
     }
 
@@ -212,7 +212,9 @@ struct TodayView: View {
                 }
                 .padding(.horizontal, 18)
 
-                PrimaryButton(title: "COMMENCER", tint: program.light) {
+                PrimaryButton(title: store.progress(program.id).notStarted
+                              ? "DÉBUTER LE PROGRAMME" : "VOIR LA SÉANCE",
+                              tint: program.light) {
                     running = session
                 }
                 .padding(.horizontal, 18)

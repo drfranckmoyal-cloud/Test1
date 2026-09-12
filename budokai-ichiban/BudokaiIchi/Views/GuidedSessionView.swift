@@ -8,6 +8,9 @@ struct GuidedSessionView: View {
     @Environment(\.dismiss) private var dismiss
 
     let session: PlannedSession
+    /// Appelé quand la séance vient d'être enregistrée : la fiche enchaîne
+    /// alors sur la question du ressenti, comme par l'autre chemin.
+    var onRecorded: (() -> Void)?
 
     @State private var index = 0
     @State private var achieved: [Int: Int] = [:]
@@ -25,7 +28,10 @@ struct GuidedSessionView: View {
         ZStack {
             Theme.ground.ignoresSafeArea()
             if let outcome = outcome {
-                OutcomeView(outcome: outcome) { dismiss() }
+                OutcomeView(outcome: outcome) {
+                    onRecorded?()
+                    dismiss()
+                }
             } else {
                 running
             }

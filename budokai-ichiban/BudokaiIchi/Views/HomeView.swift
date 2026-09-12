@@ -283,7 +283,8 @@ struct HomeView: View {
     private func buttonTitle(_ program: Program, finished: Bool) -> String {
         if finished { return "PROGRAMME TERMINÉ" }
         if store.isResting(program.id) { return "VOIR LE JOUR DE REPOS" }
-        return "CONTINUER"
+        // « Continuer » n'a aucun sens tant qu'on n'a rien commencé
+        return store.progress(program.id).notStarted ? "DÉBUTER LE PROGRAMME" : "CONTINUER"
     }
 
     private func rhythmLabel(_ program: Program) -> String {

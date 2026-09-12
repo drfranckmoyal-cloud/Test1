@@ -50,6 +50,12 @@ struct RootView: View {
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { store.refreshDate() }
         }
+        // prendre un programme conduit à sa séance, sans détour
+        .onChange(of: store.justStarted) { _, started in
+            guard started != nil else { return }
+            tab = .session
+            store.justStarted = nil
+        }
         .fullScreenCover(isPresented: penaltyPresented) { PenaltyView() }
     }
 

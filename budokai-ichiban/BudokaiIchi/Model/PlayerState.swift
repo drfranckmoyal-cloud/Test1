@@ -49,6 +49,66 @@ struct ProgramProgress: Codable, Equatable {
     var completedSessions: Int = 0
     var startedOn: String?
     var finishedOn: String?
+    /// Le curseur d'intensité du programme, 1 = ce qui était prévu.
+    /// Il monte quand les séances sont jugées faciles, descend quand elles
+    /// sont trop dures. C'est lui qui rend le programme adaptatif.
+    var intensity: Double = 1.0
+
+    /// Vrai tant qu'aucune séance n'a été faite.
+    var notStarted: Bool { completedSessions == 0 }
+}
+
+/// Ce que le joueur répond après une séance. C'est la seule mesure
+/// d'intensité que l'app puisse obtenir sans matériel : l'effort perçu.
+enum SessionFeedback: String, Codable, CaseIterable, Identifiable {
+    case tooEasy, easy, right, hard, tooHard, unfinished
+    var id: String { rawValue }
+
+    var label: String {
+        switch self {
+        case .tooEasy: return "Trop facile"
+        case .easy: return "Facile"
+        case .right: return "Juste ce qu'il faut"
+        case .hard: return "Difficile"
+        case .tooHard: return "Très difficile"
+        case .unfinished: return "Je n'ai pas pu la terminer"
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .tooEasy: return "arrow.up.right.circle.fill"
+        case .easy: return "arrow.up.circle"
+        case .right: return "checkmark.circle.fill"
+        case .hard: return "arrow.down.circle"
+        case .tooHard: return "arrow.down.right.circle.fill"
+        case .unfinished: return "xmark.circle.fill"
+        }
+    }
+
+    /// Ce que la réponse fait au curseur d'intensité.
+    var adjustment: Double {
+        switch self {
+        case .tooEasy: return 0.12
+        case .easy: return 0.05
+        case .right: return 0
+        case .hard: return -0.04
+        case .tooHard: return -0.09
+        case .unfinished: return -0.15
+        }
+    }
+
+    /// Ce qu'on annonce au joueur.
+    var consequence: String {
+        switch self {
+        case .tooEasy: return "La prochaine montera nettement."
+        case .easy: return "La prochaine montera un peu."
+        case .right: return "On garde ce rythme."
+        case .hard: return "La prochaine s'allégera un peu."
+        case .tooHard: return "La prochaine s'allégera nettement."
+        case .unfinished: return "On redescend franchement, et on repart de là."
+        }
+    }
 }
 
 /// Une tâche de la quête de pénalité.

@@ -57,6 +57,11 @@ extension Program {
         }
     }
 
+    /// Le guidage minuté a du sens en salle, pas dehors : personne ne court
+    /// en suivant son téléphone bloc par bloc. Les programmes de course se
+    /// lisent, se font, et se cochent.
+    var allowsGuidance: Bool { id != .naruto && id != .minato }
+
     /// Le décor de l'univers.
     var environmentImage: String { "env_\(id.rawValue)" }
 

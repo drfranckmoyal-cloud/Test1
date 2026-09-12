@@ -21,6 +21,10 @@ struct SessionOutcome: Identifiable, Equatable {
 @MainActor
 final class GameStore: ObservableObject {
 
+    /// Le programme que l'on vient de prendre : l'app doit y conduire
+    /// directement plutôt que de laisser le joueur le rechercher.
+    @Published var justStarted: ProgramID?
+
     @Published private(set) var state: PlayerState
     @Published private(set) var today: Date
 
@@ -99,11 +103,36 @@ final class GameStore: ObservableObject {
     }
 
     /// La prochaine séance d'un programme, ou nil s'il est terminé.
+    /// Elle sort déjà ajustée au curseur d'intensité du programme.
     func session(of id: ProgramID) -> PlannedSession? {
         let program = Catalog.program(id)
         let done = state.progress(id).completedSessions
         guard done < program.totalSessions else { return nil }
-        return Catalog.session(for: id, index: done, tier: state.tier)
+        return Catalog.session(for: id, index: done, tier: state.tier,
+                               intensity: state.progress(id).intensity)
+    }
+
+    /// Le curseur d'intensité d'un programme.
+    func intensity(_ id: ProgramID) -> Double { state.progress(id).intensity }
+
+    /// Borne le curseur : ni caricature d'effort, ni séance vidée.
+    private func clamp(_ value: Double) -> Double { min(2.5, max(0.5, value)) }
+
+    /// Règle l'intensité à la main, avant ou pendant la séance.
+    func setIntensity(_ value: Double, for id: ProgramID) {
+        var progress = state.progress(id)
+        progress.intensity = clamp(value)
+        state.programs[id.rawValue] = progress
+        save()
+    }
+
+    /// Applique le ressenti d'une séance au programme : c'est ce qui rend la
+    /// suivante plus dure ou plus douce.
+    func apply(_ feedback: SessionFeedback, to id: ProgramID) {
+        var progress = state.progress(id)
+        progress.intensity = clamp(progress.intensity + feedback.adjustment)
+        state.programs[id.rawValue] = progress
+        save()
     }
 
     /// Jour où la prochaine séance d'un programme est attendue.
@@ -174,6 +203,7 @@ final class GameStore: ObservableObject {
         var progress = state.progress(id)
         if progress.startedOn == nil { progress.startedOn = todayKey }
         state.programs[id.rawValue] = progress
+        justStarted = id
         save()
         syncNotifications()
     }

@@ -103,7 +103,12 @@ enum Catalog {
     }
 
     /// Toutes les séances d'un programme, calibrées sur le palier choisi.
-    static func sessions(for id: ProgramID, tier: Tier) -> [PlannedSession] {
+    static func sessions(for id: ProgramID, tier: Tier, intensity: Double = 1.0) -> [PlannedSession] {
+        let all = build(id, tier: tier)
+        return intensity == 1.0 ? all : all.map { $0.scaled(by: intensity) }
+    }
+
+    private static func build(_ id: ProgramID, tier: Tier) -> [PlannedSession] {
         switch id {
         case .saitama: return saitamaSessions(tier: tier)
         case .naruto: return narutoSessions(tier: tier)
@@ -117,8 +122,9 @@ enum Catalog {
         }
     }
 
-    static func session(for id: ProgramID, index: Int, tier: Tier) -> PlannedSession? {
-        let all = sessions(for: id, tier: tier)
+    static func session(for id: ProgramID, index: Int, tier: Tier,
+                        intensity: Double = 1.0) -> PlannedSession? {
+        let all = sessions(for: id, tier: tier, intensity: intensity)
         guard index >= 0 && index < all.count else { return nil }
         return all[index]
     }
