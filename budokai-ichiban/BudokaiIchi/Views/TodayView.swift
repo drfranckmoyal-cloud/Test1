@@ -187,7 +187,7 @@ struct TodayView: View {
     /// lancer la séance sans rien déplier.
     private func compactCard(program: Program, session: PlannedSession) -> some View {
         let status = store.stageStatus(program)
-        let stageName = program.stages[min(status.index, program.stages.count - 1)]
+        let stageName = store.stageName(program)
 
         return HStack(spacing: 0) {
             Button {
@@ -241,7 +241,7 @@ struct TodayView: View {
     private func sessionCard(program: Program, session: PlannedSession,
                              collapsible: Bool = false) -> some View {
         let status = store.stageStatus(program)
-        let stageName = program.stages[min(status.index, program.stages.count - 1)]
+        let stageName = store.stageName(program)
         let ratio = status.total > 0 ? Double(status.done) / Double(status.total) : 0
 
         return VStack(spacing: 0) {
@@ -336,9 +336,7 @@ struct TodayView: View {
                 }
                 .padding(.horizontal, 18)
 
-                PrimaryButton(title: store.progress(program.id).notStarted
-                              ? "DÉBUTER LE PROGRAMME" : "VOIR LA SÉANCE",
-                              tint: program.light) {
+                PrimaryButton(title: "OUVRIR LA SÉANCE DU JOUR", tint: program.light) {
                     running = session
                 }
                 .padding(.horizontal, 18)

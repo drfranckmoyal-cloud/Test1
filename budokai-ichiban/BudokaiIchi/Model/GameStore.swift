@@ -610,7 +610,26 @@ final class GameStore: ObservableObject {
     }
 
     /// Étape en cours d'un programme et avancement à l'intérieur.
+    /// Le nom de l'étape en cours : le bloc pour Saitama, l'étape du
+    /// catalogue pour les autres.
+    func stageName(_ program: Program) -> String {
+        let index = stageStatus(program).index
+        if program.id == .saitama, state.progress(.saitama).saitama?.isComplete == true {
+            return SaitamaBlocks.spec(index + 1).title
+        }
+        return program.stages[min(index, program.stages.count - 1)]
+    }
+
     func stageStatus(_ program: Program) -> (index: Int, done: Int, total: Int) {
+        // Saitama se compte en blocs, pas dans les étapes du vieux catalogue
+        if program.id == .saitama, state.progress(.saitama).saitama?.isComplete == true {
+            let perWeek = schedule(of: .saitama)?.sessionsPerWeek ?? 5
+            let done = state.progress(.saitama).completedSessions
+            let position = SaitamaPlan.position(sessionIndex: done, sessionsPerWeek: perWeek)
+            let first = SaitamaPlan.firstWeek(ofBlock: position.blockIndex)
+            let total = SaitamaPlan.weeks(inBlock: position.blockIndex) * perWeek
+            return (position.blockIndex - 1, max(0, done - (first - 1) * perWeek), total)
+        }
         let completed = state.progress(program.id).completedSessions
         let index = min(program.stageIndex(forSession: completed), program.stages.count - 1)
         let first = program.firstSession(ofStage: index)

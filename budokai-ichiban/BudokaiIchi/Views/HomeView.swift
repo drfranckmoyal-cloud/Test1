@@ -211,7 +211,7 @@ struct HomeView: View {
 
     private func activeCard(_ program: Program) -> some View {
         let status = store.stageStatus(program)
-        let stageName = program.stages[min(status.index, program.stages.count - 1)]
+        let stageName = store.stageName(program)
         let ratio = status.total > 0 ? Double(status.done) / Double(status.total) : 0
         let finished = store.session(of: program.id) == nil
 
@@ -297,9 +297,10 @@ struct HomeView: View {
 
     private func buttonTitle(_ program: Program, finished: Bool) -> String {
         if finished { return "PROGRAMME TERMINÉ" }
+        if store.needsSetup(program.id) { return "RÉGLER LE PROGRAMME" }
         if store.isResting(program.id) { return "VOIR LE JOUR DE REPOS" }
-        // « Continuer » n'a aucun sens tant qu'on n'a rien commencé
-        return store.progress(program.id).notStarted ? "DÉBUTER LE PROGRAMME" : "CONTINUER"
+        // le programme est pris : ce bouton mène à la séance, il le dit
+        return store.progress(program.id).notStarted ? "OUVRIR LA PREMIÈRE SÉANCE" : "CONTINUER"
     }
 
     private func rhythmLabel(_ program: Program) -> String {

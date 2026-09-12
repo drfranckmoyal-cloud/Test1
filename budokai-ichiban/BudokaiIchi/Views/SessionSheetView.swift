@@ -23,10 +23,16 @@ struct SessionSheetView: View {
 
     private var program: Program { Catalog.program(session.programID) }
     /// La séance telle qu'elle sera faite, curseur d'intensité compris.
+    /// La séance telle qu'elle sera faite.
+    ///
+    /// Une séance prescrite porte déjà son dosage : on la prend telle quelle.
+    /// Seuls les anciens programmes, qui n'expriment qu'un volume, se
+    /// recalculent avec le curseur d'intensité.
     private var tuned: PlannedSession {
-        Catalog.session(for: session.programID, index: session.index - 1,
-                        tier: store.state.tier,
-                        intensity: store.intensity(session.programID)) ?? session
+        if session.prescribed != nil { return session }
+        return Catalog.session(for: session.programID, index: session.index - 1,
+                               tier: store.state.tier,
+                               intensity: store.intensity(session.programID)) ?? session
     }
 
     var body: some View {
@@ -53,10 +59,10 @@ struct SessionSheetView: View {
             header
             ScrollView {
                 VStack(spacing: 18) {
-                    if let story = narrative { narrativeCard(story) }
                     if let note = engineNote { engineCard(note) }
-                    if tuned.prescribed == nil { intensityDial }
                     exercises
+                    if let story = narrative { narrativeCard(story) }
+                    if tuned.prescribed == nil { intensityDial }
                     if !program.equipment.isEmpty && program.equipment != "Aucun" {
                         note("Matériel : \(program.equipment)")
                     }
@@ -167,6 +173,8 @@ struct SessionSheetView: View {
     /// coefficients qui le décident.
     private var engineNote: (icon: String, title: String, body: String)? {
         guard session.programID == .saitama else { return nil }
+        // rien à expliquer tant qu'aucune séance n'a été faite
+        guard store.progress(.saitama).completedSessions > 0 else { return nil }
 
         if let consolidation = store.saitamaConsolidation {
             let names = consolidation.domains.map { $0.label.lowercased() }.joined(separator: " et ")
