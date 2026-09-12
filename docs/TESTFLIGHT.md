@@ -1,4 +1,4 @@
-# Partager Budokai Ichi avec des amis (TestFlight)
+# Partager Budokai Ichiban avec des amis (TestFlight)
 
 TestFlight est le service d'Apple qui permet de distribuer une app **avant** (ou sans)
 publication sur l'App Store. Tu obtiens un **lien public** à partager : la personne
@@ -19,7 +19,7 @@ Ces règles sont celles d'Apple et peuvent changer : vérifie sur
 ## 1. Créer l'app dans App Store Connect
 
 1. <https://appstoreconnect.apple.com> → **Mes apps** → **+** → **Nouvelle app**.
-2. Plateforme **iOS**, nom « Budokai Ichi », langue **Français**.
+2. Plateforme **iOS**, nom « Budokai Ichiban », langue **Français**.
 3. **Identifiant de bundle** : il doit être identique à celui du projet Xcode. Le projet
    utilise `com.franckmoyal.PompesChallenge` — garde-le, ou change-le des deux côtés.
 4. SKU : ce que tu veux, par exemple `budokai-ichi`.

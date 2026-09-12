@@ -33,3 +33,6 @@ __pycache__/
 # Secrets
 .env
 *.db
+
+# Réglages locaux de Claude Code (propres à cette machine)
+.claude/settings.local.json
