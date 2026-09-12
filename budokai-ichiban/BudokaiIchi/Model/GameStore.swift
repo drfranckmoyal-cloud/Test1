@@ -119,6 +119,9 @@ final class GameStore: ObservableObject {
         // Saitama ne se termine pas au nombre de séances : il se valide par
         // son combat final. C'est le principe 1.4 du cadrage.
         if id == .saitama { return state.progress(.saitama).bossDefeated }
+        // Un programme dont la spécification porte un combat final ne se
+        // termine pas au compteur de séances : il se valide au combat.
+        if ProgramLibrary.definition(id)?.boss != nil { return state.progress(id).bossDefeated }
         return state.progress(id).completedSessions >= Catalog.program(id).totalSessions
     }
 
@@ -670,18 +673,129 @@ final class GameStore: ObservableObject {
 
     /// Enregistre la victoire sur le combat final et ouvre le Serious Mode.
     func defeatSaitamaBoss() {
-        closeSession(of: .saitama)
-        var progress = state.progress(.saitama)
-        progress.bossDefeated = true
-        progress.standardValidated = true
-        progress.finishedOn = todayKey
-        state.programs[ProgramID.saitama.rawValue] = progress
-        state.rewards.unlock("SAI-009")
-        state.rewards.unlock("SAI-SPLUS-001")
-        save()
+        recordVictory(.saitama, rewards: ["SAI-009", "SAI-SPLUS-001"])
     }
 
     var seriousModeUnlocked: Bool { state.progress(.saitama).bossDefeated }
+
+    // MARK: - Les combats finaux des huit autres programmes
+
+    /// Les mesures de départ d'un programme : la **première** valeur relevée
+    /// pour chaque test. Les mesures suivantes sont conservées, mais ce n'est
+    /// pas contre elles qu'on juge une progression — c'est contre le départ.
+    func baselines(of id: ProgramID) -> [String: Int] {
+        var first: [String: Int] = [:]
+        for result in state.progress(id).calibration.sorted(by: { $0.measuredAt < $1.measuredAt }) {
+            if first[result.testId] == nil { first[result.testId] = result.value }
+        }
+        return first
+    }
+
+    /// Le combat final d'un programme, résolu avec ses mesures de départ.
+    func bossChallenge(of id: ProgramID) -> BossChallenge? {
+        BossChallenge.make(id, baselines: baselines(of: id))
+    }
+
+    /// Combien de séances le parcours d'un programme prévoit, au scénario
+    /// nominal — la somme des jalons à la fréquence retenue.
+    func plannedSessions(of id: ProgramID) -> Int {
+        let stages = ProgramLibrary.stages(id)
+        guard !stages.isEmpty else { return Catalog.program(id).totalSessions }
+        let perWeek = progress(id).schedule?.sessionsPerWeek
+            ?? schedulingRules(of: id)?.recommendedSessionsPerWeek ?? 4
+        return stages.reduce(0) { $0 + max(1, $1.weeksMin * perWeek) }
+    }
+
+    /// Ce qui ouvre le combat final d'un programme écrit par le coach.
+    func bossAccess(of id: ProgramID) -> BossAccess {
+        let progress = state.progress(id)
+        let planned = plannedSessions(of: id)
+        let tests = SessionLibrary.calibration(id)
+        let answered = Set(progress.calibration.map(\.testId))
+        let last = recentReports(of: id).first
+        return BossAccess(
+            planComplete: progress.completedSessions >= planned,
+            sessionsDone: progress.completedSessions,
+            sessionsPlanned: planned,
+            calibrated: tests.isEmpty || !answered.isEmpty,
+            lastSessionOK: last.map { ($0.completion ?? .entirely) != .no } ?? false)
+    }
+
+    /// Vrai quand le combat final d'un programme est ouvert, Saitama compris.
+    func bossIsOpen(_ id: ProgramID) -> Bool {
+        if id == .saitama { return saitamaBossEligibility.isEligible }
+        return bossAccess(of: id).isEligible
+    }
+
+    /// Ce qu'il reste à tenir avant d'y avoir droit.
+    func bossMissing(_ id: ProgramID) -> [String] {
+        id == .saitama ? saitamaBossEligibility.missing : bossAccess(of: id).missing
+    }
+
+    /// Ouvre la journée du combat d'un programme, ou retrouve celle ouverte.
+    @discardableResult
+    func beginBoss(_ challenge: BossChallenge) -> OpenSession {
+        let items = challenge.prescriptions
+        // une journée déjà ouverte n'est reprise que si ses compteurs sont
+        // bien ceux du combat : une ancienne sauvegarde peut en porter d'autres
+        if let existing = openSession(of: challenge.programID),
+           items.allSatisfy({ existing.objectives[$0.id] != nil }) {
+            return existing
+        }
+        closeSession(of: challenge.programID)
+        var fresh = OpenSession(programID: challenge.programID.rawValue,
+                                sessionIndex: -1, day: todayKey)
+        for item in items {
+            fresh.objectives[item.id] = DailyObjectiveProgress(
+                prescriptionId: item.id, day: todayKey,
+                targetValue: item.targetValue, unit: item.unit,
+                completionPolicy: item.completionPolicy)
+        }
+        state.openSessions.append(fresh)
+        save()
+        return fresh
+    }
+
+    /// Vrai quand la journée du combat d'un programme est ouverte.
+    func bossDayOpen(of id: ProgramID) -> Bool {
+        openSession(of: id)?.sessionIndex == -1
+    }
+
+    /// L'issue du combat, au regard des compteurs du jour.
+    func bossOutcome(_ challenge: BossChallenge) -> BossChallenge.Outcome {
+        challenge.outcome(openSession(of: challenge.programID)?.objectives ?? [:])
+    }
+
+    /// Enregistre la victoire : la vignette du combat, celle du mode
+    /// supérieur, et le programme marqué comme validé.
+    func defeatBoss(_ id: ProgramID) {
+        if id == .saitama { defeatSaitamaBoss(); return }
+        let definition = ProgramLibrary.definition(id)
+        recordVictory(id, rewards: [definition?.boss?.rewardId,
+                                    definition?.superRank?.rewardId].compactMap { $0 })
+    }
+
+    /// Ce que gagner un combat final change, quel que soit le programme : la
+    /// journée se ferme, le programme est validé, les vignettes tombent, et
+    /// l'expérience du standard est créditée.
+    private func recordVictory(_ id: ProgramID, rewards: [String]) {
+        closeSession(of: id)
+        var progress = state.progress(id)
+        guard !progress.bossDefeated else { return }
+        progress.bossDefeated = true
+        progress.standardValidated = true
+        progress.finishedOn = todayKey
+        state.programs[id.rawValue] = progress
+
+        for rewardId in rewards { state.rewards.unlock(rewardId) }
+
+        let program = Catalog.program(id)
+        let badge = "\(program.name) : combat final remporté"
+        if !state.badges.contains(badge) { state.badges.append(badge) }
+        if !state.equipment.contains(program.name) { state.equipment.append(program.name) }
+        state.xp += GameEngine.bossXP
+        save()
+    }
 
     /// Le curseur d'intensité d'un programme.
     func intensity(_ id: ProgramID) -> Double { state.progress(id).intensity }

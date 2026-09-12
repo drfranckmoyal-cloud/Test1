@@ -1,195 +1,220 @@
 {
- "id": "minato",
- "quality": "Vitesse et accélération",
- "scheduling": {
-  "min": 2,
-  "recommended": 3,
-  "max": 4,
-  "recoveryHours": 48,
-  "requiresLongSession": false,
-  "keySessionLabel": "la séance de vitesse principale",
-  "templates": {
-   "2": [
-    {
-     "type": "speed",
-     "title": "Accélération",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
-    },
-    {
-     "type": "speed",
-     "title": "Vitesse maximale",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
+  "id": "minato",
+  "quality": "Vitesse et accélération",
+  "scheduling": {
+    "min": 2,
+    "recommended": 3,
+    "max": 4,
+    "recoveryHours": 48,
+    "requiresLongSession": false,
+    "keySessionLabel": "la séance de vitesse principale",
+    "templates": {
+      "2": [
+        {
+          "type": "speed",
+          "title": "Accélération",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "speed",
+          "title": "Vitesse maximale",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        }
+      ],
+      "3": [
+        {
+          "type": "speed",
+          "title": "Accélération",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "speed",
+          "title": "Vitesse maximale",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "strength",
+          "title": "Force et technique",
+          "priority": "important",
+          "load": "moderate",
+          "minutes": 40
+        }
+      ],
+      "4": [
+        {
+          "type": "speed",
+          "title": "Accélération",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "speed",
+          "title": "Vitesse maximale",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "strength",
+          "title": "Force et technique",
+          "priority": "important",
+          "load": "moderate",
+          "minutes": 40
+        },
+        {
+          "type": "mobility",
+          "title": "Drills et mobilité",
+          "priority": "optional",
+          "load": "easy",
+          "minutes": 30
+        }
+      ]
     }
-   ],
-   "3": [
+  },
+  "stages": [
     {
-     "type": "speed",
-     "title": "Accélération",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
+      "key": "ACADEMY",
+      "title": "Academy Prodigy",
+      "goal": "Technique de course et premières accélérations.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
     },
     {
-     "type": "speed",
-     "title": "Vitesse maximale",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
+      "key": "JIRAIYA",
+      "title": "Team Jiraiya",
+      "goal": "Construire la base de force et d'appuis.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
     },
     {
-     "type": "strength",
-     "title": "Force et technique",
-     "priority": "important",
-     "load": "moderate",
-     "minutes": 40
+      "key": "YELLOW",
+      "title": "Yellow Flash",
+      "goal": "Accélération sur 10 et 20 m.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
+    },
+    {
+      "key": "KANNABI",
+      "title": "Kannabi Bridge",
+      "goal": "Vitesse maximale sur 30 m.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
+    },
+    {
+      "key": "AB",
+      "title": "A/B Combo",
+      "goal": "Répétabilité entre efforts.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
+    },
+    {
+      "key": "HOKAGE",
+      "title": "Fourth Hokage",
+      "goal": "Vitesse sur 60 m.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
+    },
+    {
+      "key": "WAR",
+      "title": "Flying Raijin",
+      "goal": "Affûtage avant le test.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 1,
+      "weeksMax": 3
     }
-   ],
-   "4": [
-    {
-     "type": "speed",
-     "title": "Accélération",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
-    },
-    {
-     "type": "speed",
-     "title": "Vitesse maximale",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
-    },
-    {
-     "type": "strength",
-     "title": "Force et technique",
-     "priority": "important",
-     "load": "moderate",
-     "minutes": 40
-    },
-    {
-     "type": "mobility",
-     "title": "Drills et mobilité",
-     "priority": "optional",
-     "load": "easy",
-     "minutes": 30
-    }
-   ]
-  }
- },
- "stages": [
-  {
-   "key": "ACADEMY",
-   "title": "Academy Prodigy",
-   "goal": "Technique de course et premières accélérations.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "JIRAIYA",
-   "title": "Team Jiraiya",
-   "goal": "Construire la base de force et d'appuis.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "YELLOW",
-   "title": "Yellow Flash",
-   "goal": "Accélération sur 10 et 20 m.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "KANNABI",
-   "title": "Kannabi Bridge",
-   "goal": "Vitesse maximale sur 30 m.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "AB",
-   "title": "A/B Combo",
-   "goal": "Répétabilité entre efforts.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "HOKAGE",
-   "title": "Fourth Hokage",
-   "goal": "Vitesse sur 60 m.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "WAR",
-   "title": "Flying Raijin",
-   "goal": "Affûtage avant le test.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 1,
-   "weeksMax": 3
-  }
- ],
- "boss": {
-  "title": "HIRAISHIN TEST",
-  "summary": "Trois distances chronométrées et la répétabilité.",
-  "components": [
-   {
-    "id": "boss.min.10",
-    "name": "10 m",
-    "value": 3,
-    "unit": "seconds",
-    "policy": "continuous"
-   },
-   {
-    "id": "boss.min.30",
-    "name": "30 m",
-    "value": 5,
-    "unit": "seconds",
-    "policy": "continuous"
-   },
-   {
-    "id": "boss.min.60",
-    "name": "60 m",
-    "value": 9,
-    "unit": "seconds",
-    "policy": "continuous"
-   }
   ],
-  "requirements": [
-   "10 m amélioré d'au moins 3 % vs départ",
-   "30 m d'au moins 4 %",
-   "60 m d'au moins 5 %",
-   "Écart ≤ 3 % entre trois efforts de 30 m"
-  ],
-  "rewardId": "MIN-001"
- },
- "superRank": {
-  "name": "FLYING RAIJIN NIVEAU 2",
-  "rewardId": null
- },
- "rewards": [
-  {
-   "id": "MIN-001",
-   "stage": null,
-   "title": "Yellow Flash of Konoha",
-   "type": "rank",
-   "rarity": "legendary"
-  }
- ]
+  "boss": {
+    "title": "HIRAISHIN TEST",
+    "summary": "Trois distances chronométrées et la répétabilité. Deux cibles sur trois suffisent, à condition que la troisième ne recule pas.",
+    "components": [
+      {
+        "id": "boss.min.repeat",
+        "name": "Répétabilité — 3 × 30 m rapides",
+        "unit": "meters",
+        "policy": "structuredSession",
+        "value": 90,
+        "family": "minato.accel",
+        "mandatory": true,
+        "note": "Écart de 3 % au maximum entre le meilleur et le pire des trois efforts."
+      },
+      {
+        "id": "boss.min.10",
+        "name": "10 m",
+        "unit": "centiseconds",
+        "policy": "continuous",
+        "improvement": 0.03,
+        "baselineTest": "10m",
+        "lowerIsBetter": true,
+        "family": "minato.accel",
+        "mandatory": false
+      },
+      {
+        "id": "boss.min.30",
+        "name": "30 m",
+        "unit": "centiseconds",
+        "policy": "continuous",
+        "improvement": 0.04,
+        "baselineTest": "30m",
+        "lowerIsBetter": true,
+        "family": "minato.accel",
+        "mandatory": false
+      },
+      {
+        "id": "boss.min.60",
+        "name": "60 m",
+        "unit": "centiseconds",
+        "policy": "continuous",
+        "improvement": 0.05,
+        "baselineTest": "60m",
+        "lowerIsBetter": true,
+        "family": "minato.maxv",
+        "mandatory": false
+      }
+    ],
+    "requirements": [
+      "Répétabilité validée : 3 % d'écart au maximum sur trois 30 m",
+      "Deux des trois distances atteignent leur cible",
+      "La troisième ne régresse pas de plus de 1,5 %",
+      "Départ, surface et chaussures identiques au test de départ"
+    ],
+    "optionalRequired": 2,
+    "maxRegression": 0.015,
+    "note": "Si ton niveau de départ est déjà très élevé, la route avancée s'applique : 2 % sur le 10 ou le 30 m, maintien du 60 m, répétabilité sous 2 %.",
+    "rewardId": "MIN-001"
+  },
+  "superRank": {
+    "name": "FLYING RAIJIN NIVEAU 2",
+    "rewardId": null
+  },
+  "rewards": [
+    {
+      "id": "MIN-001",
+      "stage": null,
+      "title": "Yellow Flash of Konoha",
+      "type": "rank",
+      "rarity": "legendary"
+    }
+  ]
 }

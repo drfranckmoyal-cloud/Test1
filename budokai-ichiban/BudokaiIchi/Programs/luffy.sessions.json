@@ -154,9 +154,9 @@
       "label": "Knee-to-wall",
       "family": "luffy.ankle",
       "referenceLevel": 2,
-      "unit": "meters",
-      "max": 0.2,
-      "cue": "Mesure la distance gros orteil-mur avec talon au sol."
+      "unit": "centimeters",
+      "max": 20,
+      "cue": "Talon au sol, genou vers le mur : mesure l'écart gros orteil-mur en centimètres."
     },
     {
       "id": "squat",
@@ -172,9 +172,9 @@
       "label": "Chaîne postérieure",
       "family": "luffy.posterior",
       "referenceLevel": 2,
-      "unit": "reps",
-      "max": 10,
-      "cue": "Active leg raise contrôlé, compare gauche/droite."
+      "unit": "degrees",
+      "max": 90,
+      "cue": "Jambe tendue levée activement : estime l'angle atteint, en degrés."
     },
     {
       "id": "shoulder",

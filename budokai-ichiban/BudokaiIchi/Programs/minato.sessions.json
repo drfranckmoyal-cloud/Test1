@@ -111,27 +111,27 @@
       "label": "10 m",
       "family": "minato.accel",
       "referenceLevel": 2,
-      "unit": "seconds",
-      "max": 10,
-      "cue": "3 essais, récupération complète."
+      "unit": "centiseconds",
+      "max": 1000,
+      "cue": "Trois essais, récupération complète. En centièmes : 1,84 s s'écrit 184."
     },
     {
       "id": "30m",
       "label": "30 m",
       "family": "minato.accel",
       "referenceLevel": 3,
-      "unit": "seconds",
-      "max": 15,
-      "cue": "2–3 essais, garde le meilleur."
+      "unit": "centiseconds",
+      "max": 1500,
+      "cue": "Deux à trois essais, garde le meilleur. En centièmes : 4,55 s s'écrit 455."
     },
     {
       "id": "60m",
       "label": "60 m",
       "family": "minato.maxv",
       "referenceLevel": 3,
-      "unit": "seconds",
-      "max": 20,
-      "cue": "2 essais seulement si niveau et terrain adaptés."
+      "unit": "centiseconds",
+      "max": 2000,
+      "cue": "Deux essais, et seulement si le terrain s'y prête. En centièmes : 8,40 s s'écrit 840."
     }
   ],
   "weeks": [

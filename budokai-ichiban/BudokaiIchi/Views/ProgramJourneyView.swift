@@ -19,11 +19,12 @@ struct ProgramJourneyView: View {
 
     @State private var opened: Int?
     @State private var showDetail = false
+    @State private var showBoss = false
     @State private var showSetup = false
 
     private var tint: Color { program.light }
     private var stages: [ProgramDefinition.Stage] { ProgramLibrary.stages(program.id) }
-    private var boss: ProgramStructures.BossFight? { ProgramStructures.boss(for: program.id) }
+    private var boss: BossChallenge? { store.bossChallenge(of: program.id) }
 
     // MARK: - Où l'on en est
 
@@ -87,6 +88,9 @@ struct ProgramJourneyView: View {
             }
         }
         .sheet(isPresented: $showDetail) { ProgramDetailView(program: program) }
+        .sheet(isPresented: $showBoss) {
+            if let boss = boss { BossFightView(challenge: boss) }
+        }
         .sheet(isPresented: $showSetup) {
             ProgramLaunchView(program: program) { store.startProgram(program.id) }
         }
@@ -143,6 +147,18 @@ struct ProgramJourneyView: View {
                 milestone(stage, number: offset + 1)
                 connector(after: offset + 1)
             }
+            finishNode
+        }
+    }
+
+    /// L'arrivée se touche quand le programme tourne : c'est le bout de la
+    /// route, donc l'endroit où l'on cherche le combat final.
+    @ViewBuilder
+    private var finishNode: some View {
+        if store.isActive(program.id), boss != nil {
+            Button { Haptics.tap(); showBoss = true } label: { finish }
+                .buttonStyle(.plain)
+        } else {
             finish
         }
     }
@@ -417,7 +433,7 @@ struct ProgramJourneyView: View {
 
     private var finish: some View {
         let won = store.progress(program.id).bossDefeated
-        let eligible = program.id == .saitama ? store.saitamaBossEligibility.isEligible : false
+        let eligible = store.isActive(program.id) && store.bossIsOpen(program.id)
 
         return VStack(spacing: 9) {
             ZStack {
@@ -439,7 +455,9 @@ struct ProgramJourneyView: View {
                 .multilineTextAlignment(.center)
             Text(won
                  ? "Gagné. \(ProgramStructures.superRankName(for: program.id) ?? "Le mode supérieur") est ouvert."
-                 : (ProgramLibrary.bossSummary(program.id) ?? "Le standard qui valide le programme."))
+                 : (eligible
+                    ? "Le combat est ouvert. Touche pour l'engager."
+                    : (ProgramLibrary.bossSummary(program.id) ?? "Le standard qui valide le programme.")))
                 .font(.ui(12))
                 .foregroundStyle(Theme.muted)
                 .multilineTextAlignment(.center)

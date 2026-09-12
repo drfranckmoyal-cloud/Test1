@@ -1,376 +1,426 @@
 {
- "id": "goku",
- "quality": "Surcharge progressive",
- "scheduling": {
-  "min": 3,
-  "recommended": 4,
-  "max": 5,
-  "recoveryHours": 48,
-  "requiresLongSession": false,
-  "keySessionLabel": "la séance lourde",
-  "templates": {
-   "3": [
-    {
-     "type": "strength",
-     "title": "Full Body A",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 55
-    },
-    {
-     "type": "strength",
-     "title": "Full Body B",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 55
-    },
-    {
-     "type": "strength",
-     "title": "Full Body C — léger",
-     "priority": "important",
-     "load": "moderate",
-     "minutes": 40
+  "id": "goku",
+  "quality": "Surcharge progressive",
+  "scheduling": {
+    "min": 3,
+    "recommended": 4,
+    "max": 5,
+    "recoveryHours": 48,
+    "requiresLongSession": false,
+    "keySessionLabel": "la séance lourde",
+    "templates": {
+      "3": [
+        {
+          "type": "strength",
+          "title": "Full Body A",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 55
+        },
+        {
+          "type": "strength",
+          "title": "Full Body B",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 55
+        },
+        {
+          "type": "strength",
+          "title": "Full Body C — léger",
+          "priority": "important",
+          "load": "moderate",
+          "minutes": 40
+        }
+      ],
+      "4": [
+        {
+          "type": "strength",
+          "title": "Lower + Push",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 55
+        },
+        {
+          "type": "strength",
+          "title": "Pull + Hinge",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 55
+        },
+        {
+          "type": "strength",
+          "title": "Full Body technique",
+          "priority": "important",
+          "load": "moderate",
+          "minutes": 45
+        },
+        {
+          "type": "mobility",
+          "title": "Carry / capacité",
+          "priority": "optional",
+          "load": "easy",
+          "minutes": 35
+        }
+      ],
+      "5": [
+        {
+          "type": "strength",
+          "title": "Lower + Push",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 55
+        },
+        {
+          "type": "strength",
+          "title": "Pull + Hinge",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 55
+        },
+        {
+          "type": "strength",
+          "title": "Full Body technique",
+          "priority": "important",
+          "load": "moderate",
+          "minutes": 45
+        },
+        {
+          "type": "mobility",
+          "title": "Carry / capacité",
+          "priority": "optional",
+          "load": "easy",
+          "minutes": 35
+        },
+        {
+          "type": "recovery",
+          "title": "Technique et mobilité",
+          "priority": "optional",
+          "load": "easy",
+          "minutes": 30
+        }
+      ]
     }
-   ],
-   "4": [
+  },
+  "stages": [
     {
-     "type": "strength",
-     "title": "Lower + Push",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 55
+      "key": "Tortue",
+      "title": "École de la Tortue",
+      "goal": "Technique et base de surcharge.",
+      "benchmark": "Gravity Benchmark technique à charge initiale",
+      "exit": [
+        "Toutes les familles exécutées proprement",
+        "Aucune variante de base instable"
+      ],
+      "weeksMin": 2,
+      "weeksMax": 5
     },
     {
-     "type": "strength",
-     "title": "Pull + Hinge",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 55
+      "key": "Kaio",
+      "title": "Kaiō — Gravité ×10",
+      "goal": "Augmenter la capacité de travail sous charge.",
+      "benchmark": null,
+      "exit": [
+        "+5 à 10 % de charge moyenne",
+        "Carry progressé",
+        "RIR stable"
+      ],
+      "weeksMin": 3,
+      "weeksMax": 5
     },
     {
-     "type": "strength",
-     "title": "Full Body technique",
-     "priority": "important",
-     "load": "moderate",
-     "minutes": 45
+      "key": "Namek",
+      "title": "Super Saiyan",
+      "goal": "Premier vrai bloc de surcharge.",
+      "benchmark": null,
+      "exit": [
+        "≥10 % de progression de l'indice de charge",
+        "Benchmark intermédiaire amélioré"
+      ],
+      "weeksMin": 3,
+      "weeksMax": 5
     },
     {
-     "type": "mobility",
-     "title": "Carry / capacité",
-     "priority": "optional",
-     "load": "easy",
-     "minutes": 35
+      "key": "Salle",
+      "title": "Salle de l'Esprit et du Temps",
+      "goal": "Consolider et maîtriser : tempo, pause, amplitude.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 5
+    },
+    {
+      "key": "SSJ2",
+      "title": "Super Saiyan 2",
+      "goal": "Force. 5 à 8 répétitions sur les principaux, RIR 1–2.",
+      "benchmark": null,
+      "exit": [
+        "Charge principale +15 à 20 % vs départ",
+        "Bonne technique"
+      ],
+      "weeksMin": 3,
+      "weeksMax": 5
+    },
+    {
+      "key": "SSJ3",
+      "title": "Super Saiyan 3",
+      "goal": "Force et gestion de la fatigue : clusters, top set et back-off.",
+      "benchmark": null,
+      "exit": [
+        "Charge élevée tolérée",
+        "Benchmark proche de +20 %"
+      ],
+      "weeksMin": 3,
+      "weeksMax": 5
+    },
+    {
+      "key": "God",
+      "title": "Super Saiyan God",
+      "goal": "Transformer la force en maîtrise globale.",
+      "benchmark": null,
+      "exit": [
+        "Benchmark +20 à 25 % simulé",
+        "RPE ≤ 8"
+      ],
+      "weeksMin": 3,
+      "weeksMax": 5
+    },
+    {
+      "key": "Blue",
+      "title": "Super Saiyan Blue",
+      "goal": "Affûtage spécifique du Gravity Benchmark.",
+      "benchmark": "+25 % de charge",
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
     }
-   ],
-   "5": [
-    {
-     "type": "strength",
-     "title": "Lower + Push",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 55
-    },
-    {
-     "type": "strength",
-     "title": "Pull + Hinge",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 55
-    },
-    {
-     "type": "strength",
-     "title": "Full Body technique",
-     "priority": "important",
-     "load": "moderate",
-     "minutes": 45
-    },
-    {
-     "type": "mobility",
-     "title": "Carry / capacité",
-     "priority": "optional",
-     "load": "easy",
-     "minutes": 35
-    },
-    {
-     "type": "recovery",
-     "title": "Technique et mobilité",
-     "priority": "optional",
-     "load": "easy",
-     "minutes": 30
-    }
-   ]
-  }
- },
- "stages": [
-  {
-   "key": "Tortue",
-   "title": "École de la Tortue",
-   "goal": "Technique et base de surcharge.",
-   "benchmark": "Gravity Benchmark technique à charge initiale",
-   "exit": [
-    "Toutes les familles exécutées proprement",
-    "Aucune variante de base instable"
-   ],
-   "weeksMin": 2,
-   "weeksMax": 5
-  },
-  {
-   "key": "Kaio",
-   "title": "Kaiō — Gravité ×10",
-   "goal": "Augmenter la capacité de travail sous charge.",
-   "benchmark": null,
-   "exit": [
-    "+5 à 10 % de charge moyenne",
-    "Carry progressé",
-    "RIR stable"
-   ],
-   "weeksMin": 3,
-   "weeksMax": 5
-  },
-  {
-   "key": "Namek",
-   "title": "Super Saiyan",
-   "goal": "Premier vrai bloc de surcharge.",
-   "benchmark": null,
-   "exit": [
-    "≥10 % de progression de l'indice de charge",
-    "Benchmark intermédiaire amélioré"
-   ],
-   "weeksMin": 3,
-   "weeksMax": 5
-  },
-  {
-   "key": "Salle",
-   "title": "Salle de l'Esprit et du Temps",
-   "goal": "Consolider et maîtriser : tempo, pause, amplitude.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 5
-  },
-  {
-   "key": "SSJ2",
-   "title": "Super Saiyan 2",
-   "goal": "Force. 5 à 8 répétitions sur les principaux, RIR 1–2.",
-   "benchmark": null,
-   "exit": [
-    "Charge principale +15 à 20 % vs départ",
-    "Bonne technique"
-   ],
-   "weeksMin": 3,
-   "weeksMax": 5
-  },
-  {
-   "key": "SSJ3",
-   "title": "Super Saiyan 3",
-   "goal": "Force et gestion de la fatigue : clusters, top set et back-off.",
-   "benchmark": null,
-   "exit": [
-    "Charge élevée tolérée",
-    "Benchmark proche de +20 %"
-   ],
-   "weeksMin": 3,
-   "weeksMax": 5
-  },
-  {
-   "key": "God",
-   "title": "Super Saiyan God",
-   "goal": "Transformer la force en maîtrise globale.",
-   "benchmark": null,
-   "exit": [
-    "Benchmark +20 à 25 % simulé",
-    "RPE ≤ 8"
-   ],
-   "weeksMin": 3,
-   "weeksMax": 5
-  },
-  {
-   "key": "Blue",
-   "title": "Super Saiyan Blue",
-   "goal": "Affûtage spécifique du Gravity Benchmark.",
-   "benchmark": "+25 % de charge",
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  }
- ],
- "boss": {
-  "title": "GRAVITY BENCHMARK",
-  "summary": "Le benchmark d'entrée, refait avec environ 25 % de charge externe en plus, technique correcte et RPE ≤ 8.",
-  "components": [
-   {
-    "id": "boss.gok.load",
-    "name": "Charge du benchmark",
-    "value": 125,
-    "unit": "kg",
-    "policy": "structuredSession"
-   }
   ],
-  "requirements": [
-   "+25 % de charge réalisable sur une répétition générale",
-   "RPE ≤ 8",
-   "Technique conservée"
-  ],
-  "rewardId": "GOK-022"
- },
- "superRank": {
-  "name": "ULTRA INSTINCT",
-  "rewardId": "GOK-UI-001"
- },
- "rewards": [
-  {
-   "id": "GOK-001",
-   "stage": "Tortue",
-   "title": "Kame House",
-   "type": "location",
-   "rarity": "rare"
+  "boss": {
+    "title": "GRAVITY BENCHMARK",
+    "summary": "Le benchmark d'entrée, refait avec 25 % de charge en plus : mêmes répétitions, mêmes rounds, même ordre, RPE global ≤ 8 et aucun exercice mené à l'échec.",
+    "components": [
+      {
+        "id": "boss.gok.load",
+        "name": "Charge du sac",
+        "unit": "kg",
+        "policy": "structuredSession",
+        "improvement": 0.25,
+        "note": "+25 % par rapport à la charge du benchmark de départ.",
+        "label": "+25 % de charge"
+      },
+      {
+        "id": "boss.gok.squat",
+        "name": "Front / Bear-Hug Squat",
+        "unit": "reps",
+        "policy": "structuredSession",
+        "value": 30,
+        "family": "goku.squat",
+        "note": "10 répétitions à chacun des 3 rounds."
+      },
+      {
+        "id": "boss.gok.hinge",
+        "name": "Bag Romanian Deadlift",
+        "unit": "reps",
+        "policy": "structuredSession",
+        "value": 30,
+        "family": "goku.hinge",
+        "note": "10 répétitions à chacun des 3 rounds."
+      },
+      {
+        "id": "boss.gok.pull",
+        "name": "Bag Row",
+        "unit": "reps",
+        "policy": "structuredSession",
+        "value": 30,
+        "family": "goku.pull",
+        "note": "10 répétitions à chacun des 3 rounds."
+      },
+      {
+        "id": "boss.gok.push",
+        "name": "Bag Floor Press ou pompe adaptée",
+        "unit": "reps",
+        "policy": "structuredSession",
+        "value": 30,
+        "family": "goku.push",
+        "note": "10 répétitions à chacun des 3 rounds."
+      },
+      {
+        "id": "boss.gok.carry",
+        "name": "Loaded Carry",
+        "unit": "meters",
+        "policy": "structuredSession",
+        "value": 180,
+        "family": "goku.carry",
+        "note": "60 m à chacun des 3 rounds."
+      }
+    ],
+    "requirements": [
+      "3 rounds complets, dans l'ordre",
+      "+25 % de charge externe par rapport au benchmark de départ",
+      "RPE global ≤ 8, aucun exercice à l'échec",
+      "Technique conservée sur les cinq mouvements",
+      "Repos : 60 à 120 s entre exercices, 2 à 3 min entre rounds"
+    ],
+    "note": "Si ton matériel plafonne : +15 % de charge au minimum, plus une variante plus difficile sur au moins deux mouvements ou 10 % de densité en plus.",
+    "rewardId": "GOK-022"
   },
-  {
-   "id": "GOK-002",
-   "stage": "Tortue",
-   "title": "Carapace de Tortue Géniale",
-   "type": "object",
-   "rarity": "rare"
+  "superRank": {
+    "name": "ULTRA INSTINCT",
+    "rewardId": "GOK-UI-001"
   },
-  {
-   "id": "GOK-003",
-   "stage": "Tortue",
-   "title": "21e Tenkaichi Budokai",
-   "type": "event",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-004",
-   "stage": "Kaio",
-   "title": "Route du Serpent",
-   "type": "location",
-   "rarity": "rare"
-  },
-  {
-   "id": "GOK-005",
-   "stage": "Kaio",
-   "title": "Bubbles",
-   "type": "character",
-   "rarity": "rare"
-  },
-  {
-   "id": "GOK-006",
-   "stage": "Kaio",
-   "title": "Kaio-ken",
-   "type": "technique",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-007",
-   "stage": "Namek",
-   "title": "Vaisseau à gravité",
-   "type": "object",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-008",
-   "stage": "Namek",
-   "title": "Commando Ginyu",
-   "type": "fight",
-   "rarity": "rare"
-  },
-  {
-   "id": "GOK-009",
-   "stage": "Namek",
-   "title": "Super Saiyan",
-   "type": "transformation",
-   "rarity": "legendary"
-  },
-  {
-   "id": "GOK-010",
-   "stage": "Salle",
-   "title": "Salle de l'Esprit et du Temps",
-   "type": "location",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-011",
-   "stage": "Salle",
-   "title": "Full Power Super Saiyan",
-   "type": "transformation",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-012",
-   "stage": "Salle",
-   "title": "Cell Games",
-   "type": "event",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-013",
-   "stage": "SSJ2",
-   "title": "Majin Vegeta",
-   "type": "fight",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-014",
-   "stage": "SSJ2",
-   "title": "Super Saiyan 2",
-   "type": "transformation",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-015",
-   "stage": "SSJ3",
-   "title": "Super Saiyan 3",
-   "type": "transformation",
-   "rarity": "legendary"
-  },
-  {
-   "id": "GOK-016",
-   "stage": "SSJ3",
-   "title": "Genki-dama contre Buu",
-   "type": "technique",
-   "rarity": "legendary"
-  },
-  {
-   "id": "GOK-017",
-   "stage": "God",
-   "title": "Beerus",
-   "type": "character",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-018",
-   "stage": "God",
-   "title": "Super Saiyan God",
-   "type": "transformation",
-   "rarity": "legendary"
-  },
-  {
-   "id": "GOK-019",
-   "stage": "Blue",
-   "title": "Whis",
-   "type": "sensei",
-   "rarity": "epic"
-  },
-  {
-   "id": "GOK-020",
-   "stage": "Blue",
-   "title": "Super Saiyan Blue",
-   "type": "transformation",
-   "rarity": "legendary"
-  },
-  {
-   "id": "GOK-021",
-   "stage": "Blue",
-   "title": "Blue Kaio-ken",
-   "type": "transformation",
-   "rarity": "legendary"
-  },
-  {
-   "id": "GOK-022",
-   "stage": "Ultra",
-   "title": "Gravity Master",
-   "type": "rank",
-   "rarity": "legendary"
-  }
- ]
+  "rewards": [
+    {
+      "id": "GOK-001",
+      "stage": "Tortue",
+      "title": "Kame House",
+      "type": "location",
+      "rarity": "rare"
+    },
+    {
+      "id": "GOK-002",
+      "stage": "Tortue",
+      "title": "Carapace de Tortue Géniale",
+      "type": "object",
+      "rarity": "rare"
+    },
+    {
+      "id": "GOK-003",
+      "stage": "Tortue",
+      "title": "21e Tenkaichi Budokai",
+      "type": "event",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-004",
+      "stage": "Kaio",
+      "title": "Route du Serpent",
+      "type": "location",
+      "rarity": "rare"
+    },
+    {
+      "id": "GOK-005",
+      "stage": "Kaio",
+      "title": "Bubbles",
+      "type": "character",
+      "rarity": "rare"
+    },
+    {
+      "id": "GOK-006",
+      "stage": "Kaio",
+      "title": "Kaio-ken",
+      "type": "technique",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-007",
+      "stage": "Namek",
+      "title": "Vaisseau à gravité",
+      "type": "object",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-008",
+      "stage": "Namek",
+      "title": "Commando Ginyu",
+      "type": "fight",
+      "rarity": "rare"
+    },
+    {
+      "id": "GOK-009",
+      "stage": "Namek",
+      "title": "Super Saiyan",
+      "type": "transformation",
+      "rarity": "legendary"
+    },
+    {
+      "id": "GOK-010",
+      "stage": "Salle",
+      "title": "Salle de l'Esprit et du Temps",
+      "type": "location",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-011",
+      "stage": "Salle",
+      "title": "Full Power Super Saiyan",
+      "type": "transformation",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-012",
+      "stage": "Salle",
+      "title": "Cell Games",
+      "type": "event",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-013",
+      "stage": "SSJ2",
+      "title": "Majin Vegeta",
+      "type": "fight",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-014",
+      "stage": "SSJ2",
+      "title": "Super Saiyan 2",
+      "type": "transformation",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-015",
+      "stage": "SSJ3",
+      "title": "Super Saiyan 3",
+      "type": "transformation",
+      "rarity": "legendary"
+    },
+    {
+      "id": "GOK-016",
+      "stage": "SSJ3",
+      "title": "Genki-dama contre Buu",
+      "type": "technique",
+      "rarity": "legendary"
+    },
+    {
+      "id": "GOK-017",
+      "stage": "God",
+      "title": "Beerus",
+      "type": "character",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-018",
+      "stage": "God",
+      "title": "Super Saiyan God",
+      "type": "transformation",
+      "rarity": "legendary"
+    },
+    {
+      "id": "GOK-019",
+      "stage": "Blue",
+      "title": "Whis",
+      "type": "sensei",
+      "rarity": "epic"
+    },
+    {
+      "id": "GOK-020",
+      "stage": "Blue",
+      "title": "Super Saiyan Blue",
+      "type": "transformation",
+      "rarity": "legendary"
+    },
+    {
+      "id": "GOK-021",
+      "stage": "Blue",
+      "title": "Blue Kaio-ken",
+      "type": "transformation",
+      "rarity": "legendary"
+    },
+    {
+      "id": "GOK-022",
+      "stage": "Ultra",
+      "title": "Gravity Master",
+      "type": "rank",
+      "rarity": "legendary"
+    }
+  ]
 }

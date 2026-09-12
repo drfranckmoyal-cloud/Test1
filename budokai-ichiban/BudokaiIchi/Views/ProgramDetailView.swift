@@ -79,8 +79,7 @@ struct ProgramDetailView: View {
                             }
                         }
 
-                        if program.id == .saitama, store.saitamaCalibration?.isComplete == true,
-                           ProgramStructures.boss(for: program.id) != nil {
+                        if store.isActive(program.id), store.bossChallenge(of: program.id) != nil {
                             bossEntry
                         }
                         action
@@ -123,8 +122,8 @@ struct ProgramDetailView: View {
             dismiss()
         }
         .sheet(isPresented: $showBoss) {
-            if let fight = ProgramStructures.boss(for: program.id) {
-                BossFightView(fight: fight)
+            if let challenge = store.bossChallenge(of: program.id) {
+                BossFightView(challenge: challenge)
             }
         }
     }
@@ -140,22 +139,28 @@ struct ProgramDetailView: View {
     /// L'entrée vers le combat final. Visible dès que le programme tourne :
     /// verrouillée, elle dit ce qu'il reste à tenir.
     private var bossEntry: some View {
-        let eligible = store.saitamaBossEligibility.isEligible
+        let eligible = store.bossIsOpen(program.id)
+        let missing = store.bossMissing(program.id)
+        let won = store.progress(program.id).bossDefeated
         return Button {
             Haptics.tap()
             showBoss = true
         } label: {
             HStack(spacing: 12) {
-                Image(systemName: eligible ? "flame.fill" : "lock.fill")
+                Image(systemName: won ? "crown.fill" : (eligible ? "flame.fill" : "lock.fill"))
                     .font(.system(size: 17))
                     .foregroundStyle(eligible ? Theme.gold : Theme.muted)
                 VStack(alignment: .leading, spacing: 2) {
                     Text("COMBAT FINAL")
                         .font(.display(15))
                         .foregroundStyle(Theme.text)
-                    Text(eligible
-                         ? "Tes capacités récentes l'ouvrent. 100/100/100 et 10 km."
-                         : "Il te reste \(store.saitamaBossEligibility.missing.count) prérequis à tenir.")
+                    Text(won
+                         ? "Gagné. \(ProgramStructures.superRankName(for: program.id) ?? "Le mode supérieur") est ouvert."
+                         : (eligible
+                            ? (ProgramLibrary.bossSummary(program.id) ?? "Le standard qui valide le programme.")
+                            : (missing.count == 1
+                               ? "Il te reste un prérequis à tenir."
+                               : "Il te reste \(missing.count) prérequis à tenir.")))
                         .font(.ui(11, .semibold))
                         .foregroundStyle(Theme.muted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -170,7 +175,8 @@ struct ProgramDetailView: View {
             .frame(maxWidth: .infinity)
             .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(eligible ? Theme.gold.opacity(0.55) : Theme.border, lineWidth: eligible ? 2 : 1))
+                .stroke(eligible || won ? Theme.gold.opacity(0.55) : Theme.border,
+                        lineWidth: eligible || won ? 2 : 1))
         }
         .buttonStyle(.plain)
     }

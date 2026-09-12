@@ -360,6 +360,9 @@ struct AmountPad: View {
         case .seconds: return "SECONDES"
         case .meters: return "MÈTRES"
         case .kg: return "KILOS"
+        case .centimeters: return "CENTIMÈTRES"
+        case .degrees: return "DEGRÉS"
+        case .centiseconds: return "CENTIÈMES DE SECONDE"
         }
     }
 

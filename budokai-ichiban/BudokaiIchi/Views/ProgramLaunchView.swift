@@ -305,6 +305,9 @@ struct ProgramLaunchView: View {
         case .seconds: return "Secondes"
         case .meters: return "Mètres"
         case .kg: return "Kilos"
+        case .centimeters: return "Centimètres"
+        case .degrees: return "Degrés"
+        case .centiseconds: return "Centièmes de seconde"
         }
     }
 
@@ -312,7 +315,10 @@ struct ProgramLaunchView: View {
         switch test.objectiveUnit {
         case .seconds: return min(test.max, 1800)
         case .meters: return min(test.max, 5000)
-        default: return min(test.max, 10)
+        case .centiseconds: return min(test.max, 300)
+        case .centimeters: return min(test.max, 150)
+        case .degrees: return min(test.max, 60)
+        case .reps, .kg: return min(test.max, 10)
         }
     }
 

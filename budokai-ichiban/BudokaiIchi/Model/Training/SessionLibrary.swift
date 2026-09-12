@@ -279,7 +279,7 @@ enum CoachEngine {
             case .reps: return partial + item.targetValue * 3
             case .seconds: return partial + item.targetValue
             case .meters: return partial + item.targetValue / 3
-            case .kg: return partial
+            case .kg, .centimeters, .degrees, .centiseconds: return partial
             }
         }
         let rest = items.reduce(0) { $0 + (($1.restSeconds ?? 0) * max(0, ($1.sets ?? 1) - 1)) }

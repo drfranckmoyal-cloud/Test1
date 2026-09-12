@@ -65,17 +65,66 @@ struct ProgramDefinition: Codable, Equatable {
         var components: [Component]
         var requirements: [String]
         var rewardId: String?
+        /// Combien de composantes facultatives doivent passer. Certains boss
+        /// se valident « deux sur trois ».
+        var optionalRequired: Int?
+        /// Recul toléré sur les composantes non validées, en décimal.
+        var maxRegression: Double?
+        /// Progression exigée sur une composante qui n'atteint pas sa cible :
+        /// Luffy valide quatre familles sur cinq, la cinquième devant tout de
+        /// même avoir gagné dix pour cent.
+        var unmetImprovement: Double?
+        /// Part de la cible qu'une composante non validée doit tout de même
+        /// atteindre : Levi accepte la cinquième à quatre-vingt-dix pour cent.
+        var unmetTargetRatio: Double?
+        var note: String?
 
         struct Component: Codable, Equatable, Identifiable {
             var id: String
             var name: String
-            var value: Int
+            /// La cible absolue, quand il y en a une.
+            var value: Int?
             var unit: String
             var policy: String
+            /// Progression exigée par rapport à la mesure de départ, en
+            /// décimal : 0,25 pour « +25 % de charge ».
+            var improvement: Double?
+            /// Le test de calibration qui sert de référence.
+            var baselineTest: String?
+            /// Vrai quand progresser veut dire **baisser** — un chrono.
+            var lowerIsBetter: Bool?
+            /// La famille d'exercices qui l'entraîne, pour retrouver la
+            /// performance dans l'historique.
+            var family: String?
+            /// Faux quand la composante entre dans un « deux sur trois ».
+            var mandatory: Bool?
+            /// Le critère que l'app ne sait pas mesurer, dit en clair.
+            var note: String?
+            /// Ce qu'on annonce quand aucun chiffre ne peut être calculé :
+            /// « +25 % de charge » là où l'app ne connaît pas le poids du sac.
+            var label: String?
 
             var objectiveUnit: ObjectiveUnit { ObjectiveUnit(rawValue: unit) ?? .reps }
             var completionPolicy: CompletionPolicy {
                 CompletionPolicy(rawValue: policy) ?? .structuredSession
+            }
+            var isMandatory: Bool { mandatory ?? true }
+            var isRelative: Bool { improvement != nil }
+            /// Vrai quand la composante se juge à l'œil et non au compteur :
+            /// ni cible chiffrée, ni progression à mesurer.
+            var isQualitative: Bool { value == nil && improvement == nil }
+
+            /// Ce qu'on annonce : une cible chiffrée, ou une progression.
+            var targetLabel: String {
+                if let label = label { return label }
+                if let improvement = improvement {
+                    let percent = Int((improvement * 100).rounded())
+                    return lowerIsBetter == true
+                        ? "−\(percent) % sur ton temps de départ"
+                        : "+\(percent) % sur ta mesure de départ"
+                }
+                if let value = value { return objectiveUnit.format(value) }
+                return note ?? "À valider"
             }
         }
     }
@@ -158,7 +207,7 @@ enum ProgramLibrary {
             programID: id.rawValue,
             title: boss.title,
             components: boss.components.map {
-                .init(id: $0.id, name: $0.name, targetValue: $0.value,
+                .init(id: $0.id, name: $0.name, targetValue: $0.value ?? 0,
                       unit: $0.objectiveUnit, policy: $0.completionPolicy)
             },
             entryRequirements: boss.requirements,

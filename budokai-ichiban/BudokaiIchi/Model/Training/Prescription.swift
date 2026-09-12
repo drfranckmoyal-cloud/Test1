@@ -85,6 +85,12 @@ enum TrainingCharacteristic: String, Codable, CaseIterable, Identifiable {
 /// externe, que l'ancien modèle ne savait pas exprimer.
 enum ObjectiveUnit: String, Codable, CaseIterable, Identifiable {
     case reps, seconds, meters, kg
+    /// Les tests de mobilité se mesurent en centimètres — le genou au mur de
+    /// Luffy, la distance d'un saut — et certains en degrés.
+    case centimeters, degrees
+    /// Le centième de seconde. Un 10 m se joue à deux centièmes : la seconde
+    /// entière ne permet ni de mesurer un sprint, ni d'en juger 3 % de mieux.
+    case centiseconds
 
     var id: String { rawValue }
 
@@ -94,7 +100,7 @@ enum ObjectiveUnit: String, Codable, CaseIterable, Identifiable {
         case .reps: return .reps
         case .seconds: return .seconds
         case .meters: return .meters
-        case .kg: return nil
+        case .kg, .centimeters, .degrees, .centiseconds: return nil
         }
     }
 
@@ -121,6 +127,13 @@ enum ObjectiveUnit: String, Codable, CaseIterable, Identifiable {
             return String(format: "%.1f km", km).replacingOccurrences(of: ".", with: ",")
         case .kg:
             return "\(value) kg"
+        case .centimeters:
+            return "\(value) cm"
+        case .degrees:
+            return "\(value)°"
+        case .centiseconds:
+            return String(format: "%.2f s", Double(value) / 100)
+                .replacingOccurrences(of: ".", with: ",")
         }
     }
 
@@ -185,9 +198,14 @@ struct ExercisePrescription: Identifiable, Codable, Equatable {
     /// retour au calme, mobilité d'accompagnement.
     var countsTowardAdaptation: Bool = true
 
+    /// Ce qu'on affiche à la place de la quantité, quand la quantité ne veut
+    /// rien dire : « +25 % de charge », « à valider à l'œil ».
+    var amountOverride: String?
+
     /// La quantité, dite en toutes lettres. « 4 × 8 » ne dit pas ce qu'on
     /// compte ; « 4 séries de 8 répétitions » si.
     var amountLabel: String {
+        if let amountOverride = amountOverride { return amountOverride }
         if let sets = sets, let perSet = targetPerSet, sets > 1 {
             return "\(sets) séries de \(unit.format(perSet))"
         }

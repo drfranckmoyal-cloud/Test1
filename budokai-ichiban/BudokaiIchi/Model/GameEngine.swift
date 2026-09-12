@@ -118,6 +118,9 @@ enum GameEngine {
 
     static let stageXP = 850
     static let programXP = 1500
+    /// Le combat final. Il vaut un peu plus que le simple fait d'arriver au
+    /// bout du parcours : c'est lui qui valide le standard du programme.
+    static let bossXP = 2_000
 
     // MARK: - Caractéristiques
 
