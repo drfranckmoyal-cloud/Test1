@@ -19,7 +19,7 @@ struct SessionSheetView: View {
     @State private var step: Step = .card
     @State private var guided: PlannedSession?
     @State private var outcome: SessionOutcome?
-    @State private var chosen: SessionFeedback?
+    @State private var report = SessionReport()
 
     private var program: Program { Catalog.program(session.programID) }
     /// La séance telle qu'elle sera faite, curseur d'intensité compris.
@@ -167,14 +167,59 @@ struct SessionSheetView: View {
     // MARK: - Le contenu de la séance
 
     private var exercises: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            SectionLabel(text: "LA SÉANCE")
-            VStack(spacing: 7) {
-                ForEach(grouped.indices, id: \.self) { position in
-                    row(grouped[position], number: position + 1)
+        let open = store.openSession(of: session.programID)
+        return VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                SectionLabel(text: "LA SÉANCE")
+                if let open = open {
+                    Text("\(Int(open.ratio(against: tuned.prescriptions) * 100)) %")
+                        .font(.ui(12, .bold))
+                        .foregroundStyle(program.light)
+                }
+            }
+            ForEach(tuned.prescriptions) { item in
+                if let progress = open?.objectives[item.id] {
+                    DailyProgressObjective(
+                        prescription: item, progress: progress, tint: program.light,
+                        onAdd: { store.addProgress($0, to: item.id, of: session.programID) },
+                        onDeclareComplete: { store.declareComplete(item.id, of: session.programID) },
+                        onRemoveEntry: { store.removeProgress($0, from: item.id, of: session.programID) },
+                        onEditEntry: { store.updateProgress($0, to: $1, in: item.id, of: session.programID) })
+                } else {
+                    staticRow(item)
                 }
             }
         }
+    }
+
+    /// La ligne simple, avant que la séance ne soit ouverte.
+    private func staticRow(_ item: ExercisePrescription) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text(item.name)
+                    .font(.ui(15, .bold))
+                    .foregroundStyle(Theme.text)
+                if let intensity = item.intensityLabel {
+                    Text(intensity)
+                        .font(.ui(11, .bold))
+                        .foregroundStyle(program.light)
+                }
+                if let detail = item.detail {
+                    Text(detail)
+                        .font(.ui(12))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            Spacer(minLength: 8)
+            Text(item.amountLabel)
+                .font(.ui(15, .bold))
+                .foregroundStyle(program.light)
+                .multilineTextAlignment(.trailing)
+        }
+        .padding(14)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).stroke(Theme.border, lineWidth: 1))
     }
 
     private func row(_ line: Line, number: Int) -> some View {
@@ -219,9 +264,19 @@ struct SessionSheetView: View {
     // MARK: - Les boutons du bas
 
     private var actions: some View {
-        VStack(spacing: 9) {
-            PrimaryButton(title: "SÉANCE RÉALISÉE", tint: program.light) {
-                step = .feedback
+        let open = store.openSession(of: session.programID)
+        return VStack(spacing: 9) {
+            if open == nil {
+                PrimaryButton(title: "COMMENCER LE SUIVI", tint: program.light) {
+                    store.beginSession(tuned)
+                }
+                GhostButton(title: "Marquer la séance faite, sans détailler") {
+                    step = .feedback
+                }
+            } else {
+                PrimaryButton(title: "SÉANCE RÉALISÉE", tint: program.light) {
+                    step = .feedback
+                }
             }
             if program.allowsGuidance {
                 GhostButton(title: "Me guider pas à pas, avec minuteur") {
@@ -243,56 +298,62 @@ struct SessionSheetView: View {
 
     private var feedbackScreen: some View {
         ScrollView {
-            VStack(spacing: 18) {
+            VStack(spacing: 20) {
                 VStack(spacing: 8) {
                     Text("C'EST FAIT")
                         .font(.display(27))
                         .foregroundStyle(Theme.text)
-                    Text("Comment as-tu trouvé cette séance ?")
-                        .font(.ui(15))
+                    Text("Trois questions, pas une de plus. Tu peux n'en répondre aucune.")
+                        .font(.ui(13))
                         .foregroundStyle(Theme.muted)
-                    Text("C'est cette réponse qui règle la séance suivante. Tu peux aussi ne rien dire : elle restera comme elle est.")
-                        .font(.ui(12))
-                        .foregroundStyle(Theme.dim)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                .padding(.top, 40)
+                .padding(.top, 34)
+
+                question("DIFFICULTÉ GLOBALE") {
+                    ForEach(PerceivedEffort.allCases) { candidate in
+                        choice(candidate.label, icon: candidate.icon,
+                               picked: report.effort == candidate) {
+                            report.effort = candidate
+                        }
+                    }
+                }
+
+                question("SÉANCE TERMINÉE ?") {
+                    ForEach(CompletionStatus.allCases) { candidate in
+                        choice(candidate.label, icon: nil, picked: report.completion == candidate) {
+                            report.completion = candidate
+                            if candidate == .entirely { report.failureReason = nil }
+                        }
+                    }
+                }
+
+                if let completion = report.completion, completion != .entirely {
+                    question("QU'EST-CE QUI A MANQUÉ ?") {
+                        ForEach(FailureReason.allCases) { candidate in
+                            choice(candidate.label, icon: nil, picked: report.failureReason == candidate) {
+                                report.failureReason = candidate
+                            }
+                        }
+                    }
+                }
+
+                question("QUALITÉ D'EXÉCUTION") {
+                    ForEach(TechnicalQuality.allCases) { candidate in
+                        choice(candidate.label, icon: nil, picked: report.quality == candidate) {
+                            report.quality = candidate
+                        }
+                    }
+                }
 
                 VStack(spacing: 9) {
-                    ForEach(SessionFeedback.allCases) { candidate in
-                        Button {
-                            Haptics.tap()
-                            chosen = candidate
-                            finish(with: candidate)
-                        } label: {
-                            HStack(spacing: 13) {
-                                Image(systemName: candidate.icon)
-                                    .font(.system(size: 19))
-                                    .foregroundStyle(program.light)
-                                    .frame(width: 26)
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(candidate.label)
-                                        .font(.ui(15, .bold))
-                                        .foregroundStyle(Theme.text)
-                                    Text(candidate.consequence)
-                                        .font(.ui(11))
-                                        .foregroundStyle(Theme.muted)
-                                }
-                                Spacer(minLength: 0)
-                            }
-                            .padding(15)
-                            .frame(maxWidth: .infinity)
-                            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .stroke(Theme.border, lineWidth: 1))
-                        }
-                        .buttonStyle(.plain)
+                    PrimaryButton(title: "VALIDER LA SÉANCE", tint: program.light) {
+                        finish(with: report)
                     }
-
                     Button {
                         Haptics.tap()
-                        finish(with: nil)
+                        finish(with: SessionReport())
                     } label: {
                         Text("Je préfère ne pas répondre")
                             .font(.ui(13, .semibold))
@@ -301,8 +362,8 @@ struct SessionSheetView: View {
                             .frame(height: 46)
                     }
                     .buttonStyle(.plain)
-                    .padding(.top, 4)
                 }
+                .padding(.top, 4)
             }
             .padding(.horizontal, 20)
             .padding(.bottom, 30)
@@ -310,11 +371,58 @@ struct SessionSheetView: View {
         .scrollIndicators(.hidden)
     }
 
-    /// Enregistre la séance comme faite, au niveau où elle était prévue.
-    /// Si le guidage l'a déjà fait, on se contente du ressenti.
-    private func finish(with feedback: SessionFeedback?) {
+    private func question<Content: View>(_ title: String,
+                                         @ViewBuilder _ content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            SectionLabel(text: title)
+            VStack(spacing: 7) { content() }
+        }
+    }
+
+    private func choice(_ label: String, icon: String?, picked: Bool,
+                        _ action: @escaping () -> Void) -> some View {
+        Button {
+            Haptics.tap()
+            action()
+        } label: {
+            HStack(spacing: 12) {
+                if let icon = icon {
+                    Image(systemName: icon)
+                        .font(.system(size: 17))
+                        .foregroundStyle(picked ? Theme.cream : program.light)
+                        .frame(width: 24)
+                }
+                Text(label)
+                    .font(.ui(14, .bold))
+                    .foregroundStyle(picked ? Theme.cream : Theme.text)
+                Spacer(minLength: 0)
+                if picked {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(Theme.cream)
+                }
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity)
+            .background(picked ? AnyShapeStyle(program.light) : AnyShapeStyle(Theme.surface),
+                        in: RoundedRectangle(cornerRadius: 13, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 13, style: .continuous)
+                .stroke(picked ? Color.clear : Theme.border, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+    }
+
+    /// Enregistre la séance comme faite, au niveau où elle était prévue,
+    /// puis laisse le moteur décider de la suivante.
+    private func finish(with report: SessionReport) {
         let done = tuned
-        if let feedback = feedback { store.apply(feedback, to: done.programID) }
+        let openRatio = store.openSession(of: done.programID)?
+            .ratio(against: done.prescriptions)
+        let ratio = openRatio ?? 1.0
+
+        store.record(report, for: done.programID, completedRatio: ratio)
+        store.closeSession(of: done.programID)
+
         if alreadyRecorded {
             dismiss()
             return

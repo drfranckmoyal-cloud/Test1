@@ -56,6 +56,33 @@ struct ProgramProgress: Codable, Equatable {
 
     /// Vrai tant qu'aucune séance n'a été faite.
     var notStarted: Bool { completedSessions == 0 }
+
+    // MARK: Nouveau moteur
+
+    /// Résultats des tests de calibration, historisés : un retest ajoute une
+    /// mesure, il n'en écrase aucune.
+    var calibration: [CalibrationResult] = []
+    /// L'échelon atteint dans chaque famille de mouvements.
+    var exerciseLevel: [String: Int] = [:]
+    /// La variante retenue pour une famille, quand elle diffère de l'échelon.
+    var exerciseVariant: [String: String] = [:]
+    /// Le dernier mouvement d'adaptation décidé par le moteur.
+    var lastMove: AdaptationMove?
+    /// Séances consécutives sans progrès mesuré, par famille de mouvements.
+    var sessionsWithoutProgress: [String: Int] = [:]
+    /// Bloc en cours dans la structure du programme, à partir de 1.
+    var blockIndex: Int = 1
+    /// Semaine en cours dans le programme, à partir de 1.
+    var weekIndex: Int = 1
+    /// Blocs déjà validés.
+    var completedBlocks: [String] = []
+    /// Vrai quand le standard sportif final a été tenu.
+    var standardValidated: Bool = false
+
+    /// La dernière mesure d'un test donné.
+    func latest(_ testId: String) -> CalibrationResult? {
+        calibration.filter { $0.testId == testId }.max { $0.measuredAt < $1.measuredAt }
+    }
 }
 
 /// Ce que le joueur répond après une séance. C'est la seule mesure
@@ -158,6 +185,20 @@ struct PlayerState: Codable {
     var onboarded: Bool = false
     var avatar: AvatarConfig = AvatarConfig()
 
+    // MARK: Nouveau moteur
+
+    /// Les réponses de l'onboarding commun.
+    var profile: OnboardingProfile = OnboardingProfile()
+    /// La séance laissée ouverte, s'il y en a une. Une séance fractionnable
+    /// peut rester ouverte toute la journée, et survivre à la fermeture.
+    var openSessions: [OpenSession] = []
+    /// Les retours de séance, par identifiant d'enregistrement.
+    var reports: [String: SessionReport] = [:]
+    /// La collection de vignettes.
+    var rewards: RewardInventory = RewardInventory()
+    /// Jusqu'où l'on accepte d'être spoilé.
+    var spoilerLevel: SpoilerLevel = .anime
+
     /// Relit une sauvegarde écrite quand un seul programme était suivi.
     init(from decoder: Decoder) throws {
         let box = try decoder.container(keyedBy: CodingKeys.self)
@@ -180,6 +221,11 @@ struct PlayerState: Codable {
         reminders = read(.reminders, Reminder.defaults)
         onboarded = read(.onboarded, false)
         avatar = read(.avatar, AvatarConfig())
+        profile = read(.profile, OnboardingProfile())
+        openSessions = read(.openSessions, [])
+        reports = read(.reports, [:])
+        rewards = read(.rewards, RewardInventory())
+        spoilerLevel = read(.spoilerLevel, .anime)
 
         if let many = try? box.decode([String].self, forKey: .activePrograms) {
             activePrograms = many

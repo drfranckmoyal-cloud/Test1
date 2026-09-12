@@ -355,6 +355,151 @@ final class GameStore: ObservableObject {
     func setAppearance(_ appearance: Appearance) { state.appearance = appearance; save() }
     func setAvatar(_ avatar: AvatarConfig) { state.avatar = avatar; save() }
 
+    // MARK: - Séance ouverte et suivi fractionné
+
+    /// La séance d'un programme laissée ouverte aujourd'hui.
+    func openSession(of id: ProgramID) -> OpenSession? {
+        state.openSessions.first { $0.programID == id.rawValue && $0.day == todayKey }
+    }
+
+    /// Ouvre la séance d'un programme, ou retrouve celle déjà ouverte.
+    /// Une séance fractionnable vit toute la journée : on ne la recrée pas à
+    /// chaque passage dans l'écran.
+    @discardableResult
+    func beginSession(_ session: PlannedSession) -> OpenSession {
+        if let existing = openSession(of: session.programID) { return existing }
+        var fresh = OpenSession(programID: session.programID.rawValue,
+                                sessionIndex: session.index, day: todayKey)
+        for item in session.prescriptions {
+            fresh.objectives[item.id] = DailyObjectiveProgress(
+                prescriptionId: item.id, day: todayKey,
+                targetValue: item.targetValue, unit: item.unit,
+                completionPolicy: item.completionPolicy)
+        }
+        state.openSessions.append(fresh)
+        save()
+        return fresh
+    }
+
+    /// Enregistre une contribution à un objectif.
+    func addProgress(_ value: Int, to prescriptionId: String, of id: ProgramID,
+                     source: ProgressEntry.Source = .manual) {
+        guard value > 0,
+              let index = state.openSessions.firstIndex(where: {
+                  $0.programID == id.rawValue && $0.day == todayKey }),
+              var objective = state.openSessions[index].objectives[prescriptionId]
+        else { return }
+        objective.add(ProgressEntry(prescriptionId: prescriptionId,
+                                    value: value, unit: objective.unit, source: source))
+        state.openSessions[index].objectives[prescriptionId] = objective
+        save()
+    }
+
+    /// Déclare un objectif atteint sans détailler les contributions.
+    func declareComplete(_ prescriptionId: String, of id: ProgramID) {
+        mutate(prescriptionId, of: id) { $0.declaredComplete = true }
+    }
+
+    func removeProgress(_ entryId: UUID, from prescriptionId: String, of id: ProgramID) {
+        mutate(prescriptionId, of: id) { $0.remove(entryId) }
+    }
+
+    func updateProgress(_ entryId: UUID, to value: Int,
+                        in prescriptionId: String, of id: ProgramID) {
+        mutate(prescriptionId, of: id) { $0.update(entryId, to: value) }
+    }
+
+    private func mutate(_ prescriptionId: String, of id: ProgramID,
+                        _ change: (inout DailyObjectiveProgress) -> Void) {
+        guard let index = state.openSessions.firstIndex(where: {
+            $0.programID == id.rawValue && $0.day == todayKey }),
+              var objective = state.openSessions[index].objectives[prescriptionId]
+        else { return }
+        change(&objective)
+        state.openSessions[index].objectives[prescriptionId] = objective
+        save()
+    }
+
+    /// Referme la séance ouverte d'un programme.
+    func closeSession(of id: ProgramID) {
+        state.openSessions.removeAll { $0.programID == id.rawValue }
+        save()
+    }
+
+    /// Les séances ouvertes d'un autre jour, à solder.
+    var staleSessions: [OpenSession] {
+        state.openSessions.filter { $0.day != todayKey }
+    }
+
+    // MARK: - Retour de séance et adaptation
+
+    /// Enregistre le retour à trois questions et applique la décision du
+    /// moteur. Chaque réponse est facultative.
+    func record(_ report: SessionReport, for id: ProgramID, completedRatio: Double) {
+        guard !report.isEmpty else { return }
+        state.reports["\(id.rawValue)-\(state.progress(id).completedSessions)"] = report
+
+        let move = AdaptationEngine.decide(
+            AdaptationInput(report: report, completedRatio: completedRatio))
+
+        var progress = state.progress(id)
+        progress.lastMove = move
+        progress.intensity = clamp(progress.intensity * AdaptationEngine.volumeFactor(for: move))
+        state.programs[id.rawValue] = progress
+        save()
+    }
+
+    /// Ce que le moteur a décidé pour la prochaine séance d'un programme.
+    func lastMove(of id: ProgramID) -> AdaptationMove? { state.progress(id).lastMove }
+
+    // MARK: - Structure, blocs et récompenses
+
+    /// La structure du programme, quand elle est écrite.
+    func structure(of id: ProgramID) -> ProgramStructure? { ProgramStructures.structure(for: id) }
+
+    /// Le bloc en cours, d'après les séances déjà faites.
+    func currentBlock(of id: ProgramID) -> ProgramBlock? {
+        guard let structure = structure(of: id) else { return nil }
+        let done = state.progress(id).completedSessions
+        let week = max(1, done / max(1, structure.sessionsPerWeek) + 1)
+        return structure.block(forWeek: min(week, structure.totalWeeks))
+    }
+
+    /// Marque un bloc comme validé et débloque sa vignette.
+    func completeBlock(_ blockId: String, of id: ProgramID) {
+        var progress = state.progress(id)
+        guard !progress.completedBlocks.contains(blockId) else { return }
+        progress.completedBlocks.append(blockId)
+        state.programs[id.rawValue] = progress
+        if let reward = RewardCatalog.reward(forBlock: blockId) {
+            state.rewards.unlock(reward.rewardId)
+        }
+        save()
+    }
+
+    /// Les vignettes obtenues, les plus récentes d'abord.
+    var unlockedRewards: [Reward] {
+        state.rewards.unlocked
+            .compactMap { id, date in RewardCatalog.reward(id).map { ($0, date) } }
+            .sorted { $0.1 > $1.1 }
+            .map(\.0)
+    }
+
+    /// Les vignettes obtenues mais pas encore montrées en grand.
+    var rewardsToReveal: [Reward] {
+        RewardCatalog.all.filter { state.rewards.needsReveal($0.rewardId) }
+    }
+
+    func markRevealed(_ rewardId: String) {
+        state.rewards.markRevealed(rewardId)
+        save()
+    }
+
+    func setSpoilerLevel(_ level: SpoilerLevel) {
+        state.spoilerLevel = level
+        save()
+    }
+
     // MARK: - Historique
 
     /// Les séances faites, de la plus récente à la plus ancienne.
