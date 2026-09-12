@@ -230,7 +230,7 @@ struct SessionSheetView: View {
         if session.programID == .saitama, let block = store.saitamaBlock {
             return "\(session.title) · jalon \(block.index) sur 8 · \(tuned.estimatedMinutes) min"
         }
-        return "Séance \(session.index) sur \(program.totalSessions) · environ \(tuned.estimatedMinutes) min"
+        return "Séance \(session.index) sur \(store.shape(of: session.programID).totalSessions) · environ \(tuned.estimatedMinutes) min"
     }
 
     /// Ce que le moteur a décidé, dit en clair. Le cadrage veut que le

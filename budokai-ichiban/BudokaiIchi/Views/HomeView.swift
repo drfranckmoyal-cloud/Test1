@@ -437,8 +437,7 @@ struct HomeView: View {
     }
 
     private func ratio(_ program: Program) -> Double {
-        let done = store.progress(program.id).completedSessions
-        return program.totalSessions > 0 ? Double(done) / Double(program.totalSessions) : 0
+        store.completion(of: program.id)
     }
 
     private func dayLabel(_ date: Date) -> String {

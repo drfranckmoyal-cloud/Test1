@@ -51,7 +51,7 @@ struct ProgramDetailView: View {
                         HStack(spacing: 16) {
                             fact(program.rhythm)
                             fact(program.equipment)
-                            fact("\(program.totalSessions) séances")
+                            fact("\(store.shape(of: program.id).totalSessions) séances")
                         }
 
                         Text(program.pitch)
@@ -59,7 +59,7 @@ struct ProgramDetailView: View {
                             .foregroundStyle(Theme.muted)
                             .fixedSize(horizontal: false, vertical: true)
 
-                        SectionLabel(text: "LES \(program.stages.count) ÉTAPES")
+                        SectionLabel(text: "LES \(store.shape(of: program.id).stageCount) ÉTAPES")
 
                         // l'accès au contenu complet était une mention en
                         // petit à côté du titre : personne ne la voyait
@@ -93,7 +93,7 @@ struct ProgramDetailView: View {
                         .buttonStyle(.plain)
 
                         VStack(spacing: 7) {
-                            ForEach(program.stages.indices, id: \.self) { index in
+                            ForEach(store.shape(of: program.id).stageTitles.indices, id: \.self) { index in
                                 stageRow(index)
                             }
                         }
@@ -208,7 +208,8 @@ struct ProgramDetailView: View {
     private func stageRow(_ index: Int) -> some View {
         let status = store.stageStatus(program)
         let isActive = store.isActive(program.id) && index == status.index
-        let isDone = store.progress(program.id).completedSessions >= program.firstSession(ofStage: index + 1)
+        let isDone = store.progress(program.id).completedSessions
+            >= store.shape(of: program.id).firstSession(ofStage: index + 1)
 
         return HStack(spacing: 13) {
             ZStack {
@@ -225,7 +226,7 @@ struct ProgramDetailView: View {
                         .foregroundStyle(isActive ? program.light : Theme.dim)
                 }
             }
-            Text(program.stages[index])
+            Text(store.shape(of: program.id).title(ofStage: index))
                 .font(.ui(14, isActive ? .bold : .semibold))
                 .foregroundStyle(isDone || isActive ? Theme.text : Theme.muted)
             Spacer(minLength: 6)

@@ -19,26 +19,26 @@ struct ProgramContentView: View {
     /// La séance à laquelle on propose de revenir, le temps de confirmer.
     @State private var rewinding: PlannedSession?
 
+    /// Le programme entier, tel que son moteur le déroule.
+    ///
+    /// Ce n'est plus l'ancien catalogue : les séances viennent du même moteur
+    /// que celle du jour, jalon par jalon, à la fréquence retenue. L'ancien
+    /// catalogue ne sert plus que si aucune spécification n'existe.
     private var sessions: [PlannedSession] {
-        // Saitama ne vient plus du catalogue figé : son plan est calculé.
-        if program.id == .saitama {
-            let plan = store.saitamaPlan()
-            if !plan.isEmpty { return plan }
-        }
+        let plan = store.plan(of: program.id, asWritten: asWritten)
+        if !plan.isEmpty { return plan }
         return Catalog.sessions(for: program.id,
                                 tier: asWritten ? .confirme : store.state.tier,
                                 intensity: asWritten ? 1.0 : store.intensity(program.id))
     }
 
-    /// Vrai quand le programme est fabriqué à la demande : les étapes du
-    /// catalogue ne décrivent alors plus son découpage réel.
-    private var isGenerated: Bool {
-        program.id == .saitama && !store.saitamaPlan().isEmpty
-    }
+    /// Vrai quand le programme est déroulé par le moteur : le découpage vient
+    /// alors de sa spécification, plus de l'ancien catalogue.
+    private var isGenerated: Bool { !store.plan(of: program.id).isEmpty }
 
-    /// Les blocs de Saitama remplacent les étapes du catalogue.
+    /// Les étapes réelles du programme.
     private var blockTitles: [String] {
-        isGenerated ? SaitamaBlocks.all.map(\.title) : program.stages
+        isGenerated ? store.shape(of: program.id).stageTitles : program.stages
     }
 
     var body: some View {
@@ -97,7 +97,7 @@ struct ProgramContentView: View {
 
         return HStack(spacing: 10) {
             tally("\(all.count)", "SÉANCES")
-            tally("\(blockTitles.count)", isGenerated ? "BLOCS" : "ÉTAPES")
+            tally("\(blockTitles.count)", program.id == .saitama ? "BLOCS" : "ÉTAPES")
             tally("\(minutes / 60) h", "AU TOTAL")
             if reps > 0 { tally(reps.grouped, "RÉPÉTITIONS") }
         }
@@ -131,13 +131,23 @@ struct ProgramContentView: View {
             }
             .pickerStyle(.segmented)
 
-            Text(asWritten
-                 ? "Le programme d'origine, au palier Confirmé, sans ton curseur d'intensité."
-                 : "Ce que l'app te donnerait aujourd'hui : ton palier \(store.state.tier.label.lowercased()) et ton intensité \(percent).")
+            Text(lensNote)
                 .font(.ui(11))
                 .foregroundStyle(Theme.muted)
                 .fixedSize(horizontal: false, vertical: true)
         }
+    }
+
+    /// Ce que la bascule change, dit selon le moteur qui produit le programme.
+    private var lensNote: String {
+        guard isGenerated else {
+            return asWritten
+                ? "Le programme d'origine, au palier Confirmé, sans ton curseur d'intensité."
+                : "Ce que l'app te donnerait aujourd'hui : ton palier \(store.state.tier.label.lowercased()) et ton intensité \(percent)."
+        }
+        return asWritten
+            ? "Le programme tel que le coach l'a écrit, aux variantes de référence."
+            : "Le programme tel qu'il sortira pour toi, aux échelons que tu as atteints."
     }
 
     private var percent: String {
@@ -229,7 +239,7 @@ struct ProgramContentView: View {
                             .font(.ui(13, .bold))
                             .foregroundStyle(Theme.text)
                             .multilineTextAlignment(.leading)
-                        Text("\(session.estimatedMinutes) min · \(session.steps.count) étapes")
+                        Text(subtitle(of: session))
                             .font(.ui(10, .semibold))
                             .foregroundStyle(Theme.muted)
                     }
@@ -294,7 +304,22 @@ struct ProgramContentView: View {
         var amount: String
     }
 
+    /// Ce qu'on lit sous le titre : la durée et le nombre d'exercices.
+    private func subtitle(of session: PlannedSession) -> String {
+        let count = lines(of: session).count
+        let word = count > 1 ? "exercices" : "exercice"
+        return "\(session.estimatedMinutes) min · \(count) \(word)"
+    }
+
     private func lines(of session: PlannedSession) -> [Line] {
+        // une séance prescrite porte ses exercices, pas des étapes répétées
+        if let prescribed = session.prescribed, !prescribed.isEmpty {
+            return prescribed.map { item in
+                Line(name: item.name,
+                     amount: [item.amountLabel, item.intensityLabel]
+                        .compactMap { $0 }.joined(separator: " · "))
+            }
+        }
         var order: [String] = []
         var counts: [String: Int] = [:]
         var goals: [String: Goal] = [:]

@@ -115,6 +115,29 @@ final class GameStore: ObservableObject {
 
     func progress(_ id: ProgramID) -> ProgramProgress { state.progress(id) }
 
+    /// La fréquence retenue pour un programme.
+    func sessionsPerWeek(of id: ProgramID) -> Int {
+        state.progress(id).schedule?.sessionsPerWeek
+            ?? schedulingRules(of: id)?.recommendedSessionsPerWeek
+            ?? (id == .saitama ? 5 : 4)
+    }
+
+    /// La forme réelle d'un programme : ses étapes et leur longueur.
+    ///
+    /// C'est elle qui fait foi partout où l'app décrit un programme. Les
+    /// chiffres de l'ancien catalogue ne servent plus que pour ce qui n'a pas
+    /// de spécification.
+    func shape(of id: ProgramID) -> ProgramShape {
+        let perWeek = sessionsPerWeek(of: id)
+        // Saitama est découpé en blocs, pas en jalons : son plan calculé fait
+        // autorité dès qu'il est calibré.
+        if id == .saitama, state.progress(.saitama).saitama?.isComplete == true {
+            return .saitama(blocks: SaitamaBlocks.all, sessionsPerWeek: perWeek)
+        }
+        return ProgramShape.make(id, sessionsPerWeek: perWeek)
+            ?? .legacy(Catalog.program(id))
+    }
+
     func isFinished(_ id: ProgramID) -> Bool {
         // Saitama ne se termine pas au nombre de séances : il se valide par
         // son combat final. C'est le principe 1.4 du cadrage.
@@ -122,7 +145,7 @@ final class GameStore: ObservableObject {
         // Un programme dont la spécification porte un combat final ne se
         // termine pas au compteur de séances : il se valide au combat.
         if ProgramLibrary.definition(id)?.boss != nil { return state.progress(id).bossDefeated }
-        return state.progress(id).completedSessions >= Catalog.program(id).totalSessions
+        return state.progress(id).completedSessions >= shape(of: id).totalSessions
     }
 
     func isUnlocked(_ program: Program) -> Bool {
@@ -138,7 +161,7 @@ final class GameStore: ObservableObject {
         if SessionLibrary.hasSessions(id) { return coachSession(id) }
         let program = Catalog.program(id)
         let done = state.progress(id).completedSessions
-        guard done < program.totalSessions else { return nil }
+        guard done < shape(of: id).totalSessions else { return nil }
         return Catalog.session(for: id, index: done, tier: state.tier,
                                intensity: state.progress(id).intensity)
     }
@@ -265,6 +288,66 @@ final class GameStore: ObservableObject {
             isDeload: deload,
             narrativeId: NarrationLibrary.session(id, index: done)?.id,
             scheduling: scheduling))
+    }
+
+    /// Tout le programme, séance par séance, du premier jour au dernier.
+    ///
+    /// La séance du jour sort du même moteur : ce n'est pas un aperçu
+    /// approché, c'est le programme tel qu'il se déroulera. `asWritten`
+    /// montre les séances de référence du coach ; sinon elles sortent aux
+    /// échelons réellement atteints.
+    func coachPlan(of id: ProgramID, asWritten: Bool = false) -> [PlannedSession] {
+        let stages = ProgramLibrary.stages(id)
+        guard !stages.isEmpty, SessionLibrary.hasSessions(id) else { return [] }
+
+        let form = shape(of: id)
+        let perWeek = form.sessionsPerWeek
+        let levels = asWritten ? [:] : state.progress(id).exerciseLevel
+
+        var plan: [PlannedSession] = []
+        var index = 0
+        for (stageIndex, stage) in stages.enumerated() {
+            let count = stageIndex < form.sessionsPerStage.count
+                ? form.sessionsPerStage[stageIndex]
+                : perWeek
+            for position in 0..<count {
+                let weekInStage = position / perWeek
+                let slot = position % perWeek
+                let deload = weekInStage > 0 && (weekInStage + 1) % 4 == 0
+                if let session = CoachEngine.session(CoachEngine.Context(
+                    program: id,
+                    stageKey: stage.key,
+                    stageIndex: stageIndex,
+                    frequency: perWeek,
+                    slot: slot,
+                    weekInStage: weekInStage,
+                    sessionIndex: index,
+                    levels: levels,
+                    isDeload: deload,
+                    narrativeId: NarrationLibrary.session(id, index: index)?.id,
+                    scheduling: nil)) {
+                    plan.append(session)
+                }
+                index += 1
+            }
+        }
+        return plan
+    }
+
+    /// Le programme complet, quel que soit le moteur qui le produit.
+    /// La part du programme déjà parcourue, de zéro à un.
+    func completion(of id: ProgramID) -> Double {
+        let total = shape(of: id).totalSessions
+        guard total > 0 else { return 0 }
+        return min(1, Double(state.progress(id).completedSessions) / Double(total))
+    }
+
+    func plan(of id: ProgramID, asWritten: Bool = false) -> [PlannedSession] {
+        if id == .saitama {
+            let plan = saitamaPlan()
+            if !plan.isEmpty { return plan }
+        }
+        return coachPlan(of: id, asWritten: asWritten)
     }
 
     // MARK: - Saitama, programme pilote
@@ -698,13 +781,7 @@ final class GameStore: ObservableObject {
 
     /// Combien de séances le parcours d'un programme prévoit, au scénario
     /// nominal — la somme des jalons à la fréquence retenue.
-    func plannedSessions(of id: ProgramID) -> Int {
-        let stages = ProgramLibrary.stages(id)
-        guard !stages.isEmpty else { return Catalog.program(id).totalSessions }
-        let perWeek = progress(id).schedule?.sessionsPerWeek
-            ?? schedulingRules(of: id)?.recommendedSessionsPerWeek ?? 4
-        return stages.reduce(0) { $0 + max(1, $1.weeksMin * perWeek) }
-    }
+    func plannedSessions(of id: ProgramID) -> Int { shape(of: id).totalSessions }
 
     /// Ce qui ouvre le combat final d'un programme écrit par le coach.
     func bossAccess(of id: ProgramID) -> BossAccess {
@@ -964,10 +1041,12 @@ final class GameStore: ObservableObject {
             let total = SaitamaPlan.weeks(inBlock: position.blockIndex) * perWeek
             return (position.blockIndex - 1, max(0, done - (first - 1) * perWeek), total)
         }
+        let form = shape(of: program.id)
+        guard form.stageCount > 0 else { return (0, 0, 0) }
         let completed = state.progress(program.id).completedSessions
-        let index = min(program.stageIndex(forSession: completed), program.stages.count - 1)
-        let first = program.firstSession(ofStage: index)
-        let total = program.sessionsPerStage[index]
+        let index = min(form.stageIndex(forSession: completed), form.stageCount - 1)
+        let first = form.firstSession(ofStage: index)
+        let total = form.sessionsPerStage[index]
         return (index, min(completed - first, total), total)
     }
 
@@ -1035,16 +1114,17 @@ final class GameStore: ObservableObject {
         if progress.startedOn == nil { progress.startedOn = todayKey }
 
         // étape franchie ?
-        let stageBefore = program.stageIndex(forSession: progress.completedSessions - 1)
-        let stageAfter = program.stageIndex(forSession: progress.completedSessions)
-        let crossedStage = progress.completedSessions >= program.totalSessions || stageAfter != stageBefore
+        let form = shape(of: program.id)
+        let stageBefore = form.stageIndex(forSession: progress.completedSessions - 1)
+        let stageAfter = form.stageIndex(forSession: progress.completedSessions)
+        let crossedStage = progress.completedSessions >= form.totalSessions || stageAfter != stageBefore
         var stageName: String?
-        if crossedStage && stageBefore < program.stages.count {
-            stageName = program.stages[stageBefore]
+        if crossedStage && stageBefore < form.stageCount {
+            stageName = form.title(ofStage: stageBefore)
             gained += GameEngine.stageXP
         }
 
-        let programComplete = progress.completedSessions >= program.totalSessions
+        let programComplete = progress.completedSessions >= form.totalSessions
         if programComplete {
             progress.finishedOn = todayKey
             gained += GameEngine.programXP
