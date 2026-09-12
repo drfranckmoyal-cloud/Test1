@@ -251,7 +251,7 @@ struct SessionSheetView: View {
                     Text("Comment as-tu trouvé cette séance ?")
                         .font(.ui(15))
                         .foregroundStyle(Theme.muted)
-                    Text("C'est cette réponse, et rien d'autre, qui règle la séance suivante.")
+                    Text("C'est cette réponse qui règle la séance suivante. Tu peux aussi ne rien dire : elle restera comme elle est.")
                         .font(.ui(12))
                         .foregroundStyle(Theme.dim)
                         .multilineTextAlignment(.center)
@@ -289,6 +289,19 @@ struct SessionSheetView: View {
                         }
                         .buttonStyle(.plain)
                     }
+
+                    Button {
+                        Haptics.tap()
+                        finish(with: nil)
+                    } label: {
+                        Text("Je préfère ne pas répondre")
+                            .font(.ui(13, .semibold))
+                            .foregroundStyle(Theme.muted)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 46)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.top, 4)
                 }
             }
             .padding(.horizontal, 20)
@@ -299,9 +312,9 @@ struct SessionSheetView: View {
 
     /// Enregistre la séance comme faite, au niveau où elle était prévue.
     /// Si le guidage l'a déjà fait, on se contente du ressenti.
-    private func finish(with feedback: SessionFeedback) {
+    private func finish(with feedback: SessionFeedback?) {
         let done = tuned
-        store.apply(feedback, to: done.programID)
+        if let feedback = feedback { store.apply(feedback, to: done.programID) }
         if alreadyRecorded {
             dismiss()
             return

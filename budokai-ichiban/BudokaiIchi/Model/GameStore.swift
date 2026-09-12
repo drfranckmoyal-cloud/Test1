@@ -355,6 +355,61 @@ final class GameStore: ObservableObject {
     func setAppearance(_ appearance: Appearance) { state.appearance = appearance; save() }
     func setAvatar(_ avatar: AvatarConfig) { state.avatar = avatar; save() }
 
+    // MARK: - Historique
+
+    /// Les séances faites, de la plus récente à la plus ancienne.
+    var historyNewestFirst: [SessionRecord] {
+        state.history.sorted { lhs, rhs in
+            lhs.day == rhs.day ? lhs.sessionIndex > rhs.sessionIndex : lhs.day > rhs.day
+        }
+    }
+
+    /// Efface une séance enregistrée par erreur, et défait ce qu'elle avait
+    /// apporté : son expérience, son avancement, et la série si elle en
+    /// dépendait.
+    func deleteRecord(_ id: UUID) {
+        guard let position = state.history.firstIndex(where: { $0.id == id }) else { return }
+        let record = state.history.remove(at: position)
+
+        state.xp = max(0, state.xp - record.xp)
+
+        if let programID = ProgramID(rawValue: record.programID) {
+            var progress = state.progress(programID)
+            progress.completedSessions = max(0, progress.completedSessions - 1)
+            if progress.completedSessions == 0 { progress.startedOn = nil }
+            progress.finishedOn = nil
+            state.programs[programID.rawValue] = progress
+        }
+
+        recomputeStreak()
+        save()
+        syncNotifications()
+    }
+
+    /// Recalcule la série d'après ce qui reste : des jours consécutifs
+    /// jusqu'au dernier jour où une séance a été faite.
+    private func recomputeStreak() {
+        let days = Set(state.history.map(\.day)).compactMap(date(fromKey:)).sorted(by: >)
+        guard let mostRecent = days.first else {
+            state.streak = 0
+            state.lastCompletedDay = nil
+            return
+        }
+        var run = 1
+        var cursor = mostRecent
+        for day in days.dropFirst() {
+            guard let previous = Calendar.current.date(byAdding: .day, value: -1, to: cursor) else { break }
+            if Calendar.current.isDate(day, inSameDayAs: previous) {
+                run += 1
+                cursor = day
+            } else if !Calendar.current.isDate(day, inSameDayAs: cursor) {
+                break
+            }
+        }
+        state.streak = run
+        state.lastCompletedDay = key(mostRecent)
+    }
+
     /// La ceinture que la série en cours a méritée.
     var belt: Belt { Belt.earned(streak: state.streak) }
     func finishOnboarding(tier: Tier) {

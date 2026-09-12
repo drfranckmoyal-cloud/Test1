@@ -3,6 +3,9 @@ import SwiftUI
 struct TodayView: View {
     @EnvironmentObject private var store: GameStore
     @State private var running: PlannedSession?
+    /// Quand plusieurs séances tombent le même jour, une seule est dépliée :
+    /// sinon la page fait trois écrans de haut.
+    @State private var opened: ProgramID?
 
     var body: some View {
         ScrollView {
@@ -60,9 +63,18 @@ struct TodayView: View {
             let due = store.sessionsDueToday
             if due.count > 1 {
                 SectionLabel(text: "\(due.count) SÉANCES AUJOURD'HUI")
-            }
-            ForEach(due.indices, id: \.self) { index in
-                sessionCard(program: due[index].program, session: due[index].session)
+                ForEach(due.indices, id: \.self) { index in
+                    let entry = due[index]
+                    if opened == entry.program.id {
+                        sessionCard(program: entry.program, session: entry.session)
+                    } else {
+                        compactCard(program: entry.program, session: entry.session)
+                    }
+                }
+            } else {
+                ForEach(due.indices, id: \.self) { index in
+                    sessionCard(program: due[index].program, session: due[index].session)
+                }
             }
             ForEach(store.programsResting) { program in
                 restCard(program)
@@ -135,6 +147,61 @@ struct TodayView: View {
         .frame(maxWidth: .infinity)
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Theme.border, lineWidth: 1))
+    }
+
+    /// La version repliée : le maître, l'étape, l'estimation, et de quoi
+    /// lancer la séance sans rien déplier.
+    private func compactCard(program: Program, session: PlannedSession) -> some View {
+        let status = store.stageStatus(program)
+        let stageName = program.stages[min(status.index, program.stages.count - 1)]
+
+        return HStack(spacing: 0) {
+            Button {
+                Haptics.tap()
+                withAnimation(.easeInOut(duration: 0.2)) { opened = program.id }
+            } label: {
+                HStack(spacing: 12) {
+                    ZStack {
+                        program.gradient
+                        ArtworkFill(name: program.stageImage(status.index)).opacity(0.9)
+                    }
+                    .frame(width: 52, height: 52)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(program.name.uppercased())
+                            .font(.display(15))
+                            .foregroundStyle(Theme.text)
+                            .lineLimit(1)
+                        Text(stageName)
+                            .font(.ui(11, .semibold))
+                            .foregroundStyle(Theme.muted)
+                            .lineLimit(1)
+                        Text("\(status.done)/\(status.total) · \(session.estimatedMinutes) min")
+                            .font(.ui(10, .semibold))
+                            .foregroundStyle(program.light)
+                    }
+                    Spacer(minLength: 6)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+
+            Button {
+                Haptics.tap()
+                running = session
+            } label: {
+                Image(systemName: "play.fill")
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(Theme.ink)
+                    .frame(width: 42, height: 42)
+                    .background(program.light, in: Circle())
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(12)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Theme.border, lineWidth: 1))
     }
 
     private func sessionCard(program: Program, session: PlannedSession) -> some View {

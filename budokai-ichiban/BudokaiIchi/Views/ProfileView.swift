@@ -4,6 +4,7 @@ struct ProfileView: View {
     @EnvironmentObject private var store: GameStore
     @State private var showSettings = false
     @State private var showAvatar = false
+    @State private var showHistory = false
 
     var body: some View {
         ScrollView {
@@ -14,7 +15,10 @@ struct ProfileView: View {
                 figures
                 if !store.state.equipment.isEmpty { equipment }
                 if !store.state.badges.isEmpty { badges }
-                GhostButton(title: "Réglages") { showSettings = true }
+                HStack(spacing: 10) {
+                    GhostButton(title: "Historique") { showHistory = true }
+                    GhostButton(title: "Réglages") { showSettings = true }
+                }
             }
             .padding(.horizontal, 20)
             .padding(.top, 14)
@@ -24,6 +28,7 @@ struct ProfileView: View {
         .background(Theme.ground)
         .sheet(isPresented: $showSettings) { SettingsView() }
         .sheet(isPresented: $showAvatar) { AvatarEditorView() }
+        .sheet(isPresented: $showHistory) { HistoryView() }
     }
 
     /// Le combattant, sa ceinture, et l'accès à sa personnalisation.
