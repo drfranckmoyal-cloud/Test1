@@ -13,19 +13,92 @@ enum AvatarHair: String, Codable, CaseIterable, Identifiable {
     }
 }
 
+/// La carrure du combattant. Change la chevelure arrière, qui donnait à
+/// tout le monde une silhouette féminine.
+enum AvatarBuild: String, Codable, CaseIterable, Identifiable {
+    case male, female
+    var id: String { rawValue }
+    var label: String {
+        switch self {
+        case .male: return "Homme"
+        case .female: return "Femme"
+        }
+    }
+}
+
+/// Une tenue. Le kimono blanc du débutant, puis celles des neuf maîtres.
+struct AvatarOutfit: Identifiable, Equatable {
+    let id: String
+    let name: String
+    /// Veste et manches.
+    let top: UInt32
+    /// Pantalon.
+    let bottom: UInt32
+    /// Revers et parements.
+    let accent: UInt32
+    /// Cape ou haori, porté dans le dos. Absent pour la plupart.
+    let cape: UInt32?
+
+    static let all: [AvatarOutfit] = [
+        .init(id: "white", name: "Kimono blanc",
+              top: 0xF2E7D8, bottom: 0xEADFD0, accent: 0xD9C6AE, cape: nil),
+        .init(id: "saitama", name: "Saitama",
+              top: 0xF2C94C, bottom: 0xF2C94C, accent: 0xE03A2F, cape: 0xF7F3EC),
+        .init(id: "goku", name: "Goku",
+              top: 0xF08A24, bottom: 0xF08A24, accent: 0x2E5FA3, cape: nil),
+        .init(id: "rocklee", name: "Rock Lee",
+              top: 0x3E8E41, bottom: 0x3E8E41, accent: 0xE8843C, cape: nil),
+        .init(id: "kenshiro", name: "Kenshiro",
+              top: 0x2B3A57, bottom: 0x2B3A57, accent: 0xC9A227, cape: nil),
+        .init(id: "ichigo", name: "Ichigo",
+              top: 0x1A1A1F, bottom: 0x1A1A1F, accent: 0xE8E4DC, cape: nil),
+        .init(id: "minato", name: "Minato",
+              top: 0x1E3A5F, bottom: 0x1E3A5F, accent: 0xE8E4DC, cape: 0xF2EDE4),
+        .init(id: "levi", name: "Levi",
+              top: 0xF2EDE4, bottom: 0x4A4034, accent: 0x6B5B45, cape: 0x3E6B4A),
+        .init(id: "luffy", name: "Luffy",
+              top: 0xD2352C, bottom: 0x2E5FA3, accent: 0xD2352C, cape: nil),
+        .init(id: "naruto", name: "Naruto",
+              top: 0xF07A1A, bottom: 0x1F2937, accent: 0x1F2937, cape: nil),
+    ]
+
+    static func named(_ id: String) -> AvatarOutfit {
+        all.first { $0.id == id } ?? all[0]
+    }
+}
+
 /// La tenue et les traits du combattant, tels que Franck les choisit.
 /// Rangé dans `PlayerState` à côté du ton et de l'apparence.
 struct AvatarConfig: Codable, Equatable {
+    var build: AvatarBuild = .male
     var hair: AvatarHair = .spiky
     var hairColor: UInt32 = 0x2A2320
     var skin: UInt32 = 0xF6CBA4
     var eye: UInt32 = 0x3E7FB5
-    var gi: UInt32 = 0xF2E7D8
+    var outfitID: String = "white"
+
+    var outfit: AvatarOutfit { .named(outfitID) }
+
+    /// Relit une sauvegarde d'avant la carrure et les tenues.
+    init(from decoder: Decoder) throws {
+        let box = try decoder.container(keyedBy: CodingKeys.self)
+        func read<T: Decodable>(_ key: CodingKeys, _ fallback: T) -> T {
+            (try? box.decode(T.self, forKey: key)) ?? fallback
+        }
+        build = read(.build, .male)
+        hair = read(.hair, .spiky)
+        hairColor = read(.hairColor, 0x2A2320)
+        skin = read(.skin, 0xF6CBA4)
+        eye = read(.eye, 0x3E7FB5)
+        outfitID = read(.outfitID, "white")
+    }
+
+    init() {}
 
     static let hairChoices: [UInt32] = [0x2A2320, 0x6E3A1E, 0xD9A441, 0xC7402F, 0x5B6FA8, 0xE8E2DA]
     static let skinChoices: [UInt32] = [0xFBDCC0, 0xF6CBA4, 0xDCA274, 0xB67548, 0x7E4A2C]
     static let eyeChoices: [UInt32] = [0x3E7FB5, 0x4E8A5A, 0x8A5A2E, 0x8C4A6E, 0xC4472A]
-    static let giChoices: [UInt32] = [0xF2E7D8, 0xE9843C, 0x4A6E8C, 0x57694E, 0x2E2A29]
+
 }
 
 /// La ceinture, qui monte avec la série de jours tenue.

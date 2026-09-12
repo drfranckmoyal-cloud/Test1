@@ -15,6 +15,7 @@ struct AvatarEditorView: View {
                 VStack(spacing: 20) {
                     stage
                     poseRail
+                    buildSection
                     hairSection
                     colorSection(title: "CHEVEUX",
                                  choices: AvatarConfig.hairChoices,
@@ -25,9 +26,7 @@ struct AvatarEditorView: View {
                     colorSection(title: "YEUX",
                                  choices: AvatarConfig.eyeChoices,
                                  selected: draft.eye) { draft.eye = $0 }
-                    colorSection(title: "KIMONO",
-                                 choices: AvatarConfig.giChoices,
-                                 selected: draft.gi) { draft.gi = $0 }
+                    outfitSection
                     beltSection
                 }
                 .padding(.horizontal, 20)
@@ -106,6 +105,76 @@ struct AvatarEditorView: View {
     }
 
     // MARK: - Réglages
+
+    private var buildSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            SectionLabel(text: "CARRURE")
+            HStack(spacing: 8) {
+                ForEach(AvatarBuild.allCases) { candidate in
+                    Button {
+                        Haptics.tap()
+                        draft.build = candidate
+                    } label: {
+                        Text(candidate.label)
+                            .font(.ui(13, .bold))
+                            .foregroundStyle(draft.build == candidate ? Theme.cream : Theme.muted)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 44)
+                            .background(draft.build == candidate ? AnyShapeStyle(Theme.crimson) : AnyShapeStyle(Theme.surface),
+                                        in: RoundedRectangle(cornerRadius: 11, style: .continuous))
+                            .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous)
+                                .stroke(draft.build == candidate ? Color.clear : Theme.border, lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+    }
+
+    /// Le kimono blanc du débutant, puis les tenues des neuf maîtres.
+    private var outfitSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            SectionLabel(text: "TENUE")
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 96), spacing: 10)], spacing: 10) {
+                ForEach(AvatarOutfit.all) { candidate in
+                    let picked = draft.outfitID == candidate.id
+                    Button {
+                        Haptics.tap()
+                        draft.outfitID = candidate.id
+                    } label: {
+                        VStack(spacing: 7) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 7, style: .continuous)
+                                    .fill(Color(hex: candidate.top))
+                                    .frame(height: 26)
+                                HStack(spacing: 0) {
+                                    Rectangle().fill(Color(hex: candidate.accent))
+                                    Rectangle().fill(Color(hex: candidate.bottom))
+                                    if let cape = candidate.cape {
+                                        Rectangle().fill(Color(hex: cape))
+                                    }
+                                }
+                                .frame(height: 9)
+                                .clipShape(RoundedRectangle(cornerRadius: 2, style: .continuous))
+                                .padding(.horizontal, 10)
+                                .offset(y: 6)
+                            }
+                            Text(candidate.name)
+                                .font(.ui(11, .bold))
+                                .foregroundStyle(picked ? Theme.text : Theme.muted)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.7)
+                        }
+                        .padding(8)
+                        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .stroke(picked ? Theme.crimson : Theme.border, lineWidth: picked ? 2 : 1))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+    }
 
     private var hairSection: some View {
         VStack(alignment: .leading, spacing: 10) {

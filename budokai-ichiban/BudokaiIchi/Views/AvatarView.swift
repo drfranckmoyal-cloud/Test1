@@ -23,9 +23,10 @@ struct AvatarView: View {
     private var skin: Color { Color(hex: config.skin) }
     private var skinShade: Color { .shade(config.skin, -0.16) }
     private var hair: Color { Color(hex: config.hairColor) }
-    private var gi: Color { Color(hex: config.gi) }
-    private var giShade: Color { .shade(config.gi, -0.16) }
-    private var trousers: Color { .shade(config.gi, -0.05) }
+    private var outfit: AvatarOutfit { config.outfit }
+    private var gi: Color { Color(hex: outfit.top) }
+    private var giShade: Color { Color(hex: outfit.accent) }
+    private var trousers: Color { Color(hex: outfit.bottom) }
     private var beltColor: Color { Color(hex: belt.color) }
 
     var body: some View {
@@ -84,6 +85,7 @@ struct AvatarView: View {
 
     private var character: some View {
         ZStack {
+            cape
             backHair
             leg(left: true)
             leg(left: false)
@@ -95,6 +97,17 @@ struct AvatarView: View {
         }
     }
 
+    /// Cape ou haori. Dessiné derrière le corps, seulement pour les tenues
+    /// qui en portent une.
+    @ViewBuilder
+    private var cape: some View {
+        if let color = outfit.cape {
+            SVGShape(d: Self.capePath)
+                .fill(Color(hex: color))
+                .overlay(SVGShape(d: Self.capePath).stroke(outline, lineWidth: 3.2))
+        }
+    }
+
     private var backHair: some View {
         ZStack {
             SVGShape(d: Self.ponytail)
@@ -102,11 +115,16 @@ struct AvatarView: View {
                 .overlay(SVGShape(d: Self.ponytail).stroke(outline, lineWidth: 3.2))
                 .opacity(config.hair == .ponytail ? 1 : 0)
 
-            SVGShape(d: Self.backHair)
+            SVGShape(d: backHairPath)
                 .fill(hair)
-                .overlay(SVGShape(d: Self.backHair).stroke(outline, lineWidth: 3.2))
+                .overlay(SVGShape(d: backHairPath).stroke(outline, lineWidth: 3.2))
         }
         .scaleEffect(x: 1, y: belt.spike, anchor: UnitPoint(x: 200 / 400, y: 140 / 540))
+    }
+
+    /// La nuque dégagée pour l'homme, la chevelure longue pour la femme.
+    private var backHairPath: String {
+        config.build == .male ? Self.backHairMale : Self.backHairFemale
     }
 
     // MARK: Jambes
@@ -333,7 +351,14 @@ struct AvatarView: View {
 
     private static let auraFlame = "M200 500c-58-40-92-92-86-156 20 34 40 50 48 54-20-58-8-110 26-152-4 44 14 70 32 86-12-42-6-76 16-104 0 40 20 64 36 88 14 22 20 46 14 70-8 44-42 80-86 114Z"
     private static let ponytail = "M248 78c30-6 58 8 66 34 8 26-2 54-20 74-8 8-20 0-16-10 10-26 10-46 2-60-8-14-20-24-32-28Z"
-    private static let backHair = "M200 44c46 0 72 32 72 76 0 13-2 25-4 35-2 9-13 10-16 1-4-12-6-24-7-34-3 14-6 23-9 29h-72c-3-6-6-15-9-29-1 10-3 22-7 34-3 9-14 8-16-1-2-10-4-22-4-35 0-44 26-76 72-76Z"
+    /// Nuque rasée court : la calotte s'arrête au-dessus des oreilles.
+    private static let backHairMale = "M200 48c40 0 66 30 66 70 0 10-1 19-3 26-2 7-11 8-14 1-3-9-5-17-6-25-2 10-4 17-6 22h-74c-2-5-4-12-6-22-1 8-3 16-6 25-3 7-12 6-14-1-2-7-3-16-3-26 0-40 26-70 66-70Z"
+
+    /// Chevelure longue, qui retombe derrière les épaules.
+    private static let backHairFemale = "M200 44c46 0 72 32 72 76 0 42-3 84-7 120-1 11-17 12-19 1-5-33-7-68-7-94-3 14-6 23-9 29h-60c-3-6-6-15-9-29 0 26-2 61-7 94-2 11-18 10-19-1-4-36-7-78-7-120 0-44 26-76 72-76Z"
+
+    private static let capePath = "M154 198c-20 8-32 26-38 52-7 30-9 66-7 98h182c2-32 0-68-7-98-6-26-18-44-38-52 8 20 2 42-46 42s-54-22-46-42Z"
+
     private static let torsoGi = "M200 190 152 206c-6 2-9 7-9 14l7 84h100l7-84c0-7-3-12-9-14Z"
     private static let chest = "M200 194 181 200l19 46 19-46Z"
     private static let lapelL = "M154 202 168 196 207 252 199 270Z"
