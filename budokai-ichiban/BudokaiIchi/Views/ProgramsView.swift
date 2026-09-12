@@ -31,9 +31,9 @@ struct ProgramsView: View {
                     ForEach(Catalog.programs) { program in
                         Button {
                             Haptics.tap()
-                            // Saitama s'ouvre sur sa route, suivi ou non :
-                            // c'est elle, la page du programme.
-                            if program.id == .saitama {
+                            // un programme qui a ses jalons s'ouvre sur sa
+                            // route : c'est elle, sa page de garde.
+                            if !ProgramLibrary.stages(program.id).isEmpty {
                                 journey = program
                             } else {
                                 selected = program

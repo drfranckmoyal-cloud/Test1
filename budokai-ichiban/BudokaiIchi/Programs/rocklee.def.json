@@ -1,0 +1,318 @@
+{
+ "id": "rocklee",
+ "quality": "Explosivité et réactivité",
+ "scheduling": {
+  "min": 3,
+  "recommended": 4,
+  "max": 4,
+  "recoveryHours": 48,
+  "requiresLongSession": false,
+  "keySessionLabel": "la séance pliométrique principale",
+  "templates": {
+   "3": [
+    {
+     "type": "power",
+     "title": "Plyo vertical / technique",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 45
+    },
+    {
+     "type": "strength",
+     "title": "Force support",
+     "priority": "important",
+     "load": "moderate",
+     "minutes": 45
+    },
+    {
+     "type": "power",
+     "title": "Horizontal / accélération",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 45
+    }
+   ],
+   "4": [
+    {
+     "type": "power",
+     "title": "Plyo vertical / technique",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 45
+    },
+    {
+     "type": "strength",
+     "title": "Force support",
+     "priority": "important",
+     "load": "moderate",
+     "minutes": 45
+    },
+    {
+     "type": "power",
+     "title": "Horizontal / accélération",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 45
+    },
+    {
+     "type": "mobility",
+     "title": "Technique et changement de direction",
+     "priority": "optional",
+     "load": "easy",
+     "minutes": 35
+    }
+   ]
+  }
+ },
+ "stages": [
+  {
+   "key": "ORIGINES",
+   "title": "Porte de l'Ouverture",
+   "goal": "Apprendre à atterrir et produire un saut propre.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 2,
+   "weeksMax": 4
+  },
+  {
+   "key": "CHŪNIN",
+   "title": "Porte du Repos",
+   "goal": "Répéter sans perdre la qualité.",
+   "benchmark": null,
+   "exit": [
+    "3×5 CMJ sans dégradation",
+    "3×5 broad submax stick",
+    "Accélération 10 m maîtrisée"
+   ],
+   "weeksMin": 2,
+   "weeksMax": 4
+  },
+  {
+   "key": "BLESSURE",
+   "title": "Portes de la Vie et de la Blessure",
+   "goal": "Puissance bilatérale, force horizontale et freinage.",
+   "benchmark": "Re-test broad et vertical",
+   "exit": [
+    "Chute de performance < 5–7 % sur séries maximales",
+    "Décélérations propres"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "SHIPPUDEN",
+   "title": "Portes de la Limite et de la Vue",
+   "goal": "Force réactive, unilatéral et latéral.",
+   "benchmark": null,
+   "exit": [
+    "Série réactive stable",
+    "Qualité d'atterrissage",
+    "5 single-leg hop/stick par côté"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "GUERRE",
+   "title": "Portes de la Merveille et de la Mort",
+   "goal": "Puissance avancée, vitesse, puis affûtage.",
+   "benchmark": "Broad +5 à 8 % vs départ",
+   "exit": [],
+   "weeksMin": 2,
+   "weeksMax": 4
+  }
+ ],
+ "boss": {
+  "title": "EIGHT GATES PERFORMANCE TEST",
+  "summary": "Un boss composite : saut, accélération et répétabilité.",
+  "components": [
+   {
+    "id": "boss.lee.broad",
+    "name": "Broad jump",
+    "value": 108,
+    "unit": "reps",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.lee.cmj",
+    "name": "Saut vertical",
+    "value": 108,
+    "unit": "reps",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.lee.sprint",
+    "name": "10 m",
+    "value": 3,
+    "unit": "seconds",
+    "policy": "continuous"
+   }
+  ],
+  "requirements": [
+   "≥8 % vs baseline sur le saut",
+   "≥3 % sur le temps",
+   "Qualité d'atterrissage conservée"
+  ],
+  "rewardId": "LEE-021"
+ },
+ "superRank": {
+  "name": "RED BEAST / NIGHT GUY",
+  "rewardId": "LEE-S-001"
+ },
+ "rewards": [
+  {
+   "id": "LEE-001",
+   "stage": "ORIGINES",
+   "title": "Bandeau de Konoha",
+   "type": "object",
+   "rarity": "rare"
+  },
+  {
+   "id": "LEE-002",
+   "stage": "ORIGINES",
+   "title": "Équipe Guy",
+   "type": "character",
+   "rarity": "rare"
+  },
+  {
+   "id": "LEE-003",
+   "stage": "ORIGINES",
+   "title": "Might Guy",
+   "type": "sensei",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-004",
+   "stage": "CHŪNIN",
+   "title": "Lotus Recto",
+   "type": "technique",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-005",
+   "stage": "CHŪNIN",
+   "title": "Les Poids de Lee",
+   "type": "object",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-006",
+   "stage": "BLESSURE",
+   "title": "Lee vs Gaara",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-007",
+   "stage": "BLESSURE",
+   "title": "Première Porte",
+   "type": "transformation",
+   "rarity": "rare"
+  },
+  {
+   "id": "LEE-008",
+   "stage": "BLESSURE",
+   "title": "Quatrième Porte",
+   "type": "transformation",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-009",
+   "stage": "SHIPPUDEN",
+   "title": "Cinquième Porte",
+   "type": "transformation",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-010",
+   "stage": "SHIPPUDEN",
+   "title": "Lotus Verso",
+   "type": "technique",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-011",
+   "stage": "SHIPPUDEN",
+   "title": "Le Choix de Lee",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-012",
+   "stage": "SHIPPUDEN",
+   "title": "Retour du Fauve",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-013",
+   "stage": "SHIPPUDEN",
+   "title": "Drunken Fist",
+   "type": "technique",
+   "rarity": "rare"
+  },
+  {
+   "id": "LEE-014",
+   "stage": "GUERRE",
+   "title": "Sixième Porte",
+   "type": "transformation",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-015",
+   "stage": "GUERRE",
+   "title": "Asakujaku",
+   "type": "technique",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-016",
+   "stage": "GUERRE",
+   "title": "Septième Porte",
+   "type": "transformation",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-017",
+   "stage": "GUERRE",
+   "title": "Hirudora",
+   "type": "technique",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-018",
+   "stage": "GUERRE",
+   "title": "Might Dai",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEE-019",
+   "stage": "GUERRE",
+   "title": "Huitième Porte",
+   "type": "transformation",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-020",
+   "stage": "GUERRE",
+   "title": "Bête Rouge",
+   "type": "transformation",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-021",
+   "stage": null,
+   "title": "Eight Gates Formation",
+   "type": "rank",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEE-S-001",
+   "stage": null,
+   "title": "Red Beast",
+   "type": "transformation",
+   "rarity": "legendary"
+  }
+ ]
+}

@@ -3,9 +3,12 @@ import SwiftUI
 /// Le chemin du programme : une route de jalons, du premier pas au combat
 /// final.
 ///
-/// C'est la page de garde d'un programme lancé. Elle ne liste pas des blocs,
-/// elle dessine un trajet — et chaque jalon porte d'abord son arc narratif,
-/// le détail sportif ne venant qu'en se dépliant.
+/// C'est la page de garde d'un programme. Elle ne liste pas des blocs, elle
+/// dessine un trajet — et chaque jalon porte d'abord son arc narratif, le
+/// détail sportif ne venant qu'en se dépliant.
+///
+/// Les jalons viennent de la définition du programme : la même vue sert les
+/// neuf.
 struct ProgramJourneyView: View {
     @EnvironmentObject private var store: GameStore
     @Environment(\.dismiss) private var dismiss
@@ -19,24 +22,39 @@ struct ProgramJourneyView: View {
     @State private var showSetup = false
 
     private var tint: Color { program.light }
-    private var blocks: [SaitamaBlockSpec] { program.id == .saitama ? SaitamaBlocks.all : [] }
+    private var stages: [ProgramDefinition.Stage] { ProgramLibrary.stages(program.id) }
+    private var boss: ProgramStructures.BossFight? { ProgramStructures.boss(for: program.id) }
 
     // MARK: - Où l'on en est
 
     private var perWeek: Int {
         store.schedule(of: program.id)?.sessionsPerWeek
-            ?? store.schedulingRules(of: program.id)?.recommendedSessionsPerWeek ?? 5
+            ?? store.schedulingRules(of: program.id)?.recommendedSessionsPerWeek ?? 4
     }
     private var done: Int { store.progress(program.id).completedSessions }
-    private var position: SaitamaPlan.Position {
-        SaitamaPlan.position(sessionIndex: done, sessionsPerWeek: perWeek)
-    }
-    private var currentBlock: Int { position.blockIndex }
 
-    private var blockProgress: (done: Int, total: Int) {
-        let first = SaitamaPlan.firstWeek(ofBlock: currentBlock)
-        let total = SaitamaPlan.weeks(inBlock: currentBlock) * perWeek
-        return (max(0, done - (first - 1) * perWeek), total)
+    /// Séances prévues par jalon, dans le scénario nominal.
+    private func sessions(inStage index: Int) -> Int {
+        guard index >= 1, index <= stages.count else { return perWeek }
+        return max(1, stages[index - 1].weeksMin * perWeek)
+    }
+
+    private var currentStage: Int {
+        guard !stages.isEmpty else { return 1 }
+        var remaining = done
+        for index in 1...stages.count {
+            let count = sessions(inStage: index)
+            if remaining < count { return index }
+            remaining -= count
+        }
+        return stages.count
+    }
+
+    private var stageProgress: (done: Int, total: Int) {
+        let before = currentStage > 1
+            ? (1..<currentStage).reduce(0) { $0 + sessions(inStage: $1) }
+            : 0
+        return (max(0, done - before), sessions(inStage: currentStage))
     }
 
     var body: some View {
@@ -46,9 +64,10 @@ struct ProgramJourneyView: View {
                     banner
                     if !store.isActive(program.id) {
                         startCall
+                        roadway
                     } else if store.needsSetup(program.id) {
                         setupCall
-                    } else if blocks.isEmpty {
+                    } else if stages.isEmpty {
                         unavailable
                     } else {
                         roadway
@@ -71,7 +90,7 @@ struct ProgramJourneyView: View {
         .sheet(isPresented: $showSetup) {
             ProgramLaunchView(program: program) { store.startProgram(program.id) }
         }
-        .onAppear { if isIntroduction { opened = currentBlock } }
+        .onAppear { if isIntroduction { opened = currentStage } }
     }
 
     // MARK: - Le bandeau
@@ -79,12 +98,12 @@ struct ProgramJourneyView: View {
     private var banner: some View {
         ZStack(alignment: .bottomLeading) {
             program.gradient
-            ArtworkFill(name: program.stageImage(max(0, currentBlock - 1))).opacity(0.55)
+            ArtworkFill(name: program.stageImage(max(0, currentStage - 1))).opacity(0.55)
             LinearGradient(colors: [Color.black.opacity(0.15), Theme.ground],
                            startPoint: .top, endPoint: .bottom)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text(program.family.uppercased())
+                Text(quality.uppercased())
                     .font(.ui(10, .bold))
                     .kerning(2.4)
                     .foregroundStyle(Theme.cream.opacity(0.9))
@@ -102,16 +121,31 @@ struct ProgramJourneyView: View {
         .frame(height: 230)
     }
 
-    private var bannerLine: String {
-        if !store.isActive(program.id) {
-            return "Huit jalons, une histoire, un combat au bout."
-        }
-        if isIntroduction { return "Voilà la route. Huit étapes, une histoire, un combat au bout." }
-        if store.needsSetup(program.id) { return "Il reste ton point de départ à mesurer." }
-        return "Tu es au jalon \(currentBlock) sur \(blocks.count)."
+    private var quality: String {
+        ProgramLibrary.definition(program.id)?.quality ?? program.family
     }
 
-    // MARK: - Le départ
+    private var bannerLine: String {
+        if !store.isActive(program.id) {
+            return "\(stages.count) jalons, une histoire, un combat au bout."
+        }
+        if isIntroduction { return "Voilà la route. Une histoire, et un combat au bout." }
+        if store.needsSetup(program.id) { return "Il reste ton point de départ à mesurer." }
+        return "Tu es au jalon \(currentStage) sur \(stages.count)."
+    }
+
+    // MARK: - La route
+
+    private var roadway: some View {
+        VStack(spacing: 0) {
+            start
+            ForEach(Array(stages.enumerated()), id: \.element.key) { offset, stage in
+                milestone(stage, number: offset + 1)
+                connector(after: offset + 1)
+            }
+            finish
+        }
+    }
 
     private var start: some View {
         VStack(spacing: 0) {
@@ -126,32 +160,29 @@ struct ProgramJourneyView: View {
 
     // MARK: - Un jalon
 
-    private func milestone(_ block: SaitamaBlockSpec) -> some View {
-        let state = state(of: block)
-        let isOpen = opened == block.index
-        let onLeft = side(block.index) < 0.5
+    private func milestone(_ stage: ProgramDefinition.Stage, number: Int) -> some View {
+        let state = state(of: number)
+        let isOpen = opened == number
+        let onLeft = side(number) < 0.5
 
         return VStack(spacing: 0) {
             HStack(alignment: .center, spacing: 14) {
-                if !onLeft { label(block, state, aligned: .trailing); Spacer(minLength: 0) }
-                node(block, state)
-                if onLeft { label(block, state, aligned: .leading); Spacer(minLength: 0) }
+                if !onLeft { label(stage, state, aligned: .trailing); Spacer(minLength: 0) }
+                node(number, state)
+                if onLeft { label(stage, state, aligned: .leading); Spacer(minLength: 0) }
             }
             .padding(.horizontal, 22)
             .contentShape(Rectangle())
             .onTapGesture {
                 Haptics.tap()
-                withAnimation(.easeInOut(duration: 0.22)) {
-                    opened = isOpen ? nil : block.index
-                }
+                withAnimation(.easeInOut(duration: 0.22)) { opened = isOpen ? nil : number }
             }
 
-            if isOpen { card(block, state) }
+            if isOpen { card(stage, state) }
         }
     }
 
-    /// La pastille du jalon, posée sur la route.
-    private func node(_ block: SaitamaBlockSpec, _ state: BlockState) -> some View {
+    private func node(_ number: Int, _ state: StageState) -> some View {
         ZStack {
             if state == .current {
                 Circle().fill(tint.opacity(0.18)).frame(width: 74, height: 74)
@@ -161,7 +192,6 @@ struct ProgramJourneyView: View {
                 .frame(width: 54, height: 54)
                 .overlay(Circle().stroke(state == .locked ? Theme.border : tint,
                                          lineWidth: state == .current ? 3 : 2))
-
             if state == .done {
                 Image(systemName: "checkmark")
                     .font(.system(size: 20, weight: .bold))
@@ -171,7 +201,7 @@ struct ProgramJourneyView: View {
                     .font(.system(size: 15))
                     .foregroundStyle(Theme.dim)
             } else {
-                Text("\(block.index)")
+                Text("\(number)")
                     .font(.display(22))
                     .foregroundStyle(tint)
             }
@@ -179,8 +209,7 @@ struct ProgramJourneyView: View {
         .frame(width: 78, height: 78)
     }
 
-    /// Le libellé à côté de la pastille : l'arc d'abord, le sport ensuite.
-    private func label(_ block: SaitamaBlockSpec, _ state: BlockState,
+    private func label(_ stage: ProgramDefinition.Stage, _ state: StageState,
                        aligned: HorizontalAlignment) -> some View {
         VStack(alignment: aligned, spacing: 3) {
             if state == .current {
@@ -192,21 +221,19 @@ struct ProgramJourneyView: View {
                     .padding(.vertical, 2)
                     .background(tint, in: Capsule())
             }
-            Text(block.title)
+            Text(stage.title)
                 .font(.display(18))
                 .foregroundStyle(state == .locked ? Theme.dim : Theme.text)
                 .multilineTextAlignment(aligned == .leading ? .leading : .trailing)
                 .fixedSize(horizontal: false, vertical: true)
-            Text(block.arc)
+            Text(stage.weeksLabel)
                 .font(.ui(11, .semibold))
                 .foregroundStyle(Theme.muted)
-                .multilineTextAlignment(aligned == .leading ? .leading : .trailing)
-                .fixedSize(horizontal: false, vertical: true)
-            if state == .done, store.state.rewards.has(block.rewardId),
-               let reward = RewardCatalog.reward(block.rewardId) {
+            if state == .done,
+               let first = rewards(of: stage).first(where: { store.state.rewards.has($0.rewardId) }) {
                 HStack(spacing: 4) {
                     Image(systemName: "rosette").font(.system(size: 9))
-                    Text(reward.title).font(.ui(10, .bold))
+                    Text(first.title).font(.ui(10, .bold))
                 }
                 .foregroundStyle(Theme.gold)
             }
@@ -216,12 +243,12 @@ struct ProgramJourneyView: View {
 
     // MARK: - Le jalon déplié
 
-    private func card(_ block: SaitamaBlockSpec, _ state: BlockState) -> some View {
+    private func card(_ stage: ProgramDefinition.Stage, _ state: StageState) -> some View {
         VStack(alignment: .leading, spacing: 14) {
-            story(block)
-            target(block)
+            story(stage)
+            target(stage)
             if state == .current { currentNote }
-            rewardLine(block)
+            rewardLine(stage)
         }
         .padding(17)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -232,9 +259,9 @@ struct ProgramJourneyView: View {
         .padding(.top, 10)
     }
 
-    /// L'histoire de l'arc, en clair. C'est ce qu'on venait chercher.
-    private func story(_ block: SaitamaBlockSpec) -> some View {
-        let beats = NarrationLibrary.sessions(program.id, stage: block.title)
+    /// L'histoire de l'arc, prise dans le pack narratif.
+    private func story(_ stage: ProgramDefinition.Stage) -> some View {
+        let beats = NarrationLibrary.sessions(program.id, stage: stage.key)
             .map { NarrativeContent($0, program: program) }
             .filter { $0.isVisible(at: store.state.spoilerLevel) }
 
@@ -246,18 +273,20 @@ struct ProgramJourneyView: View {
 
             if let first = beats.first {
                 Text(first.storyRecap)
-                    .font(.ui(13))
-                    .foregroundStyle(Theme.text)
+                    .font(.system(size: 14, weight: .regular, design: .serif))
+                    .lineSpacing(2)
+                    .foregroundStyle(Theme.text.opacity(0.88))
                     .fixedSize(horizontal: false, vertical: true)
+            } else {
+                Text("Le récit de ce jalon se dévoile séance après séance.")
+                    .font(.ui(12))
+                    .foregroundStyle(Theme.muted)
             }
 
             VStack(alignment: .leading, spacing: 5) {
-                ForEach(beats.dropFirst()) { beat in
+                ForEach(beats.dropFirst().prefix(8)) { beat in
                     HStack(alignment: .top, spacing: 8) {
-                        Circle()
-                            .fill(Theme.dim)
-                            .frame(width: 4, height: 4)
-                            .padding(.top, 7)
+                        Circle().fill(Theme.dim).frame(width: 4, height: 4).padding(.top, 7)
                         Text(beat.narrativeTitle)
                             .font(.ui(12))
                             .foregroundStyle(Theme.muted)
@@ -270,7 +299,7 @@ struct ProgramJourneyView: View {
                 HStack(alignment: .top, spacing: 9) {
                     Rectangle().fill(tint).frame(width: 2)
                     Text(sensei)
-                        .font(.ui(12))
+                        .font(.system(size: 13, weight: .regular, design: .serif))
                         .italic()
                         .foregroundStyle(Theme.text)
                         .fixedSize(horizontal: false, vertical: true)
@@ -281,74 +310,92 @@ struct ProgramJourneyView: View {
     }
 
     /// Le sport, dit sans jargon.
-    private func target(_ block: SaitamaBlockSpec) -> some View {
+    private func target(_ stage: ProgramDefinition.Stage) -> some View {
         VStack(alignment: .leading, spacing: 7) {
-            Text("CE QUE TU DOIS TENIR À LA FIN")
+            Text("CE QUE TU VIENS Y CHERCHER")
                 .font(.ui(9, .bold))
                 .kerning(1.8)
                 .foregroundStyle(Theme.muted)
-            Text("\(block.routineVolume) pompes, \(block.routineVolume) abdominaux, \(block.routineVolume) squats, et \(ObjectiveUnit.meters.format(block.benchmarkMeters)) de course.")
+            Text(stage.goal)
                 .font(.ui(13, .semibold))
                 .foregroundStyle(Theme.text)
                 .fixedSize(horizontal: false, vertical: true)
-            Text("\(SaitamaPlan.weeks(inBlock: block.index)) semaines, soit \(SaitamaPlan.weeks(inBlock: block.index) * perWeek) séances à ton rythme."
-                 + (block.endsWithDeload ? " La dernière semaine est allégée." : ""))
+
+            if let benchmark = stage.benchmark {
+                Text("Repère de sortie : \(benchmark)")
+                    .font(.ui(12, .semibold))
+                    .foregroundStyle(tint)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            if !stage.exit.isEmpty {
+                VStack(alignment: .leading, spacing: 3) {
+                    ForEach(stage.exit, id: \.self) { item in
+                        HStack(alignment: .top, spacing: 7) {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 9, weight: .bold))
+                                .foregroundStyle(Theme.dim)
+                                .padding(.top, 3)
+                            Text(item)
+                                .font(.ui(11))
+                                .foregroundStyle(Theme.muted)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                }
+            }
+            Text("\(stage.weeksLabel) à ton rythme.")
                 .font(.ui(11))
-                .foregroundStyle(Theme.muted)
-                .fixedSize(horizontal: false, vertical: true)
+                .foregroundStyle(Theme.dim)
         }
     }
 
     private var currentNote: some View {
-        let inBlock = blockProgress
+        let progress = stageProgress
         return VStack(alignment: .leading, spacing: 7) {
-            ProgressBar(value: inBlock.total > 0 ? Double(inBlock.done) / Double(inBlock.total) : 0,
+            ProgressBar(value: progress.total > 0 ? Double(progress.done) / Double(progress.total) : 0,
                         height: 7, tint: tint)
-            Text("Séance \(inBlock.done + 1) sur \(inBlock.total) de ce jalon."
-                 + (store.estimatedWeeksRemaining(of: program.id).map { " Environ \($0) semaines avant la fin du parcours." } ?? ""))
+            Text("Séance \(progress.done + 1) sur \(progress.total) de ce jalon.")
                 .font(.ui(11, .semibold))
                 .foregroundStyle(Theme.muted)
-                .fixedSize(horizontal: false, vertical: true)
         }
     }
 
-    private func rewardLine(_ block: SaitamaBlockSpec) -> some View {
-        let owned = store.state.rewards.has(block.rewardId)
-        let reward = RewardCatalog.reward(block.rewardId)
-        return HStack(spacing: 9) {
-            Image(systemName: owned ? "rosette" : "gift")
-                .font(.system(size: 13))
-                .foregroundStyle(owned ? Theme.gold : Theme.dim)
-            Text(owned
-                 ? "Vignette obtenue : \(reward?.title ?? "")"
-                 : "Une vignette t'attend à la sortie de ce jalon.")
-                .font(.ui(11, .semibold))
-                .foregroundStyle(owned ? Theme.gold : Theme.muted)
-                .fixedSize(horizontal: false, vertical: true)
-        }
+    private func rewards(of stage: ProgramDefinition.Stage) -> [Reward] {
+        RewardCatalog.rewards(for: program.id).filter { $0.blockId == stage.key }
     }
 
-    // MARK: - La route
-
-    /// Position horizontale d'un jalon, en fraction de largeur. Le trajet
-    /// serpente au lieu de s'empiler.
-    private func side(_ index: Int) -> CGFloat {
-        index % 2 == 1 ? 0.26 : 0.74
-    }
-
-    private func connector(after block: SaitamaBlockSpec) -> some View {
-        let next = block.index + 1
-        let reached = block.index < currentBlock
+    private func rewardLine(_ stage: ProgramDefinition.Stage) -> some View {
+        let items = rewards(of: stage)
+        let owned = items.filter { store.state.rewards.has($0.rewardId) }
         return Group {
-            if next <= blocks.count {
-                path(from: side(block.index), to: side(next), height: 54, reached: reached)
+            if items.isEmpty {
+                EmptyView()
             } else {
-                path(from: side(block.index), to: 0.5, height: 54, reached: reached)
+                HStack(spacing: 9) {
+                    Image(systemName: owned.isEmpty ? "gift" : "rosette")
+                        .font(.system(size: 13))
+                        .foregroundStyle(owned.isEmpty ? Theme.dim : Theme.gold)
+                    Text(owned.isEmpty
+                         ? "\(items.count) vignette\(items.count > 1 ? "s" : "") à débloquer ici."
+                         : "\(owned.count) sur \(items.count) obtenue\(owned.count > 1 ? "s" : "").")
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(owned.isEmpty ? Theme.muted : Theme.gold)
+                }
             }
         }
     }
 
-    /// Un segment de route, tracé en courbe d'un jalon au suivant.
+    // MARK: - Le tracé
+
+    private func side(_ index: Int) -> CGFloat { index % 2 == 1 ? 0.26 : 0.74 }
+
+    private func connector(after number: Int) -> some View {
+        let next = number + 1
+        let reached = number < currentStage
+        return path(from: side(number), to: next <= stages.count ? side(next) : 0.5,
+                    height: 54, reached: reached)
+    }
+
     private func path(from: CGFloat, to: CGFloat, height: CGFloat, reached: Bool) -> some View {
         GeometryReader { geometry in
             let width = geometry.size.width
@@ -359,10 +406,9 @@ struct ProgramJourneyView: View {
             shape.addCurve(to: end,
                            control1: CGPoint(x: start.x, y: height * 0.6),
                            control2: CGPoint(x: end.x, y: height * 0.4))
-            return shape
-                .stroke(reached ? tint : Theme.border,
-                        style: StrokeStyle(lineWidth: 3, lineCap: .round,
-                                           dash: reached ? [] : [5, 7]))
+            return shape.stroke(reached ? tint : Theme.border,
+                                style: StrokeStyle(lineWidth: 3, lineCap: .round,
+                                                   dash: reached ? [] : [5, 7]))
         }
         .frame(height: height)
     }
@@ -370,8 +416,8 @@ struct ProgramJourneyView: View {
     // MARK: - L'arrivée
 
     private var finish: some View {
-        let eligible = store.saitamaBossEligibility.isEligible
-        let won = store.progress(.saitama).bossDefeated
+        let won = store.progress(program.id).bossDefeated
+        let eligible = program.id == .saitama ? store.saitamaBossEligibility.isEligible : false
 
         return VStack(spacing: 9) {
             ZStack {
@@ -387,19 +433,59 @@ struct ProgramJourneyView: View {
                     .foregroundStyle(won ? Theme.ink : (eligible ? Theme.gold : Theme.dim))
             }
 
-            Text("LE COMBAT FINAL")
+            Text((boss?.title ?? "Le combat final").uppercased())
                 .font(.display(17))
                 .foregroundStyle(won || eligible ? Theme.text : Theme.dim)
+                .multilineTextAlignment(.center)
             Text(won
-                 ? "Gagné. Le Serious Mode est ouvert."
-                 : "Cent pompes, cent abdominaux, cent squats, et dix kilomètres d'une seule traite.")
+                 ? "Gagné. \(ProgramStructures.superRankName(for: program.id) ?? "Le mode supérieur") est ouvert."
+                 : (ProgramLibrary.bossSummary(program.id) ?? "Le standard qui valide le programme."))
                 .font(.ui(12))
                 .foregroundStyle(Theme.muted)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(.horizontal, 40)
+                .padding(.horizontal, 34)
         }
         .padding(.top, 4)
+    }
+
+    // MARK: - Appels à l'action
+
+    private var startCall: some View {
+        VStack(alignment: .leading, spacing: 13) {
+            Text(program.pitch)
+                .font(.ui(14))
+                .foregroundStyle(Theme.muted)
+                .fixedSize(horizontal: false, vertical: true)
+            PrimaryButton(title: "PRENDRE CE PROGRAMME", tint: tint) { showSetup = true }
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+            .stroke(tint.opacity(0.4), lineWidth: 1))
+        .padding(.horizontal, 20)
+        .padding(.top, 20)
+    }
+
+    private var setupCall: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Il manque ton point de départ")
+                .font(.display(21))
+                .foregroundStyle(Theme.text)
+            Text("Sans tes disponibilités et tes mesures, l'app ne peut rien te prescrire de sensé. Deux minutes, et la route s'ouvre.")
+                .font(.ui(14))
+                .foregroundStyle(Theme.muted)
+                .fixedSize(horizontal: false, vertical: true)
+            PrimaryButton(title: "RÉGLER LE PROGRAMME", tint: tint) { showSetup = true }
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+            .stroke(tint.opacity(0.4), lineWidth: 1))
+        .padding(.horizontal, 20)
+        .padding(.top, 22)
     }
 
     private var footer: some View {
@@ -419,78 +505,12 @@ struct ProgramJourneyView: View {
 
     // MARK: - État d'un jalon
 
-    private enum BlockState { case done, current, locked }
+    private enum StageState { case done, current, locked }
 
-    private func state(of block: SaitamaBlockSpec) -> BlockState {
-        guard store.isActive(program.id) else { return block.index == 1 ? .current : .locked }
-        if store.progress(program.id).completedBlocks.contains(block.id) { return .done }
-        if block.index == currentBlock { return .current }
-        return block.index < currentBlock ? .done : .locked
-    }
-
-    /// La route elle-même, du départ au combat.
-    private var roadway: some View {
-        VStack(spacing: 0) {
-            start
-            ForEach(blocks) { block in
-                milestone(block)
-                connector(after: block)
-            }
-            finish
-        }
-    }
-
-    /// Le programme n'est pas encore pris : on montre quand même la route,
-    /// et on propose de partir.
-    private var startCall: some View {
-        VStack(spacing: 0) {
-            VStack(alignment: .leading, spacing: 13) {
-                Text(program.pitch)
-                    .font(.ui(14))
-                    .foregroundStyle(Theme.muted)
-                    .fixedSize(horizontal: false, vertical: true)
-                PrimaryButton(title: "PRENDRE CE PROGRAMME", tint: tint) {
-                    showSetup = true
-                }
-            }
-            .padding(20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .stroke(tint.opacity(0.4), lineWidth: 1))
-            .padding(.horizontal, 20)
-            .padding(.top, 20)
-
-            roadway
-        }
-    }
-
-    /// Le programme tourne mais n'a jamais été réglé : il faut ses
-    /// disponibilités et ses mesures avant de pouvoir prescrire quoi que ce
-    /// soit.
-    private var setupCall: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text("Il manque ton point de départ")
-                .font(.display(21))
-                .foregroundStyle(Theme.text)
-            Text("Ce programme a été lancé avant que l'app ne sache mesurer ton niveau. Sans tes disponibilités et tes quatre mesures, elle ne peut rien te prescrire de sensé.")
-                .font(.ui(14))
-                .foregroundStyle(Theme.muted)
-                .fixedSize(horizontal: false, vertical: true)
-            Text("Deux minutes, et la route s'ouvre.")
-                .font(.ui(13, .semibold))
-                .foregroundStyle(tint)
-            PrimaryButton(title: "RÉGLER LE PROGRAMME", tint: tint) {
-                showSetup = true
-            }
-        }
-        .padding(20)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
-            .stroke(tint.opacity(0.4), lineWidth: 1))
-        .padding(.horizontal, 20)
-        .padding(.top, 22)
+    private func state(of number: Int) -> StageState {
+        guard store.isActive(program.id) else { return number == 1 ? .current : .locked }
+        if number < currentStage { return .done }
+        return number == currentStage ? .current : .locked
     }
 
     private var unavailable: some View {
@@ -498,7 +518,7 @@ struct ProgramJourneyView: View {
             Text("Ce programme n'a pas encore sa route")
                 .font(.display(18))
                 .foregroundStyle(Theme.text)
-            Text("Seul Saitama est découpé en jalons pour l'instant. Les autres avancent par étapes, visibles dans la fiche du programme.")
+            Text("Ses jalons ne sont pas encore décrits. Il avance par étapes, visibles dans la fiche du programme.")
                 .font(.ui(13))
                 .foregroundStyle(Theme.muted)
                 .fixedSize(horizontal: false, vertical: true)

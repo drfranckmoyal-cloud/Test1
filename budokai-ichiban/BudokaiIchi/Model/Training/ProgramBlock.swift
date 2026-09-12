@@ -161,6 +161,7 @@ enum ProgramStructures {
         rewardId: nil)
 
     static func boss(for id: ProgramID) -> BossFight? {
+        if let fromData = ProgramLibrary.boss(id) { return fromData }
         switch id {
         case .saitama: return saitamaBoss
         case .naruto: return narutoBoss
@@ -170,6 +171,7 @@ enum ProgramStructures {
 
     /// Le nom du mode qui s'ouvre après validation, quand le cahier le donne.
     static func superRankName(for id: ProgramID) -> String? {
+        if let fromData = ProgramLibrary.superRankName(id) { return fromData }
         switch id {
         case .saitama: return "SERIOUS MODE"
         case .naruto: return "MODE BARYON"

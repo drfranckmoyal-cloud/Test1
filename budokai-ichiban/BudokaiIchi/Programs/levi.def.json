@@ -1,0 +1,327 @@
+{
+ "id": "levi",
+ "quality": "Tronc et contrôle corporel",
+ "scheduling": {
+  "min": 3,
+  "recommended": 4,
+  "max": 5,
+  "recoveryHours": 24,
+  "requiresLongSession": false,
+  "keySessionLabel": "la séance intégrée",
+  "templates": {
+   "3": [
+    {
+     "type": "strength",
+     "title": "Anti-extension",
+     "priority": "critical",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Suspension et tractions",
+     "priority": "critical",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Latéral et anti-rotation",
+     "priority": "important",
+     "load": "moderate",
+     "minutes": 30
+    }
+   ],
+   "4": [
+    {
+     "type": "strength",
+     "title": "Anti-extension",
+     "priority": "critical",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Suspension et tractions",
+     "priority": "critical",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Latéral et anti-rotation",
+     "priority": "important",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Séance intégrée",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 35
+    }
+   ],
+   "5": [
+    {
+     "type": "strength",
+     "title": "Anti-extension",
+     "priority": "critical",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Suspension et tractions",
+     "priority": "critical",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Latéral et anti-rotation",
+     "priority": "important",
+     "load": "moderate",
+     "minutes": 30
+    },
+    {
+     "type": "strength",
+     "title": "Séance intégrée",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 35
+    },
+    {
+     "type": "recovery",
+     "title": "Récupération et technique",
+     "priority": "optional",
+     "load": "easy",
+     "minutes": 25
+    }
+   ]
+  }
+ },
+ "stages": [
+  {
+   "key": "UNDERGROUND",
+   "title": "Underground",
+   "goal": "Bases du tronc.",
+   "benchmark": null,
+   "exit": [
+    "Gainage 30 s",
+    "Gainage latéral 20 s par côté",
+    "Suspension 20 à 30 s"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "NOREGRETS",
+   "title": "No Regrets",
+   "goal": "Passer de la stabilité statique au contrôle dynamique.",
+   "benchmark": null,
+   "exit": [
+    "Hollow 30 s",
+    "Gainage latéral 30 s",
+    "Suspension 40 s",
+    "3 négatives propres"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "SPECIALOPS",
+   "title": "Special Operations",
+   "goal": "Répéter la qualité sous fatigue modérée.",
+   "benchmark": null,
+   "exit": [
+    "Hollow 35 à 40 s",
+    "Gainage latéral 35 s",
+    "Suspension 50 s",
+    "2 à 3 tractions strictes"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "ACKERMAN",
+   "title": "Ackerman",
+   "goal": "Force relative et contrôle.",
+   "benchmark": null,
+   "exit": [
+    "Hollow 45 s",
+    "Gainage latéral 40 à 45 s",
+    "4 tractions"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "STRONGEST",
+   "title": "Humanity's Strongest",
+   "goal": "Affûtage et répétition générale des cinq tests.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 2,
+   "weeksMax": 4
+  }
+ ],
+ "boss": {
+  "title": "HUMANITY'S STRONGEST TEST",
+  "summary": "Cinq tests de contrôle corporel.",
+  "components": [
+   {
+    "id": "boss.lev.hollow",
+    "name": "Hollow body",
+    "value": 45,
+    "unit": "seconds",
+    "policy": "continuous"
+   },
+   {
+    "id": "boss.lev.side",
+    "name": "Gainage latéral par côté",
+    "value": 45,
+    "unit": "seconds",
+    "policy": "continuous"
+   },
+   {
+    "id": "boss.lev.hang",
+    "name": "Suspension",
+    "value": 60,
+    "unit": "seconds",
+    "policy": "continuous"
+   },
+   {
+    "id": "boss.lev.pull",
+    "name": "Tractions strictes",
+    "value": 5,
+    "unit": "reps",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.lev.taps",
+    "name": "Shoulder taps lents par côté",
+    "value": 10,
+    "unit": "reps",
+    "policy": "structuredSession"
+   }
+  ],
+  "requirements": [
+   "Quatre standards sur cinq déjà atteints",
+   "Le cinquième à ≥ 90 %",
+   "Aucun signal rouge"
+  ],
+  "rewardId": "LEV-013"
+ },
+ "superRank": {
+  "name": "ACKERMAN MODE",
+  "rewardId": "LEV-S-004"
+ },
+ "rewards": [
+  {
+   "id": "LEV-001",
+   "stage": "UNDERGROUND",
+   "title": "Underground",
+   "type": "location",
+   "rarity": "rare"
+  },
+  {
+   "id": "LEV-002",
+   "stage": "UNDERGROUND",
+   "title": "Furlan & Isabel",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEV-003",
+   "stage": "NOREGRETS",
+   "title": "Erwin Smith",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEV-004",
+   "stage": "NOREGRETS",
+   "title": "Survey Corps",
+   "type": "event",
+   "rarity": "rare"
+  },
+  {
+   "id": "LEV-005",
+   "stage": "SPECIALOPS",
+   "title": "Levi Squad",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEV-006",
+   "stage": "SPECIALOPS",
+   "title": "Petra",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEV-007",
+   "stage": "SPECIALOPS",
+   "title": "Female Titan",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEV-008",
+   "stage": "ACKERMAN",
+   "title": "Kenny Ackerman",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEV-009",
+   "stage": "ACKERMAN",
+   "title": "Ackerman Bloodline",
+   "type": "event",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEV-010",
+   "stage": "ACKERMAN",
+   "title": "Historia / Uprising",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEV-011",
+   "stage": "STRONGEST",
+   "title": "Erwin's Charge",
+   "type": "event",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEV-012",
+   "stage": "STRONGEST",
+   "title": "Beast Titan",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEV-013",
+   "stage": "STRONGEST",
+   "title": "Humanity's Strongest",
+   "type": "rank",
+   "rarity": "legendary"
+  },
+  {
+   "id": "LEV-014",
+   "stage": "STRONGEST",
+   "title": "The Promise",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "LEV-S-004",
+   "stage": null,
+   "title": "Ackerman Mode",
+   "type": "rank",
+   "rarity": "legendary"
+  }
+ ]
+}

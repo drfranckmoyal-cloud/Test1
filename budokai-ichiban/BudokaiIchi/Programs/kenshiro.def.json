@@ -1,0 +1,307 @@
+{
+ "id": "kenshiro",
+ "quality": "Force relative",
+ "scheduling": {
+  "min": 3,
+  "recommended": 4,
+  "max": 4,
+  "recoveryHours": 48,
+  "requiresLongSession": false,
+  "keySessionLabel": "la séance lourde",
+  "templates": {
+   "3": [
+    {
+     "type": "strength",
+     "title": "Push + Pull",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 50
+    },
+    {
+     "type": "strength",
+     "title": "Jambes + tronc",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 50
+    },
+    {
+     "type": "strength",
+     "title": "Full body",
+     "priority": "important",
+     "load": "moderate",
+     "minutes": 45
+    }
+   ],
+   "4": [
+    {
+     "type": "strength",
+     "title": "Push",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 45
+    },
+    {
+     "type": "strength",
+     "title": "Pull",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 45
+    },
+    {
+     "type": "strength",
+     "title": "Jambes",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 45
+    },
+    {
+     "type": "strength",
+     "title": "Full body technique",
+     "priority": "important",
+     "load": "moderate",
+     "minutes": 40
+    }
+   ]
+  }
+ },
+ "stages": [
+  {
+   "key": "SCARS",
+   "title": "Les Sept Cicatrices",
+   "goal": "Fondations : toutes les familles à 6–12 répétitions propres, RIR 3–4.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "SHIN",
+   "title": "King / Shin",
+   "goal": "Construire la première vraie force relative.",
+   "benchmark": null,
+   "exit": [
+    "10 à 15 pompes standard propres",
+    "3 négatives de traction de 5 s",
+    "8 split squats par côté"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "REI",
+   "title": "Nanto / Rei",
+   "goal": "Volume de qualité et unilatéral.",
+   "benchmark": null,
+   "exit": [
+    "20 pompes propres ou progression archer",
+    "3 tractions strictes",
+    "3 pistols assistés par côté"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "TOKI",
+   "title": "Toki",
+   "goal": "Contrôle, tempo, maîtrise.",
+   "benchmark": null,
+   "exit": [
+    "Pompe archer contrôlée",
+    "4 à 5 tractions strictes",
+    "Pistol excentrique de 5 s"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "RAOH",
+   "title": "Raoh",
+   "goal": "Force pure : 3 à 6 répétitions, repos longs.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "SOUTHER",
+   "title": "Souther",
+   "goal": "Résoudre les derniers blocages techniques.",
+   "benchmark": null,
+   "exit": [
+    "Pompe une main très peu assistée",
+    "7 tractions strictes"
+   ],
+   "weeksMin": 3,
+   "weeksMax": 5
+  },
+  {
+   "key": "FINAL",
+   "title": "True Successor",
+   "goal": "Affûtage du combat final.",
+   "benchmark": null,
+   "exit": [
+    "Pompe une main réussie de chaque côté sur une séance non fatiguée"
+   ],
+   "weeksMin": 2,
+   "weeksMax": 5
+  }
+ ],
+ "boss": {
+  "title": "TRUE SUCCESSOR TEST",
+  "summary": "La force relative, prouvée sur les trois familles.",
+  "components": [
+   {
+    "id": "boss.ken.push",
+    "name": "Pompe à une main",
+    "value": 1,
+    "unit": "reps",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.ken.pull",
+    "name": "Tractions strictes",
+    "value": 8,
+    "unit": "reps",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.ken.legs",
+    "name": "Pistol squats par jambe",
+    "value": 5,
+    "unit": "reps",
+    "policy": "structuredSession"
+   }
+  ],
+  "requirements": [
+   "Pompe une main contrôlée de chaque côté",
+   "8 tractions strictes",
+   "5 pistols par jambe"
+  ],
+  "rewardId": "KEN-016"
+ },
+ "superRank": {
+  "name": "MUSŌ TENSEI",
+  "rewardId": "KEN-S-002"
+ },
+ "rewards": [
+  {
+   "id": "KEN-001",
+   "stage": "SCARS",
+   "title": "Les Sept Cicatrices",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-002",
+   "stage": "SCARS",
+   "title": "Bat & Lin",
+   "type": "character",
+   "rarity": "rare"
+  },
+  {
+   "id": "KEN-003",
+   "stage": "SHIN",
+   "title": "Southern Cross",
+   "type": "location",
+   "rarity": "rare"
+  },
+  {
+   "id": "KEN-004",
+   "stage": "SHIN",
+   "title": "Shin",
+   "type": "fight",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-005",
+   "stage": "SHIN",
+   "title": "Revanche",
+   "type": "fight",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-006",
+   "stage": "REI",
+   "title": "Rei",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-007",
+   "stage": "REI",
+   "title": "Nanto Suichō Ken",
+   "type": "technique",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-008",
+   "stage": "TOKI",
+   "title": "Toki",
+   "type": "sensei",
+   "rarity": "legendary"
+  },
+  {
+   "id": "KEN-009",
+   "stage": "TOKI",
+   "title": "Hokuto Ujō Ken",
+   "type": "technique",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-010",
+   "stage": "RAOH",
+   "title": "Kokuoh",
+   "type": "character",
+   "rarity": "rare"
+  },
+  {
+   "id": "KEN-011",
+   "stage": "RAOH",
+   "title": "Ken-Oh",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "KEN-012",
+   "stage": "SOUTHER",
+   "title": "Holy Emperor",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "KEN-013",
+   "stage": "SOUTHER",
+   "title": "Tenha Kassatsu",
+   "type": "technique",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-014",
+   "stage": "FINAL",
+   "title": "Yuria",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "KEN-015",
+   "stage": "FINAL",
+   "title": "Kenshiro vs Raoh",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "KEN-016",
+   "stage": null,
+   "title": "True Successor",
+   "type": "rank",
+   "rarity": "legendary"
+  },
+  {
+   "id": "KEN-S-002",
+   "stage": null,
+   "title": "Musō Tensei",
+   "type": "technique",
+   "rarity": "legendary"
+  }
+ ]
+}

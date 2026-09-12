@@ -180,7 +180,11 @@ struct TrainingAvailability: Codable, Equatable {
 /// pas un oubli, et l'app continue de tourner sans eux.
 enum SchedulingCatalog {
 
+    /// Les règles viennent désormais des définitions embarquées, une par
+    /// programme. Les deux jeux codés en dur restent en secours, au cas où un
+    /// fichier manquerait.
     static func rules(for id: ProgramID) -> ProgramSchedulingRules? {
+        if let fromData = ProgramLibrary.schedulingRules(id) { return fromData }
         switch id {
         case .saitama: return saitama
         case .naruto: return naruto

@@ -1,0 +1,282 @@
+{
+ "id": "luffy",
+ "quality": "Mobilité active",
+ "scheduling": {
+  "min": 4,
+  "recommended": 6,
+  "max": 7,
+  "recoveryHours": 0,
+  "requiresLongSession": false,
+  "keySessionLabel": "la séance longue",
+  "templates": {
+   "4": [
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Séance longue",
+     "priority": "critical",
+     "load": "easy",
+     "minutes": 30
+    }
+   ],
+   "5": [
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Séance longue",
+     "priority": "critical",
+     "load": "easy",
+     "minutes": 30
+    }
+   ],
+   "6": [
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Séance longue",
+     "priority": "critical",
+     "load": "easy",
+     "minutes": 30
+    }
+   ],
+   "7": [
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Micro-séance de mobilité",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 15
+    },
+    {
+     "type": "mobility",
+     "title": "Séance longue",
+     "priority": "critical",
+     "load": "easy",
+     "minutes": 30
+    }
+   ]
+  }
+ },
+ "stages": [
+  {
+   "key": "EASTBLUE",
+   "title": "East Blue",
+   "goal": "Ouvrir les cinq familles : cheville, squat, chaîne postérieure, épaule, rachis.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 2,
+   "weeksMax": 4
+  },
+  {
+   "key": "GRANDLINE",
+   "title": "Grand Line",
+   "goal": "Gagner en amplitude active.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 2,
+   "weeksMax": 4
+  },
+  {
+   "key": "ENIES",
+   "title": "Enies Lobby",
+   "goal": "Tenir l'amplitude sous contrôle.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 2,
+   "weeksMax": 4
+  },
+  {
+   "key": "NEWWORLD",
+   "title": "Nouveau Monde",
+   "goal": "Intégrer les familles entre elles.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 2,
+   "weeksMax": 4
+  },
+  {
+   "key": "WANO",
+   "title": "Wano",
+   "goal": "Affûtage avant le test.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 1,
+   "weeksMax": 3
+  }
+ ],
+ "boss": {
+  "title": "GRAND LINE MOBILITY TEST",
+  "summary": "Quatre familles sur cinq fonctionnelles, la cinquième améliorée d'au moins 10 %.",
+  "components": [
+   {
+    "id": "boss.luf.ankle",
+    "name": "Cheville — knee-to-wall par côté",
+    "value": 8,
+    "unit": "kg",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.luf.squat",
+    "name": "Deep squat tenu",
+    "value": 60,
+    "unit": "seconds",
+    "policy": "continuous"
+   },
+   {
+    "id": "boss.luf.posterior",
+    "name": "Chaîne postérieure — élévation jambe tendue",
+    "value": 70,
+    "unit": "kg",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.luf.shoulder",
+    "name": "Épaule",
+    "value": 1,
+    "unit": "reps",
+    "policy": "structuredSession"
+   },
+   {
+    "id": "boss.luf.spine",
+    "name": "Rachis — rotation thoracique",
+    "value": 1,
+    "unit": "reps",
+    "policy": "structuredSession"
+   }
+  ],
+  "requirements": [
+   "Quatre familles sur cinq fonctionnelles ou fortes",
+   "La cinquième améliorée d'au moins 10 % vs départ"
+  ],
+  "rewardId": "LUF-001"
+ },
+ "superRank": {
+  "name": "GEAR 5",
+  "rewardId": null
+ },
+ "rewards": [
+  {
+   "id": "LUF-001",
+   "stage": null,
+   "title": "Freedom of Movement",
+   "type": "rank",
+   "rarity": "legendary"
+  }
+ ]
+}

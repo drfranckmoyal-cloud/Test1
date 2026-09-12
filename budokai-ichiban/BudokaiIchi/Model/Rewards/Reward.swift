@@ -144,7 +144,12 @@ struct RewardInventory: Codable, Equatable {
 /// leur contenu n'est pas écrit.
 enum RewardCatalog {
 
-    static let all: [Reward] = saitama
+    /// Toutes les vignettes des neuf programmes, prises dans leur définition.
+    /// Le jeu Saitama codé en dur reste en secours.
+    static var all: [Reward] {
+        let fromData = ProgramID.allCases.flatMap { ProgramLibrary.rewards($0) }
+        return fromData.isEmpty ? saitama : fromData
+    }
 
     static func reward(_ id: String) -> Reward? { all.first { $0.rewardId == id } }
 

@@ -1,0 +1,346 @@
+{
+ "id": "naruto",
+ "quality": "Endurance longue",
+ "scheduling": {
+  "min": 3,
+  "recommended": 4,
+  "max": 5,
+  "recoveryHours": 48,
+  "requiresLongSession": true,
+  "keySessionLabel": "la sortie longue",
+  "templates": {
+   "3": [
+    {
+     "type": "easyEndurance",
+     "title": "Easy / run-walk",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 35
+    },
+    {
+     "type": "qualityEndurance",
+     "title": "Séance spécifique",
+     "priority": "important",
+     "load": "hard",
+     "minutes": 40
+    },
+    {
+     "type": "longEndurance",
+     "title": "Sortie longue",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 70
+    }
+   ],
+   "4": [
+    {
+     "type": "easyEndurance",
+     "title": "Easy",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 35
+    },
+    {
+     "type": "qualityEndurance",
+     "title": "Quality",
+     "priority": "important",
+     "load": "hard",
+     "minutes": 40
+    },
+    {
+     "type": "recovery",
+     "title": "Easy recovery",
+     "priority": "optional",
+     "load": "easy",
+     "minutes": 30
+    },
+    {
+     "type": "longEndurance",
+     "title": "Sortie longue",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 70
+    }
+   ],
+   "5": [
+    {
+     "type": "easyEndurance",
+     "title": "Easy",
+     "priority": "important",
+     "load": "easy",
+     "minutes": 35
+    },
+    {
+     "type": "qualityEndurance",
+     "title": "Quality",
+     "priority": "important",
+     "load": "hard",
+     "minutes": 40
+    },
+    {
+     "type": "recovery",
+     "title": "Recovery",
+     "priority": "optional",
+     "load": "easy",
+     "minutes": 30
+    },
+    {
+     "type": "easyEndurance",
+     "title": "Easy",
+     "priority": "optional",
+     "load": "easy",
+     "minutes": 35
+    },
+    {
+     "type": "longEndurance",
+     "title": "Sortie longue",
+     "priority": "critical",
+     "load": "hard",
+     "minutes": 75
+    }
+   ]
+  }
+ },
+ "stages": [
+  {
+   "key": "GENIN",
+   "title": "Genin — Ninja imprévisible",
+   "goal": "Créer l'habitude et une vraie base aérobie.",
+   "benchmark": "40 min continu ou équivalent",
+   "exit": [
+    "≥85 % des séances clés sur les 2 dernières semaines",
+    "L'easy est réellement easy"
+   ],
+   "weeksMin": 4,
+   "weeksMax": 8
+  },
+  {
+   "key": "CHŪNIN",
+   "title": "Examen Chūnin",
+   "goal": "Passer de « je peux courir » à « je construis de l'endurance ».",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 3,
+   "weeksMax": 6
+  },
+  {
+   "key": "JIRAIYA",
+   "title": "Héritier de Jiraiya",
+   "goal": "Devenir un vrai coureur de fond.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 4,
+   "weeksMax": 8
+  },
+  {
+   "key": "SENNIN",
+   "title": "Mode Sennin",
+   "goal": "Spécificité semi-marathon.",
+   "benchmark": null,
+   "exit": [],
+   "weeksMin": 4,
+   "weeksMax": 8
+  },
+  {
+   "key": "HOKAGE",
+   "title": "Hokage",
+   "goal": "Affûtage puis combat final.",
+   "benchmark": "Semi-marathon",
+   "exit": [],
+   "weeksMin": 1,
+   "weeksMax": 2
+  }
+ ],
+ "boss": {
+  "title": "HOKAGE",
+  "summary": "21,0975 km en continu, une seule sortie.",
+  "components": [
+   {
+    "id": "boss.nar.hm",
+    "name": "Semi-marathon",
+    "value": 21100,
+    "unit": "meters",
+    "policy": "continuous"
+   }
+  ],
+  "requirements": [
+   "Une sortie longue récente proche de 18 km",
+   "Un volume hebdomadaire stable sur plusieurs semaines"
+  ],
+  "rewardId": "NAR-024"
+ },
+ "superRank": {
+  "name": "MODE BARYON",
+  "rewardId": null
+ },
+ "rewards": [
+  {
+   "id": "NAR-001",
+   "stage": "GENIN",
+   "title": "Bandeau de Konoha",
+   "type": "object",
+   "rarity": "rare"
+  },
+  {
+   "id": "NAR-002",
+   "stage": "GENIN",
+   "title": "Équipe 7",
+   "type": "character",
+   "rarity": "rare"
+  },
+  {
+   "id": "NAR-003",
+   "stage": "GENIN",
+   "title": "Pays des Vagues",
+   "type": "location",
+   "rarity": "rare"
+  },
+  {
+   "id": "NAR-004",
+   "stage": "GENIN",
+   "title": "Mon Nindô",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-005",
+   "stage": "CHŪNIN",
+   "title": "Examen Chūnin",
+   "type": "event",
+   "rarity": "rare"
+  },
+  {
+   "id": "NAR-006",
+   "stage": "CHŪNIN",
+   "title": "Gamabunta",
+   "type": "character",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-007",
+   "stage": "CHŪNIN",
+   "title": "Naruto vs Neji",
+   "type": "fight",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-008",
+   "stage": "CHŪNIN",
+   "title": "Naruto vs Gaara",
+   "type": "fight",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-009",
+   "stage": "JIRAIYA",
+   "title": "Jiraiya — Le Maître",
+   "type": "sensei",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-010",
+   "stage": "JIRAIYA",
+   "title": "Rasengan",
+   "type": "technique",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-011",
+   "stage": "JIRAIYA",
+   "title": "Le Pendentif du Hokage",
+   "type": "object",
+   "rarity": "rare"
+  },
+  {
+   "id": "NAR-012",
+   "stage": "JIRAIYA",
+   "title": "La Promesse d'une vie",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-013",
+   "stage": "JIRAIYA",
+   "title": "Retour à Konoha",
+   "type": "event",
+   "rarity": "rare"
+  },
+  {
+   "id": "NAR-014",
+   "stage": "JIRAIYA",
+   "title": "Rasen Shuriken",
+   "type": "technique",
+   "rarity": "legendary"
+  },
+  {
+   "id": "NAR-015",
+   "stage": "SENNIN",
+   "title": "Mont Myôboku",
+   "type": "location",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-016",
+   "stage": "SENNIN",
+   "title": "Fukasaku",
+   "type": "sensei",
+   "rarity": "rare"
+  },
+  {
+   "id": "NAR-017",
+   "stage": "SENNIN",
+   "title": "Mode Sennin",
+   "type": "transformation",
+   "rarity": "legendary"
+  },
+  {
+   "id": "NAR-018",
+   "stage": "SENNIN",
+   "title": "Naruto vs Pain",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "NAR-019",
+   "stage": "SENNIN",
+   "title": "Héros de Konoha",
+   "type": "rank",
+   "rarity": "legendary"
+  },
+  {
+   "id": "NAR-020",
+   "stage": "HOKAGE",
+   "title": "Kurama",
+   "type": "character",
+   "rarity": "legendary"
+  },
+  {
+   "id": "NAR-021",
+   "stage": "HOKAGE",
+   "title": "Alliance Shinobi",
+   "type": "event",
+   "rarity": "epic"
+  },
+  {
+   "id": "NAR-022",
+   "stage": "HOKAGE",
+   "title": "Pouvoir de Rikudô",
+   "type": "transformation",
+   "rarity": "legendary"
+  },
+  {
+   "id": "NAR-023",
+   "stage": "HOKAGE",
+   "title": "Vallée de la Fin",
+   "type": "fight",
+   "rarity": "legendary"
+  },
+  {
+   "id": "NAR-024",
+   "stage": "HOKAGE",
+   "title": "Septième Hokage",
+   "type": "rank",
+   "rarity": "legendary"
+  }
+ ]
+}
