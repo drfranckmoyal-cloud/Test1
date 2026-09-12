@@ -321,34 +321,46 @@ struct ProgramLaunchView: View {
     }
 
     private var enduranceScreen: some View {
-        screen(eyebrow: "MESURE 4 SUR 4", title: "Endurance",
-               help: "Six minutes de course. Pas d'alternative ici : si tu dois marcher une partie du temps, marche — c'est justement ce qu'on mesure.") {
+        screen(eyebrow: "MESURE 4 SUR 4", title: "Endurance", help: nil) {
             VStack(alignment: .leading, spacing: 20) {
-                stepper("Distance en 6 minutes (mètres)", value: $meters, range: 200...2500, stride: 50)
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("L'EXERCICE")
+                        .font(.ui(9, .bold))
+                        .kerning(1.8)
+                        .foregroundStyle(tint)
+                    Text("Six minutes de course")
+                        .font(.display(24))
+                        .foregroundStyle(Theme.text)
+                    Text("Quelle distance peux-tu couvrir en six minutes ? Si tu dois marcher une partie du temps, marche : c'est aussi une réponse.")
+                        .font(.ui(13))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Theme.surface, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 15, style: .continuous)
+                    .stroke(Theme.border, lineWidth: 1))
+
+                stepper("Distance en six minutes (mètres)", value: $meters,
+                        range: 200...2500, stride: 50)
+
                 VStack(alignment: .leading, spacing: 8) {
-                    SectionLabel(text: "PART RÉELLEMENT COURUE")
-                    HStack(spacing: 6) {
-                        ForEach([0.0, 0.25, 0.5, 0.75, 1.0], id: \.self) { value in
-                            Button {
-                                Haptics.tap()
-                                runRatio = value
-                            } label: {
-                                Text("\(Int(value * 100)) %")
-                                    .font(.ui(13, .bold))
-                                    .foregroundStyle(runRatio == value ? Theme.cream : Theme.muted)
-                                    .frame(maxWidth: .infinity)
-                                    .frame(height: 48)
-                                    .background(runRatio == value ? AnyShapeStyle(tint) : AnyShapeStyle(Theme.surface),
-                                                in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                        .stroke(runRatio == value ? Color.clear : Theme.border, lineWidth: 1))
-                            }
-                            .buttonStyle(.plain)
-                        }
+                    SectionLabel(text: "COMMENT L'AS-TU FAIT ?")
+                    ForEach(paceChoices, id: \.ratio) { choice in
+                        bigChoice(title: choice.title, subtitle: choice.subtitle,
+                                  picked: runRatio == choice.ratio) { runRatio = choice.ratio }
                     }
                 }
             }
         }
+    }
+
+    /// Trois réponses concrètes plutôt qu'un pourcentage à estimer.
+    private var paceChoices: [(ratio: Double, title: String, subtitle: String?)] {
+        [(1.0, "J'ai couru sans m'arrêter", nil),
+         (0.5, "J'ai alterné course et marche", nil),
+         (0.15, "J'ai surtout marché", "C'est le point de départ de beaucoup de gens.")]
     }
 
     private var summaryScreen: some View {
@@ -363,7 +375,8 @@ struct ProgramLaunchView: View {
                     recap("Poussée", "\(SaitamaLibrary.exercise(family: "sai.push", level: pushLevel)?.name ?? "") · \(pushReps)")
                     recap("Jambes", "\(SaitamaLibrary.exercise(family: "sai.squat", level: squatLevel)?.name ?? "") · \(squatReps)")
                     recap("Tronc", "\(SaitamaLibrary.exercise(family: "sai.core", level: coreLevel)?.name ?? "") · \(coreReps)")
-                    recap("Endurance", "\(meters) m en 6 minutes")
+                    recap("Endurance", "\(meters) m en 6 minutes · "
+                          + (paceChoices.first { $0.ratio == runRatio }?.title.lowercased() ?? ""))
                 }
                 Text("Tout cela se modifie ensuite, et le programme se recalcule à mesure que tu avances.")
                     .font(.ui(12))
