@@ -3,6 +3,7 @@ import SwiftUI
 struct ProgramDetailView: View {
     @EnvironmentObject private var store: GameStore
     @Environment(\.dismiss) private var dismiss
+    @State private var showContent = false
     let program: Program
 
     var body: some View {
@@ -55,7 +56,19 @@ struct ProgramDetailView: View {
                             .foregroundStyle(Theme.muted)
                             .fixedSize(horizontal: false, vertical: true)
 
-                        SectionLabel(text: "LES \(program.stages.count) ÉTAPES")
+                        HStack {
+                            SectionLabel(text: "LES \(program.stages.count) ÉTAPES")
+                            Button {
+                                Haptics.tap()
+                                showContent = true
+                            } label: {
+                                Text("TOUT LE CONTENU")
+                                    .font(.ui(10, .bold))
+                                    .kerning(1.2)
+                                    .foregroundStyle(program.light)
+                            }
+                            .buttonStyle(.plain)
+                        }
 
                         VStack(spacing: 7) {
                             ForEach(program.stages.indices, id: \.self) { index in
@@ -87,6 +100,9 @@ struct ProgramDetailView: View {
             }
             .padding(.horizontal, 16)
             .padding(.top, 14)
+        }
+        .sheet(isPresented: $showContent) {
+            ProgramContentView(program: program)
         }
     }
 
