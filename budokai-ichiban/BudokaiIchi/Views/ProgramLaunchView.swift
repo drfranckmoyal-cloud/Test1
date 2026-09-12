@@ -16,7 +16,6 @@ struct ProgramLaunchView: View {
     // — planning
     @State private var frequency = 0
     @State private var available: Set<Weekday> = Set(Weekday.allCases)
-    @State private var blocked: Set<Weekday> = []
     @State private var keyDay: Weekday?
     @State private var minutes = 45
 
@@ -40,14 +39,14 @@ struct ProgramLaunchView: View {
     // MARK: - Les étapes
 
     private enum Stage: Hashable {
-        case welcome, frequency, days, blocked, keyDay, duration, week
+        case welcome, frequency, days, keyDay, duration, week
         case calibrationIntro, push, squat, core, endurance
         case summary
     }
 
     private var stages: [Stage] {
         var list: [Stage] = [.welcome]
-        if rules != nil { list += [.frequency, .days, .blocked, .keyDay, .duration, .week] }
+        if rules != nil { list += [.frequency, .days, .keyDay, .duration, .week] }
         if needsCalibration { list += [.calibrationIntro, .push, .squat, .core, .endurance] }
         list.append(.summary)
         return list
@@ -111,7 +110,6 @@ struct ProgramLaunchView: View {
         case .welcome: welcomeScreen
         case .frequency: frequencyScreen
         case .days: daysScreen
-        case .blocked: blockedScreen
         case .keyDay: keyDayScreen
         case .duration: durationScreen
         case .week: weekScreen
@@ -168,21 +166,14 @@ struct ProgramLaunchView: View {
     }
 
     private var daysScreen: some View {
-        screen(eyebrow: "QUESTION 2", title: "Quels jours peux-tu ?",
-               help: "Coches-en plus que de séances si tu veux : le planning choisira les meilleurs.") {
+        screen(eyebrow: "QUESTION 2", title: "Quels jours peux-tu t'entraîner ?",
+               help: "Coche tous les jours possibles, même plus que de séances : le planning retiendra les meilleurs. Les jours non cochés ne seront jamais utilisés.") {
             dayGrid(selection: $available, tint: tint)
         }
     }
 
-    private var blockedScreen: some View {
-        screen(eyebrow: "QUESTION 3", title: "Des jours vraiment impossibles ?",
-               help: "Un jour marqué ici ne sera jamais utilisé, quelle que soit la logique sportive. Laisse vide si tu n'en as pas.") {
-            dayGrid(selection: $blocked, tint: Theme.crimson)
-        }
-    }
-
     private var keyDayScreen: some View {
-        screen(eyebrow: "QUESTION 4",
+        screen(eyebrow: "QUESTION 3",
                title: rules?.requiresLongSession == true ? "Quel jour pour la sortie longue ?" : "Quel jour pour la séance clé ?",
                help: "Une préférence, pas une garantie : si la récupération l'interdit, le planning la déplacera et te dira pourquoi.") {
             VStack(spacing: 10) {
@@ -205,7 +196,7 @@ struct ProgramLaunchView: View {
     }
 
     private var durationScreen: some View {
-        screen(eyebrow: "QUESTION 5", title: "Combien de temps par séance ?",
+        screen(eyebrow: "QUESTION 4", title: "Combien de temps par séance ?",
                help: "La sortie longue peut dépasser cette durée.") {
             VStack(spacing: 10) {
                 ForEach([20, 30, 45, 60, 75], id: \.self) { value in
@@ -633,7 +624,7 @@ struct ProgramLaunchView: View {
     private var canContinue: Bool {
         switch stage {
         case .frequency: return frequency > 0
-        case .days: return !available.subtracting(blocked).isEmpty
+        case .days: return available.count >= frequency
         case .week: if case .failure = plan { return false }; return true
         default: return true
         }
@@ -653,7 +644,7 @@ struct ProgramLaunchView: View {
         TrainingAvailability(
             targetSessionsPerWeek: frequency,
             availableWeekdays: Array(available).sorted(),
-            blockedWeekdays: Array(blocked).sorted(),
+            blockedWeekdays: [],
             preferredWeekdays: [],
             preferredKeySessionDay: keyDay,
             preferredLongSessionDay: keyDay,
