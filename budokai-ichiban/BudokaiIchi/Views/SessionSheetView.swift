@@ -47,10 +47,11 @@ struct SessionSheetView: View {
             }
         }
         .onAppear {
-            // une séance s'ouvre cochable : pas d'étape « commencer le suivi »
-            if store.openSession(of: session.programID) == nil {
-                store.beginSession(tuned)
-            }
+            // Toujours appeler : la fonction retrouve la séance du jour si
+            // elle correspond, et la reconstruit sinon. Ne l'appeler qu'en
+            // l'absence de séance ouverte laissait une séance périmée en
+            // place — et sans compteurs, aucune case à cocher n'apparaît.
+            store.beginSession(tuned)
         }
     }
 
@@ -307,14 +308,22 @@ struct SessionSheetView: View {
                 if let open = open {
                     let ratio = open.ratio(against: all)
                     HStack {
-                        SectionLabel(text: "LE TRAVAIL DU JOUR")
+                        Text("LE TRAVAIL DU JOUR")
+                            .font(.ui(12, .bold))
+                            .kerning(2.2)
+                            .foregroundStyle(program.light)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         Text("\(required.filter { open.objectives[$0.id]?.status.isDone ?? false }.count) / \(required.count)")
                             .font(.ui(12, .bold))
                             .foregroundStyle(program.light)
                     }
                     ProgressBar(value: ratio, height: 6, tint: program.light)
                 } else {
-                    SectionLabel(text: "LE TRAVAIL DU JOUR")
+                    Text("LE TRAVAIL DU JOUR")
+                        .font(.ui(12, .bold))
+                        .kerning(2.2)
+                        .foregroundStyle(program.light)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 ForEach(required) { item in card(item, open: open, compact: false) }
             }

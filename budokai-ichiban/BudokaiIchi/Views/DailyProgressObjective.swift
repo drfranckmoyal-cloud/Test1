@@ -44,11 +44,11 @@ struct DailyProgressObjective: View {
 
     /// La ligne d'un exercice secondaire.
     private var compactBody: some View {
-        HStack(spacing: 12) {
-            checkbox(size: 22)
+        HStack(spacing: 11) {
+            checkbox(size: 19)
             VStack(alignment: .leading, spacing: 1) {
                 Text(prescription.name)
-                    .font(.ui(14, .semibold))
+                    .font(.ui(13, .semibold))
                     .foregroundStyle(done ? Theme.dim : Theme.text)
                     .strikethrough(done, color: Theme.dim)
                     .fixedSize(horizontal: false, vertical: true)
@@ -61,12 +61,12 @@ struct DailyProgressObjective: View {
             }
             Spacer(minLength: 6)
             Text(prescription.amountLabel)
-                .font(.ui(13, .bold))
-                .foregroundStyle(done ? Theme.dim : Theme.muted)
+                .font(.ui(12, .semibold))
+                .foregroundStyle(Theme.dim)
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 11)
-        .background(Theme.surfaceAlt, in: RoundedRectangle(cornerRadius: 11, style: .continuous))
+        .padding(.horizontal, 13)
+        .padding(.vertical, 9)
+        .opacity(done ? 0.5 : 0.85)
     }
 
     private func checkbox(size: CGFloat) -> some View {
@@ -92,10 +92,22 @@ struct DailyProgressObjective: View {
             if !done { actions }
             if !progress.entries.isEmpty { historyToggle }
         }
-        .padding(18)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .padding(20)
+        .background(
+            ZStack {
+                Theme.surface
+                // une barre de couleur sur le flanc : le travail du jour se
+                // repère sans lire
+                HStack {
+                    Rectangle().fill(tint).frame(width: 5)
+                    Spacer()
+                }
+            }
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
-            .stroke(done ? tint.opacity(0.55) : Theme.border, lineWidth: done ? 2 : 1))
+            .stroke(done ? tint.opacity(0.55) : Theme.border, lineWidth: 1))
+        .shadow(color: Color.black.opacity(done ? 0 : 0.20), radius: 10, y: 4)
     }
 
     // MARK: - En-tête
@@ -103,17 +115,17 @@ struct DailyProgressObjective: View {
     private var header: some View {
         HStack(alignment: .top, spacing: 12) {
             // la case à cocher : le geste le plus fréquent, le plus accessible
-            checkbox(size: 32)
+            checkbox(size: 34)
 
             VStack(alignment: .leading, spacing: 5) {
                 Text(prescription.name.uppercased())
-                    .font(.display(21))
+                    .font(.display(22))
                     .foregroundStyle(done ? Theme.muted : Theme.text)
                     .strikethrough(done, color: Theme.dim)
                     .fixedSize(horizontal: false, vertical: true)
 
                 Text(prescription.amountLabel)
-                    .font(.display(26))
+                    .font(.display(30))
                     .foregroundStyle(done ? Theme.dim : tint)
                     .fixedSize(horizontal: false, vertical: true)
 
