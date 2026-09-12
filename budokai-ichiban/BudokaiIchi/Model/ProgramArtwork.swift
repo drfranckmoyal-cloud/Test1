@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Les images d'un programme, versées dans le catalogue par
 /// `tools/build_images.py`. Les noms sont fabriqués, pas écrits à la main :
@@ -35,6 +36,13 @@ extension Program {
         case .naruto: return 2    // 058 · mode ermite
         default: return 0
         }
+    }
+
+    /// L'image qui porte la vignette. Une illustration déposée exprès dans
+    /// le dossier du programme l'emporte ; sinon, l'étape de présentation.
+    var tileImage: String {
+        let custom = "tile_\(id.rawValue)"
+        return UIImage(named: custom) != nil ? custom : stageImage(heroStage)
     }
 
     /// Le décor de l'univers.

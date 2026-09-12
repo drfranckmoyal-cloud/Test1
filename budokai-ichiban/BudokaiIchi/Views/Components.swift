@@ -239,14 +239,13 @@ struct ProgramTile: View {
     var progress: Double
     var locked: Bool
     var height: CGFloat = 152
-    /// L'étape à montrer, comptée à partir de zéro : le personnage suit
-    /// l'avancement du joueur.
-    var stage: Int = 0
+    /// L'image à montrer. Par défaut celle de présentation du programme.
+    var tile: String?
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             program.gradient
-            ArtworkFill(name: program.stageImage(stage))
+            ArtworkFill(name: tile ?? program.tileImage)
                 .opacity(0.92)
             // le texte du bas doit rester lisible sur n'importe quelle image
             LinearGradient(colors: [Color.black.opacity(0.10), Color.clear, Color.black.opacity(0.78)],

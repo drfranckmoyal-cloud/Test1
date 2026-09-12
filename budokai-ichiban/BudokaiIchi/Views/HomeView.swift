@@ -347,7 +347,7 @@ struct HomeView: View {
                                         progress: ratio(program),
                                         locked: !store.isUnlocked(program),
                                         height: 132,
-                                        stage: program.heroStage)
+                                        tile: program.tileImage)
                                 .frame(width: 128)
                                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                         }

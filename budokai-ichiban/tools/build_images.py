@@ -101,6 +101,7 @@ def main():
     # le catalogue est réécrit : on efface les images d'un import précédent
     if not dry:
         for old in glob(os.path.join(CATALOG, "stage_*.imageset")) \
+                 + glob(os.path.join(CATALOG, "tile_*.imageset")) \
                  + glob(os.path.join(CATALOG, "env_*.imageset")) \
                  + glob(os.path.join(CATALOG, "logo_*.imageset")):
             shutil.rmtree(old, ignore_errors=True)
@@ -121,6 +122,14 @@ def main():
                     continue
                 fallback += 1
             total += emit(f"stage_{pid}_{index}", source, STAGE_WIDTH, dry)
+            written += 1
+
+    # Image de vignette : un fichier « vignette.* » posé à la racine d'un
+    # dossier de programme remplace l'étape servant d'image de présentation.
+    for folder, pid, _ in PROGRAMS:
+        found = sorted(glob(os.path.join(MAIN, folder, "vignette.*")))
+        if found:
+            total += emit(f"tile_{pid}", found[0], STAGE_WIDTH, dry)
             written += 1
 
     envs = sorted(glob(os.path.join(MAIN, "11_environnements", "environnements", "*.jpg")))
