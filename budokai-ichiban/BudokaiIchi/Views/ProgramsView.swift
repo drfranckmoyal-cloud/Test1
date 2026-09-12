@@ -35,7 +35,7 @@ struct ProgramsView: View {
                             ProgramTile(program: program,
                                         progress: ratio(program),
                                         locked: !store.isUnlocked(program),
-                                        stage: store.stageStatus(program).index)
+                                        stage: program.heroStage)
                         }
                         .buttonStyle(.plain)
                     }

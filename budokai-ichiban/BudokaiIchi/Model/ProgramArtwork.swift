@@ -24,6 +24,19 @@ extension Program {
         return "stage_\(id.rawValue)_\(clamped + 1)"
     }
 
+    /// L'image de présentation, celle qui porte la vignette du programme.
+    /// Franck a désigné les plus parlantes ; les autres prennent la première.
+    var heroStage: Int {
+        switch id {
+        case .saitama: return 6   // 007 · héros de classe C
+        case .goku: return 4      // 013 · Super Saiyan 2
+        case .minato: return 6    // 045 · Yondaime Hokage
+        case .ichigo: return 3    // 035 · dix tractions d'affilée
+        case .naruto: return 2    // 058 · mode ermite
+        default: return 0
+        }
+    }
+
     /// Le décor de l'univers.
     var environmentImage: String { "env_\(id.rawValue)" }
 

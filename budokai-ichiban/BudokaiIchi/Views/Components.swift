@@ -222,9 +222,14 @@ struct StatRadar: View {
 /// pose donc en surcouche d'un fond transparent, puis on rogne.
 struct ArtworkFill: View {
     let name: String
+    /// Par où l'image est retenue quand elle déborde. Le haut par défaut :
+    /// une image plus haute que son cadre perdrait sinon la tête du
+    /// personnage, coupée au profit du buste.
+    var anchor: Alignment = .top
+
     var body: some View {
         Color.clear
-            .overlay { Image(name).resizable().scaledToFill() }
+            .overlay(alignment: anchor) { Image(name).resizable().scaledToFill() }
             .clipped()
     }
 }
