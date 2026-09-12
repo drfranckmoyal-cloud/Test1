@@ -1,10 +1,11 @@
 import SwiftUI
 
 enum Tab: String, CaseIterable, Identifiable {
-    case session, programs, profile
+    case home, session, programs, profile
     var id: String { rawValue }
     var title: String {
         switch self {
+        case .home: return "Accueil"
         case .session: return "Séance"
         case .programs: return "Programmes"
         case .profile: return "Profil"
@@ -12,6 +13,7 @@ enum Tab: String, CaseIterable, Identifiable {
     }
     var icon: String {
         switch self {
+        case .home: return "house.fill"
         case .session: return "bolt.heart"
         case .programs: return "square.grid.2x2"
         case .profile: return "person.crop.circle"
@@ -22,7 +24,7 @@ enum Tab: String, CaseIterable, Identifiable {
 struct RootView: View {
     @EnvironmentObject private var store: GameStore
     @Environment(\.scenePhase) private var scenePhase
-    @State private var tab: Tab = .session
+    @State private var tab: Tab = .home
 
     private let ticker = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
 
@@ -32,6 +34,7 @@ struct RootView: View {
             if store.state.onboarded {
                 Group {
                     switch tab {
+                    case .home: HomeView { destination in tab = destination }
                     case .session: TodayView()
                     case .programs: ProgramsView()
                     case .profile: ProfileView()

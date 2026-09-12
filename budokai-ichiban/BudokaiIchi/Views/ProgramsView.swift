@@ -38,7 +38,7 @@ struct ProgramsView: View {
                     }
                 }
 
-                Text("Sept programmes attendent leur contenu sportif. Ils apparaissent ici pour qu'on voie où l'on va.")
+                Text("Les neuf programmes sont écrits. Ceux qui restent verrouillés s'ouvrent en montant tes stats et ton rang.")
                     .font(.ui(12))
                     .foregroundStyle(Theme.muted)
                     .fixedSize(horizontal: false, vertical: true)
