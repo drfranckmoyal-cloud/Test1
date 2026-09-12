@@ -4,8 +4,7 @@ struct ProgramDetailView: View {
     @EnvironmentObject private var store: GameStore
     @Environment(\.dismiss) private var dismiss
     @State private var showContent = false
-    @State private var showScheduling = false
-    @State private var showCalibration = false
+    @State private var showLaunch = false
     @State private var showBoss = false
     let program: Program
 
@@ -111,18 +110,8 @@ struct ProgramDetailView: View {
         .sheet(isPresented: $showContent) {
             ProgramContentView(program: program)
         }
-        .sheet(isPresented: $showScheduling) {
-            SchedulingSetupView(program: program) {
-                if program.id == .saitama && store.saitamaNeedsCalibration {
-                    showCalibration = true
-                } else {
-                    store.startProgram(program.id)
-                    dismiss()
-                }
-            }
-        }
-        .sheet(isPresented: $showCalibration) {
-            SaitamaCalibrationView {
+        .sheet(isPresented: $showLaunch) {
+            ProgramLaunchView(program: program) {
                 store.startProgram(program.id)
                 dismiss()
             }
@@ -279,10 +268,10 @@ struct ProgramDetailView: View {
                               tint: program.light) {
                     // le planning se règle avant de démarrer, quand le
                     // programme sait le construire
-                    if store.needsScheduling(program.id) {
-                        showScheduling = true
-                    } else if program.id == .saitama && store.saitamaNeedsCalibration {
-                        showCalibration = true
+                    // le parcours de lancement pose les questions une à une
+                    if store.needsScheduling(program.id)
+                        || (program.id == .saitama && store.saitamaNeedsCalibration) {
+                        showLaunch = true
                     } else {
                         store.startProgram(program.id)
                         dismiss()
