@@ -42,6 +42,10 @@ struct SessionRecord: Identifiable, Codable, Equatable {
     var reps: Int
     var seconds: Int
     var meters: Int
+    /// Ce que la séance a fait gagner en caractéristiques. Sans cette
+    /// mémoire, l'effacer ne pouvait pas les rendre : on ne savait pas quoi
+    /// retirer. Vide pour les séances enregistrées avant cette correction.
+    var statGains: [String: Int] = [:]
 }
 
 /// Avancement dans un programme.

@@ -8,6 +8,7 @@ struct HistoryView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var pendingDeletion: SessionRecord?
+    @State private var confirmRepair = false
 
     var body: some View {
         NavigationStack {
@@ -15,7 +16,10 @@ struct HistoryView: View {
                 if store.state.history.isEmpty {
                     empty
                 } else {
-                    list
+                    VStack(spacing: 0) {
+                        if store.hasUntrackedStatGains { repairBanner }
+                        list
+                    }
                 }
             }
             .background(Theme.ground)
@@ -39,8 +43,47 @@ struct HistoryView: View {
             }
             Button("Garder", role: .cancel) { pendingDeletion = nil }
         } message: {
-            Text("Son expérience sera retirée, le programme reculera d'une séance et ta série sera recalculée.")
+            Text("Son expérience et ses caractéristiques seront retirées, le programme reculera d'une séance et ta série sera recalculée.")
         }
+        .confirmationDialog("Recalculer les caractéristiques ?",
+                            isPresented: $confirmRepair, titleVisibility: .visible) {
+            Button("Recalculer", role: .destructive) { store.recomputeStats() }
+            Button("Laisser comme ça", role: .cancel) {}
+        } message: {
+            Text("Force, Vitesse et Endurance seront reprises à partir des séances qui restent. Celles enregistrées avant la correction ne comptaient pas leurs gains : elles ne rapporteront rien.")
+        }
+    }
+
+    /// L'app ne gardait pas les gains de caractéristiques : les anciennes
+    /// séances ne peuvent donc pas les rendre en s'effaçant. On propose le
+    /// rattrapage plutôt que de le faire dans le dos de Franck.
+    private var repairBanner: some View {
+        Button {
+            Haptics.tap()
+            confirmRepair = true
+        } label: {
+            HStack(alignment: .top, spacing: 10) {
+                Image(systemName: "wrench.adjustable.fill")
+                    .font(.system(size: 14))
+                    .foregroundStyle(Theme.gold)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Des séances anciennes ne rendent pas leurs caractéristiques")
+                        .font(.ui(13, .bold))
+                        .foregroundStyle(Theme.text)
+                        .multilineTextAlignment(.leading)
+                    Text("Elles ont été enregistrées avant que l'app ne garde ce qu'elles rapportaient. Touche ici pour recalculer.")
+                        .font(.ui(11))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(14)
+            .background(Theme.gold.opacity(0.10))
+            .overlay(Rectangle().frame(height: 1).foregroundStyle(Theme.border), alignment: .bottom)
+        }
+        .buttonStyle(.plain)
     }
 
     private var empty: some View {

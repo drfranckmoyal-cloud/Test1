@@ -277,14 +277,18 @@ final class GameStore: ObservableObject {
         state.xp += gained
         let rankAfter = GameEngine.rank(forXP: state.xp)
 
-        for (kind, value) in GameEngine.statGains(for: session, achieved: achieved) {
+        let gains = GameEngine.statGains(for: session, achieved: achieved)
+        var gainsByName: [String: Int] = [:]
+        for (kind, value) in gains {
             state.stats[kind.rawValue] = state.stat(kind) + value
+            gainsByName[kind.rawValue] = value
         }
 
         state.history.append(SessionRecord(
             programID: program.id.rawValue, sessionIndex: session.index,
             stageIndex: session.stageIndex, day: todayKey,
-            xp: gained, reps: reps, seconds: seconds, meters: meters))
+            xp: gained, reps: reps, seconds: seconds, meters: meters,
+            statGains: gainsByName))
         state.lastCompletedDay = todayKey
         state.penalty = nil
         save()
@@ -567,6 +571,7 @@ final class GameStore: ObservableObject {
         let record = state.history.remove(at: position)
 
         state.xp = max(0, state.xp - record.xp)
+        subtract(record.statGains)
 
         if let programID = ProgramID(rawValue: record.programID) {
             var progress = state.progress(programID)
@@ -593,6 +598,7 @@ final class GameStore: ObservableObject {
 
         state.history.removeAll { $0.programID == id.rawValue && $0.sessionIndex >= index }
         state.xp = max(0, state.xp - removed.reduce(0) { $0 + $1.xp })
+        for record in removed { subtract(record.statGains) }
 
         var progress = state.progress(id)
         progress.completedSessions = max(0, index - 1)
@@ -608,6 +614,35 @@ final class GameStore: ObservableObject {
     /// Combien de séances seraient défaites en revenant à celle-ci.
     func sessionsUndone(_ id: ProgramID, toSession index: Int) -> Int {
         state.history.filter { $0.programID == id.rawValue && $0.sessionIndex >= index }.count
+    }
+
+    /// Retire d'un coup les caractéristiques d'une séance effacée.
+    private func subtract(_ gains: [String: Int]) {
+        for (name, value) in gains {
+            state.stats[name] = max(0, (state.stats[name] ?? 0) - value)
+        }
+    }
+
+    /// Recalcule les caractéristiques à partir de tout l'historique.
+    ///
+    /// Sert de rattrapage : les séances enregistrées avant que l'app ne garde
+    /// leurs gains n'en portent aucun, et ne peuvent donc pas être défaites
+    /// une par une. Ce recalcul remet le compteur d'aplomb sur ce qui reste.
+    func recomputeStats() {
+        var totals: [String: Int] = [:]
+        for record in state.history {
+            for (name, value) in record.statGains {
+                totals[name, default: 0] += value
+            }
+        }
+        state.stats = totals
+        save()
+    }
+
+    /// Vrai quand l'historique contient des séances d'avant la correction :
+    /// leurs caractéristiques ne peuvent pas être rendues précisément.
+    var hasUntrackedStatGains: Bool {
+        state.history.contains { $0.statGains.isEmpty }
     }
 
     /// Recalcule la série d'après ce qui reste : des jours consécutifs
