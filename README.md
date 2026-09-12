@@ -107,8 +107,8 @@ pompes est conservé.
   en page à ajouter à l'écran d'accueil depuis Safari. Tout fonctionne sauf les rappels
   automatiques, qu'iOS réserve aux vraies apps. Voir `web/README.md`.
 - **TestFlight** — pour distribuer la vraie app par lien, avec les notifications.
-  Compte développeur Apple à 99 €/an. Marche à suivre complète dans
-  `docs/TESTFLIGHT.md` ; le projet est déjà configuré pour (`ITSAppUsesNonExemptEncryption`).
+  `./tools/envoie-testflight.sh` archive et transmet en une commande ; marche à suivre
+  complète et procédure manuelle dans `docs/TESTFLIGHT.md`.
 
 ## Maquette
 

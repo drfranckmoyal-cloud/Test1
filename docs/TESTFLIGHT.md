@@ -45,7 +45,35 @@ Une fiche par app. Celle-ci est **nouvelle** : ne réutilise pas celle de Budoka
    puis reviens.
 4. SKU : ce que tu veux, par exemple `defi-pompes`.
 
-## 2. Envoyer un build depuis Xcode
+## 2. Envoyer un build — en une commande
+
+Depuis un Mac, sur la branche `v1-defi-100-pompes` :
+
+```
+./tools/envoie-testflight.sh
+```
+
+Le script vérifie l'identifiant de l'app, incrémente le numéro de build, archive,
+exporte et transmet à App Store Connect. Pour un premier passage sans rien envoyer :
+
+```
+./tools/envoie-testflight.sh --essai
+```
+
+Il s'arrête de lui-même si l'identifiant n'est pas `com.franckmoyal.DefiPompes` —
+archiver depuis l'autre branche enverrait Budokai Ichi sous l'identité du défi, et les
+deux apps s'écraseraient.
+
+Il utilise par défaut le compte Apple connecté dans Xcode. Pour un envoi sans aucune
+interaction, renseigne une clé d'API App Store Connect (le script explique comment en
+tête de fichier).
+
+Après l'envoi, le numéro de build a changé dans le projet : le script rappelle de le
+committer.
+
+## 3. Envoyer un build à la main (si le script échoue)
+
+Les mêmes étapes, dans l'interface de Xcode.
 
 1. Place-toi sur la branche `v1-defi-100-pompes`, puis ouvre
    `PompesChallenge.xcodeproj`. Depuis l'autre branche tu archiverais Budokai Ichi
@@ -64,7 +92,7 @@ Le projet déclare déjà `ITSAppUsesNonExemptEncryption = NO` : l'app n'utilise
 chiffrement soumis à restriction, donc App Store Connect ne te posera pas la question de
 conformité à l'exportation à chaque envoi.
 
-## 3. Ouvrir le lien public
+## 4. Ouvrir le lien public
 
 1. Dans App Store Connect → **TestFlight** → **Tests externes** → créer un groupe
    (ex. « Amis »).
@@ -76,15 +104,13 @@ conformité à l'exportation à chaque envoi.
 Tes amis : installer **TestFlight** depuis l'App Store, ouvrir ton lien, appuyer sur
 **Accepter** puis **Installer**.
 
-## 4. Envoyer une mise à jour
+## 5. Envoyer une mise à jour
 
 À chaque nouvelle version :
 
-1. Dans Xcode, augmente **Build** (`CURRENT_PROJECT_VERSION`) — et **Version**
-   (`MARKETING_VERSION`) si le changement est notable. Deux builds ne peuvent pas porter
-   le même numéro.
-2. **Product → Archive → Distribute → Upload**.
-3. Dans App Store Connect, ajoute le nouveau build au groupe « Amis ».
+1. `./tools/envoie-testflight.sh` — le numéro de build s'incrémente tout seul.
+   Augmente **Version** (`MARKETING_VERSION`) à la main si le changement est notable.
+2. Dans App Store Connect, ajoute le nouveau build au groupe « Amis ».
 
 Pas de nouvelle revue pour les mises à jour d'un groupe déjà approuvé : tes testeurs
 reçoivent la notification dans les minutes qui suivent.
