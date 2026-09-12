@@ -27,6 +27,9 @@ __pycache__/
 *.pyc
 .venv/
 
+# État local de l'outil de déploiement Netlify
+.netlify/
+
 # Secrets
 .env
 *.db
