@@ -194,6 +194,11 @@ struct ExercisePrescription: Identifiable, Codable, Equatable {
         return unit.format(targetValue)
     }
 
+    /// Obligatoire : c'est le cœur de la séance, ce sans quoi elle n'a pas
+    /// eu lieu. L'échauffement, le retour au calme et l'assistance restent
+    /// facultatifs.
+    var isRequired: Bool { countsTowardAdaptation }
+
     /// Le repos entre les séries, quand il y en a.
     var restLabel: String? {
         guard let rest = restSeconds, rest > 0, (sets ?? 1) > 1 else { return nil }

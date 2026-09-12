@@ -17,6 +17,9 @@ struct DailyProgressObjective: View {
     var onRemoveEntry: (UUID) -> Void
     var onEditEntry: (UUID, Int) -> Void
     var onUncheck: () -> Void = {}
+    /// Les exercices secondaires — échauffement, assistance, retour au calme —
+    /// tiennent sur une ligne. Le travail principal occupe la place.
+    var compact: Bool = false
 
     @State private var showingPad = false
     @State private var showingHistory = false
@@ -25,19 +28,7 @@ struct DailyProgressObjective: View {
     private var done: Bool { progress.status.isDone }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            header
-            if !done { counter }
-            if prescription.completionPolicy == .continuous && !done {
-                policyNote
-            }
-            if !done { actions }
-            if !progress.entries.isEmpty { historyToggle }
-        }
-        .padding(16)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
-            .stroke(done ? tint.opacity(0.55) : Theme.border, lineWidth: done ? 2 : 1))
+        Group { compact ? AnyView(compactBody) : AnyView(fullBody) }
         .sheet(isPresented: $showingPad) {
             AmountPad(title: prescription.name, unit: prescription.unit,
                       suggestion: suggestion) { value in
@@ -51,32 +42,80 @@ struct DailyProgressObjective: View {
         }
     }
 
+    /// La ligne d'un exercice secondaire.
+    private var compactBody: some View {
+        HStack(spacing: 12) {
+            checkbox(size: 22)
+            VStack(alignment: .leading, spacing: 1) {
+                Text(prescription.name)
+                    .font(.ui(14, .semibold))
+                    .foregroundStyle(done ? Theme.dim : Theme.text)
+                    .strikethrough(done, color: Theme.dim)
+                    .fixedSize(horizontal: false, vertical: true)
+                if let detail = prescription.detail {
+                    Text(detail)
+                        .font(.ui(11))
+                        .foregroundStyle(Theme.dim)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            Spacer(minLength: 6)
+            Text(prescription.amountLabel)
+                .font(.ui(13, .bold))
+                .foregroundStyle(done ? Theme.dim : Theme.muted)
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 11)
+        .background(Theme.surfaceAlt, in: RoundedRectangle(cornerRadius: 11, style: .continuous))
+    }
+
+    private func checkbox(size: CGFloat) -> some View {
+        Button {
+            Haptics.success()
+            if done { onUncheck() } else { onDeclareComplete() }
+        } label: {
+            Image(systemName: done ? "checkmark.circle.fill" : "circle")
+                .font(.system(size: size))
+                .foregroundStyle(done ? tint : Theme.dim)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(done ? "Décocher \(prescription.name)" : "Marquer \(prescription.name) comme fait")
+    }
+
+    private var fullBody: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            header
+            if !done { counter }
+            if prescription.completionPolicy == .continuous && !done {
+                policyNote
+            }
+            if !done { actions }
+            if !progress.entries.isEmpty { historyToggle }
+        }
+        .padding(18)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+            .stroke(done ? tint.opacity(0.55) : Theme.border, lineWidth: done ? 2 : 1))
+    }
+
     // MARK: - En-tête
 
     private var header: some View {
         HStack(alignment: .top, spacing: 12) {
             // la case à cocher : le geste le plus fréquent, le plus accessible
-            Button {
-                Haptics.success()
-                if done { onUncheck() } else { onDeclareComplete() }
-            } label: {
-                Image(systemName: done ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 27))
-                    .foregroundStyle(done ? tint : Theme.dim)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel(done ? "Décocher \(prescription.name)" : "Marquer \(prescription.name) comme fait")
+            checkbox(size: 32)
 
-            VStack(alignment: .leading, spacing: 4) {
-                Text(prescription.name)
-                    .font(.ui(16, .bold))
+            VStack(alignment: .leading, spacing: 5) {
+                Text(prescription.name.uppercased())
+                    .font(.display(21))
                     .foregroundStyle(done ? Theme.muted : Theme.text)
                     .strikethrough(done, color: Theme.dim)
                     .fixedSize(horizontal: false, vertical: true)
 
                 Text(prescription.amountLabel)
-                    .font(.display(17))
+                    .font(.display(26))
                     .foregroundStyle(done ? Theme.dim : tint)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 if let rest = prescription.restLabel {
                     Text(rest)

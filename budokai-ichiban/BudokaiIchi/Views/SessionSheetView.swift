@@ -17,7 +17,6 @@ struct SessionSheetView: View {
     /// doit alors rien enregistrer de plus.
     @State private var alreadyRecorded = false
     @State private var step: Step = .card
-    @State private var guided: PlannedSession?
     @State private var outcome: SessionOutcome?
     @State private var report = SessionReport()
 
@@ -46,9 +45,6 @@ struct SessionSheetView: View {
                     OutcomeView(outcome: outcome) { dismiss() }
                 }
             }
-        }
-        .fullScreenCover(item: $guided) { session in
-            GuidedSessionView(session: session) { alreadyRecorded = true }
         }
         .onAppear {
             // une séance s'ouvre cochable : pas d'étape « commencer le suivi »
@@ -91,15 +87,16 @@ struct SessionSheetView: View {
 
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(program.name.uppercased())
-                        .font(.ui(11, .bold))
+                    Text((narrative?.arc ?? program.name).uppercased())
+                        .font(.ui(10, .bold))
                         .kerning(2.4)
                         .foregroundStyle(Theme.cream.opacity(0.85))
-                    Text(session.title)
-                        .font(.display(25))
+                    Text(narrative?.narrativeTitle ?? session.title)
+                        .font(.display(26))
                         .foregroundStyle(Theme.cream)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.7)
+                        .lineLimit(3)
+                        .minimumScaleFactor(0.65)
+                        .fixedSize(horizontal: false, vertical: true)
                     Text(positionLabel)
                         .font(.ui(12, .semibold))
                         .foregroundStyle(Theme.cream.opacity(0.8))
@@ -135,41 +132,58 @@ struct SessionSheetView: View {
     }
 
     private func narrativeCard(_ story: NarrativeContent) -> some View {
-        VStack(alignment: .leading, spacing: 9) {
-            Text(story.arc.uppercased())
-                .font(.ui(9, .bold))
-                .kerning(2.0)
-                .foregroundStyle(program.light)
-            Text(story.narrativeTitle)
-                .font(.display(19))
-                .foregroundStyle(Theme.text)
-                .fixedSize(horizontal: false, vertical: true)
-            Text(story.storyRecap)
-                .font(.ui(13))
-                .foregroundStyle(Theme.muted)
-                .fixedSize(horizontal: false, vertical: true)
-            if let sensei = story.senseiMessage {
-                HStack(alignment: .top, spacing: 8) {
-                    Rectangle().fill(program.light).frame(width: 2)
-                    Text(sensei)
-                        .font(.ui(12))
-                        .italic()
-                        .foregroundStyle(Theme.text)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .padding(.top, 2)
+        let stage = store.saitamaBlock.map { $0.index - 1 } ?? 0
+
+        return VStack(alignment: .leading, spacing: 0) {
+            ZStack(alignment: .bottomLeading) {
+                program.gradient
+                ArtworkFill(name: program.stageImage(stage))
+                LinearGradient(colors: [Color.black.opacity(0.10), Color.black.opacity(0.80)],
+                               startPoint: .center, endPoint: .bottom)
+                Text(story.arc.uppercased())
+                    .font(.ui(9, .bold))
+                    .kerning(2.2)
+                    .foregroundStyle(Theme.cream.opacity(0.9))
+                    .padding(.horizontal, 18)
+                    .padding(.bottom, 12)
             }
+            .frame(height: 130)
+
+            VStack(alignment: .leading, spacing: 11) {
+                Text(story.narrativeTitle)
+                    .font(.display(20))
+                    .foregroundStyle(Theme.text)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Text(story.storyRecap)
+                    .font(.system(size: 15, weight: .regular, design: .serif))
+                    .lineSpacing(3)
+                    .foregroundStyle(Theme.text.opacity(0.88))
+                    .fixedSize(horizontal: false, vertical: true)
+
+                if let sensei = story.senseiMessage {
+                    HStack(alignment: .top, spacing: 10) {
+                        Rectangle().fill(program.light).frame(width: 2)
+                        Text(sensei)
+                            .font(.system(size: 13, weight: .regular, design: .serif))
+                            .italic()
+                            .foregroundStyle(Theme.muted)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .padding(.top, 3)
+                }
+            }
+            .padding(18)
         }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Theme.border, lineWidth: 1))
+        .background(Theme.surface)
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Theme.border, lineWidth: 1))
     }
 
     /// Où se situe cette séance dans le parcours.
     private var positionLabel: String {
         if session.programID == .saitama, let block = store.saitamaBlock {
-            return "Bloc \(block.index) sur 8 · \(block.title) · environ \(tuned.estimatedMinutes) min"
+            return "\(session.title) · jalon \(block.index) sur 8 · \(tuned.estimatedMinutes) min"
         }
         return "Séance \(session.index) sur \(program.totalSessions) · environ \(tuned.estimatedMinutes) min"
     }
@@ -179,14 +193,13 @@ struct SessionSheetView: View {
     /// coefficients qui le décident.
     private var engineNote: (icon: String, title: String, body: String)? {
         guard session.programID == .saitama else { return nil }
-        // rien à expliquer tant qu'aucune séance n'a été faite
         guard store.progress(.saitama).completedSessions > 0 else { return nil }
 
         if let consolidation = store.saitamaConsolidation {
             let names = consolidation.domains.map { $0.label.lowercased() }.joined(separator: " et ")
             return ("arrow.triangle.2.circlepath",
                     "Microcycle de consolidation",
-                    "Le bloc n'est pas encore tenu sur \(names). \(consolidation.remaining) séance\(consolidation.remaining > 1 ? "s" : "") ciblée\(consolidation.remaining > 1 ? "s" : "") avant de le rejuger. Rien n'est perdu, le récit continue.")
+                    "Le jalon n'est pas encore tenu sur \(names). \(consolidation.remaining) séance\(consolidation.remaining > 1 ? "s" : "") ciblée\(consolidation.remaining > 1 ? "s" : "") avant de le rejuger. Rien n'est perdu, l'histoire continue.")
         }
         if tuned.title.contains("décharge") {
             return ("moon.zzz.fill", "Semaine allégée",
@@ -281,34 +294,57 @@ struct SessionSheetView: View {
 
     private var exercises: some View {
         let open = store.openSession(of: session.programID)
-        return VStack(alignment: .leading, spacing: 10) {
-            if let open = open {
-                let ratio = open.ratio(against: tuned.prescriptions)
-                VStack(alignment: .leading, spacing: 6) {
+        let all = tuned.prescriptions
+        let required = all.filter(\.isRequired)
+        let warmup = all.filter { $0.isWarmup }
+        let extras = all.filter { !$0.isRequired && !$0.isWarmup }
+
+        return VStack(alignment: .leading, spacing: 22) {
+            if !warmup.isEmpty {
+                group("ÉCHAUFFEMENT", warmup, open: open, compact: true)
+            }
+            VStack(alignment: .leading, spacing: 10) {
+                if let open = open {
+                    let ratio = open.ratio(against: all)
                     HStack {
-                        SectionLabel(text: "LA SÉANCE")
-                        Text("\(Int(ratio * 100)) %")
+                        SectionLabel(text: "LE TRAVAIL DU JOUR")
+                        Text("\(required.filter { open.objectives[$0.id]?.status.isDone ?? false }.count) / \(required.count)")
                             .font(.ui(12, .bold))
                             .foregroundStyle(program.light)
                     }
                     ProgressBar(value: ratio, height: 6, tint: program.light)
-                }
-            } else {
-                SectionLabel(text: "LA SÉANCE")
-            }
-            ForEach(tuned.prescriptions) { item in
-                if let progress = open?.objectives[item.id] {
-                    DailyProgressObjective(
-                        prescription: item, progress: progress, tint: program.light,
-                        onAdd: { store.addProgress($0, to: item.id, of: session.programID) },
-                        onDeclareComplete: { store.declareComplete(item.id, of: session.programID) },
-                        onRemoveEntry: { store.removeProgress($0, from: item.id, of: session.programID) },
-                        onEditEntry: { store.updateProgress($0, to: $1, in: item.id, of: session.programID) },
-                        onUncheck: { store.resetObjective(item.id, of: session.programID) })
                 } else {
-                    staticRow(item)
+                    SectionLabel(text: "LE TRAVAIL DU JOUR")
                 }
+                ForEach(required) { item in card(item, open: open, compact: false) }
             }
+            if !extras.isEmpty {
+                group("EN COMPLÉMENT", extras, open: open, compact: true)
+            }
+        }
+    }
+
+    private func group(_ title: String, _ items: [ExercisePrescription],
+                       open: OpenSession?, compact: Bool) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            SectionLabel(text: title)
+            ForEach(items) { item in card(item, open: open, compact: compact) }
+        }
+    }
+
+    @ViewBuilder
+    private func card(_ item: ExercisePrescription, open: OpenSession?, compact: Bool) -> some View {
+        if let progress = open?.objectives[item.id] {
+            DailyProgressObjective(
+                prescription: item, progress: progress, tint: program.light,
+                onAdd: { store.addProgress($0, to: item.id, of: session.programID) },
+                onDeclareComplete: { store.declareComplete(item.id, of: session.programID) },
+                onRemoveEntry: { store.removeProgress($0, from: item.id, of: session.programID) },
+                onEditEntry: { store.updateProgress($0, to: $1, in: item.id, of: session.programID) },
+                onUncheck: { store.resetObjective(item.id, of: session.programID) },
+                compact: compact)
+        } else {
+            staticRow(item)
         }
     }
 
@@ -383,23 +419,36 @@ struct SessionSheetView: View {
 
     // MARK: - Les boutons du bas
 
+    /// Tout le travail principal est-il coché ?
+    private var requiredDone: Bool {
+        guard let open = store.openSession(of: session.programID) else { return false }
+        let required = tuned.prescriptions.filter(\.isRequired)
+        guard !required.isEmpty else { return true }
+        return required.allSatisfy { open.objectives[$0.id]?.status.isDone ?? false }
+    }
+
     private var actions: some View {
-        let open = store.openSession(of: session.programID)
-        let ratio = open?.ratio(against: tuned.prescriptions) ?? 0
-        return VStack(spacing: 9) {
-            PrimaryButton(title: ratio >= 0.999 ? "SÉANCE TERMINÉE" : "J'AI FINI POUR AUJOURD'HUI",
-                          tint: program.light) {
+        VStack(spacing: 7) {
+            PrimaryButton(title: "SÉANCE TERMINÉE", tint: program.light, enabled: requiredDone) {
                 step = .feedback
             }
-            if program.allowsGuidance {
-                GhostButton(title: "Me guider pas à pas, avec minuteur") {
-                    guided = tuned
+            if !requiredDone {
+                Button {
+                    Haptics.tap()
+                    step = .feedback
+                } label: {
+                    Text("Je n'ai pas pu tout faire")
+                        .font(.ui(13, .semibold))
+                        .foregroundStyle(Theme.muted)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 42)
                 }
+                .buttonStyle(.plain)
             }
         }
         .padding(.horizontal, 20)
         .padding(.top, 12)
-        .padding(.bottom, 10)
+        .padding(.bottom, 8)
         .background(
             Theme.groundDeep
                 .overlay(Rectangle().frame(height: 1).foregroundStyle(Theme.border), alignment: .top)

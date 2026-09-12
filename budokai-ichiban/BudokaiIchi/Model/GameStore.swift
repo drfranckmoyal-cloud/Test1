@@ -824,7 +824,14 @@ final class GameStore: ObservableObject {
     /// chaque passage dans l'écran.
     @discardableResult
     func beginSession(_ session: PlannedSession) -> OpenSession {
-        if let existing = openSession(of: session.programID) { return existing }
+        // Une séance déjà ouverte aujourd'hui ne vaut que si elle porte les
+        // mêmes objectifs. Sinon elle vient d'un contenu périmé, et ses
+        // compteurs ne correspondent plus à rien : on la refait.
+        if let existing = openSession(of: session.programID) {
+            let wanted = Set(session.prescriptions.map(\.id))
+            if wanted.isSubset(of: Set(existing.objectives.keys)) { return existing }
+            state.openSessions.removeAll { $0.programID == session.programID.rawValue }
+        }
         var fresh = OpenSession(programID: session.programID.rawValue,
                                 sessionIndex: session.index, day: todayKey)
         for item in session.prescriptions {

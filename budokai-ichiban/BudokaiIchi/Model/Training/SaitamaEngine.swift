@@ -377,10 +377,6 @@ enum SaitamaEngine {
             items.append(warmupReps("Dead bug", sets: 1, perSet: 6,
                                     detail: "Six de chaque côté, bas du dos plaqué au sol"))
         }
-        if let push = context.exercise(.push) {
-            items.append(warmupReps("\(push.name) — montée en charge", sets: 2, perSet: 5,
-                                    detail: "Deux séries légères, pour retrouver le geste"))
-        }
         return items
     }
 
