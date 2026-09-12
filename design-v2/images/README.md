@@ -5,6 +5,10 @@ s'il est absent, le fond graphique dessiné en CSS prend le relais.** Rien ne ca
 dans un cas comme dans l'autre — tu peux en déposer une, huit, ou aucune, et en
 changer quand tu veux sans toucher au code.
 
+**Les huit fichiers sont déjà là**, composés à partir d'estampes japonaises du
+domaine public traitées dans la palette de chaque programme — voir `CREDITS.md`.
+Déposer un fichier du même nom remplace celui d'origine.
+
 ## Les huit fichiers attendus
 
 | Fichier | Programme | Dominantes de la palette |
