@@ -185,12 +185,21 @@ struct ExercisePrescription: Identifiable, Codable, Equatable {
     /// retour au calme, mobilité d'accompagnement.
     var countsTowardAdaptation: Bool = true
 
-    /// Ce qui s'affiche à droite d'une ligne de séance.
+    /// La quantité, dite en toutes lettres. « 4 × 8 » ne dit pas ce qu'on
+    /// compte ; « 4 séries de 8 répétitions » si.
     var amountLabel: String {
         if let sets = sets, let perSet = targetPerSet, sets > 1 {
-            return "\(sets) × \(unit.short(perSet))"
+            return "\(sets) séries de \(unit.format(perSet))"
         }
         return unit.format(targetValue)
+    }
+
+    /// Le repos entre les séries, quand il y en a.
+    var restLabel: String? {
+        guard let rest = restSeconds, rest > 0, (sets ?? 1) > 1 else { return nil }
+        return rest >= 60 && rest % 60 == 0
+            ? "\(rest / 60) min de repos entre les séries"
+            : "\(rest) s de repos entre les séries"
     }
 
     /// L'indication d'intensité, quand il y en a une. C'est elle qui manquait

@@ -857,6 +857,14 @@ final class GameStore: ObservableObject {
         mutate(prescriptionId, of: id) { $0.declaredComplete = true }
     }
 
+    /// Décoche un exercice : on efface ce qui avait été enregistré pour lui.
+    func resetObjective(_ prescriptionId: String, of id: ProgramID) {
+        mutate(prescriptionId, of: id) {
+            $0.entries.removeAll()
+            $0.declaredComplete = false
+        }
+    }
+
     func removeProgress(_ entryId: UUID, from prescriptionId: String, of id: ProgramID) {
         mutate(prescriptionId, of: id) { $0.remove(entryId) }
     }

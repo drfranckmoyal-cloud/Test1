@@ -16,6 +16,7 @@ struct DailyProgressObjective: View {
     var onDeclareComplete: () -> Void
     var onRemoveEntry: (UUID) -> Void
     var onEditEntry: (UUID, Int) -> Void
+    var onUncheck: () -> Void = {}
 
     @State private var showingPad = false
     @State private var showingHistory = false
@@ -53,16 +54,35 @@ struct DailyProgressObjective: View {
     // MARK: - En-tête
 
     private var header: some View {
-        HStack(alignment: .top, spacing: 10) {
-            VStack(alignment: .leading, spacing: 3) {
-                Text(prescription.name.uppercased())
-                    .font(.display(16))
-                    .foregroundStyle(Theme.text)
+        HStack(alignment: .top, spacing: 12) {
+            // la case à cocher : le geste le plus fréquent, le plus accessible
+            Button {
+                Haptics.success()
+                if done { onUncheck() } else { onDeclareComplete() }
+            } label: {
+                Image(systemName: done ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 27))
+                    .foregroundStyle(done ? tint : Theme.dim)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(done ? "Décocher \(prescription.name)" : "Marquer \(prescription.name) comme fait")
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(prescription.name)
+                    .font(.ui(16, .bold))
+                    .foregroundStyle(done ? Theme.muted : Theme.text)
+                    .strikethrough(done, color: Theme.dim)
                     .fixedSize(horizontal: false, vertical: true)
 
                 Text(prescription.amountLabel)
-                    .font(.ui(13, .semibold))
-                    .foregroundStyle(Theme.muted)
+                    .font(.display(17))
+                    .foregroundStyle(done ? Theme.dim : tint)
+
+                if let rest = prescription.restLabel {
+                    Text(rest)
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(Theme.muted)
+                }
 
                 if let intensity = prescription.intensityLabel {
                     Text(intensity)
@@ -84,13 +104,7 @@ struct DailyProgressObjective: View {
                 }
             }
 
-            Spacer(minLength: 6)
-
-            if done {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 25))
-                    .foregroundStyle(tint)
-            }
+            Spacer(minLength: 0)
         }
     }
 
@@ -150,18 +164,7 @@ struct DailyProgressObjective: View {
             }
             .buttonStyle(.plain)
 
-            Button {
-                Haptics.success()
-                onDeclareComplete()
-            } label: {
-                Text("Terminé")
-                    .font(.ui(13, .bold))
-                    .foregroundStyle(Theme.muted)
-                    .frame(width: 96)
-                    .frame(height: 46)
-                    .background(Theme.surfaceAlt, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            }
-            .buttonStyle(.plain)
+
         }
     }
 

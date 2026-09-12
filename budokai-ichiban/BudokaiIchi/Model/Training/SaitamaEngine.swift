@@ -367,33 +367,35 @@ enum SaitamaEngine {
 
     private static func warmupStrength(_ context: Context, short: Bool = false) -> [ExercisePrescription] {
         var items: [ExercisePrescription] = [
-            warmup("Marche active", seconds: 120, detail: "Se mettre en route"),
-            warmup("Cercles d'épaules", seconds: 60, detail: "Dix dans chaque sens"),
-            warmup("Scapular push-ups", seconds: 60, detail: "2 séries de 6 à 10")
+            warmupTime("Marche active ou trot léger", seconds: 120, detail: "Se mettre en route"),
+            warmupReps("Cercles d'épaules", sets: 1, perSet: 10, detail: "Dix dans chaque sens"),
+            warmupReps("Scapular push-ups", sets: 2, perSet: 8, detail: "Amplitude d'omoplate seule, bras tendus")
         ]
         if !short {
-            items.append(warmup("Squats à amplitude progressive", seconds: 60, detail: "2 séries de 8"))
-            items.append(warmup("Dead bug", seconds: 60, detail: "6 de chaque côté"))
+            items.append(warmupReps("Squats à amplitude progressive", sets: 2, perSet: 8,
+                                    detail: "De plus en plus bas à chaque série"))
+            items.append(warmupReps("Dead bug", sets: 1, perSet: 6,
+                                    detail: "Six de chaque côté, bas du dos plaqué au sol"))
         }
         if let push = context.exercise(.push) {
-            items.append(warmup("Montée en charge — \(push.name)", seconds: 90,
-                                detail: "Une à deux séries légères, pour retrouver la technique"))
+            items.append(warmupReps("\(push.name) — montée en charge", sets: 2, perSet: 5,
+                                    detail: "Deux séries légères, pour retrouver le geste"))
         }
         return items
     }
 
     private static func warmupRun(easy: Bool) -> [ExercisePrescription] {
         var items: [ExercisePrescription] = [
-            warmup("Marche active", seconds: easy ? 240 : 300, detail: nil),
-            warmup("Mobilité de cheville", seconds: 60, detail: nil),
-            warmup("Balancements de jambe", seconds: 60, detail: "Dix de chaque côté")
+            warmupTime("Marche active", seconds: easy ? 240 : 300, detail: nil),
+            warmupTime("Mobilité de cheville", seconds: 60, detail: nil),
+            warmupTime("Balancements de jambe", seconds: 60, detail: "Dix de chaque côté")
         ]
         if easy {
-            items.append(warmup("Trot facile", seconds: 180, detail: nil))
+            items.append(warmupTime("Trot facile", seconds: 180, detail: nil))
         } else {
-            items.append(warmup("Trot facile", seconds: 480, detail: nil))
-            items.append(warmup("Accélérations progressives", seconds: 60,
-                                detail: "2 à 4 fois 15 secondes, sans sprint"))
+            items.append(warmupTime("Trot facile", seconds: 480, detail: nil))
+            items.append(warmupTime("Accélérations progressives", seconds: 60,
+                                    detail: "2 à 4 fois 15 secondes, sans sprint"))
         }
         return items
     }
@@ -447,9 +449,21 @@ enum SaitamaEngine {
         return item
     }
 
-    private static func warmup(_ name: String, seconds: Int, detail: String?) -> ExercisePrescription {
+    private static func warmupTime(_ name: String, seconds: Int, detail: String?) -> ExercisePrescription {
         var item = ExercisePrescription(
             name: name, detail: detail, targetValue: seconds, unit: .seconds,
+            characteristic: .mobility, completionPolicy: .structuredSession)
+        item.id = "sai.warm.\(name)"
+        item.isWarmup = true
+        item.countsTowardAdaptation = false
+        return item
+    }
+
+    private static func warmupReps(_ name: String, sets: Int, perSet: Int,
+                                   detail: String?) -> ExercisePrescription {
+        var item = ExercisePrescription(
+            name: name, detail: detail, targetValue: sets * perSet, unit: .reps,
+            sets: sets > 1 ? sets : nil, targetPerSet: sets > 1 ? perSet : nil,
             characteristic: .mobility, completionPolicy: .structuredSession)
         item.id = "sai.warm.\(name)"
         item.isWarmup = true

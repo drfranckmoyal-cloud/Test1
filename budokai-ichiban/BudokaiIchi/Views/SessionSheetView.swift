@@ -49,7 +49,13 @@ struct SessionSheetView: View {
         }
         .fullScreenCover(item: $guided) { session in
             GuidedSessionView(session: session) { alreadyRecorded = true }
-        } 
+        }
+        .onAppear {
+            // une séance s'ouvre cochable : pas d'étape « commencer le suivi »
+            if store.openSession(of: session.programID) == nil {
+                store.beginSession(tuned)
+            }
+        }
     }
 
     // MARK: - La fiche
@@ -59,9 +65,9 @@ struct SessionSheetView: View {
             header
             ScrollView {
                 VStack(spacing: 18) {
+                    if let story = narrative { narrativeCard(story) }
                     if let note = engineNote { engineCard(note) }
                     exercises
-                    if let story = narrative { narrativeCard(story) }
                     if tuned.prescribed == nil { intensityDial }
                     if !program.equipment.isEmpty && program.equipment != "Aucun" {
                         note("Matériel : \(program.equipment)")
@@ -276,13 +282,19 @@ struct SessionSheetView: View {
     private var exercises: some View {
         let open = store.openSession(of: session.programID)
         return VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                SectionLabel(text: "LA SÉANCE")
-                if let open = open {
-                    Text("\(Int(open.ratio(against: tuned.prescriptions) * 100)) %")
-                        .font(.ui(12, .bold))
-                        .foregroundStyle(program.light)
+            if let open = open {
+                let ratio = open.ratio(against: tuned.prescriptions)
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack {
+                        SectionLabel(text: "LA SÉANCE")
+                        Text("\(Int(ratio * 100)) %")
+                            .font(.ui(12, .bold))
+                            .foregroundStyle(program.light)
+                    }
+                    ProgressBar(value: ratio, height: 6, tint: program.light)
                 }
+            } else {
+                SectionLabel(text: "LA SÉANCE")
             }
             ForEach(tuned.prescriptions) { item in
                 if let progress = open?.objectives[item.id] {
@@ -291,7 +303,8 @@ struct SessionSheetView: View {
                         onAdd: { store.addProgress($0, to: item.id, of: session.programID) },
                         onDeclareComplete: { store.declareComplete(item.id, of: session.programID) },
                         onRemoveEntry: { store.removeProgress($0, from: item.id, of: session.programID) },
-                        onEditEntry: { store.updateProgress($0, to: $1, in: item.id, of: session.programID) })
+                        onEditEntry: { store.updateProgress($0, to: $1, in: item.id, of: session.programID) },
+                        onUncheck: { store.resetObjective(item.id, of: session.programID) })
                 } else {
                     staticRow(item)
                 }
@@ -372,18 +385,11 @@ struct SessionSheetView: View {
 
     private var actions: some View {
         let open = store.openSession(of: session.programID)
+        let ratio = open?.ratio(against: tuned.prescriptions) ?? 0
         return VStack(spacing: 9) {
-            if open == nil {
-                PrimaryButton(title: "COMMENCER LE SUIVI", tint: program.light) {
-                    store.beginSession(tuned)
-                }
-                GhostButton(title: "Marquer la séance faite, sans détailler") {
-                    step = .feedback
-                }
-            } else {
-                PrimaryButton(title: "SÉANCE RÉALISÉE", tint: program.light) {
-                    step = .feedback
-                }
+            PrimaryButton(title: ratio >= 0.999 ? "SÉANCE TERMINÉE" : "J'AI FINI POUR AUJOURD'HUI",
+                          tint: program.light) {
+                step = .feedback
             }
             if program.allowsGuidance {
                 GhostButton(title: "Me guider pas à pas, avec minuteur") {
