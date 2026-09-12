@@ -386,6 +386,35 @@ final class GameStore: ObservableObject {
         syncNotifications()
     }
 
+    /// Ramène un programme à une séance donnée : cette séance et toutes
+    /// celles qui la suivent redeviennent à faire.
+    ///
+    /// L'avancement se compte en nombre de séances, pas en cases cochées :
+    /// un programme ne peut pas avoir de trou. Effacer une séance du milieu
+    /// revient donc à défaire tout ce qui vient après.
+    func rewind(_ id: ProgramID, toSession index: Int) {
+        let removed = state.history.filter { $0.programID == id.rawValue && $0.sessionIndex >= index }
+        guard !removed.isEmpty else { return }
+
+        state.history.removeAll { $0.programID == id.rawValue && $0.sessionIndex >= index }
+        state.xp = max(0, state.xp - removed.reduce(0) { $0 + $1.xp })
+
+        var progress = state.progress(id)
+        progress.completedSessions = max(0, index - 1)
+        if progress.completedSessions == 0 { progress.startedOn = nil }
+        progress.finishedOn = nil
+        state.programs[id.rawValue] = progress
+
+        recomputeStreak()
+        save()
+        syncNotifications()
+    }
+
+    /// Combien de séances seraient défaites en revenant à celle-ci.
+    func sessionsUndone(_ id: ProgramID, toSession index: Int) -> Int {
+        state.history.filter { $0.programID == id.rawValue && $0.sessionIndex >= index }.count
+    }
+
     /// Recalcule la série d'après ce qui reste : des jours consécutifs
     /// jusqu'au dernier jour où une séance a été faite.
     private func recomputeStreak() {

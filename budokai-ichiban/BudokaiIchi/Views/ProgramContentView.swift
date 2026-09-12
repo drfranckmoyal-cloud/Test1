@@ -16,6 +16,8 @@ struct ProgramContentView: View {
     @State private var openSession: String?
     /// Voir le programme tel qu'il est écrit, ou tel qu'il sortira pour moi.
     @State private var asWritten = false
+    /// La séance à laquelle on propose de revenir, le temps de confirmer.
+    @State private var rewinding: PlannedSession?
 
     private var sessions: [PlannedSession] {
         Catalog.sessions(for: program.id,
@@ -45,6 +47,27 @@ struct ProgramContentView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Fermer") { dismiss() }
                 }
+            }
+        }
+        .confirmationDialog("Revenir à cette séance ?",
+                            isPresented: Binding(get: { rewinding != nil },
+                                                 set: { if !$0 { rewinding = nil } }),
+                            titleVisibility: .visible) {
+            if let session = rewinding {
+                let count = store.sessionsUndone(program.id, toSession: session.index)
+                Button(count > 1 ? "Défaire ces \(count) séances" : "Défaire cette séance",
+                       role: .destructive) {
+                    store.rewind(program.id, toSession: session.index)
+                    rewinding = nil
+                }
+            }
+            Button("Ne rien changer", role: .cancel) { rewinding = nil }
+        } message: {
+            if let session = rewinding {
+                let count = store.sessionsUndone(program.id, toSession: session.index)
+                Text(count > 1
+                     ? "« \(session.title) » et les \(count - 1) séances suivantes redeviendront à faire. L'expérience gagnée sera retirée et ta série recalculée."
+                     : "« \(session.title) » redeviendra à faire. L'expérience gagnée sera retirée et ta série recalculée.")
             }
         }
     }
@@ -201,6 +224,23 @@ struct ProgramContentView: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .overlay(alignment: .trailing) {
+                if done {
+                    Button {
+                        Haptics.tap()
+                        rewinding = session
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundStyle(Theme.muted)
+                            .frame(width: 34, height: 34)
+                            .background(Theme.ground, in: Circle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Revenir à cette séance")
+                    .offset(x: -26)
+                }
+            }
 
             if isOpen {
                 VStack(spacing: 5) {
