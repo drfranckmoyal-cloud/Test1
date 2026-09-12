@@ -93,7 +93,6 @@ L'état tient dans `UserDefaults` sous `budokai.player.v1`.
 
 ## Ce qui reste
 
-- Le contenu sportif des sept autres programmes.
 - Le test de forme à l'inscription : pour l'instant une simple déclaration
   — je reprends / je suis actif / je m'entraîne déjà — calibre les charges.
 - Le réglage de la courbe d'XP et des seuils de caractéristiques, sur des
