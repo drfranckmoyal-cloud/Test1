@@ -1,4 +1,4 @@
-# Budokai Ichi
+# Budokai Ichiban
 
 App iPhone SwiftUI : défis sportifs inspirés d'animés japonais, avec XP,
 niveaux, rangs et déblocages. Voir `README.md` pour le détail du moteur et
@@ -28,7 +28,7 @@ SwiftUI conservateur — elle ne verra jamais l'erreur de compilation.
 ## Pièges à ne pas réintroduire
 
 - **`PRODUCT_BUNDLE_IDENTIFIER` reste `com.franckmoyal.PompesChallenge`**,
-  malgré le renommage en Budokai Ichi. C'est ce qui fait que l'app installée
+  malgré le renommage en Budokai Ichiban. C'est ce qui fait que l'app installée
   se met à jour au lieu de se dupliquer, et que les données de la v1 migrent.
   Ne pas « corriger ».
 - `DEVELOPMENT_TEAM = A7H8D53DKZ` — signature de l'app, ne pas retirer.

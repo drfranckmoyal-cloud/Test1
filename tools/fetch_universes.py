@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compose les fonds d'univers des huit programmes de Budokai Ichi.
+"""Compose les fonds d'univers des huit programmes de Budokai Ichiban.
 
 Les images viennent de l'Open Access du Metropolitan Museum of Art : des
 estampes japonaises tombées dans le domaine public (CC0). Chacune est passée
