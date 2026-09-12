@@ -1,0 +1,3415 @@
+{
+  "program": "naruto",
+  "version": "2026-09-12",
+  "families": [
+    {
+      "id": "naruto.easy",
+      "name": "Endurance facile",
+      "function": "Base aérobie",
+      "bossLevel": 4,
+      "ladder": [
+        {
+          "id": "runWalk",
+          "name": "Course/marche",
+          "detail": "Alternance course facile et marche, conversation possible"
+        },
+        {
+          "id": "easy20",
+          "name": "Course facile 20–30 min",
+          "detail": "RPE 3, conversation complète"
+        },
+        {
+          "id": "easy40",
+          "name": "Course facile 30–45 min",
+          "detail": "RPE 3–4, respiration contrôlée"
+        },
+        {
+          "id": "easy60",
+          "name": "Course facile 45–60 min",
+          "detail": "RPE 3–4, allure stable"
+        },
+        {
+          "id": "easy75",
+          "name": "Course facile 60–75 min",
+          "detail": "RPE 3–4, effort durable"
+        }
+      ]
+    },
+    {
+      "id": "naruto.long",
+      "name": "Sortie longue",
+      "function": "Endurance longue",
+      "bossLevel": 5,
+      "ladder": [
+        {
+          "id": "long40",
+          "name": "Longue facile 40–55 min",
+          "detail": "RPE 3–4"
+        },
+        {
+          "id": "long60",
+          "name": "Longue facile 55–75 min",
+          "detail": "RPE 3–4"
+        },
+        {
+          "id": "long90",
+          "name": "Longue facile 75–95 min",
+          "detail": "RPE 3–4"
+        },
+        {
+          "id": "long110",
+          "name": "Longue facile 95–115 min",
+          "detail": "RPE 3–4"
+        },
+        {
+          "id": "longSpecific",
+          "name": "Longue spécifique semi",
+          "detail": "Sortie longue avec segment contrôlé à effort semi"
+        }
+      ]
+    },
+    {
+      "id": "naruto.quality",
+      "name": "Qualité aérobie",
+      "function": "Seuil et endurance spécifique",
+      "bossLevel": 4,
+      "ladder": [
+        {
+          "id": "strides",
+          "name": "Strides",
+          "detail": "Accélérations relâchées, jamais sprint maximal"
+        },
+        {
+          "id": "fartlek1",
+          "name": "Fartlek court",
+          "detail": "Blocs de 60 à 120 s à RPE 6"
+        },
+        {
+          "id": "tempoBlocks",
+          "name": "Tempo fractionné",
+          "detail": "Blocs de 6 à 12 min à RPE 7"
+        },
+        {
+          "id": "threshold",
+          "name": "Seuil",
+          "detail": "Blocs de 10 à 15 min à RPE 7–8"
+        },
+        {
+          "id": "hmSpecific",
+          "name": "Spécifique semi",
+          "detail": "Blocs à RPE 6–7 proches de l’effort semi"
+        }
+      ]
+    },
+    {
+      "id": "naruto.recovery",
+      "name": "Récupération",
+      "function": "Volume facile récupérable",
+      "bossLevel": 2,
+      "ladder": [
+        {
+          "id": "walkRun",
+          "name": "Marche/course très facile",
+          "detail": "RPE 2–3"
+        },
+        {
+          "id": "recovery25",
+          "name": "Recovery 20–30 min",
+          "detail": "RPE 2–3"
+        },
+        {
+          "id": "recovery40",
+          "name": "Recovery 30–45 min",
+          "detail": "RPE 2–3"
+        }
+      ]
+    },
+    {
+      "id": "naruto.strength",
+      "name": "Renforcement coureur",
+      "function": "Support musculo-tendineux",
+      "bossLevel": 3,
+      "ladder": [
+        {
+          "id": "basicSupport",
+          "name": "Support de base",
+          "detail": "Split squat, pont fessier, mollets, gainage"
+        },
+        {
+          "id": "singleLegSupport",
+          "name": "Support unilatéral",
+          "detail": "Fente arrière, single-leg bridge, mollets unilatéraux"
+        },
+        {
+          "id": "advancedSupport",
+          "name": "Support avancé",
+          "detail": "Split squat contrôlé, hamstring walkout, mollets genou fléchi"
+        }
+      ]
+    }
+  ],
+  "calibration": [
+    {
+      "id": "continuousRun",
+      "label": "Course continue",
+      "family": "naruto.easy",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 3600,
+      "cue": "Cours à RPE 3–4 et arrête le test si tu ne peux plus parler en phrases complètes."
+    },
+    {
+      "id": "recent5k",
+      "label": "5 km récent",
+      "family": "naruto.quality",
+      "referenceLevel": 2,
+      "unit": "seconds",
+      "max": 3600,
+      "cue": "Renseigne ton meilleur temps récent sur 5 km s’il date de moins de 8 semaines."
+    },
+    {
+      "id": "recent10k",
+      "label": "10 km récent",
+      "family": "naruto.quality",
+      "referenceLevel": 3,
+      "unit": "seconds",
+      "max": 7200,
+      "cue": "Renseigne ton meilleur temps récent sur 10 km s’il reflète encore ton niveau actuel."
+    },
+    {
+      "id": "longRun",
+      "label": "Plus longue sortie récente",
+      "family": "naruto.long",
+      "referenceLevel": 2,
+      "unit": "meters",
+      "max": 21097,
+      "cue": "Renseigne la distance de ta plus longue sortie des 30 derniers jours."
+    }
+  ],
+  "weeks": [
+    {
+      "stage": "GENIN",
+      "frequency": 3,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.06,
+        "note": "Augmente uniquement la durée totale facile si les deux dernières séances sont GREEN. Toutes les 2 à 3 semaines, maintiens ou réduis de 15 à 20 % pour consolider."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1800,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Jeu d’allures",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 360,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Fartlek contrôlé",
+              "detail": "Accélérer sans sprinter; garder la dernière répétition propre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 6,
+              "perSet": 60,
+              "restSeconds": 120,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 480,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Sortie longue facile",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 3000,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "GENIN",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.06,
+        "note": "Augmente uniquement la durée totale facile si les deux dernières séances sont GREEN. Toutes les 2 à 3 semaines, maintiens ou réduis de 15 à 20 % pour consolider."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1800,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Jeu d’allures",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 360,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Fartlek contrôlé",
+              "detail": "Accélérer sans sprinter; garder la dernière répétition propre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 6,
+              "perSet": 60,
+              "restSeconds": 120,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 480,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Récupération active",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 1500,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Sortie longue facile",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 3000,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "GENIN",
+      "frequency": 5,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.06,
+        "note": "Augmente uniquement la durée totale facile si les deux dernières séances sont GREEN. Toutes les 2 à 3 semaines, maintiens ou réduis de 15 à 20 % pour consolider."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1800,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Easy + strides",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 210,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1500,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Strides relâchés",
+              "detail": "Rapide mais jamais sprint maximal",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 80,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Récupération active",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 1200,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Endurance facile 2",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1500,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Sortie longue facile",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 3000,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "CHŪNIN",
+      "frequency": 3,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.06,
+        "note": "Augmente la durée hebdomadaire, principalement via la sortie longue. La séance qualité conserve la même intensité jusqu’à validation du jalon."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2100,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Fartlek Chūnin",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 360,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Fartlek contrôlé",
+              "detail": "Accélérer sans sprinter; garder la dernière répétition propre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 5,
+              "perSet": 120,
+              "restSeconds": 120,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 480,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Sortie longue",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 4200,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "CHŪNIN",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.06,
+        "note": "Augmente la durée hebdomadaire, principalement via la sortie longue. La séance qualité conserve la même intensité jusqu’à validation du jalon."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2100,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Fartlek Chūnin",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 360,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Fartlek contrôlé",
+              "detail": "Accélérer sans sprinter; garder la dernière répétition propre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 5,
+              "perSet": 120,
+              "restSeconds": 120,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 480,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Endurance facile 2",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1800,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Sortie longue",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 4200,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "CHŪNIN",
+      "frequency": 5,
+      "progression": {
+        "rule": "duration",
+        "perWeek": 0.06,
+        "note": "Augmente la durée hebdomadaire, principalement via la sortie longue. La séance qualité conserve la même intensité jusqu’à validation du jalon."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2100,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Fartlek Chūnin",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 360,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Fartlek contrôlé",
+              "detail": "Accélérer sans sprinter; garder la dernière répétition propre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 5,
+              "perSet": 120,
+              "restSeconds": 120,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 480,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Récupération",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 1500,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Easy + strides",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 210,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1800,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Strides relâchés",
+              "detail": "Rapide mais jamais sprint maximal",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 80,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Sortie longue",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 4200,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "JIRAIYA",
+      "frequency": 3,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Augmente le volume total de travail au seuil en ajoutant d’abord une répétition ou quelques minutes, sans augmenter simultanément l’allure."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2700,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Tempo Jiraiya",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 450,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Blocs tempo",
+              "detail": "Effort soutenu mais contrôlé; finir sans effondrement",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 480,
+              "restSeconds": 180,
+              "rpe": 7,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Sortie longue",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 5400,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "JIRAIYA",
+      "frequency": 4,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Augmente le volume total de travail au seuil en ajoutant d’abord une répétition ou quelques minutes, sans augmenter simultanément l’allure."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2700,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Tempo Jiraiya",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 450,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Blocs tempo",
+              "detail": "Effort soutenu mais contrôlé; finir sans effondrement",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 480,
+              "restSeconds": 180,
+              "rpe": 7,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Endurance facile 2",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2100,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Sortie longue",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 5400,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "JIRAIYA",
+      "frequency": 5,
+      "progression": {
+        "rule": "volume",
+        "perWeek": 0.05,
+        "note": "Augmente le volume total de travail au seuil en ajoutant d’abord une répétition ou quelques minutes, sans augmenter simultanément l’allure."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2700,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Tempo Jiraiya",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 450,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Blocs tempo",
+              "detail": "Effort soutenu mais contrôlé; finir sans effondrement",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 480,
+              "restSeconds": 180,
+              "rpe": 7,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Récupération",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 1800,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Easy + strides",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 210,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2100,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Strides relâchés",
+              "detail": "Rapide mais jamais sprint maximal",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 80,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Sortie longue",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 5400,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SENNIN",
+      "frequency": 3,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Augmente prioritairement la distance spécifique ou la sortie longue, une seule variable par semaine. Prévoir un step-back de 15 à 25 % après 2 à 4 semaines de build."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 3000,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Spécifique semi",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 450,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Blocs spécifiques semi",
+              "detail": "Allure contrôlée correspondant à RPE 6–7, sans finir au sprint",
+              "family": "naruto.quality",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 2000,
+              "restSeconds": 180,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Sortie longue spécifique",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 4620,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Segment effort semi contrôlé",
+              "detail": "Rester en contrôle, jamais contre-la-montre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "value": 1188,
+              "rpe": 6,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SENNIN",
+      "frequency": 4,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Augmente prioritairement la distance spécifique ou la sortie longue, une seule variable par semaine. Prévoir un step-back de 15 à 25 % après 2 à 4 semaines de build."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 3000,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Spécifique semi",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 450,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Blocs spécifiques semi",
+              "detail": "Allure contrôlée correspondant à RPE 6–7, sans finir au sprint",
+              "family": "naruto.quality",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 2000,
+              "restSeconds": 180,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Endurance facile 2",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2400,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Sortie longue spécifique",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 4620,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Segment effort semi contrôlé",
+              "detail": "Rester en contrôle, jamais contre-la-montre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "value": 1188,
+              "rpe": 6,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SENNIN",
+      "frequency": 5,
+      "progression": {
+        "rule": "distance",
+        "perWeek": 0.05,
+        "note": "Augmente prioritairement la distance spécifique ou la sortie longue, une seule variable par semaine. Prévoir un step-back de 15 à 25 % après 2 à 4 semaines de build."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Endurance facile",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 3000,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Spécifique semi",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 450,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "warmup",
+              "name": "Accélérations progressives",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 20,
+              "restSeconds": 60,
+              "rpe": 5,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "work",
+              "name": "Blocs spécifiques semi",
+              "detail": "Allure contrôlée correspondant à RPE 6–7, sans finir au sprint",
+              "family": "naruto.quality",
+              "unit": "meters",
+              "sets": 3,
+              "perSet": 2000,
+              "restSeconds": 180,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Récupération",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 1800,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Easy + strides",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 210,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 2400,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Strides relâchés",
+              "detail": "Rapide mais jamais sprint maximal",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 80,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "Sortie longue spécifique",
+          "type": "longEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Sortie longue facile",
+              "detail": "RPE stable, conversation possible",
+              "family": "naruto.long",
+              "unit": "seconds",
+              "value": 4620,
+              "rpe": 3,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Segment effort semi contrôlé",
+              "detail": "Rester en contrôle, jamais contre-la-montre",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "value": 1188,
+              "rpe": 6,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HOKAGE",
+      "frequency": 3,
+      "progression": {
+        "rule": "duration",
+        "perWeek": -0.2,
+        "note": "Phase de taper : réduire le volume total à chaque semaine de préparation finale tout en conservant de courts rappels d’intensité. Le boss remplace toute progression supplémentaire."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Easy + rappel vitesse",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 210,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1500,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "work",
+              "name": "Strides relâchés",
+              "detail": "Rapide mais jamais sprint maximal",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 6,
+              "perSet": 20,
+              "restSeconds": 80,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "speed"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Rappel spécifique semi",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Effort semi contrôlé",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 300,
+              "restSeconds": 180,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "HOKAGE — Semi-marathon",
+          "type": "benchmark",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Semi-marathon continu",
+              "detail": "21,0975 km en continu, sans objectif de chrono obligatoire",
+              "family": "naruto.long",
+              "unit": "meters",
+              "value": 21097,
+              "rpe": 6,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HOKAGE",
+      "frequency": 4,
+      "progression": {
+        "rule": "duration",
+        "perWeek": -0.2,
+        "note": "Phase de taper : réduire le volume total à chaque semaine de préparation finale tout en conservant de courts rappels d’intensité. Le boss remplace toute progression supplémentaire."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Easy taper",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1500,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Rappel spécifique semi",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Effort semi contrôlé",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 300,
+              "restSeconds": 180,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Shakeout",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 900,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "HOKAGE — Semi-marathon",
+          "type": "benchmark",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Semi-marathon continu",
+              "detail": "21,0975 km en continu, sans objectif de chrono obligatoire",
+              "family": "naruto.long",
+              "unit": "meters",
+              "value": 21097,
+              "rpe": 6,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "HOKAGE",
+      "frequency": 5,
+      "progression": {
+        "rule": "duration",
+        "perWeek": -0.2,
+        "note": "Phase de taper : réduire le volume total à chaque semaine de préparation finale tout en conservant de courts rappels d’intensité. Le boss remplace toute progression supplémentaire."
+      },
+      "sessions": [
+        {
+          "slot": 0,
+          "title": "Easy taper",
+          "type": "easyEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course facile",
+              "detail": "Conversation complète, allure volontairement confortable",
+              "family": "naruto.easy",
+              "unit": "seconds",
+              "value": 1500,
+              "rpe": 3,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 240,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 1,
+          "title": "Rappel spécifique semi",
+          "type": "qualityEndurance",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Effort semi contrôlé",
+              "family": "naruto.quality",
+              "unit": "seconds",
+              "sets": 3,
+              "perSet": 300,
+              "restSeconds": 180,
+              "rpe": 6,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 2,
+          "title": "Recovery taper",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 1200,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 3,
+          "title": "Shakeout",
+          "type": "recovery",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Course de récupération",
+              "detail": "Très facile, aucune recherche d’allure",
+              "family": "naruto.recovery",
+              "unit": "seconds",
+              "value": 900,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 180,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        },
+        {
+          "slot": 4,
+          "title": "HOKAGE — Semi-marathon",
+          "type": "benchmark",
+          "exercises": [
+            {
+              "role": "warmup",
+              "name": "Marche active puis trot très facile",
+              "unit": "seconds",
+              "value": 300,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "warmup",
+              "name": "Mobilité dynamique chevilles et hanches",
+              "unit": "reps",
+              "sets": 1,
+              "perSet": 8,
+              "rir": 4,
+              "policy": "structuredSession",
+              "characteristic": "mobility"
+            },
+            {
+              "role": "work",
+              "name": "Semi-marathon continu",
+              "detail": "21,0975 km en continu, sans objectif de chrono obligatoire",
+              "family": "naruto.long",
+              "unit": "meters",
+              "value": 21097,
+              "rpe": 6,
+              "policy": "continuous",
+              "characteristic": "endurance"
+            },
+            {
+              "role": "cooldown",
+              "name": "Retour au calme",
+              "unit": "seconds",
+              "value": 600,
+              "rpe": 2,
+              "policy": "structuredSession",
+              "characteristic": "endurance",
+              "detail": "Marche lente puis respiration calme"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

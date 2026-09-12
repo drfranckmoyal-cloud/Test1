@@ -129,14 +129,60 @@ final class GameStore: ObservableObject {
     /// La prochaine séance d'un programme, ou nil s'il est terminé.
     /// Elle sort déjà ajustée au curseur d'intensité du programme.
     func session(of id: ProgramID) -> PlannedSession? {
-        // Saitama ne sort plus d'une liste figée : sa séance est fabriquée
-        // à partir du bloc, du calendrier et de la calibration.
+        // Saitama garde son moteur propre ; les programmes dont le coach a
+        // écrit les séances passent par le générateur générique.
         if id == .saitama { return saitamaSession() }
+        if SessionLibrary.hasSessions(id) { return coachSession(id) }
         let program = Catalog.program(id)
         let done = state.progress(id).completedSessions
         guard done < program.totalSessions else { return nil }
         return Catalog.session(for: id, index: done, tier: state.tier,
                                intensity: state.progress(id).intensity)
+    }
+
+    // MARK: - Programmes écrits par le coach
+
+    /// La séance du jour d'un programme dont les semaines type sont livrées.
+    private func coachSession(_ id: ProgramID) -> PlannedSession? {
+        let progress = state.progress(id)
+        guard !progress.bossDefeated else { return nil }
+        let stages = ProgramLibrary.stages(id)
+        guard !stages.isEmpty else { return nil }
+
+        let perWeek = progress.schedule?.sessionsPerWeek
+            ?? SchedulingCatalog.rules(for: id)?.recommendedSessionsPerWeek ?? 4
+        let done = progress.completedSessions
+
+        // où en est-on : quel jalon, quelle semaine dedans, quel créneau
+        var remaining = done
+        var stageIndex = 0
+        for (index, stage) in stages.enumerated() {
+            let count = max(1, stage.weeksMin * perWeek)
+            if remaining < count { stageIndex = index; break }
+            remaining -= count
+            stageIndex = index
+        }
+        let stage = stages[stageIndex]
+        let weekInStage = remaining / max(1, perWeek)
+        let slot = remaining % max(1, perWeek)
+
+        let deload = weekInStage > 0 && (weekInStage + 1) % 4 == 0
+
+        let scheduling = progress.schedule?.sessions
+            .first { $0.metadata.title != nil }?.metadata
+
+        return CoachEngine.session(CoachEngine.Context(
+            program: id,
+            stageKey: stage.key,
+            stageIndex: stageIndex,
+            frequency: perWeek,
+            slot: slot,
+            weekInStage: weekInStage,
+            sessionIndex: done,
+            levels: progress.exerciseLevel,
+            isDeload: deload,
+            narrativeId: NarrationLibrary.session(id, index: done)?.id,
+            scheduling: scheduling))
     }
 
     // MARK: - Saitama, programme pilote
@@ -605,6 +651,8 @@ final class GameStore: ObservableObject {
     func needsSetup(_ id: ProgramID) -> Bool {
         if needsScheduling(id) { return true }
         if id == .saitama { return saitamaNeedsCalibration }
+        // les autres programmes démarrent sur leur semaine type : leur
+        // calibration affine, elle ne bloque pas
         return false
     }
 
