@@ -7,6 +7,7 @@ struct ProgramDetailView: View {
     @State private var showLaunch = false
     @State private var justLaunched = false
     @State private var showBoss = false
+    @State private var confirmStop = false
     let program: Program
 
     var body: some View {
@@ -139,6 +140,16 @@ struct ProgramDetailView: View {
             guard !presented, justLaunched else { return }
             justLaunched = false
             dismiss()
+        }
+        .confirmationDialog("Ne plus suivre \(program.name) ?",
+                            isPresented: $confirmStop, titleVisibility: .visible) {
+            Button("Ne plus suivre", role: .destructive) {
+                store.stopProgram(program.id)
+                dismiss()
+            }
+            Button("Continuer le programme", role: .cancel) {}
+        } message: {
+            Text("Rien n'est effacé : tes séances faites, ton expérience et tes caractéristiques restent. Le programme sort juste de tes suivis, et tu pourras le reprendre là où tu l'as laissé.")
         }
         .sheet(isPresented: $showBoss) {
             if let challenge = store.bossChallenge(of: program.id) {
@@ -278,8 +289,7 @@ struct ProgramDetailView: View {
                 GhostButton(title: "Programme en cours") { dismiss() }
                 Button {
                     Haptics.tap()
-                    store.stopProgram(program.id)
-                    dismiss()
+                    confirmStop = true
                 } label: {
                     Text("Ne plus suivre")
                         .font(.ui(13, .semibold))

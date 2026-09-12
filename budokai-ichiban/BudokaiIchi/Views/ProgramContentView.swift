@@ -82,8 +82,8 @@ struct ProgramContentView: View {
             if let session = rewinding {
                 let count = store.sessionsUndone(program.id, toSession: session.index)
                 Text(count > 1
-                     ? "« \(session.title) » et les \(count - 1) séances suivantes redeviendront à faire. L'expérience gagnée sera retirée et ta série recalculée."
-                     : "« \(session.title) » redeviendra à faire. L'expérience gagnée sera retirée et ta série recalculée.")
+                     ? "« \(session.title) » et les \(count - 1) séances suivantes redeviendront à faire. Leur expérience et leurs points de Force, Vitesse et Endurance seront retirés, et ta série recalculée."
+                     : "« \(session.title) » redeviendra à faire. Son expérience et ses points de Force, Vitesse et Endurance seront retirés, et ta série recalculée.")
             }
         }
     }

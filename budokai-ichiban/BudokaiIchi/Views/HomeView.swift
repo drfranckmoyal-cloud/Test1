@@ -112,7 +112,7 @@ struct HomeView: View {
             }
             Button("Continuer le programme", role: .cancel) { stopping = nil }
         } message: {
-            Text("Ton avancée est gardée. Tu pourras le reprendre là où tu l'as laissé.")
+            Text("Rien n'est effacé : tes séances faites, ton expérience et tes caractéristiques restent. Tu pourras le reprendre là où tu l'as laissé.")
         }
     }
 
