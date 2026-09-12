@@ -452,17 +452,67 @@ final class GameStore: ObservableObject {
     /// Ce que le moteur a décidé pour la prochaine séance d'un programme.
     func lastMove(of id: ProgramID) -> AdaptationMove? { state.progress(id).lastMove }
 
+    // MARK: - Planification
+
+    /// Les règles de planification d'un programme, quand elles sont écrites.
+    func schedulingRules(of id: ProgramID) -> ProgramSchedulingRules? {
+        SchedulingCatalog.rules(for: id)
+    }
+
+    /// Vrai quand le programme réclame ses disponibilités avant de démarrer.
+    func needsScheduling(_ id: ProgramID) -> Bool {
+        schedulingRules(of: id) != nil && state.progress(id).schedule == nil
+    }
+
+    func availability(of id: ProgramID) -> TrainingAvailability? { state.progress(id).availability }
+    func schedule(of id: ProgramID) -> ProgramSchedule? { state.progress(id).schedule }
+
+    /// Construit le calendrier et le range. Renvoie le refus quand la
+    /// fréquence demandée passe sous le minimum du programme : on ne comprime
+    /// jamais un programme sous son minimum.
+    @discardableResult
+    func applyAvailability(_ availability: TrainingAvailability,
+                           to id: ProgramID) -> Result<ProgramSchedule, SchedulingRefusal> {
+        guard let rules = schedulingRules(of: id) else {
+            return .failure(.belowMinimum(minimum: 1))
+        }
+        let outcome = CalendarPlanner.plan(rules: rules, availability: availability,
+                                           structure: structure(of: id))
+        if case .success(let schedule) = outcome {
+            var progress = state.progress(id)
+            progress.availability = availability
+            progress.schedule = schedule
+            state.programs[id.rawValue] = progress
+            save()
+            syncNotifications()
+        }
+        return outcome
+    }
+
+    /// Les semaines encore estimées avant la fin, d'après ce qui est fait.
+    func estimatedWeeksRemaining(of id: ProgramID) -> Int? {
+        guard let schedule = schedule(of: id), schedule.sessionsPerWeek > 0 else { return nil }
+        let done = state.progress(id).completedSessions
+        let weeksDone = done / schedule.sessionsPerWeek
+        return max(0, schedule.estimatedWeeks - weeksDone)
+    }
+
     // MARK: - Structure, blocs et récompenses
 
     /// La structure du programme, quand elle est écrite.
     func structure(of id: ProgramID) -> ProgramStructure? { ProgramStructures.structure(for: id) }
 
     /// Le bloc en cours, d'après les séances déjà faites.
+    ///
+    /// La semaine se compte sur la **fréquence réelle** du calendrier, pas
+    /// sur la fréquence nominale : quelqu'un qui s'entraîne quatre fois par
+    /// semaine avance en semaines plus lentement, et ses blocs suivent.
     func currentBlock(of id: ProgramID) -> ProgramBlock? {
         guard let structure = structure(of: id) else { return nil }
+        let perWeek = schedule(of: id)?.sessionsPerWeek ?? structure.nominalSessionsPerWeek
         let done = state.progress(id).completedSessions
-        let week = max(1, done / max(1, structure.sessionsPerWeek) + 1)
-        return structure.block(forWeek: min(week, structure.totalWeeks))
+        let week = max(1, done / max(1, perWeek) + 1)
+        return structure.block(forWeek: min(week, structure.nominalWeeks))
     }
 
     /// Marque un bloc comme validé et débloque sa vignette.

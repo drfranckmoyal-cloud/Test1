@@ -4,6 +4,7 @@ struct ProgramDetailView: View {
     @EnvironmentObject private var store: GameStore
     @Environment(\.dismiss) private var dismiss
     @State private var showContent = false
+    @State private var showScheduling = false
     let program: Program
 
     var body: some View {
@@ -103,6 +104,12 @@ struct ProgramDetailView: View {
         }
         .sheet(isPresented: $showContent) {
             ProgramContentView(program: program)
+        }
+        .sheet(isPresented: $showScheduling) {
+            SchedulingSetupView(program: program) {
+                store.startProgram(program.id)
+                dismiss()
+            }
         }
     }
 
@@ -211,8 +218,14 @@ struct ProgramDetailView: View {
             VStack(spacing: 8) {
                 PrimaryButton(title: store.progress(program.id).completedSessions > 0 ? "REPRENDRE" : "COMMENCER",
                               tint: program.light) {
-                    store.startProgram(program.id)
-                    dismiss()
+                    // le planning se règle avant de démarrer, quand le
+                    // programme sait le construire
+                    if store.needsScheduling(program.id) {
+                        showScheduling = true
+                    } else {
+                        store.startProgram(program.id)
+                        dismiss()
+                    }
                 }
                 if !store.activePrograms.isEmpty {
                     Text("Il s'ajoutera à \(suiviLabel) — les programmes avancent en parallèle.")

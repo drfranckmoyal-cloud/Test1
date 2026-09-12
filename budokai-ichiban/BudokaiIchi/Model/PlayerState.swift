@@ -78,6 +78,10 @@ struct ProgramProgress: Codable, Equatable {
     var completedBlocks: [String] = []
     /// Vrai quand le standard sportif final a été tenu.
     var standardValidated: Bool = false
+    /// Les disponibilités déclarées au lancement du programme.
+    var availability: TrainingAvailability?
+    /// Le calendrier construit à partir de ces disponibilités.
+    var schedule: ProgramSchedule?
 
     /// La dernière mesure d'un test donné.
     func latest(_ testId: String) -> CalibrationResult? {
