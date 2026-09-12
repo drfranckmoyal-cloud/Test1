@@ -371,13 +371,24 @@ final class GameStore: ObservableObject {
             guard let value = answers[test.id], value > 0 else { continue }
             progress.calibration.append(CalibrationResult(
                 testId: test.id, value: value, unit: test.objectiveUnit))
-            if let family = test.family, let level = test.referenceLevel,
-               progress.exerciseLevel[family] == nil {
-                progress.exerciseLevel[family] = level
+
+            // la mesure ne sert pas qu'à garder une trace : elle décide de
+            // l'échelon où l'on commence, sans quoi tout le monde démarrerait
+            // au même endroit
+            guard let level = test.entryLevel(for: value) else { continue }
+            let families = [test.family].compactMap { $0 } + (test.alsoFamilies ?? [])
+            for family in families where progress.exerciseLevel[family] == nil {
+                progress.exerciseLevel[family] = clampLevel(level, family: family, of: id)
             }
         }
         state.programs[id.rawValue] = progress
         save()
+    }
+
+    /// Un échelon ne peut pas sortir de son échelle.
+    private func clampLevel(_ level: Int, family: String, of id: ProgramID) -> Int {
+        let rungs = SessionLibrary.family(id, family)?.ladder.count ?? 1
+        return min(max(1, level), max(1, rungs))
     }
 
     func setSaitamaCalibration(_ calibration: SaitamaCalibration) {

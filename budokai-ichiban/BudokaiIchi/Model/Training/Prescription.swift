@@ -157,6 +157,9 @@ struct ExercisePrescription: Identifiable, Codable, Equatable {
     var exerciseId: String?
 
     var name: String
+    /// Le nom technique du mouvement, quand il en a un. Affiché en tout
+    /// petit sous le nom simple : il ne sert jamais à comprendre l'exercice.
+    var technicalName: String?
     var detail: String?
 
     // — volume

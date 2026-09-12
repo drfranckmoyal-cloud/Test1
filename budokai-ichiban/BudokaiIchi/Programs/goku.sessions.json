@@ -10,33 +10,38 @@
       "ladder": [
         {
           "id": "bodyweightSquat",
-          "name": "Squat au poids du corps",
-          "detail": "Talons ancrés, amplitude contrôlée"
+          "name": "Squat",
+          "detail": "Cuisses parallèles, talons au sol."
         },
         {
           "id": "bearHugSquat",
-          "name": "Squat bear-hug",
-          "detail": "Sac serré contre la poitrine"
+          "name": "Squat lesté",
+          "detail": "Tiens le sac serré contre la poitrine.",
+          "technical": "Bear hug squat"
         },
         {
           "id": "frontLoadedSquat",
-          "name": "Squat chargé devant",
-          "detail": "Sac haut contre le torse, tronc stable"
+          "name": "Squat lesté",
+          "detail": "Charge tenue devant, coudes hauts.",
+          "technical": "Front loaded squat"
         },
         {
           "id": "tempoSquat",
-          "name": "Squat tempo",
-          "detail": "Descente 3 s, pause basse 1 s"
+          "name": "Squat lesté",
+          "detail": "Descente lente : 3 secondes.",
+          "technical": "Tempo squat"
         },
         {
           "id": "splitSquatLoaded",
-          "name": "Split squat chargé",
-          "detail": "Charge tenue stable, genou contrôlé"
+          "name": "Fente lestée",
+          "detail": "Un pied devant, un pied derrière, genou arrière vers le sol.",
+          "technical": "Split squat chargé"
         },
         {
           "id": "bulgarianLoaded",
-          "name": "Bulgarian split squat chargé",
-          "detail": "Pied arrière sur support stable"
+          "name": "Fente lestée",
+          "detail": "Pied arrière posé sur une chaise.",
+          "technical": "Bulgarian split squat"
         }
       ]
     },
@@ -48,33 +53,39 @@
       "ladder": [
         {
           "id": "hipHinge",
-          "name": "Hip hinge",
-          "detail": "Apprendre la charnière de hanche"
+          "name": "Soulevé de terre à vide",
+          "detail": "Pousse les hanches vers l'arrière, dos plat.",
+          "technical": "Hip hinge"
         },
         {
           "id": "bagDeadlift",
-          "name": "Deadlift sac",
-          "detail": "Sac proche du corps, dos neutre"
+          "name": "Soulevé de terre avec sac",
+          "detail": "Sac au sol, tu le ramasses en poussant les hanches en arrière.",
+          "technical": "Bag deadlift"
         },
         {
           "id": "bagRDL",
-          "name": "Romanian deadlift sac",
-          "detail": "Hanches en arrière, tension ischios"
+          "name": "Soulevé de terre avec sac",
+          "detail": "Jambes presque tendues, le sac descend le long des cuisses.",
+          "technical": "Romanian deadlift"
         },
         {
           "id": "tempoRDL",
-          "name": "RDL tempo",
-          "detail": "Descente 3 s"
+          "name": "Soulevé de terre avec sac",
+          "detail": "Descente lente : 3 secondes.",
+          "technical": "Tempo RDL"
         },
         {
           "id": "staggeredRDL",
-          "name": "RDL décalé",
-          "detail": "Appui arrière léger"
+          "name": "Soulevé de terre avec sac",
+          "detail": "Un pied légèrement derrière l'autre.",
+          "technical": "Staggered RDL"
         },
         {
           "id": "singleLegRDL",
-          "name": "RDL unilatéral",
-          "detail": "Contrôle bassin et équilibre"
+          "name": "Soulevé de terre avec sac",
+          "detail": "Une jambe part en arrière pendant que le buste descend.",
+          "technical": "Single-leg RDL"
         }
       ]
     },
@@ -87,32 +98,34 @@
         {
           "id": "inclinePushup",
           "name": "Pompe inclinée",
-          "detail": "Corps gainé"
+          "detail": "Mains sur une table ou un banc : plus la surface est haute, plus c'est facile."
         },
         {
           "id": "pushup",
           "name": "Pompe",
-          "detail": "Amplitude complète"
+          "detail": "Corps gainé, poitrine près du sol."
         },
         {
           "id": "bagFloorPress",
-          "name": "Floor press sac",
-          "detail": "Sac stable, contrôle en bas"
+          "name": "Développé au sol avec sac",
+          "detail": "Allongé sur le dos, tu pousses le sac vers le plafond.",
+          "technical": "Bag floor press"
         },
         {
           "id": "tempoPushup",
-          "name": "Pompe tempo",
-          "detail": "Descente 3 s"
+          "name": "Pompe",
+          "detail": "Descente lente : 3 secondes.",
+          "technical": "Tempo push-up"
         },
         {
           "id": "feetElevatedPushup",
           "name": "Pompe pieds surélevés",
-          "detail": "Tronc stable"
+          "detail": "Pieds sur une chaise."
         },
         {
           "id": "loadedPushupSafe",
-          "name": "Pompe chargée sécurisée",
-          "detail": "Uniquement si charge parfaitement fixée"
+          "name": "Pompe lestée",
+          "detail": "Sac posé en haut du dos, bien calé."
         }
       ]
     },
@@ -124,33 +137,39 @@
       "ladder": [
         {
           "id": "lightBagRow",
-          "name": "Row sac léger",
-          "detail": "Dos stable"
+          "name": "Tirage avec sac",
+          "detail": "Sac léger, buste penché, dos plat.",
+          "technical": "Light bag row"
         },
         {
           "id": "bagRow",
-          "name": "Row sac",
-          "detail": "Tirer vers le bas des côtes"
+          "name": "Tirage avec sac",
+          "detail": "Buste penché, tu tires le sac vers le ventre.",
+          "technical": "Bag row"
         },
         {
           "id": "oneArmSupportedRow",
-          "name": "Row unilatéral soutenu",
-          "detail": "Main libre en appui"
+          "name": "Tirage à un bras",
+          "detail": "Main libre appuyée sur une chaise.",
+          "technical": "One-arm supported row"
         },
         {
           "id": "tempoRow",
-          "name": "Row tempo",
-          "detail": "Pause haute 1 s"
+          "name": "Tirage avec sac",
+          "detail": "Retour lent : 3 secondes.",
+          "technical": "Tempo row"
         },
         {
           "id": "heavyOneArmRow",
-          "name": "Row unilatéral lourd",
-          "detail": "Tronc verrouillé"
+          "name": "Tirage à un bras",
+          "detail": "Charge plus lourde, même position.",
+          "technical": "Heavy one-arm row"
         },
         {
           "id": "offsetRow",
-          "name": "Row en désavantage mécanique",
-          "detail": "Charge asymétrique contrôlée"
+          "name": "Tirage à un bras",
+          "detail": "Charge tenue loin du corps, plus dure à tenir.",
+          "technical": "Offset row"
         }
       ]
     },
@@ -162,33 +181,39 @@
       "ladder": [
         {
           "id": "bearHugHold",
-          "name": "Bear-hug hold",
-          "detail": "Tenue statique du sac"
+          "name": "Maintien avec charge",
+          "detail": "Debout, le sac serré contre la poitrine.",
+          "technical": "Bear hug hold"
         },
         {
           "id": "bearHugCarry",
-          "name": "Bear-hug carry",
-          "detail": "Marche chargée, posture haute"
+          "name": "Marche avec charge",
+          "detail": "Tiens le sac contre la poitrine.",
+          "technical": "Bear hug carry"
         },
         {
           "id": "backpackWalk",
-          "name": "Marche sac à dos",
-          "detail": "Charge stable"
+          "name": "Marche avec charge",
+          "detail": "Sac sur le dos, bien sanglé.",
+          "technical": "Backpack walk"
         },
         {
           "id": "suitcaseCarry",
-          "name": "Suitcase carry",
-          "detail": "Charge d’un côté, tronc droit"
+          "name": "Marche avec charge",
+          "detail": "Porte la charge d'un seul côté, sans pencher.",
+          "technical": "Suitcase carry"
         },
         {
           "id": "offsetCarry",
-          "name": "Offset carry",
-          "detail": "Asymétrie contrôlée"
+          "name": "Marche avec charge",
+          "detail": "Une charge d'un côté, une autre plus légère de l'autre.",
+          "technical": "Offset carry"
         },
         {
           "id": "heavyCarry",
-          "name": "Carry lourd",
-          "detail": "Distance courte, posture stricte"
+          "name": "Marche avec charge",
+          "detail": "Charge lourde, distance plus courte.",
+          "technical": "Heavy carry"
         }
       ]
     },
@@ -200,33 +225,38 @@
       "ladder": [
         {
           "id": "deadBug",
-          "name": "Dead bug",
-          "detail": "Lombaires contrôlées"
+          "name": "Abdos bras-jambe opposés",
+          "detail": "Sur le dos, tu tends le bras et la jambe opposés sans creuser le dos.",
+          "technical": "Dead bug"
         },
         {
           "id": "plank",
           "name": "Planche",
-          "detail": "Bassin neutre"
+          "detail": "Appui sur les avant-bras, corps aligné."
         },
         {
           "id": "sidePlank",
-          "name": "Planche latérale",
-          "detail": "Ligne épaule-bassin"
+          "name": "Gainage latéral",
+          "detail": "Sur un coude, bassin haut.",
+          "technical": "Side plank"
         },
         {
           "id": "bearHugMarch",
-          "name": "Bear-hug march",
-          "detail": "Marche sur place chargée"
+          "name": "Marche sur place avec charge",
+          "detail": "Sac contre la poitrine, tu montes les genoux.",
+          "technical": "Bear hug march"
         },
         {
           "id": "suitcaseHold",
-          "name": "Suitcase hold",
-          "detail": "Anti-inclinaison"
+          "name": "Maintien avec charge",
+          "detail": "Debout, une charge dans une main, épaules droites.",
+          "technical": "Suitcase hold"
         },
         {
           "id": "offsetMarch",
-          "name": "Offset march",
-          "detail": "Contrôle anti-rotation"
+          "name": "Marche sur place avec charge",
+          "detail": "Charge d'un seul côté, tu montes les genoux sans pencher.",
+          "technical": "Offset march"
         }
       ]
     }
@@ -239,7 +269,24 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 20,
-      "cue": "Trouve la variante et la charge qui te permettent 8 à 12 répétitions avec 2 à 3 en réserve."
+      "cue": "Trouve la variante et la charge qui te permettent 8 à 12 répétitions avec 2 à 3 en réserve.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 10,
+          "level": 2
+        },
+        {
+          "atLeast": 20,
+          "level": 3
+        }
+      ],
+      "alsoFamilies": [
+        "goku.core"
+      ]
     },
     {
       "id": "hinge",
@@ -248,7 +295,21 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 20,
-      "cue": "Choisis une charge permettant 8 à 12 répétitions propres avec 2 à 3 en réserve."
+      "cue": "Choisis une charge permettant 8 à 12 répétitions propres avec 2 à 3 en réserve.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 8,
+          "level": 2
+        },
+        {
+          "atLeast": 15,
+          "level": 3
+        }
+      ]
     },
     {
       "id": "push",
@@ -257,7 +318,25 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 30,
-      "cue": "Sélectionne la variante qui permet 6 à 12 répétitions propres avec 2 à 3 en réserve."
+      "cue": "Sélectionne la variante qui permet 6 à 12 répétitions propres avec 2 à 3 en réserve.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 5,
+          "level": 2
+        },
+        {
+          "atLeast": 15,
+          "level": 3
+        },
+        {
+          "atLeast": 25,
+          "level": 4
+        }
+      ]
     },
     {
       "id": "pull",
@@ -266,7 +345,21 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 20,
-      "cue": "Sélectionne la charge/variante qui permet 8 à 12 répétitions propres avec 2 à 3 en réserve."
+      "cue": "Sélectionne la charge/variante qui permet 8 à 12 répétitions propres avec 2 à 3 en réserve.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 5,
+          "level": 2
+        },
+        {
+          "atLeast": 12,
+          "level": 3
+        }
+      ]
     },
     {
       "id": "carry",
@@ -275,7 +368,21 @@
       "referenceLevel": 2,
       "unit": "meters",
       "max": 200,
-      "cue": "Choisis une charge permettant 30 à 60 mètres avec posture stable et RPE maximal 6."
+      "cue": "Choisis une charge permettant 30 à 60 mètres avec posture stable et RPE maximal 6.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 50,
+          "level": 2
+        },
+        {
+          "atLeast": 100,
+          "level": 3
+        }
+      ]
     }
   ],
   "weeks": [
@@ -290,7 +397,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -305,7 +412,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -387,7 +494,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -402,7 +509,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -484,7 +591,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Capacity",
+          "title": "Corps entier — endurance de force",
           "type": "strength",
           "exercises": [
             {
@@ -499,7 +606,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -592,7 +699,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -607,7 +714,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -689,7 +796,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -704,7 +811,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -786,7 +893,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -801,7 +908,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -883,7 +990,7 @@
         },
         {
           "slot": 3,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -898,7 +1005,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -991,7 +1098,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -1006,7 +1113,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1088,7 +1195,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -1103,7 +1210,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1185,7 +1292,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -1248,7 +1355,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -1263,7 +1370,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1345,7 +1452,7 @@
         },
         {
           "slot": 4,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -1360,7 +1467,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1453,7 +1560,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -1468,7 +1575,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1550,7 +1657,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -1565,7 +1672,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1647,7 +1754,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Capacity",
+          "title": "Corps entier — endurance de force",
           "type": "strength",
           "exercises": [
             {
@@ -1662,7 +1769,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1755,7 +1862,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -1770,7 +1877,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1852,7 +1959,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -1867,7 +1974,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -1949,7 +2056,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -1964,7 +2071,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2046,7 +2153,7 @@
         },
         {
           "slot": 3,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -2061,7 +2168,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2154,7 +2261,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -2169,7 +2276,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2251,7 +2358,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -2266,7 +2373,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2348,7 +2455,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -2411,7 +2518,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -2426,7 +2533,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2508,7 +2615,7 @@
         },
         {
           "slot": 4,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -2523,7 +2630,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2616,7 +2723,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -2631,7 +2738,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2713,7 +2820,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -2728,7 +2835,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2810,7 +2917,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Capacity",
+          "title": "Corps entier — endurance de force",
           "type": "strength",
           "exercises": [
             {
@@ -2825,7 +2932,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -2918,7 +3025,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -2933,7 +3040,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3015,7 +3122,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -3030,7 +3137,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3112,7 +3219,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -3127,7 +3234,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3209,7 +3316,7 @@
         },
         {
           "slot": 3,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -3224,7 +3331,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3317,7 +3424,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -3332,7 +3439,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3414,7 +3521,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -3429,7 +3536,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3511,7 +3618,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -3574,7 +3681,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -3589,7 +3696,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3671,7 +3778,7 @@
         },
         {
           "slot": 4,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -3686,7 +3793,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3779,7 +3886,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -3794,7 +3901,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3878,7 +3985,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -3893,7 +4000,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -3977,7 +4084,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Capacity",
+          "title": "Corps entier — endurance de force",
           "type": "strength",
           "exercises": [
             {
@@ -3992,7 +4099,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4085,7 +4192,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -4100,7 +4207,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4184,7 +4291,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -4199,7 +4306,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4283,7 +4390,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -4298,7 +4405,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4382,7 +4489,7 @@
         },
         {
           "slot": 3,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -4397,7 +4504,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4490,7 +4597,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -4505,7 +4612,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4589,7 +4696,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -4604,7 +4711,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4688,7 +4795,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -4751,7 +4858,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -4766,7 +4873,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4850,7 +4957,7 @@
         },
         {
           "slot": 4,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -4865,7 +4972,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -4958,7 +5065,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -4973,7 +5080,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5055,7 +5162,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -5070,7 +5177,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5152,7 +5259,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Capacity",
+          "title": "Corps entier — endurance de force",
           "type": "strength",
           "exercises": [
             {
@@ -5167,7 +5274,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5260,7 +5367,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -5275,7 +5382,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5357,7 +5464,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -5372,7 +5479,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5454,7 +5561,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -5469,7 +5576,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5551,7 +5658,7 @@
         },
         {
           "slot": 3,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -5566,7 +5673,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5659,7 +5766,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -5674,7 +5781,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5756,7 +5863,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -5771,7 +5878,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -5853,7 +5960,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -5916,7 +6023,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -5931,7 +6038,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6013,7 +6120,7 @@
         },
         {
           "slot": 4,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -6028,7 +6135,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6121,7 +6228,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -6136,7 +6243,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6218,7 +6325,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -6233,7 +6340,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6315,7 +6422,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Capacity",
+          "title": "Corps entier — endurance de force",
           "type": "strength",
           "exercises": [
             {
@@ -6330,7 +6437,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6423,7 +6530,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -6438,7 +6545,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6520,7 +6627,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -6535,7 +6642,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6617,7 +6724,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -6632,7 +6739,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6714,7 +6821,7 @@
         },
         {
           "slot": 3,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -6729,7 +6836,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6822,7 +6929,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -6837,7 +6944,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -6919,7 +7026,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -6934,7 +7041,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7016,7 +7123,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -7079,7 +7186,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -7094,7 +7201,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7176,7 +7283,7 @@
         },
         {
           "slot": 4,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -7191,7 +7298,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7284,7 +7391,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -7299,7 +7406,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7381,7 +7488,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -7396,7 +7503,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7478,7 +7585,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Capacity",
+          "title": "Corps entier — endurance de force",
           "type": "strength",
           "exercises": [
             {
@@ -7493,7 +7600,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7586,7 +7693,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -7601,7 +7708,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7683,7 +7790,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -7698,7 +7805,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7780,7 +7887,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -7795,7 +7902,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7877,7 +7984,7 @@
         },
         {
           "slot": 3,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -7892,7 +7999,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -7985,7 +8092,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -8000,7 +8107,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8082,7 +8189,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -8097,7 +8204,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8179,7 +8286,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -8242,7 +8349,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -8257,7 +8364,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8339,7 +8446,7 @@
         },
         {
           "slot": 4,
-          "title": "Loaded Capacity / Carry",
+          "title": "Corps entier — marche avec charge",
           "type": "strength",
           "exercises": [
             {
@@ -8354,7 +8461,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8447,7 +8554,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Full Body A",
+          "title": "Corps entier A",
           "type": "strength",
           "exercises": [
             {
@@ -8462,7 +8569,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8544,7 +8651,7 @@
         },
         {
           "slot": 1,
-          "title": "Full Body B",
+          "title": "Corps entier B",
           "type": "strength",
           "exercises": [
             {
@@ -8559,7 +8666,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8641,7 +8748,7 @@
         },
         {
           "slot": 2,
-          "title": "Gravity Benchmark",
+          "title": "Test de charge",
           "type": "benchmark",
           "exercises": [
             {
@@ -8656,7 +8763,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8749,7 +8856,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -8764,7 +8871,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8846,7 +8953,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -8861,7 +8968,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -8943,7 +9050,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -8958,7 +9065,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -9040,7 +9147,7 @@
         },
         {
           "slot": 3,
-          "title": "Gravity Benchmark",
+          "title": "Test de charge",
           "type": "benchmark",
           "exercises": [
             {
@@ -9055,7 +9162,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -9148,7 +9255,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Lower + Push",
+          "title": "Jambes et poussée",
           "type": "strength",
           "exercises": [
             {
@@ -9163,7 +9270,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -9245,7 +9352,7 @@
         },
         {
           "slot": 1,
-          "title": "Pull + Hinge",
+          "title": "Tirage et soulevé de terre",
           "type": "strength",
           "exercises": [
             {
@@ -9260,7 +9367,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -9342,7 +9449,7 @@
         },
         {
           "slot": 2,
-          "title": "Technique / Weak Point",
+          "title": "Technique et point faible",
           "type": "recovery",
           "exercises": [
             {
@@ -9405,7 +9512,7 @@
         },
         {
           "slot": 3,
-          "title": "Full Body Strength",
+          "title": "Corps entier — force",
           "type": "strength",
           "exercises": [
             {
@@ -9420,7 +9527,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,
@@ -9502,7 +9609,7 @@
         },
         {
           "slot": 4,
-          "title": "Gravity Benchmark",
+          "title": "Test de charge",
           "type": "benchmark",
           "exercises": [
             {
@@ -9517,7 +9624,7 @@
             },
             {
               "role": "warmup",
-              "name": "Squats et hinges sans charge",
+              "name": "Squats et bascules du bassin, sans charge",
               "unit": "reps",
               "sets": 1,
               "perSet": 10,

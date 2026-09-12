@@ -10,28 +10,33 @@
       "ladder": [
         {
           "id": "deadBug",
-          "name": "Dead bug",
-          "detail": "Base"
+          "name": "Abdos bras-jambe opposés",
+          "detail": "Sur le dos, bras et jambe opposés, sans creuser le dos.",
+          "technical": "Dead bug"
         },
         {
           "id": "plank",
-          "name": "Forearm plank",
-          "detail": "Standard"
+          "name": "Planche",
+          "detail": "Appui sur les avant-bras, corps aligné.",
+          "technical": "Forearm plank"
         },
         {
           "id": "hollowTuck",
-          "name": "Hollow tuck",
-          "detail": "Compact"
+          "name": "Gainage en cuillère, genoux repliés",
+          "detail": "Bas du dos plaqué, genoux vers la poitrine.",
+          "technical": "Hollow tuck"
         },
         {
           "id": "oneLegHollow",
-          "name": "One-leg hollow",
-          "detail": "Intermédiaire"
+          "name": "Gainage en cuillère",
+          "detail": "Une jambe tendue, l'autre repliée.",
+          "technical": "One-leg hollow"
         },
         {
           "id": "hollow",
-          "name": "Hollow body",
-          "detail": "Boss prep"
+          "name": "Gainage en cuillère",
+          "detail": "Bras et jambes tendus, bas du dos plaqué.",
+          "technical": "Hollow body"
         }
       ]
     },
@@ -43,23 +48,24 @@
       "ladder": [
         {
           "id": "sideKnees",
-          "name": "Side plank genoux",
-          "detail": "Base"
+          "name": "Gainage latéral",
+          "detail": "Appui sur le coude et les genoux."
         },
         {
           "id": "sideShort",
-          "name": "Side plank court",
-          "detail": "Intermédiaire"
+          "name": "Gainage latéral",
+          "detail": "Tenue courte, bassin haut."
         },
         {
           "id": "sideFull",
-          "name": "Side plank complet",
-          "detail": "Standard"
+          "name": "Gainage latéral",
+          "detail": "Jambes tendues, bassin haut."
         },
         {
           "id": "sideStar",
-          "name": "Star plank",
-          "detail": "Avancé"
+          "name": "Gainage latéral",
+          "detail": "Jambe du dessus levée.",
+          "technical": "Star plank"
         }
       ]
     },
@@ -71,28 +77,33 @@
       "ladder": [
         {
           "id": "birdDog",
-          "name": "Bird dog",
-          "detail": "Base"
+          "name": "Bras et jambe opposés à quatre pattes",
+          "detail": "À quatre pattes, tu tends le bras et la jambe opposés.",
+          "technical": "Bird dog"
         },
         {
           "id": "bearTap",
-          "name": "Bear shoulder tap",
-          "detail": "Compact"
+          "name": "Touchés d'épaule",
+          "detail": "Genoux à quelques centimètres du sol, tu touches l'épaule opposée.",
+          "technical": "Bear shoulder tap"
         },
         {
           "id": "wideTap",
-          "name": "Shoulder tap pieds larges",
-          "detail": "Contrôle"
+          "name": "Touchés d'épaule",
+          "detail": "En planche, pieds écartés, tu touches l'épaule opposée.",
+          "technical": "Shoulder tap"
         },
         {
           "id": "standardTap",
-          "name": "Shoulder tap standard",
-          "detail": "Boss prep"
+          "name": "Touchés d'épaule",
+          "detail": "En planche, pieds à largeur de hanches.",
+          "technical": "Shoulder tap"
         },
         {
           "id": "narrowTap",
-          "name": "Shoulder tap pieds serrés",
-          "detail": "Avancé"
+          "name": "Touchés d'épaule",
+          "detail": "Pieds joints : le bassin ne doit pas tourner.",
+          "technical": "Narrow shoulder tap"
         }
       ]
     },
@@ -104,23 +115,26 @@
       "ladder": [
         {
           "id": "bridge",
-          "name": "Glute bridge",
-          "detail": "Base"
+          "name": "Pont fessier",
+          "detail": "Sur le dos, tu montes le bassin.",
+          "technical": "Glute bridge"
         },
         {
           "id": "singleBridge",
-          "name": "Single-leg bridge",
-          "detail": "Unilatéral"
+          "name": "Pont fessier sur une jambe",
+          "detail": "Une jambe tendue en l'air."
         },
         {
           "id": "walkout",
-          "name": "Hamstring walkout",
-          "detail": "Ischios"
+          "name": "Ischios en glissé",
+          "detail": "Depuis le pont, tu éloignes les talons petit à petit.",
+          "technical": "Hamstring walkout"
         },
         {
           "id": "reversePlank",
-          "name": "Reverse plank",
-          "detail": "Chaîne postérieure"
+          "name": "Planche inversée",
+          "detail": "Assis, mains derrière, tu montes le bassin.",
+          "technical": "Reverse plank"
         }
       ]
     },
@@ -132,28 +146,32 @@
       "ladder": [
         {
           "id": "assistHang",
-          "name": "Hang assisté",
-          "detail": "Pieds partiels"
+          "name": "Suspension assistée",
+          "detail": "Un pied posé pour alléger."
         },
         {
           "id": "dead20",
-          "name": "Dead hang 20–30 s",
-          "detail": "Base"
+          "name": "Suspension à la barre",
+          "detail": "20 à 30 secondes.",
+          "technical": "Dead hang"
         },
         {
           "id": "dead45",
-          "name": "Dead hang 30–45 s",
-          "detail": "Intermédiaire"
+          "name": "Suspension à la barre",
+          "detail": "30 à 45 secondes.",
+          "technical": "Dead hang"
         },
         {
           "id": "dead60",
-          "name": "Dead hang 60 s",
-          "detail": "Boss"
+          "name": "Suspension à la barre",
+          "detail": "60 secondes.",
+          "technical": "Dead hang"
         },
         {
           "id": "activeHang",
-          "name": "Active hang",
-          "detail": "Scapulaire"
+          "name": "Suspension, épaules actives",
+          "detail": "Épaules basses et serrées, bras tendus.",
+          "technical": "Active hang"
         }
       ]
     },
@@ -165,33 +183,34 @@
       "ladder": [
         {
           "id": "scap",
-          "name": "Scap pull",
-          "detail": "Base"
+          "name": "Suspension, épaules actives",
+          "detail": "Sans plier les bras, tu remontes les épaules.",
+          "technical": "Scap pull"
         },
         {
           "id": "footAssist",
-          "name": "Foot-assisted",
-          "detail": "Assistance"
+          "name": "Traction assistée",
+          "detail": "Un pied posé pour t'aider."
         },
         {
           "id": "negative",
-          "name": "Negative pull-up",
-          "detail": "3–5 s"
+          "name": "Traction négative",
+          "detail": "Tu pars en haut et tu descends lentement."
         },
         {
           "id": "single",
-          "name": "1 traction",
-          "detail": "Strict"
+          "name": "Traction",
+          "detail": "1 répétition stricte."
         },
         {
           "id": "three",
-          "name": "3 tractions",
-          "detail": "Volume"
+          "name": "Traction",
+          "detail": "3 répétitions strictes."
         },
         {
           "id": "five",
-          "name": "5 tractions",
-          "detail": "Boss"
+          "name": "Traction",
+          "detail": "5 répétitions strictes."
         }
       ]
     }
@@ -204,7 +223,32 @@
       "referenceLevel": 2,
       "unit": "seconds",
       "max": 60,
-      "cue": "Choisis une variante tenable 20–40 s sans perdre la position."
+      "cue": "Choisis une variante tenable 20–40 s sans perdre la position.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 10,
+          "level": 2
+        },
+        {
+          "atLeast": 20,
+          "level": 3
+        },
+        {
+          "atLeast": 35,
+          "level": 4
+        },
+        {
+          "atLeast": 50,
+          "level": 5
+        }
+      ],
+      "alsoFamilies": [
+        "levi.cross"
+      ]
     },
     {
       "id": "side",
@@ -213,7 +257,28 @@
       "referenceLevel": 2,
       "unit": "seconds",
       "max": 60,
-      "cue": "Teste chaque côté séparément."
+      "cue": "Teste chaque côté séparément.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 15,
+          "level": 2
+        },
+        {
+          "atLeast": 30,
+          "level": 3
+        },
+        {
+          "atLeast": 45,
+          "level": 4
+        }
+      ],
+      "alsoFamilies": [
+        "levi.posterior"
+      ]
     },
     {
       "id": "hang",
@@ -222,7 +287,29 @@
       "referenceLevel": 2,
       "unit": "seconds",
       "max": 60,
-      "cue": "Suspension confortable, cap 60 s."
+      "cue": "Suspension confortable, cap 60 s.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 10,
+          "level": 2
+        },
+        {
+          "atLeast": 25,
+          "level": 3
+        },
+        {
+          "atLeast": 40,
+          "level": 4
+        },
+        {
+          "atLeast": 60,
+          "level": 5
+        }
+      ]
     },
     {
       "id": "pull",
@@ -231,7 +318,25 @@
       "referenceLevel": 3,
       "unit": "reps",
       "max": 12,
-      "cue": "Arrête dès dégradation technique."
+      "cue": "Arrête dès dégradation technique.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 1,
+          "level": 4
+        },
+        {
+          "atLeast": 2,
+          "level": 5
+        },
+        {
+          "atLeast": 4,
+          "level": 6
+        }
+      ]
     }
   ],
   "weeks": [
@@ -246,12 +351,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension + Posterior",
+          "title": "Gainage ventral et chaîne arrière",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -284,7 +389,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -296,12 +401,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -334,7 +439,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -346,12 +451,12 @@
         },
         {
           "slot": 2,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -408,7 +513,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -431,12 +536,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -469,7 +574,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -481,12 +586,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -519,7 +624,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -531,12 +636,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -569,7 +674,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -581,12 +686,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -643,7 +748,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -666,12 +771,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -704,7 +809,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -716,12 +821,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -754,7 +859,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -766,12 +871,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -804,7 +909,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -816,12 +921,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -878,7 +983,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -890,12 +995,12 @@
         },
         {
           "slot": 4,
-          "title": "Skill / Recovery",
+          "title": "Technique et récupération",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -928,7 +1033,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -951,12 +1056,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension + Posterior",
+          "title": "Gainage ventral et chaîne arrière",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -989,7 +1094,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1001,12 +1106,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1039,7 +1144,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1051,12 +1156,12 @@
         },
         {
           "slot": 2,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1113,7 +1218,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1136,12 +1241,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1174,7 +1279,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1186,12 +1291,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1224,7 +1329,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1236,12 +1341,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1274,7 +1379,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1286,12 +1391,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1348,7 +1453,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1371,12 +1476,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1409,7 +1514,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1421,12 +1526,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1459,7 +1564,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1471,12 +1576,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1509,7 +1614,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1521,12 +1626,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1583,7 +1688,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1595,12 +1700,12 @@
         },
         {
           "slot": 4,
-          "title": "Skill / Recovery",
+          "title": "Technique et récupération",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1633,7 +1738,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1656,12 +1761,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension + Posterior",
+          "title": "Gainage ventral et chaîne arrière",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1694,7 +1799,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1706,12 +1811,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1744,7 +1849,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1756,12 +1861,12 @@
         },
         {
           "slot": 2,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1818,7 +1923,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1841,12 +1946,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1879,7 +1984,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1891,12 +1996,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1929,7 +2034,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1941,12 +2046,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -1979,7 +2084,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -1991,12 +2096,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2053,7 +2158,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2076,12 +2181,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2114,7 +2219,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2126,12 +2231,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2164,7 +2269,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2176,12 +2281,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2214,7 +2319,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2226,12 +2331,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2288,7 +2393,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2300,12 +2405,12 @@
         },
         {
           "slot": 4,
-          "title": "Skill / Recovery",
+          "title": "Technique et récupération",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2338,7 +2443,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2361,12 +2466,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension + Posterior",
+          "title": "Gainage ventral et chaîne arrière",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2399,7 +2504,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2411,12 +2516,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2449,7 +2554,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2461,12 +2566,12 @@
         },
         {
           "slot": 2,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2523,7 +2628,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2546,12 +2651,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2584,7 +2689,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2596,12 +2701,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2634,7 +2739,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2646,12 +2751,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2684,7 +2789,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2696,12 +2801,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2758,7 +2863,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2781,12 +2886,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2819,7 +2924,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2831,12 +2936,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2869,7 +2974,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2881,12 +2986,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2919,7 +3024,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -2931,12 +3036,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -2993,7 +3098,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3005,12 +3110,12 @@
         },
         {
           "slot": 4,
-          "title": "Skill / Recovery",
+          "title": "Technique et récupération",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3043,7 +3148,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3066,12 +3171,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension + Posterior",
+          "title": "Gainage ventral et chaîne arrière",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3104,7 +3209,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3116,12 +3221,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3154,7 +3259,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3166,12 +3271,12 @@
         },
         {
           "slot": 2,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3228,7 +3333,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3251,12 +3356,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3289,7 +3394,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3301,12 +3406,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3339,7 +3444,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3351,12 +3456,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3389,7 +3494,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3401,12 +3506,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3463,7 +3568,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3486,12 +3591,12 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Anti-extension",
+          "title": "Gainage ventral",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3524,7 +3629,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3536,12 +3641,12 @@
         },
         {
           "slot": 1,
-          "title": "Hang + Pull",
+          "title": "Suspension et tractions",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3574,7 +3679,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3586,12 +3691,12 @@
         },
         {
           "slot": 2,
-          "title": "Lateral + Cross-body",
+          "title": "Gainage latéral et croisé",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3624,7 +3729,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3636,12 +3741,12 @@
         },
         {
           "slot": 3,
-          "title": "Integrated Core",
+          "title": "Gainage complet",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3698,7 +3803,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,
@@ -3710,12 +3815,12 @@
         },
         {
           "slot": 4,
-          "title": "Skill / Recovery",
+          "title": "Technique et récupération",
           "type": "control",
           "exercises": [
             {
               "role": "warmup",
-              "name": "Respiration et contrôle scapulaire",
+              "name": "Respiration et placement des épaules",
               "unit": "seconds",
               "value": 180,
               "rpe": 2,
@@ -3748,7 +3853,7 @@
             },
             {
               "role": "cooldown",
-              "name": "Mobilité thoracique",
+              "name": "Mobilité du buste",
               "unit": "reps",
               "sets": 1,
               "perSet": 6,

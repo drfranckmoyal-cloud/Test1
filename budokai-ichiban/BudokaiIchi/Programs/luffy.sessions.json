@@ -10,23 +10,27 @@
       "ladder": [
         {
           "id": "rocks",
-          "name": "Ankle rocks",
-          "detail": "Base"
+          "name": "Mobilité cheville",
+          "detail": "À genoux ou debout, tu avances le genou au-dessus des orteils.",
+          "technical": "Ankle rocks"
         },
         {
           "id": "kneeWall",
-          "name": "Knee-to-wall",
-          "detail": "Mesurable"
+          "name": "Mobilité cheville",
+          "detail": "Genou vers le mur, talon au sol.",
+          "technical": "Knee-to-wall"
         },
         {
           "id": "soleus",
-          "name": "Soleus stretch",
-          "detail": "Genou fléchi"
+          "name": "Mobilité cheville",
+          "detail": "Genou fléchi, talon au sol.",
+          "technical": "Soleus stretch"
         },
         {
           "id": "activeDF",
-          "name": "Active dorsiflexion",
-          "detail": "Contrôle actif"
+          "name": "Mobilité cheville",
+          "detail": "Tu tires activement la pointe du pied vers toi.",
+          "technical": "Active dorsiflexion"
         }
       ]
     },
@@ -38,28 +42,31 @@
       "ladder": [
         {
           "id": "supportedSquat",
-          "name": "Squat assisté",
-          "detail": "Base"
+          "name": "Squat profond",
+          "detail": "Tiens-toi à un appui pour descendre bas."
         },
         {
           "id": "pry",
-          "name": "Squat pry",
-          "detail": "Amplitude"
+          "name": "Squat profond",
+          "detail": "En bas du squat, tu pousses les genoux vers l'extérieur.",
+          "technical": "Squat pry"
         },
         {
           "id": "9090",
-          "name": "90/90",
-          "detail": "Rotation hanche"
+          "name": "Mobilité hanche",
+          "detail": "Assis, une jambe devant à 90°, l'autre sur le côté.",
+          "technical": "90/90"
         },
         {
           "id": "cossack",
-          "name": "Cossack assisté",
-          "detail": "Latéral"
+          "name": "Squat latéral",
+          "detail": "Tu descends d'un côté, l'autre jambe tendue.",
+          "technical": "Cossack squat"
         },
         {
           "id": "deepSquat",
-          "name": "Deep squat",
-          "detail": "Boss"
+          "name": "Squat profond",
+          "detail": "Talons au sol, sans appui."
         }
       ]
     },
@@ -71,23 +78,26 @@
       "ladder": [
         {
           "id": "supineHam",
-          "name": "Hamstring supine",
-          "detail": "Base"
+          "name": "Mobilité ischios",
+          "detail": "Sur le dos, une jambe tendue vers le plafond."
         },
         {
           "id": "dynamicLeg",
-          "name": "Dynamic leg raise",
-          "detail": "Actif"
+          "name": "Mobilité ischios",
+          "detail": "Mouvement contrôlé, sans à-coups.",
+          "technical": "Dynamic leg raise"
         },
         {
           "id": "hinge",
-          "name": "Hinge drill",
-          "detail": "Contrôle"
+          "name": "Mobilité ischios",
+          "detail": "Debout, hanches en arrière, dos plat.",
+          "technical": "Hinge drill"
         },
         {
           "id": "activeSLR",
-          "name": "Active SLR",
-          "detail": "Boss prep"
+          "name": "Mobilité ischios",
+          "detail": "L'autre jambe reste au sol.",
+          "technical": "Active straight leg raise"
         }
       ]
     },
@@ -99,23 +109,27 @@
       "ladder": [
         {
           "id": "wallSlide",
-          "name": "Wall slide",
-          "detail": "Base"
+          "name": "Mobilité épaules",
+          "detail": "Dos au mur, tu montes les bras en gardant le contact.",
+          "technical": "Wall slide"
         },
         {
           "id": "latStretch",
-          "name": "Lat stretch",
-          "detail": "Amplitude"
+          "name": "Mobilité épaules",
+          "detail": "Bras tendus devant, tu pousses la poitrine vers le sol.",
+          "technical": "Lat stretch"
         },
         {
           "id": "wallFlex",
-          "name": "Wall flexion",
-          "detail": "Contrôle ribs"
+          "name": "Mobilité épaules",
+          "detail": "Côtes basses : ne creuse pas le dos.",
+          "technical": "Wall flexion"
         },
         {
           "id": "liftOff",
-          "name": "Lift-off",
-          "detail": "Actif"
+          "name": "Mobilité épaules",
+          "detail": "À plat ventre, bras tendus devant, tu les décolles.",
+          "technical": "Lift-off"
         }
       ]
     },
@@ -127,23 +141,27 @@
       "ladder": [
         {
           "id": "openBook",
-          "name": "Open book",
-          "detail": "Base"
+          "name": "Rotation du buste",
+          "detail": "Allongé sur le côté, tu ouvres le bras du dessus.",
+          "technical": "Open book"
         },
         {
           "id": "quadRot",
-          "name": "Quadruped rotation",
-          "detail": "Contrôle"
+          "name": "Rotation du buste",
+          "detail": "Une main derrière la tête, tu ouvres le coude vers le plafond.",
+          "technical": "Quadruped rotation"
         },
         {
           "id": "halfKneel",
-          "name": "Half-kneeling rotation",
-          "detail": "Intermédiaire"
+          "name": "Rotation du buste",
+          "detail": "Un genou au sol, tu tournes le buste.",
+          "technical": "Half-kneeling rotation"
         },
         {
           "id": "activeRot",
-          "name": "Active rotation hold",
-          "detail": "Boss prep"
+          "name": "Rotation du buste",
+          "detail": "Tu tiens la rotation quelques secondes.",
+          "technical": "Active rotation hold"
         }
       ]
     }
@@ -156,7 +174,25 @@
       "referenceLevel": 2,
       "unit": "centimeters",
       "max": 20,
-      "cue": "Talon au sol, genou vers le mur : mesure l'écart gros orteil-mur en centimètres."
+      "cue": "Talon au sol, genou vers le mur : mesure l'écart gros orteil-mur en centimètres.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 5,
+          "level": 2
+        },
+        {
+          "atLeast": 8,
+          "level": 3
+        },
+        {
+          "atLeast": 12,
+          "level": 4
+        }
+      ]
     },
     {
       "id": "squat",
@@ -165,7 +201,29 @@
       "referenceLevel": 2,
       "unit": "seconds",
       "max": 60,
-      "cue": "Tiens la position confortable, talons au sol."
+      "cue": "Tiens la position confortable, talons au sol.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 10,
+          "level": 2
+        },
+        {
+          "atLeast": 30,
+          "level": 3
+        },
+        {
+          "atLeast": 45,
+          "level": 4
+        },
+        {
+          "atLeast": 60,
+          "level": 5
+        }
+      ]
     },
     {
       "id": "posterior",
@@ -174,7 +232,25 @@
       "referenceLevel": 2,
       "unit": "degrees",
       "max": 90,
-      "cue": "Jambe tendue levée activement : estime l'angle atteint, en degrés."
+      "cue": "Jambe tendue levée activement : estime l'angle atteint, en degrés.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 45,
+          "level": 2
+        },
+        {
+          "atLeast": 60,
+          "level": 3
+        },
+        {
+          "atLeast": 75,
+          "level": 4
+        }
+      ]
     },
     {
       "id": "shoulder",
@@ -183,7 +259,25 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 10,
-      "cue": "Wall flexion avec côtes contrôlées."
+      "cue": "Wall flexion avec côtes contrôlées.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 3,
+          "level": 2
+        },
+        {
+          "atLeast": 6,
+          "level": 3
+        },
+        {
+          "atLeast": 9,
+          "level": 4
+        }
+      ]
     },
     {
       "id": "thoracic",
@@ -192,7 +286,25 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 10,
-      "cue": "Rotation active symétrique, sans compensation."
+      "cue": "Rotation active symétrique, sans compensation.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 3,
+          "level": 2
+        },
+        {
+          "atLeast": 6,
+          "level": 3
+        },
+        {
+          "atLeast": 9,
+          "level": 4
+        }
+      ]
     }
   ],
   "weeks": [
@@ -207,7 +319,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -256,7 +368,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -305,7 +417,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -354,7 +466,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -414,7 +526,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -463,7 +575,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -512,7 +624,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -561,7 +673,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -610,7 +722,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -670,7 +782,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -719,7 +831,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -768,7 +880,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -817,7 +929,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -866,7 +978,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -915,7 +1027,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -975,7 +1087,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -1024,7 +1136,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -1073,7 +1185,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -1122,7 +1234,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -1171,7 +1283,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -1220,7 +1332,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -1269,7 +1381,7 @@
         },
         {
           "slot": 6,
-          "title": "Integrated Flow",
+          "title": "Enchaînement complet",
           "type": "mobility",
           "exercises": [
             {
@@ -1353,7 +1465,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -1402,7 +1514,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -1451,7 +1563,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -1500,7 +1612,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -1560,7 +1672,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -1609,7 +1721,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -1658,7 +1770,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -1707,7 +1819,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -1756,7 +1868,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -1816,7 +1928,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -1865,7 +1977,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -1914,7 +2026,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -1963,7 +2075,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -2012,7 +2124,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -2061,7 +2173,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -2121,7 +2233,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -2170,7 +2282,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -2219,7 +2331,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -2268,7 +2380,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -2317,7 +2429,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -2366,7 +2478,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -2415,7 +2527,7 @@
         },
         {
           "slot": 6,
-          "title": "Integrated Flow",
+          "title": "Enchaînement complet",
           "type": "mobility",
           "exercises": [
             {
@@ -2499,7 +2611,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -2548,7 +2660,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -2597,7 +2709,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -2646,7 +2758,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -2706,7 +2818,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -2755,7 +2867,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -2804,7 +2916,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -2853,7 +2965,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -2902,7 +3014,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -2962,7 +3074,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -3011,7 +3123,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -3060,7 +3172,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -3109,7 +3221,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -3158,7 +3270,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -3207,7 +3319,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -3267,7 +3379,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -3316,7 +3428,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -3365,7 +3477,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -3414,7 +3526,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -3463,7 +3575,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -3512,7 +3624,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -3561,7 +3673,7 @@
         },
         {
           "slot": 6,
-          "title": "Integrated Flow",
+          "title": "Enchaînement complet",
           "type": "mobility",
           "exercises": [
             {
@@ -3645,7 +3757,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -3694,7 +3806,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -3743,7 +3855,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -3792,7 +3904,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -3852,7 +3964,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -3901,7 +4013,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -3950,7 +4062,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -3999,7 +4111,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -4048,7 +4160,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -4108,7 +4220,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -4157,7 +4269,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -4206,7 +4318,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -4255,7 +4367,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -4304,7 +4416,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -4353,7 +4465,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -4413,7 +4525,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -4462,7 +4574,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -4511,7 +4623,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -4560,7 +4672,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -4609,7 +4721,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -4658,7 +4770,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -4707,7 +4819,7 @@
         },
         {
           "slot": 6,
-          "title": "Integrated Flow",
+          "title": "Enchaînement complet",
           "type": "mobility",
           "exercises": [
             {
@@ -4791,7 +4903,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -4840,7 +4952,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -4889,7 +5001,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -4938,7 +5050,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -4998,7 +5110,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -5047,7 +5159,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -5096,7 +5208,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -5145,7 +5257,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -5194,7 +5306,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -5254,7 +5366,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -5303,7 +5415,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -5352,7 +5464,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -5401,7 +5513,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -5450,7 +5562,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -5499,7 +5611,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -5559,7 +5671,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Ankle + Squat",
+          "title": "Chevilles et squat profond",
           "type": "mobility",
           "exercises": [
             {
@@ -5608,7 +5720,7 @@
         },
         {
           "slot": 1,
-          "title": "Shoulder + Thoracic",
+          "title": "Épaules et buste",
           "type": "mobility",
           "exercises": [
             {
@@ -5657,7 +5769,7 @@
         },
         {
           "slot": 2,
-          "title": "Posterior + Hip",
+          "title": "Ischios et hanches",
           "type": "mobility",
           "exercises": [
             {
@@ -5706,7 +5818,7 @@
         },
         {
           "slot": 3,
-          "title": "Ankle + Posterior",
+          "title": "Chevilles et ischios",
           "type": "mobility",
           "exercises": [
             {
@@ -5755,7 +5867,7 @@
         },
         {
           "slot": 4,
-          "title": "Shoulder + Rotation",
+          "title": "Épaules et rotation",
           "type": "mobility",
           "exercises": [
             {
@@ -5804,7 +5916,7 @@
         },
         {
           "slot": 5,
-          "title": "Hip Active",
+          "title": "Hanches en mouvement",
           "type": "mobility",
           "exercises": [
             {
@@ -5853,7 +5965,7 @@
         },
         {
           "slot": 6,
-          "title": "Integrated Flow",
+          "title": "Enchaînement complet",
           "type": "mobility",
           "exercises": [
             {

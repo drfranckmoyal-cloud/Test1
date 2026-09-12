@@ -260,7 +260,7 @@ struct ProgramLaunchView: View {
         let step = test.objectiveUnit == .meters ? 100 : (test.objectiveUnit == .seconds ? 30 : 1)
 
         return AnyView(screen(eyebrow: "MESURE \(index + 1) SUR \(tests.count)",
-                              title: test.label, help: nil) {
+                              title: test.question ?? test.label, help: nil) {
             VStack(alignment: .leading, spacing: 20) {
                 VStack(alignment: .leading, spacing: 7) {
                     Text("CE QU'ON MESURE")
@@ -278,11 +278,21 @@ struct ProgramLaunchView: View {
                 .overlay(RoundedRectangle(cornerRadius: 15, style: .continuous)
                     .stroke(Theme.border, lineWidth: 1))
 
+                // certaines mesures se choisissent au lieu de se saisir : on
+                // ne demande pas un chiffre quand une réponse suffit
+                if let choices = test.choices {
+                    VStack(spacing: 8) {
+                        ForEach(choices) { option in
+                            choiceRow(option, test: test)
+                        }
+                    }
+                } else {
                 stepper(unitLabel(test.objectiveUnit),
                         value: Binding(
                             get: { coachAnswers[test.id] ?? defaultAnswer(test) },
                             set: { coachAnswers[test.id] = $0 }),
                         range: 0...test.max, stride: step)
+                }
 
                 Button {
                     Haptics.tap()
@@ -297,6 +307,35 @@ struct ProgramLaunchView: View {
                 .buttonStyle(.plain)
             }
         })
+    }
+
+    /// Une réponse à choisir, taille d'un vrai bouton.
+    private func choiceRow(_ option: SessionLibrary.CalibrationTest.Choice,
+                           test: SessionLibrary.CalibrationTest) -> some View {
+        let picked = coachAnswers[test.id] == option.value
+        return Button {
+            Haptics.tap()
+            coachAnswers[test.id] = option.value
+        } label: {
+            HStack(spacing: 11) {
+                Image(systemName: picked ? "largecircle.fill.circle" : "circle")
+                    .font(.system(size: 19))
+                    .foregroundStyle(picked ? tint : Theme.dim)
+                Text(option.label)
+                    .font(.ui(15, picked ? .bold : .semibold))
+                    .foregroundStyle(Theme.text)
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 0)
+            }
+            .padding(15)
+            .frame(maxWidth: .infinity)
+            .background(picked ? tint.opacity(0.12) : Theme.surface,
+                        in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(picked ? tint : Theme.border, lineWidth: picked ? 2 : 1))
+        }
+        .buttonStyle(.plain)
     }
 
     private func unitLabel(_ unit: ObjectiveUnit) -> String {

@@ -124,6 +124,15 @@ struct DailyProgressObjective: View {
                     .strikethrough(done, color: Theme.dim)
                     .fixedSize(horizontal: false, vertical: true)
 
+                // le nom technique, pour qui le connaît déjà : il ne sert
+                // jamais à comprendre ce qu'il faut faire
+                if let technical = prescription.technicalName {
+                    Text(technical)
+                        .font(.ui(10, .semibold))
+                        .kerning(0.6)
+                        .foregroundStyle(Theme.dim)
+                }
+
                 Text(prescription.amountLabel)
                     .font(.display(30))
                     .foregroundStyle(done ? Theme.dim : tint)
@@ -135,7 +144,8 @@ struct DailyProgressObjective: View {
                         .foregroundStyle(Theme.muted)
                 }
 
-                if let intensity = prescription.intensityLabel {
+                if let intensity = prescription.intensityLabel,
+                   !prescription.isWarmup, !prescription.isCooldown {
                     Text(intensity)
                         .font(.ui(11, .bold))
                         .foregroundStyle(tint)

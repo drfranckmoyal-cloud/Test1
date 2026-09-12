@@ -10,23 +10,24 @@
       "ladder": [
         {
           "id": "drill",
-          "name": "Drills",
-          "detail": "March/A-skip"
+          "name": "Éducatifs de course",
+          "detail": "Montées de genoux et talons-fesses, propres.",
+          "technical": "Drills"
         },
         {
           "id": "10m",
-          "name": "10 m",
-          "detail": "Départ"
+          "name": "Sprint 10 m",
+          "detail": "Départ arrêté, récupération complète."
         },
         {
           "id": "20m",
-          "name": "20 m",
-          "detail": "Accélération"
+          "name": "Sprint 20 m",
+          "detail": "Départ arrêté, récupération complète."
         },
         {
           "id": "30m",
-          "name": "30 m",
-          "detail": "Boss prep"
+          "name": "Sprint 30 m",
+          "detail": "Départ arrêté, récupération complète."
         }
       ]
     },
@@ -38,23 +39,26 @@
       "ladder": [
         {
           "id": "stride",
-          "name": "Strides",
-          "detail": "Progressif"
+          "name": "Lignes droites relâchées",
+          "detail": "Accélère progressivement, sans forcer.",
+          "technical": "Strides"
         },
         {
           "id": "fly10",
-          "name": "Fly 10",
-          "detail": "Build-up + 10 m rapide"
+          "name": "Sprint lancé",
+          "detail": "Prends de l'élan, puis 10 m à pleine vitesse.",
+          "technical": "Fly 10"
         },
         {
           "id": "fly20",
-          "name": "Fly 20",
-          "detail": "Build-up + 20 m"
+          "name": "Sprint lancé",
+          "detail": "Prends de l'élan, puis 20 m à pleine vitesse.",
+          "technical": "Fly 20"
         },
         {
           "id": "60m",
-          "name": "60 m",
-          "detail": "Test"
+          "name": "Sprint 60 m",
+          "detail": "Départ arrêté, récupération complète."
         }
       ]
     },
@@ -66,18 +70,19 @@
       "ladder": [
         {
           "id": "staticStart",
-          "name": "Départ statique",
-          "detail": "Standard"
+          "name": "Départ arrêté",
+          "detail": "Position stable, puis départ franc."
         },
         {
           "id": "variedStart",
-          "name": "Départ varié",
-          "detail": "Positions diverses"
+          "name": "Départ arrêté",
+          "detail": "Assis, à genoux, de dos : tu pars de là."
         },
         {
           "id": "reactiveStart",
-          "name": "Départ réactif",
-          "detail": "Signal simple"
+          "name": "Départ arrêté",
+          "detail": "Tu pars sur un signal extérieur.",
+          "technical": "Reactive start"
         }
       ]
     },
@@ -89,18 +94,18 @@
       "ladder": [
         {
           "id": "basic",
-          "name": "Support de base",
-          "detail": "Split squat, calf, bridge"
+          "name": "Renforcement de base",
+          "detail": "Fentes, pont fessier, mollets."
         },
         {
           "id": "single",
-          "name": "Unilatéral",
-          "detail": "Single-leg"
+          "name": "Renforcement sur une jambe",
+          "detail": "Même travail, une jambe à la fois."
         },
         {
           "id": "advanced",
-          "name": "Support avancé",
-          "detail": "Hamstring walkout, calf genou fléchi"
+          "name": "Renforcement avancé",
+          "detail": "Charges ou appuis plus exigeants."
         }
       ]
     }
@@ -113,7 +118,29 @@
       "referenceLevel": 2,
       "unit": "centiseconds",
       "max": 1000,
-      "cue": "Trois essais, récupération complète. En centièmes : 1,84 s s'écrit 184."
+      "cue": "Trois essais, récupération complète. En centièmes : 1,84 s s'écrit 184.",
+      "entry": [
+        {
+          "atMost": 200,
+          "level": 4
+        },
+        {
+          "atMost": 230,
+          "level": 3
+        },
+        {
+          "atMost": 270,
+          "level": 2
+        },
+        {
+          "atMost": 10000,
+          "level": 1
+        }
+      ],
+      "alsoFamilies": [
+        "minato.cod",
+        "minato.support"
+      ]
     },
     {
       "id": "30m",
@@ -122,7 +149,25 @@
       "referenceLevel": 3,
       "unit": "centiseconds",
       "max": 1500,
-      "cue": "Deux à trois essais, garde le meilleur. En centièmes : 4,55 s s'écrit 455."
+      "cue": "Deux à trois essais, garde le meilleur. En centièmes : 4,55 s s'écrit 455.",
+      "entry": [
+        {
+          "atMost": 480,
+          "level": 4
+        },
+        {
+          "atMost": 540,
+          "level": 3
+        },
+        {
+          "atMost": 600,
+          "level": 2
+        },
+        {
+          "atMost": 10000,
+          "level": 1
+        }
+      ]
     },
     {
       "id": "60m",
@@ -131,7 +176,25 @@
       "referenceLevel": 3,
       "unit": "centiseconds",
       "max": 2000,
-      "cue": "Deux essais, et seulement si le terrain s'y prête. En centièmes : 8,40 s s'écrit 840."
+      "cue": "Deux essais, et seulement si le terrain s'y prête. En centièmes : 8,40 s s'écrit 840.",
+      "entry": [
+        {
+          "atMost": 850,
+          "level": 4
+        },
+        {
+          "atMost": 950,
+          "level": 3
+        },
+        {
+          "atMost": 1100,
+          "level": 2
+        },
+        {
+          "atMost": 10000,
+          "level": 1
+        }
+      ]
     }
   ],
   "weeks": [
@@ -161,7 +224,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -205,7 +268,7 @@
         },
         {
           "slot": 1,
-          "title": "Vitesse / Réactivité",
+          "title": "Vitesse et réactivité",
           "type": "speed",
           "exercises": [
             {
@@ -220,7 +283,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -290,7 +353,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -334,7 +397,7 @@
         },
         {
           "slot": 1,
-          "title": "Technique / Support",
+          "title": "Technique et renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -349,7 +412,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -420,7 +483,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -490,7 +553,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -534,7 +597,7 @@
         },
         {
           "slot": 1,
-          "title": "Support",
+          "title": "Renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -549,7 +612,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -620,7 +683,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -679,7 +742,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -749,7 +812,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -793,7 +856,7 @@
         },
         {
           "slot": 1,
-          "title": "Vitesse / Réactivité",
+          "title": "Vitesse et réactivité",
           "type": "speed",
           "exercises": [
             {
@@ -808,7 +871,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -878,7 +941,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -922,7 +985,7 @@
         },
         {
           "slot": 1,
-          "title": "Technique / Support",
+          "title": "Technique et renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -937,7 +1000,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1008,7 +1071,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1078,7 +1141,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1122,7 +1185,7 @@
         },
         {
           "slot": 1,
-          "title": "Support",
+          "title": "Renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -1137,7 +1200,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1208,7 +1271,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1267,7 +1330,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1337,7 +1400,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1381,7 +1444,7 @@
         },
         {
           "slot": 1,
-          "title": "Vitesse / Réactivité",
+          "title": "Vitesse et réactivité",
           "type": "speed",
           "exercises": [
             {
@@ -1396,7 +1459,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1466,7 +1529,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1510,7 +1573,7 @@
         },
         {
           "slot": 1,
-          "title": "Technique / Support",
+          "title": "Technique et renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -1525,7 +1588,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1596,7 +1659,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1666,7 +1729,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1710,7 +1773,7 @@
         },
         {
           "slot": 1,
-          "title": "Support",
+          "title": "Renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -1725,7 +1788,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1796,7 +1859,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1855,7 +1918,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1925,7 +1988,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1969,7 +2032,7 @@
         },
         {
           "slot": 1,
-          "title": "Vitesse / Réactivité",
+          "title": "Vitesse et réactivité",
           "type": "speed",
           "exercises": [
             {
@@ -1984,7 +2047,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2054,7 +2117,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2098,7 +2161,7 @@
         },
         {
           "slot": 1,
-          "title": "Technique / Support",
+          "title": "Technique et renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -2113,7 +2176,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2184,7 +2247,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2254,7 +2317,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2298,7 +2361,7 @@
         },
         {
           "slot": 1,
-          "title": "Support",
+          "title": "Renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -2313,7 +2376,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2384,7 +2447,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2443,7 +2506,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2513,7 +2576,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2557,7 +2620,7 @@
         },
         {
           "slot": 1,
-          "title": "Vitesse / Réactivité",
+          "title": "Vitesse et réactivité",
           "type": "speed",
           "exercises": [
             {
@@ -2572,7 +2635,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2642,7 +2705,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2686,7 +2749,7 @@
         },
         {
           "slot": 1,
-          "title": "Technique / Support",
+          "title": "Technique et renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -2701,7 +2764,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2772,7 +2835,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2842,7 +2905,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2886,7 +2949,7 @@
         },
         {
           "slot": 1,
-          "title": "Support",
+          "title": "Renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -2901,7 +2964,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2972,7 +3035,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3031,7 +3094,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3101,7 +3164,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3145,7 +3208,7 @@
         },
         {
           "slot": 1,
-          "title": "Vitesse / Réactivité",
+          "title": "Vitesse et réactivité",
           "type": "speed",
           "exercises": [
             {
@@ -3160,7 +3223,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3230,7 +3293,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3274,7 +3337,7 @@
         },
         {
           "slot": 1,
-          "title": "Technique / Support",
+          "title": "Technique et renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -3289,7 +3352,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3360,7 +3423,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3430,7 +3493,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3474,7 +3537,7 @@
         },
         {
           "slot": 1,
-          "title": "Support",
+          "title": "Renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -3489,7 +3552,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3560,7 +3623,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3619,7 +3682,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3689,7 +3752,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3733,7 +3796,7 @@
         },
         {
           "slot": 1,
-          "title": "Vitesse / Réactivité",
+          "title": "Vitesse et réactivité",
           "type": "speed",
           "exercises": [
             {
@@ -3748,7 +3811,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3818,7 +3881,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3862,7 +3925,7 @@
         },
         {
           "slot": 1,
-          "title": "Technique / Support",
+          "title": "Technique et renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -3877,7 +3940,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -3948,7 +4011,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -4018,7 +4081,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -4062,7 +4125,7 @@
         },
         {
           "slot": 1,
-          "title": "Support",
+          "title": "Renforcement",
           "type": "speed",
           "exercises": [
             {
@@ -4077,7 +4140,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -4148,7 +4211,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -4207,7 +4270,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,

@@ -10,48 +10,52 @@
       "ladder": [
         {
           "id": "wall",
-          "name": "Pompe murale",
-          "detail": "Base"
+          "name": "Pompe au mur",
+          "detail": "Mains au mur, debout."
         },
         {
           "id": "incline",
           "name": "Pompe inclinée",
-          "detail": "Support haut"
+          "detail": "Mains sur une table ou un banc."
         },
         {
           "id": "standard",
-          "name": "Pompe standard",
+          "name": "Pompe",
           "detail": "Amplitude complète"
         },
         {
           "id": "feetElevated",
           "name": "Pompe pieds surélevés",
-          "detail": "Plus exigeant"
+          "detail": "Pieds sur une chaise."
         },
         {
           "id": "archer",
           "name": "Pompe archer",
-          "detail": "Transfert unilatéral"
+          "detail": "Un bras tendu sur le côté, l'autre travaille."
         },
         {
           "id": "assistedOAP",
-          "name": "One-arm assistée",
-          "detail": "Main secondaire sur support"
+          "name": "Pompe à un bras assistée",
+          "detail": "L'autre main posée sur un support surélevé.",
+          "technical": "Assisted one-arm push-up"
         },
         {
           "id": "eccOAP",
-          "name": "One-arm eccentric",
-          "detail": "3–5 s descente"
+          "name": "Pompe à un bras",
+          "detail": "Tu descends lentement sur un bras, tu remontes à deux.",
+          "technical": "One-arm eccentric"
         },
         {
           "id": "oapSingle",
-          "name": "One-arm single",
-          "detail": "1 rep propre"
+          "name": "Pompe à un bras",
+          "detail": "Une répétition complète.",
+          "technical": "One-arm push-up"
         },
         {
           "id": "oapVolume",
-          "name": "One-arm volume",
-          "detail": "2–5/côté"
+          "name": "Pompe à un bras",
+          "detail": "Plusieurs répétitions par côté.",
+          "technical": "One-arm volume"
         }
       ]
     },
@@ -63,43 +67,46 @@
       "ladder": [
         {
           "id": "hang",
-          "name": "Dead hang",
-          "detail": "Suspension"
+          "name": "Suspension à la barre",
+          "detail": "Bras tendus, épaules actives.",
+          "technical": "Dead hang"
         },
         {
           "id": "scap",
-          "name": "Scap pull",
-          "detail": "Contrôle scapulaire"
+          "name": "Suspension, épaules actives",
+          "detail": "Sans plier les bras, tu remontes les épaules.",
+          "technical": "Scap pull"
         },
         {
           "id": "footAssist",
-          "name": "Foot-assisted pull-up",
-          "detail": "Assistance pieds"
+          "name": "Traction assistée",
+          "detail": "Un pied posé pour t'aider.",
+          "technical": "Foot-assisted pull-up"
         },
         {
           "id": "negative",
-          "name": "Negative pull-up",
-          "detail": "Descente lente"
+          "name": "Traction négative",
+          "detail": "Tu pars en haut et tu descends lentement."
         },
         {
           "id": "single",
-          "name": "Traction single",
-          "detail": "1 rep stricte"
+          "name": "Traction",
+          "detail": "1 répétition stricte."
         },
         {
           "id": "volume3",
-          "name": "Tractions 3 reps",
-          "detail": "Volume"
+          "name": "Traction",
+          "detail": "3 répétitions strictes."
         },
         {
           "id": "volume5",
-          "name": "Tractions 5 reps",
-          "detail": "Volume"
+          "name": "Traction",
+          "detail": "5 répétitions strictes."
         },
         {
           "id": "boss8",
-          "name": "8 tractions strictes",
-          "detail": "Boss"
+          "name": "Traction",
+          "detail": "8 répétitions strictes."
         }
       ]
     },
@@ -111,8 +118,9 @@
       "ladder": [
         {
           "id": "sitStand",
-          "name": "Sit-to-stand",
-          "detail": "Base"
+          "name": "Squat sur chaise",
+          "detail": "Tu t'assieds et tu te relèves sans élan.",
+          "technical": "Sit-to-stand"
         },
         {
           "id": "squat",
@@ -121,38 +129,45 @@
         },
         {
           "id": "split",
-          "name": "Split squat",
-          "detail": "Unilatéral"
+          "name": "Fente",
+          "detail": "Un pied devant, un pied derrière.",
+          "technical": "Split squat"
         },
         {
           "id": "boxPistol",
-          "name": "Pistol assistée box",
-          "detail": "Support"
+          "name": "Squat sur une jambe",
+          "detail": "Tu t'assieds sur une chaise sur une seule jambe.",
+          "technical": "Box pistol"
         },
         {
           "id": "eccPistol",
-          "name": "Pistol eccentric",
-          "detail": "Descente lente"
+          "name": "Squat sur une jambe",
+          "detail": "Tu descends lentement sur une jambe, tu remontes à deux.",
+          "technical": "Eccentric pistol"
         },
         {
           "id": "counterPistol",
-          "name": "Pistol contrebalancée",
-          "detail": "Assistance légère"
+          "name": "Squat sur une jambe",
+          "detail": "Bras tendus devant pour l'équilibre.",
+          "technical": "Counterbalanced pistol"
         },
         {
           "id": "fullPistol",
-          "name": "Pistol complète",
-          "detail": "1 rep"
+          "name": "Squat sur une jambe",
+          "detail": "Descente complète, sans appui.",
+          "technical": "Pistol squat"
         },
         {
           "id": "pistolVolume",
-          "name": "Pistol volume",
-          "detail": "3–5/côté"
+          "name": "Squat sur une jambe",
+          "detail": "Plusieurs répétitions par jambe.",
+          "technical": "Pistol volume"
         },
         {
           "id": "pistolTempo",
-          "name": "Pistol tempo",
-          "detail": "Contrôle avancé"
+          "name": "Squat sur une jambe",
+          "detail": "Descente lente : 3 secondes.",
+          "technical": "Pistol tempo"
         }
       ]
     },
@@ -164,28 +179,32 @@
       "ladder": [
         {
           "id": "deadBug",
-          "name": "Dead bug",
-          "detail": "Base"
+          "name": "Abdos bras-jambe opposés",
+          "detail": "Sur le dos, bras et jambe opposés, sans creuser le dos.",
+          "technical": "Dead bug"
         },
         {
           "id": "plank",
           "name": "Planche",
-          "detail": "Anti-extension"
+          "detail": "Appui sur les avant-bras, corps aligné."
         },
         {
           "id": "hollowTuck",
-          "name": "Hollow tuck",
-          "detail": "Compact"
+          "name": "Gainage en cuillère, genoux repliés",
+          "detail": "Sur le dos, bas du dos plaqué, genoux vers la poitrine.",
+          "technical": "Hollow tuck"
         },
         {
           "id": "hollow",
-          "name": "Hollow hold",
-          "detail": "Standard"
+          "name": "Gainage en cuillère",
+          "detail": "Sur le dos, bras et jambes tendus, bas du dos plaqué.",
+          "technical": "Hollow hold"
         },
         {
           "id": "hangingKnee",
-          "name": "Hanging knee raise",
-          "detail": "Suspendu"
+          "name": "Montée de genoux suspendu",
+          "detail": "Suspendu à la barre, tu montes les genoux.",
+          "technical": "Hanging knee raise"
         }
       ]
     }
@@ -198,7 +217,29 @@
       "referenceLevel": 3,
       "unit": "reps",
       "max": 20,
-      "cue": "Trouve une variante à 5–12 reps avec 2–3 RIR."
+      "cue": "Trouve une variante à 5–12 reps avec 2–3 RIR.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 1,
+          "level": 2
+        },
+        {
+          "atLeast": 5,
+          "level": 3
+        },
+        {
+          "atLeast": 15,
+          "level": 4
+        },
+        {
+          "atLeast": 25,
+          "level": 5
+        }
+      ]
     },
     {
       "id": "pull",
@@ -207,7 +248,29 @@
       "referenceLevel": 3,
       "unit": "reps",
       "max": 12,
-      "cue": "Trouve une variante à 3–8 reps avec 2–3 RIR."
+      "cue": "Trouve une variante à 3–8 reps avec 2–3 RIR.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 2
+        },
+        {
+          "atLeast": 1,
+          "level": 5
+        },
+        {
+          "atLeast": 2,
+          "level": 6
+        },
+        {
+          "atLeast": 4,
+          "level": 7
+        },
+        {
+          "atLeast": 7,
+          "level": 8
+        }
+      ]
     },
     {
       "id": "squat",
@@ -216,7 +279,21 @@
       "referenceLevel": 3,
       "unit": "reps",
       "max": 15,
-      "cue": "Trouve une variante unilatérale propre à 5–10 reps/côté."
+      "cue": "Trouve une variante unilatérale propre à 5–10 reps/côté.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 2
+        },
+        {
+          "atLeast": 10,
+          "level": 3
+        },
+        {
+          "atLeast": 15,
+          "level": 4
+        }
+      ]
     },
     {
       "id": "core",
@@ -225,7 +302,25 @@
       "referenceLevel": 2,
       "unit": "seconds",
       "max": 90,
-      "cue": "Choisis une variante tenable 20–40 s avec qualité good."
+      "cue": "Choisis une variante tenable 20–40 s avec qualité good.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 20,
+          "level": 2
+        },
+        {
+          "atLeast": 40,
+          "level": 3
+        },
+        {
+          "atLeast": 60,
+          "level": 4
+        }
+      ]
     }
   ],
   "weeks": [
@@ -240,7 +335,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -290,7 +385,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -340,7 +435,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -413,7 +508,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -463,7 +558,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -513,7 +608,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -575,7 +670,7 @@
         },
         {
           "slot": 3,
-          "title": "Technique / Faiblesse",
+          "title": "Technique et point faible",
           "type": "strength",
           "exercises": [
             {
@@ -648,7 +743,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -698,7 +793,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -748,7 +843,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -821,7 +916,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -871,7 +966,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -921,7 +1016,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -983,7 +1078,7 @@
         },
         {
           "slot": 3,
-          "title": "Technique / Faiblesse",
+          "title": "Technique et point faible",
           "type": "strength",
           "exercises": [
             {
@@ -1056,7 +1151,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -1106,7 +1201,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -1156,7 +1251,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -1229,7 +1324,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -1279,7 +1374,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -1329,7 +1424,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -1391,7 +1486,7 @@
         },
         {
           "slot": 3,
-          "title": "Technique / Faiblesse",
+          "title": "Technique et point faible",
           "type": "strength",
           "exercises": [
             {
@@ -1464,7 +1559,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -1514,7 +1609,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -1564,7 +1659,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -1637,7 +1732,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -1687,7 +1782,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -1737,7 +1832,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -1799,7 +1894,7 @@
         },
         {
           "slot": 3,
-          "title": "Technique / Faiblesse",
+          "title": "Technique et point faible",
           "type": "strength",
           "exercises": [
             {
@@ -1872,7 +1967,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -1922,7 +2017,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -1972,7 +2067,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -2045,7 +2140,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -2095,7 +2190,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -2145,7 +2240,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -2207,7 +2302,7 @@
         },
         {
           "slot": 3,
-          "title": "Technique / Faiblesse",
+          "title": "Technique et point faible",
           "type": "strength",
           "exercises": [
             {
@@ -2280,7 +2375,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -2330,7 +2425,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -2380,7 +2475,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -2453,7 +2548,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -2503,7 +2598,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -2553,7 +2648,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -2615,7 +2710,7 @@
         },
         {
           "slot": 3,
-          "title": "Technique / Faiblesse",
+          "title": "Technique et point faible",
           "type": "strength",
           "exercises": [
             {
@@ -2688,7 +2783,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -2738,7 +2833,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -2788,7 +2883,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -2861,7 +2956,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Push + Pull",
+          "title": "Poussée et tirage",
           "type": "strength",
           "exercises": [
             {
@@ -2911,7 +3006,7 @@
         },
         {
           "slot": 1,
-          "title": "Legs + Core",
+          "title": "Jambes et gainage",
           "type": "strength",
           "exercises": [
             {
@@ -2961,7 +3056,7 @@
         },
         {
           "slot": 2,
-          "title": "Full Body Skill",
+          "title": "Corps entier — technique",
           "type": "strength",
           "exercises": [
             {
@@ -3023,7 +3118,7 @@
         },
         {
           "slot": 3,
-          "title": "Technique / Faiblesse",
+          "title": "Technique et point faible",
           "type": "strength",
           "exercises": [
             {

@@ -11,37 +11,39 @@
         {
           "id": "incline",
           "name": "Pompe inclinée",
-          "detail": "Base"
+          "detail": "Mains sur une table ou un banc."
         },
         {
           "id": "standard",
-          "name": "Pompe standard",
+          "name": "Pompe",
           "detail": "Continue"
         },
         {
           "id": "volumeSets",
-          "name": "Pompes volume",
-          "detail": "Sets sous-max"
+          "name": "Pompe",
+          "detail": "Plus de séries, mêmes répétitions.",
+          "technical": "Volume sets"
         },
         {
           "id": "density",
-          "name": "Pompes densité",
-          "detail": "Repos réduit"
+          "name": "Pompe",
+          "detail": "Mêmes séries, moins de repos.",
+          "technical": "Density"
         },
         {
           "id": "continuous25",
-          "name": "25 continues",
-          "detail": "Benchmark intermédiaire"
+          "name": "Pompe — série longue",
+          "detail": "25 répétitions d'affilée."
         },
         {
           "id": "continuous40",
-          "name": "40 continues",
-          "detail": "Avancé"
+          "name": "Pompe — série longue",
+          "detail": "40 répétitions d'affilée."
         },
         {
           "id": "continuous50",
-          "name": "50 continues",
-          "detail": "Target"
+          "name": "Pompe — série longue",
+          "detail": "50 répétitions d'affilée."
         }
       ]
     },
@@ -53,38 +55,40 @@
       "ladder": [
         {
           "id": "hang",
-          "name": "Hang",
-          "detail": "Base"
+          "name": "Suspension à la barre",
+          "detail": "Bras tendus, épaules actives.",
+          "technical": "Dead hang"
         },
         {
           "id": "scap",
-          "name": "Scap pull",
-          "detail": "Contrôle"
+          "name": "Suspension, épaules actives",
+          "detail": "Sans plier les bras, tu remontes les épaules.",
+          "technical": "Scap pull"
         },
         {
           "id": "assist",
           "name": "Traction assistée",
-          "detail": "Assistance"
+          "detail": "Un pied posé sur une chaise pour t'aider."
         },
         {
           "id": "negative",
-          "name": "Negative",
-          "detail": "Lente"
+          "name": "Traction négative",
+          "detail": "Tu pars en haut et tu descends le plus lentement possible."
         },
         {
           "id": "three",
-          "name": "3 strictes",
-          "detail": "Volume"
+          "name": "Traction",
+          "detail": "3 répétitions strictes."
         },
         {
           "id": "six",
-          "name": "6 strictes",
-          "detail": "Intermédiaire"
+          "name": "Traction",
+          "detail": "6 répétitions strictes."
         },
         {
           "id": "ten",
-          "name": "10 strictes",
-          "detail": "Target"
+          "name": "Traction",
+          "detail": "10 répétitions strictes."
         }
       ]
     },
@@ -96,23 +100,25 @@
       "ladder": [
         {
           "id": "sitStand",
-          "name": "Sit-to-stand",
-          "detail": "Base"
+          "name": "Squat sur chaise",
+          "detail": "Tu t'assieds et tu te relèves sans élan.",
+          "technical": "Sit-to-stand"
         },
         {
           "id": "squat",
-          "name": "Squat poids du corps",
+          "name": "Squat",
           "detail": "Standard"
         },
         {
           "id": "volume",
-          "name": "Squat volume",
-          "detail": "Sets cumulés"
+          "name": "Squat",
+          "detail": "Plus de séries.",
+          "technical": "Volume"
         },
         {
           "id": "day100",
-          "name": "100 squats/jour",
-          "detail": "Target"
+          "name": "Squat",
+          "detail": "100 répétitions dans la journée, à répartir."
         }
       ]
     },
@@ -124,18 +130,20 @@
       "ladder": [
         {
           "id": "curlUp",
-          "name": "Curl-up contrôlé",
-          "detail": "Base"
+          "name": "Abdos",
+          "detail": "Épaules décollées, bas du dos plaqué.",
+          "technical": "Curl-up"
         },
         {
           "id": "volume",
-          "name": "Curl-up volume",
-          "detail": "Sets cumulés"
+          "name": "Abdos",
+          "detail": "Plus de séries.",
+          "technical": "Volume"
         },
         {
           "id": "day200",
-          "name": "200 abdos/jour",
-          "detail": "Target"
+          "name": "Abdos",
+          "detail": "200 répétitions dans la journée, à répartir."
         }
       ]
     },
@@ -147,28 +155,29 @@
       "ladder": [
         {
           "id": "runWalk",
-          "name": "Run/walk",
-          "detail": "Débutant"
+          "name": "Course et marche",
+          "detail": "Alterne course facile et marche.",
+          "technical": "Run/walk"
         },
         {
           "id": "run20",
-          "name": "20 min continu",
-          "detail": "Facile"
+          "name": "Course facile",
+          "detail": "20 minutes sans marcher."
         },
         {
           "id": "run30",
-          "name": "30 min continu",
-          "detail": "Facile"
+          "name": "Course facile",
+          "detail": "30 minutes sans marcher."
         },
         {
           "id": "run4k",
-          "name": "4 km continu",
-          "detail": "Prépa"
+          "name": "Course facile",
+          "detail": "4 km sans marcher."
         },
         {
           "id": "run5k",
-          "name": "5 km continu",
-          "detail": "Target"
+          "name": "Course facile",
+          "detail": "5 km sans marcher."
         }
       ]
     }
@@ -181,7 +190,33 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 40,
-      "cue": "Max propre avec arrêt à la première dégradation."
+      "cue": "Max propre avec arrêt à la première dégradation.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 5,
+          "level": 2
+        },
+        {
+          "atLeast": 15,
+          "level": 3
+        },
+        {
+          "atLeast": 25,
+          "level": 5
+        },
+        {
+          "atLeast": 40,
+          "level": 6
+        },
+        {
+          "atLeast": 50,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "pull",
@@ -190,7 +225,29 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 15,
-      "cue": "Max strict sans kipping."
+      "cue": "Max strict sans kipping.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 2
+        },
+        {
+          "atLeast": 1,
+          "level": 4
+        },
+        {
+          "atLeast": 3,
+          "level": 5
+        },
+        {
+          "atLeast": 6,
+          "level": 6
+        },
+        {
+          "atLeast": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "squat",
@@ -199,7 +256,21 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 60,
-      "cue": "Cap 60 reps propres."
+      "cue": "Cap 60 reps propres.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 10,
+          "level": 2
+        },
+        {
+          "atLeast": 30,
+          "level": 3
+        }
+      ]
     },
     {
       "id": "abs",
@@ -208,16 +279,75 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 60,
-      "cue": "Curl-up contrôlé, cap 60."
+      "cue": "Curl-up contrôlé, cap 60.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 10,
+          "level": 2
+        },
+        {
+          "atLeast": 30,
+          "level": 3
+        }
+      ]
     },
     {
-      "id": "run",
-      "label": "Course continue",
+      "id": "easyDistance",
+      "label": "Ta distance facile",
       "family": "ichigo.run",
       "referenceLevel": 2,
-      "unit": "seconds",
-      "max": 3600,
-      "cue": "Course facile continue, pas de test max obligatoire."
+      "unit": "meters",
+      "max": 42195,
+      "cue": "Pas ton record : la distance que tu sais courir aujourd'hui à allure confortable, sans marcher.",
+      "question": "Quelle distance peux-tu courir facilement aujourd'hui, sans marcher ?",
+      "choices": [
+        {
+          "label": "Je ne peux pas encore courir 2 km facilement",
+          "value": 1000
+        },
+        {
+          "label": "2 km",
+          "value": 2000
+        },
+        {
+          "label": "5 km",
+          "value": 5000
+        },
+        {
+          "label": "7 km",
+          "value": 7000
+        },
+        {
+          "label": "10 km ou plus",
+          "value": 10000
+        }
+      ],
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 2000,
+          "level": 2
+        },
+        {
+          "atLeast": 5000,
+          "level": 4
+        },
+        {
+          "atLeast": 7000,
+          "level": 5
+        },
+        {
+          "atLeast": 10000,
+          "level": 5
+        }
+      ]
     }
   ],
   "weeks": [
@@ -232,7 +362,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — SUBSTITUTE",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -267,7 +397,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — SUBSTITUTE",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -302,7 +432,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — SUBSTITUTE",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -348,7 +478,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — SUBSTITUTE",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -383,7 +513,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -432,7 +562,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — SUBSTITUTE",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -467,7 +597,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -527,7 +657,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — SUBSTITUTE",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -562,7 +692,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -611,7 +741,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — SUBSTITUTE",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -646,7 +776,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -695,7 +825,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -755,7 +885,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — SOULSOCIETY",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -790,7 +920,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — SOULSOCIETY",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -825,7 +955,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — SOULSOCIETY",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -871,7 +1001,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — SOULSOCIETY",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -906,7 +1036,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -955,7 +1085,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — SOULSOCIETY",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -990,7 +1120,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1050,7 +1180,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — SOULSOCIETY",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1085,7 +1215,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1134,7 +1264,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — SOULSOCIETY",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1169,7 +1299,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1218,7 +1348,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1278,7 +1408,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — BANKAI",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1313,7 +1443,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — BANKAI",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1348,7 +1478,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — BANKAI",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1394,7 +1524,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — BANKAI",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1429,7 +1559,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1478,7 +1608,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — BANKAI",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1513,7 +1643,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1573,7 +1703,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — BANKAI",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1608,7 +1738,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1657,7 +1787,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — BANKAI",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1692,7 +1822,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1741,7 +1871,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -1801,7 +1931,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — VIZARD",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1838,7 +1968,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — VIZARD",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1875,7 +2005,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — VIZARD",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1923,7 +2053,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — VIZARD",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -1960,7 +2090,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2009,7 +2139,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — VIZARD",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2046,7 +2176,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2106,7 +2236,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — VIZARD",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2143,7 +2273,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2192,7 +2322,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — VIZARD",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2229,7 +2359,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2278,7 +2408,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2338,7 +2468,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — HUECO",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2375,7 +2505,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — HUECO",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2412,7 +2542,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — HUECO",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2460,7 +2590,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — HUECO",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2497,7 +2627,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2546,7 +2676,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — HUECO",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2583,7 +2713,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2643,7 +2773,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — HUECO",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2680,7 +2810,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2729,7 +2859,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — HUECO",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2766,7 +2896,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2815,7 +2945,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -2875,7 +3005,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — AIZEN",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2910,7 +3040,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — AIZEN",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2945,7 +3075,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — AIZEN",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -2991,7 +3121,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — AIZEN",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3026,7 +3156,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3075,7 +3205,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — AIZEN",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3110,7 +3240,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3170,7 +3300,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — AIZEN",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3205,7 +3335,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3254,7 +3384,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — AIZEN",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3289,7 +3419,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3338,7 +3468,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3398,7 +3528,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — FULLBRING",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3447,7 +3577,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — FULLBRING",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3496,7 +3626,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — FULLBRING",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3556,7 +3686,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — FULLBRING",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3605,7 +3735,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3654,7 +3784,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — FULLBRING",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3703,7 +3833,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3763,7 +3893,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — FULLBRING",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3812,7 +3942,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3861,7 +3991,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — FULLBRING",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -3910,7 +4040,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -3959,7 +4089,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -4019,7 +4149,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — TYBW",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -4074,7 +4204,7 @@
         },
         {
           "slot": 1,
-          "title": "Target — TYBW",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -4129,7 +4259,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — TYBW",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -4195,7 +4325,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — TYBW",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -4250,7 +4380,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -4299,7 +4429,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — TYBW",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -4354,7 +4484,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -4414,7 +4544,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Target — TYBW",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -4469,7 +4599,7 @@
         },
         {
           "slot": 1,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -4518,7 +4648,7 @@
         },
         {
           "slot": 2,
-          "title": "Target — TYBW",
+          "title": "Séance cible",
           "type": "hybrid",
           "exercises": [
             {
@@ -4573,7 +4703,7 @@
         },
         {
           "slot": 3,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -4622,7 +4752,7 @@
         },
         {
           "slot": 4,
-          "title": "Maintenance",
+          "title": "Entretien",
           "type": "hybrid",
           "exercises": [
             {
@@ -4780,7 +4910,7 @@
         },
         {
           "slot": 2,
-          "title": "BANKAI DAY",
+          "title": "Jour du Bankai",
           "type": "hybrid",
           "exercises": [
             {
@@ -5023,7 +5153,7 @@
         },
         {
           "slot": 3,
-          "title": "BANKAI DAY",
+          "title": "Jour du Bankai",
           "type": "hybrid",
           "exercises": [
             {
@@ -5315,7 +5445,7 @@
         },
         {
           "slot": 4,
-          "title": "BANKAI DAY",
+          "title": "Jour du Bankai",
           "type": "hybrid",
           "exercises": [
             {

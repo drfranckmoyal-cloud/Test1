@@ -10,28 +10,29 @@
       "ladder": [
         {
           "id": "runWalk",
-          "name": "Course/marche",
-          "detail": "Alternance course facile et marche, conversation possible"
+          "name": "Course et marche",
+          "detail": "Alterne course facile et marche.",
+          "technical": "Run/walk"
         },
         {
           "id": "easy20",
-          "name": "Course facile 20–30 min",
-          "detail": "RPE 3, conversation complète"
+          "name": "Course facile",
+          "detail": "20 à 30 minutes, tu dois pouvoir parler."
         },
         {
           "id": "easy40",
-          "name": "Course facile 30–45 min",
-          "detail": "RPE 3–4, respiration contrôlée"
+          "name": "Course facile",
+          "detail": "30 à 45 minutes, tu dois pouvoir parler."
         },
         {
           "id": "easy60",
-          "name": "Course facile 45–60 min",
-          "detail": "RPE 3–4, allure stable"
+          "name": "Course facile",
+          "detail": "45 à 60 minutes, tu dois pouvoir parler."
         },
         {
           "id": "easy75",
-          "name": "Course facile 60–75 min",
-          "detail": "RPE 3–4, effort durable"
+          "name": "Course facile",
+          "detail": "60 à 75 minutes, tu dois pouvoir parler."
         }
       ]
     },
@@ -43,28 +44,28 @@
       "ladder": [
         {
           "id": "long40",
-          "name": "Longue facile 40–55 min",
-          "detail": "RPE 3–4"
+          "name": "Sortie longue",
+          "detail": "40 à 55 minutes, allure confortable."
         },
         {
           "id": "long60",
-          "name": "Longue facile 55–75 min",
-          "detail": "RPE 3–4"
+          "name": "Sortie longue",
+          "detail": "55 à 75 minutes, allure confortable."
         },
         {
           "id": "long90",
-          "name": "Longue facile 75–95 min",
-          "detail": "RPE 3–4"
+          "name": "Sortie longue",
+          "detail": "75 à 95 minutes, allure confortable."
         },
         {
           "id": "long110",
-          "name": "Longue facile 95–115 min",
-          "detail": "RPE 3–4"
+          "name": "Sortie longue",
+          "detail": "95 à 115 minutes, allure confortable."
         },
         {
           "id": "longSpecific",
-          "name": "Longue spécifique semi",
-          "detail": "Sortie longue avec segment contrôlé à effort semi"
+          "name": "Sortie longue",
+          "detail": "Des portions à l'allure du semi à l'intérieur de la sortie."
         }
       ]
     },
@@ -76,28 +77,32 @@
       "ladder": [
         {
           "id": "strides",
-          "name": "Strides",
-          "detail": "Accélérations relâchées, jamais sprint maximal"
+          "name": "Lignes droites relâchées",
+          "detail": "Une vingtaine de secondes d'accélération progressive.",
+          "technical": "Strides"
         },
         {
           "id": "fartlek1",
-          "name": "Fartlek court",
-          "detail": "Blocs de 60 à 120 s à RPE 6"
+          "name": "Course avec accélérations libres",
+          "detail": "Alterne allures sans chronomètre.",
+          "technical": "Fartlek"
         },
         {
           "id": "tempoBlocks",
-          "name": "Tempo fractionné",
-          "detail": "Blocs de 6 à 12 min à RPE 7"
+          "name": "Course soutenue par blocs",
+          "detail": "Des blocs à allure soutenue, avec récupération trottée.",
+          "technical": "Tempo"
         },
         {
           "id": "threshold",
-          "name": "Seuil",
-          "detail": "Blocs de 10 à 15 min à RPE 7–8"
+          "name": "Course soutenue continue",
+          "detail": "Allure que tu tiendrais environ une heure.",
+          "technical": "Seuil"
         },
         {
           "id": "hmSpecific",
-          "name": "Spécifique semi",
-          "detail": "Blocs à RPE 6–7 proches de l’effort semi"
+          "name": "Course à l'allure du semi",
+          "detail": "L'allure que tu vises le jour du semi."
         }
       ]
     },
@@ -109,18 +114,18 @@
       "ladder": [
         {
           "id": "walkRun",
-          "name": "Marche/course très facile",
-          "detail": "RPE 2–3"
+          "name": "Marche et course très facile",
+          "detail": "Le but est de récupérer, pas de progresser."
         },
         {
           "id": "recovery25",
-          "name": "Recovery 20–30 min",
-          "detail": "RPE 2–3"
+          "name": "Course de récupération",
+          "detail": "20 à 30 minutes très faciles."
         },
         {
           "id": "recovery40",
-          "name": "Recovery 30–45 min",
-          "detail": "RPE 2–3"
+          "name": "Course de récupération",
+          "detail": "30 à 45 minutes très faciles."
         }
       ]
     },
@@ -132,23 +137,80 @@
       "ladder": [
         {
           "id": "basicSupport",
-          "name": "Support de base",
-          "detail": "Split squat, pont fessier, mollets, gainage"
+          "name": "Renforcement de base",
+          "detail": "Fentes, pont fessier, gainage, mollets."
         },
         {
           "id": "singleLegSupport",
-          "name": "Support unilatéral",
-          "detail": "Fente arrière, single-leg bridge, mollets unilatéraux"
+          "name": "Renforcement sur une jambe",
+          "detail": "Même travail, une jambe à la fois."
         },
         {
           "id": "advancedSupport",
-          "name": "Support avancé",
-          "detail": "Split squat contrôlé, hamstring walkout, mollets genou fléchi"
+          "name": "Renforcement avancé",
+          "detail": "Charges ou appuis plus exigeants."
         }
       ]
     }
   ],
   "calibration": [
+    {
+      "id": "easyDistance",
+      "label": "Ta distance facile",
+      "family": "naruto.easy",
+      "alsoFamilies": [
+        "naruto.recovery"
+      ],
+      "referenceLevel": 2,
+      "unit": "meters",
+      "max": 42195,
+      "cue": "Pas ton record : la distance que tu sais courir aujourd'hui à allure confortable, sans marcher.",
+      "question": "Quelle distance peux-tu courir facilement aujourd'hui, sans marcher ?",
+      "choices": [
+        {
+          "label": "Je ne peux pas encore courir 2 km facilement",
+          "value": 1000
+        },
+        {
+          "label": "2 km",
+          "value": 2000
+        },
+        {
+          "label": "5 km",
+          "value": 5000
+        },
+        {
+          "label": "7 km",
+          "value": 7000
+        },
+        {
+          "label": "10 km ou plus",
+          "value": 10000
+        }
+      ],
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 2000,
+          "level": 2
+        },
+        {
+          "atLeast": 5000,
+          "level": 3
+        },
+        {
+          "atLeast": 7000,
+          "level": 4
+        },
+        {
+          "atLeast": 10000,
+          "level": 5
+        }
+      ]
+    },
     {
       "id": "continuousRun",
       "label": "Course continue",
@@ -156,7 +218,32 @@
       "referenceLevel": 2,
       "unit": "seconds",
       "max": 3600,
-      "cue": "Cours à RPE 3–4 et arrête le test si tu ne peux plus parler en phrases complètes."
+      "cue": "Cours à RPE 3–4 et arrête le test si tu ne peux plus parler en phrases complètes.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 900,
+          "level": 2
+        },
+        {
+          "atLeast": 1800,
+          "level": 3
+        },
+        {
+          "atLeast": 2700,
+          "level": 4
+        },
+        {
+          "atLeast": 3600,
+          "level": 5
+        }
+      ],
+      "alsoFamilies": [
+        "naruto.recovery"
+      ]
     },
     {
       "id": "recent5k",
@@ -165,7 +252,28 @@
       "referenceLevel": 2,
       "unit": "seconds",
       "max": 3600,
-      "cue": "Renseigne ton meilleur temps récent sur 5 km s’il date de moins de 8 semaines."
+      "cue": "Renseigne ton meilleur temps récent sur 5 km s’il date de moins de 8 semaines.",
+      "entry": [
+        {
+          "atMost": 1500,
+          "level": 4
+        },
+        {
+          "atMost": 1800,
+          "level": 3
+        },
+        {
+          "atMost": 2100,
+          "level": 2
+        },
+        {
+          "atMost": 10000,
+          "level": 1
+        }
+      ],
+      "alsoFamilies": [
+        "naruto.strength"
+      ]
     },
     {
       "id": "recent10k",
@@ -174,7 +282,25 @@
       "referenceLevel": 3,
       "unit": "seconds",
       "max": 7200,
-      "cue": "Renseigne ton meilleur temps récent sur 10 km s’il reflète encore ton niveau actuel."
+      "cue": "Renseigne ton meilleur temps récent sur 10 km s’il reflète encore ton niveau actuel.",
+      "entry": [
+        {
+          "atMost": 3000,
+          "level": 5
+        },
+        {
+          "atMost": 3600,
+          "level": 4
+        },
+        {
+          "atMost": 4200,
+          "level": 3
+        },
+        {
+          "atMost": 10000,
+          "level": 2
+        }
+      ]
     },
     {
       "id": "longRun",
@@ -183,7 +309,28 @@
       "referenceLevel": 2,
       "unit": "meters",
       "max": 21097,
-      "cue": "Renseigne la distance de ta plus longue sortie des 30 derniers jours."
+      "cue": "Renseigne la distance de ta plus longue sortie des 30 derniers jours.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 8000,
+          "level": 2
+        },
+        {
+          "atLeast": 12000,
+          "level": 3
+        },
+        {
+          "atLeast": 16000,
+          "level": 4
+        }
+      ],
+      "alsoFamilies": [
+        "naruto.long"
+      ]
     }
   ],
   "weeks": [
@@ -198,7 +345,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -245,7 +392,7 @@
         },
         {
           "slot": 1,
-          "title": "Jeu d’allures",
+          "title": "Jeu d'allures",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -363,7 +510,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -410,7 +557,7 @@
         },
         {
           "slot": 1,
-          "title": "Jeu d’allures",
+          "title": "Jeu d'allures",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -575,7 +722,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -622,7 +769,7 @@
         },
         {
           "slot": 1,
-          "title": "Easy + strides",
+          "title": "Course facile et lignes droites",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -728,7 +875,7 @@
         },
         {
           "slot": 3,
-          "title": "Endurance facile 2",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -833,7 +980,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -880,7 +1027,7 @@
         },
         {
           "slot": 1,
-          "title": "Fartlek Chūnin",
+          "title": "Jeu d'allures — Chūnin",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -998,7 +1145,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1045,7 +1192,7 @@
         },
         {
           "slot": 1,
-          "title": "Fartlek Chūnin",
+          "title": "Jeu d'allures — Chūnin",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -1105,7 +1252,7 @@
         },
         {
           "slot": 2,
-          "title": "Endurance facile 2",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1210,7 +1357,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1257,7 +1404,7 @@
         },
         {
           "slot": 1,
-          "title": "Fartlek Chūnin",
+          "title": "Jeu d'allures — Chūnin",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -1364,7 +1511,7 @@
         },
         {
           "slot": 3,
-          "title": "Easy + strides",
+          "title": "Course facile et lignes droites",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1481,7 +1628,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1528,7 +1675,7 @@
         },
         {
           "slot": 1,
-          "title": "Tempo Jiraiya",
+          "title": "Course soutenue — Jiraiya",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -1646,7 +1793,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1693,7 +1840,7 @@
         },
         {
           "slot": 1,
-          "title": "Tempo Jiraiya",
+          "title": "Course soutenue — Jiraiya",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -1753,7 +1900,7 @@
         },
         {
           "slot": 2,
-          "title": "Endurance facile 2",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1858,7 +2005,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -1905,7 +2052,7 @@
         },
         {
           "slot": 1,
-          "title": "Tempo Jiraiya",
+          "title": "Course soutenue — Jiraiya",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -2012,7 +2159,7 @@
         },
         {
           "slot": 3,
-          "title": "Easy + strides",
+          "title": "Course facile et lignes droites",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -2129,7 +2276,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -2176,7 +2323,7 @@
         },
         {
           "slot": 1,
-          "title": "Spécifique semi",
+          "title": "Allure du semi",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -2236,7 +2383,7 @@
         },
         {
           "slot": 2,
-          "title": "Sortie longue spécifique",
+          "title": "Sortie longue avec blocs d'allure",
           "type": "longEndurance",
           "exercises": [
             {
@@ -2305,7 +2452,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -2352,7 +2499,7 @@
         },
         {
           "slot": 1,
-          "title": "Spécifique semi",
+          "title": "Allure du semi",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -2412,7 +2559,7 @@
         },
         {
           "slot": 2,
-          "title": "Endurance facile 2",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -2459,7 +2606,7 @@
         },
         {
           "slot": 3,
-          "title": "Sortie longue spécifique",
+          "title": "Sortie longue avec blocs d'allure",
           "type": "longEndurance",
           "exercises": [
             {
@@ -2528,7 +2675,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Endurance facile",
+          "title": "Course facile",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -2575,7 +2722,7 @@
         },
         {
           "slot": 1,
-          "title": "Spécifique semi",
+          "title": "Allure du semi",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -2682,7 +2829,7 @@
         },
         {
           "slot": 3,
-          "title": "Easy + strides",
+          "title": "Course facile et lignes droites",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -2741,7 +2888,7 @@
         },
         {
           "slot": 4,
-          "title": "Sortie longue spécifique",
+          "title": "Sortie longue avec blocs d'allure",
           "type": "longEndurance",
           "exercises": [
             {
@@ -2810,7 +2957,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Easy + rappel vitesse",
+          "title": "Course facile et rappel de vitesse",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -2869,7 +3016,7 @@
         },
         {
           "slot": 1,
-          "title": "Rappel spécifique semi",
+          "title": "Rappel d'allure du semi",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -2975,7 +3122,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Easy taper",
+          "title": "Course facile allégée",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -3022,7 +3169,7 @@
         },
         {
           "slot": 1,
-          "title": "Rappel spécifique semi",
+          "title": "Rappel d'allure du semi",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -3070,7 +3217,7 @@
         },
         {
           "slot": 2,
-          "title": "Shakeout",
+          "title": "Déverrouillage",
           "type": "recovery",
           "exercises": [
             {
@@ -3175,7 +3322,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Easy taper",
+          "title": "Course facile allégée",
           "type": "easyEndurance",
           "exercises": [
             {
@@ -3222,7 +3369,7 @@
         },
         {
           "slot": 1,
-          "title": "Rappel spécifique semi",
+          "title": "Rappel d'allure du semi",
           "type": "qualityEndurance",
           "exercises": [
             {
@@ -3270,7 +3417,7 @@
         },
         {
           "slot": 2,
-          "title": "Recovery taper",
+          "title": "Récupération allégée",
           "type": "recovery",
           "exercises": [
             {
@@ -3317,7 +3464,7 @@
         },
         {
           "slot": 3,
-          "title": "Shakeout",
+          "title": "Déverrouillage",
           "type": "recovery",
           "exercises": [
             {

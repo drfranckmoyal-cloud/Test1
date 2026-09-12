@@ -10,28 +10,32 @@
       "ladder": [
         {
           "id": "snapDown",
-          "name": "Snap-down",
-          "detail": "Atterrissage bilatéral contrôlé"
+          "name": "Réception contrôlée",
+          "detail": "Tu montes sur la pointe puis tu tombes en position de réception.",
+          "technical": "Snap down"
         },
         {
           "id": "dropStick",
-          "name": "Drop to stick",
-          "detail": "Petite hauteur, réception silencieuse"
+          "name": "Réception contrôlée",
+          "detail": "Tu descends d'une marche et tu figes la réception.",
+          "technical": "Drop to stick"
         },
         {
           "id": "singleStick",
-          "name": "Single-leg stick",
-          "detail": "Réception unilatérale"
+          "name": "Réception contrôlée",
+          "detail": "Même chose, sur un pied."
         },
         {
           "id": "lateralStick",
-          "name": "Lateral bound stick",
-          "detail": "Bond latéral + stabilisation"
+          "name": "Saut latéral",
+          "detail": "Tu sautes sur le côté et tu tiens la réception.",
+          "technical": "Lateral bound"
         },
         {
           "id": "reactiveStick",
-          "name": "Reactive landing",
-          "detail": "Réception après action rapide"
+          "name": "Réception contrôlée",
+          "detail": "Tu reçois et tu repars immédiatement.",
+          "technical": "Reactive landing"
         }
       ]
     },
@@ -43,28 +47,32 @@
       "ladder": [
         {
           "id": "ankleBounce",
-          "name": "Ankle bounce",
-          "detail": "Faible amplitude"
+          "name": "Petits sauts sur place",
+          "detail": "Tout petits rebonds, chevilles rigides.",
+          "technical": "Ankle bounce"
         },
         {
           "id": "pogoLow",
-          "name": "Pogo bas",
-          "detail": "Contacts courts"
+          "name": "Petits sauts réactifs",
+          "detail": "Rebonds bas, contact au sol le plus court possible.",
+          "technical": "Pogo"
         },
         {
           "id": "pogoMedium",
-          "name": "Pogo moyen",
-          "detail": "Plus de raideur cheville"
+          "name": "Petits sauts réactifs",
+          "detail": "Rebonds plus hauts, contact toujours court.",
+          "technical": "Pogo"
         },
         {
           "id": "pogoReactive",
-          "name": "Pogo réactif",
-          "detail": "Qualité maximale"
+          "name": "Petits sauts réactifs",
+          "detail": "Le plus de rebonds possible en gardant le rythme.",
+          "technical": "Pogo"
         },
         {
           "id": "pogoSingle",
-          "name": "Pogo unilatéral",
-          "detail": "Contrôle avancé"
+          "name": "Petits sauts réactifs",
+          "detail": "Un pied à la fois."
         }
       ]
     },
@@ -76,28 +84,31 @@
       "ladder": [
         {
           "id": "countermovement",
-          "name": "CMJ",
-          "detail": "Saut vertical contrôlé"
+          "name": "Saut vertical",
+          "detail": "Flexion rapide puis saut le plus haut possible.",
+          "technical": "CMJ"
         },
         {
           "id": "broad",
-          "name": "Broad jump",
-          "detail": "Saut horizontal"
+          "name": "Saut en longueur",
+          "detail": "Depuis l'arrêt, le plus loin possible, réception tenue.",
+          "technical": "Broad jump"
         },
         {
           "id": "repeatedBroad",
-          "name": "Broad jump répété",
-          "detail": "Faible nombre de contacts"
+          "name": "Saut en longueur",
+          "detail": "Plusieurs sauts à la suite."
         },
         {
           "id": "bound",
-          "name": "Bounds",
-          "detail": "Alternés contrôlés"
+          "name": "Foulées bondissantes",
+          "detail": "Grandes foulées sautées, alternées.",
+          "technical": "Bounds"
         },
         {
           "id": "maxJump",
-          "name": "Max jump",
-          "detail": "Effort maximal, volume faible"
+          "name": "Saut vertical",
+          "detail": "Un seul saut, à fond, bien récupéré."
         }
       ]
     },
@@ -109,28 +120,29 @@
       "ladder": [
         {
           "id": "march",
-          "name": "March/A-skip",
-          "detail": "Technique"
+          "name": "Montées de genoux techniques",
+          "detail": "Genou haut, pied sous la hanche.",
+          "technical": "A-march / A-skip"
         },
         {
           "id": "accel10",
-          "name": "Accélération 10 m",
-          "detail": "Départ propre"
+          "name": "Sprint 10 m",
+          "detail": "Départ arrêté, récupération complète."
         },
         {
           "id": "accel20",
-          "name": "Accélération 20 m",
-          "detail": "Accélération prolongée"
+          "name": "Sprint 20 m",
+          "detail": "Départ arrêté, récupération complète."
         },
         {
           "id": "accel30",
-          "name": "Accélération 30 m",
-          "detail": "Rapide, complet"
+          "name": "Sprint 30 m",
+          "detail": "Départ arrêté, récupération complète."
         },
         {
           "id": "max30",
-          "name": "30 m maximal",
-          "detail": "Full recovery"
+          "name": "Sprint 30 m",
+          "detail": "À fond, récupération complète."
         }
       ]
     },
@@ -142,23 +154,27 @@
       "ladder": [
         {
           "id": "shuffle",
-          "name": "Shuffle technique",
-          "detail": "Décélération contrôlée"
+          "name": "Déplacements latéraux",
+          "detail": "Pas chassés, bassin bas.",
+          "technical": "Shuffle"
         },
         {
           "id": "505prep",
-          "name": "505 prep",
-          "detail": "Freinage et relance"
+          "name": "Demi-tour rapide",
+          "detail": "Tu cours, tu freines, tu repars dans l'autre sens.",
+          "technical": "505"
         },
         {
           "id": "lateralCut",
-          "name": "Lateral cut",
-          "detail": "Angle modéré"
+          "name": "Appui et changement de direction",
+          "detail": "Un appui franc pour repartir sur le côté.",
+          "technical": "Lateral cut"
         },
         {
           "id": "reactiveCut",
-          "name": "Reactive cut",
-          "detail": "Signal simple"
+          "name": "Changement de direction au signal",
+          "detail": "Tu changes de direction sur un signal extérieur.",
+          "technical": "Reactive cut"
         }
       ]
     }
@@ -171,7 +187,28 @@
       "referenceLevel": 2,
       "unit": "centimeters",
       "max": 400,
-      "cue": "Trois essais depuis l'arrêt, garde le meilleur saut propre, mesuré en centimètres."
+      "cue": "Trois essais depuis l'arrêt, garde le meilleur saut propre, mesuré en centimètres.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 150,
+          "level": 2
+        },
+        {
+          "atLeast": 200,
+          "level": 3
+        },
+        {
+          "atLeast": 240,
+          "level": 4
+        }
+      ],
+      "alsoFamilies": [
+        "rocklee.cod"
+      ]
     },
     {
       "id": "tenM",
@@ -180,7 +217,25 @@
       "referenceLevel": 2,
       "unit": "centiseconds",
       "max": 1000,
-      "cue": "Trois essais, récupération complète. Note ton meilleur temps en centièmes : 1,84 s s'écrit 184."
+      "cue": "Trois essais, récupération complète. Note ton meilleur temps en centièmes : 1,84 s s'écrit 184.",
+      "entry": [
+        {
+          "atMost": 190,
+          "level": 4
+        },
+        {
+          "atMost": 210,
+          "level": 3
+        },
+        {
+          "atMost": 240,
+          "level": 2
+        },
+        {
+          "atMost": 10000,
+          "level": 1
+        }
+      ]
     },
     {
       "id": "pogo",
@@ -189,7 +244,25 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 50,
-      "cue": "Compte seulement les contacts réactifs propres."
+      "cue": "Compte seulement les contacts réactifs propres.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 10,
+          "level": 2
+        },
+        {
+          "atLeast": 20,
+          "level": 3
+        },
+        {
+          "atLeast": 30,
+          "level": 4
+        }
+      ]
     },
     {
       "id": "lateral",
@@ -198,7 +271,25 @@
       "referenceLevel": 2,
       "unit": "reps",
       "max": 10,
-      "cue": "Cinq essais par côté, qualité avant distance."
+      "cue": "Cinq essais par côté, qualité avant distance.",
+      "entry": [
+        {
+          "atLeast": 0,
+          "level": 1
+        },
+        {
+          "atLeast": 3,
+          "level": 2
+        },
+        {
+          "atLeast": 6,
+          "level": 3
+        },
+        {
+          "atLeast": 9,
+          "level": 4
+        }
+      ]
     }
   ],
   "weeks": [
@@ -213,7 +304,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -228,7 +319,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -285,7 +376,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -300,7 +391,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -345,7 +436,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -360,7 +451,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -428,7 +519,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -443,7 +534,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -500,7 +591,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -515,7 +606,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -560,7 +651,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -575,7 +666,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -647,7 +738,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -715,7 +806,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -730,7 +821,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -787,7 +878,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -802,7 +893,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -847,7 +938,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -862,7 +953,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -930,7 +1021,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -945,7 +1036,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1002,7 +1093,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -1017,7 +1108,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1062,7 +1153,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -1077,7 +1168,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1149,7 +1240,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1217,7 +1308,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -1232,7 +1323,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1289,7 +1380,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -1304,7 +1395,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1349,7 +1440,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -1364,7 +1455,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1432,7 +1523,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -1447,7 +1538,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1504,7 +1595,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -1519,7 +1610,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1564,7 +1655,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -1579,7 +1670,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1651,7 +1742,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1719,7 +1810,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -1734,7 +1825,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1791,7 +1882,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -1806,7 +1897,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1851,7 +1942,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -1866,7 +1957,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -1934,7 +2025,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -1949,7 +2040,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2006,7 +2097,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -2021,7 +2112,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2066,7 +2157,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -2081,7 +2172,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2153,7 +2244,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2221,7 +2312,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -2236,7 +2327,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2293,7 +2384,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -2308,7 +2399,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2353,7 +2444,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -2368,7 +2459,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2436,7 +2527,7 @@
       "sessions": [
         {
           "slot": 0,
-          "title": "Plyométrie / Réception",
+          "title": "Sauts et réceptions",
           "type": "power",
           "exercises": [
             {
@@ -2451,7 +2542,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2508,7 +2599,7 @@
         },
         {
           "slot": 1,
-          "title": "Sprint / COD",
+          "title": "Sprints et changements de direction",
           "type": "power",
           "exercises": [
             {
@@ -2523,7 +2614,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2568,7 +2659,7 @@
         },
         {
           "slot": 2,
-          "title": "Puissance intégrée",
+          "title": "Puissance complète",
           "type": "power",
           "exercises": [
             {
@@ -2583,7 +2674,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,
@@ -2655,7 +2746,7 @@
             },
             {
               "role": "warmup",
-              "name": "A-march / A-skip",
+              "name": "Montées de genoux techniques",
               "unit": "meters",
               "sets": 2,
               "perSet": 20,

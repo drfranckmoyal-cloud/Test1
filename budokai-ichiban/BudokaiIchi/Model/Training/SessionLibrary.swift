@@ -28,7 +28,12 @@ enum SessionLibrary {
 
         struct Rung: Codable, Equatable, Identifiable {
             var id: String
+            /// Le nom que lit le pratiquant : simple, en français.
             var name: String
+            /// Le nom technique, en tout petit sous le nom simple. Il existe
+            /// pour que celui qui connaît le mouvement le reconnaisse, pas
+            /// pour que l'autre ait à le comprendre.
+            var technical: String?
             var detail: String?
         }
 
@@ -42,12 +47,62 @@ enum SessionLibrary {
         var id: String
         var label: String
         var family: String?
+        /// Les familles voisines que cette mesure renseigne aussi. Sans cela,
+        /// un coureur de dix kilomètres se verrait prescrire des séances de
+        /// récupération de débutant, faute de test sur cette famille-là.
+        var alsoFamilies: [String]?
+        /// L'échelon de repli, quand la mesure ne permet pas de trancher.
         var referenceLevel: Int?
         var unit: String
         var max: Int
         var cue: String
+        /// La question posée en toutes lettres, quand elle vaut mieux qu'un
+        /// libellé de champ.
+        var question: String?
+        /// Des réponses à choisir plutôt qu'un nombre à saisir.
+        var choices: [Choice]?
+        /// Ce que la mesure dit du point de départ : à quel échelon de la
+        /// famille elle place le pratiquant.
+        ///
+        /// C'est la pièce qui manquait. Sans elle, tout le monde démarrait au
+        /// même échelon quelle que soit sa réponse — celui qui fait trente
+        /// pompes commençait comme celui qui en fait trois.
+        var entry: [EntryRule]?
+
+        struct Choice: Codable, Equatable, Identifiable {
+            var label: String
+            var value: Int
+            var id: Int { value }
+        }
+
+        struct EntryRule: Codable, Equatable {
+            /// Seuil à atteindre, pour ce qui se mesure vers le haut.
+            var atLeast: Int?
+            /// Seuil à ne pas dépasser, pour un chrono.
+            var atMost: Int?
+            var level: Int
+        }
 
         var objectiveUnit: ObjectiveUnit { ObjectiveUnit(rawValue: unit) ?? .reps }
+
+        /// L'échelon de départ que cette mesure désigne.
+        ///
+        /// Les règles « au moins » se lisent de la plus exigeante à la moins
+        /// exigeante ; les règles « au plus » dans l'autre sens. À défaut de
+        /// table, on retombe sur l'échelon de repli — l'ancien comportement.
+        func entryLevel(for value: Int) -> Int? {
+            guard let entry = entry, !entry.isEmpty else { return referenceLevel }
+            if entry.contains(where: { $0.atMost != nil }) {
+                let match = entry.filter { $0.atMost != nil }
+                    .sorted { ($0.atMost ?? 0) < ($1.atMost ?? 0) }
+                    .first { value <= ($0.atMost ?? 0) }
+                return match?.level ?? referenceLevel
+            }
+            let match = entry.filter { $0.atLeast != nil }
+                .sorted { ($0.atLeast ?? 0) > ($1.atLeast ?? 0) }
+                .first { value >= ($0.atLeast ?? 0) }
+            return match?.level ?? referenceLevel
+        }
     }
 
     struct Week: Codable, Equatable {
@@ -211,6 +266,7 @@ enum CoachEngine {
                                      rule: String?) -> ExercisePrescription {
         // la variante suit l'échelon atteint dans la famille
         var name = exercise.name
+        var technical: String?
         var detail = exercise.detail
         var level: Int?
         var easier: String?
@@ -221,6 +277,7 @@ enum CoachEngine {
             let current = context.levels[familyId] ?? family.bossLevel ?? 1
             if let rung = family.rung(atLevel: current) {
                 name = rung.name
+                technical = rung.technical
                 detail = rung.detail ?? exercise.detail
                 level = current
                 easier = family.rung(atLevel: current - 1)?.id
@@ -262,6 +319,7 @@ enum CoachEngine {
             tempo: exercise.tempo,
             completionPolicy: exercise.completionPolicy)
 
+        item.technicalName = technical
         item.id = "\(context.program.rawValue).\(context.stageKey).\(context.slot).\(exercise.name)"
         item.exerciseLevel = level
         item.variantId = exercise.family
