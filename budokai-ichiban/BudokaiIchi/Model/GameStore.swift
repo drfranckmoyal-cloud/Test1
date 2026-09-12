@@ -797,6 +797,66 @@ final class GameStore: ObservableObject {
         save()
     }
 
+    // MARK: - L'intervention du héros
+
+    /// Les visuels choisis d'avance, en attente d'être montrés. Volontairement
+    /// hors sauvegarde : un visuel préparé et jamais vu ne doit rien retenir.
+    private var pendingHeroPopups: [String: HeroPopupAsset] = [:]
+
+    /// Le visuel à montrer avant une séance, ou nil s'il n'y a rien à montrer.
+    ///
+    /// Ne renvoie rien quand le joueur a coupé les popups, quand le héros n'a
+    /// pas d'image pour ce moment, ou quand le programme n'a pas de héros.
+    func heroPopup(for program: ProgramID,
+                   phase: HeroPopupPhase = .sessionStart) -> HeroPopupAsset? {
+        guard state.heroPopups else { return nil }
+        // celui qu'on a préparé et déjà chargé, s'il y en a un
+        if let ready = pendingHeroPopups.removeValue(forKey: pendingKey(program, phase)) {
+            return ready
+        }
+        guard let hero = BudokaiHero(program: program) else { return nil }
+        return HeroPopupSelector.next(hero: hero, phase: phase,
+                                      excluding: state.lastHeroVariant[key(hero, phase)])
+    }
+
+    /// Choisit le visuel à l'avance et le charge en mémoire.
+    ///
+    /// Appelé quand la séance s'affiche dans la liste du jour : au moment du
+    /// tap, l'image est déjà décodée et le héros apparaît sans temps mort.
+    /// Rien n'est retenu en sauvegarde ici — la variante n'est enregistrée
+    /// qu'une fois montrée.
+    func prepareHeroPopup(for program: ProgramID,
+                          phase: HeroPopupPhase = .sessionStart) {
+        guard state.heroPopups, let hero = BudokaiHero(program: program) else { return }
+        let slot = pendingKey(program, phase)
+        guard pendingHeroPopups[slot] == nil else { return }
+        guard let asset = HeroPopupSelector.next(hero: hero, phase: phase,
+                                                 excluding: state.lastHeroVariant[key(hero, phase)])
+        else { return }
+        pendingHeroPopups[slot] = asset
+        HeroPopupLibrary.preload(asset)
+    }
+
+    private func pendingKey(_ program: ProgramID, _ phase: HeroPopupPhase) -> String {
+        "\(program.rawValue).\(phase.assetKey)"
+    }
+
+    /// Retient la variante montrée : c'est elle qu'on évitera la prochaine fois.
+    func rememberHeroPopup(_ asset: HeroPopupAsset) {
+        state.lastHeroVariant[key(asset.hero, asset.phase)] = asset.variant
+        save()
+    }
+
+    /// Les interventions du héros, à couper si elles lassent.
+    var heroPopupsEnabled: Bool {
+        get { state.heroPopups }
+        set { state.heroPopups = newValue; save() }
+    }
+
+    private func key(_ hero: BudokaiHero, _ phase: HeroPopupPhase) -> String {
+        "\(hero.assetKey).\(phase.assetKey)"
+    }
+
     /// Le curseur d'intensité d'un programme.
     func intensity(_ id: ProgramID) -> Double { state.progress(id).intensity }
 

@@ -312,4 +312,7 @@ enum Haptics {
     static func tap() { UIImpactFeedbackGenerator(style: .medium).impactOccurred() }
     static func success() { UINotificationFeedbackGenerator().notificationOccurred(.success) }
     static func warning() { UINotificationFeedbackGenerator().notificationOccurred(.warning) }
+    /// Une touche discrète : l'apparition du héros ne doit pas secouer le
+    /// téléphone, juste se faire sentir.
+    static func light() { UIImpactFeedbackGenerator(style: .light).impactOccurred() }
 }

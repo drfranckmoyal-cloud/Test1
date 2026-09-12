@@ -54,6 +54,25 @@ struct SettingsView: View {
                     }
                     .padding(.top, 10)
 
+                    SectionLabel(text: "TON HÉROS").padding(.top, 26)
+                    HStack(alignment: .top, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("Il te lance la séance")
+                                .font(.ui(14, .semibold))
+                                .foregroundStyle(Theme.text)
+                            Text("Le personnage du programme apparaît deux secondes avant la séance.")
+                                .font(.ui(12))
+                                .foregroundStyle(Theme.muted)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        Spacer(minLength: 8)
+                        Toggle("", isOn: Binding(get: { store.state.heroPopups },
+                                                 set: { store.heroPopupsEnabled = $0 }))
+                            .labelsHidden()
+                            .tint(Theme.gold)
+                    }
+                    .padding(.top, 10)
+
                     SectionLabel(text: "RAPPELS").padding(.top, 26)
                     if !notificationsAllowed {
                         permissionBanner.padding(.top, 10)

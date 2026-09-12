@@ -19,6 +19,11 @@ struct SessionSheetView: View {
     @State private var step: Step = .card
     @State private var outcome: SessionOutcome?
     @State private var report = SessionReport()
+    /// Le héros qui intervient avant la séance, tant qu'il est à l'écran.
+    @State private var hero: HeroPopupAsset?
+    /// La séance n'est ouverte qu'une fois le héros parti : tant qu'il parle,
+    /// rien n'est enregistré.
+    @State private var started = false
 
     private var program: Program { Catalog.program(session.programID) }
     /// La séance telle qu'elle sera faite, curseur d'intensité compris.
@@ -46,13 +51,30 @@ struct SessionSheetView: View {
                 }
             }
         }
+        .heroPopup($hero) { begin() }
         .onAppear {
-            // Toujours appeler : la fonction retrouve la séance du jour si
-            // elle correspond, et la reconstruit sinon. Ne l'appeler qu'en
-            // l'absence de séance ouverte laissait une séance périmée en
-            // place — et sans compteurs, aucune case à cocher n'apparaît.
-            store.beginSession(tuned)
+            guard !started else { return }
+            // le héros d'abord, la séance ensuite : rien ne s'enregistre
+            // pendant qu'il parle
+            if let asset = store.heroPopup(for: session.programID) {
+                store.rememberHeroPopup(asset)
+                hero = asset
+            } else {
+                begin()
+            }
         }
+    }
+
+    /// Ouvre réellement la séance.
+    ///
+    /// Toujours appeler `beginSession` : elle retrouve la séance du jour si
+    /// elle correspond, et la reconstruit sinon. Ne l'appeler qu'en l'absence
+    /// de séance ouverte laissait une séance périmée en place — et sans
+    /// compteurs, aucune case à cocher n'apparaît.
+    private func begin() {
+        guard !started else { return }
+        started = true
+        store.beginSession(tuned)
     }
 
     // MARK: - La fiche

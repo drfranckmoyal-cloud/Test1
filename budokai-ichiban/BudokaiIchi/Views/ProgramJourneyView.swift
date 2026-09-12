@@ -19,6 +19,7 @@ struct ProgramJourneyView: View {
 
     @State private var opened: Int?
     @State private var showDetail = false
+    @State private var showContent = false
     @State private var showBoss = false
     @State private var showSetup = false
 
@@ -88,6 +89,7 @@ struct ProgramJourneyView: View {
             }
         }
         .sheet(isPresented: $showDetail) { ProgramDetailView(program: program) }
+        .sheet(isPresented: $showContent) { ProgramContentView(program: program) }
         .sheet(isPresented: $showBoss) {
             if let boss = boss { BossFightView(challenge: boss) }
         }
@@ -509,15 +511,35 @@ struct ProgramJourneyView: View {
     private var footer: some View {
         Button {
             Haptics.tap()
-            showDetail = true
+            showContent = true
         } label: {
-            Text("Voir la fiche technique du programme")
-                .font(.ui(12, .semibold))
-                .foregroundStyle(Theme.muted)
-                .frame(maxWidth: .infinity)
-                .frame(height: 48)
+            HStack(spacing: 10) {
+                Image(systemName: "list.bullet.rectangle")
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(tint)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Voir le détail du programme")
+                        .font(.ui(14, .bold))
+                        .foregroundStyle(Theme.text)
+                    Text("Toutes les étapes et toutes les séances, séance par séance.")
+                        .font(.ui(11))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(Theme.dim)
+            }
+            .padding(15)
+            .frame(maxWidth: .infinity)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(tint.opacity(0.45), lineWidth: 1))
         }
         .buttonStyle(.plain)
+        .padding(.horizontal, 20)
         .padding(.top, 24)
     }
 

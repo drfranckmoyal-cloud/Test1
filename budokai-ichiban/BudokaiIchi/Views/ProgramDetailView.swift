@@ -59,19 +59,38 @@ struct ProgramDetailView: View {
                             .foregroundStyle(Theme.muted)
                             .fixedSize(horizontal: false, vertical: true)
 
-                        HStack {
-                            SectionLabel(text: "LES \(program.stages.count) ÉTAPES")
-                            Button {
-                                Haptics.tap()
-                                showContent = true
-                            } label: {
-                                Text("TOUT LE CONTENU")
-                                    .font(.ui(10, .bold))
-                                    .kerning(1.2)
+                        SectionLabel(text: "LES \(program.stages.count) ÉTAPES")
+
+                        // l'accès au contenu complet était une mention en
+                        // petit à côté du titre : personne ne la voyait
+                        Button {
+                            Haptics.tap()
+                            showContent = true
+                        } label: {
+                            HStack(spacing: 10) {
+                                Image(systemName: "list.bullet.rectangle")
+                                    .font(.system(size: 15, weight: .semibold))
                                     .foregroundStyle(program.light)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Voir le détail du programme")
+                                        .font(.ui(14, .bold))
+                                        .foregroundStyle(Theme.text)
+                                    Text("Toutes les séances, étape par étape.")
+                                        .font(.ui(11))
+                                        .foregroundStyle(Theme.muted)
+                                }
+                                Spacer(minLength: 0)
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 12, weight: .bold))
+                                    .foregroundStyle(Theme.dim)
                             }
-                            .buttonStyle(.plain)
+                            .padding(15)
+                            .frame(maxWidth: .infinity)
+                            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(program.light.opacity(0.45), lineWidth: 1))
                         }
+                        .buttonStyle(.plain)
 
                         VStack(spacing: 7) {
                             ForEach(program.stages.indices, id: \.self) { index in

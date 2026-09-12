@@ -239,6 +239,11 @@ struct PlayerState: Codable {
     var rewards: RewardInventory = RewardInventory()
     /// Jusqu'où l'on accepte d'être spoilé.
     var spoilerLevel: SpoilerLevel = .anime
+    /// L'intervention du héros au début d'une séance.
+    var heroPopups: Bool = true
+    /// La dernière variante montrée, par héros et par moment, pour ne jamais
+    /// servir deux fois de suite la même image.
+    var lastHeroVariant: [String: Int] = [:]
 
     /// Relit une sauvegarde écrite quand un seul programme était suivi.
     init(from decoder: Decoder) throws {
@@ -267,6 +272,8 @@ struct PlayerState: Codable {
         reports = read(.reports, [:])
         rewards = read(.rewards, RewardInventory())
         spoilerLevel = read(.spoilerLevel, .anime)
+        heroPopups = read(.heroPopups, true)
+        lastHeroVariant = read(.lastHeroVariant, [:])
 
         if let many = try? box.decode([String].self, forKey: .activePrograms) {
             activePrograms = many

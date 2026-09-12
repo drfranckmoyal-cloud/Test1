@@ -339,6 +339,9 @@ struct TodayView: View {
                 PrimaryButton(title: "OUVRIR LA SÉANCE DU JOUR", tint: program.light) {
                     running = session
                 }
+                // le visuel du héros est choisi et décodé dès que la séance
+                // s'affiche : au tap, il est déjà prêt
+                .onAppear { store.prepareHeroPopup(for: session.programID) }
                 .padding(.horizontal, 18)
                 .padding(.bottom, 20)
             }
