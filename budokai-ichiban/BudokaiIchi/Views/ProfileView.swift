@@ -5,6 +5,8 @@ struct ProfileView: View {
     @State private var showSettings = false
     @State private var showAvatar = false
     @State private var showHistory = false
+    @State private var showAlbum = false
+    @State private var revealing: Reward?
 
     var body: some View {
         ScrollView {
@@ -16,6 +18,7 @@ struct ProfileView: View {
                 if !store.state.equipment.isEmpty { equipment }
                 if !store.state.badges.isEmpty { badges }
                 HStack(spacing: 10) {
+                    GhostButton(title: "Collection") { showAlbum = true }
                     GhostButton(title: "Historique") { showHistory = true }
                     GhostButton(title: "Réglages") { showSettings = true }
                 }
@@ -29,6 +32,9 @@ struct ProfileView: View {
         .sheet(isPresented: $showSettings) { SettingsView() }
         .sheet(isPresented: $showAvatar) { AvatarEditorView() }
         .sheet(isPresented: $showHistory) { HistoryView() }
+        .sheet(isPresented: $showAlbum) { RewardAlbumView() }
+        .fullScreenCover(item: $revealing) { reward in RewardRevealView(reward: reward) }
+        .onAppear { revealing = store.rewardsToReveal.first }
     }
 
     /// Le combattant, sa ceinture, et l'accès à sa personnalisation.

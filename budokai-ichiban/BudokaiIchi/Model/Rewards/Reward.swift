@@ -157,35 +157,53 @@ enum RewardCatalog {
         all.first { $0.unlockCondition == .blockCompleted(blockId: blockId) }
     }
 
-    private static func saitamaReward(_ id: String, _ index: Int, _ block: String?,
-                                      _ type: RewardType, _ title: String,
-                                      _ rarity: RewardRarity,
-                                      _ condition: UnlockCondition) -> Reward {
+    private static func sai(_ id: String, _ index: Int, _ block: String?,
+                            _ type: RewardType, _ title: String, _ subtitle: String?,
+                            _ description: String, _ rarity: RewardRarity,
+                            _ condition: UnlockCondition) -> Reward {
         Reward(rewardId: id, anime: "One Punch Man", programId: ProgramID.saitama.rawValue,
-               arc: "Saitama", blockId: block, rewardType: type, title: title,
-               subtitle: nil,
-               description: "Vignette obtenue à la fin de ce bloc. Son récit reste à écrire.",
-               rarity: rarity, chronologyIndex: index, unlockCondition: condition)
+               arc: SaitamaBlocks.spec(id: block ?? "")?.arc ?? "Saitama",
+               blockId: block, rewardType: type, title: title, subtitle: subtitle,
+               description: description, rarity: rarity, chronologyIndex: index,
+               unlockCondition: condition)
     }
 
+    /// Les neuf vignettes du chapitre 22, avec leurs raretés exactes, plus
+    /// les deux du Serious Mode.
     private static let saitama: [Reward] = [
-        saitamaReward("SAI-001", 1, "SAI-B1", .event, "Le Déclic", .standard,
-                      .blockCompleted(blockId: "SAI-B1")),
-        saitamaReward("SAI-002", 2, "SAI-B2", .technique, "La Routine", .standard,
-                      .blockCompleted(blockId: "SAI-B2")),
-        saitamaReward("SAI-003", 3, "SAI-B3", .character, "Genos : Le Disciple", .rare,
-                      .blockCompleted(blockId: "SAI-B3")),
-        saitamaReward("SAI-004", 4, "SAI-B4", .rank, "Caped Baldy : Classe C", .rare,
-                      .blockCompleted(blockId: "SAI-B4")),
-        saitamaReward("SAI-005", 5, "SAI-B5", .event, "Météorite de Z-City", .epic,
-                      .blockCompleted(blockId: "SAI-B5")),
-        saitamaReward("SAI-006", 6, "SAI-B6", .character, "Mumen Rider", .rare,
-                      .blockCompleted(blockId: "SAI-B6")),
-        saitamaReward("SAI-007", 7, "SAI-B7", .fight, "Boros", .epic,
-                      .blockCompleted(blockId: "SAI-B7")),
-        saitamaReward("SAI-008", 8, "SAI-B8", .rank, "Le Plus Fort", .epic,
-                      .blockCompleted(blockId: "SAI-B8")),
-        saitamaReward("SAI-009", 9, nil, .transformation, "One Punch Man", .legendary,
-                      .bossDefeated(programId: ProgramID.saitama.rawValue))
+        sai("SAI-001", 1, "SAI-B1", .event, "Le Déclic", "Origines",
+            "Le bloc des fondations est derrière toi. La décision valait moins que les répétitions.",
+            .rare, .blockCompleted(blockId: "SAI-B1")),
+        sai("SAI-002", 2, "SAI-B2", .technique, "La Routine", "L'entraînement",
+            "Trente de chaque, et trois kilomètres. La routine est devenue un repère.",
+            .rare, .blockCompleted(blockId: "SAI-B2")),
+        sai("SAI-003", 3, "SAI-B3", .character, "Genos", "Le Disciple",
+            "Le volume dispersé est devenu une vraie capacité de travail en séance.",
+            .rare, .blockCompleted(blockId: "SAI-B3")),
+        sai("SAI-004", 4, "SAI-B4", .rank, "Caped Baldy", "Classe C",
+            "La moitié de la routine, et cinq kilomètres continus. Le classement viendra après.",
+            .rare, .blockCompleted(blockId: "SAI-B4")),
+        sai("SAI-005", 5, "SAI-B5", .event, "La Météorite de Z-City", nil,
+            "Soixante-cinq de chaque et six kilomètres et demi : la capacité combinée tient.",
+            .epic, .blockCompleted(blockId: "SAI-B5")),
+        sai("SAI-006", 6, "SAI-B6", .character, "Mumen Rider", "Justice indomptable",
+            "Des séances plus longues, une qualité qui tient malgré la fatigue accumulée.",
+            .epic, .blockCompleted(blockId: "SAI-B6")),
+        sai("SAI-007", 7, "SAI-B7", .fight, "Boros", "Dominator of the Universe",
+            "Quatre-vingt-dix de chaque, neuf kilomètres. La routine complète est en vue.",
+            .legendary, .blockCompleted(blockId: "SAI-B7")),
+        sai("SAI-008", 8, "SAI-B8", .transformation, "Le Plus Fort", nil,
+            "Le dernier bloc ne construit plus : il laisse apparaître le travail déjà fait.",
+            .legendary, .blockCompleted(blockId: "SAI-B8")),
+        sai("SAI-009", 9, nil, .transformation, "ONE PUNCH MAN", "Boss final",
+            "Cent pompes, cent abdominaux, cent squats le même jour, et dix kilomètres d'une seule traite.",
+            .legendary, .bossDefeated(programId: ProgramID.saitama.rawValue)),
+        sai("SAI-SPLUS-001", 10, nil, .rank, "SERIOUS MODE", "S+ débloqué",
+            "Le programme avancé s'ouvre. Ce n'est pas le même programme en plus long.",
+            .legendary, .bossDefeated(programId: ProgramID.saitama.rawValue)),
+        sai("SAI-SPLUS-002", 11, nil, .technique, "SERIOUS SERIES", "S+ validé",
+            "Le Serious Benchmark est tenu.",
+            .legendary, .standardValidated(programId: ProgramID.saitama.rawValue))
     ]
+
 }

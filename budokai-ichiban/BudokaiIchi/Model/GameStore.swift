@@ -104,7 +104,10 @@ final class GameStore: ObservableObject {
     func progress(_ id: ProgramID) -> ProgramProgress { state.progress(id) }
 
     func isFinished(_ id: ProgramID) -> Bool {
-        state.progress(id).completedSessions >= Catalog.program(id).totalSessions
+        // Saitama ne se termine pas au nombre de séances : il se valide par
+        // son combat final. C'est le principe 1.4 du cadrage.
+        if id == .saitama { return state.progress(.saitama).bossDefeated }
+        return state.progress(id).completedSessions >= Catalog.program(id).totalSessions
     }
 
     func isUnlocked(_ program: Program) -> Bool {
@@ -114,12 +117,174 @@ final class GameStore: ObservableObject {
     /// La prochaine séance d'un programme, ou nil s'il est terminé.
     /// Elle sort déjà ajustée au curseur d'intensité du programme.
     func session(of id: ProgramID) -> PlannedSession? {
+        // Saitama ne sort plus d'une liste figée : sa séance est fabriquée
+        // à partir du bloc, du calendrier et de la calibration.
+        if id == .saitama { return saitamaSession() }
         let program = Catalog.program(id)
         let done = state.progress(id).completedSessions
         guard done < program.totalSessions else { return nil }
         return Catalog.session(for: id, index: done, tier: state.tier,
                                intensity: state.progress(id).intensity)
     }
+
+    // MARK: - Saitama, programme pilote
+
+    var saitamaCalibration: SaitamaCalibration? { state.progress(.saitama).saitama }
+
+    /// Vrai tant que les quatre domaines ne sont pas mesurés.
+    var saitamaNeedsCalibration: Bool {
+        !(saitamaCalibration?.isComplete ?? false)
+    }
+
+    func setSaitamaCalibration(_ calibration: SaitamaCalibration) {
+        var progress = state.progress(.saitama)
+        var stored = calibration
+        stored.measuredAt = Date()
+        progress.saitama = stored
+        // les échelons partent de la calibration
+        for domain in SaitamaDomain.allCases {
+            if let family = domain.familyId {
+                progress.exerciseLevel[family] = stored.level(domain)
+            }
+        }
+        state.programs[ProgramID.saitama.rawValue] = progress
+        save()
+    }
+
+    /// La séance du jour de Saitama, fabriquée à la demande.
+    private func saitamaSession() -> PlannedSession? {
+        let progress = state.progress(.saitama)
+        guard let calibration = progress.saitama, calibration.isComplete else { return nil }
+        if progress.bossDefeated { return nil }
+
+        let perWeek = progress.schedule?.sessionsPerWeek
+            ?? SchedulingCatalog.rules(for: .saitama)?.recommendedSessionsPerWeek ?? 5
+        let done = progress.completedSessions
+        let position = SaitamaPlan.position(sessionIndex: done, sessionsPerWeek: perWeek)
+        let deload = SaitamaPlan.isDeloadWeek(week: position.week,
+                                              servedWeeks: progress.deloadWeeksServed,
+                                              recentReports: recentReports(of: .saitama))
+
+        let type = SaitamaPlan.sessionType(slot: position.slot, sessionsPerWeek: perWeek)
+        // le créneau de routine porte un index impair pour que le moteur
+        // choisisse Force B plutôt que Force A
+        let slotParity = SaitamaPlan.isRoutineSlot(position.slot, sessionsPerWeek: perWeek) ? 1 : 0
+
+        let scheduling = progress.schedule?.sessions
+            .first { $0.metadata.type == type }?.metadata
+
+        let context = SaitamaEngine.Context(
+            blockIndex: position.blockIndex,
+            sessionType: type,
+            calibration: calibration,
+            levels: progress.exerciseLevel,
+            isDeload: deload,
+            sessionIndex: done + slotParity - (done % 2),
+            narrativeId: SaitamaNarrative.content(sessionIndex: done)?.id,
+            scheduling: scheduling)
+
+        var session = SaitamaEngine.session(context)
+        session.index = done + 1
+        session.id = "saitama-\(done + 1)"
+        return session
+    }
+
+    /// Fait avancer Saitama après une séance : note la décharge servie,
+    /// valide le bloc s'il est tenu, et débloque sa vignette.
+    private func advanceSaitama() {
+        var progress = state.progress(.saitama)
+        guard progress.saitama?.isComplete == true else { return }
+        let perWeek = progress.schedule?.sessionsPerWeek ?? 5
+        let done = progress.completedSessions
+        let position = SaitamaPlan.position(sessionIndex: max(0, done - 1), sessionsPerWeek: perWeek)
+
+        // la semaine allégée est notée pour ne pas se répéter indéfiniment
+        if SaitamaPlan.isDeloadWeek(week: position.week,
+                                    servedWeeks: progress.deloadWeeksServed,
+                                    recentReports: recentReports(of: .saitama)),
+           !progress.deloadWeeksServed.contains(position.week) {
+            progress.deloadWeeksServed.append(position.week)
+        }
+
+        // fin de bloc : on juge les quatre domaines
+        let block = SaitamaBlocks.spec(position.blockIndex)
+        let lastWeek = SaitamaPlan.firstWeek(ofBlock: block.index)
+            + SaitamaPlan.weeks(inBlock: block.index) - 1
+        let isLastSessionOfBlock = position.week == lastWeek
+            && position.slot == perWeek - 1
+
+        state.programs[ProgramID.saitama.rawValue] = progress
+
+        guard isLastSessionOfBlock, !progress.completedBlocks.contains(block.id) else { return }
+        let outcome = SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBest)
+        switch outcome {
+        case .advance, .advanceWithCorrective:
+            completeBlock(block.id, of: .saitama)
+        case .consolidate:
+            // pas de vignette tant que le seuil minimal n'est pas atteint :
+            // on insère un microcycle de consolidation
+            progress.consolidationCycles += 1
+            state.programs[ProgramID.saitama.rawValue] = progress
+        }
+    }
+
+    /// Les derniers retours de séance d'un programme, du plus récent au plus
+    /// ancien.
+    func recentReports(of id: ProgramID) -> [SessionReport] {
+        let done = state.progress(id).completedSessions
+        return stride(from: done - 1, through: max(0, done - 5), by: -1)
+            .compactMap { state.reports["\(id.rawValue)-\($0)"] }
+    }
+
+    /// Le meilleur résultat atteint par domaine, mesuré sur l'historique.
+    var saitamaBest: [String: Int] {
+        var best: [String: Int] = [:]
+        for record in state.history where record.programID == ProgramID.saitama.rawValue {
+            best["endurance"] = max(best["endurance"] ?? 0, record.meters)
+            // les répétitions d'une séance de routine se répartissent sur les
+            // trois familles : on retient le tiers, qui est le volume par famille
+            let perFamily = record.reps / 3
+            for domain in ["push", "squat", "core"] {
+                best[domain] = max(best[domain] ?? 0, perFamily)
+            }
+        }
+        return best
+    }
+
+    /// Le bloc en cours de Saitama et ce qu'il vise.
+    var saitamaBlock: SaitamaBlockSpec? {
+        let progress = state.progress(.saitama)
+        guard progress.saitama?.isComplete == true else { return nil }
+        let perWeek = progress.schedule?.sessionsPerWeek ?? 5
+        let position = SaitamaPlan.position(sessionIndex: progress.completedSessions,
+                                            sessionsPerWeek: perWeek)
+        return SaitamaBlocks.spec(position.blockIndex)
+    }
+
+    /// Ce que le moteur décide en fin de bloc.
+    var saitamaBlockOutcome: SaitamaPlan.BlockOutcome? {
+        guard let block = saitamaBlock else { return nil }
+        return SaitamaPlan.outcome(blockIndex: block.index, best: saitamaBest)
+    }
+
+    /// L'éligibilité au combat final.
+    var saitamaBossEligibility: SaitamaPlan.BossEligibility {
+        SaitamaPlan.eligibility(best: saitamaBest, lastReport: recentReports(of: .saitama).first)
+    }
+
+    /// Enregistre la victoire sur le combat final et ouvre le Serious Mode.
+    func defeatSaitamaBoss() {
+        var progress = state.progress(.saitama)
+        progress.bossDefeated = true
+        progress.standardValidated = true
+        progress.finishedOn = todayKey
+        state.programs[ProgramID.saitama.rawValue] = progress
+        state.rewards.unlock("SAI-009")
+        state.rewards.unlock("SAI-SPLUS-001")
+        save()
+    }
+
+    var seriousModeUnlocked: Bool { state.progress(.saitama).bossDefeated }
 
     /// Le curseur d'intensité d'un programme.
     func intensity(_ id: ProgramID) -> Double { state.progress(id).intensity }
@@ -300,6 +465,7 @@ final class GameStore: ObservableObject {
             statGains: gainsByName))
         state.lastCompletedDay = todayKey
         state.penalty = nil
+        if program.id == .saitama { advanceSaitama() }
         save()
         syncNotifications()
 

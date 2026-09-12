@@ -237,6 +237,7 @@ extension PlannedSession {
     /// consécutives sont regroupées en séries, ce que l'ancien modèle
     /// exprimait en répétant la même étape.
     var prescriptions: [ExercisePrescription] {
+        if let prescribed = prescribed { return prescribed }
         var result: [ExercisePrescription] = []
         for step in steps {
             if var last = result.last, last.name == step.name,

@@ -53,7 +53,8 @@ struct SessionSheetView: View {
             header
             ScrollView {
                 VStack(spacing: 18) {
-                    intensityDial
+                    if let story = narrative { narrativeCard(story) }
+                    if tuned.prescribed == nil { intensityDial }
                     exercises
                     if !program.equipment.isEmpty && program.equipment != "Aucun" {
                         note("Matériel : \(program.equipment)")
@@ -108,6 +109,48 @@ struct SessionSheetView: View {
         }
         .frame(height: 190)
         .ignoresSafeArea(edges: .top)
+    }
+
+    /// Le récit de la séance, quand il existe et que le réglage de spoilers
+    /// l'autorise.
+    private var narrative: NarrativeContent? {
+        guard session.programID == .saitama,
+              let id = tuned.narrativeId,
+              let content = SaitamaNarrative.beats.first(where: { $0.id == id }),
+              content.isVisible(at: store.state.spoilerLevel) else { return nil }
+        return content
+    }
+
+    private func narrativeCard(_ story: NarrativeContent) -> some View {
+        VStack(alignment: .leading, spacing: 9) {
+            Text(story.arc.uppercased())
+                .font(.ui(9, .bold))
+                .kerning(2.0)
+                .foregroundStyle(program.light)
+            Text(story.narrativeTitle)
+                .font(.display(19))
+                .foregroundStyle(Theme.text)
+                .fixedSize(horizontal: false, vertical: true)
+            Text(story.storyRecap)
+                .font(.ui(13))
+                .foregroundStyle(Theme.muted)
+                .fixedSize(horizontal: false, vertical: true)
+            if let sensei = story.senseiMessage {
+                HStack(alignment: .top, spacing: 8) {
+                    Rectangle().fill(program.light).frame(width: 2)
+                    Text(sensei)
+                        .font(.ui(12))
+                        .italic()
+                        .foregroundStyle(Theme.text)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .padding(.top, 2)
+            }
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Theme.border, lineWidth: 1))
     }
 
     // MARK: - Le curseur d'intensité

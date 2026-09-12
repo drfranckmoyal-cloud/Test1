@@ -137,15 +137,32 @@ struct PlannedSession: Identifiable, Equatable {
     var stageIndex: Int     // étape à laquelle elle appartient, à partir de 0
     var title: String
     var steps: [SessionStep]
+    /// La prescription complète, quand le programme sait l'exprimer.
+    ///
+    /// Les anciens programmes ne portent que des `steps` : une quantité et un
+    /// repos. Saitama, lui, prescrit des variantes, des RIR, des politiques de
+    /// complétion — ce que `SessionStep` ne sait pas dire. Quand ce champ est
+    /// rempli, c'est lui qui fait foi.
+    var prescribed: [ExercisePrescription]?
+    /// Le rôle de la séance dans le calendrier, quand il est connu.
+    var scheduling: SessionSchedulingMetadata?
+    /// Le récit attaché à cette séance.
+    var narrativeId: String?
 
     var totalReps: Int {
-        steps.reduce(0) { $0 + ($1.goal.unit == .reps ? $1.goal.value : 0) }
+        if let prescribed = prescribed {
+            return prescribed.reduce(0) { $0 + ($1.unit == .reps ? $1.targetValue : 0) }
+        }
+        return steps.reduce(0) { $0 + ($1.goal.unit == .reps ? $1.goal.value : 0) }
     }
 
     /// La même séance, allégée ou durcie par le curseur d'intensité.
     /// L'échauffement et le retour au calme n'en dépendent pas : ils durent
     /// ce qu'ils durent, quelle que soit la forme du jour.
     func scaled(by intensity: Double) -> PlannedSession {
+        // une séance prescrite porte déjà son dosage : le curseur global n'a
+        // plus rien à y faire
+        if prescribed != nil { return self }
         var copy = self
         copy.steps = steps.map { step in
             guard step.isWork else { return step }
@@ -162,6 +179,19 @@ struct PlannedSession: Identifiable, Equatable {
     }
 
     var estimatedMinutes: Int {
+        if let scheduling = scheduling { return scheduling.estimatedDurationMinutes }
+        if let prescribed = prescribed {
+            let work = prescribed.reduce(0) { partial, item in
+                switch item.unit {
+                case .reps: return partial + item.targetValue * 3
+                case .seconds: return partial + item.targetValue
+                case .meters: return partial + item.targetValue / 3
+                case .kg: return partial
+                }
+            }
+            let rest = prescribed.reduce(0) { $0 + (($1.restSeconds ?? 0) * max(0, ($1.sets ?? 1) - 1)) }
+            return max(1, (work + rest) / 60)
+        }
         let work = steps.reduce(0) { partial, step in
             switch step.goal.unit {
             case .reps: return partial + step.goal.value * 2

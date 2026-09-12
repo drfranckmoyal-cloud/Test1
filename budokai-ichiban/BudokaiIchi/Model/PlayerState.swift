@@ -86,6 +86,14 @@ struct ProgramProgress: Codable, Equatable {
     var availability: TrainingAvailability?
     /// Le calendrier construit à partir de ces disponibilités.
     var schedule: ProgramSchedule?
+    /// La calibration à quatre domaines de Saitama.
+    var saitama: SaitamaCalibration?
+    /// Décharges déjà servies, par index de semaine.
+    var deloadWeeksServed: [Int] = []
+    /// Microcycles de consolidation insérés avant le combat final.
+    var consolidationCycles: Int = 0
+    /// Le combat final a été gagné.
+    var bossDefeated: Bool = false
 
     /// La dernière mesure d'un test donné.
     func latest(_ testId: String) -> CalibrationResult? {

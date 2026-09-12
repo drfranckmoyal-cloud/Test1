@@ -5,6 +5,8 @@ struct ProgramDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showContent = false
     @State private var showScheduling = false
+    @State private var showCalibration = false
+    @State private var showBoss = false
     let program: Program
 
     var body: some View {
@@ -77,6 +79,10 @@ struct ProgramDetailView: View {
                             }
                         }
 
+                        if program.id == .saitama, store.saitamaCalibration?.isComplete == true,
+                           ProgramStructures.boss(for: program.id) != nil {
+                            bossEntry
+                        }
                         action
                     }
                     .padding(.horizontal, 20)
@@ -107,8 +113,23 @@ struct ProgramDetailView: View {
         }
         .sheet(isPresented: $showScheduling) {
             SchedulingSetupView(program: program) {
+                if program.id == .saitama && store.saitamaNeedsCalibration {
+                    showCalibration = true
+                } else {
+                    store.startProgram(program.id)
+                    dismiss()
+                }
+            }
+        }
+        .sheet(isPresented: $showCalibration) {
+            SaitamaCalibrationView {
                 store.startProgram(program.id)
                 dismiss()
+            }
+        }
+        .sheet(isPresented: $showBoss) {
+            if let fight = ProgramStructures.boss(for: program.id) {
+                BossFightView(fight: fight)
             }
         }
     }
@@ -119,6 +140,44 @@ struct ProgramDetailView: View {
             .foregroundStyle(Theme.muted)
             .lineLimit(1)
             .minimumScaleFactor(0.75)
+    }
+
+    /// L'entrée vers le combat final. Visible dès que le programme tourne :
+    /// verrouillée, elle dit ce qu'il reste à tenir.
+    private var bossEntry: some View {
+        let eligible = store.saitamaBossEligibility.isEligible
+        return Button {
+            Haptics.tap()
+            showBoss = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: eligible ? "flame.fill" : "lock.fill")
+                    .font(.system(size: 17))
+                    .foregroundStyle(eligible ? Theme.gold : Theme.muted)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("COMBAT FINAL")
+                        .font(.display(15))
+                        .foregroundStyle(Theme.text)
+                    Text(eligible
+                         ? "Tes capacités récentes l'ouvrent. 100/100/100 et 10 km."
+                         : "Il te reste \(store.saitamaBossEligibility.missing.count) prérequis à tenir.")
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(Theme.dim)
+            }
+            .padding(15)
+            .frame(maxWidth: .infinity)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(eligible ? Theme.gold.opacity(0.55) : Theme.border, lineWidth: eligible ? 2 : 1))
+        }
+        .buttonStyle(.plain)
     }
 
     private var suiviLabel: String {
@@ -222,6 +281,8 @@ struct ProgramDetailView: View {
                     // programme sait le construire
                     if store.needsScheduling(program.id) {
                         showScheduling = true
+                    } else if program.id == .saitama && store.saitamaNeedsCalibration {
+                        showCalibration = true
                     } else {
                         store.startProgram(program.id)
                         dismiss()
