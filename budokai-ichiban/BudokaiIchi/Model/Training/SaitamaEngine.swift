@@ -39,6 +39,16 @@ struct SaitamaBlockSpec: Identifiable, Equatable {
     var developmentRPE: Int
 
     var rewardId: String
+
+    /// Le repère du bloc, en clair : « 20 / 20 / 20 + 2 km ».
+    var benchmark: String {
+        let volume = "\(routineVolume) / \(routineVolume) / \(routineVolume)"
+        return "\(volume) + \(ObjectiveUnit.meters.format(benchmarkMeters))"
+    }
+
+    /// Les blocs pairs se terminent par une semaine allégée dans le scénario
+    /// nominal. La décharge suit le bloc, pas le calendrier.
+    var endsWithDeload: Bool { index % 2 == 0 }
 }
 
 /// Les huit blocs de Saitama.

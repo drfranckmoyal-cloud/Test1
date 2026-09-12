@@ -88,7 +88,7 @@ struct SessionSheetView: View {
                         .foregroundStyle(Theme.cream)
                         .lineLimit(2)
                         .minimumScaleFactor(0.7)
-                    Text("Séance \(session.index) sur \(program.totalSessions) · environ \(tuned.estimatedMinutes) min")
+                    Text(positionLabel)
                         .font(.ui(12, .semibold))
                         .foregroundStyle(Theme.cream.opacity(0.8))
                 }
@@ -152,6 +152,14 @@ struct SessionSheetView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Theme.border, lineWidth: 1))
+    }
+
+    /// Où se situe cette séance dans le parcours.
+    private var positionLabel: String {
+        if session.programID == .saitama, let block = store.saitamaBlock {
+            return "Bloc \(block.index) sur 8 · \(block.title) · environ \(tuned.estimatedMinutes) min"
+        }
+        return "Séance \(session.index) sur \(program.totalSessions) · environ \(tuned.estimatedMinutes) min"
     }
 
     /// Ce que le moteur a décidé, dit en clair. Le cadrage veut que le

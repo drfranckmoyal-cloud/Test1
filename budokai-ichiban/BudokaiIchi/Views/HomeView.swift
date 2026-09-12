@@ -80,6 +80,7 @@ struct HomeView: View {
 
     /// Le programme dont on demande l'arrêt, le temps de confirmer.
     @State private var stopping: Program?
+    @State private var journey: Program?
 
     var body: some View {
         ScrollView {
@@ -96,6 +97,9 @@ struct HomeView: View {
         }
         .scrollIndicators(.hidden)
         .background(Theme.ground)
+        .sheet(item: $journey) { program in
+            ProgramJourneyView(program: program)
+        }
         .confirmationDialog("Arrêter ce programme ?",
                             isPresented: Binding(get: { stopping != nil },
                                                  set: { if !$0 { stopping = nil } }),
@@ -227,11 +231,22 @@ struct HomeView: View {
                     .frame(width: 62, height: 62)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(program.name.uppercased())
-                            .font(.display(21))
-                            .foregroundStyle(Theme.cream)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
+                        Button {
+                            Haptics.tap()
+                            journey = program
+                        } label: {
+                            HStack(spacing: 5) {
+                                Text(program.name.uppercased())
+                                    .font(.display(21))
+                                    .foregroundStyle(Theme.cream)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
+                                Image(systemName: "map")
+                                    .font(.system(size: 11, weight: .bold))
+                                    .foregroundStyle(Theme.cream.opacity(0.75))
+                            }
+                        }
+                        .buttonStyle(.plain)
                         Text(stageName.uppercased())
                             .font(.ui(10, .bold))
                             .kerning(1.4)

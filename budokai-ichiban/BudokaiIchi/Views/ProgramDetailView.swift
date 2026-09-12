@@ -5,6 +5,8 @@ struct ProgramDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showContent = false
     @State private var showLaunch = false
+    @State private var showJourney = false
+    @State private var justLaunched = false
     @State private var showBoss = false
     let program: Program
 
@@ -58,6 +60,9 @@ struct ProgramDetailView: View {
                             .foregroundStyle(Theme.muted)
                             .fixedSize(horizontal: false, vertical: true)
 
+                        if program.id == .saitama, store.saitamaCalibration?.isComplete == true {
+                            journeyEntry
+                        }
                         HStack {
                             SectionLabel(text: "LES \(program.stages.count) ÉTAPES")
                             Button {
@@ -113,8 +118,22 @@ struct ProgramDetailView: View {
         .sheet(isPresented: $showLaunch) {
             ProgramLaunchView(program: program) {
                 store.startProgram(program.id)
-                dismiss()
+                justLaunched = true
             }
+        }
+        .sheet(isPresented: $showJourney) {
+            ProgramJourneyView(program: program, isIntroduction: justLaunched)
+        }
+        .onChange(of: showLaunch) { _, presented in
+            // le parcours s'ouvre dans la foulée du lancement : on ne lâche
+            // pas le pratiquant sur une séance isolée
+            guard !presented, justLaunched else { return }
+            showJourney = true
+        }
+        .onChange(of: showJourney) { _, presented in
+            guard !presented, justLaunched else { return }
+            justLaunched = false
+            dismiss()
         }
         .sheet(isPresented: $showBoss) {
             if let fight = ProgramStructures.boss(for: program.id) {
@@ -129,6 +148,38 @@ struct ProgramDetailView: View {
             .foregroundStyle(Theme.muted)
             .lineLimit(1)
             .minimumScaleFactor(0.75)
+    }
+
+    /// L'accès permanent à la carte du programme.
+    private var journeyEntry: some View {
+        Button {
+            Haptics.tap()
+            showJourney = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "map.fill")
+                    .font(.system(size: 16))
+                    .foregroundStyle(program.light)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("TON PARCOURS")
+                        .font(.display(15))
+                        .foregroundStyle(Theme.text)
+                    Text("Les huit blocs, et où tu te situes dedans")
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(Theme.muted)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(Theme.dim)
+            }
+            .padding(15)
+            .frame(maxWidth: .infinity)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Theme.border, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
     }
 
     /// L'entrée vers le combat final. Visible dès que le programme tourne :
