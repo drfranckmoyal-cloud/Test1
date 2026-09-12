@@ -44,17 +44,14 @@ struct ProgramJourneyView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     banner
-                    if store.needsSetup(program.id) {
+                    if !store.isActive(program.id) {
+                        startCall
+                    } else if store.needsSetup(program.id) {
                         setupCall
                     } else if blocks.isEmpty {
                         unavailable
                     } else {
-                        start
-                        ForEach(blocks) { block in
-                            milestone(block)
-                            connector(after: block)
-                        }
-                        finish
+                        roadway
                     }
                     footer
                 }
@@ -94,9 +91,7 @@ struct ProgramJourneyView: View {
                 Text(program.name.uppercased())
                     .font(.display(34))
                     .foregroundStyle(Theme.cream)
-                Text(isIntroduction
-                     ? "Voilà la route. Huit étapes, une histoire, un combat au bout."
-                     : "Tu es au jalon \(currentBlock) sur \(blocks.count).")
+                Text(bannerLine)
                     .font(.ui(14, .semibold))
                     .foregroundStyle(Theme.cream.opacity(0.9))
                     .fixedSize(horizontal: false, vertical: true)
@@ -105,6 +100,15 @@ struct ProgramJourneyView: View {
             .padding(.bottom, 18)
         }
         .frame(height: 230)
+    }
+
+    private var bannerLine: String {
+        if !store.isActive(program.id) {
+            return "Huit jalons, une histoire, un combat au bout."
+        }
+        if isIntroduction { return "Voilà la route. Huit étapes, une histoire, un combat au bout." }
+        if store.needsSetup(program.id) { return "Il reste ton point de départ à mesurer." }
+        return "Tu es au jalon \(currentBlock) sur \(blocks.count)."
     }
 
     // MARK: - Le départ
@@ -417,9 +421,47 @@ struct ProgramJourneyView: View {
     private enum BlockState { case done, current, locked }
 
     private func state(of block: SaitamaBlockSpec) -> BlockState {
+        guard store.isActive(program.id) else { return block.index == 1 ? .current : .locked }
         if store.progress(program.id).completedBlocks.contains(block.id) { return .done }
         if block.index == currentBlock { return .current }
         return block.index < currentBlock ? .done : .locked
+    }
+
+    /// La route elle-même, du départ au combat.
+    private var roadway: some View {
+        VStack(spacing: 0) {
+            start
+            ForEach(blocks) { block in
+                milestone(block)
+                connector(after: block)
+            }
+            finish
+        }
+    }
+
+    /// Le programme n'est pas encore pris : on montre quand même la route,
+    /// et on propose de partir.
+    private var startCall: some View {
+        VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 13) {
+                Text(program.pitch)
+                    .font(.ui(14))
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+                PrimaryButton(title: "PRENDRE CE PROGRAMME", tint: tint) {
+                    showSetup = true
+                }
+            }
+            .padding(20)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(tint.opacity(0.4), lineWidth: 1))
+            .padding(.horizontal, 20)
+            .padding(.top, 20)
+
+            roadway
+        }
     }
 
     /// Le programme tourne mais n'a jamais été réglé : il faut ses
