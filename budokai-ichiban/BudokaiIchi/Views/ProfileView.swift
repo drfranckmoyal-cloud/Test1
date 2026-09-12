@@ -3,10 +3,12 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject private var store: GameStore
     @State private var showSettings = false
+    @State private var showAvatar = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 22) {
+                avatarCard
                 rankHeader
                 characteristics
                 figures
@@ -21,6 +23,53 @@ struct ProfileView: View {
         .scrollIndicators(.hidden)
         .background(Theme.ground)
         .sheet(isPresented: $showSettings) { SettingsView() }
+        .sheet(isPresented: $showAvatar) { AvatarEditorView() }
+    }
+
+    /// Le combattant, sa ceinture, et l'accès à sa personnalisation.
+    private var avatarCard: some View {
+        Button {
+            Haptics.tap()
+            showAvatar = true
+        } label: {
+            HStack(spacing: 4) {
+                AvatarView(config: store.state.avatar, pose: .guardStance,
+                           belt: store.belt, width: 150)
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(store.belt.label.uppercased())
+                        .font(.display(15))
+                        .foregroundStyle(Theme.text)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(store.belt.japanese)
+                        .font(.ui(13))
+                        .foregroundStyle(Theme.muted)
+                    if let next = nextBelt {
+                        Text("Encore \(next.streakNeeded - store.state.streak) jours de série pour la \(next.label.lowercased()).")
+                            .font(.ui(11))
+                            .foregroundStyle(Theme.muted)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding(.top, 2)
+                    }
+                    Text("PERSONNALISER")
+                        .font(.ui(10, .bold))
+                        .kerning(1.2)
+                        .foregroundStyle(Theme.crimson)
+                        .padding(.top, 4)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(.trailing, 14)
+            .frame(maxWidth: .infinity)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Theme.border, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+    }
+
+    /// La ceinture juste au-dessus de celle déjà obtenue.
+    private var nextBelt: Belt? {
+        Belt.allCases.first { $0.streakNeeded > store.state.streak }
     }
 
     private var rankHeader: some View {

@@ -108,10 +108,12 @@ struct HomeView: View {
                 .frame(height: 116)
                 .accessibilityLabel("Budokai Ichiban")
 
-            Text("ICHIBAN")
+            Text("BUDOKAÏ ICHIBAN")
                 .font(.display(15))
-                .kerning(6)
+                .kerning(3.5)
                 .foregroundStyle(Theme.muted)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
 
             Text("Neuf maîtres, une seule échelle.")
                 .font(.ui(14))

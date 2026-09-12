@@ -96,6 +96,7 @@ struct PlayerState: Codable {
     var tone: MotivationTone = .absurd
     var reminders: [Reminder] = Reminder.defaults
     var onboarded: Bool = false
+    var avatar: AvatarConfig = AvatarConfig()
 
     /// Relit une sauvegarde écrite quand un seul programme était suivi.
     init(from decoder: Decoder) throws {
@@ -118,6 +119,7 @@ struct PlayerState: Codable {
         tone = read(.tone, .absurd)
         reminders = read(.reminders, Reminder.defaults)
         onboarded = read(.onboarded, false)
+        avatar = read(.avatar, AvatarConfig())
 
         if let many = try? box.decode([String].self, forKey: .activePrograms) {
             activePrograms = many

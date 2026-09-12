@@ -323,6 +323,10 @@ final class GameStore: ObservableObject {
     func setTier(_ tier: Tier) { state.tier = tier; save() }
     func setTone(_ tone: MotivationTone) { state.tone = tone; save(); syncNotifications() }
     func setAppearance(_ appearance: Appearance) { state.appearance = appearance; save() }
+    func setAvatar(_ avatar: AvatarConfig) { state.avatar = avatar; save() }
+
+    /// La ceinture que la série en cours a méritée.
+    var belt: Belt { Belt.earned(streak: state.streak) }
     func finishOnboarding(tier: Tier) {
         state.tier = tier
         state.onboarded = true
