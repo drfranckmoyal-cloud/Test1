@@ -64,7 +64,10 @@ struct ProgramJourneyView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     banner
-                    if !store.isActive(program.id) {
+                    if store.isPaused(program.id) {
+                        resumeCall
+                        roadway
+                    } else if !store.isActive(program.id) {
                         startCall
                         roadway
                     } else if store.needsSetup(program.id) {
@@ -470,6 +473,30 @@ struct ProgramJourneyView: View {
     }
 
     // MARK: - Appels à l'action
+
+    /// Un programme en pause ne se reprend pas de zéro : il redémarre là où
+    /// il s'est arrêté.
+    private var resumeCall: some View {
+        let done = store.progress(program.id).completedSessions
+        return VStack(alignment: .leading, spacing: 13) {
+            Text(done > 0
+                 ? "Tu l'as mis en pause après \(done) séance\(done > 1 ? "s" : ""). Rien n'a bougé : il repart exactement là où tu l'as laissé."
+                 : "Tu l'as mis en pause avant de commencer. Il repart du début.")
+                .font(.ui(14))
+                .foregroundStyle(Theme.muted)
+                .fixedSize(horizontal: false, vertical: true)
+            PrimaryButton(title: "REPRENDRE CE PROGRAMME", tint: tint) {
+                store.resumeProgram(program.id)
+            }
+        }
+        .padding(20)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
+            .stroke(tint.opacity(0.4), lineWidth: 1))
+        .padding(.horizontal, 20)
+        .padding(.top, 20)
+    }
 
     private var startCall: some View {
         VStack(alignment: .leading, spacing: 13) {

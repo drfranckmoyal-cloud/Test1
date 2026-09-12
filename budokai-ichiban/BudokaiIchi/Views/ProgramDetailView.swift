@@ -8,6 +8,7 @@ struct ProgramDetailView: View {
     @State private var justLaunched = false
     @State private var showBoss = false
     @State private var confirmStop = false
+    @State private var confirmDelete = false
     let program: Program
 
     var body: some View {
@@ -141,21 +142,52 @@ struct ProgramDetailView: View {
             justLaunched = false
             dismiss()
         }
-        .confirmationDialog("Ne plus suivre \(program.name) ?",
+        .confirmationDialog("Quitter \(program.name) ?",
                             isPresented: $confirmStop, titleVisibility: .visible) {
-            Button("Ne plus suivre", role: .destructive) {
-                store.stopProgram(program.id)
+            Button("Mettre en pause") {
+                store.pauseProgram(program.id)
                 dismiss()
             }
+            Button("Supprimer le programme…", role: .destructive) { confirmDelete = true }
             Button("Continuer le programme", role: .cancel) {}
         } message: {
-            Text("Rien n'est effacé : tes séances faites, ton expérience et tes caractéristiques restent. Le programme sort juste de tes suivis, et tu pourras le reprendre là où tu l'as laissé.")
+            Text("En pause, rien n'est effacé : il quitte l'accueil mais reste en grisé dans l'onglet Séances, prêt à repartir où tu l'as laissé. Supprimer efface tout ce qu'il a produit.")
+        }
+        .confirmationDialog("Supprimer \(program.name) ?",
+                            isPresented: $confirmDelete, titleVisibility: .visible) {
+            Button("Tout supprimer", role: .destructive) {
+                store.deleteProgram(program.id)
+                dismiss()
+            }
+            Button("Annuler", role: .cancel) {}
+        } message: {
+            Text(deletionWarning)
         }
         .sheet(isPresented: $showBoss) {
             if let challenge = store.bossChallenge(of: program.id) {
                 BossFightView(challenge: challenge)
             }
         }
+    }
+
+    /// Ce que la suppression emporte, en chiffres.
+    private var deletionWarning: String {
+        let impact = store.deletionImpact(program.id)
+        var pieces: [String] = []
+        if impact.sessions > 0 {
+            pieces.append(impact.sessions > 1 ? "\(impact.sessions) séances faites" : "1 séance faite")
+        }
+        if impact.xp > 0 { pieces.append("\(impact.xp.grouped) XP") }
+        if impact.rewards > 0 {
+            pieces.append(impact.rewards > 1 ? "\(impact.rewards) vignettes" : "1 vignette")
+        }
+        guard !pieces.isEmpty else {
+            return "\(program.name) n'a encore rien produit : il n'y a rien à perdre. Tes réglages et tes mesures de départ seront effacés."
+        }
+        let list = pieces.count == 1
+            ? pieces[0]
+            : pieces.dropLast().joined(separator: ", ") + " et " + pieces[pieces.count - 1]
+        return "Tu perds \(list), ainsi que tes mesures de départ et tes caractéristiques gagnées ici. C'est définitif. Pour garder tout ça, mets-le plutôt en pause."
     }
 
     private func fact(_ text: String) -> some View {
@@ -284,6 +316,30 @@ struct ProgramDetailView: View {
                     .font(.ui(12))
                     .foregroundStyle(Theme.muted)
             }
+        } else if store.isPaused(program.id) {
+            // un programme en pause se reprend, ou se supprime pour de bon
+            VStack(spacing: 8) {
+                PrimaryButton(title: "REPRENDRE LE PROGRAMME", tint: program.light) {
+                    store.resumeProgram(program.id)
+                    dismiss()
+                }
+                Button {
+                    Haptics.tap()
+                    confirmDelete = true
+                } label: {
+                    Text("Supprimer ce programme")
+                        .font(.ui(13, .semibold))
+                        .foregroundStyle(Theme.muted)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 38)
+                }
+                .buttonStyle(.plain)
+                Text("En pause depuis \(store.progress(program.id).completedSessions) séance\(store.progress(program.id).completedSessions > 1 ? "s" : "") faite\(store.progress(program.id).completedSessions > 1 ? "s" : ""). Rien n'est perdu tant que tu ne supprimes pas.")
+                    .font(.ui(11))
+                    .foregroundStyle(Theme.dim)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         } else if store.isActive(program.id) {
             VStack(spacing: 8) {
                 GhostButton(title: "Programme en cours") { dismiss() }
@@ -291,14 +347,14 @@ struct ProgramDetailView: View {
                     Haptics.tap()
                     confirmStop = true
                 } label: {
-                    Text("Ne plus suivre")
+                    Text("Mettre en pause ou supprimer")
                         .font(.ui(13, .semibold))
                         .foregroundStyle(Theme.muted)
                         .frame(maxWidth: .infinity)
                         .frame(height: 38)
                 }
                 .buttonStyle(.plain)
-                Text("Ton avancée est gardée : tu peux le reprendre où tu l'as laissé.")
+                Text("En pause, ton avancée est gardée. Supprimer efface tout.")
                     .font(.ui(11))
                     .foregroundStyle(Theme.dim)
                     .multilineTextAlignment(.center)

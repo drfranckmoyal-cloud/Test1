@@ -1077,13 +1077,84 @@ final class GameStore: ObservableObject {
         syncNotifications()
     }
 
-    /// Retire un programme du suivi. L'avancée déjà faite est conservée : le
-    /// reprendre plus tard repart d'où il en était.
-    func stopProgram(_ id: ProgramID) {
+    /// Met un programme en pause.
+    ///
+    /// Il quitte l'accueil et ne réclame plus de séance, mais rien n'est
+    /// touché : il reste en grisé dans l'onglet des séances et repart d'où il
+    /// en était. C'est le geste réversible ; supprimer est l'autre.
+    func pauseProgram(_ id: ProgramID) {
         state.activePrograms.removeAll { $0 == id.rawValue }
+        if !state.pausedPrograms.contains(id.rawValue) {
+            state.pausedPrograms.append(id.rawValue)
+        }
         save()
         syncNotifications()
     }
+
+    /// Remet un programme en pause dans les suivis.
+    func resumeProgram(_ id: ProgramID) {
+        state.pausedPrograms.removeAll { $0 == id.rawValue }
+        if !state.activePrograms.contains(id.rawValue) {
+            state.activePrograms.append(id.rawValue)
+        }
+        save()
+        syncNotifications()
+    }
+
+    func isPaused(_ id: ProgramID) -> Bool { state.pausedPrograms.contains(id.rawValue) }
+
+    /// Les programmes en pause, dans l'ordre où ils ont été suspendus.
+    var pausedPrograms: [Program] {
+        state.pausedPrograms.compactMap(ProgramID.init(rawValue:)).map(Catalog.program)
+    }
+
+    /// Ce qu'une suppression emporterait : de quoi le dire avant de le faire.
+    func deletionImpact(_ id: ProgramID) -> (sessions: Int, xp: Int, rewards: Int) {
+        let records = state.history.filter { $0.programID == id.rawValue }
+        let rewards = RewardCatalog.all
+            .filter { $0.programId == id.rawValue && state.rewards.has($0.rewardId) }
+        return (records.count, records.reduce(0) { $0 + $1.xp }, rewards.count)
+    }
+
+    /// Supprime un programme et tout ce qu'il a produit.
+    ///
+    /// C'est le geste irréversible : les séances faites quittent l'historique,
+    /// leur expérience et leurs caractéristiques sont retirées, les vignettes
+    /// gagnées sont reprises, et les mesures de départ comme le calendrier
+    /// sont effacés. Le programme redevient ce qu'il était avant d'être pris.
+    func deleteProgram(_ id: ProgramID) {
+        let key = id.rawValue
+
+        // l'expérience des séances de ce programme s'en va avec elles
+        let records = state.history.filter { $0.programID == key }
+        state.xp = max(0, state.xp - records.reduce(0) { $0 + $1.xp })
+        state.history.removeAll { $0.programID == key }
+
+        // les retours de séance, les compteurs du jour, l'avancement
+        state.reports = state.reports.filter { !$0.key.hasPrefix("\(key)-") }
+        state.openSessions.removeAll { $0.programID == key }
+        state.programs[key] = nil
+
+        // les vignettes que ce programme avait ouvertes
+        for reward in RewardCatalog.all where reward.programId == key {
+            state.rewards.unlocked[reward.rewardId] = nil
+            state.rewards.revealed.remove(reward.rewardId)
+        }
+
+        // ce que la victoire avait ajouté au profil
+        let program = Catalog.program(id)
+        state.badges.removeAll { $0.hasPrefix(program.name) }
+        state.equipment.removeAll { $0 == program.name }
+
+        state.activePrograms.removeAll { $0 == key }
+        state.pausedPrograms.removeAll { $0 == key }
+
+        recomputeStreak()
+        reconcileStats()
+        save()
+        syncNotifications()
+    }
+
 
     // MARK: - Séance terminée
 

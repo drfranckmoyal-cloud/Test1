@@ -213,6 +213,9 @@ struct PlayerState: Codable {
     var programs: [String: ProgramProgress] = [:]
     /// Les programmes suivis en parallèle, dans l'ordre où ils ont été pris.
     var activePrograms: [String] = []
+    /// Les programmes mis en pause : ils quittent l'accueil mais restent
+    /// visibles, en grisé, dans l'onglet des séances, prêts à repartir.
+    var pausedPrograms: [String] = []
     var history: [SessionRecord] = []
     var streak: Int = 0
     var bestStreak: Int = 0
@@ -276,6 +279,7 @@ struct PlayerState: Codable {
         reports = read(.reports, [:])
         rewards = read(.rewards, RewardInventory())
         spoilerLevel = read(.spoilerLevel, .anime)
+        pausedPrograms = read(.pausedPrograms, [])
         heroPopups = read(.heroPopups, true)
         lastHeroVariant = read(.lastHeroVariant, [:])
         heroVariantBag = read(.heroVariantBag, [:])

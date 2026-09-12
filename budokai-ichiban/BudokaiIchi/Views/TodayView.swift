@@ -63,6 +63,7 @@ struct TodayView: View {
     private var mainContent: some View {
         if store.activePrograms.isEmpty {
             emptyCard
+            pausedSection
         } else {
             let due = store.sessionsDueToday
             if due.count > 1 {
@@ -90,7 +91,72 @@ struct TodayView: View {
             ForEach(store.programsFinished) { program in
                 finishedCard(program)
             }
+            pausedSection
         }
+    }
+
+    /// Les programmes mis en pause : ils ne réclament rien, mais ils sont là,
+    /// en grisé, à un toucher de repartir.
+    @ViewBuilder
+    private var pausedSection: some View {
+        let paused = store.pausedPrograms
+        if !paused.isEmpty {
+            SectionLabel(text: paused.count > 1 ? "EN PAUSE" : "EN PAUSE")
+                .padding(.top, 6)
+            ForEach(paused) { program in
+                pausedCard(program)
+            }
+        }
+    }
+
+    private func pausedCard(_ program: Program) -> some View {
+        let done = store.progress(program.id).completedSessions
+        let total = store.shape(of: program.id).totalSessions
+
+        return HStack(spacing: 12) {
+            ZStack {
+                program.gradient
+                ArtworkFill(name: program.stageImage(store.stageStatus(program).index)).opacity(0.9)
+            }
+            .frame(width: 52, height: 52)
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .grayscale(1)
+            .opacity(0.55)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(program.name)
+                    .font(.ui(15, .bold))
+                    .foregroundStyle(Theme.muted)
+                Text(done > 0 ? "En pause · \(done) séance\(done > 1 ? "s" : "") sur \(total)"
+                              : "En pause · pas commencé")
+                    .font(.ui(11, .semibold))
+                    .foregroundStyle(Theme.dim)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+
+            Spacer(minLength: 8)
+
+            Button {
+                Haptics.tap()
+                store.resumeProgram(program.id)
+            } label: {
+                Text("REPRENDRE")
+                    .font(.ui(10, .bold))
+                    .kerning(1.2)
+                    .foregroundStyle(Theme.ink)
+                    .padding(.horizontal, 13)
+                    .frame(height: 32)
+                    .background(program.light, in: Capsule())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Reprendre \(program.name)")
+        }
+        .padding(13)
+        .frame(maxWidth: .infinity)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
+            .stroke(Theme.border, lineWidth: 1))
     }
 
     private var emptyCard: some View {

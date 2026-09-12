@@ -80,6 +80,8 @@ struct HomeView: View {
 
     /// Le programme dont on demande l'arrêt, le temps de confirmer.
     @State private var stopping: Program?
+    /// Le programme dont on va vraiment tout effacer, le temps de confirmer.
+    @State private var deleting: Program?
     @State private var journey: Program?
 
     var body: some View {
@@ -100,19 +102,37 @@ struct HomeView: View {
         .sheet(item: $journey) { program in
             ProgramJourneyView(program: program)
         }
-        .confirmationDialog("Arrêter ce programme ?",
+        .confirmationDialog("Quitter ce programme ?",
                             isPresented: Binding(get: { stopping != nil },
                                                  set: { if !$0 { stopping = nil } }),
                             titleVisibility: .visible) {
             if let program = stopping {
-                Button("Arrêter \(program.name)", role: .destructive) {
-                    store.stopProgram(program.id)
+                Button("Mettre en pause") {
+                    store.pauseProgram(program.id)
+                    stopping = nil
+                }
+                Button("Supprimer le programme…", role: .destructive) {
+                    deleting = program
                     stopping = nil
                 }
             }
             Button("Continuer le programme", role: .cancel) { stopping = nil }
         } message: {
-            Text("Rien n'est effacé : tes séances faites, ton expérience et tes caractéristiques restent. Tu pourras le reprendre là où tu l'as laissé.")
+            Text("En pause, il quitte l'accueil mais reste en grisé dans l'onglet Séances, prêt à repartir. Supprimer efface tout ce qu'il a produit.")
+        }
+        .confirmationDialog("Supprimer ce programme ?",
+                            isPresented: Binding(get: { deleting != nil },
+                                                 set: { if !$0 { deleting = nil } }),
+                            titleVisibility: .visible) {
+            if let program = deleting {
+                Button("Tout supprimer", role: .destructive) {
+                    store.deleteProgram(program.id)
+                    deleting = nil
+                }
+            }
+            Button("Annuler", role: .cancel) { deleting = nil }
+        } message: {
+            if let program = deleting { Text(deletionWarning(program)) }
         }
     }
 
@@ -430,6 +450,30 @@ struct HomeView: View {
         if programs < 0.75 { return "un demi-programme" }
         if programs < 1.25 { return "un programme complet" }
         return "\(Int(programs.rounded())) programmes complets"
+    }
+
+    /// Ce que la suppression emporte, dit en chiffres plutôt qu'en principe.
+    private func deletionWarning(_ program: Program) -> String {
+        let impact = store.deletionImpact(program.id)
+        var pieces: [String] = []
+        if impact.sessions > 0 {
+            pieces.append(impact.sessions > 1
+                ? "\(impact.sessions) séances faites"
+                : "1 séance faite")
+        }
+        if impact.xp > 0 { pieces.append("\(impact.xp.grouped) XP") }
+        if impact.rewards > 0 {
+            pieces.append(impact.rewards > 1
+                ? "\(impact.rewards) vignettes"
+                : "1 vignette")
+        }
+        guard !pieces.isEmpty else {
+            return "\(program.name) n'a encore rien produit : il n'y a rien à perdre. Tes réglages et tes mesures de départ seront effacés."
+        }
+        let list = pieces.count == 1
+            ? pieces[0]
+            : pieces.dropLast().joined(separator: ", ") + " et " + pieces[pieces.count - 1]
+        return "Tu perds \(list), ainsi que tes mesures de départ et tes caractéristiques gagnées ici. C'est définitif. Pour garder tout ça, mets-le plutôt en pause."
     }
 
     private var unlockedCount: Int {
