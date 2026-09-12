@@ -67,21 +67,34 @@ CONTENTS = {
 
 
 def emit(name, source, max_width, dry):
-    """Écrit une image du catalogue, réduite si elle dépasse la taille utile."""
+    """Écrit une image du catalogue, réduite si elle dépasse la taille utile.
+
+    Une image détourée garde sa transparence — et donc le PNG. Les autres
+    partent en JPEG, bien plus léger.
+    """
     folder = os.path.join(CATALOG, f"{name}.imageset")
-    image = Image.open(source).convert("RGB")
+    image = Image.open(source)
+    cutout = image.mode in ("RGBA", "LA") and image.getchannel("A").getextrema()[0] < 255
+    image = image.convert("RGBA" if cutout else "RGB")
     if image.width > max_width:
         height = round(image.height * max_width / image.width)
         image = image.resize((max_width, height), Image.LANCZOS)
     if dry:
-        print(f"  {name:24s} {image.width}x{image.height}  <- {os.path.basename(source)}")
+        kind = "détourée" if cutout else "pleine"
+        print(f"  {name:24s} {image.width}x{image.height} {kind:9s} <- {os.path.basename(source)}")
         return 0
     shutil.rmtree(folder, ignore_errors=True)
     os.makedirs(folder)
-    path = os.path.join(folder, "image.jpg")
-    image.save(path, "JPEG", quality=QUALITY, optimize=True, progressive=True)
+    filename = "image.png" if cutout else "image.jpg"
+    path = os.path.join(folder, filename)
+    if cutout:
+        image.save(path, "PNG", optimize=True)
+    else:
+        image.save(path, "JPEG", quality=QUALITY, optimize=True, progressive=True)
+    contents = json.loads(json.dumps(CONTENTS))
+    contents["images"][0]["filename"] = filename
     with open(os.path.join(folder, "Contents.json"), "w") as handle:
-        json.dump(CONTENTS, handle, indent=2)
+        json.dump(contents, handle, indent=2)
     return os.path.getsize(path)
 
 

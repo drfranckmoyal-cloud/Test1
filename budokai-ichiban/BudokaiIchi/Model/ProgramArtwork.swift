@@ -45,6 +45,18 @@ extension Program {
         return UIImage(named: custom) != nil ? custom : stageImage(heroStage)
     }
 
+    /// Vrai quand l'illustration de vignette est détourée : elle se pose
+    /// alors sur le dégradé de l'univers au lieu de remplir le cadre.
+    var tileIsCutout: Bool { Program.isCutout(tileImage) }
+
+    static func isCutout(_ name: String) -> Bool {
+        guard let alpha = UIImage(named: name)?.cgImage?.alphaInfo else { return false }
+        switch alpha {
+        case .first, .last, .premultipliedFirst, .premultipliedLast: return true
+        default: return false
+        }
+    }
+
     /// Le décor de l'univers.
     var environmentImage: String { "env_\(id.rawValue)" }
 

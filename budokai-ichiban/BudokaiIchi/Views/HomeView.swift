@@ -78,6 +78,9 @@ struct HomeView: View {
     /// Pour envoyer vers un autre onglet depuis l'accueil.
     var go: (Tab) -> Void
 
+    /// Le programme dont on demande l'arrêt, le temps de confirmer.
+    @State private var stopping: Program?
+
     var body: some View {
         ScrollView {
             VStack(spacing: 22) {
@@ -93,6 +96,20 @@ struct HomeView: View {
         }
         .scrollIndicators(.hidden)
         .background(Theme.ground)
+        .confirmationDialog("Arrêter ce programme ?",
+                            isPresented: Binding(get: { stopping != nil },
+                                                 set: { if !$0 { stopping = nil } }),
+                            titleVisibility: .visible) {
+            if let program = stopping {
+                Button("Arrêter \(program.name)", role: .destructive) {
+                    store.stopProgram(program.id)
+                    stopping = nil
+                }
+            }
+            Button("Continuer le programme", role: .cancel) { stopping = nil }
+        } message: {
+            Text("Ton avancée est gardée. Tu pourras le reprendre là où tu l'as laissé.")
+        }
     }
 
     // MARK: Bandeau de marque
@@ -223,6 +240,19 @@ struct HomeView: View {
                             .minimumScaleFactor(0.7)
                     }
                     Spacer(minLength: 0)
+
+                    Button {
+                        Haptics.tap()
+                        stopping = program
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundStyle(Theme.cream)
+                            .frame(width: 34, height: 34)
+                            .background(Color.black.opacity(0.30), in: Circle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Arrêter \(program.name)")
                 }
                 .padding(.horizontal, 18)
             }

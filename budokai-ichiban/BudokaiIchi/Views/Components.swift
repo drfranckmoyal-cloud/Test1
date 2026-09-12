@@ -245,8 +245,7 @@ struct ProgramTile: View {
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             program.gradient
-            ArtworkFill(name: tile ?? program.tileImage)
-                .opacity(0.92)
+            artwork
             // le texte du bas doit rester lisible sur n'importe quelle image
             LinearGradient(colors: [Color.black.opacity(0.10), Color.clear, Color.black.opacity(0.78)],
                            startPoint: .top, endPoint: .bottom)
@@ -288,6 +287,22 @@ struct ProgramTile: View {
         }
         .frame(height: height)
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
+    /// Une illustration pleine remplit le cadre ; une illustration détourée
+    /// s'y pose en entier, calée sur le bas, comme une figurine découpée.
+    @ViewBuilder
+    private var artwork: some View {
+        let name = tile ?? program.tileImage
+        if Program.isCutout(name) {
+            Color.clear
+                .overlay(alignment: .bottom) {
+                    Image(name).resizable().scaledToFit()
+                }
+                .clipped()
+        } else {
+            ArtworkFill(name: name).opacity(0.92)
+        }
     }
 }
 
