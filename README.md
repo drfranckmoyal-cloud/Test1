@@ -1,129 +1,101 @@
-# 100 Pompes Challenge
+# Budokai Ichi
 
-Application iPhone de motivation pour un défi quotidien : un nombre de jours et un ou
-plusieurs exercices (**pompes**, **tractions**, **abdos**) avec leur objectif de
-répétitions par jour. Le défi par défaut reste 100 pompes par jour pendant 30 jours.
+武道会一 — jeu de progression sportive. Des programmes d'entraînement tirés
+d'animés japonais, de l'expérience, des rangs, des caractéristiques et des
+déblocages.
 
-Chaque journée court **de minuit à minuit** : les totaux sont enregistrés sous la date
-locale du jour, donc les compteurs repartent de zéro tout seuls au changement de date. Un
-jour est **validé** quand *tous* les exercices du défi ont atteint leur objectif ; sinon
-il est manqué définitivement.
+L'app est née d'un défi « 100 pompes par jour pendant 30 jours ». Cette
+première version reste entière sur la branche **`v1-defi-100-pompes`** ; le
+défi lui-même est devenu le programme *Saitama*.
 
 ## Ouvrir le projet
 
 ```
-open PompesChallenge.xcodeproj
+open BudokaiIchi.xcodeproj
 ```
 
-Sélectionner un simulateur iPhone (ou un appareil) puis `⌘R`.
+Xcode 16 ou plus récent, iOS 17 minimum, iPhone, portrait. Le groupe de fichiers
+est synchronisé avec le système de fichiers : ajouter un fichier dans
+`BudokaiIchi/` suffit, sans passer par le `.pbxproj`.
 
-- Xcode 16 ou plus récent (le projet utilise un groupe synchronisé avec le système de
-  fichiers : les fichiers ajoutés dans `PompesChallenge/` sont pris en compte
-  automatiquement, sans passer par le `.pbxproj`).
-- iOS 17 minimum, iPhone uniquement, portrait, apparence sombre forcée.
-- Sur un appareil réel, remplacer `PRODUCT_BUNDLE_IDENTIFIER` par votre propre
-  identifiant et choisir votre équipe de signature dans l'onglet *Signing & Capabilities*.
+L'identifiant de bundle **n'a pas changé** (`com.franckmoyal.PompesChallenge`).
+C'est voulu : l'app installée se met à jour au lieu de se dédoubler, et les
+répétitions déjà faites dans « 100 Pompes » sont reprises comme expérience de
+départ.
 
-## Les écrans
+## Où en est le projet
 
-| Écran | Ce qu'il fait |
-|---|---|
-| **Aujourd'hui** | Un anneau de progression par exercice (leur taille s'adapte au nombre d'exercices), une carte par exercice avec ajouts rapides calibrés (+5/+10/+20 pour les pompes, +1/+2/+5 pour les tractions…), correction des totaux, message de motivation, barre d'avancement du défi. |
-| **Calendrier** | Tous les jours du défi : étoile orange si validé, case grise si manqué, contour orange et pourcentage sur le jour en cours, gris éteint pour les jours à venir. Toucher un jour passé ouvre la saisie de tous ses exercices. Série en cours, meilleure série et total de répétitions en bas. |
-| **Réglages** | Le défi en cours (objectif de chaque exercice, réglable à la volée) et le bouton **Créer un nouveau défi** ; les trois rappels quotidiens ; le ton des messages ; l'apparence (clair / sombre / système). |
-| **Célébration** | Plein écran orange à l'instant où la journée est bouclée : jour validé, détail par exercice, série, semaine en étoiles. Affiché une seule fois par jour. |
+**Le moteur de jeu est écrit, avec deux programmes jouables.** Les sept autres
+figurent au catalogue, verrouillés, avec leur condition d'ouverture — ils
+existent pour qu'on voie où l'on va.
 
-## Nouveau défi
+| Programme | Famille | Contenu |
+|---|---|---|
+| **Saitama** | Transformation physique | 84 séances quotidiennes, 8 étapes |
+| **Naruto** | Résilience | 27 sorties sur 9 semaines, 5 étapes |
+| Rock Lee · Kenshiro · Ichigo · Minato · Levi · Luffy · Goku | — | contenu à écrire |
 
-*Réglages → Créer un nouveau défi* : durée (au jour près, ou 7 / 14 / 21 / 30 / 60 / 90),
-puis les exercices à inclure avec leur objectif quotidien. Le nouveau défi démarre le jour
-même au jour 1 ; l'historique précédent est effacé après confirmation.
+## Le moteur
 
-## Rappels
+**L'expérience** vient de cinq sources : la séance terminée (100 XP × le palier
+de calibrage), le dépassement de l'objectif (1 XP par répétition en plus,
+plafonné à 50), le record personnel (150), le multiplicateur de série (×1 à
+×1,5), et les franchissements — 850 XP par étape, 1 500 par programme bouclé.
+Le niveau *n* demande `250 × n^1,6` XP cumulés.
 
-Trois rappels quotidiens (07:30, 13:00, 20:30 par défaut). Chaque créneau porte une part
-de l'objectif (30 % / 35 % / 35 %) et la notification liste ce qu'il y a à faire pour tous
-les exercices : « 30 pompes, 6 tractions, 45 abdos ».
+**Les rangs** vont de E à S+, chacun attaché à un palier de niveau. **Trois
+caractéristiques** — Force, Vitesse, Endurance — montent bien plus lentement que
+l'XP et conditionnent les déblocages : « Force 30 requise » devant un programme
+dit quoi travailler, là où un niveau global ne dit rien.
 
-Les notifications ne sont pas des rappels répétés — elles sont programmées une par jour
-sur une fenêtre glissante de 20 jours (60 notifications, sous la limite iOS de 64), et la
-fenêtre est repoussée à chaque lancement. C'est ce qui permet à chaque jour d'avoir son
-propre texte au lieu de répéter éternellement la même phrase. Toute modification
-d'horaire, d'objectif ou de ton reprogramme la fenêtre entière.
+**Une séance manquée ne casse pas la série.** Elle ouvre une quête de pénalité,
+calibrée sur le rang, à accomplir avant minuit : accomplie, la série est sauvée ;
+ignorée, elle tombe. Le mécanisme vient de *Solo Leveling* et vaut mieux qu'une
+sanction sèche — il transforme l'échec en rattrapage.
 
-Si les notifications sont refusées au niveau du système, l'écran Réglages affiche un
-bandeau et un raccourci vers les réglages iOS.
+Tout cela est dans `Model/GameEngine.swift`, en fonctions pures : la courbe se
+règle sans toucher au reste de l'app.
 
-## Tons de motivation
-
-Quatre tons, appliqués aussi bien aux textes de l'app qu'aux notifications :
-**Cash**, **Coach**, **Zen**, et **Absurde** — des promesses délirantes et
-disproportionnées (« Plus que 37 pompes et tu deviens officiellement milliardaire »,
-« Ton banquier vient d'appeler juste pour te féliciter »).
-
-Le ton absurde puise dans des listes de plusieurs dizaines de phrases. Le tirage est
-**déterministe** — il dépend du jour et du compteur, jamais d'un vrai hasard : une phrase
-tirée au sort à chaque rendu changerait à chaque redessin de l'écran SwiftUI.
-
-## Apparence
-
-Thème clair (défaut), sombre, ou suivi du réglage système. Les couleurs sont déclarées une
-seule fois dans `Design/Theme.swift` sous forme de paires clair/sombre et basculent
-seules.
-
-Trois tons de message sont disponibles — **Cash**, **Coach**, **Zen** — et s'appliquent
-aussi bien aux notifications qu'aux textes affichés dans l'app.
-
-## Organisation du code
+## Organisation
 
 ```
-PompesChallenge/
-├── PompesChallengeApp.swift      point d'entrée, autorisation des notifications
-├── Design/Theme.swift            palette et typographie
+BudokaiIchi/
+├── BudokaiIchiApp.swift
+├── Design/Theme.swift            palette clair/sombre, rangs, typographie
 ├── Model/
-│   ├── Models.swift              ExerciseKind, Exercise, Reminder, ChallengeState…
-│   ├── ChallengeStore.swift      source de vérité : jours, séries, persistance
-│   └── Motivation.swift          tous les textes, déclinés par ton
-├── Services/NotificationManager  programmation des rappels locaux
-└── Views/                        Root, Today, Calendar, Settings, NewChallenge, Celebration
+│   ├── Program.swift             rangs, paliers, étapes de séance, programmes
+│   ├── Content.swift             le catalogue et les deux programmes jouables
+│   ├── PlayerState.swift         ce qui est conservé d'une ouverture à l'autre
+│   ├── GameEngine.swift          les règles, sans état
+│   ├── GameStore.swift           source de vérité, persistance, reprise de v1
+│   └── Motivation.swift          les textes, déclinés par ton
+├── Services/NotificationManager  rappels sur fenêtre glissante de 20 jours
+└── Views/                        Root, Today, GuidedSession, Outcome, Penalty,
+                                  Programs, ProgramDetail, Profile, Settings,
+                                  Onboarding, Components
 ```
 
-Les données sont persistées en JSON dans `UserDefaults` (clé `pompes.challenge.state.v2`) :
-volume minuscule, aucune dépendance externe. Un défi enregistré par la première version
-(un seul exercice, clé `…v1`) est repris automatiquement au lancement — l'historique de
-pompes est conservé.
+L'état tient dans `UserDefaults` sous `budokai.player.v1`.
 
-## Partager l'app
+## Ce qui reste
 
-- **Version web** — `web/`, un site statique sans compilation ni dépendance : la même app
-  en page à ajouter à l'écran d'accueil depuis Safari. Tout fonctionne sauf les rappels
-  automatiques, qu'iOS réserve aux vraies apps. Voir `web/README.md`.
-- **TestFlight** — pour distribuer la vraie app par lien, avec les notifications.
-  Compte développeur Apple à 99 €/an. Marche à suivre complète dans
-  `docs/TESTFLIGHT.md` ; le projet est déjà configuré pour (`ITSAppUsesNonExemptEncryption`).
+- Le contenu sportif des sept autres programmes.
+- Le test de forme à l'inscription : pour l'instant une simple déclaration
+  — je reprends / je suis actif / je m'entraîne déjà — calibre les charges.
+- Le réglage de la courbe d'XP et des seuils de caractéristiques, sur des
+  chiffres d'usage réels. Aucun équilibrage ne tombe juste du premier coup.
 
-## Maquette
+## Maquette et cadrage
 
-Les sources de la maquette (canvas Claude Design) sont dans `design/` :
-un artboard `.dc.html` par écran, plus `canvas.json` pour la mise en page.
-`AltClair.dc.html` est la variante claire, non retenue.
+- `docs/cadrage-budokai-chi.html` — le cahier des charges complet.
+- `design-v2/` — les artboards de la maquette et les fonds d'univers.
+- `design-v2/images/` — une image par programme, remplaçable (voir son README).
 
-## Icône
-
-`tools/make_app_icon.py` génère `PompesChallenge/Assets.xcassets/AppIcon.appiconset/AppIcon.png`
-(1024×1024, RGB sans canal alpha comme l'exige iOS) : l'anneau de progression et l'étoile
-du jour validé, sur le dégradé orange de l'app. Pour la régénérer après une retouche des
-constantes en tête de fichier :
+## Outils
 
 ```
-python3 tools/make_app_icon.py PompesChallenge/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+python3 tools/make_budokai_icon.py BudokaiIchi/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+python3 tools/fetch_universes.py
 ```
 
-Le script n'a aucune dépendance : le rendu et l'encodage PNG sont faits à la main.
-
-## Points connus
-
-- Le projet n'est pas compilé dans l'environnement où il est écrit (pas de toolchain
-  Swift) : la compilation se fait sur un Mac avec Xcode.
-- La maquette utilise la police Archivo ; l'app utilise l'équivalent système
-  (`.system(weight: .black)`) pour éviter d'embarquer une police.
+Aucune dépendance : le rendu d'image et l'encodage PNG sont écrits à la main.

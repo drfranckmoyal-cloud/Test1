@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A1B2C3D40000000000000004 /* PompesChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PompesChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D40000000000000004 /* BudokaiIchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudokaiIchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A1B2C3D40000000000000009 /* PompesChallenge */ = {isa = PBXFileSystemSynchronizedRootGroup; path = PompesChallenge; sourceTree = "<group>"; };
+		A1B2C3D40000000000000009 /* BudokaiIchi */ = {isa = PBXFileSystemSynchronizedRootGroup; path = BudokaiIchi; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,7 +28,7 @@
 		A1B2C3D40000000000000002 = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D40000000000000009 /* PompesChallenge */,
+				A1B2C3D40000000000000009 /* BudokaiIchi */,
 				A1B2C3D40000000000000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,7 +36,7 @@
 		A1B2C3D40000000000000003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D40000000000000004 /* PompesChallenge.app */,
+				A1B2C3D40000000000000004 /* BudokaiIchi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -44,9 +44,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1B2C3D40000000000000005 /* PompesChallenge */ = {
+		A1B2C3D40000000000000005 /* BudokaiIchi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "PompesChallenge" */;
+			buildConfigurationList = A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "BudokaiIchi" */;
 			buildPhases = (
 				A1B2C3D40000000000000006 /* Sources */,
 				A1B2C3D40000000000000007 /* Frameworks */,
@@ -57,11 +57,11 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A1B2C3D40000000000000009 /* PompesChallenge */,
+				A1B2C3D40000000000000009 /* BudokaiIchi */,
 			);
-			name = PompesChallenge;
-			productName = PompesChallenge;
-			productReference = A1B2C3D40000000000000004 /* PompesChallenge.app */;
+			name = BudokaiIchi;
+			productName = BudokaiIchi;
+			productReference = A1B2C3D40000000000000004 /* BudokaiIchi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -79,7 +79,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A1B2C3D4000000000000000A /* Build configuration list for PBXProject "PompesChallenge" */;
+			buildConfigurationList = A1B2C3D4000000000000000A /* Build configuration list for PBXProject "BudokaiIchi" */;
 			developmentRegion = fr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,7 +93,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1B2C3D40000000000000005 /* PompesChallenge */,
+				A1B2C3D40000000000000005 /* BudokaiIchi */,
 			);
 		};
 /* End PBXProject section */
@@ -182,7 +182,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "100 Pompes";
+				INFOPLIST_KEY_CFBundleDisplayName = "Budokai Ichi";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -211,7 +211,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "100 Pompes";
+				INFOPLIST_KEY_CFBundleDisplayName = "Budokai Ichi";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -233,7 +233,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1B2C3D4000000000000000A /* Build configuration list for PBXProject "PompesChallenge" */ = {
+		A1B2C3D4000000000000000A /* Build configuration list for PBXProject "BudokaiIchi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3D4000000000000000C /* Debug */,
@@ -242,7 +242,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "PompesChallenge" */ = {
+		A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "BudokaiIchi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3D4000000000000000E /* Debug */,

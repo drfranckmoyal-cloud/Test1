@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A1B2C3D40000000000000005"
-               BuildableName = "PompesChallenge.app"
-               BlueprintName = "PompesChallenge"
-               ReferencedContainer = "container:PompesChallenge.xcodeproj">
+               BuildableName = "BudokaiIchi.app"
+               BlueprintName = "BudokaiIchi"
+               ReferencedContainer = "container:BudokaiIchi.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1B2C3D40000000000000005"
-            BuildableName = "PompesChallenge.app"
-            BlueprintName = "PompesChallenge"
-            ReferencedContainer = "container:PompesChallenge.xcodeproj">
+            BuildableName = "BudokaiIchi.app"
+            BlueprintName = "BudokaiIchi"
+            ReferencedContainer = "container:BudokaiIchi.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1B2C3D40000000000000005"
-            BuildableName = "PompesChallenge.app"
-            BlueprintName = "PompesChallenge"
-            ReferencedContainer = "container:PompesChallenge.xcodeproj">
+            BuildableName = "BudokaiIchi.app"
+            BlueprintName = "BudokaiIchi"
+            ReferencedContainer = "container:BudokaiIchi.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,8 +1,8 @@
 import SwiftUI
 
 @main
-struct PompesChallengeApp: App {
-    @StateObject private var store = ChallengeStore()
+struct BudokaiIchiApp: App {
+    @StateObject private var store = GameStore()
 
     var body: some Scene {
         WindowGroup {
@@ -11,6 +11,7 @@ struct PompesChallengeApp: App {
                 .task {
                     _ = await NotificationManager.requestAuthorization()
                     store.refreshDate()
+                    store.issuePenaltyIfNeeded()
                     store.syncNotifications()
                 }
         }
