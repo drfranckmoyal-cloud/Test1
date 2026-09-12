@@ -21,11 +21,11 @@ struct ProgramLaunchView: View {
     @State private var minutes = 45
 
     // — calibration
-    @State private var pushLevel = 4
+    @State private var pushLevel = 4   // pompe au sol
     @State private var pushReps = 10
-    @State private var squatLevel = 3
+    @State private var squatLevel = 3  // squat au poids du corps
     @State private var squatReps = 15
-    @State private var coreLevel = 2
+    @State private var coreLevel = 5   // sit-up contrôlé
     @State private var coreReps = 10
     @State private var meters = 800
     @State private var runRatio = 0.5
@@ -116,15 +116,15 @@ struct ProgramLaunchView: View {
         case .duration: durationScreen
         case .week: weekScreen
         case .calibrationIntro: calibrationIntroScreen
-        case .push: domainScreen(.push, SaitamaLibrary.push, level: $pushLevel,
-                                 reps: $pushReps, max: 60,
-                                 help: "Trouve la variante qui te permet 8 à 20 répétitions propres en gardant une ou deux répétitions en réserve.")
-        case .squat: domainScreen(.squat, SaitamaLibrary.squat, level: $squatLevel,
-                                  reps: $squatReps, max: 40,
-                                  help: "Une série submaximale, arrêtée dès que la technique se dégrade.")
-        case .core: domainScreen(.core, SaitamaLibrary.core, level: $coreLevel,
-                                 reps: $coreReps, max: 30,
-                                 help: "La variante que tu contrôles vraiment, puis une série propre.")
+        case .push: domainScreen(.push, SaitamaLibrary.push, reference: 4, number: 1,
+                                 level: $pushLevel, reps: $pushReps, max: 60,
+                                 cue: "Corps gréé, poitrine près du sol, coudes vers l'arrière. Compte ce que tu fais proprement, en gardant une ou deux répétitions en réserve.")
+        case .squat: domainScreen(.squat, SaitamaLibrary.squat, reference: 3, number: 2,
+                                  level: $squatLevel, reps: $squatReps, max: 40,
+                                  cue: "Descends jusqu'à ce que les cuisses soient parallèles au sol, talons ancrés. Arrête-toi dès que la technique se dégrade.")
+        case .core: domainScreen(.core, SaitamaLibrary.core, reference: 5, number: 3,
+                                 level: $coreLevel, reps: $coreReps, max: 30,
+                                 cue: "Remontée contrôlée, sans tirer sur la nuque ni s'aider d'un élan.")
         case .endurance: enduranceScreen
         case .summary: summaryScreen
         }
@@ -240,29 +240,89 @@ struct ProgramLaunchView: View {
         }
     }
 
+    /// Un domaine : le mouvement attendu est **nommé**, pas choisi dans une
+    /// liste. Le programme le fixe déjà — on demande seulement combien, et
+    /// on n'ouvre une alternative que si le mouvement n'est pas tenable.
     private func domainScreen(_ domain: SaitamaDomain, _ family: ExerciseFamily,
+                              reference: Int, number: Int,
                               level: Binding<Int>, reps: Binding<Int>, max: Int,
-                              help: String) -> some View {
-        screen(eyebrow: "MESURE \(domain == .push ? "1" : domain == .squat ? "2" : "3") SUR 4",
-               title: domain.label, help: help) {
+                              cue: String) -> some View {
+        let exercise = SaitamaLibrary.exercise(family: family.id, level: level.wrappedValue)
+        let isReference = level.wrappedValue >= reference
+        let easier = SaitamaLibrary.exercise(family: family.id, level: level.wrappedValue - 1)
+
+        return screen(eyebrow: "MESURE \(number) SUR 4", title: domain.label, help: nil) {
             VStack(alignment: .leading, spacing: 20) {
-                VStack(alignment: .leading, spacing: 8) {
-                    SectionLabel(text: "TA VARIANTE")
-                    ForEach(family.ladder) { exercise in
-                        bigChoice(title: exercise.name, subtitle: exercise.detail,
-                                  picked: level.wrappedValue == exercise.level) {
-                            level.wrappedValue = exercise.level
-                        }
+                // le mouvement attendu, énoncé
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("L'EXERCICE")
+                        .font(.ui(9, .bold))
+                        .kerning(1.8)
+                        .foregroundStyle(tint)
+                    Text(exercise?.name ?? domain.label)
+                        .font(.display(24))
+                        .foregroundStyle(Theme.text)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(cue)
+                        .font(.ui(13))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                    if !isReference {
+                        Text("Version allégée. Le programme te ramènera au mouvement complet dès que tu le tiendras.")
+                            .font(.ui(11, .semibold))
+                            .foregroundStyle(Theme.gold)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                 }
-                stepper("Répétitions propres", value: reps, range: 1...max)
+                .padding(16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Theme.surface, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 15, style: .continuous)
+                    .stroke(isReference ? Theme.border : Theme.gold.opacity(0.45), lineWidth: 1))
+
+                stepper("Combien en fais-tu proprement", value: reps, range: 1...max)
+
+                // la seule porte de sortie : je n'y arrive pas
+                VStack(spacing: 6) {
+                    if let easier = easier {
+                        Button {
+                            Haptics.tap()
+                            level.wrappedValue -= 1
+                            reps.wrappedValue = Swift.max(reps.wrappedValue, 5)
+                        } label: {
+                            Text("Je n'arrive pas à ce mouvement — passer à « \(easier.name.lowercased()) »")
+                                .font(.ui(12, .semibold))
+                                .foregroundStyle(Theme.muted)
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(minHeight: 44)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    if !isReference,
+                       let back = SaitamaLibrary.exercise(family: family.id, level: level.wrappedValue + 1) {
+                        Button {
+                            Haptics.tap()
+                            level.wrappedValue += 1
+                        } label: {
+                            Text("Finalement, je tiens « \(back.name.lowercased()) »")
+                                .font(.ui(12, .semibold))
+                                .foregroundStyle(tint)
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(minHeight: 40)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
             }
         }
     }
 
     private var enduranceScreen: some View {
         screen(eyebrow: "MESURE 4 SUR 4", title: "Endurance",
-               help: "Six minutes de marche ou de course. On note la distance, et la part que tu as réellement courue.") {
+               help: "Six minutes de course. Pas d'alternative ici : si tu dois marcher une partie du temps, marche — c'est justement ce qu'on mesure.") {
             VStack(alignment: .leading, spacing: 20) {
                 stepper("Distance en 6 minutes (mètres)", value: $meters, range: 200...2500, stride: 50)
                 VStack(alignment: .leading, spacing: 8) {
