@@ -77,10 +77,16 @@ final class GameStore: ObservableObject {
     var levelProgress: Double { GameEngine.levelProgress(forXP: state.xp) }
     var xpToNextLevel: Int { max(0, GameEngine.xpNeeded(forLevel: level + 1) - state.xp) }
 
-    var activeProgram: Program? {
-        guard let raw = state.activeProgram, let id = ProgramID(rawValue: raw) else { return nil }
-        return Catalog.program(id)
+    /// Les programmes suivis en parallèle, dans l'ordre où ils ont été pris.
+    var activePrograms: [Program] {
+        state.activePrograms.compactMap(ProgramID.init(rawValue:)).map(Catalog.program)
     }
+
+    /// Le premier programme suivi. Sert là où il n'y a qu'une place à remplir,
+    /// comme le libellé d'un rappel.
+    var activeProgram: Program? { activePrograms.first }
+
+    func isActive(_ id: ProgramID) -> Bool { state.activePrograms.contains(id.rawValue) }
 
     func progress(_ id: ProgramID) -> ProgramProgress { state.progress(id) }
 
@@ -92,30 +98,52 @@ final class GameStore: ObservableObject {
         GameEngine.isUnlocked(program, state: state)
     }
 
-    /// La prochaine séance du programme actif, ou nil s'il est terminé.
-    var currentSession: PlannedSession? {
-        guard let program = activeProgram else { return nil }
-        let done = state.progress(program.id).completedSessions
+    /// La prochaine séance d'un programme, ou nil s'il est terminé.
+    func session(of id: ProgramID) -> PlannedSession? {
+        let program = Catalog.program(id)
+        let done = state.progress(id).completedSessions
         guard done < program.totalSessions else { return nil }
-        return Catalog.session(for: program.id, index: done, tier: state.tier)
+        return Catalog.session(for: id, index: done, tier: state.tier)
     }
 
-    /// Jour où la prochaine séance est attendue.
-    var nextDueDay: Date? {
-        guard let program = activeProgram else { return nil }
-        guard let last = lastSessionDay(program.id) else { return today }
-        return Calendar.current.date(byAdding: .day, value: 1 + program.restDays, to: last)
+    /// Jour où la prochaine séance d'un programme est attendue.
+    func nextDueDay(of id: ProgramID) -> Date? {
+        guard isActive(id) else { return nil }
+        guard let last = lastSessionDay(id) else { return today }
+        return Calendar.current.date(byAdding: .day, value: 1 + Catalog.program(id).restDays, to: last)
     }
 
-    var isSessionDueToday: Bool {
-        guard let due = nextDueDay else { return false }
+    /// Vrai quand le programme attend une séance aujourd'hui ou l'a laissée passer.
+    func isDueToday(_ id: ProgramID) -> Bool {
+        guard session(of: id) != nil, let due = nextDueDay(of: id) else { return false }
         return due <= today
     }
 
-    var isRestDay: Bool {
-        guard currentSession != nil, let due = nextDueDay else { return false }
+    /// Vrai quand le programme tourne mais se repose aujourd'hui.
+    func isResting(_ id: ProgramID) -> Bool {
+        guard session(of: id) != nil, let due = nextDueDay(of: id) else { return false }
         return due > today
     }
+
+    /// Les séances attendues aujourd'hui, tous programmes suivis confondus.
+    var sessionsDueToday: [(program: Program, session: PlannedSession)] {
+        activePrograms.compactMap { program in
+            guard isDueToday(program.id), let session = session(of: program.id) else { return nil }
+            return (program, session)
+        }
+    }
+
+    /// Les programmes suivis qui se reposent aujourd'hui.
+    var programsResting: [Program] { activePrograms.filter { isResting($0.id) } }
+
+    /// Les programmes suivis arrivés à leur terme.
+    var programsFinished: [Program] { activePrograms.filter { session(of: $0.id) == nil } }
+
+    // Conservés pour les écrans qui ne parlent que du premier programme.
+    var currentSession: PlannedSession? { activeProgram.flatMap { session(of: $0.id) } }
+    var nextDueDay: Date? { activeProgram.flatMap { nextDueDay(of: $0.id) } }
+    var isSessionDueToday: Bool { activeProgram.map { isDueToday($0.id) } ?? false }
+    var isRestDay: Bool { activeProgram.map { isResting($0.id) } ?? false }
 
     func lastSessionDay(_ id: ProgramID) -> Date? {
         let days = state.history
@@ -138,11 +166,22 @@ final class GameStore: ObservableObject {
 
     // MARK: - Programmes
 
+    /// Prend un programme de plus. Les autres continuent en parallèle.
     func startProgram(_ id: ProgramID) {
-        state.activeProgram = id.rawValue
+        if !state.activePrograms.contains(id.rawValue) {
+            state.activePrograms.append(id.rawValue)
+        }
         var progress = state.progress(id)
         if progress.startedOn == nil { progress.startedOn = todayKey }
         state.programs[id.rawValue] = progress
+        save()
+        syncNotifications()
+    }
+
+    /// Retire un programme du suivi. L'avancée déjà faite est conservée : le
+    /// reprendre plus tard repart d'où il en était.
+    func stopProgram(_ id: ProgramID) {
+        state.activePrograms.removeAll { $0 == id.rawValue }
         save()
         syncNotifications()
     }
@@ -168,7 +207,7 @@ final class GameStore: ObservableObject {
         let isRecord = reps > 0 && reps > bestReps
 
         // la série monte si la séance tombe le jour attendu ou avant
-        let onTime = nextDueDay.map { $0 >= today } ?? true
+        let onTime = nextDueDay(of: program.id).map { $0 >= today } ?? true
         let previousStreak = state.streak
         if onTime || state.streak == 0 {
             state.streak += 1
@@ -234,8 +273,13 @@ final class GameStore: ObservableObject {
     /// Une séance attendue hier ou avant, et rien de fait : la série est en
     /// danger et une quête s'ouvre pour la sauver.
     func issuePenaltyIfNeeded() {
-        guard state.penalty == nil, state.streak > 0, currentSession != nil else { return }
-        guard let due = nextDueDay, due < today else { return }
+        guard state.penalty == nil, state.streak > 0 else { return }
+        // un seul programme en retard suffit
+        let late = activePrograms.contains { program in
+            guard session(of: program.id) != nil, let due = nextDueDay(of: program.id) else { return false }
+            return due < today
+        }
+        guard late else { return }
         state.penalty = PenaltyQuest(issuedDay: todayKey, dueDay: todayKey,
                                      tasks: GameEngine.penaltyTasks(forRank: rank))
         save()
@@ -303,7 +347,13 @@ final class GameStore: ObservableObject {
     func syncNotifications() {
         let reminders = state.reminders
         let tone = state.tone
-        let label = currentSession.map { "\(activeProgram?.name ?? "") · \($0.title)" } ?? ""
+        let due = sessionsDueToday
+        let label: String
+        switch due.count {
+        case 0: label = ""
+        case 1: label = "\(due[0].program.name) · \(due[0].session.title)"
+        default: label = "\(due.count) séances : " + due.map(\.program.name).joined(separator: ", ")
+        }
         Task { await NotificationManager.reschedule(reminders: reminders, tone: tone, sessionLabel: label) }
     }
 

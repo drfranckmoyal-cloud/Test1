@@ -83,7 +83,8 @@ struct PlayerState: Codable {
     var stats: [String: Int] = [:]
     var tier: Tier = .novice
     var programs: [String: ProgramProgress] = [:]
-    var activeProgram: String?
+    /// Les programmes suivis en parallèle, dans l'ordre où ils ont été pris.
+    var activePrograms: [String] = []
     var history: [SessionRecord] = []
     var streak: Int = 0
     var bestStreak: Int = 0
@@ -95,6 +96,42 @@ struct PlayerState: Codable {
     var tone: MotivationTone = .absurd
     var reminders: [Reminder] = Reminder.defaults
     var onboarded: Bool = false
+
+    /// Relit une sauvegarde écrite quand un seul programme était suivi.
+    init(from decoder: Decoder) throws {
+        let box = try decoder.container(keyedBy: CodingKeys.self)
+        func read<T: Decodable>(_ key: CodingKeys, _ fallback: T) -> T {
+            (try? box.decode(T.self, forKey: key)) ?? fallback
+        }
+        xp = read(.xp, 0)
+        stats = read(.stats, [:])
+        tier = read(.tier, .novice)
+        programs = read(.programs, [:])
+        history = read(.history, [])
+        streak = read(.streak, 0)
+        bestStreak = read(.bestStreak, 0)
+        lastCompletedDay = try? box.decode(String.self, forKey: .lastCompletedDay)
+        penalty = try? box.decode(PenaltyQuest.self, forKey: .penalty)
+        badges = read(.badges, [])
+        equipment = read(.equipment, [])
+        appearance = read(.appearance, .dark)
+        tone = read(.tone, .absurd)
+        reminders = read(.reminders, Reminder.defaults)
+        onboarded = read(.onboarded, false)
+
+        if let many = try? box.decode([String].self, forKey: .activePrograms) {
+            activePrograms = many
+        } else if let old = try? decoder.container(keyedBy: LegacyKey.self),
+                  let single = try? old.decode(String.self, forKey: .activeProgram) {
+            activePrograms = [single]          // sauvegarde d'avant le multi-programmes
+        } else {
+            activePrograms = []
+        }
+    }
+
+    private enum LegacyKey: String, CodingKey { case activeProgram }
+
+    init() {}
 
     func stat(_ kind: StatKind) -> Int { stats[kind.rawValue] ?? 0 }
     func progress(_ id: ProgramID) -> ProgramProgress { programs[id.rawValue] ?? ProgramProgress() }

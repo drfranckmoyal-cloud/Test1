@@ -83,9 +83,14 @@ struct ProgramDetailView: View {
             .minimumScaleFactor(0.75)
     }
 
+    private var suiviLabel: String {
+        let names = store.activePrograms.map(\.name)
+        return names.count == 1 ? names[0] : "tes \(names.count) programmes"
+    }
+
     private func stageRow(_ index: Int) -> some View {
         let status = store.stageStatus(program)
-        let isActive = store.state.activeProgram == program.id.rawValue && index == status.index
+        let isActive = store.isActive(program.id) && index == status.index
         let isDone = store.progress(program.id).completedSessions >= program.firstSession(ofStage: index + 1)
 
         return HStack(spacing: 13) {
@@ -150,13 +155,41 @@ struct ProgramDetailView: View {
                     .font(.ui(12))
                     .foregroundStyle(Theme.muted)
             }
-        } else if store.state.activeProgram == program.id.rawValue {
-            GhostButton(title: "Programme en cours") { dismiss() }
+        } else if store.isActive(program.id) {
+            VStack(spacing: 8) {
+                GhostButton(title: "Programme en cours") { dismiss() }
+                Button {
+                    Haptics.tap()
+                    store.stopProgram(program.id)
+                    dismiss()
+                } label: {
+                    Text("Ne plus suivre")
+                        .font(.ui(13, .semibold))
+                        .foregroundStyle(Theme.muted)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 38)
+                }
+                .buttonStyle(.plain)
+                Text("Ton avancée est gardée : tu peux le reprendre où tu l'as laissé.")
+                    .font(.ui(11))
+                    .foregroundStyle(Theme.dim)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         } else {
-            PrimaryButton(title: store.progress(program.id).completedSessions > 0 ? "REPRENDRE" : "COMMENCER",
-                          tint: program.light) {
-                store.startProgram(program.id)
-                dismiss()
+            VStack(spacing: 8) {
+                PrimaryButton(title: store.progress(program.id).completedSessions > 0 ? "REPRENDRE" : "COMMENCER",
+                              tint: program.light) {
+                    store.startProgram(program.id)
+                    dismiss()
+                }
+                if !store.activePrograms.isEmpty {
+                    Text("Il s'ajoutera à \(suiviLabel) — les programmes avancent en parallèle.")
+                        .font(.ui(11))
+                        .foregroundStyle(Theme.dim)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
         }
     }

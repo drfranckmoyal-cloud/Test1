@@ -11,7 +11,7 @@ struct TodayView: View {
                 if let penalty = store.state.penalty, penalty.accepted {
                     penaltyCard(penalty)
                 }
-                mainContent(for: store.activeProgram)
+                mainContent
             }
             .padding(.horizontal, 20)
             .padding(.top, 10)
@@ -53,19 +53,23 @@ struct TodayView: View {
     // MARK: - Corps selon la situation
 
     @ViewBuilder
-    private func mainContent(for program: Program?) -> some View {
-        if let program = program {
-            if let session = store.currentSession {
-                if store.isRestDay {
-                    restCard(program)
-                } else {
-                    sessionCard(program: program, session: session)
-                }
-            } else {
+    private var mainContent: some View {
+        if store.activePrograms.isEmpty {
+            emptyCard
+        } else {
+            let due = store.sessionsDueToday
+            if due.count > 1 {
+                SectionLabel(text: "\(due.count) SÉANCES AUJOURD'HUI")
+            }
+            ForEach(due.indices, id: \.self) { index in
+                sessionCard(program: due[index].program, session: due[index].session)
+            }
+            ForEach(store.programsResting) { program in
+                restCard(program)
+            }
+            ForEach(store.programsFinished) { program in
                 finishedCard(program)
             }
-        } else {
-            emptyCard
         }
     }
 
@@ -120,7 +124,7 @@ struct TodayView: View {
                 .foregroundStyle(Theme.muted)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
-            if let due = store.nextDueDay {
+            if let due = store.nextDueDay(of: program.id) {
                 Text("Prochaine séance \(dayLabel(due)).")
                     .font(.ui(13, .bold))
                     .foregroundStyle(program.light)

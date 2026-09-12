@@ -170,10 +170,13 @@ struct HomeView: View {
 
     @ViewBuilder
     private var currentProgramSection: some View {
-        if let program = store.activeProgram {
+        if !store.activePrograms.isEmpty {
+            let programs = store.activePrograms
             VStack(alignment: .leading, spacing: 10) {
-                SectionLabel(text: "TON PROGRAMME")
-                activeCard(program)
+                SectionLabel(text: programs.count > 1 ? "TES \(programs.count) PROGRAMMES" : "TON PROGRAMME")
+                ForEach(programs) { program in
+                    activeCard(program)
+                }
             }
         } else {
             VStack(alignment: .leading, spacing: 10) {
@@ -187,7 +190,7 @@ struct HomeView: View {
         let status = store.stageStatus(program)
         let stageName = program.stages[min(status.index, program.stages.count - 1)]
         let ratio = status.total > 0 ? Double(status.done) / Double(status.total) : 0
-        let finished = store.currentSession == nil
+        let finished = store.session(of: program.id) == nil
 
         return VStack(spacing: 0) {
             ZStack {
@@ -231,7 +234,7 @@ struct HomeView: View {
                         .foregroundStyle(program.light)
                 }
 
-                PrimaryButton(title: buttonTitle(finished: finished), tint: program.light) {
+                PrimaryButton(title: buttonTitle(program, finished: finished), tint: program.light) {
                     go(.session)
                 }
             }
@@ -242,16 +245,16 @@ struct HomeView: View {
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(Theme.border, lineWidth: 1))
     }
 
-    private func buttonTitle(finished: Bool) -> String {
+    private func buttonTitle(_ program: Program, finished: Bool) -> String {
         if finished { return "PROGRAMME TERMINÉ" }
-        if store.isRestDay { return "VOIR LE JOUR DE REPOS" }
+        if store.isResting(program.id) { return "VOIR LE JOUR DE REPOS" }
         return "CONTINUER"
     }
 
     private func rhythmLabel(_ program: Program) -> String {
-        if store.currentSession == nil { return "Terminé" }
-        if store.isRestDay {
-            guard let due = store.nextDueDay else { return "Repos" }
+        if store.session(of: program.id) == nil { return "Terminé" }
+        if store.isResting(program.id) {
+            guard let due = store.nextDueDay(of: program.id) else { return "Repos" }
             return "Repos · reprise \(dayLabel(due))"
         }
         return "Séance du jour"
