@@ -20,7 +20,7 @@ xcuserdata/
 Packages/
 
 # Sortie assemblée de la maquette (2 Mo d'éditeur embarqué) — les sources sont les .dc.html
-design-v2/budokai-ichi.html
+budokai-ichi/design-v2/budokai-ichi.html
 
 # Python
 __pycache__/

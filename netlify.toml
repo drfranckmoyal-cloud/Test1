@@ -1,7 +1,7 @@
 # La version web du défi est un site statique : rien à compiler,
-# on publie simplement le dossier web/.
+# on publie simplement son dossier web/.
 [build]
-  publish = "web"
+  publish = "defi-100-pompes/web"
   command = ""
 
 [[headers]]

@@ -95,8 +95,6 @@ struct PlayerState: Codable {
     var tone: MotivationTone = .absurd
     var reminders: [Reminder] = Reminder.defaults
     var onboarded: Bool = false
-    /// Répétitions reprises de l'app « 100 Pompes ».
-    var legacyReps: Int = 0
 
     func stat(_ kind: StatKind) -> Int { stats[kind.rawValue] ?? 0 }
     func progress(_ id: ProgramID) -> ProgramProgress { programs[id.rawValue] ?? ProgramProgress() }

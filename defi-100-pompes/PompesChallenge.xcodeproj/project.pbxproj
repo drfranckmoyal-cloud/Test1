@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A1B2C3D40000000000000004 /* BudokaiIchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudokaiIchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D40000000000000004 /* PompesChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PompesChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A1B2C3D40000000000000009 /* BudokaiIchi */ = {isa = PBXFileSystemSynchronizedRootGroup; path = BudokaiIchi; sourceTree = "<group>"; };
+		A1B2C3D40000000000000009 /* PompesChallenge */ = {isa = PBXFileSystemSynchronizedRootGroup; path = PompesChallenge; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,7 +28,7 @@
 		A1B2C3D40000000000000002 = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D40000000000000009 /* BudokaiIchi */,
+				A1B2C3D40000000000000009 /* PompesChallenge */,
 				A1B2C3D40000000000000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,7 +36,7 @@
 		A1B2C3D40000000000000003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D40000000000000004 /* BudokaiIchi.app */,
+				A1B2C3D40000000000000004 /* PompesChallenge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -44,9 +44,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1B2C3D40000000000000005 /* BudokaiIchi */ = {
+		A1B2C3D40000000000000005 /* PompesChallenge */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "BudokaiIchi" */;
+			buildConfigurationList = A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "PompesChallenge" */;
 			buildPhases = (
 				A1B2C3D40000000000000006 /* Sources */,
 				A1B2C3D40000000000000007 /* Frameworks */,
@@ -57,11 +57,11 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A1B2C3D40000000000000009 /* BudokaiIchi */,
+				A1B2C3D40000000000000009 /* PompesChallenge */,
 			);
-			name = BudokaiIchi;
-			productName = BudokaiIchi;
-			productReference = A1B2C3D40000000000000004 /* BudokaiIchi.app */;
+			name = PompesChallenge;
+			productName = PompesChallenge;
+			productReference = A1B2C3D40000000000000004 /* PompesChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -79,7 +79,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A1B2C3D4000000000000000A /* Build configuration list for PBXProject "BudokaiIchi" */;
+			buildConfigurationList = A1B2C3D4000000000000000A /* Build configuration list for PBXProject "PompesChallenge" */;
 			developmentRegion = fr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,7 +93,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1B2C3D40000000000000005 /* BudokaiIchi */,
+				A1B2C3D40000000000000005 /* PompesChallenge */,
 			);
 		};
 /* End PBXProject section */
@@ -178,12 +178,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A7H8D53DKZ;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = A7H8D53DKZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Budokai Ichi";
+				INFOPLIST_KEY_CFBundleDisplayName = "100 Pompes";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -208,12 +208,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A7H8D53DKZ;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = A7H8D53DKZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Budokai Ichi";
+				INFOPLIST_KEY_CFBundleDisplayName = "100 Pompes";
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -235,7 +235,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1B2C3D4000000000000000A /* Build configuration list for PBXProject "BudokaiIchi" */ = {
+		A1B2C3D4000000000000000A /* Build configuration list for PBXProject "PompesChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3D4000000000000000C /* Debug */,
@@ -244,7 +244,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "BudokaiIchi" */ = {
+		A1B2C3D4000000000000000B /* Build configuration list for PBXNativeTarget "PompesChallenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3D4000000000000000E /* Debug */,

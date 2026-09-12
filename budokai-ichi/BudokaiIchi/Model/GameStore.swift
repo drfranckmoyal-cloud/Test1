@@ -42,7 +42,7 @@ final class GameStore: ObservableObject {
            let decoded = try? JSONDecoder().decode(PlayerState.self, from: data) {
             self.state = decoded
         } else {
-            self.state = LegacyImport.makeInitialState(defaults: defaults)
+            self.state = PlayerState()
         }
         expirePenaltyIfNeeded()
     }
@@ -133,7 +133,7 @@ final class GameStore: ObservableObject {
         return (index, min(completed - first, total), total)
     }
 
-    var totalReps: Int { state.history.reduce(0) { $0 + $1.reps } + state.legacyReps }
+    var totalReps: Int { state.history.reduce(0) { $0 + $1.reps } }
     var sessionsDone: Int { state.history.count }
 
     // MARK: - Programmes
@@ -312,45 +312,5 @@ final class GameStore: ObservableObject {
     private func save() {
         guard let data = try? JSONEncoder().encode(state) else { return }
         defaults.set(data, forKey: storageKey)
-    }
-}
-
-// MARK: - Reprise de l'app « 100 Pompes »
-
-/// L'ancienne app rangeait ses totaux sous une autre clé. On ne perd rien :
-/// les répétitions déjà faites deviennent de l'expérience de départ.
-enum LegacyImport {
-
-    private struct LegacyExercise: Codable { var kind: String; var dailyGoal: Int }
-    private struct LegacyState: Codable {
-        var startDate: Date
-        var durationDays: Int
-        var exercises: [LegacyExercise]
-        var logs: [String: [String: Int]]
-    }
-    private struct LegacyStateV1: Codable {
-        var startDate: Date
-        var dailyGoal: Int
-        var logs: [String: Int]
-    }
-
-    static func makeInitialState(defaults: UserDefaults) -> PlayerState {
-        var state = PlayerState()
-        var reps = 0
-
-        if let data = defaults.data(forKey: "pompes.challenge.state.v2"),
-           let legacy = try? JSONDecoder().decode(LegacyState.self, from: data) {
-            reps = legacy.logs.values.reduce(0) { $0 + $1.values.reduce(0, +) }
-        } else if let data = defaults.data(forKey: "pompes.challenge.state.v1"),
-                  let legacy = try? JSONDecoder().decode(LegacyStateV1.self, from: data) {
-            reps = legacy.logs.values.reduce(0, +)
-        }
-
-        guard reps > 0 else { return state }
-        state.legacyReps = reps
-        state.xp = reps
-        state.stats[StatKind.force.rawValue] = min(40, reps / 100)
-        state.badges.append("Reprise du défi 100 pompes")
-        return state
     }
 }

@@ -20,8 +20,9 @@ Ces règles sont celles d'Apple et peuvent changer : vérifie sur
 
 1. <https://appstoreconnect.apple.com> → **Mes apps** → **+** → **Nouvelle app**.
 2. Plateforme **iOS**, nom « Budokai Ichi », langue **Français**.
-3. **Identifiant de bundle** : il doit être identique à celui du projet Xcode. Le projet
-   utilise `com.franckmoyal.PompesChallenge` — garde-le, ou change-le des deux côtés.
+3. **Identifiant de bundle** : `com.franckmoyal.BudokaiIchi`. S'il n'apparaît pas dans
+   la liste, crée-le d'abord dans *Certificates, Identifiers & Profiles* →
+   **Identifiers** → **+** → *App IDs* → *App*.
 4. SKU : ce que tu veux, par exemple `budokai-ichi`.
 
 ## 2. Envoyer un build depuis Xcode
@@ -69,6 +70,6 @@ reçoivent la notification dans les minutes qui suivent.
 ## L'autre app
 
 Le défi 100 pompes se distribue séparément, sous son propre identifiant
-`com.franckmoyal.DefiPompes`, depuis la branche `v1-defi-100-pompes` — elle a son guide
+`com.franckmoyal.PompesChallenge`, depuis le dossier `../defi-100-pompes/` — il a son guide
 et un script d'envoi en une commande. **Ne jamais réunifier les deux identifiants** :
 deux apps qui partagent le leur s'écrasent l'une l'autre à l'installation.
