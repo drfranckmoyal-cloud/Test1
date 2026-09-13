@@ -186,6 +186,12 @@ struct ProgramJourneyView: View {
         .frame(height: over ? (store.isActive(program.id) ? 300 : 390) : 230)
     }
 
+    /// La fréquence recommandée, dite en clair.
+    private var rhythm: String {
+        guard let rules = store.schedulingRules(of: program.id) else { return program.rhythm }
+        return "\(rules.recommendedSessionsPerWeek) séances/semaine"
+    }
+
     private var quality: String {
         ProgramLibrary.definition(program.id)?.quality ?? program.family
     }
@@ -555,12 +561,31 @@ struct ProgramJourneyView: View {
     }
 
     private var startCall: some View {
-        VStack(alignment: .leading, spacing: 13) {
+        VStack(alignment: .leading, spacing: 14) {
+            // ce que le programme travaille, où il mène, et le héros en une
+            // ligne — dans cet ordre : le sport d'abord, la référence ensuite
+            HStack(spacing: 8) {
+                Text(quality.uppercased())
+                    .font(.ui(9, .bold))
+                    .kerning(1.8)
+                    .foregroundStyle(tint)
+                Text("·")
+                    .font(.ui(9, .bold))
+                    .foregroundStyle(Theme.dim)
+                Text("\(stages.count) jalons · \(rhythm)")
+                    .font(.ui(9, .bold))
+                    .kerning(0.8)
+                    .foregroundStyle(Theme.muted)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                Spacer(minLength: 0)
+            }
             Text(program.pitch)
-                .font(.ui(14))
-                .foregroundStyle(Theme.muted)
+                .font(.ui(15))
+                .lineSpacing(2)
+                .foregroundStyle(Theme.text)
                 .fixedSize(horizontal: false, vertical: true)
-            PrimaryButton(title: "PRENDRE CE PROGRAMME", tint: tint) { showSetup = true }
+            PrimaryButton(title: "LET'S GO !", tint: tint) { showSetup = true }
         }
         .padding(20)
         .frame(maxWidth: .infinity, alignment: .leading)

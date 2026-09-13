@@ -10,7 +10,7 @@ enum Catalog {
     static let programs: [Program] = [
         Program(
             id: .saitama, name: "Saitama", family: "Transformation physique",
-            pitch: "La routine canonique — 100 pompes, 100 abdos, 100 squats, 10 km — mais montée sur douze semaines au lieu du premier jour. Le corps qui n'a rien fait depuis dix ans devient celui qui encaisse tout.",
+            pitch: "Pompes, abdominaux, squats et course, montés ensemble sur huit jalons jusqu'à la routine complète tenue en une seule journée. Tu ne travailles pas une qualité : tu les montes toutes à la fois. Deviens obstiné comme Saitama — il n'a jamais rien fait d'autre que répéter.",
             stages: ["Salaryman raté", "Le déclic", "Trois mois de discipline",
                      "La première année", "La deuxième année", "Les cheveux perdus",
                      "Héros de classe C", "Demi-dieu"],
@@ -20,7 +20,7 @@ enum Catalog {
 
         Program(
             id: .naruto, name: "Naruto", family: "Résilience",
-            pitch: "De zéro à cinq kilomètres courus sans marcher. Neuf semaines, trois sorties, des intervalles course-marche qui se résorbent. Le personnage qui ne lâche jamais porte la seule qualité qui se gagne par la répétition.",
+            pitch: "Courir, longtemps, de plus en plus loin. Cinq jalons pour passer de l'alternance course-marche au semi-marathon couru d'une traite. Deviens endurant et persévérant comme Naruto — il ne lâche jamais.",
             stages: ["Numéro un imprévisible", "Rasengan", "Mode Ermite",
                      "Chakra de Kurama", "Hokage"],
             sessionsPerStage: [6, 6, 6, 6, 3],
@@ -29,7 +29,7 @@ enum Catalog {
 
         Program(
             id: .rocklee, name: "Rock Lee", family: "Explosivité",
-            pitch: "Pliométrie, corde à sauter, séries de pompes en 30-30-20. Huit portes, huit crans d'intensité.",
+            pitch: "Sauter, rebondir, accélérer. Peu de répétitions, beaucoup de qualité, beaucoup de repos. Cinq jalons pour gagner de la détente et de la vitesse d'appui. Deviens explosif à force de travail, comme Rock Lee.",
             stages: ["Porte de l'Ouverture", "Porte du Repos", "Porte de la Vie",
                      "Porte de la Blessure", "Porte de la Limite", "Porte de la Vue",
                      "Porte de la Merveille", "Porte de la Mort"],
@@ -40,7 +40,7 @@ enum Catalog {
 
         Program(
             id: .kenshiro, name: "Kenshiro", family: "Force pure",
-            pitch: "Force maximale au poids du corps : pompes archer puis à une main, squats pistol, tractions lestées. Peu de répétitions, beaucoup de tension.",
+            pitch: "La force au poids du corps, poussée jusqu'à ses variantes les plus dures : pompe à une main, tractions strictes, squat sur une jambe. Sept jalons, peu de répétitions, beaucoup de tension. Deviens implacable comme Kenshiro.",
             stages: ["Dubhe", "Merak", "Phecda", "Megrez", "Alioth", "Mizar", "Alkaid"],
             sessionsPerStage: [4, 4, 4, 4, 4, 4, 4],
             rhythm: "3 séances par semaine", equipment: "Barre de traction",
@@ -49,7 +49,7 @@ enum Catalog {
 
         Program(
             id: .ichigo, name: "Ichigo", family: "Six cibles",
-            pitch: "Pas de planning : une cible unique à la fois, énorme et nette. On ne passe à la suivante qu'une fois celle-ci tombée.",
+            pitch: "Six chiffres à tenir : cent pompes, deux cents abdominaux et cent squats dans la journée, dix tractions et cinquante pompes d'affilée, cinq kilomètres. Neuf jalons pour les réunir le même jour. Deviens tenace comme Ichigo.",
             stages: ["100 pompes dans la journée", "200 abdos dans la journée",
                      "100 squats dans la journée", "10 tractions d'affilée",
                      "50 pompes d'affilée", "5 km sans marcher", "Bankai"],
@@ -60,7 +60,7 @@ enum Catalog {
 
         Program(
             id: .minato, name: "Minato", family: "Vitesse",
-            pitch: "L'Éclair Jaune de Konoha. Sprints courts, éducatifs de course, pliométrie horizontale. Deux séances par semaine, soixante-douze heures d'écart.",
+            pitch: "Courir vite, sur dix, trente et soixante mètres. Beaucoup de récupération, jamais de sprint fatigué : on ne court vite qu'en étant frais. Sept jalons pour gagner des dixièmes. Deviens insaisissable comme Minato.",
             stages: ["Genin", "Chūnin", "Jōnin", "ANBU", "L'Éclair Jaune",
                      "Hiraishin", "Yondaime Hokage"],
             sessionsPerStage: [3, 3, 3, 3, 2, 2, 2],
@@ -70,7 +70,7 @@ enum Catalog {
 
         Program(
             id: .levi, name: "Levi", family: "Gainage",
-            pitch: "Puissance rapportée au poids de corps : gainage, tractions, suspensions, rotations. Séances courtes, intensité haute.",
+            pitch: "Gainage, suspension, tractions, contrôle croisé. Des séances courtes qui construisent un tronc qui ne cède pas. Cinq jalons jusqu'aux cinq standards tenus la même semaine. Deviens précis et inébranlable comme Levi.",
             stages: ["Recrue", "Bataillon d'exploration", "Escouade d'élite",
                      "Caporal-chef", "Le plus fort de l'humanité"],
             sessionsPerStage: [5, 5, 5, 5, 4],
@@ -80,7 +80,7 @@ enum Catalog {
 
         Program(
             id: .luffy, name: "Luffy", family: "Souplesse",
-            pitch: "Le seul personnage dont le pouvoir est l'élasticité. Mobilité articulaire, étirements tenus, ouverture de hanches et d'épaules. Dix minutes par jour.",
+            pitch: "Gagner de l'amplitude et apprendre à la contrôler : chevilles, hanches, ischios, épaules, buste. Des séances courtes, presque tous les jours. Cinq jalons pour cinq familles. Deviens libre de tes mouvements comme Luffy.",
             stages: ["Gomu Gomu", "Gear 2", "Gear 3", "Gear 4", "Gear 5"],
             sessionsPerStage: [7, 7, 7, 7, 7],
             rhythm: "Tous les jours", equipment: "Aucun",
@@ -89,7 +89,7 @@ enum Catalog {
 
         Program(
             id: .goku, name: "Goku", family: "Progression extrême",
-            pitch: "Chaque transformation multiplie la charge de la précédente. Le Kaiō-ken ×4 est déjà un multiplicateur dans l'œuvre : il le devient ici.",
+            pitch: "Pousser, tirer, porter plus lourd de semaine en semaine, avec un simple sac lesté. Huit jalons pour refaire le test du premier jour avec un quart de charge en plus. Deviens plus fort à chaque palier, comme Goku.",
             stages: ["Base", "Kaiō-ken", "Kaiō-ken ×4", "Super Saiyan",
                      "Super Saiyan 2", "Super Saiyan 3", "Super Saiyan Blue", "Ultra Instinct"],
             sessionsPerStage: [5, 5, 5, 5, 5, 5, 5, 5],
