@@ -237,8 +237,12 @@ struct HomeView: View {
         return VStack(spacing: 0) {
             ZStack {
                 program.gradient
-                ArtworkFill(name: program.stageImage(status.index))
-                LinearGradient(colors: [Color.black.opacity(0.62), Color.black.opacity(0.18)],
+                if ProgramVisuals.hasCover(program.id) {
+                    ProgramVisuals.faceCrop(program.id)
+                } else {
+                    ArtworkFill(name: program.stageImage(status.index))
+                }
+                LinearGradient(colors: [Color.black.opacity(0.68), Color.black.opacity(0.22)],
                                startPoint: .leading, endPoint: .trailing)
                 HStack(spacing: 14) {
                     ZStack {
@@ -254,12 +258,11 @@ struct HomeView: View {
                             Haptics.tap()
                             journey = program
                         } label: {
-                            HStack(spacing: 5) {
-                                Text(program.name.uppercased())
-                                    .font(.display(21))
-                                    .foregroundStyle(Theme.cream)
-                                    .lineLimit(1)
-                                    .minimumScaleFactor(0.7)
+                            HStack(spacing: 6) {
+                                // le logo tient lieu de nom : c'est la
+                                // signature du programme
+                                ProgramLogo(program: program, height: 52,
+                                            fallbackFont: .display(21))
                                 Image(systemName: "map")
                                     .font(.system(size: 11, weight: .bold))
                                     .foregroundStyle(Theme.cream.opacity(0.75))
@@ -412,8 +415,7 @@ struct HomeView: View {
                             ProgramTile(program: program,
                                         progress: ratio(program),
                                         locked: !store.isUnlocked(program),
-                                        height: 132,
-                                        tile: program.tileImage)
+                                        height: 132)
                                 .frame(width: 128)
                                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                         }

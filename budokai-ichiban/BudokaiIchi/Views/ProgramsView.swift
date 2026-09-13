@@ -41,8 +41,7 @@ struct ProgramsView: View {
                         } label: {
                             ProgramTile(program: program,
                                         progress: ratio(program),
-                                        locked: !store.isUnlocked(program),
-                                        tile: program.tileImage)
+                                        locked: !store.isUnlocked(program))
                         }
                         .buttonStyle(.plain)
                     }

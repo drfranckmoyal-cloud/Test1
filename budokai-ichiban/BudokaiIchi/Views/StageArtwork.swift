@@ -83,6 +83,16 @@ enum ProgramVisuals {
         named("cover_\(id.rawValue)") ?? Catalog.program(id).tileImage
     }
 
+    /// Vrai quand le programme a sa couverture pleine page.
+    static func hasCover(_ id: ProgramID) -> Bool {
+        named("cover_\(id.rawValue)") != nil
+    }
+
+    /// La vignette d'un héros, cadrée sur son visage.
+    static func faceCrop(_ id: ProgramID) -> some View {
+        FaceCrop(name: cover(id))
+    }
+
     /// L'illustration du mode supérieur, quand elle existe.
     static func superRank(_ id: ProgramID) -> String? {
         named("superrank_\(id.rawValue)")
@@ -158,6 +168,40 @@ enum ThumbnailCache {
         let small = full.preparingThumbnail(of: target) ?? full
         cache[name] = small
         return small
+    }
+}
+
+// MARK: - Le cadrage sur le visage
+
+/// Une couverture recadrée autour du visage du héros.
+///
+/// Les couvertures montrent le personnage en pied, le visage au premier
+/// sixième de la hauteur. Remplir un bandeau large ne laisse voir qu'une fine
+/// bande : ancrée en haut, c'est le ciel ; centrée, c'est le torse. On place
+/// donc explicitement le point du visage au milieu du cadre, en s'interdisant
+/// de sortir de l'image.
+struct FaceCrop: View {
+    let name: String
+    /// Où se tient le visage dans la hauteur de l'image.
+    var focus: CGFloat = 0.14
+    /// Les proportions de la couverture.
+    private let source = CGSize(width: 941, height: 1672)
+
+    var body: some View {
+        GeometryReader { geometry in
+            let scale = max(geometry.size.width / source.width,
+                            geometry.size.height / source.height)
+            let width = source.width * scale
+            let height = source.height * scale
+            let wanted = geometry.size.height / 2 - height * focus
+            let clamped = min(0, max(geometry.size.height - height, wanted))
+            Image(name)
+                .resizable()
+                .frame(width: width, height: height)
+                .offset(x: (geometry.size.width - width) / 2, y: clamped)
+        }
+        .clipped()
+        .accessibilityHidden(true)
     }
 }
 

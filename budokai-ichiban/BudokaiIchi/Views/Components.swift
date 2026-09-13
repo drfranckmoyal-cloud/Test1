@@ -306,6 +306,9 @@ struct ProgramTile: View {
     /// s'y pose en entier, calée sur le bas, comme une figurine découpée.
     @ViewBuilder
     private var artwork: some View {
+        if tile == nil, ProgramVisuals.hasCover(program.id) {
+            FaceCrop(name: ProgramVisuals.cover(program.id))
+        } else {
         let name = tile ?? program.tileImage
         if Program.isCutout(name) {
             Color.clear
@@ -315,6 +318,7 @@ struct ProgramTile: View {
                 .clipped()
         } else {
             ArtworkFill(name: name).opacity(0.92)
+        }
         }
     }
 }
