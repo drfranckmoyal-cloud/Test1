@@ -104,6 +104,55 @@ enum AdaptationEngine {
         return .hold
     }
 
+    /// De combien le pratiquant veut alléger, quand le moteur propose de
+    /// réduire.
+    ///
+    /// Le moteur décide de la direction ; le pratiquant règle l'ampleur, dans
+    /// des bornes. Lui seul sait si la séance était un peu au-dessus ou très
+    /// au-dessus — et personne n'aime qu'une machine décide seule de le
+    /// ménager. La borne haute existe pour qu'un mauvais jour ne vide pas le
+    /// programme.
+    enum Dose: String, Codable, CaseIterable, Identifiable {
+        case gentle
+        case asProposed
+        case strong
+
+        var id: String { rawValue }
+
+        var label: String {
+            switch self {
+            case .gentle: return "Un peu"
+            case .asProposed: return "Conseillé"
+            case .strong: return "Nettement"
+            }
+        }
+
+        /// La baisse retenue, en pourcentage entier, à partir de celle que le
+        /// moteur propose. Jamais moins de 5 %, jamais plus de 25 %.
+        func percent(from proposed: Double) -> Int {
+            let drop = Int(((1 - proposed) * 100).rounded())
+            guard drop > 0 else { return 0 }
+            // arrondi au multiple de cinq le plus proche : « −7 % » ne veut
+            // rien dire à personne
+            func toFive(_ value: Double) -> Int { Int((value / 5).rounded()) * 5 }
+            switch self {
+            case .gentle: return max(5, toFive(Double(drop) / 2))
+            case .asProposed: return drop
+            case .strong: return min(25, toFive(Double(drop) * 2))
+            }
+        }
+
+        func factor(from proposed: Double) -> Double {
+            proposed >= 1 ? proposed : 1 - Double(percent(from: proposed)) / 100
+        }
+
+        /// Vrai quand les trois doses ne se distinguent pas : une baisse déjà
+        /// au plancher n'a rien à régler.
+        static func isAdjustable(_ proposed: Double) -> Bool {
+            Set(allCases.map { $0.percent(from: proposed) }).count > 1
+        }
+    }
+
     /// Le facteur de volume qu'entraîne un mouvement, pour les prescriptions
     /// qui n'ont pas encore de variante ni de charge à faire bouger.
     ///

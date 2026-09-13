@@ -23,6 +23,8 @@ struct SessionSheetView: View {
     @State private var abandonReason: AbandonReason?
     /// Les exercices obligatoires que le pratiquant n'a pas réussis.
     @State private var failed: Set<String> = []
+    /// De combien alléger la suite : le moteur propose, le pratiquant règle.
+    @State private var dose: AdaptationEngine.Dose = .asProposed
     /// Le héros qui intervient, avant la séance ou après elle.
     @State private var hero: HeroPopupAsset?
     /// Ce qu'on fait une fois le héros parti : ouvrir la séance, ou passer au
@@ -570,11 +572,21 @@ struct SessionSheetView: View {
                     .transition(.opacity)
                 }
 
+                if abandonReason == .tooHard {
+                    adaptationCard(
+                        proposed: AdaptationEngine.volumeFactor(
+                            for: failed.isEmpty ? .reduceVolume : .easierVariant),
+                        explanation: failed.isEmpty
+                            ? "La prochaine tentative sera moins chargée."
+                            : "Les mouvements cochés redescendent aussi d'un cran.")
+                }
+
                 VStack(spacing: 9) {
                     PrimaryButton(title: "ARRÊTER LA SÉANCE", tint: Theme.crimson,
                                   enabled: abandonReason != nil) {
                         let ids = Array(failed)
-                        store.abandonSession(tuned, reason: abandonReason ?? .hadToStop, failed: ids)
+                        store.abandonSession(tuned, reason: abandonReason ?? .hadToStop,
+                                             failed: ids, dose: dose)
                         dismiss()
                     }
                     Button {
@@ -757,30 +769,54 @@ struct SessionSheetView: View {
         let move = AdaptationEngine.decide(AdaptationInput(
             report: SessionReport(effort: effort, completion: .entirely),
             completedRatio: 1.0))
-        let factor = AdaptationEngine.volumeFactor(for: move)
-        let percent = Int((abs(factor - 1) * 100).rounded())
-        let up = factor > 1
+        adaptationCard(proposed: AdaptationEngine.volumeFactor(for: move),
+                       explanation: move.explanation)
+    }
 
-        HStack(alignment: .top, spacing: 11) {
-            Image(systemName: percent == 0 ? "equal.circle"
-                                           : (up ? "arrow.up.right" : "arrow.down.right"))
-                .font(.system(size: 15))
-                .foregroundStyle(percent == 0 ? Theme.muted : (up ? program.light : Theme.crimson))
-                .frame(width: 22)
-            VStack(alignment: .leading, spacing: 3) {
-                Text(percent == 0
-                     ? "La prochaine séance garde ce niveau."
-                     : (up ? "La prochaine séance sera renforcée de \(percent) %."
-                           : "La prochaine séance sera allégée de \(percent) %."))
-                    .font(.ui(13, .bold))
-                    .foregroundStyle(Theme.text)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text(move.explanation)
-                    .font(.ui(12))
-                    .foregroundStyle(Theme.muted)
-                    .fixedSize(horizontal: false, vertical: true)
+    /// Ce que la prochaine séance devient, et de combien.
+    ///
+    /// Quand il s'agit d'alléger, le pratiquant règle l'ampleur : lui seul
+    /// sait si la séance était un peu au-dessus ou très au-dessus. Le moteur
+    /// garde la direction et les bornes.
+    @ViewBuilder
+    private func adaptationCard(proposed: Double, explanation: String) -> some View {
+        let percent = dose.percent(from: proposed)
+        let up = proposed > 1
+        let upPercent = Int(((proposed - 1) * 100).rounded())
+
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 11) {
+                Image(systemName: proposed == 1 ? "equal.circle"
+                                                : (up ? "arrow.up.right" : "arrow.down.right"))
+                    .font(.system(size: 15))
+                    .foregroundStyle(proposed == 1 ? Theme.muted : (up ? program.light : Theme.crimson))
+                    .frame(width: 22)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(proposed == 1
+                         ? "La prochaine séance garde ce niveau."
+                         : (up ? "La prochaine séance sera renforcée de \(upPercent) %."
+                               : "La prochaine séance sera allégée de \(percent) %."))
+                        .font(.ui(13, .bold))
+                        .foregroundStyle(Theme.text)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(explanation)
+                        .font(.ui(12))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
             }
-            Spacer(minLength: 0)
+
+            if proposed < 1, AdaptationEngine.Dose.isAdjustable(proposed) {
+                Text("Tu peux doser :")
+                    .font(.ui(11, .semibold))
+                    .foregroundStyle(Theme.dim)
+                HStack(spacing: 7) {
+                    ForEach(AdaptationEngine.Dose.allCases) { candidate in
+                        doseRow(candidate, proposed: proposed)
+                    }
+                }
+            }
         }
         .padding(14)
         .frame(maxWidth: .infinity)
@@ -788,6 +824,32 @@ struct SessionSheetView: View {
         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
             .stroke(Theme.border, lineWidth: 1))
         .transition(.opacity)
+    }
+
+    private func doseRow(_ candidate: AdaptationEngine.Dose, proposed: Double) -> some View {
+        let picked = dose == candidate
+        let percent = candidate.percent(from: proposed)
+        return Button {
+            Haptics.tap()
+            withAnimation(.easeOut(duration: 0.15)) { dose = candidate }
+        } label: {
+            VStack(spacing: 1) {
+                Text("−\(percent) %")
+                    .font(.display(17))
+                    .foregroundStyle(picked ? Theme.crimson : Theme.text)
+                Text(candidate.label)
+                    .font(.ui(10, .bold))
+                    .foregroundStyle(Theme.muted)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 9)
+            .background(picked ? Theme.crimson.opacity(0.10) : Theme.surfaceAlt,
+                        in: RoundedRectangle(cornerRadius: 11, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous)
+                .stroke(picked ? Theme.crimson : Color.clear, lineWidth: 2))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Alléger de \(percent) pour cent, \(candidate.label.lowercased())")
     }
 
     private func question<Content: View>(_ title: String,
@@ -839,7 +901,7 @@ struct SessionSheetView: View {
             .ratio(against: done.prescriptions)
         let ratio = openRatio ?? 1.0
 
-        store.record(report, for: done.programID, completedRatio: ratio)
+        store.record(report, for: done.programID, completedRatio: ratio, dose: dose)
 
         if alreadyRecorded {
             store.closeSession(of: done.programID)
