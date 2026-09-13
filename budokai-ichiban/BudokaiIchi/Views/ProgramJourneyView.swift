@@ -181,7 +181,9 @@ struct ProgramJourneyView: View {
             .padding(.bottom, 18)
             .padding(.top, over ? 26 : 0)
         }
-        .frame(height: over ? 390 : 230)
+        // une fois le programme lancé, c'est la route qu'on vient voir : la
+        // couverture se contente de la moitié haute de l'écran
+        .frame(height: over ? (store.isActive(program.id) ? 300 : 390) : 230)
     }
 
     private var quality: String {
@@ -228,9 +230,9 @@ struct ProgramJourneyView: View {
                 .font(.ui(9, .bold))
                 .kerning(2.2)
                 .foregroundStyle(Theme.muted)
-            path(from: 0.5, to: side(1), height: 38, reached: true)
+            path(from: 0.5, to: side(1), height: 24, reached: true)
         }
-        .padding(.top, 18)
+        .padding(.top, 12)
     }
 
     // MARK: - Un jalon
@@ -260,28 +262,28 @@ struct ProgramJourneyView: View {
     private func node(_ number: Int, _ state: StageState) -> some View {
         ZStack {
             if state == .current {
-                Circle().fill(tint.opacity(0.18)).frame(width: 74, height: 74)
+                Circle().fill(tint.opacity(0.18)).frame(width: 60, height: 60)
             }
             Circle()
                 .fill(state == .done ? tint : Theme.surface)
-                .frame(width: 54, height: 54)
+                .frame(width: 44, height: 44)
                 .overlay(Circle().stroke(state == .locked ? Theme.border : tint,
                                          lineWidth: state == .current ? 3 : 2))
             if state == .done {
                 Image(systemName: "checkmark")
-                    .font(.system(size: 20, weight: .bold))
+                    .font(.system(size: 17, weight: .bold))
                     .foregroundStyle(Theme.ink)
             } else if state == .locked {
                 Image(systemName: "lock.fill")
-                    .font(.system(size: 15))
+                    .font(.system(size: 13))
                     .foregroundStyle(Theme.dim)
             } else {
                 Text("\(number)")
-                    .font(.display(22))
+                    .font(.display(18))
                     .foregroundStyle(tint)
             }
         }
-        .frame(width: 78, height: 78)
+        .frame(width: 62, height: 58)
     }
 
     private func label(_ stage: ProgramDefinition.Stage, _ state: StageState,
@@ -297,7 +299,7 @@ struct ProgramJourneyView: View {
                     .background(tint, in: Capsule())
             }
             Text(stage.title)
-                .font(.display(18))
+                .font(.display(16))
                 .foregroundStyle(state == .locked ? Theme.dim : Theme.text)
                 .multilineTextAlignment(aligned == .leading ? .leading : .trailing)
                 .fixedSize(horizontal: false, vertical: true)
@@ -468,7 +470,7 @@ struct ProgramJourneyView: View {
         let next = number + 1
         let reached = number < currentStage
         return path(from: side(number), to: next <= stages.count ? side(next) : 0.5,
-                    height: 54, reached: reached)
+                    height: 30, reached: reached)
     }
 
     private func path(from: CGFloat, to: CGFloat, height: CGFloat, reached: Bool) -> some View {
@@ -497,19 +499,19 @@ struct ProgramJourneyView: View {
         return VStack(spacing: 9) {
             ZStack {
                 if won || eligible {
-                    Circle().fill(Theme.gold.opacity(0.18)).frame(width: 86, height: 86)
+                    Circle().fill(Theme.gold.opacity(0.18)).frame(width: 70, height: 70)
                 }
                 Circle()
                     .fill(won ? Theme.gold : Theme.surface)
-                    .frame(width: 62, height: 62)
+                    .frame(width: 50, height: 50)
                     .overlay(Circle().stroke(won || eligible ? Theme.gold : Theme.border, lineWidth: 2))
                 Image(systemName: won ? "crown.fill" : (eligible ? "flame.fill" : "lock.fill"))
-                    .font(.system(size: 22))
+                    .font(.system(size: 18))
                     .foregroundStyle(won ? Theme.ink : (eligible ? Theme.gold : Theme.dim))
             }
 
             Text((boss?.title ?? "Le combat final").uppercased())
-                .font(.display(17))
+                .font(.display(15))
                 .foregroundStyle(won || eligible ? Theme.text : Theme.dim)
                 .multilineTextAlignment(.center)
             Text(won
@@ -549,7 +551,7 @@ struct ProgramJourneyView: View {
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
             .stroke(tint.opacity(0.4), lineWidth: 1))
         .padding(.horizontal, 20)
-        .padding(.top, 20)
+        .padding(.top, 12)
     }
 
     private var startCall: some View {
@@ -566,7 +568,7 @@ struct ProgramJourneyView: View {
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
             .stroke(tint.opacity(0.4), lineWidth: 1))
         .padding(.horizontal, 20)
-        .padding(.top, 20)
+        .padding(.top, 12)
     }
 
     private var setupCall: some View {
@@ -586,7 +588,7 @@ struct ProgramJourneyView: View {
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
             .stroke(tint.opacity(0.4), lineWidth: 1))
         .padding(.horizontal, 20)
-        .padding(.top, 22)
+        .padding(.top, 12)
     }
 
     private var footer: some View {
@@ -648,6 +650,6 @@ struct ProgramJourneyView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .padding(.horizontal, 20)
-        .padding(.top, 20)
+        .padding(.top, 12)
     }
 }
