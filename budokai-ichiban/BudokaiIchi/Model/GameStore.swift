@@ -69,8 +69,32 @@ final class GameStore: ObservableObject {
     /// Remet d'aplomb ce qu'une version antérieure a pu laisser incohérent.
     /// Un historique vide ne peut pas porter de caractéristiques.
     private func healIfNeeded() {
-        guard state.history.isEmpty, !state.stats.isEmpty else { return }
-        state.stats = [:]
+        let before = state.xp
+        reconcileXP()
+        if state.history.isEmpty, !state.stats.isEmpty { state.stats = [:] }
+        if before != state.xp || state.history.isEmpty { save() }
+    }
+
+    /// L'expérience, recalculée depuis ce qui l'a produite.
+    ///
+    /// Elle n'est plus un compteur qu'on incrémente en espérant le décrémenter
+    /// au bon endroit — c'est ainsi qu'une expérience survivait à la
+    /// suppression de son programme, et qu'il en restait sans le moindre
+    /// programme en cours. C'est une somme : les séances de l'historique, les
+    /// combats finaux des programmes encore présents, et les quêtes de
+    /// rattrapage. Supprimer un programme fait donc partir son expérience,
+    /// toujours, sans qu'on ait à y penser.
+    private func reconcileXP() {
+        let sessions = state.history.reduce(0) { $0 + $1.xp }
+        let bosses = state.programs.values.reduce(0) {
+            $0 + ($1.bossDefeated ? GameEngine.bossXP : 0)
+        }
+        state.xp = max(0, sessions + bosses + state.bonusXP)
+    }
+
+    /// Remet l'expérience d'accord avec l'historique, à la demande.
+    func recomputeXP() {
+        reconcileXP()
         save()
     }
 
@@ -885,7 +909,7 @@ final class GameStore: ObservableObject {
         let badge = "\(program.name) : combat final remporté"
         if !state.badges.contains(badge) { state.badges.append(badge) }
         if !state.equipment.contains(program.name) { state.equipment.append(program.name) }
-        state.xp += GameEngine.bossXP
+        reconcileXP()
         save()
     }
 
@@ -1256,9 +1280,7 @@ final class GameStore: ObservableObject {
     func deleteProgram(_ id: ProgramID) {
         let key = id.rawValue
 
-        // l'expérience des séances de ce programme s'en va avec elles
         let records = state.history.filter { $0.programID == key }
-        state.xp = max(0, state.xp - records.reduce(0) { $0 + $1.xp })
 
         // et leurs caractéristiques aussi, retirées une à une.
         //
@@ -1294,10 +1316,11 @@ final class GameStore: ObservableObject {
 
         recomputeStreak()
         // quand tout l'historique restant porte ses gains, on remet les
-        // compteurs d'aplomb exactement ; sinon la soustraction ci-dessus fait
-        // foi
+        // compteurs d'aplomb exactement ; sinon la soustraction faite plus
+        // haut fait foi
         if !hasUntrackedStatGains { recomputeStats(persist: false) }
         if state.history.isEmpty { state.stats = [:] }
+        reconcileXP()
         save()
         syncNotifications()
     }
@@ -1362,8 +1385,9 @@ final class GameStore: ObservableObject {
         state.programs[program.id.rawValue] = progress
 
         let rankBefore = rank
-        state.xp += gained
-        let rankAfter = GameEngine.rank(forXP: state.xp)
+        // l'expérience de la séance est portée par son enregistrement, ajouté
+        // plus bas ; on la compte ici pour annoncer le rang gagné
+        let rankAfter = GameEngine.rank(forXP: state.xp + gained)
 
         let gains = GameEngine.statGains(for: session, achieved: achieved)
         var gainsByName: [String: Int] = [:]
@@ -1382,6 +1406,7 @@ final class GameStore: ObservableObject {
             structuredDomains: measured.structured,
             domainLevel: measured.level,
             continuousMeters: measured.continuousMeters))
+        reconcileXP()
         state.lastCompletedDay = todayKey
         state.penalty = nil
         if program.id == .saitama { advanceSaitama(session) } else { advanceProgram(program.id, session) }
@@ -1433,7 +1458,9 @@ final class GameStore: ObservableObject {
         penalty.tasks[index].done = max(0, min(penalty.tasks[index].target, penalty.tasks[index].done + amount))
         if penalty.isComplete {
             state.penalty = nil
-            state.xp += 120                     // la quête rapporte peu : elle répare, elle n'avance pas
+            // la quête rapporte peu : elle répare, elle n'avance pas
+            state.bonusXP += 120
+            reconcileXP()
         } else {
             state.penalty = penalty
         }
@@ -1760,8 +1787,6 @@ final class GameStore: ObservableObject {
         guard let position = state.history.firstIndex(where: { $0.id == id }) else { return }
         let record = state.history.remove(at: position)
 
-        state.xp = max(0, state.xp - record.xp)
-
         // effacer une tentative abandonnée ne fait rien reculer : elle
         // n'avait rien fait avancer
         if !record.abandoned, let programID = ProgramID(rawValue: record.programID) {
@@ -1774,6 +1799,7 @@ final class GameStore: ObservableObject {
 
         recomputeStreak()
         reconcileStats()
+        reconcileXP()
         save()
         syncNotifications()
     }
@@ -1789,7 +1815,6 @@ final class GameStore: ObservableObject {
         guard !removed.isEmpty else { return }
 
         state.history.removeAll { $0.programID == id.rawValue && $0.sessionIndex >= index }
-        state.xp = max(0, state.xp - removed.reduce(0) { $0 + $1.xp })
 
         var progress = state.progress(id)
         progress.completedSessions = max(0, index - 1)
@@ -1799,6 +1824,7 @@ final class GameStore: ObservableObject {
 
         recomputeStreak()
         reconcileStats()
+        reconcileXP()
         save()
         syncNotifications()
     }

@@ -259,6 +259,10 @@ struct PlayerState: Codable {
     var rewards: RewardInventory = RewardInventory()
     /// Jusqu'où l'on accepte d'être spoilé.
     var spoilerLevel: SpoilerLevel = .anime
+    /// L'expérience gagnée hors séance : les quêtes de rattrapage. Elle vit à
+    /// part pour que l'expérience totale reste une somme recalculable, et non
+    /// un compteur qu'on espère décrémenter au bon endroit.
+    var bonusXP: Int = 0
     /// L'intervention du héros au début d'une séance.
     var heroPopups: Bool = true
     /// La dernière variante montrée, par héros et par moment, pour ne jamais
@@ -301,6 +305,7 @@ struct PlayerState: Codable {
         rewards = read(.rewards, RewardInventory())
         spoilerLevel = read(.spoilerLevel, .anime)
         pausedPrograms = read(.pausedPrograms, [])
+        bonusXP = read(.bonusXP, 0)
         heroPopups = read(.heroPopups, true)
         lastHeroVariant = read(.lastHeroVariant, [:])
         heroVariantBag = read(.heroVariantBag, [:])
