@@ -104,14 +104,14 @@ enum AdaptationEngine {
         return .hold
     }
 
-    /// De combien le pratiquant veut alléger, quand le moteur propose de
-    /// réduire.
+    /// De combien le pratiquant règle la séance suivante, dans un sens comme
+    /// dans l'autre.
     ///
     /// Le moteur décide de la direction ; le pratiquant règle l'ampleur, dans
     /// des bornes. Lui seul sait si la séance était un peu au-dessus ou très
-    /// au-dessus — et personne n'aime qu'une machine décide seule de le
-    /// ménager. La borne haute existe pour qu'un mauvais jour ne vide pas le
-    /// programme.
+    /// au-dessus. Les mêmes bornes valent pour progresser : cinq pour cent au
+    /// minimum, vingt-cinq au maximum, pour qu'un bon jour n'envoie pas le
+    /// programme trop loin, ni un mauvais jour ne le vide.
     enum Dose: String, Codable, CaseIterable, Identifiable {
         case gentle
         case asProposed
@@ -127,29 +127,42 @@ enum AdaptationEngine {
             }
         }
 
-        /// La baisse retenue, en pourcentage entier, à partir de celle que le
-        /// moteur propose. Jamais moins de 5 %, jamais plus de 25 %.
+        /// L'écart retenu, en pourcentage entier, à partir de celui que le
+        /// moteur propose. Jamais moins de 5 %, jamais plus de 25 %, dans un
+        /// sens comme dans l'autre.
         func percent(from proposed: Double) -> Int {
-            let drop = Int(((1 - proposed) * 100).rounded())
-            guard drop > 0 else { return 0 }
+            let step = Int((abs(proposed - 1) * 100).rounded())
+            guard step > 0 else { return 0 }
             // arrondi au multiple de cinq le plus proche : « −7 % » ne veut
             // rien dire à personne
             func toFive(_ value: Double) -> Int { Int((value / 5).rounded()) * 5 }
             switch self {
-            case .gentle: return max(5, toFive(Double(drop) / 2))
-            case .asProposed: return drop
-            case .strong: return min(25, toFive(Double(drop) * 2))
+            case .gentle: return max(5, toFive(Double(step) / 2))
+            case .asProposed: return step
+            case .strong: return min(25, toFive(Double(step) * 2))
             }
         }
 
         func factor(from proposed: Double) -> Double {
-            proposed >= 1 ? proposed : 1 - Double(percent(from: proposed)) / 100
+            guard proposed != 1 else { return 1 }
+            let shift = Double(percent(from: proposed)) / 100
+            return proposed > 1 ? 1 + shift : 1 - shift
         }
 
-        /// Vrai quand les trois doses ne se distinguent pas : une baisse déjà
-        /// au plancher n'a rien à régler.
+        /// Les doses réellement distinctes, de la plus douce à la plus
+        /// franche. Deux doses qui tombent sur le même chiffre n'occupent
+        /// qu'un bouton, et c'est celle du moteur qui le garde : c'est elle
+        /// qui doit porter la mention « conseillé ».
+        static func choices(for proposed: Double) -> [Dose] {
+            var seen = Set<Int>()
+            let byPriority: [Dose] = [.asProposed, .gentle, .strong]
+            let kept = byPriority.filter { seen.insert($0.percent(from: proposed)).inserted }
+            return kept.sorted { $0.percent(from: proposed) < $1.percent(from: proposed) }
+        }
+
+        /// Vrai quand il y a vraiment quelque chose à régler.
         static func isAdjustable(_ proposed: Double) -> Bool {
-            Set(allCases.map { $0.percent(from: proposed) }).count > 1
+            proposed != 1 && choices(for: proposed).count > 1
         }
     }
 
@@ -161,7 +174,7 @@ enum AdaptationEngine {
     static func volumeFactor(for move: AdaptationMove) -> Double {
         switch move {
         case .progressVariant, .progressLoad: return 1.00
-        case .progressVolume, .progressDuration, .progressDistance: return 1.06
+        case .progressVolume, .progressDuration, .progressDistance: return 1.05
         case .shortenRest, .hold: return 1.00
         case .reduceIntensity: return 0.95
         case .reduceVolume: return 0.90

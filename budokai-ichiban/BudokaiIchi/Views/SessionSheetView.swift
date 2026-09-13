@@ -712,6 +712,10 @@ struct SessionSheetView: View {
                     ForEach(PerceivedEffort.faces) { candidate in
                         Button {
                             Haptics.tap()
+                            // changer d'avis repart du réglage conseillé :
+                            // « nettement » ne veut pas dire la même chose
+                            // dans un sens et dans l'autre
+                            if report.effort != candidate { dose = .asProposed }
                             report.effort = candidate
                         } label: {
                             HeroFace(hero: heroFace, effort: candidate,
@@ -782,7 +786,6 @@ struct SessionSheetView: View {
     private func adaptationCard(proposed: Double, explanation: String) -> some View {
         let percent = dose.percent(from: proposed)
         let up = proposed > 1
-        let upPercent = Int(((proposed - 1) * 100).rounded())
 
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 11) {
@@ -793,8 +796,8 @@ struct SessionSheetView: View {
                     .frame(width: 22)
                 VStack(alignment: .leading, spacing: 3) {
                     Text(proposed == 1
-                         ? "La prochaine séance garde ce niveau."
-                         : (up ? "La prochaine séance sera renforcée de \(upPercent) %."
+                         ? "La prochaine séance garde ce volume."
+                         : (up ? "La prochaine séance sera renforcée de \(percent) %."
                                : "La prochaine séance sera allégée de \(percent) %."))
                         .font(.ui(13, .bold))
                         .foregroundStyle(Theme.text)
@@ -807,12 +810,13 @@ struct SessionSheetView: View {
                 Spacer(minLength: 0)
             }
 
-            if proposed < 1, AdaptationEngine.Dose.isAdjustable(proposed) {
+            // le réglage vaut dans les deux sens, avec les mêmes bornes
+            if AdaptationEngine.Dose.isAdjustable(proposed) {
                 Text("Tu peux doser :")
                     .font(.ui(11, .semibold))
                     .foregroundStyle(Theme.dim)
                 HStack(spacing: 7) {
-                    ForEach(AdaptationEngine.Dose.allCases) { candidate in
+                    ForEach(AdaptationEngine.Dose.choices(for: proposed)) { candidate in
                         doseRow(candidate, proposed: proposed)
                     }
                 }
@@ -827,29 +831,31 @@ struct SessionSheetView: View {
     }
 
     private func doseRow(_ candidate: AdaptationEngine.Dose, proposed: Double) -> some View {
-        let picked = dose == candidate
         let percent = candidate.percent(from: proposed)
+        let picked = dose.percent(from: proposed) == percent
+        let up = proposed > 1
+        let tint = up ? program.light : Theme.crimson
         return Button {
             Haptics.tap()
             withAnimation(.easeOut(duration: 0.15)) { dose = candidate }
         } label: {
             VStack(spacing: 1) {
-                Text("−\(percent) %")
+                Text("\(up ? "+" : "−")\(percent) %")
                     .font(.display(17))
-                    .foregroundStyle(picked ? Theme.crimson : Theme.text)
+                    .foregroundStyle(picked ? tint : Theme.text)
                 Text(candidate.label)
                     .font(.ui(10, .bold))
                     .foregroundStyle(Theme.muted)
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 9)
-            .background(picked ? Theme.crimson.opacity(0.10) : Theme.surfaceAlt,
+            .background(picked ? tint.opacity(0.12) : Theme.surfaceAlt,
                         in: RoundedRectangle(cornerRadius: 11, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous)
-                .stroke(picked ? Theme.crimson : Color.clear, lineWidth: 2))
+                .stroke(picked ? tint : Color.clear, lineWidth: 2))
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("Alléger de \(percent) pour cent, \(candidate.label.lowercased())")
+        .accessibilityLabel("\(up ? "Renforcer" : "Alléger") de \(percent) pour cent, \(candidate.label.lowercased())")
     }
 
     private func question<Content: View>(_ title: String,
