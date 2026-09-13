@@ -286,6 +286,7 @@ final class GameStore: ObservableObject {
             sessionIndex: done,
             levels: progress.exerciseLevel,
             isDeload: deload,
+            intensity: progress.intensity,
             narrativeId: NarrationLibrary.session(id, index: done)?.id,
             scheduling: scheduling))
     }
@@ -324,6 +325,7 @@ final class GameStore: ObservableObject {
                     sessionIndex: index,
                     levels: levels,
                     isDeload: deload,
+                    intensity: asWritten ? 1.0 : state.progress(id).intensity,
                     narrativeId: NarrationLibrary.session(id, index: index)?.id,
                     scheduling: nil)) {
                     plan.append(session)

@@ -243,11 +243,16 @@ struct SessionSheetView: View {
     /// Ce que le moteur a décidé, dit en clair. Le cadrage veut que le
     /// pratiquant voie **pourquoi** l'exercice change, jamais les
     /// coefficients qui le décident.
+    /// Ce que le moteur a décidé à partir de ton dernier retour.
+    ///
+    /// Sans cette carte, dire « très difficile » ne se voyait nulle part : la
+    /// séance suivante était plus légère sans que rien ne l'explique. Elle
+    /// vaut pour les neuf programmes, pas seulement pour Saitama.
     private var engineNote: (icon: String, title: String, body: String)? {
-        guard session.programID == .saitama else { return nil }
-        guard store.progress(.saitama).completedSessions > 0 else { return nil }
+        let id = session.programID
+        guard store.progress(id).completedSessions > 0 else { return nil }
 
-        if let consolidation = store.saitamaConsolidation {
+        if id == .saitama, let consolidation = store.saitamaConsolidation {
             let names = consolidation.domains.map { $0.label.lowercased() }.joined(separator: " et ")
             return ("arrow.triangle.2.circlepath",
                     "Microcycle de consolidation",
@@ -257,7 +262,7 @@ struct SessionSheetView: View {
             return ("moon.zzz.fill", "Semaine allégée",
                     "Volume réduit exprès. C'est pendant ces semaines que l'adaptation se fait.")
         }
-        if let move = store.lastMove(of: .saitama), move != .hold {
+        if let move = store.lastMove(of: id), move != .hold {
             return (move.isProgression ? "arrow.up.right" : "arrow.down.right",
                     move.label, move.explanation)
         }

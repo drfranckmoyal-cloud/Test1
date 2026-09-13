@@ -218,6 +218,9 @@ enum CoachEngine {
         /// Échelon atteint par famille.
         var levels: [String: Int]
         var isDeload: Bool
+        /// Le curseur d'intensité du programme : ce que le ressenti des
+        /// séances précédentes a fait bouger. 1 = ce que le coach a écrit.
+        var intensity: Double = 1.0
         var narrativeId: String?
         var scheduling: SessionSchedulingMetadata?
     }
@@ -294,6 +297,9 @@ enum CoachEngine {
             }
         }
         if context.isDeload && exercise.isWork { scale *= deloadFactor }
+        // le ressenti des séances passées pèse sur le travail, jamais sur
+        // l'échauffement ni sur le retour au calme
+        if exercise.isWork { scale *= context.intensity }
 
         func grow(_ value: Int) -> Int {
             guard scale != 1 else { return value }
