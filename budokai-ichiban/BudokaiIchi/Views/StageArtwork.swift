@@ -74,6 +74,15 @@ enum ProgramVisuals {
         named("arc_\(id.rawValue)_\(max(0, index) + 1)")
     }
 
+    /// L'image de couverture d'un programme : générique, celle qui dit
+    /// l'univers plutôt qu'un moment précis de la progression.
+    ///
+    /// Une couverture déposée exprès l'emporte ; sinon on reprend l'image de
+    /// présentation du programme, celle de sa vignette.
+    static func cover(_ id: ProgramID) -> String {
+        named("cover_\(id.rawValue)") ?? Catalog.program(id).tileImage
+    }
+
     /// L'illustration du mode supérieur, quand elle existe.
     static func superRank(_ id: ProgramID) -> String? {
         named("superrank_\(id.rawValue)")

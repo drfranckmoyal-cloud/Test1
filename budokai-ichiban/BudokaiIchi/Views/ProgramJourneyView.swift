@@ -104,19 +104,19 @@ struct ProgramJourneyView: View {
 
     // MARK: - Le fond de page
 
-    /// L'illustration du jalon en cours, en plein format derrière toute la
-    /// page.
+    /// La couverture du programme, en plein format derrière toute la page.
     ///
     /// Ce n'est pas un bandeau : l'image tient tout l'écran et le parcours se
-    /// lit par-dessus. Elle change à chaque jalon franchi — l'histoire avance
-    /// avec la progression. Les programmes sans illustration gardent le fond
-    /// uni de l'app.
+    /// lit par-dessus. Et c'est volontairement une image **générique** de
+    /// l'univers, pas l'illustration d'un jalon : celles-là appartiennent à
+    /// leur moment de la progression, et les poser ici les ferait déborder sur
+    /// les jalons suivants.
     @ViewBuilder
     private var pageBackground: some View {
-        if let art = ProgramVisuals.arc(program.id, index: max(0, currentStage - 1)) {
+        if ProgramVisuals.hasNarrativeArt(program.id) {
             ZStack {
                 Color.black
-                Image(art)
+                Image(ProgramVisuals.cover(program.id))
                     .resizable()
                     .scaledToFill()
                     .accessibilityHidden(true)
@@ -138,8 +138,7 @@ struct ProgramJourneyView: View {
 
     /// La tête de page : le logo du programme, puis le jalon où l'on se trouve.
     private var banner: some View {
-        let art = ProgramVisuals.arc(program.id, index: max(0, currentStage - 1))
-        let over = art != nil
+        let over = ProgramVisuals.hasNarrativeArt(program.id)
 
         return ZStack(alignment: .bottomLeading) {
             if !over {
@@ -151,8 +150,11 @@ struct ProgramJourneyView: View {
 
             VStack(alignment: .leading, spacing: over ? 12 : 6) {
                 if over {
-                    ProgramLogo(program: program, height: 74)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    // le logo est la signature du programme : il tient la
+                    // largeur de la page, pas un coin
+                    ProgramLogo(program: program, height: 132)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.bottom, 4)
                 } else {
                     Text(quality.uppercased())
                         .font(.ui(10, .bold))
@@ -179,7 +181,7 @@ struct ProgramJourneyView: View {
             .padding(.bottom, 18)
             .padding(.top, over ? 26 : 0)
         }
-        .frame(height: over ? 330 : 230)
+        .frame(height: over ? 390 : 230)
     }
 
     private var quality: String {

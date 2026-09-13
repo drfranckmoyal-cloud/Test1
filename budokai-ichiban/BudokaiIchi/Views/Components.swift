@@ -254,12 +254,13 @@ struct ProgramTile: View {
                 // le logo tient lieu de nom quand il existe : c'est la
                 // signature du programme, pas une décoration
                 if let logo = ProgramVisuals.logo(program.id) {
+                    // le logo occupe toute la largeur de la vignette : c'est
+                    // lui qu'on doit reconnaître avant de lire quoi que ce soit
                     Image(logo)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 40, alignment: .leading)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .shadow(color: .black.opacity(0.5), radius: 8, y: 2)
+                        .frame(maxWidth: .infinity, maxHeight: height * 0.46)
+                        .shadow(color: .black.opacity(0.55), radius: 10, y: 3)
                         .accessibilityLabel(program.name)
                 } else {
                     Text(program.name.uppercased())
