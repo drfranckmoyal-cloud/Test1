@@ -7,6 +7,10 @@ struct TodayView: View {
     /// sinon la page fait trois écrans de haut.
     @State private var opened: ProgramID?
     @State private var setting: Program?
+    /// L'étape qu'on présente avant d'ouvrir la séance, le cas échéant.
+    @State private var introducing: (program: Program, stage: Int)?
+    /// La séance à ouvrir une fois l'étape présentée.
+    @State private var pendingSession: PlannedSession?
 
     var body: some View {
         ScrollView {
@@ -26,9 +30,32 @@ struct TodayView: View {
         .fullScreenCover(item: $running) { session in
             SessionSheetView(session: session)
         }
+        // l'ouverture d'un jalon passe avant la séance : l'histoire d'abord,
+        // le héros ensuite, l'entraînement en dernier
+        .fullScreenCover(isPresented: Binding(get: { introducing != nil },
+                                              set: { if !$0 { introducing = nil } })) {
+            if let intro = introducing {
+                StageIntroView(program: intro.program, stageIndex: intro.stage) {
+                    let session = pendingSession
+                    introducing = nil
+                    pendingSession = nil
+                    if let session = session { running = session }
+                }
+            }
+        }
         .sheet(item: $setting) { program in
             ProgramLaunchView(program: program) { store.startProgram(program.id) }
         }
+    }
+
+    /// Ouvre la séance, précédée de la page d'étape si elle n'a jamais été vue.
+    private func open(_ session: PlannedSession, of program: Program) {
+        guard store.stageNeedsIntro(program.id) else {
+            running = session
+            return
+        }
+        pendingSession = session
+        introducing = (program, store.currentStageIndex(program.id))
     }
 
     // MARK: - En-tête
@@ -116,7 +143,11 @@ struct TodayView: View {
         return HStack(spacing: 12) {
             ZStack {
                 program.gradient
-                ArtworkFill(name: program.stageImage(store.stageStatus(program).index)).opacity(0.9)
+                if let art = ProgramVisuals.stage(program.id, index: store.stageStatus(program).index) {
+                    StageArtwork(name: art, presentation: .thumbnail)
+                } else {
+                    ArtworkFill(name: program.stageImage(store.stageStatus(program).index)).opacity(0.9)
+                }
             }
             .frame(width: 52, height: 52)
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -263,7 +294,11 @@ struct TodayView: View {
                 HStack(spacing: 12) {
                     ZStack {
                         program.gradient
-                        ArtworkFill(name: program.stageImage(status.index)).opacity(0.9)
+                        if let art = ProgramVisuals.stage(program.id, index: status.index) {
+                            StageArtwork(name: art, presentation: .thumbnail)
+                        } else {
+                            ArtworkFill(name: program.stageImage(status.index)).opacity(0.9)
+                        }
                     }
                     .frame(width: 52, height: 52)
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
@@ -289,7 +324,7 @@ struct TodayView: View {
 
             Button {
                 Haptics.tap()
-                running = session
+                open(session, of: program)
             } label: {
                 Image(systemName: "play.fill")
                     .font(.system(size: 14, weight: .bold))
@@ -311,25 +346,36 @@ struct TodayView: View {
         let ratio = status.total > 0 ? Double(status.done) / Double(status.total) : 0
 
         return VStack(spacing: 0) {
-            // bandeau de l'univers
+            // le moment de l'histoire où l'on s'entraîne aujourd'hui
+            let art = ProgramVisuals.stage(program.id, index: status.index)
             ZStack {
                 program.gradient
-                ArtworkFill(name: program.environmentImage)
-                    .opacity(0.5)
-                // le décor pose l'ambiance sans gêner la lecture
-                LinearGradient(colors: [Color.black.opacity(0.30), Color.black.opacity(0.62)],
-                               startPoint: .top, endPoint: .bottom)
-                VStack(spacing: 4) {
-                    Text(program.name.uppercased())
-                        .font(.ui(11, .bold))
-                        .kerning(2.6)
-                        .foregroundStyle(Theme.cream.opacity(0.85))
+                if let art = art {
+                    StageArtwork(name: art, presentation: .card,
+                                 label: "\(program.name), \(stageName)")
+                } else {
+                    ArtworkFill(name: program.environmentImage)
+                        .opacity(0.5)
+                    // le décor pose l'ambiance sans gêner la lecture
+                    LinearGradient(colors: [Color.black.opacity(0.30), Color.black.opacity(0.62)],
+                                   startPoint: .top, endPoint: .bottom)
+                }
+                VStack(spacing: 5) {
+                    if art != nil {
+                        ProgramLogo(program: program, height: 34, fallbackFont: .ui(11, .bold))
+                    } else {
+                        Text(program.name.uppercased())
+                            .font(.ui(11, .bold))
+                            .kerning(2.6)
+                            .foregroundStyle(Theme.cream.opacity(0.85))
+                    }
                     Text(stageName.uppercased())
                         .font(.display(23))
                         .foregroundStyle(Theme.cream)
                         .multilineTextAlignment(.center)
                         .lineLimit(2)
                         .minimumScaleFactor(0.7)
+                        .shadow(color: .black.opacity(0.55), radius: 7, y: 2)
                 }
                 .padding(.horizontal, 18)
 
@@ -355,7 +401,7 @@ struct TodayView: View {
                     .padding(10)
                 }
             }
-            .frame(height: 104)
+            .frame(height: art != nil ? 168 : 104)
 
             VStack(spacing: 18) {
                 ZStack {
@@ -403,7 +449,7 @@ struct TodayView: View {
                 .padding(.horizontal, 18)
 
                 PrimaryButton(title: "OUVRIR LA SÉANCE DU JOUR", tint: program.light) {
-                    running = session
+                    open(session, of: program)
                 }
                 // le visuel du héros est choisi et décodé dès que la séance
                 // s'affiche : au tap, il est déjà prêt

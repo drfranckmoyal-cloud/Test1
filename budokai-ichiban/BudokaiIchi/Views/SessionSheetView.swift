@@ -115,46 +115,75 @@ struct SessionSheetView: View {
         }
     }
 
+    /// L'en-tête de la séance : l'illustration du jalon en cours, le logo du
+    /// programme, et l'étape où l'on se trouve.
+    ///
+    /// Quand le programme a reçu ses illustrations narratives, l'image occupe
+    /// un bon tiers de l'écran et porte le contexte : on sait dans quel
+    /// moment de l'histoire on s'entraîne avant même de lire quoi que ce soit.
+    /// Les autres programmes gardent leur bandeau d'univers.
     private var header: some View {
-        ZStack(alignment: .bottomLeading) {
-            program.gradient
-            ArtworkFill(name: program.environmentImage).opacity(0.42)
-            LinearGradient(colors: [Color.black.opacity(0.25), Color.black.opacity(0.72)],
-                           startPoint: .top, endPoint: .bottom)
+        let stageIndex = store.stageStatus(program).index
+        let art = ProgramVisuals.stage(program.id, index: stageIndex)
+        let tall = art != nil
 
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text((narrative?.arc ?? program.name).uppercased())
-                        .font(.ui(10, .bold))
-                        .kerning(2.4)
-                        .foregroundStyle(Theme.cream.opacity(0.85))
-                    Text(narrative?.narrativeTitle ?? session.title)
-                        .font(.display(26))
-                        .foregroundStyle(Theme.cream)
-                        .lineLimit(3)
-                        .minimumScaleFactor(0.65)
-                        .fixedSize(horizontal: false, vertical: true)
-                    Text(positionLabel)
-                        .font(.ui(12, .semibold))
-                        .foregroundStyle(Theme.cream.opacity(0.8))
+        return ZStack(alignment: .bottomLeading) {
+            program.gradient
+            if let art = art {
+                StageArtwork(name: art, presentation: .hero,
+                             label: "\(program.name), \(store.stageName(program))")
+            } else {
+                ArtworkFill(name: program.environmentImage).opacity(0.42)
+                LinearGradient(colors: [Color.black.opacity(0.25), Color.black.opacity(0.72)],
+                               startPoint: .top, endPoint: .bottom)
+            }
+
+            VStack(alignment: .leading, spacing: tall ? 10 : 5) {
+                if tall {
+                    ProgramLogo(program: program, height: 46)
+                        .padding(.bottom, 2)
                 }
-                Spacer(minLength: 8)
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundStyle(Theme.cream)
-                        .frame(width: 36, height: 36)
-                        .background(Color.black.opacity(0.32), in: Circle())
-                }
-                .buttonStyle(.plain)
+                Text((narrative?.arc ?? program.name).uppercased())
+                    .font(.ui(10, .bold))
+                    .kerning(2.4)
+                    .foregroundStyle(Theme.cream.opacity(0.85))
+                Text(narrative?.narrativeTitle ?? session.title)
+                    .font(.display(tall ? 30 : 26))
+                    .foregroundStyle(Theme.cream)
+                    .lineLimit(3)
+                    .minimumScaleFactor(0.65)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .shadow(color: .black.opacity(0.5), radius: 8, y: 2)
+                Text(positionLabel)
+                    .font(.ui(12, .semibold))
+                    .foregroundStyle(Theme.cream.opacity(0.85))
             }
             .padding(.horizontal, 20)
-            .padding(.bottom, 16)
+            .padding(.bottom, 18)
+            .padding(.trailing, 44)
+
+            // la croix reste en haut, hors du chemin du titre
+            VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(Theme.cream)
+                            .frame(width: 36, height: 36)
+                            .background(Color.black.opacity(0.38), in: Circle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Fermer")
+                }
+                Spacer()
+            }
+            .padding(.horizontal, 16)
             .padding(.top, 54)
         }
-        .frame(height: 190)
+        .frame(height: tall ? 330 : 190)
         .ignoresSafeArea(edges: .top)
     }
 
@@ -172,19 +201,23 @@ struct SessionSheetView: View {
         let stage = store.saitamaBlock.map { $0.index - 1 } ?? 0
 
         return VStack(alignment: .leading, spacing: 0) {
-            ZStack(alignment: .bottomLeading) {
-                program.gradient
-                ArtworkFill(name: program.stageImage(stage))
-                LinearGradient(colors: [Color.black.opacity(0.10), Color.black.opacity(0.80)],
-                               startPoint: .center, endPoint: .bottom)
-                Text(story.arc.uppercased())
-                    .font(.ui(9, .bold))
-                    .kerning(2.2)
-                    .foregroundStyle(Theme.cream.opacity(0.9))
-                    .padding(.horizontal, 18)
-                    .padding(.bottom, 12)
+            // l'en-tête porte déjà l'illustration du jalon : la répéter ici
+            // ferait deux grandes images l'une sur l'autre
+            if ProgramVisuals.stage(program.id, index: store.stageStatus(program).index) == nil {
+                ZStack(alignment: .bottomLeading) {
+                    program.gradient
+                    ArtworkFill(name: program.stageImage(stage))
+                    LinearGradient(colors: [Color.black.opacity(0.10), Color.black.opacity(0.80)],
+                                   startPoint: .center, endPoint: .bottom)
+                    Text(story.arc.uppercased())
+                        .font(.ui(9, .bold))
+                        .kerning(2.2)
+                        .foregroundStyle(Theme.cream.opacity(0.9))
+                        .padding(.horizontal, 18)
+                        .padding(.bottom, 12)
+                }
+                .frame(height: 130)
             }
-            .frame(height: 130)
 
             VStack(alignment: .leading, spacing: 11) {
                 Text(story.narrativeTitle)

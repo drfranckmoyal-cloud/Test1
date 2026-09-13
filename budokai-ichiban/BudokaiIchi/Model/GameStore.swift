@@ -887,6 +887,35 @@ final class GameStore: ObservableObject {
         save()
     }
 
+    // MARK: - L'ouverture d'une étape
+
+    /// Vrai quand l'étape en cours n'a pas encore été présentée.
+    ///
+    /// Ne s'applique qu'aux programmes qui ont reçu leurs illustrations : sans
+    /// image, une page d'ouverture n'aurait rien à montrer.
+    func stageNeedsIntro(_ id: ProgramID) -> Bool {
+        guard ProgramVisuals.hasNarrativeArt(id), isActive(id) else { return false }
+        let index = stageStatus(Catalog.program(id)).index
+        return !state.stagesSeen.contains(stageKey(id, index))
+    }
+
+    /// L'étape en cours d'un programme, comptée à partir de zéro.
+    func currentStageIndex(_ id: ProgramID) -> Int {
+        stageStatus(Catalog.program(id)).index
+    }
+
+    /// Retient qu'une étape a été présentée.
+    func markStageSeen(_ id: ProgramID, stage index: Int) {
+        let key = stageKey(id, index)
+        guard !state.stagesSeen.contains(key) else { return }
+        state.stagesSeen.append(key)
+        save()
+    }
+
+    private func stageKey(_ id: ProgramID, _ index: Int) -> String {
+        "\(id.rawValue).\(index)"
+    }
+
     // MARK: - L'intervention du héros
 
     /// Les visuels choisis d'avance, en attente d'être montrés. Volontairement
@@ -1050,7 +1079,8 @@ final class GameStore: ObservableObject {
         if program.id == .saitama, state.progress(.saitama).saitama?.isComplete == true {
             return SaitamaBlocks.spec(index + 1).title
         }
-        return program.stages[min(index, program.stages.count - 1)]
+        // le nom vient de la spécification, pas de l'ancien catalogue
+        return shape(of: program.id).title(ofStage: index)
     }
 
     func stageStatus(_ program: Program) -> (index: Int, done: Int, total: Int) {

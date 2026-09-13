@@ -17,37 +17,7 @@ struct ProgramDetailView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    ZStack(alignment: .bottomLeading) {
-                        program.gradient.frame(height: 192)
-                        ArtworkFill(name: program.stageImage(store.stageStatus(program).index))
-                            .frame(height: 192)
-                        // le logo de l'univers, en filigrane dans le coin
-                        HStack {
-                            Spacer()
-                            Image(program.logoImage)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 92)
-                                .opacity(0.5)
-                                .blendMode(.screen)
-                                .padding(.trailing, 16)
-                                .padding(.top, 14)
-                        }
-                        .frame(height: 192, alignment: .top)
-                        LinearGradient(colors: [.clear, Theme.ground], startPoint: .center, endPoint: .bottom)
-                            .frame(height: 192)
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text(program.family.uppercased())
-                                .font(.ui(10, .bold))
-                                .kerning(2.6)
-                                .foregroundStyle(Theme.cream.opacity(0.9))
-                            Text(program.name.uppercased())
-                                .font(.display(38))
-                                .foregroundStyle(Theme.cream)
-                        }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 16)
-                    }
+                    programHeader
 
                     VStack(alignment: .leading, spacing: 18) {
                         HStack(spacing: 16) {
@@ -194,6 +164,72 @@ struct ProgramDetailView: View {
             ? pieces[0]
             : pieces.dropLast().joined(separator: ", ") + " et " + pieces[pieces.count - 1]
         return "Tu perds \(list), ainsi que tes mesures de départ et tes caractéristiques gagnées ici. C'est définitif. Pour garder tout ça, mets-le plutôt en pause."
+    }
+
+    /// L'en-tête du programme : son illustration du moment, son logo, et
+    /// l'étape où l'on se trouve.
+    ///
+    /// Quand le programme porte ses illustrations, le logo remplace le titre
+    /// écrit — il est la signature. Le nom reste un vrai texte pour les
+    /// lecteurs d'écran, jamais lu dans l'image.
+    private var programHeader: some View {
+        let status = store.stageStatus(program)
+        let art = ProgramVisuals.stage(program.id, index: status.index)
+        let narrative = art != nil
+        let height: CGFloat = narrative ? 330 : 192
+
+        return ZStack(alignment: .bottomLeading) {
+            program.gradient.frame(height: height)
+            if let art = art {
+                StageArtwork(name: art, presentation: .hero,
+                             label: "\(program.name), \(store.stageName(program))")
+                    .frame(height: height)
+            } else {
+                ArtworkFill(name: program.stageImage(status.index)).frame(height: height)
+                // le logo de l'univers, en filigrane dans le coin
+                HStack {
+                    Spacer()
+                    Image(program.logoImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 92)
+                        .opacity(0.5)
+                        .blendMode(.screen)
+                        .padding(.trailing, 16)
+                        .padding(.top, 14)
+                }
+                .frame(height: height, alignment: .top)
+            }
+            LinearGradient(colors: [.clear, Theme.ground], startPoint: .center, endPoint: .bottom)
+                .frame(height: height)
+
+            VStack(alignment: .leading, spacing: narrative ? 10 : 6) {
+                if narrative {
+                    ProgramLogo(program: program, height: 62)
+                } else {
+                    Text(program.family.uppercased())
+                        .font(.ui(10, .bold))
+                        .kerning(2.6)
+                        .foregroundStyle(Theme.cream.opacity(0.9))
+                    Text(program.name.uppercased())
+                        .font(.display(38))
+                        .foregroundStyle(Theme.cream)
+                }
+                if narrative, store.isActive(program.id) || store.isPaused(program.id) {
+                    Text(store.stageName(program).uppercased())
+                        .font(.display(22))
+                        .foregroundStyle(Theme.cream)
+                        .shadow(color: .black.opacity(0.55), radius: 8, y: 2)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text("Étape \(status.index + 1) sur \(store.shape(of: program.id).stageCount)")
+                        .font(.ui(12, .semibold))
+                        .foregroundStyle(Theme.cream.opacity(0.9))
+                        .shadow(color: .black.opacity(0.6), radius: 6, y: 1)
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 16)
+        }
     }
 
     private func fact(_ text: String) -> some View {

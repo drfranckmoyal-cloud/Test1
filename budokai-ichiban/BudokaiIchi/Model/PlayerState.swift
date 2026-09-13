@@ -259,6 +259,10 @@ struct PlayerState: Codable {
     /// La dernière variante montrée, par héros et par moment, pour ne jamais
     /// servir deux fois de suite la même image.
     var lastHeroVariant: [String: Int] = [:]
+    /// Les étapes dont la page d'ouverture a déjà été montrée, sous la forme
+    /// « programme.numéro ». Une page d'introduction revue à chaque séance
+    /// perdrait tout son sens.
+    var stagesSeen: [String] = []
     /// Les variantes qu'il reste à sortir avant de rebattre les cartes. C'est
     /// ce qui garantit que les quatre passent autant, au lieu d'un tirage au
     /// sort qui en répéterait une et en oublierait une autre.
@@ -295,6 +299,7 @@ struct PlayerState: Codable {
         heroPopups = read(.heroPopups, true)
         lastHeroVariant = read(.lastHeroVariant, [:])
         heroVariantBag = read(.heroVariantBag, [:])
+        stagesSeen = read(.stagesSeen, [])
 
         if let many = try? box.decode([String].self, forKey: .activePrograms) {
             activePrograms = many
