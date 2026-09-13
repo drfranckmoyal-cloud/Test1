@@ -1141,6 +1141,18 @@ final class GameStore: ObservableObject {
         // l'expérience des séances de ce programme s'en va avec elles
         let records = state.history.filter { $0.programID == key }
         state.xp = max(0, state.xp - records.reduce(0) { $0 + $1.xp })
+
+        // et leurs caractéristiques aussi, retirées une à une.
+        //
+        // Le recalcul global ne suffit pas : il refuse de tourner tant qu'il
+        // reste une séance d'avant la mémorisation des gains, et il rendait
+        // alors la suppression sans effet sur l'araignée. La soustraction
+        // directe, elle, marche toujours.
+        for record in records {
+            for (name, value) in record.statGains {
+                state.stats[name] = max(0, (state.stats[name] ?? 0) - value)
+            }
+        }
         state.history.removeAll { $0.programID == key }
 
         // les retours de séance, les compteurs du jour, l'avancement
@@ -1163,7 +1175,11 @@ final class GameStore: ObservableObject {
         state.pausedPrograms.removeAll { $0 == key }
 
         recomputeStreak()
-        reconcileStats()
+        // quand tout l'historique restant porte ses gains, on remet les
+        // compteurs d'aplomb exactement ; sinon la soustraction ci-dessus fait
+        // foi
+        if !hasUntrackedStatGains { recomputeStats(persist: false) }
+        if state.history.isEmpty { state.stats = [:] }
         save()
         syncNotifications()
     }

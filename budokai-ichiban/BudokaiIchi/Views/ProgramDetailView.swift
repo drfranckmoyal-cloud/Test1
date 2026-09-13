@@ -148,7 +148,13 @@ struct ProgramDetailView: View {
                 store.pauseProgram(program.id)
                 dismiss()
             }
-            Button("Supprimer le programme…", role: .destructive) { confirmDelete = true }
+            Button("Supprimer le programme…", role: .destructive) {
+                // même précaution : enchaîner deux dialogues sans laisser le
+                // premier se refermer fait disparaître le second
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+                    confirmDelete = true
+                }
+            }
             Button("Continuer le programme", role: .cancel) {}
         } message: {
             Text("En pause, rien n'est effacé : il quitte l'accueil mais reste en grisé dans l'onglet Séances, prêt à repartir où tu l'as laissé. Supprimer efface tout ce qu'il a produit.")

@@ -127,6 +127,12 @@ enum GameEngine {
     /// Points de caractéristique gagnés sur une séance. Volontairement lents :
     /// ce sont eux qui conditionnent les déblocages.
     static func statGains(for session: PlannedSession, achieved: [Int: Int]) -> [StatKind: Int] {
+        // Une séance prescrite ne porte pas d'étapes : tout est dans ses
+        // exercices. Sans cette branche, les neuf programmes ne rapportaient
+        // plus aucune caractéristique — l'araignée ne bougeait plus.
+        if let prescribed = session.prescribed, !prescribed.isEmpty {
+            return statGains(fromPrescribed: prescribed)
+        }
         var reps = 0
         var runSeconds = 0
         var meters = 0
@@ -153,6 +159,52 @@ enum GameEngine {
         if endurance > 0 { gains[.endurance] = min(6, endurance) }
         if sprintBlocks > 0 { gains[.vitesse] = min(6, sprintBlocks) }
         return gains
+    }
+
+    /// Les caractéristiques gagnées sur une séance prescrite.
+    ///
+    /// Chaque exercice de travail est ramené à une mesure commune — la
+    /// répétition — pour que des secondes de gainage, des mètres de course et
+    /// des répétitions de squat puissent se comparer. Seul le travail compte :
+    /// l'échauffement et le retour au calme ne font pas progresser.
+    private static func statGains(fromPrescribed items: [ExercisePrescription]) -> [StatKind: Int] {
+        var effort: [StatKind: Int] = [:]
+        for item in items where item.countsTowardAdaptation {
+            effort[kind(of: item.characteristic), default: 0] += equivalentReps(item)
+        }
+        var gains: [StatKind: Int] = [:]
+        for (stat, value) in effort {
+            let points = value / 25
+            if points > 0 { gains[stat] = min(6, points) }
+        }
+        return gains
+    }
+
+    /// La caractéristique de l'app que travaille une qualité du coach.
+    ///
+    /// L'app n'en compte que trois : le contrôle rejoint la force, la
+    /// puissance la vitesse, la mobilité l'endurance. Ce n'est pas un abus de
+    /// langage mais un choix de rangement — mieux vaut qu'un programme de
+    /// mobilité fasse bouger quelque chose que rien.
+    private static func kind(of characteristic: TrainingCharacteristic) -> StatKind {
+        switch characteristic {
+        case .force, .control: return .force
+        case .speed, .power: return .vitesse
+        case .endurance, .mobility: return .endurance
+        }
+    }
+
+    /// Un exercice ramené en répétitions équivalentes : dix secondes de
+    /// gainage ou soixante mètres valent à peu près une répétition.
+    private static func equivalentReps(_ item: ExercisePrescription) -> Int {
+        switch item.unit {
+        case .reps: return item.targetValue
+        case .seconds: return item.targetValue / 6
+        case .meters: return item.targetValue / 60
+        case .kg, .centimeters, .degrees, .centiseconds:
+            // une mesure, pas un volume : on compte les séries réalisées
+            return (item.sets ?? 1) * 5
+        }
     }
 
     // MARK: - Déblocages

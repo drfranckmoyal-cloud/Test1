@@ -112,8 +112,14 @@ struct HomeView: View {
                     stopping = nil
                 }
                 Button("Supprimer le programme…", role: .destructive) {
-                    deleting = program
+                    // la seconde confirmation attend que la première ait fini
+                    // de se refermer : demandée trop tôt, SwiftUI l'avale et
+                    // il ne se passe rien du tout
+                    let target = program
                     stopping = nil
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+                        deleting = target
+                    }
                 }
             }
             Button("Continuer le programme", role: .cancel) { stopping = nil }
