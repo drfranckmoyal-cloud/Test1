@@ -8,6 +8,9 @@ struct ProgramDetailView: View {
     @State private var justLaunched = false
     @State private var showBoss = false
     @State private var confirmStop = false
+    /// La confirmation de suppression d'un programme déjà en pause. Déclenchée
+    /// par un bouton, jamais depuis un autre dialogue : c'est l'enchaînement
+    /// qui faisait disparaître la seconde boîte.
     @State private var confirmDelete = false
     let program: Program
 
@@ -148,20 +151,18 @@ struct ProgramDetailView: View {
                 store.pauseProgram(program.id)
                 dismiss()
             }
-            Button("Supprimer le programme…", role: .destructive) {
-                // même précaution : enchaîner deux dialogues sans laisser le
-                // premier se refermer fait disparaître le second
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
-                    confirmDelete = true
-                }
+            Button("Supprimer et tout effacer", role: .destructive) {
+                store.deleteProgram(program.id)
+                dismiss()
             }
             Button("Continuer le programme", role: .cancel) {}
         } message: {
-            Text("En pause, rien n'est effacé : il quitte l'accueil mais reste en grisé dans l'onglet Séances, prêt à repartir où tu l'as laissé. Supprimer efface tout ce qu'il a produit.")
+            Text("En pause, rien n'est effacé : il quitte l'accueil mais reste en grisé dans l'onglet Séances, prêt à repartir où tu l'as laissé. "
+                 + deletionWarning)
         }
         .confirmationDialog("Supprimer \(program.name) ?",
                             isPresented: $confirmDelete, titleVisibility: .visible) {
-            Button("Tout supprimer", role: .destructive) {
+            Button("Supprimer et tout effacer", role: .destructive) {
                 store.deleteProgram(program.id)
                 dismiss()
             }

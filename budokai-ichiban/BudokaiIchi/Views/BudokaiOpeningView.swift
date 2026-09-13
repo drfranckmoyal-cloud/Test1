@@ -15,7 +15,7 @@ struct BudokaiOpeningView: View {
     var onFinish: () -> Void
 
     /// Combien de temps le panorama reste pleinement visible.
-    private let dwell: Double = 1.6
+    private let dwell: Double = 3.1
     private let entrance: Double = 0.5
     private let exit: Double = 0.3
 
