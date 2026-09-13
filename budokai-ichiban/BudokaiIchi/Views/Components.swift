@@ -321,6 +321,47 @@ struct ProgramTile: View {
 
 // MARK: - Retour haptique
 
+/// La croix de fermeture, en haut à droite.
+///
+/// Toujours au même endroit, toujours de la même taille, sur fond sombre comme
+/// sur fond clair : aucune page ne doit enfermer le joueur.
+struct CloseCross: View {
+    var tint: Color = Theme.cream
+    var onBackdrop: Bool = true
+    var label: String = "Fermer"
+    var action: () -> Void
+
+    var body: some View {
+        Button {
+            Haptics.tap()
+            action()
+        } label: {
+            Image(systemName: "xmark")
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(tint)
+                .frame(width: 38, height: 38)
+                .background(onBackdrop ? AnyShapeStyle(Color.black.opacity(0.38))
+                                       : AnyShapeStyle(Theme.surfaceAlt),
+                            in: Circle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(label)
+    }
+}
+
+extension View {
+    /// Pose la croix de fermeture par-dessus l'écran.
+    func closeCross(tint: Color = Theme.cream, onBackdrop: Bool = true,
+                    label: String = "Fermer",
+                    action: @escaping () -> Void) -> some View {
+        overlay(alignment: .topTrailing) {
+            CloseCross(tint: tint, onBackdrop: onBackdrop, label: label, action: action)
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+        }
+    }
+}
+
 enum Haptics {
     static func tap() { UIImpactFeedbackGenerator(style: .medium).impactOccurred() }
     static func success() { UINotificationFeedbackGenerator().notificationOccurred(.success) }

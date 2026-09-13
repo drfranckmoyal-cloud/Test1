@@ -144,6 +144,7 @@ struct OutcomeView: View {
             }
             .scrollIndicators(.hidden)
         }
+        .closeCross(action: onContinue)
         .onAppear {
             withAnimation(.spring(response: 0.6, dampingFraction: 0.6)) { appeared = true }
         }

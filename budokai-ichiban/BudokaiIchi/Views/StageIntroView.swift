@@ -108,6 +108,10 @@ struct StageIntroView: View {
                 .opacity(buttonIn ? 1 : 0)
             }
         }
+        .closeCross(label: "Passer la présentation") {
+            store.markStageSeen(program.id, stage: stageIndex)
+            onEnter()
+        }
         .onAppear(perform: reveal)
     }
 

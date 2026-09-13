@@ -33,6 +33,9 @@ struct SessionSheetView: View {
     /// La séance n'est ouverte qu'une fois le héros parti : tant qu'il parle,
     /// rien n'est enregistré.
     @State private var started = false
+    /// Le récit de la séance est replié par défaut : il ne doit plus repousser
+    /// les exercices hors de l'écran.
+    @State private var storyOpen = false
 
     private var program: Program { Catalog.program(session.programID) }
     /// La séance telle qu'elle sera faite, curseur d'intensité compris.
@@ -98,16 +101,21 @@ struct SessionSheetView: View {
             header
             ScrollView {
                 VStack(spacing: 18) {
-                    if let story = narrative { narrativeCard(story) }
                     if let note = engineNote { engineCard(note) }
+                    // le travail du jour d'abord : c'est pour lui qu'on ouvre
+                    // la séance, il ne doit pas se mériter par un défilement
                     exercises
+                    if let story = narrative {
+                        narrativeCard(story)
+                        narrativeBody(story)
+                    }
                     if tuned.prescribed == nil { intensityDial }
                     if !program.equipment.isEmpty && program.equipment != "Aucun" {
                         note("Matériel : \(program.equipment)")
                     }
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, 16)
+                .padding(.top, 12)
                 .padding(.bottom, 24)
             }
             .scrollIndicators(.hidden)
@@ -128,15 +136,15 @@ struct SessionSheetView: View {
                         .font(.ui(10, .bold))
                         .kerning(2.4)
                         .foregroundStyle(Theme.cream.opacity(0.85))
-                    Text(narrative?.narrativeTitle ?? session.title)
-                        .font(.display(26))
+                    Text(session.title)
+                        .font(.display(22))
                         .foregroundStyle(Theme.cream)
-                        .lineLimit(3)
-                        .minimumScaleFactor(0.65)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.7)
                         .fixedSize(horizontal: false, vertical: true)
                     Text(positionLabel)
-                        .font(.ui(12, .semibold))
-                        .foregroundStyle(Theme.cream.opacity(0.8))
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(Theme.cream.opacity(0.85))
                 }
                 Spacer(minLength: 8)
                 Button {
@@ -151,10 +159,10 @@ struct SessionSheetView: View {
                 .buttonStyle(.plain)
             }
             .padding(.horizontal, 20)
-            .padding(.bottom, 16)
-            .padding(.top, 54)
+            .padding(.bottom, 13)
+            .padding(.top, 52)
         }
-        .frame(height: 190)
+        .frame(height: 148)
         .ignoresSafeArea(edges: .top)
     }
 
@@ -168,7 +176,56 @@ struct SessionSheetView: View {
         return content
     }
 
+    /// Le récit de la séance, replié.
+    ///
+    /// Il occupait un grand cadre en tête de page et repoussait les exercices
+    /// sous la ligne de flottaison. Il est maintenant sous eux, et fermé : une
+    /// ligne qu'on ouvre si on veut lire, pas un passage obligé.
     private func narrativeCard(_ story: NarrativeContent) -> some View {
+        Button {
+            Haptics.tap()
+            withAnimation(.easeInOut(duration: 0.22)) { storyOpen.toggle() }
+        } label: {
+            HStack(spacing: 11) {
+                Image(systemName: "book.closed.fill")
+                    .font(.system(size: 13))
+                    .foregroundStyle(program.light)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(story.arc.uppercased())
+                        .font(.ui(9, .bold))
+                        .kerning(1.8)
+                        .foregroundStyle(Theme.dim)
+                    Text(story.narrativeTitle)
+                        .font(.ui(14, .bold))
+                        .foregroundStyle(Theme.text)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 6)
+                Image(systemName: storyOpen ? "chevron.up" : "chevron.down")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(Theme.dim)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Theme.border, lineWidth: 1))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .overlay(alignment: .bottom) {
+            if storyOpen { EmptyView() }
+        }
+    }
+
+    /// Le récit déplié, sous la ligne.
+    @ViewBuilder
+    private func narrativeBody(_ story: NarrativeContent) -> some View {
+        if storyOpen { legacyNarrativeCard(story) }
+    }
+
+    private func legacyNarrativeCard(_ story: NarrativeContent) -> some View {
         let stage = store.saitamaBlock.map { $0.index - 1 } ?? 0
 
         return VStack(alignment: .leading, spacing: 0) {

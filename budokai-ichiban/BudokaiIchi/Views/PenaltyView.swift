@@ -86,5 +86,6 @@ struct PenaltyView: View {
                 .padding(.bottom, 32)
             }
         }
+        .closeCross(label: "Fermer") { store.abandonStreak() }
     }
 }
