@@ -25,7 +25,7 @@ struct ArcSessionCard: View {
 
     private var ratio: Double { total > 0 ? Double(done) / Double(total) : 0 }
     private var context: String? {
-        NarrationLibrary.stageContext(program.id, stageIndex: stageIndex)
+        ArcContext.line(program.id, stageIndex: stageIndex)
     }
 
     var body: some View {
@@ -45,7 +45,7 @@ struct ArcSessionCard: View {
             }
 
             VStack(spacing: 0) {
-                ProgramLogo(program: program, height: 84)
+                ProgramLogo(program: program, height: 112)
                     .padding(.top, standalone ? 22 : 4)
 
                 VStack(spacing: 7) {
@@ -55,11 +55,14 @@ struct ArcSessionCard: View {
                         .foregroundStyle(Theme.cream.opacity(0.92))
                         .shadow(color: .black.opacity(0.8), radius: 6, y: 1)
                     Text(stageName.uppercased())
-                        .font(.display(28))
+                        .font(.manga(38))
+                        .italic()
+                        .kerning(0.5)
                         .foregroundStyle(Theme.cream)
                         .multilineTextAlignment(.center)
-                        .minimumScaleFactor(0.7)
-                        .shadow(color: .black.opacity(0.7), radius: 10, y: 2)
+                        .minimumScaleFactor(0.6)
+                        .lineLimit(3)
+                        .shadow(color: .black.opacity(0.8), radius: 12, y: 3)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.top, 14)

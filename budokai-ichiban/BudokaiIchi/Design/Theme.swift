@@ -90,6 +90,13 @@ extension Font {
     static func ui(_ size: CGFloat, _ weight: Font.Weight = .semibold) -> Font {
         .system(size: size, weight: weight, design: .default)
     }
+
+    /// Les titres d'arc : noire et resserrée, comme un titre de chapitre de
+    /// shōnen, mais c'est la police du système — donc parfaitement lisible,
+    /// et elle suit les réglages d'accessibilité du téléphone.
+    static func manga(_ size: CGFloat) -> Font {
+        .system(size: size, weight: .black, design: .default).width(.compressed)
+    }
 }
 
 extension Int {
