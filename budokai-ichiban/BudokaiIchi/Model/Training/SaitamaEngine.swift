@@ -383,7 +383,6 @@ enum SaitamaEngine {
     private static func warmupRun(easy: Bool) -> [ExercisePrescription] {
         var items: [ExercisePrescription] = [
             warmupTime("Marche active", seconds: easy ? 240 : 300, detail: nil),
-            warmupTime("Mobilité de cheville", seconds: 60, detail: nil),
             warmupTime("Balancements de jambe", seconds: 60, detail: "Dix de chaque côté")
         ]
         if easy {
