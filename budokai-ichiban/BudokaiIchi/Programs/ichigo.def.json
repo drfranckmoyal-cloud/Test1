@@ -1,351 +1,351 @@
 {
- "id": "ichigo",
- "quality": "Performance par objectifs",
- "scheduling": {
-  "min": 3,
-  "recommended": 4,
-  "max": 5,
-  "recoveryHours": 24,
-  "requiresLongSession": true,
-  "keySessionLabel": "le 5 km",
-  "templates": {
-   "3": [
-    {
-     "type": "strength",
-     "title": "Volume poussée et tronc",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
-    },
-    {
-     "type": "strength",
-     "title": "Tractions et jambes",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
-    },
-    {
-     "type": "longEndurance",
-     "title": "Course",
-     "priority": "critical",
-     "load": "moderate",
-     "minutes": 40
+  "id": "ichigo",
+  "quality": "Six cibles, une seule journée",
+  "scheduling": {
+    "min": 3,
+    "recommended": 4,
+    "max": 5,
+    "recoveryHours": 24,
+    "requiresLongSession": true,
+    "keySessionLabel": "le 5 km",
+    "templates": {
+      "3": [
+        {
+          "type": "strength",
+          "title": "Volume poussée et tronc",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "strength",
+          "title": "Tractions et jambes",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "longEndurance",
+          "title": "Course",
+          "priority": "critical",
+          "load": "moderate",
+          "minutes": 40
+        }
+      ],
+      "4": [
+        {
+          "type": "strength",
+          "title": "Volume poussée",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "strength",
+          "title": "Tractions",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 35
+        },
+        {
+          "type": "strength",
+          "title": "Jambes et tronc",
+          "priority": "important",
+          "load": "moderate",
+          "minutes": 35
+        },
+        {
+          "type": "longEndurance",
+          "title": "Course",
+          "priority": "critical",
+          "load": "moderate",
+          "minutes": 40
+        }
+      ],
+      "5": [
+        {
+          "type": "strength",
+          "title": "Volume poussée",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 40
+        },
+        {
+          "type": "strength",
+          "title": "Tractions",
+          "priority": "critical",
+          "load": "hard",
+          "minutes": 35
+        },
+        {
+          "type": "strength",
+          "title": "Jambes et tronc",
+          "priority": "important",
+          "load": "moderate",
+          "minutes": 35
+        },
+        {
+          "type": "easyEndurance",
+          "title": "Course facile",
+          "priority": "optional",
+          "load": "easy",
+          "minutes": 30
+        },
+        {
+          "type": "longEndurance",
+          "title": "Course",
+          "priority": "critical",
+          "load": "moderate",
+          "minutes": 40
+        }
+      ]
     }
-   ],
-   "4": [
+  },
+  "stages": [
     {
-     "type": "strength",
-     "title": "Volume poussée",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
+      "key": "SUBSTITUTE",
+      "title": "Substitute Shinigami",
+      "goal": "Poser les bases des six cibles.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
     },
     {
-     "type": "strength",
-     "title": "Tractions",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 35
+      "key": "SOULSOCIETY",
+      "title": "Soul Society",
+      "goal": "Monter le volume quotidien.",
+      "benchmark": "100 pompes dans la journée",
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
     },
     {
-     "type": "strength",
-     "title": "Jambes et tronc",
-     "priority": "important",
-     "load": "moderate",
-     "minutes": 35
+      "key": "BANKAI",
+      "title": "Bankai",
+      "goal": "Passer aux séries continues.",
+      "benchmark": "50 pompes d'affilée",
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
     },
     {
-     "type": "longEndurance",
-     "title": "Course",
-     "priority": "critical",
-     "load": "moderate",
-     "minutes": 40
+      "key": "VIZARD",
+      "title": "Vizard",
+      "goal": "Travailler les tractions.",
+      "benchmark": "10 tractions d'affilée",
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
+    },
+    {
+      "key": "HUECO",
+      "title": "Hueco Mundo",
+      "goal": "Abdominaux et squats en volume.",
+      "benchmark": "200 abdominaux et 100 squats dans la journée",
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
+    },
+    {
+      "key": "AIZEN",
+      "title": "Aizen",
+      "goal": "Endurance : 5 km.",
+      "benchmark": "5 km continus",
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 4
+    },
+    {
+      "key": "FULLBRING",
+      "title": "Fullbring",
+      "goal": "Consolider les six cibles.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 2,
+      "weeksMax": 3
+    },
+    {
+      "key": "TYBW",
+      "title": "Mille ans de sang",
+      "goal": "Affûtage avant le Bankai.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 1,
+      "weeksMax": 2
+    },
+    {
+      "key": "BANKAIDAY",
+      "title": "Jour du Bankai",
+      "goal": "Les six cibles le même jour.",
+      "benchmark": null,
+      "exit": [],
+      "weeksMin": 1,
+      "weeksMax": 1
     }
-   ],
-   "5": [
-    {
-     "type": "strength",
-     "title": "Volume poussée",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 40
-    },
-    {
-     "type": "strength",
-     "title": "Tractions",
-     "priority": "critical",
-     "load": "hard",
-     "minutes": 35
-    },
-    {
-     "type": "strength",
-     "title": "Jambes et tronc",
-     "priority": "important",
-     "load": "moderate",
-     "minutes": 35
-    },
-    {
-     "type": "easyEndurance",
-     "title": "Course facile",
-     "priority": "optional",
-     "load": "easy",
-     "minutes": 30
-    },
-    {
-     "type": "longEndurance",
-     "title": "Course",
-     "priority": "critical",
-     "load": "moderate",
-     "minutes": 40
-    }
-   ]
-  }
- },
- "stages": [
-  {
-   "key": "SUBSTITUTE",
-   "title": "Substitute Shinigami",
-   "goal": "Poser les bases des six cibles.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "SOULSOCIETY",
-   "title": "Soul Society",
-   "goal": "Monter le volume quotidien.",
-   "benchmark": "100 pompes dans la journée",
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "BANKAI",
-   "title": "Bankai",
-   "goal": "Passer aux séries continues.",
-   "benchmark": "50 pompes d'affilée",
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "VIZARD",
-   "title": "Vizard",
-   "goal": "Travailler les tractions.",
-   "benchmark": "10 tractions d'affilée",
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "HUECO",
-   "title": "Hueco Mundo",
-   "goal": "Abdominaux et squats en volume.",
-   "benchmark": "200 abdominaux et 100 squats dans la journée",
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "AIZEN",
-   "title": "Aizen",
-   "goal": "Endurance : 5 km.",
-   "benchmark": "5 km continus",
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 4
-  },
-  {
-   "key": "FULLBRING",
-   "title": "Fullbring",
-   "goal": "Consolider les six cibles.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 2,
-   "weeksMax": 3
-  },
-  {
-   "key": "TYBW",
-   "title": "Mille ans de sang",
-   "goal": "Affûtage avant le Bankai.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 1,
-   "weeksMax": 2
-  },
-  {
-   "key": "BANKAIDAY",
-   "title": "Jour du Bankai",
-   "goal": "Les six cibles le même jour.",
-   "benchmark": null,
-   "exit": [],
-   "weeksMin": 1,
-   "weeksMax": 1
-  }
- ],
- "boss": {
-  "title": "BANKAI",
-  "summary": "Les six cibles validées dans la même journée.",
-  "components": [
-   {
-    "id": "boss.ich.push.day",
-    "name": "Pompes dans la journée",
-    "value": 100,
-    "unit": "reps",
-    "policy": "dayCumulative"
-   },
-   {
-    "id": "boss.ich.abs",
-    "name": "Abdominaux dans la journée",
-    "value": 200,
-    "unit": "reps",
-    "policy": "dayCumulative"
-   },
-   {
-    "id": "boss.ich.squat",
-    "name": "Squats dans la journée",
-    "value": 100,
-    "unit": "reps",
-    "policy": "dayCumulative"
-   },
-   {
-    "id": "boss.ich.pull",
-    "name": "Tractions d'affilée",
-    "value": 10,
-    "unit": "reps",
-    "policy": "continuous"
-   },
-   {
-    "id": "boss.ich.push.max",
-    "name": "Pompes d'affilée",
-    "value": 50,
-    "unit": "reps",
-    "policy": "continuous"
-   },
-   {
-    "id": "boss.ich.run",
-    "name": "Course continue",
-    "value": 5000,
-    "unit": "meters",
-    "policy": "continuous"
-   }
   ],
-  "requirements": [
-   "Les six cibles validées individuellement dans les 6 à 8 dernières semaines",
-   "Aucune composante en recul"
-  ],
-  "rewardId": "ICH-014"
- },
- "superRank": {
-  "name": "MUGETSU",
-  "rewardId": "ICH-015"
- },
- "rewards": [
-  {
-   "id": "ICH-001",
-   "stage": "SUBSTITUTE",
-   "title": "Substitute Badge",
-   "type": "object",
-   "rarity": "rare"
+  "boss": {
+    "title": "BANKAI",
+    "summary": "Les six cibles validées dans la même journée.",
+    "components": [
+      {
+        "id": "boss.ich.push.day",
+        "name": "Pompes dans la journée",
+        "value": 100,
+        "unit": "reps",
+        "policy": "dayCumulative"
+      },
+      {
+        "id": "boss.ich.abs",
+        "name": "Abdominaux dans la journée",
+        "value": 200,
+        "unit": "reps",
+        "policy": "dayCumulative"
+      },
+      {
+        "id": "boss.ich.squat",
+        "name": "Squats dans la journée",
+        "value": 100,
+        "unit": "reps",
+        "policy": "dayCumulative"
+      },
+      {
+        "id": "boss.ich.pull",
+        "name": "Tractions d'affilée",
+        "value": 10,
+        "unit": "reps",
+        "policy": "continuous"
+      },
+      {
+        "id": "boss.ich.push.max",
+        "name": "Pompes d'affilée",
+        "value": 50,
+        "unit": "reps",
+        "policy": "continuous"
+      },
+      {
+        "id": "boss.ich.run",
+        "name": "Course continue",
+        "value": 5000,
+        "unit": "meters",
+        "policy": "continuous"
+      }
+    ],
+    "requirements": [
+      "Les six cibles validées individuellement dans les 6 à 8 dernières semaines",
+      "Aucune composante en recul"
+    ],
+    "rewardId": "ICH-014"
   },
-  {
-   "id": "ICH-002",
-   "stage": "SUBSTITUTE",
-   "title": "Zangetsu",
-   "type": "object",
-   "rarity": "epic"
+  "superRank": {
+    "name": "MUGETSU",
+    "rewardId": "ICH-015"
   },
-  {
-   "id": "ICH-003",
-   "stage": "SOULSOCIETY",
-   "title": "Rukia",
-   "type": "character",
-   "rarity": "rare"
-  },
-  {
-   "id": "ICH-004",
-   "stage": "SOULSOCIETY",
-   "title": "Renji",
-   "type": "character",
-   "rarity": "rare"
-  },
-  {
-   "id": "ICH-005",
-   "stage": "BANKAI",
-   "title": "Byakuya",
-   "type": "fight",
-   "rarity": "epic"
-  },
-  {
-   "id": "ICH-006",
-   "stage": "BANKAI",
-   "title": "Tensa Zangetsu",
-   "type": "transformation",
-   "rarity": "legendary"
-  },
-  {
-   "id": "ICH-007",
-   "stage": "VIZARD",
-   "title": "Hollow Mask",
-   "type": "transformation",
-   "rarity": "epic"
-  },
-  {
-   "id": "ICH-008",
-   "stage": "HUECO",
-   "title": "Grimmjow",
-   "type": "fight",
-   "rarity": "epic"
-  },
-  {
-   "id": "ICH-009",
-   "stage": "HUECO",
-   "title": "Ulquiorra",
-   "type": "fight",
-   "rarity": "legendary"
-  },
-  {
-   "id": "ICH-010",
-   "stage": "AIZEN",
-   "title": "Mugetsu",
-   "type": "technique",
-   "rarity": "legendary"
-  },
-  {
-   "id": "ICH-011",
-   "stage": "FULLBRING",
-   "title": "Fullbring",
-   "type": "transformation",
-   "rarity": "epic"
-  },
-  {
-   "id": "ICH-012",
-   "stage": "FULLBRING",
-   "title": "New Zangetsu",
-   "type": "object",
-   "rarity": "epic"
-  },
-  {
-   "id": "ICH-013",
-   "stage": "TYBW",
-   "title": "True Heritage",
-   "type": "event",
-   "rarity": "legendary"
-  },
-  {
-   "id": "ICH-014",
-   "stage": "BANKAIDAY",
-   "title": "Bankai",
-   "type": "rank",
-   "rarity": "legendary"
-  },
-  {
-   "id": "ICH-015",
-   "stage": null,
-   "title": "Mugetsu S+",
-   "type": "transformation",
-   "rarity": "legendary"
-  }
- ]
+  "rewards": [
+    {
+      "id": "ICH-001",
+      "stage": "SUBSTITUTE",
+      "title": "Substitute Badge",
+      "type": "object",
+      "rarity": "rare"
+    },
+    {
+      "id": "ICH-002",
+      "stage": "SUBSTITUTE",
+      "title": "Zangetsu",
+      "type": "object",
+      "rarity": "epic"
+    },
+    {
+      "id": "ICH-003",
+      "stage": "SOULSOCIETY",
+      "title": "Rukia",
+      "type": "character",
+      "rarity": "rare"
+    },
+    {
+      "id": "ICH-004",
+      "stage": "SOULSOCIETY",
+      "title": "Renji",
+      "type": "character",
+      "rarity": "rare"
+    },
+    {
+      "id": "ICH-005",
+      "stage": "BANKAI",
+      "title": "Byakuya",
+      "type": "fight",
+      "rarity": "epic"
+    },
+    {
+      "id": "ICH-006",
+      "stage": "BANKAI",
+      "title": "Tensa Zangetsu",
+      "type": "transformation",
+      "rarity": "legendary"
+    },
+    {
+      "id": "ICH-007",
+      "stage": "VIZARD",
+      "title": "Hollow Mask",
+      "type": "transformation",
+      "rarity": "epic"
+    },
+    {
+      "id": "ICH-008",
+      "stage": "HUECO",
+      "title": "Grimmjow",
+      "type": "fight",
+      "rarity": "epic"
+    },
+    {
+      "id": "ICH-009",
+      "stage": "HUECO",
+      "title": "Ulquiorra",
+      "type": "fight",
+      "rarity": "legendary"
+    },
+    {
+      "id": "ICH-010",
+      "stage": "AIZEN",
+      "title": "Mugetsu",
+      "type": "technique",
+      "rarity": "legendary"
+    },
+    {
+      "id": "ICH-011",
+      "stage": "FULLBRING",
+      "title": "Fullbring",
+      "type": "transformation",
+      "rarity": "epic"
+    },
+    {
+      "id": "ICH-012",
+      "stage": "FULLBRING",
+      "title": "New Zangetsu",
+      "type": "object",
+      "rarity": "epic"
+    },
+    {
+      "id": "ICH-013",
+      "stage": "TYBW",
+      "title": "True Heritage",
+      "type": "event",
+      "rarity": "legendary"
+    },
+    {
+      "id": "ICH-014",
+      "stage": "BANKAIDAY",
+      "title": "Bankai",
+      "type": "rank",
+      "rarity": "legendary"
+    },
+    {
+      "id": "ICH-015",
+      "stage": null,
+      "title": "Mugetsu S+",
+      "type": "transformation",
+      "rarity": "legendary"
+    }
+  ]
 }

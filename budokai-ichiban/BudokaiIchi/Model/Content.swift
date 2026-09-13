@@ -48,7 +48,7 @@ enum Catalog {
             unlock: .stat(.force, 45), playable: true),
 
         Program(
-            id: .ichigo, name: "Ichigo", family: "Objectifs",
+            id: .ichigo, name: "Ichigo", family: "Six cibles",
             pitch: "Pas de planning : une cible unique à la fois, énorme et nette. On ne passe à la suivante qu'une fois celle-ci tombée.",
             stages: ["100 pompes dans la journée", "200 abdos dans la journée",
                      "100 squats dans la journée", "10 tractions d'affilée",
