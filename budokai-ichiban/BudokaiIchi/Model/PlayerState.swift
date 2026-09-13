@@ -112,6 +112,11 @@ struct ProgramProgress: Codable, Equatable {
     var schedule: ProgramSchedule?
     /// La calibration à quatre domaines de Saitama.
     var saitama: SaitamaCalibration?
+    /// Le créneau de la semaine choisi à la place de celui du jour, et le
+    /// jour où ce choix a été fait. Il ne vaut que pour la journée : demain,
+    /// le calendrier reprend la main.
+    var swappedSlot: Int?
+    var swappedOn: String?
     /// Décharges déjà servies, par index de semaine.
     var deloadWeeksServed: [Int] = []
     /// Microcycles de consolidation insérés avant le combat final.

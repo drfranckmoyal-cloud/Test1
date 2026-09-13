@@ -36,6 +36,8 @@ struct SessionSheetView: View {
     /// Le récit de la séance est replié par défaut : il ne doit plus repousser
     /// les exercices hors de l'écran.
     @State private var storyOpen = false
+    /// Vrai le temps de choisir une autre séance de la semaine.
+    @State private var swapping = false
 
     private var program: Program { Catalog.program(session.programID) }
     /// La séance telle qu'elle sera faite, curseur d'intensité compris.
@@ -105,6 +107,7 @@ struct SessionSheetView: View {
                     // le travail du jour d'abord : c'est pour lui qu'on ouvre
                     // la séance, il ne doit pas se mériter par un défilement
                     exercises
+                    swapRow
                     if let story = narrative {
                         narrativeCard(story)
                         narrativeBody(story)
@@ -544,6 +547,103 @@ struct SessionSheetView: View {
             .font(.ui(12, .semibold))
             .foregroundStyle(Theme.muted)
             .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    // MARK: - Changer de séance
+
+    /// De quoi prendre une autre séance de la semaine à la place de celle-ci.
+    ///
+    /// Un jour où la séance prévue ne tombe pas bien, mieux vaut en faire une
+    /// autre que rien. Le programme n'avance pas plus vite : c'est un échange
+    /// dans la semaine, pas un raccourci.
+    @ViewBuilder
+    private var swapRow: some View {
+        let others = store.alternativeSessions(of: session.programID)
+        if !others.isEmpty {
+            VStack(spacing: 8) {
+                Button {
+                    Haptics.tap()
+                    withAnimation(.easeInOut(duration: 0.2)) { swapping.toggle() }
+                } label: {
+                    HStack(spacing: 9) {
+                        Image(systemName: "arrow.triangle.swap")
+                            .font(.system(size: 12, weight: .bold))
+                        Text(store.hasSwappedToday(session.programID)
+                             ? "Changer encore de séance"
+                             : "Faire une autre séance de la semaine")
+                            .font(.ui(13, .semibold))
+                        Spacer(minLength: 0)
+                        Image(systemName: swapping ? "chevron.up" : "chevron.down")
+                            .font(.system(size: 11, weight: .bold))
+                    }
+                    .foregroundStyle(Theme.muted)
+                    .padding(.horizontal, 14)
+                    .frame(height: 44)
+                    .frame(maxWidth: .infinity)
+                    .background(Theme.surfaceAlt, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+
+                if swapping {
+                    VStack(spacing: 7) {
+                        ForEach(others, id: \.slot) { other in
+                            swapChoice(other)
+                        }
+                        if store.hasSwappedToday(session.programID) {
+                            Button {
+                                Haptics.tap()
+                                store.restoreTodaySession(of: session.programID)
+                                swapping = false
+                                started = false
+                                begin()
+                            } label: {
+                                Text("Revenir à la séance prévue")
+                                    .font(.ui(12, .bold))
+                                    .foregroundStyle(program.light)
+                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 38)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .transition(.opacity)
+                }
+            }
+        }
+    }
+
+    private func swapChoice(_ other: (slot: Int, title: String, minutes: Int)) -> some View {
+        Button {
+            Haptics.tap()
+            store.swapTodaySession(of: session.programID, to: other.slot)
+            swapping = false
+            started = false
+            begin()
+        } label: {
+            HStack(spacing: 11) {
+                Image(systemName: "circle")
+                    .font(.system(size: 16))
+                    .foregroundStyle(Theme.dim)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(other.title)
+                        .font(.ui(14, .semibold))
+                        .foregroundStyle(Theme.text)
+                        .multilineTextAlignment(.leading)
+                    Text("environ \(other.minutes) min")
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(Theme.muted)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 11)
+            .frame(maxWidth: .infinity)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(Theme.border, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Les boutons du bas

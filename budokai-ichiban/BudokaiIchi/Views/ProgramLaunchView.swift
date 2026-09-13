@@ -17,6 +17,11 @@ struct ProgramLaunchView: View {
     @State private var frequency = 0
     @State private var available: Set<Weekday> = Set(Weekday.allCases)
     @State private var keyDay: Weekday?
+    /// La semaine telle que le pratiquant l'a réarrangée. Nulle tant qu'il n'y
+    /// a pas touché : c'est alors la proposition du planificateur qui vaut.
+    @State private var week: ProgramSchedule?
+    /// La séance qu'on est en train de déplacer, pour l'éclairer.
+    @State private var dragging: Weekday?
     @State private var minutes = 45
 
     // — calibration
@@ -225,7 +230,9 @@ struct ProgramLaunchView: View {
                help: nil) {
             Group {
                 switch plan {
-                case .success(let schedule): weekTable(schedule)
+                case .success(let proposed):
+                    weekTable(week ?? proposed)
+                        .onAppear { if week == nil { week = proposed } }
                 case .failure(let refusal): refusalBox(refusal)
                 }
             }
@@ -661,39 +668,39 @@ struct ProgramLaunchView: View {
         }
     }
 
+    /// La semaine proposée, réarrangeable au doigt.
+    ///
+    /// Le planificateur place les séances selon les règles du programme, mais
+    /// c'est le pratiquant qui connaît ses mardis. Une séance se prend et se
+    /// pose sur un autre jour ; si ce jour est occupé, les deux s'échangent.
     private func weekTable(_ schedule: ProgramSchedule) -> some View {
         VStack(alignment: .leading, spacing: 12) {
+            Text("Appuie longuement sur une séance pour la déplacer.")
+                .font(.ui(11, .semibold))
+                .foregroundStyle(Theme.dim)
+
             VStack(spacing: 5) {
                 ForEach(Weekday.allCases) { day in
-                    HStack(spacing: 10) {
-                        Text(day.label)
-                            .font(.ui(13, .bold))
-                            .foregroundStyle(Theme.text)
-                            .frame(width: 88, alignment: .leading)
-                        if let session = schedule.session(on: day) {
-                            Text(session.metadata.displayTitle)
-                                .font(.ui(13, .semibold))
-                                .foregroundStyle(tint)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.7)
-                            Spacer(minLength: 4)
-                            Text("\(session.metadata.estimatedDurationMinutes) min")
-                                .font(.ui(11, .semibold))
-                                .foregroundStyle(Theme.muted)
-                        } else {
-                            Text("Repos").font(.ui(13)).foregroundStyle(Theme.dim)
-                            Spacer(minLength: 0)
-                        }
-                    }
-                    .padding(.horizontal, 12)
-                    .frame(height: 42)
-                    .background(schedule.session(on: day) == nil ? Theme.ground : Theme.surface,
-                                in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    dayRow(day, in: schedule)
                 }
             }
+
             Text("Environ \(schedule.estimatedWeeks) semaines, \(schedule.weeklyMinutes / 60) h \(schedule.weeklyMinutes % 60) par semaine.")
                 .font(.ui(12, .semibold))
                 .foregroundStyle(Theme.muted)
+
+            if week != nil, let proposed = try? plan.get(), week?.sessions != proposed.sessions {
+                Button {
+                    Haptics.tap()
+                    withAnimation(.easeInOut(duration: 0.2)) { week = proposed }
+                } label: {
+                    Text("Revenir à la semaine proposée")
+                        .font(.ui(12, .bold))
+                        .foregroundStyle(tint)
+                }
+                .buttonStyle(.plain)
+            }
+
             ForEach(schedule.notes.indices, id: \.self) { index in
                 HStack(alignment: .top, spacing: 8) {
                     Image(systemName: "info.circle")
@@ -706,6 +713,83 @@ struct ProgramLaunchView: View {
                 }
             }
         }
+    }
+
+    private func dayRow(_ day: Weekday, in schedule: ProgramSchedule) -> some View {
+        let session = schedule.session(on: day)
+        let held = dragging == day
+
+        return HStack(spacing: 10) {
+            Text(day.label)
+                .font(.ui(13, .bold))
+                .foregroundStyle(Theme.text)
+                .frame(width: 88, alignment: .leading)
+            if let session = session {
+                Image(systemName: "line.3.horizontal")
+                    .font(.system(size: 11, weight: .bold))
+                    .foregroundStyle(Theme.dim)
+                Text(session.metadata.displayTitle)
+                    .font(.ui(13, .semibold))
+                    .foregroundStyle(tint)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                Spacer(minLength: 4)
+                Text("\(session.metadata.estimatedDurationMinutes) min")
+                    .font(.ui(11, .semibold))
+                    .foregroundStyle(Theme.muted)
+            } else {
+                Text("Repos").font(.ui(13)).foregroundStyle(Theme.dim)
+                Spacer(minLength: 0)
+            }
+        }
+        .padding(.horizontal, 12)
+        .frame(height: 42)
+        .frame(maxWidth: .infinity)
+        .background(session == nil ? Theme.ground : Theme.surface,
+                    in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+            .stroke(held ? tint : Color.clear, lineWidth: 2))
+        .opacity(held ? 0.55 : 1)
+        .contentShape(Rectangle())
+        .draggable(session == nil ? "" : String(day.rawValue)) {
+            // l'aperçu qu'on traîne sous le doigt
+            Text(session?.metadata.displayTitle ?? "")
+                .font(.ui(13, .bold))
+                .foregroundStyle(Theme.cream)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 9)
+                .background(tint, in: Capsule())
+        }
+        .dropDestination(for: String.self) { items, _ in
+            guard let raw = items.first, let value = Int(raw),
+                  let from = Weekday(rawValue: value), from != day else { return false }
+            move(from: from, to: day)
+            return true
+        } isTargeted: { targeted in
+            dragging = targeted ? day : (dragging == day ? nil : dragging)
+        }
+    }
+
+    /// Déplace une séance d'un jour à l'autre. Si le jour d'arrivée est
+    /// occupé, les deux séances échangent leur place — on ne perd jamais une
+    /// séance dans un déplacement.
+    private func move(from: Weekday, to: Weekday) {
+        guard var current = week else { return }
+        guard let moving = current.sessions.firstIndex(where: { $0.day == from }) else { return }
+        let landing = current.sessions.firstIndex(where: { $0.day == to })
+
+        withAnimation(.easeInOut(duration: 0.2)) {
+            current.sessions[moving].day = to
+            current.sessions[moving].movedFromPreference = false
+            if let landing = landing {
+                current.sessions[landing].day = from
+                current.sessions[landing].movedFromPreference = false
+            }
+            current.sessions.sort { $0.day < $1.day }
+            current.notes = ["Semaine réarrangée à la main."]
+            week = current
+        }
+        Haptics.success()
     }
 
     private func refusalBox(_ refusal: SchedulingRefusal) -> some View {
@@ -780,8 +864,12 @@ struct ProgramLaunchView: View {
             availableWeekdays: Array(available).sorted(),
             blockedWeekdays: [],
             preferredWeekdays: [],
-            preferredKeySessionDay: keyDay,
-            preferredLongSessionDay: keyDay,
+            // une seule question est posée : « quel jour pour \(label) ».
+            // L'appliquer aux deux préférences les mettait en concurrence —
+            // la séance clé prenait le jour choisi, et la sortie longue,
+            // trouvant la place occupée, atterrissait ailleurs.
+            preferredKeySessionDay: (rules?.requiresLongSession ?? false) ? nil : keyDay,
+            preferredLongSessionDay: (rules?.requiresLongSession ?? false) ? keyDay : nil,
             defaultSessionMinutes: minutes)
     }
 
@@ -799,6 +887,8 @@ struct ProgramLaunchView: View {
     private func commit() {
         if rules != nil {
             guard case .success = store.applyAvailability(draft, to: program.id) else { return }
+            // si le pratiquant a bougé une séance, c'est sa semaine qui vaut
+            if let week = week { store.applySchedule(week, to: program.id) }
         }
         if needsCalibration {
             var calibration = SaitamaCalibration()

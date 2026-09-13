@@ -269,7 +269,9 @@ final class GameStore: ObservableObject {
         }
         let stage = stages[stageIndex]
         let weekInStage = remaining / max(1, perWeek)
-        let slot = remaining % max(1, perWeek)
+        // le créneau du jour, ou celui que le pratiquant a choisi à la place
+        let natural = remaining % max(1, perWeek)
+        let slot = (progress.swappedOn == todayKey ? progress.swappedSlot : nil) ?? natural
 
         let deload = weekInStage > 0 && (weekInStage + 1) % 4 == 0
 
@@ -1035,6 +1037,92 @@ final class GameStore: ObservableObject {
         }
     }
 
+    /// Les autres séances de la semaine, celles qu'on peut faire à la place.
+    ///
+    /// Un jour où la séance prévue ne tombe pas bien — une salle fermée, une
+    /// jambe qui tire, une envie de courir — on prend une autre séance de la
+    /// même semaine plutôt que de ne rien faire. Le programme n'avance pas
+    /// plus vite pour autant : c'est un échange, pas un raccourci.
+    func alternativeSessions(of id: ProgramID) -> [(slot: Int, title: String, minutes: Int)] {
+        guard id != .saitama, SessionLibrary.hasSessions(id) else { return [] }
+        let progress = state.progress(id)
+        let stages = ProgramLibrary.stages(id)
+        guard !stages.isEmpty else { return [] }
+
+        let perWeek = sessionsPerWeek(of: id)
+        var remaining = progress.completedSessions
+        var stageIndex = 0
+        for (index, stage) in stages.enumerated() {
+            let count = max(1, stage.weeksMin * perWeek)
+            if remaining < count { stageIndex = index; break }
+            remaining -= count
+            stageIndex = index
+        }
+        guard let template = SessionLibrary.week(id, stage: stages[stageIndex].key,
+                                                 frequency: perWeek) else { return [] }
+        let current = currentSlot(of: id)
+        return template.sessions
+            .filter { $0.slot != current }
+            .sorted { $0.slot < $1.slot }
+            .map { ($0.slot, $0.title, estimate($0)) }
+    }
+
+    /// Le créneau effectivement servi aujourd'hui.
+    func currentSlot(of id: ProgramID) -> Int {
+        let progress = state.progress(id)
+        if progress.swappedOn == todayKey, let slot = progress.swappedSlot { return slot }
+        let perWeek = sessionsPerWeek(of: id)
+        let stages = ProgramLibrary.stages(id)
+        var remaining = progress.completedSessions
+        for stage in stages {
+            let count = max(1, stage.weeksMin * perWeek)
+            if remaining < count { break }
+            remaining -= count
+        }
+        return remaining % max(1, perWeek)
+    }
+
+    /// Échange la séance du jour contre une autre de la semaine.
+    func swapTodaySession(of id: ProgramID, to slot: Int) {
+        var progress = state.progress(id)
+        progress.swappedSlot = slot
+        progress.swappedOn = todayKey
+        state.programs[id.rawValue] = progress
+        closeSession(of: id)   // les compteurs du jour repartent sur la bonne séance
+        save()
+    }
+
+    /// Annule l'échange et revient à la séance prévue.
+    func restoreTodaySession(of id: ProgramID) {
+        var progress = state.progress(id)
+        progress.swappedSlot = nil
+        progress.swappedOn = nil
+        state.programs[id.rawValue] = progress
+        closeSession(of: id)
+        save()
+    }
+
+    /// Vrai quand la séance du jour a été échangée.
+    func hasSwappedToday(_ id: ProgramID) -> Bool {
+        state.progress(id).swappedOn == todayKey && state.progress(id).swappedSlot != nil
+    }
+
+    /// La durée approximative d'une séance du coach, avant de la fabriquer.
+    private func estimate(_ session: SessionLibrary.Session) -> Int {
+        let work = session.exercises.reduce(0) { partial, exercise in
+            switch exercise.objectiveUnit {
+            case .reps: return partial + exercise.total * 3
+            case .seconds: return partial + exercise.total
+            case .meters: return partial + exercise.total / 3
+            default: return partial
+            }
+        }
+        let rest = session.exercises.reduce(0) {
+            $0 + (($1.restSeconds ?? 0) * max(0, ($1.sets ?? 1) - 1))
+        }
+        return max(1, (work + rest) / 60)
+    }
+
     /// Les programmes suivis qui se reposent aujourd'hui.
     var programsResting: [Program] { activePrograms.filter { isResting($0.id) } }
 
@@ -1574,6 +1662,19 @@ final class GameStore: ObservableObject {
             syncNotifications()
         }
         return outcome
+    }
+
+    /// Range une semaine réarrangée à la main.
+    ///
+    /// Le planificateur propose ; le pratiquant dispose. Une fois qu'il a
+    /// déplacé une séance, c'est sa semaine qui fait foi — on ne la recalcule
+    /// pas dans son dos.
+    func applySchedule(_ schedule: ProgramSchedule, to id: ProgramID) {
+        var progress = state.progress(id)
+        progress.schedule = schedule
+        state.programs[id.rawValue] = progress
+        save()
+        syncNotifications()
     }
 
     /// Les semaines encore estimées avant la fin, d'après ce qui est fait.

@@ -92,8 +92,13 @@ enum CalendarPlanner {
         var free = availability.usableDays
         var placed: [ScheduledSession] = []
 
-        // 1 — la séance clé d'abord : c'est elle que l'on protège
+        // 1 — la séance dont le pratiquant a choisi le jour passe avant tout :
+        //     c'est la seule promesse qu'on lui ait faite. Viennent ensuite les
+        //     séances critiques, puis les lourdes.
         let ordered = template.sorted { lhs, rhs in
+            let left = preference(for: lhs, availability: availability) != nil
+            let right = preference(for: rhs, availability: availability) != nil
+            if left != right { return left }
             if lhs.priority.rank != rhs.priority.rank { return lhs.priority.rank < rhs.priority.rank }
             return lhs.loadCategory == .hard && rhs.loadCategory != .hard
         }
