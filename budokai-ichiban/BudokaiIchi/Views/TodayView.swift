@@ -7,6 +7,25 @@ struct TodayView: View {
     /// sinon la page fait trois écrans de haut.
     @State private var opened: ProgramID?
     @State private var setting: Program?
+    /// L'étape qu'on présente avant d'ouvrir la séance, le cas échéant.
+    @State private var introducing: (program: Program, stage: Int)?
+    /// La séance à ouvrir une fois l'étape présentée.
+    @State private var pendingSession: PlannedSession?
+
+    /// Le jalon dont l'illustration porte la page, quand une seule séance
+    /// tombe aujourd'hui et que son programme est illustré.
+    ///
+    /// Dans ce cas la page entière devient ce moment de l'histoire : l'image
+    /// va d'un bord à l'autre, sous le bandeau de niveau comme sous la barre
+    /// d'onglets. Une carte à coins arrondis ne ferait pas le même effet.
+    private var arcBackdrop: (program: Program, stage: Int)? {
+        let due = store.sessionsDueToday
+        guard due.count == 1, let entry = due.first,
+              ProgramVisuals.hasNarrativeArt(entry.program.id) else { return nil }
+        return (entry.program, store.stageStatus(entry.program).index)
+    }
+
+    private var overArt: Bool { arcBackdrop != nil }
 
     var body: some View {
         ScrollView {
@@ -17,17 +36,70 @@ struct TodayView: View {
                 }
                 mainContent
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, overArt ? 0 : 20)
             .padding(.top, 10)
             .padding(.bottom, 26)
         }
         .scrollIndicators(.hidden)
-        .background(Theme.ground)
+        .background(pageBackground)
         .fullScreenCover(item: $running) { session in
             SessionSheetView(session: session)
         }
         .sheet(item: $setting) { program in
             ProgramLaunchView(program: program) { store.startProgram(program.id) }
+        }
+        // l'ouverture d'un jalon passe avant la séance : l'histoire d'abord,
+        // le héros ensuite, l'entraînement en dernier
+        .fullScreenCover(isPresented: Binding(get: { introducing != nil },
+                                              set: { if !$0 { introducing = nil } })) {
+            if let intro = introducing {
+                StageIntroView(program: intro.program, stageIndex: intro.stage) {
+                    let session = pendingSession
+                    introducing = nil
+                    pendingSession = nil
+                    if let session = session { running = session }
+                }
+            }
+        }
+    }
+
+    /// Ouvre la séance, précédée de la page d'étape si elle n'a jamais été vue.
+    private func open(_ session: PlannedSession, of program: Program) {
+        guard store.stageNeedsIntro(program.id) else {
+            running = session
+            return
+        }
+        pendingSession = session
+        introducing = (program, store.currentStageIndex(program.id))
+    }
+
+    // MARK: - Le fond de page
+
+    /// L'illustration du jalon, d'un bord à l'autre, ou le fond uni de l'app.
+    @ViewBuilder
+    private var pageBackground: some View {
+        if let backdrop = arcBackdrop,
+           let art = ProgramVisuals.arc(backdrop.program.id, index: backdrop.stage) {
+            ZStack {
+                Color.black
+                Image(art)
+                    .resizable()
+                    .scaledToFill()
+                    .accessibilityHidden(true)
+                // le voile se creuse là où se posent l'anneau et le contexte :
+                // sans cela, les chiffres se perdent dans une illustration
+                // claire ou chargée
+                LinearGradient(stops: [
+                    .init(color: .black.opacity(0.62), location: 0),
+                    .init(color: .black.opacity(0.22), location: 0.20),
+                    .init(color: .black.opacity(0.52), location: 0.42),
+                    .init(color: .black.opacity(0.78), location: 0.66),
+                    .init(color: .black.opacity(0.94), location: 1)],
+                    startPoint: .top, endPoint: .bottom)
+            }
+            .ignoresSafeArea()
+        } else {
+            Theme.ground
         }
     }
 
@@ -39,10 +111,10 @@ struct TodayView: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text("NIVEAU \(store.level)")
                     .font(.display(18))
-                    .foregroundStyle(Theme.text)
+                    .foregroundStyle(overArt ? Theme.cream : Theme.text)
                 Text("\(store.state.xp.grouped) XP")
                     .font(.ui(12, .semibold))
-                    .foregroundStyle(Theme.muted)
+                    .foregroundStyle(overArt ? Theme.cream.opacity(0.8) : Theme.muted)
                 ProgressBar(value: store.levelProgress, height: 5, tint: Theme.gold)
             }
             VStack(spacing: 2) {
@@ -55,6 +127,7 @@ struct TodayView: View {
             }
             .frame(width: 48)
         }
+        .padding(.horizontal, overArt ? 20 : 0)
     }
 
     // MARK: - Corps selon la situation
@@ -79,7 +152,12 @@ struct TodayView: View {
                 }
             } else {
                 ForEach(due.indices, id: \.self) { index in
-                    sessionCard(program: due[index].program, session: due[index].session)
+                    let entry = due[index]
+                    if ProgramVisuals.hasNarrativeArt(entry.program.id) {
+                        arcCard(program: entry.program, session: entry.session)
+                    } else {
+                        sessionCard(program: entry.program, session: entry.session)
+                    }
                 }
             }
             ForEach(store.programsResting) { program in
@@ -289,7 +367,7 @@ struct TodayView: View {
 
             Button {
                 Haptics.tap()
-                running = session
+                open(session, of: program)
             } label: {
                 Image(systemName: "play.fill")
                     .font(.system(size: 14, weight: .bold))
@@ -302,6 +380,20 @@ struct TodayView: View {
         .padding(12)
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).stroke(Theme.border, lineWidth: 1))
+    }
+
+    private func arcCard(program: Program, session: PlannedSession) -> some View {
+        let status = store.stageStatus(program)
+        return ArcSessionCard(
+            program: program,
+            stageIndex: status.index,
+            stageName: store.stageName(program),
+            stageCount: store.shape(of: program.id).stageCount,
+            done: status.done,
+            total: status.total,
+            minutes: session.estimatedMinutes) {
+                open(session, of: program)
+            }
     }
 
     private func sessionCard(program: Program, session: PlannedSession,
@@ -403,7 +495,7 @@ struct TodayView: View {
                 .padding(.horizontal, 18)
 
                 PrimaryButton(title: "OUVRIR LA SÉANCE DU JOUR", tint: program.light) {
-                    running = session
+                    open(session, of: program)
                 }
                 // le visuel du héros est choisi et décodé dès que la séance
                 // s'affiche : au tap, il est déjà prêt

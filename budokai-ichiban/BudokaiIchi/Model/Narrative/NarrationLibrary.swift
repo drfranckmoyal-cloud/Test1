@@ -56,6 +56,46 @@ enum NarrationLibrary {
 
     // MARK: - Ce que l'app demande
 
+    /// La phrase de contexte d'un jalon : le moment de l'histoire où l'on
+    /// s'entraîne, en une phrase.
+    ///
+    /// Elle n'est pas écrite ici : c'est la première phrase du récit qui ouvre
+    /// le jalon, prise telle quelle dans le pack éditorial. L'app ne rédige
+    /// rien, elle découpe.
+    static func stageContext(_ id: ProgramID, stageIndex: Int) -> String? {
+        guard let pack = pack(id) else { return nil }
+        // les jalons dans leur ordre d'apparition, sans les dédoublonner par
+        // un ensemble qui perdrait l'ordre
+        var stages: [String] = []
+        for session in pack.narrativeSessions {
+            guard let stage = session.stage, !stages.contains(stage) else { continue }
+            stages.append(stage)
+        }
+        guard stageIndex >= 0, stageIndex < stages.count else { return nil }
+        let stage = stages[stageIndex]
+        guard let opening = pack.narrativeSessions.first(where: { $0.stage == stage })
+        else { return nil }
+        return firstSentence(of: opening.storyRecap)
+    }
+
+    /// La première phrase d'un récit. Le pack sépare le titre du récit par un
+    /// deux-points : on garde l'ensemble, qui se lit comme une légende.
+    private static func firstSentence(of text: String) -> String {
+        var sentence = ""
+        var characters = Array(text)
+        var index = 0
+        while index < characters.count {
+            sentence.append(characters[index])
+            if characters[index] == "." {
+                // « Z-City. » s'arrête ; « M. » ou une décimale, non
+                let next = index + 1 < characters.count ? characters[index + 1] : " "
+                if next == " " || index == characters.count - 1 { break }
+            }
+            index += 1
+        }
+        return sentence.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     /// Le récit d'une séance, dans l'ordre chronologique.
     ///
     /// Au-delà de la banque principale — quand un bloc a été prolongé — on
