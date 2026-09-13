@@ -66,9 +66,12 @@ enum ProgramVisuals {
         named("logo_program_\(id.rawValue)")
     }
 
-    /// L'illustration d'une étape, comptée à partir de zéro.
-    static func stage(_ id: ProgramID, index: Int) -> String? {
-        named("stage_\(id.rawValue)_\(max(0, index) + 1)")
+    /// L'illustration narrative d'une étape, comptée à partir de zéro.
+    ///
+    /// Distincte de `stageImage`, qui reste l'image de personnage des
+    /// vignettes : ce sont deux banques différentes, avec deux usages.
+    static func arc(_ id: ProgramID, index: Int) -> String? {
+        named("arc_\(id.rawValue)_\(max(0, index) + 1)")
     }
 
     /// L'illustration du mode supérieur, quand elle existe.
@@ -80,7 +83,7 @@ enum ProgramVisuals {
     /// une illustration par jalon et un logo. Les autres gardent l'habillage
     /// existant, sans qu'aucune image ne soit inventée pour eux.
     static func hasNarrativeArt(_ id: ProgramID) -> Bool {
-        logo(id) != nil
+        arc(id, index: 0) != nil
     }
 
     private static var cache: [String: Bool] = [:]

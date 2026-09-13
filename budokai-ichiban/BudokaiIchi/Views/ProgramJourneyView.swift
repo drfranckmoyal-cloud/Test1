@@ -82,7 +82,7 @@ struct ProgramJourneyView: View {
                 .padding(.bottom, 30)
             }
             .scrollIndicators(.hidden)
-            .background(Theme.ground)
+            .background(pageBackground)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -102,32 +102,84 @@ struct ProgramJourneyView: View {
         .onAppear { if isIntroduction { opened = currentStage } }
     }
 
+    // MARK: - Le fond de page
+
+    /// L'illustration du jalon en cours, en plein format derrière toute la
+    /// page.
+    ///
+    /// Ce n'est pas un bandeau : l'image tient tout l'écran et le parcours se
+    /// lit par-dessus. Elle change à chaque jalon franchi — l'histoire avance
+    /// avec la progression. Les programmes sans illustration gardent le fond
+    /// uni de l'app.
+    @ViewBuilder
+    private var pageBackground: some View {
+        if let art = ProgramVisuals.arc(program.id, index: max(0, currentStage - 1)) {
+            ZStack {
+                Color.black
+                Image(art)
+                    .resizable()
+                    .scaledToFill()
+                    .accessibilityHidden(true)
+                // le voile qui rend le parcours lisible sans éteindre l'image
+                LinearGradient(stops: [
+                    .init(color: .black.opacity(0.30), location: 0),
+                    .init(color: .black.opacity(0.12), location: 0.22),
+                    .init(color: .black.opacity(0.62), location: 0.52),
+                    .init(color: .black.opacity(0.86), location: 1)],
+                    startPoint: .top, endPoint: .bottom)
+            }
+            .ignoresSafeArea()
+        } else {
+            Theme.ground
+        }
+    }
+
     // MARK: - Le bandeau
 
+    /// La tête de page : le logo du programme, puis le jalon où l'on se trouve.
     private var banner: some View {
-        ZStack(alignment: .bottomLeading) {
-            program.gradient
-            ArtworkFill(name: program.stageImage(max(0, currentStage - 1))).opacity(0.55)
-            LinearGradient(colors: [Color.black.opacity(0.15), Theme.ground],
-                           startPoint: .top, endPoint: .bottom)
+        let art = ProgramVisuals.arc(program.id, index: max(0, currentStage - 1))
+        let over = art != nil
 
-            VStack(alignment: .leading, spacing: 6) {
-                Text(quality.uppercased())
-                    .font(.ui(10, .bold))
-                    .kerning(2.4)
-                    .foregroundStyle(Theme.cream.opacity(0.9))
-                Text(program.name.uppercased())
-                    .font(.display(34))
-                    .foregroundStyle(Theme.cream)
+        return ZStack(alignment: .bottomLeading) {
+            if !over {
+                program.gradient
+                ArtworkFill(name: program.stageImage(max(0, currentStage - 1))).opacity(0.55)
+                LinearGradient(colors: [Color.black.opacity(0.15), Theme.ground],
+                               startPoint: .top, endPoint: .bottom)
+            }
+
+            VStack(alignment: .leading, spacing: over ? 12 : 6) {
+                if over {
+                    ProgramLogo(program: program, height: 74)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                } else {
+                    Text(quality.uppercased())
+                        .font(.ui(10, .bold))
+                        .kerning(2.4)
+                        .foregroundStyle(Theme.cream.opacity(0.9))
+                    Text(program.name.uppercased())
+                        .font(.display(34))
+                        .foregroundStyle(Theme.cream)
+                }
+                if over, store.isActive(program.id) || store.isPaused(program.id) {
+                    Text(store.stageName(program).uppercased())
+                        .font(.display(26))
+                        .foregroundStyle(Theme.cream)
+                        .shadow(color: .black.opacity(0.7), radius: 10, y: 2)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 Text(bannerLine)
                     .font(.ui(14, .semibold))
-                    .foregroundStyle(Theme.cream.opacity(0.9))
+                    .foregroundStyle(Theme.cream.opacity(0.92))
+                    .shadow(color: .black.opacity(over ? 0.7 : 0), radius: 8, y: 1)
                     .fixedSize(horizontal: false, vertical: true)
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 18)
+            .padding(.top, over ? 26 : 0)
         }
-        .frame(height: 230)
+        .frame(height: over ? 330 : 230)
     }
 
     private var quality: String {

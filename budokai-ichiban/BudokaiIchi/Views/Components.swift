@@ -251,11 +251,23 @@ struct ProgramTile: View {
                            startPoint: .top, endPoint: .bottom)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text(program.name.uppercased())
-                    .font(.display(17))
-                    .foregroundStyle(Theme.cream)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                // le logo tient lieu de nom quand il existe : c'est la
+                // signature du programme, pas une décoration
+                if let logo = ProgramVisuals.logo(program.id) {
+                    Image(logo)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 40, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .shadow(color: .black.opacity(0.5), radius: 8, y: 2)
+                        .accessibilityLabel(program.name)
+                } else {
+                    Text(program.name.uppercased())
+                        .font(.display(17))
+                        .foregroundStyle(Theme.cream)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                }
                 Text(program.family.uppercased())
                     .font(.ui(9, .bold))
                     .kerning(1.4)

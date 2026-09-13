@@ -49,7 +49,7 @@ struct StageIntroView: View {
         ZStack {
             Color.black.ignoresSafeArea()
 
-            if let art = ProgramVisuals.stage(program.id, index: stageIndex) {
+            if let art = ProgramVisuals.arc(program.id, index: stageIndex) {
                 StageArtwork(name: art, presentation: .hero,
                              label: "\(program.name), \(title)")
                     .ignoresSafeArea()
