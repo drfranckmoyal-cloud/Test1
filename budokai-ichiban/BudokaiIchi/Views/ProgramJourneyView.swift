@@ -171,11 +171,15 @@ struct ProgramJourneyView: View {
                         .shadow(color: .black.opacity(0.7), radius: 10, y: 2)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                Text(bannerLine)
-                    .font(.ui(14, .semibold))
-                    .foregroundStyle(Theme.cream.opacity(0.92))
-                    .shadow(color: .black.opacity(over ? 0.7 : 0), radius: 8, y: 1)
-                    .fixedSize(horizontal: false, vertical: true)
+                // quand le cadre d'entrée est là, il dit déjà tout : la
+                // répéter sous le logo occupait de la hauteur pour rien
+                if store.isActive(program.id) || store.isPaused(program.id) {
+                    Text(bannerLine)
+                        .font(.ui(14, .semibold))
+                        .foregroundStyle(Theme.cream.opacity(0.92))
+                        .shadow(color: .black.opacity(over ? 0.7 : 0), radius: 8, y: 1)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 18)
@@ -183,7 +187,7 @@ struct ProgramJourneyView: View {
         }
         // une fois le programme lancé, c'est la route qu'on vient voir : la
         // couverture se contente de la moitié haute de l'écran
-        .frame(height: over ? (store.isActive(program.id) ? 300 : 390) : 230)
+        .frame(height: over ? 300 : 230)
     }
 
     /// La fréquence recommandée, dite en clair.
@@ -561,37 +565,37 @@ struct ProgramJourneyView: View {
     }
 
     private var startCall: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            // ce que le programme travaille, où il mène, et le héros en une
-            // ligne — dans cet ordre : le sport d'abord, la référence ensuite
-            HStack(spacing: 8) {
-                Text(quality.uppercased())
-                    .font(.ui(9, .bold))
-                    .kerning(1.8)
-                    .foregroundStyle(tint)
-                Text("·")
-                    .font(.ui(9, .bold))
-                    .foregroundStyle(Theme.dim)
-                Text("\(stages.count) jalons · \(rhythm)")
-                    .font(.ui(9, .bold))
-                    .kerning(0.8)
-                    .foregroundStyle(Theme.muted)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-                Spacer(minLength: 0)
-            }
+        VStack(alignment: .leading, spacing: 11) {
+            // le thème d'abord, en grand : c'est lui qui dit de quoi il s'agit
+            Text(quality.uppercased())
+                .font(.manga(27))
+                .italic()
+                .foregroundStyle(tint)
+                .lineLimit(2)
+                .minimumScaleFactor(0.7)
+                .fixedSize(horizontal: false, vertical: true)
+            Text("\(stages.count) jalons · \(rhythm)")
+                .font(.ui(10, .bold))
+                .kerning(1.2)
+                // sur un fond translucide, le gris de l'app se noie
+                .foregroundStyle(Theme.text.opacity(0.72))
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+            // puis ce qu'on y travaille, en plus discret
             Text(program.pitch)
-                .font(.ui(15))
+                .font(.ui(13))
                 .lineSpacing(2)
-                .foregroundStyle(Theme.text)
+                .foregroundStyle(Theme.text.opacity(0.88))
                 .fixedSize(horizontal: false, vertical: true)
             PrimaryButton(title: "LET'S GO !", tint: tint) { showSetup = true }
+                .padding(.top, 2)
         }
-        .padding(20)
+        .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        // le cadre se pose sur la couverture sans la masquer
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous)
-            .stroke(tint.opacity(0.4), lineWidth: 1))
+            .stroke(tint.opacity(0.45), lineWidth: 1))
         .padding(.horizontal, 20)
         .padding(.top, 12)
     }
