@@ -113,7 +113,7 @@ struct ProgramJourneyView: View {
     /// les jalons suivants.
     @ViewBuilder
     private var pageBackground: some View {
-        if ProgramVisuals.hasNarrativeArt(program.id) {
+        if ProgramVisuals.hasCover(program.id) {
             ZStack {
                 Color.black
                 Image(ProgramVisuals.cover(program.id))
@@ -138,7 +138,7 @@ struct ProgramJourneyView: View {
 
     /// La tête de page : le logo du programme, puis le jalon où l'on se trouve.
     private var banner: some View {
-        let over = ProgramVisuals.hasNarrativeArt(program.id)
+        let over = ProgramVisuals.hasCover(program.id)
 
         return ZStack(alignment: .bottomLeading) {
             if !over {
