@@ -259,7 +259,8 @@ struct ProgramTile: View {
                     Image(logo)
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: .infinity, maxHeight: height * 0.46)
+                        .frame(maxWidth: .infinity, maxHeight: height * 0.40,
+                               alignment: .leading)
                         .shadow(color: .black.opacity(0.55), radius: 10, y: 3)
                         .accessibilityLabel(program.name)
                 } else {

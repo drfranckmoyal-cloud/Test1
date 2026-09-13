@@ -214,7 +214,15 @@ struct FaceCrop: View {
 /// quand elle n'existe pas.
 struct ProgramLogo: View {
     let program: Program
+    /// La hauteur maximale. Le logo peut être plus court s'il est large.
     var height: CGFloat = 54
+    /// La largeur maximale, en proportion de la hauteur.
+    ///
+    /// Les logos n'ont pas tous les mêmes proportions : celui de Saitama est
+    /// presque carré, celui de Goku deux fois plus large que haut. Les caler
+    /// sur la seule hauteur ferait de Goku un logo deux fois plus imposant.
+    /// On les inscrit donc dans une boîte commune, et chacun s'y loge.
+    var widthRatio: CGFloat = 2.2
     /// Le repli quand aucun logo n'a été produit pour ce programme.
     var fallbackFont: Font = .display(26)
 
@@ -224,7 +232,7 @@ struct ProgramLogo: View {
                 Image(name)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: height)
+                    .frame(maxWidth: height * widthRatio, maxHeight: height)
                     .shadow(color: .black.opacity(0.45), radius: 10, y: 3)
             } else {
                 Text(program.name.uppercased())
