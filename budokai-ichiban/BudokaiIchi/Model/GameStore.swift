@@ -1409,7 +1409,7 @@ final class GameStore: ObservableObject {
         }
         guard late else { return }
         state.penalty = PenaltyQuest(issuedDay: todayKey, dueDay: todayKey,
-                                     tasks: GameEngine.penaltyTasks(forRank: rank))
+                                     tasks: GameEngine.penaltyTasks)
         save()
     }
 

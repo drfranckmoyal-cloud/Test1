@@ -228,24 +228,15 @@ enum GameEngine {
 
     // MARK: - Quête de pénalité
 
-    static func penaltyTasks(forRank rank: Rank) -> [PenaltyTask] {
-        switch rank {
-        case .e:
-            return [PenaltyTask(name: "Squats", target: 20)]
-        case .d:
-            return [PenaltyTask(name: "Squats", target: 30), PenaltyTask(name: "Abdos", target: 20)]
-        case .c:
-            return [PenaltyTask(name: "Pompes", target: 40), PenaltyTask(name: "Abdos", target: 40)]
-        case .b:
-            return [PenaltyTask(name: "Pompes", target: 60), PenaltyTask(name: "Abdos", target: 60),
-                    PenaltyTask(name: "Squats", target: 60)]
-        case .a:
-            return [PenaltyTask(name: "Pompes", target: 100), PenaltyTask(name: "Abdos", target: 100),
-                    PenaltyTask(name: "Squats", target: 100)]
-        case .s, .sPlus:
-            return [PenaltyTask(name: "Pompes", target: 100), PenaltyTask(name: "Abdos", target: 100),
-                    PenaltyTask(name: "Squats", target: 100),
-                    PenaltyTask(name: "Course (centaines de mètres)", target: 100)]
-        }
+    /// La séance de rattrapage, la même pour tout le monde.
+    ///
+    /// Elle ne dépend ni du rang ni du programme : elle n'est pas là pour
+    /// entraîner, elle est là pour remettre le pied à l'étrier. La faire
+    /// monter avec le rang punissait ceux qui avaient le plus progressé,
+    /// exactement le jour où ils avaient déjà flanché.
+    static var penaltyTasks: [PenaltyTask] {
+        [PenaltyTask(name: "Pompes", target: 20),
+         PenaltyTask(name: "Squats", target: 20),
+         PenaltyTask(name: "Abdos", target: 50)]
     }
 }
