@@ -12,13 +12,17 @@ struct SessionSheetView: View {
 
     let session: PlannedSession
 
-    private enum Step { case card, feedback, outcome }
+    private enum Step { case card, feedback, abandon, outcome }
     /// Vrai quand le guidage a déjà enregistré la séance : le ressenti ne
     /// doit alors rien enregistrer de plus.
     @State private var alreadyRecorded = false
     @State private var step: Step = .card
     @State private var outcome: SessionOutcome?
     @State private var report = SessionReport()
+    /// Pourquoi la séance s'arrête, le temps de le demander.
+    @State private var abandonReason: AbandonReason?
+    /// Les exercices obligatoires que le pratiquant n'a pas réussis.
+    @State private var failed: Set<String> = []
     /// Le héros qui intervient, avant la séance ou après elle.
     @State private var hero: HeroPopupAsset?
     /// Ce qu'on fait une fois le héros parti : ouvrir la séance, ou passer au
@@ -48,6 +52,7 @@ struct SessionSheetView: View {
             switch step {
             case .card: card
             case .feedback: feedbackScreen
+            case .abandon: abandonScreen
             case .outcome:
                 if let outcome = outcome {
                     OutcomeView(outcome: outcome, closing: narrative?.closingMessage) { dismiss() }
@@ -497,19 +502,17 @@ struct SessionSheetView: View {
             PrimaryButton(title: "SÉANCE TERMINÉE", tint: program.light, enabled: requiredDone) {
                 step = .feedback
             }
-            if !requiredDone {
-                Button {
-                    Haptics.tap()
-                    step = .feedback
-                } label: {
-                    Text("Je n'ai pas pu tout faire")
-                        .font(.ui(13, .semibold))
-                        .foregroundStyle(Theme.muted)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 42)
-                }
-                .buttonStyle(.plain)
+            Button {
+                Haptics.tap()
+                withAnimation(.easeInOut(duration: 0.2)) { step = .abandon }
+            } label: {
+                Text("Abandonner la séance")
+                    .font(.ui(13, .semibold))
+                    .foregroundStyle(Theme.muted)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 42)
             }
+            .buttonStyle(.plain)
         }
         .padding(.horizontal, 20)
         .padding(.top, 12)
@@ -523,56 +526,202 @@ struct SessionSheetView: View {
 
     // MARK: - Le ressenti
 
-    private var feedbackScreen: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                VStack(spacing: 8) {
-                    Text("C'EST FAIT")
-                        .font(.display(27))
+    // MARK: - Séance arrêtée en cours
+
+    /// Pourquoi on s'arrête, et ce qui a bloqué.
+    ///
+    /// Une séance abandonnée ne compte pas : elle reste à faire. La distinction
+    /// entre « j'ai dû arrêter » et « c'était trop dur » n'est pas cosmétique —
+    /// seule la seconde allège la prochaine tentative.
+    private var abandonScreen: some View {
+        let required = blockingCandidates
+        return ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("ON S'ARRÊTE LÀ")
+                        .font(.display(26))
                         .foregroundStyle(Theme.text)
-                    Text("Trois questions, pas une de plus. Tu peux n'en répondre aucune.")
-                        .font(.ui(13))
+                    Text("La séance ne comptera pas et restera à faire. Dis-moi juste pourquoi.")
+                        .font(.ui(14))
                         .foregroundStyle(Theme.muted)
-                        .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.top, 34)
 
-                question("DIFFICULTÉ GLOBALE") {
-                    ForEach(PerceivedEffort.allCases) { candidate in
-                        choice(candidate.label, icon: candidate.icon,
-                               picked: report.effort == candidate) {
+                VStack(spacing: 9) {
+                    ForEach(AbandonReason.allCases) { candidate in
+                        reasonRow(candidate)
+                    }
+                }
+
+                // ce qui a bloqué : seulement le travail principal, et
+                // seulement quand c'est la difficulté qui a eu raison
+                if abandonReason == .tooHard, !required.isEmpty {
+                    VStack(alignment: .leading, spacing: 9) {
+                        SectionLabel(text: "QU'EST-CE QUI N'EST PAS PASSÉ ?")
+                        Text("Coche ce que tu n'as pas réussi à faire. Ces mouvements-là redescendront d'un cran.")
+                            .font(.ui(12))
+                            .foregroundStyle(Theme.muted)
+                            .fixedSize(horizontal: false, vertical: true)
+                        ForEach(required) { item in
+                            failedRow(item)
+                        }
+                    }
+                    .transition(.opacity)
+                }
+
+                VStack(spacing: 9) {
+                    PrimaryButton(title: "ARRÊTER LA SÉANCE", tint: Theme.crimson,
+                                  enabled: abandonReason != nil) {
+                        let ids = Array(failed)
+                        store.abandonSession(tuned, reason: abandonReason ?? .hadToStop, failed: ids)
+                        dismiss()
+                    }
+                    Button {
+                        Haptics.tap()
+                        withAnimation(.easeInOut(duration: 0.2)) { step = .card }
+                    } label: {
+                        Text("Reprendre la séance")
+                            .font(.ui(13, .semibold))
+                            .foregroundStyle(Theme.muted)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 46)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.top, 4)
+            }
+            .padding(.horizontal, 20)
+            .padding(.bottom, 30)
+        }
+        .scrollIndicators(.hidden)
+    }
+
+    /// Les mouvements qu'on peut déclarer bloquants : le travail principal,
+    /// une ligne par mouvement. Une séance qui répète cinq fois le même
+    /// exercice ne doit pas le proposer cinq fois.
+    private var blockingCandidates: [ExercisePrescription] {
+        var seen = Set<String>()
+        return tuned.prescriptions.filter(\.isRequired).filter { item in
+            seen.insert(item.variantId ?? item.name).inserted
+        }
+    }
+
+    private func reasonRow(_ candidate: AbandonReason) -> some View {
+        let picked = abandonReason == candidate
+        return Button {
+            Haptics.tap()
+            withAnimation(.easeInOut(duration: 0.2)) {
+                abandonReason = candidate
+                if candidate != .tooHard { failed.removeAll() }
+            }
+        } label: {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: candidate.icon)
+                    .font(.system(size: 17))
+                    .foregroundStyle(picked ? Theme.crimson : Theme.muted)
+                    .frame(width: 24)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(candidate.label)
+                        .font(.ui(15, .bold))
+                        .foregroundStyle(Theme.text)
+                    Text(candidate.detail)
+                        .font(.ui(12))
+                        .foregroundStyle(Theme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(15)
+            .frame(maxWidth: .infinity)
+            .background(picked ? Theme.crimson.opacity(0.10) : Theme.surface,
+                        in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(picked ? Theme.crimson : Theme.border, lineWidth: picked ? 2 : 1))
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func failedRow(_ item: ExercisePrescription) -> some View {
+        let key = item.variantId ?? item.name
+        let picked = failed.contains(key)
+        return Button {
+            Haptics.tap()
+            if picked { failed.remove(key) } else { failed.insert(key) }
+        } label: {
+            HStack(spacing: 11) {
+                Image(systemName: picked ? "xmark.circle.fill" : "circle")
+                    .font(.system(size: 19))
+                    .foregroundStyle(picked ? Theme.crimson : Theme.dim)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(item.name)
+                        .font(.ui(14, .semibold))
+                        .foregroundStyle(Theme.text)
+                        .multilineTextAlignment(.leading)
+                    Text(item.amountLabel)
+                        .font(.ui(11, .semibold))
+                        .foregroundStyle(Theme.muted)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 11)
+            .frame(maxWidth: .infinity)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(picked ? Theme.crimson.opacity(0.6) : Theme.border, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+    }
+
+    /// La seule question posée après une séance : comment c'était.
+    ///
+    /// Trois questions étaient deux de trop. « As-tu terminé ? » ne se pose
+    /// plus : arriver ici, c'est avoir terminé — sinon on abandonne, et c'est
+    /// un autre chemin. La qualité d'exécution se lit dans les exercices
+    /// obligatoires qu'on n'a pas cochés, ce qui est plus précis qu'une
+    /// appréciation globale.
+    private var feedbackScreen: some View {
+        let heroFace = BudokaiHero(program: session.programID)
+        return ScrollView {
+            VStack(spacing: 22) {
+                VStack(spacing: 8) {
+                    Text("C'EST FAIT")
+                        .font(.display(27))
+                        .foregroundStyle(Theme.text)
+                    Text("Comment c'était ?")
+                        .font(.ui(15))
+                        .foregroundStyle(Theme.muted)
+                }
+                .padding(.top, 34)
+
+                HStack(spacing: 6) {
+                    ForEach(PerceivedEffort.faces) { candidate in
+                        Button {
+                            Haptics.tap()
                             report.effort = candidate
+                        } label: {
+                            HeroFace(hero: heroFace, effort: candidate,
+                                     selected: report.effort == candidate, size: 58)
                         }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(candidate.label)
+                        .accessibilityAddTraits(report.effort == candidate ? [.isSelected] : [])
                     }
                 }
+                .frame(maxWidth: .infinity)
 
-                question("SÉANCE TERMINÉE ?") {
-                    ForEach(CompletionStatus.allCases) { candidate in
-                        choice(candidate.label, icon: nil, picked: report.completion == candidate) {
-                            report.completion = candidate
-                            if candidate == .entirely { report.failureReason = nil }
-                        }
-                    }
-                }
+                // la légende, qui dit en toutes lettres ce que le visage montre
+                Text(report.effort?.caption ?? "Touche le visage qui correspond")
+                    .font(.ui(14, report.effort == nil ? .semibold : .bold))
+                    .foregroundStyle(report.effort == nil ? Theme.dim : Theme.text)
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .animation(.easeOut(duration: 0.15), value: report.effort)
 
-                if let completion = report.completion, completion != .entirely {
-                    question("QU'EST-CE QUI A MANQUÉ ?") {
-                        ForEach(FailureReason.allCases) { candidate in
-                            choice(candidate.label, icon: nil, picked: report.failureReason == candidate) {
-                                report.failureReason = candidate
-                            }
-                        }
-                    }
-                }
-
-                question("QUALITÉ D'EXÉCUTION") {
-                    ForEach(TechnicalQuality.allCases) { candidate in
-                        choice(candidate.label, icon: nil, picked: report.quality == candidate) {
-                            report.quality = candidate
-                        }
-                    }
-                }
+                // ce que ça change pour la suite, annoncé avant de valider
+                if let effort = report.effort { adaptationNote(for: effort) }
 
                 VStack(spacing: 9) {
                     PrimaryButton(title: "VALIDER LA SÉANCE", tint: program.light) {
@@ -596,6 +745,49 @@ struct SessionSheetView: View {
             .padding(.bottom, 30)
         }
         .scrollIndicators(.hidden)
+    }
+
+    /// « La prochaine séance sera allégée de 10 %. »
+    ///
+    /// Le moteur décidait déjà ; il le disait après coup, en tête de la séance
+    /// suivante. Le dire avant de valider, c'est rendre le réglage lisible au
+    /// moment où on le déclenche.
+    @ViewBuilder
+    private func adaptationNote(for effort: PerceivedEffort) -> some View {
+        let move = AdaptationEngine.decide(AdaptationInput(
+            report: SessionReport(effort: effort, completion: .entirely),
+            completedRatio: 1.0))
+        let factor = AdaptationEngine.volumeFactor(for: move)
+        let percent = Int((abs(factor - 1) * 100).rounded())
+        let up = factor > 1
+
+        HStack(alignment: .top, spacing: 11) {
+            Image(systemName: percent == 0 ? "equal.circle"
+                                           : (up ? "arrow.up.right" : "arrow.down.right"))
+                .font(.system(size: 15))
+                .foregroundStyle(percent == 0 ? Theme.muted : (up ? program.light : Theme.crimson))
+                .frame(width: 22)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(percent == 0
+                     ? "La prochaine séance garde ce niveau."
+                     : (up ? "La prochaine séance sera renforcée de \(percent) %."
+                           : "La prochaine séance sera allégée de \(percent) %."))
+                    .font(.ui(13, .bold))
+                    .foregroundStyle(Theme.text)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(move.explanation)
+                    .font(.ui(12))
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
+            .stroke(Theme.border, lineWidth: 1))
+        .transition(.opacity)
     }
 
     private func question<Content: View>(_ title: String,

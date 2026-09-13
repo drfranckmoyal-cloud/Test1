@@ -1428,6 +1428,63 @@ final class GameStore: ObservableObject {
         save()
     }
 
+    /// Enregistre une séance arrêtée en cours.
+    ///
+    /// Elle ne compte pas : ni expérience, ni caractéristiques, ni avancée
+    /// dans le programme. Elle reste à faire. Ce qu'elle laisse, c'est une
+    /// trace — la raison, et les mouvements qui ont bloqué — pour qu'on voie
+    /// ce qui se répète.
+    ///
+    /// Seule une difficulté excessive fait baisser l'intensité : manquer de
+    /// temps ne veut pas dire que la séance était trop dure.
+    @discardableResult
+    func abandonSession(_ session: PlannedSession, reason: AbandonReason,
+                        failed: [String]) -> AdaptationMove? {
+        let id = session.programID
+        closeSession(of: id)
+
+        state.history.append(SessionRecord(
+            programID: id.rawValue, sessionIndex: session.index,
+            stageIndex: session.stageIndex, day: todayKey,
+            xp: 0, reps: 0, seconds: 0, meters: 0,
+            abandoned: true, abandonReason: reason.rawValue, failedExercises: failed))
+
+        var progress = state.progress(id)
+        guard reason.lowersIntensity else {
+            state.programs[id.rawValue] = progress
+            save()
+            return nil
+        }
+
+        let move: AdaptationMove = failed.isEmpty ? .reduceVolume : .easierVariant
+        progress.lastMove = move
+        progress.intensity = clamp(progress.intensity * AdaptationEngine.volumeFactor(for: move))
+
+        // le mouvement qui a bloqué redescend d'un cran, tout de suite : on
+        // n'attend pas une deuxième séance ratée pour le reconnaître
+        var fresh = Set(progress.freshVariants)
+        for familyId in failed {
+            guard let family = SessionLibrary.family(id, familyId) else { continue }
+            let current = progress.exerciseLevel[familyId] ?? family.bossLevel ?? 1
+            if current > 1 {
+                progress.exerciseLevel[familyId] = current - 1
+                progress.poorExposures[familyId] = 0
+                progress.cleanExposures[familyId] = 0
+                fresh.insert(familyId)
+            }
+        }
+        progress.freshVariants = Array(fresh)
+        state.programs[id.rawValue] = progress
+        save()
+        syncNotifications()
+        return move
+    }
+
+    /// Les séances abandonnées d'un programme, les plus récentes d'abord.
+    func abandonedSessions(of id: ProgramID) -> [SessionRecord] {
+        state.history.filter { $0.programID == id.rawValue && $0.abandoned }.reversed()
+    }
+
     /// Ce que le moteur a décidé pour la prochaine séance d'un programme.
     func lastMove(of id: ProgramID) -> AdaptationMove? { state.progress(id).lastMove }
 
@@ -1553,7 +1610,9 @@ final class GameStore: ObservableObject {
 
         state.xp = max(0, state.xp - record.xp)
 
-        if let programID = ProgramID(rawValue: record.programID) {
+        // effacer une tentative abandonnée ne fait rien reculer : elle
+        // n'avait rien fait avancer
+        if !record.abandoned, let programID = ProgramID(rawValue: record.programID) {
             var progress = state.progress(programID)
             progress.completedSessions = max(0, progress.completedSessions - 1)
             if progress.completedSessions == 0 { progress.startedOn = nil }
@@ -1632,13 +1691,15 @@ final class GameStore: ObservableObject {
     /// Vrai quand l'historique contient des séances d'avant la correction :
     /// leurs caractéristiques ne peuvent pas être rendues précisément.
     var hasUntrackedStatGains: Bool {
-        state.history.contains { $0.statGains.isEmpty }
+        state.history.contains { !$0.abandoned && $0.statGains.isEmpty }
     }
 
     /// Recalcule la série d'après ce qui reste : des jours consécutifs
     /// jusqu'au dernier jour où une séance a été faite.
     private func recomputeStreak() {
-        let days = Set(state.history.map(\.day)).compactMap(date(fromKey:)).sorted(by: >)
+        // une séance abandonnée ne nourrit pas la série : elle n'a pas eu lieu
+        let days = Set(state.history.filter { !$0.abandoned }.map(\.day))
+            .compactMap(date(fromKey:)).sorted(by: >)
         guard let mostRecent = days.first else {
             state.streak = 0
             state.lastCompletedDay = nil

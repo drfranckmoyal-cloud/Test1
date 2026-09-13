@@ -58,6 +58,18 @@ struct SessionRecord: Identifiable, Codable, Equatable {
     var domainLevel: [String: Int] = [:]
     /// Distance parcourue d'une seule traite, en mètres.
     var continuousMeters: Int = 0
+
+    // MARK: Séance abandonnée
+
+    /// Vrai quand la séance a été arrêtée en cours. Elle ne compte pas : pas
+    /// d'expérience, pas de caractéristiques, et elle reste à faire dans le
+    /// programme. Elle garde seulement une trace, pour qu'on voie ce qui
+    /// bloque quand ça se répète.
+    var abandoned: Bool = false
+    /// Pourquoi la séance s'est arrêtée.
+    var abandonReason: String?
+    /// Les exercices obligatoires que le pratiquant n'a pas réussi à faire.
+    var failedExercises: [String] = []
 }
 
 /// Avancement dans un programme.

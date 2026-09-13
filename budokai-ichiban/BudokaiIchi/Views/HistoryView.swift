@@ -125,36 +125,69 @@ struct HistoryView: View {
     private func row(_ record: SessionRecord) -> some View {
         let program = ProgramID(rawValue: record.programID).map(Catalog.program)
 
-        return HStack(spacing: 12) {
+        return HStack(alignment: .top, spacing: 12) {
             RoundedRectangle(cornerRadius: 4, style: .continuous)
-                .fill(program?.light ?? Theme.dim)
-                .frame(width: 4, height: 38)
+                .fill(record.abandoned ? Theme.dim : (program?.light ?? Theme.dim))
+                .frame(width: 4, height: record.abandoned ? 46 : 38)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(program?.name ?? record.programID)
-                    .font(.ui(14, .bold))
-                    .foregroundStyle(Theme.text)
+                HStack(spacing: 6) {
+                    if record.abandoned {
+                        Image(systemName: "xmark.circle")
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundStyle(Theme.dim)
+                    }
+                    Text(program?.name ?? record.programID)
+                        .font(.ui(14, .bold))
+                        .foregroundStyle(record.abandoned ? Theme.muted : Theme.text)
+                }
                 Text(subtitle(record))
                     .font(.ui(11, .semibold))
-                    .foregroundStyle(Theme.muted)
+                    .foregroundStyle(record.abandoned ? Theme.dim : Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+                if let blocked = blockedLabel(record) {
+                    Text(blocked)
+                        .font(.ui(11))
+                        .foregroundStyle(Theme.dim)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
 
             Spacer(minLength: 8)
 
             VStack(alignment: .trailing, spacing: 2) {
-                Text("+\(record.xp) XP")
+                Text(record.abandoned ? "—" : "+\(record.xp) XP")
                     .font(.ui(13, .bold))
-                    .foregroundStyle(Theme.gold)
+                    .foregroundStyle(record.abandoned ? Theme.dim : Theme.gold)
                 Text(dayLabel(record.day))
                     .font(.ui(10, .semibold))
                     .foregroundStyle(Theme.dim)
             }
         }
         .padding(.vertical, 5)
+        .opacity(record.abandoned ? 0.75 : 1)
+    }
+
+    /// Les mouvements qui ont bloqué, quand la séance a été abandonnée.
+    private func blockedLabel(_ record: SessionRecord) -> String? {
+        guard record.abandoned, !record.failedExercises.isEmpty,
+              let id = ProgramID(rawValue: record.programID) else { return nil }
+        let names = record.failedExercises.compactMap { familyId -> String? in
+            guard let family = SessionLibrary.family(id, familyId) else { return nil }
+            let level = store.progress(id).exerciseLevel[familyId] ?? 1
+            return family.rung(atLevel: level)?.name ?? family.name
+        }
+        guard !names.isEmpty else { return nil }
+        return "bloqué sur " + names.joined(separator: ", ").lowercased()
     }
 
     /// « Séance 12 · 84 répétitions », en ne citant que ce qui a été fait.
     private func subtitle(_ record: SessionRecord) -> String {
+        if record.abandoned {
+            let reason = record.abandonReason.flatMap(AbandonReason.init(rawValue:))
+            return "Séance \(record.sessionIndex) · abandonnée"
+                + (reason.map { " · \($0.label.lowercased())" } ?? "")
+        }
         var pieces = ["Séance \(record.sessionIndex)"]
         if record.reps > 0 { pieces.append("\(record.reps) répétitions") }
         if record.meters > 0 { pieces.append("\(record.meters) m") }

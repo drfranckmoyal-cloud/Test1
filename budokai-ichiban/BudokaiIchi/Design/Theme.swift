@@ -52,6 +52,9 @@ enum Theme {
     static let crimson = adaptive(dark: 0xE02B20, light: 0xC71D12)
     static let gold = adaptive(dark: 0xE0B44A, light: 0xA97C17)
 
+    /// Le bleu froid d'une goutte de sueur.
+    static let steel = adaptive(dark: 0x6FA8D4, light: 0x4C86B8)
+
     static let ink = Color(hex: 0x17140F)
     static let cream = Color(hex: 0xFFF3E6)
 

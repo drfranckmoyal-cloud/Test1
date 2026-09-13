@@ -93,6 +93,46 @@ enum TechnicalQuality: String, Codable, CaseIterable, Identifiable {
     }
 }
 
+// MARK: - Séance arrêtée en cours
+
+/// Pourquoi une séance a été abandonnée.
+///
+/// Deux raisons, et elles n'appellent pas la même réponse : manquer de temps
+/// ne veut pas dire que la séance était trop dure. Seule la seconde fait
+/// baisser l'intensité.
+enum AbandonReason: String, Codable, CaseIterable, Identifiable {
+    case hadToStop
+    case tooHard
+
+    var id: String { rawValue }
+
+    var label: String {
+        switch self {
+        case .hadToStop: return "J'ai dû arrêter"
+        case .tooHard: return "Difficulté trop importante"
+        }
+    }
+
+    var detail: String {
+        switch self {
+        case .hadToStop:
+            return "Le temps, un imprévu, une gêne. La séance reste à faire, à l'identique."
+        case .tooHard:
+            return "La séance était au-dessus de tes moyens du jour. La prochaine tentative sera allégée."
+        }
+    }
+
+    var icon: String {
+        switch self {
+        case .hadToStop: return "clock.arrow.circlepath"
+        case .tooHard: return "flame.fill"
+        }
+    }
+
+    /// Seule une difficulté excessive fait bouger le curseur.
+    var lowersIntensity: Bool { self == .tooHard }
+}
+
 // MARK: - Le retour complet
 
 /// Les trois informations demandées après une séance, pas une de plus.
@@ -102,6 +142,10 @@ struct SessionReport: Codable, Equatable {
     var completion: CompletionStatus?
     var failureReason: FailureReason?
     var quality: TechnicalQuality?
+    /// Les exercices obligatoires que le pratiquant n'a pas réussi à faire.
+    /// C'est plus précis qu'une qualité d'exécution globale : on sait quel
+    /// mouvement bloque, et c'est lui qu'on fait redescendre.
+    var failedExercises: [String] = []
     var recordedAt: Date = Date()
 
     var isEmpty: Bool {
