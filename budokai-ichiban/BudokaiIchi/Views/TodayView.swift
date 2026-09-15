@@ -11,6 +11,8 @@ struct TodayView: View {
     @State private var introducing: (program: Program, stage: Int)?
     /// La séance à ouvrir une fois l'étape présentée.
     @State private var pendingSession: PlannedSession?
+    /// La séance qu'on regarde sans la faire.
+    @State private var previewing: PlannedSession?
 
     /// Le jalon dont l'illustration porte la page, quand une seule séance
     /// tombe aujourd'hui et que son programme est illustré.
@@ -44,6 +46,9 @@ struct TodayView: View {
         .background(pageBackground)
         .fullScreenCover(item: $running) { session in
             SessionSheetView(session: session)
+        }
+        .sheet(item: $previewing) { session in
+            SessionPreviewView(session: session)
         }
         .sheet(item: $setting) { program in
             ProgramLaunchView(program: program) { store.startProgram(program.id) }
@@ -319,6 +324,39 @@ struct TodayView: View {
                     .font(.ui(13, .bold))
                     .foregroundStyle(program.light)
                     .padding(.top, 2)
+            }
+
+            // un jour de repos n'est pas un mur : on peut regarder ce qui
+            // vient, et le faire quand même si on s'en sent capable
+            if let next = store.session(of: program.id) {
+                VStack(spacing: 8) {
+                    Button {
+                        Haptics.tap()
+                        previewing = next
+                    } label: {
+                        Text("Voir la prochaine séance")
+                            .font(.ui(13, .bold))
+                            .foregroundStyle(program.light)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 42)
+                            .background(Theme.surfaceAlt,
+                                        in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        Haptics.tap()
+                        open(next, of: program)
+                    } label: {
+                        Text("La faire maintenant")
+                            .font(.ui(12, .semibold))
+                            .foregroundStyle(Theme.muted)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 34)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.top, 6)
             }
         }
         .padding(24)

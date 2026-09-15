@@ -104,66 +104,49 @@ enum AdaptationEngine {
         return .hold
     }
 
-    /// De combien le pratiquant règle la séance suivante, dans un sens comme
-    /// dans l'autre.
+    /// Ce que le moteur propose de changer au volume de la prochaine séance.
     ///
-    /// Le moteur décide de la direction ; le pratiquant règle l'ampleur, dans
-    /// des bornes. Lui seul sait si la séance était un peu au-dessus ou très
-    /// au-dessus. Les mêmes bornes valent pour progresser : cinq pour cent au
-    /// minimum, vingt-cinq au maximum, pour qu'un bon jour n'envoie pas le
-    /// programme trop loin, ni un mauvais jour ne le vide.
-    enum Dose: String, Codable, CaseIterable, Identifiable {
-        case gentle
-        case asProposed
-        case strong
-
-        var id: String { rawValue }
-
-        var label: String {
-            switch self {
-            case .gentle: return "Un peu"
-            case .asProposed: return "Conseillé"
-            case .strong: return "Nettement"
-            }
+    /// Une seule table, lue par l'écran comme par l'enregistrement : le chiffre
+    /// annoncé est exactement celui qui sera appliqué.
+    static func suggestion(_ input: AdaptationInput) -> Double {
+        switch decide(input) {
+        case .progressVariant:                                      return 1.10
+        case .progressVolume, .progressDuration, .progressDistance: return 1.05
+        case .progressLoad, .shortenRest:                           return 1.05
+        case .hold:                                                 return 1.00
+        case .reduceIntensity:                                      return 0.95
+        case .reduceVolume:                                         return 0.90
+        case .easierVariant:                                        return 0.85
         }
+    }
 
-        /// L'écart retenu, en pourcentage entier, à partir de celui que le
-        /// moteur propose. Jamais moins de 5 %, jamais plus de 25 %, dans un
-        /// sens comme dans l'autre.
-        func percent(from proposed: Double) -> Int {
-            let step = Int((abs(proposed - 1) * 100).rounded())
-            guard step > 0 else { return 0 }
-            // arrondi au multiple de cinq le plus proche : « −7 % » ne veut
-            // rien dire à personne
-            func toFive(_ value: Double) -> Int { Int((value / 5).rounded()) * 5 }
-            switch self {
-            case .gentle: return max(5, toFive(Double(step) / 2))
-            case .asProposed: return step
-            case .strong: return min(25, toFive(Double(step) * 2))
-            }
+    /// Les réglages proposés autour de ce que le moteur suggère.
+    ///
+    /// **« Garder ce volume » y figure toujours.** Trouver une séance très
+    /// facile n'oblige pas à en faire plus la fois suivante : on peut avoir
+    /// envie de consolider. Et la trouver dure n'oblige pas à alléger. Le
+    /// moteur conseille, il n'impose rien.
+    ///
+    /// Les bornes tiennent : jamais plus de vingt pour cent en plus, jamais
+    /// plus de vingt-cinq en moins.
+    static func choices(around proposed: Double) -> [Double] {
+        let options: [Double]
+        switch proposed {
+        case let f where f >= 1.10: options = [1.00, 1.10, 1.20]
+        case let f where f > 1.00:  options = [1.00, 1.05, 1.10]
+        case 1.00:                  options = [0.95, 1.00, 1.05]
+        case let f where f >= 0.95: options = [1.00, 0.95, 0.90]
+        case let f where f >= 0.90: options = [1.00, 0.95, 0.90, 0.80]
+        default:                    options = [1.00, 0.90, 0.85, 0.75]
         }
+        return options.sorted()
+    }
 
-        func factor(from proposed: Double) -> Double {
-            guard proposed != 1 else { return 1 }
-            let shift = Double(percent(from: proposed)) / 100
-            return proposed > 1 ? 1 + shift : 1 - shift
-        }
-
-        /// Les doses réellement distinctes, de la plus douce à la plus
-        /// franche. Deux doses qui tombent sur le même chiffre n'occupent
-        /// qu'un bouton, et c'est celle du moteur qui le garde : c'est elle
-        /// qui doit porter la mention « conseillé ».
-        static func choices(for proposed: Double) -> [Dose] {
-            var seen = Set<Int>()
-            let byPriority: [Dose] = [.asProposed, .gentle, .strong]
-            let kept = byPriority.filter { seen.insert($0.percent(from: proposed)).inserted }
-            return kept.sorted { $0.percent(from: proposed) < $1.percent(from: proposed) }
-        }
-
-        /// Vrai quand il y a vraiment quelque chose à régler.
-        static func isAdjustable(_ proposed: Double) -> Bool {
-            proposed != 1 && choices(for: proposed).count > 1
-        }
+    /// Ce qu'un réglage affiche : « +10 % », « garder », « −5 % ».
+    static func label(for factor: Double) -> String {
+        let percent = Int((abs(factor - 1) * 100).rounded())
+        if percent == 0 { return "Garder" }
+        return factor > 1 ? "+\(percent) %" : "−\(percent) %"
     }
 
     /// Le facteur de volume qu'entraîne un mouvement, pour les prescriptions

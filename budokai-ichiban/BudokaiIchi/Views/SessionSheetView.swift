@@ -23,8 +23,9 @@ struct SessionSheetView: View {
     @State private var abandonReason: AbandonReason?
     /// Les exercices obligatoires que le pratiquant n'a pas réussis.
     @State private var failed: Set<String> = []
-    /// De combien alléger la suite : le moteur propose, le pratiquant règle.
-    @State private var dose: AdaptationEngine.Dose = .asProposed
+    /// Le réglage retenu pour la prochaine séance. Nul tant que le pratiquant
+    /// n'a rien touché : c'est alors le conseil du moteur qui s'applique.
+    @State private var factor: Double?
     /// Le héros qui intervient, avant la séance ou après elle.
     @State private var hero: HeroPopupAsset?
     /// Ce qu'on fait une fois le héros parti : ouvrir la séance, ou passer au
@@ -743,7 +744,7 @@ struct SessionSheetView: View {
                                   enabled: abandonReason != nil) {
                         let ids = Array(failed)
                         store.abandonSession(tuned, reason: abandonReason ?? .hadToStop,
-                                             failed: ids, dose: dose)
+                                             failed: ids, factor: factor)
                         dismiss()
                     }
                     Button {
@@ -872,7 +873,7 @@ struct SessionSheetView: View {
                             // changer d'avis repart du réglage conseillé :
                             // « nettement » ne veut pas dire la même chose
                             // dans un sens et dans l'autre
-                            if report.effort != candidate { dose = .asProposed }
+                            if report.effort != candidate { factor = nil }
                             report.effort = candidate
                         } label: {
                             HeroFace(hero: heroFace, effort: candidate,
@@ -902,6 +903,20 @@ struct SessionSheetView: View {
                     }
                     Button {
                         Haptics.tap()
+                        // un appui malheureux sur « séance terminée » ne doit
+                        // pas enfermer : on revient à la fiche, tout est intact
+                        withAnimation(.easeInOut(duration: 0.2)) { step = .card }
+                    } label: {
+                        Text("Revenir à la séance")
+                            .font(.ui(13, .bold))
+                            .foregroundStyle(program.light)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 44)
+                    }
+                    .buttonStyle(.plain)
+
+                    Button {
+                        Haptics.tap()
                         finish(with: SessionReport())
                     } label: {
                         Text("Je préfère ne pas répondre")
@@ -927,11 +942,10 @@ struct SessionSheetView: View {
     /// moment où on le déclenche.
     @ViewBuilder
     private func adaptationNote(for effort: PerceivedEffort) -> some View {
-        let move = AdaptationEngine.decide(AdaptationInput(
-            report: SessionReport(effort: effort, completion: .entirely),
-            completedRatio: 1.0))
-        adaptationCard(proposed: AdaptationEngine.volumeFactor(for: move),
-                       explanation: move.explanation)
+        let input = AdaptationInput(report: SessionReport(effort: effort, completion: .entirely),
+                                    completedRatio: 1.0)
+        adaptationCard(proposed: AdaptationEngine.suggestion(input),
+                       explanation: AdaptationEngine.decide(input).explanation)
     }
 
     /// Ce que la prochaine séance devient, et de combien.
@@ -941,18 +955,19 @@ struct SessionSheetView: View {
     /// garde la direction et les bornes.
     @ViewBuilder
     private func adaptationCard(proposed: Double, explanation: String) -> some View {
-        let percent = dose.percent(from: proposed)
-        let up = proposed > 1
+        let applied = factor ?? proposed
+        let percent = Int((abs(applied - 1) * 100).rounded())
+        let up = applied > 1
 
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 11) {
-                Image(systemName: proposed == 1 ? "equal.circle"
-                                                : (up ? "arrow.up.right" : "arrow.down.right"))
+                Image(systemName: percent == 0 ? "equal.circle"
+                                               : (up ? "arrow.up.right" : "arrow.down.right"))
                     .font(.system(size: 15))
-                    .foregroundStyle(proposed == 1 ? Theme.muted : (up ? program.light : Theme.crimson))
+                    .foregroundStyle(percent == 0 ? Theme.muted : (up ? program.light : Theme.crimson))
                     .frame(width: 22)
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(proposed == 1
+                    Text(percent == 0
                          ? "La prochaine séance garde ce volume."
                          : (up ? "La prochaine séance sera renforcée de \(percent) %."
                                : "La prochaine séance sera allégée de \(percent) %."))
@@ -967,15 +982,15 @@ struct SessionSheetView: View {
                 Spacer(minLength: 0)
             }
 
-            // le réglage vaut dans les deux sens, avec les mêmes bornes
-            if AdaptationEngine.Dose.isAdjustable(proposed) {
-                Text("Tu peux doser :")
-                    .font(.ui(11, .semibold))
-                    .foregroundStyle(Theme.dim)
-                HStack(spacing: 7) {
-                    ForEach(AdaptationEngine.Dose.choices(for: proposed)) { candidate in
-                        doseRow(candidate, proposed: proposed)
-                    }
+            // « garder » est toujours proposé : trouver une séance facile
+            // n'oblige pas à en faire plus la fois suivante, et la trouver
+            // dure n'oblige pas à alléger
+            Text("Tu décides :")
+                .font(.ui(11, .semibold))
+                .foregroundStyle(Theme.dim)
+            HStack(spacing: 7) {
+                ForEach(AdaptationEngine.choices(around: proposed), id: \.self) { candidate in
+                    doseRow(candidate, proposed: proposed)
                 }
             }
         }
@@ -987,32 +1002,34 @@ struct SessionSheetView: View {
         .transition(.opacity)
     }
 
-    private func doseRow(_ candidate: AdaptationEngine.Dose, proposed: Double) -> some View {
-        let percent = candidate.percent(from: proposed)
-        let picked = dose.percent(from: proposed) == percent
-        let up = proposed > 1
-        let tint = up ? program.light : Theme.crimson
+    private func doseRow(_ candidate: Double, proposed: Double) -> some View {
+        let picked = abs((factor ?? proposed) - candidate) < 0.0001
+        let advised = abs(candidate - proposed) < 0.0001
+        let tint: Color = candidate == 1 ? Theme.gold
+                        : (candidate > 1 ? program.light : Theme.crimson)
         return Button {
             Haptics.tap()
-            withAnimation(.easeOut(duration: 0.15)) { dose = candidate }
+            withAnimation(.easeOut(duration: 0.15)) { factor = candidate }
         } label: {
             VStack(spacing: 1) {
-                Text("\(up ? "+" : "−")\(percent) %")
-                    .font(.display(17))
+                Text(AdaptationEngine.label(for: candidate))
+                    .font(.display(candidate == 1 ? 14 : 17))
                     .foregroundStyle(picked ? tint : Theme.text)
-                Text(candidate.label)
-                    .font(.ui(10, .bold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                Text(advised ? "Conseillé" : " ")
+                    .font(.ui(9, .bold))
                     .foregroundStyle(Theme.muted)
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 9)
+            .padding(.vertical, 8)
             .background(picked ? tint.opacity(0.12) : Theme.surfaceAlt,
                         in: RoundedRectangle(cornerRadius: 11, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous)
                 .stroke(picked ? tint : Color.clear, lineWidth: 2))
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("\(up ? "Renforcer" : "Alléger") de \(percent) pour cent, \(candidate.label.lowercased())")
+        .accessibilityLabel(AdaptationEngine.label(for: candidate))
     }
 
     private func question<Content: View>(_ title: String,
@@ -1064,7 +1081,7 @@ struct SessionSheetView: View {
             .ratio(against: done.prescriptions)
         let ratio = openRatio ?? 1.0
 
-        store.record(report, for: done.programID, completedRatio: ratio, dose: dose)
+        store.record(report, for: done.programID, completedRatio: ratio, factor: factor)
 
         if alreadyRecorded {
             store.closeSession(of: done.programID)

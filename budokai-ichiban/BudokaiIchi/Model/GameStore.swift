@@ -1576,7 +1576,7 @@ final class GameStore: ObservableObject {
     /// Enregistre le retour à trois questions et applique la décision du
     /// moteur. Chaque réponse est facultative.
     func record(_ report: SessionReport, for id: ProgramID, completedRatio: Double,
-                dose: AdaptationEngine.Dose = .asProposed) {
+                factor chosen: Double? = nil) {
         guard !report.isEmpty else { return }
         state.reports["\(id.rawValue)-\(state.progress(id).completedSessions)"] = report
 
@@ -1585,9 +1585,10 @@ final class GameStore: ObservableObject {
 
         var progress = state.progress(id)
         progress.lastMove = move
-        // le moteur donne la direction, le pratiquant règle l'ampleur
-        let proposed = AdaptationEngine.volumeFactor(for: move)
-        progress.intensity = clamp(progress.intensity * dose.factor(from: proposed))
+        // le moteur conseille, le pratiquant tranche
+        let input = AdaptationInput(report: report, completedRatio: completedRatio)
+        progress.intensity = clamp(progress.intensity
+                                   * (chosen ?? AdaptationEngine.suggestion(input)))
         state.programs[id.rawValue] = progress
         save()
     }
@@ -1604,7 +1605,7 @@ final class GameStore: ObservableObject {
     @discardableResult
     func abandonSession(_ session: PlannedSession, reason: AbandonReason,
                         failed: [String],
-                        dose: AdaptationEngine.Dose = .asProposed) -> AdaptationMove? {
+                        factor chosen: Double? = nil) -> AdaptationMove? {
         let id = session.programID
         closeSession(of: id)
 
@@ -1624,7 +1625,7 @@ final class GameStore: ObservableObject {
         let move: AdaptationMove = failed.isEmpty ? .reduceVolume : .easierVariant
         progress.lastMove = move
         progress.intensity = clamp(progress.intensity
-                                   * dose.factor(from: AdaptationEngine.volumeFactor(for: move)))
+                                   * (chosen ?? AdaptationEngine.volumeFactor(for: move)))
 
         // le mouvement qui a bloqué redescend d'un cran, tout de suite : on
         // n'attend pas une deuxième séance ratée pour le reconnaître
