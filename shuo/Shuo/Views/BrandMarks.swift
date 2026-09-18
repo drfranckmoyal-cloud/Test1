@@ -1,15 +1,15 @@
 import SwiftUI
 
-/// La marque : le cercle au pinceau, le disque rouge, 说.
+/// La marque : 说 calligraphié, avec son petit sceau cinabre.
 ///
-/// C'est le tracé d'origine, découpé de l'icône livrée — le vrai grain du
-/// pinceau, pas une approximation vectorielle. Le catalogue porte deux
-/// versions, encre sur papier et encre claire sur fond sombre, et bascule de
-/// l'une à l'autre tout seul : rien à gérer ici.
+/// C'est le tracé d'origine, découpé de la planche d'identité — la vraie
+/// calligraphie, pas une police. Le catalogue porte deux versions, encre sur
+/// ivoire et encre claire sur fond sombre, et bascule de l'une à l'autre tout
+/// seul : rien à gérer ici.
 ///
-/// `tools/preparer_marque.py` fabrique ces deux images à partir des PNG
-/// d'origine. Si le tracé change, relancer ce script plutôt que de retoucher
-/// les fichiers à la main.
+/// `tools/preparer_marque.py` fabrique ces deux images à partir de la planche.
+/// Si le tracé change, relancer ce script plutôt que de retoucher les fichiers
+/// à la main.
 struct ShuoMark: View {
     var size: CGFloat = 220
 
@@ -19,27 +19,6 @@ struct ShuoMark: View {
             .scaledToFit()
             .frame(width: size, height: size)
             .accessibilityLabel("Shuō")
-    }
-}
-
-/// Le sceau : un carré vermillon, le caractère réservé en clair dedans.
-///
-/// Celui-ci reste dessiné : il est trop petit pour qu'une image y gagne quoi
-/// que ce soit, et il doit pouvoir porter n'importe quel caractère.
-struct SealMark: View {
-    var side: CGFloat = 34
-    var glyph: String = "说"
-
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: side * 0.10, style: .continuous)
-                .fill(Theme.seal)
-            Text(glyph)
-                .font(Theme.hanzi(side * 0.62))
-                .foregroundStyle(Theme.paper)
-        }
-        .frame(width: side, height: side)
-        .accessibilityHidden(true)
     }
 }
 
@@ -62,5 +41,26 @@ struct HorizontalLogo: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Shuō — \(Theme.slogan)")
+    }
+}
+
+/// La colonne chinoise de l'écran de lancement : le texte vertical, puis un
+/// filet qui descend, comme la marge d'un rouleau.
+struct InkColumn: View {
+    var body: some View {
+        VStack(spacing: 12) {
+            Text(Theme.tagline)
+                .font(Theme.hanzi(15))
+                .tracking(6)
+                .foregroundStyle(Theme.inkSoft)
+                // Une colonne, pas une ligne : la largeur d'un seul caractère
+                // suffit à la faire descendre.
+                .lineLimit(nil)
+                .frame(width: 20)
+            Rectangle()
+                .fill(Theme.inkSoft.opacity(0.45))
+                .frame(width: 1, height: 54)
+        }
+        .accessibilityHidden(true)
     }
 }

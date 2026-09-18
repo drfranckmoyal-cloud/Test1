@@ -34,21 +34,16 @@ struct LaunchView: View {
         ZStack {
             Theme.paper.ignoresSafeArea()
 
-            // La colonne chinoise et le sceau, contre le bord gauche, comme sur
-            // un rouleau.
-            HStack {
-                VStack(spacing: 14) {
-                    Text(Theme.tagline)
-                        .font(Theme.hanzi(15))
-                        .foregroundStyle(Theme.inkSoft)
-                        // Une colonne, pas une ligne : la largeur d'un seul
-                        // caractère suffit à la faire descendre.
-                        .lineLimit(nil)
-                        .frame(width: 20)
-                    SealMark(side: 24)
+            // La colonne chinoise contre le bord gauche, comme la marge d'un
+            // rouleau. Le sceau, lui, est déjà dans la calligraphie.
+            VStack {
+                HStack {
+                    InkColumn()
+                        .opacity(wordsShown ? 1 : 0)
+                        .padding(.leading, 26)
+                    Spacer()
                 }
-                .opacity(wordsShown ? 1 : 0)
-                .padding(.leading, 26)
+                .padding(.top, 40)
                 Spacer()
             }
 

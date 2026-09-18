@@ -1,52 +1,62 @@
 # L'identité de Shuō
 
-Trois éléments : un cercle tracé au pinceau, un disque rouge, et 说. Le nom et
-la signature se posent autour.
+Direction **encre de Chine** : 说 calligraphié, un petit sceau cinabre, du
+papier ivoire. Ni cercle ouvert ni disque rouge — ces deux motifs-là étaient
+japonais (l'ensō vient de la calligraphie zen, le disque plein est le drapeau),
+et une app de mandarin ne peut pas les porter.
 
-Le tracé est **celui d'origine**, pas une reconstitution : le grain du pinceau,
-les traits secs du cercle, la matière du disque rouge. Il vient des PNG livrés,
-rangés dans `identite-source/`.
+Le tracé est **celui de la planche**, pas une reconstitution : la vraie
+calligraphie, avec ses traits secs et ses attaques. Les fichiers d'origine sont
+dans `identite-source/`.
 
-## Comment on passe des fichiers d'origine à l'app
+## Comment on passe de la planche à l'app
 
-Les fichiers livrés ne sont pas utilisables tels quels sur iOS, pour deux
-raisons :
-
-1. **Leurs coins sont déjà arrondis**, sur un fond gris clair. iOS applique son
-   propre masque : un coin arrondi dans un coin arrondi se voit tout de suite,
-   avec un liseré autour de l'icône.
-2. **Le mot « Shuō » est dedans.** À 40 px c'est une tache illisible, et iOS
-   écrit déjà le nom sous l'icône.
-
-`tools/preparer_marque.py` s'en occupe :
+`tools/preparer_marque.py` fait le travail :
 
 ```
 python3 tools/preparer_marque.py identite-source
 ```
 
-Il découpe la marque seule, retire le fond en retrouvant l'opacité réelle de
-chaque pixel, puis écrit quatre fichiers :
+Il produit quatre fichiers :
 
 | Fichier | Ce que c'est |
 |---|---|
-| `AppIcon.png` / `AppIcon-Dark.png` | L'icône, fond jusqu'au bord, sans le mot |
+| `AppIcon.png` / `AppIcon-Dark.png` | L'icône, fond jusqu'au bord |
 | `ShuoMark.imageset/mark-light.png` / `mark-dark.png` | La marque détourée, pour l'app |
 
-La marque est reposée sur un fond uni plutôt que recollée avec son rectangle de
-papier : le grain ne se raccorde jamais exactement, et la couture se verrait
-comme une bande en haut et en bas de l'icône.
+**Ne pas retoucher ces quatre fichiers à la main** : ils se regénèrent.
+
+### Ce que le script corrige, et pourquoi
+
+1. **Les coins de la planche sont déjà arrondis**, avec une ombre portée, sur
+   une page plus claire. iOS applique son propre masque : un coin arrondi dans
+   un coin arrondi se voit tout de suite, avec un liseré tout autour.
+2. **Le sceau touche le bord droit** (x = 996 sur 1024). Le masque d'iOS rogne
+   les angles : le sceau y perdrait un coin. La marque est donc réduite à 80 %
+   de l'icône.
+3. **Le fichier sombre livré est inexploitable** : c'est un agrandissement
+   d'une vignette de la planche — flou, mal cadré, avec la tuile voisine
+   visible sur la gauche. La version sombre est reconstruite depuis la planche
+   claire, qui est nette : l'encre devient crème, le sceau garde son cinabre.
+
+Le détourage retrouve l'opacité réelle de chaque pixel en « démélangeant » ce
+qui a été peint sur l'ivoire. Deux conséquences utiles : le halo clair laissé
+par l'agrandissement de la planche disparaît tout seul, et le grain du papier,
+qui ressort en opacités très faibles, est planché à zéro.
+
+Le **caractère réservé du sceau** demande un traitement à part. Il est de la
+couleur du papier : détouré tel quel, il deviendrait un trou — invisible sur
+l'ivoire de l'app, béant sur fond sombre. Le script remplit donc chaque ligne
+du sceau entre son premier et son dernier pixel rouge, ce qui rend le caractère
+sans abîmer les angles arrondis.
 
 ## Dans l'app
 
 | Vue | Ce que c'est |
 |---|---|
 | `ShuoMark` | La marque. Une image, deux versions, le catalogue bascule seul. |
-| `SealMark` | Le sceau carré. Dessiné, lui : trop petit pour qu'une image y gagne. |
 | `HorizontalLogo` | La marque, le nom, la signature, sur une ligne. |
-
-Le catalogue porte les deux versions de la marque, encre sur papier et encre
-claire sur fond sombre, sous le même nom. `Image("ShuoMark")` prend la bonne
-sans qu'on ait à le demander.
+| `InkColumn` | La colonne chinoise et son filet, sur l'écran de lancement. |
 
 À l'ouverture, la marque **infuse** : elle arrive floue et se resserre, comme de
 l'encre qui prend. C'est la seule animation qui aille avec un tracé au pinceau —
@@ -57,9 +67,9 @@ et non un trait calculé.
 
 | Rôle | Clair | Sombre |
 |---|---|---|
-| Papier | `#F5F0E6` | `#121110` |
+| Papier | `#F4F0E8` | `#121110` |
 | Encre | `#1A1917` | `#F3EEE3` |
-| Rouge | `#CC2E26` | `#DE4438` |
+| Cinabre | `#C81D1E` | `#D8322F` |
 
 ## Les mots
 
@@ -69,17 +79,21 @@ et non un trait calculé.
 - **更近的世界** — « un monde plus proche ». En colonne, contre le bord gauche,
   sur l'écran de lancement seulement.
 
-## Ce qui n'a pas servi
+## Ce qui manque encore
 
-`identite-source/` contient aussi le paysage à l'encre, le logo horizontal et la
-calligraphie isolée, mais **en vignettes** : entre 150 et 450 pixels de large,
-soit trop peu pour un écran d'iPhone, qui en demande trois fois plus. Ils sont
-gardés comme référence, pas comme matière.
+La planche comporte un paysage à l'encre — montagnes, pavillon, pin, bateau —
+qui occupe le tiers bas de l'écran d'ouverture. Il n'est **pas** dans l'app.
 
-Si les versions pleine résolution arrivent un jour :
+Ces éléments sont livrés en découpes de la planche de contact, entre 150 et 525
+pixels de large ; `06_montagnes_encre.png` porte même le titre de la planche en
+haut. Un écran d'iPhone en demande trois fois plus. Les agrandir donnerait une
+bouillie, et le README de la livraison le dit lui-même : *« les masters devront
+être régénérés/exportés nativement, plutôt qu'agrandis depuis la planche »*.
 
-- le **paysage** irait en fond d'écran de lancement, sous la marque ;
-- le **logo horizontal** remplacerait `HorizontalLogo`, aujourd'hui composé en
-  texte.
+Il faudrait, en pleine résolution :
+
+- le **paysage** (≥ 1200 px de large), pour le bas de l'écran de lancement ;
+- le **logo horizontal**, aujourd'hui composé en texte ;
+- une **icône sombre** exportée nativement, plutôt que reconstruite.
 
 Rien de tout cela ne manque au fonctionnement de l'app.

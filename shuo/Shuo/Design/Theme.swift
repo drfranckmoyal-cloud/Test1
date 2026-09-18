@@ -44,12 +44,11 @@ private func adaptive(light: UInt32, dark: UInt32) -> Color {
     })
 }
 
-/// Papier, encre et un rouge de sceau. Les noms décrivent le rôle, pas la
-/// teinte : `ink` est la couleur du texte — encre sur papier clair, crème sur
-/// fond sombre.
+/// Papier, encre et cinabre. Les noms décrivent le rôle, pas la teinte : `ink`
+/// est la couleur du texte — encre sur papier clair, crème sur fond sombre.
 ///
-/// Les valeurs viennent de la planche d'identité : papier légèrement chaud,
-/// encre presque noire mais jamais tout à fait, rouge vermillon.
+/// Les valeurs sont relevées sur la planche d'identité : ivoire, encre de
+/// Chine, et le rouge du sceau.
 enum Theme {
 
     /// La signature, telle qu'elle est écrite sur la planche d'identité.
@@ -58,15 +57,15 @@ enum Theme {
     /// La ligne chinoise du splash : « un monde plus proche ».
     static let tagline = "更近的世界"
 
-    static let paper = adaptive(light: 0xF5F0E6, dark: 0x121110)
+    static let paper = adaptive(light: 0xF4F0E8, dark: 0x121110)
     static let card = adaptive(light: 0xFFFCF5, dark: 0x1C1B18)
     static let ink = adaptive(light: 0x1A1917, dark: 0xF3EEE3)
     static let inkSoft = adaptive(light: 0x6B6459, dark: 0x9A9286)
     static let hairline = adaptive(light: 0xE2D9C8, dark: 0x2E2B24)
-    static let seal = adaptive(light: 0xCC2E26, dark: 0xDE4438)
+    static let seal = adaptive(light: 0xC81D1E, dark: 0xD8322F)
 
     /// Les trois statuts de maîtrise, dans leurs couleurs.
-    static let red = adaptive(light: 0xCC2E26, dark: 0xE06A5A)
+    static let red = adaptive(light: 0xC81D1E, dark: 0xE06A5A)
     static let orange = adaptive(light: 0xC77B24, dark: 0xE0A055)
     static let green = adaptive(light: 0x3E7A4E, dark: 0x6BB07E)
 

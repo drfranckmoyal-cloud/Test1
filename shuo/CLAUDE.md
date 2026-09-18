@@ -47,11 +47,14 @@ implémenté.
 
 ## L'identité
 
-Le tracé est celui d'origine, pas une reconstitution. Les PNG livrés sont dans
-`identite-source/` ; `tools/preparer_marque.py` en tire l'icône et la marque
-détourée. **Ne pas retoucher les fichiers du catalogue à la main** — relancer le
-script. `docs/IDENTITE.md` explique pourquoi les fichiers d'origine ne sont pas
-utilisables tels quels, et donne la palette.
+Direction **encre de Chine** : 说 calligraphié, sceau cinabre, papier ivoire.
+Ni cercle ouvert ni disque rouge — ces deux motifs étaient japonais, et une app
+de mandarin ne peut pas les porter. Ne pas les réintroduire.
+
+La planche est dans `identite-source/` ; `tools/preparer_marque.py` en tire
+l'icône et la marque détourée. **Ne pas retoucher les fichiers du catalogue à la
+main** — relancer le script. `docs/IDENTITE.md` explique ce qu'il corrige et
+pourquoi, et donne la palette.
 
 ## L'architecture, en une phrase par couche
 
