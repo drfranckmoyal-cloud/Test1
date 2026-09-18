@@ -44,20 +44,31 @@ private func adaptive(light: UInt32, dark: UInt32) -> Color {
     })
 }
 
-/// Papier, encre et un sceau vermillon. Les noms décrivent le rôle, pas la
+/// Papier, encre et un rouge de sceau. Les noms décrivent le rôle, pas la
 /// teinte : `ink` est la couleur du texte — encre sur papier clair, crème sur
 /// fond sombre.
+///
+/// Les valeurs viennent de la planche d'identité : papier légèrement chaud,
+/// encre presque noire mais jamais tout à fait, rouge vermillon.
 enum Theme {
 
-    static let paper = adaptive(light: 0xF7F1E6, dark: 0x14130F)
-    static let card = adaptive(light: 0xFFFBF3, dark: 0x1E1C17)
-    static let ink = adaptive(light: 0x1C1A17, dark: 0xF2ECE0)
+    /// La signature, telle qu'elle est écrite sur la planche d'identité.
+    /// Le point final en fait partie : c'est une phrase, pas une étiquette.
+    static let slogan = "Parlez chinois."
+    /// La ligne chinoise du splash : « un monde plus proche ».
+    static let tagline = "更近的世界"
+
+    static let paper = adaptive(light: 0xF5F0E6, dark: 0x121110)
+    static let card = adaptive(light: 0xFFFCF5, dark: 0x1C1B18)
+    static let ink = adaptive(light: 0x1A1917, dark: 0xF3EEE3)
     static let inkSoft = adaptive(light: 0x6B6459, dark: 0x9A9286)
-    static let hairline = adaptive(light: 0xE0D7C6, dark: 0x2E2B24)
-    static let seal = adaptive(light: 0xC0392B, dark: 0xD8503F)
+    static let hairline = adaptive(light: 0xE2D9C8, dark: 0x2E2B24)
+    static let seal = adaptive(light: 0xCC2E26, dark: 0xDE4438)
+    /// Le bord du disque rouge, là où l'encre s'accumule.
+    static let sealDeep = adaptive(light: 0xA81F18, dark: 0xB8291F)
 
     /// Les trois statuts de maîtrise, dans leurs couleurs.
-    static let red = adaptive(light: 0xC0392B, dark: 0xE06A5A)
+    static let red = adaptive(light: 0xCC2E26, dark: 0xE06A5A)
     static let orange = adaptive(light: 0xC77B24, dark: 0xE0A055)
     static let green = adaptive(light: 0x3E7A4E, dark: 0x6BB07E)
 
@@ -80,6 +91,10 @@ enum Theme {
     static let pinyin = Font.system(size: 22, weight: .medium, design: .rounded)
     static let meaning = Font.system(size: 19, weight: .regular)
     static let title = Font.system(size: 26, weight: .semibold, design: .serif)
+    /// Le mot-symbole « Shuō », en romain, comme sur la planche.
+    static func wordmark(_ size: CGFloat) -> Font {
+        .system(size: size, weight: .medium, design: .serif)
+    }
     static let body = Font.system(size: 17)
     static let caption = Font.system(size: 13, weight: .medium)
     static let mono = Font.system(size: 12, design: .monospaced)

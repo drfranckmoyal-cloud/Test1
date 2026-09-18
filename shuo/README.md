@@ -1,5 +1,7 @@
 # Shuō / 说
 
+**Parlez chinois.**
+
 Un tuteur de mandarin qui parle, écoute et corrige. La colonne vertébrale est le
 programme officiel **HSK 3.0 niveau 1** — 300 mots, 15 thèmes — mais l'app
 l'enseigne à l'oral : écouter, dire, se faire reprendre sur les tons.
@@ -59,7 +61,8 @@ développeur montre la latence, les jetons et le coût, avec une cible d'environ
 - `Shuo/Content/` — le contenu embarqué : 300 mots, 155 entrées de programme, 15 modules
 - `handoff/` — le dossier de livraison V2, tel qu'il est arrivé ; il fait autorité
 - `docs/TESTS_ACCEPTATION.md` — les 18 tests du dossier et où ils vivent dans le code
-- `tools/make_app_icon.py` — l'icône
+- `docs/IDENTITE.md` — la marque : le cercle, le disque, la palette, les mots
+- `tools/make_app_icon.py` — l'icône, claire et sombre
 
 ## Droits
 

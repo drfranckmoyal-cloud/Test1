@@ -45,6 +45,13 @@ régression, même si elle paraît meilleure :
 `docs/TESTS_ACCEPTATION.md` dit où chacun des 18 tests du dossier est
 implémenté.
 
+## L'identité
+
+Elle est **dessinée**, pas importée : `Shuo/Views/BrandMarks.swift` porte le
+cercle au pinceau, le disque rouge, le sceau et le logo. `tools/make_app_icon.py`
+reprend la même géométrie pour l'icône — si l'un change, changer l'autre.
+`docs/IDENTITE.md` donne la palette, les règles et ce qui manque encore.
+
 ## L'architecture, en une phrase par couche
 
 | Dossier | Ce qu'il porte |
@@ -52,7 +59,7 @@ implémenté.
 | `Shuo/Model/` | Les formes : contenu HSK, modèle apprenant |
 | `Shuo/Engine/` | Les décisions : maîtrise, révision, recette de séance, déroulé |
 | `Shuo/Services/` | Les exécutants : voix, tuteurs, modèles de langue, télémétrie |
-| `Shuo/Views/` | L'écran |
+| `Shuo/Views/` | L'écran, et la marque dessinée en vectoriel |
 | `Shuo/Content/` | Le contenu embarqué |
 
 Le moteur pédagogique (`Engine/`) ne dépend d'aucun modèle de langue. On doit
