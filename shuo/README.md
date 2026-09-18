@@ -62,7 +62,8 @@ développeur montre la latence, les jetons et le coût, avec une cible d'environ
 - `handoff/` — le dossier de livraison V2, tel qu'il est arrivé ; il fait autorité
 - `docs/TESTS_ACCEPTATION.md` — les 18 tests du dossier et où ils vivent dans le code
 - `docs/IDENTITE.md` — la marque : le cercle, le disque, la palette, les mots
-- `tools/make_app_icon.py` — l'icône, claire et sombre
+- `identite-source/` — les PNG d'origine de la marque
+- `tools/preparer_marque.py` — en tire l'icône et la marque détourée
 
 ## Droits
 

@@ -18,17 +18,16 @@ struct RootView: View {
     }
 }
 
-/// L'écran de lancement, d'après la planche d'identité : le cercle au pinceau,
-/// le disque rouge, le caractère, le nom, la signature.
+/// L'écran de lancement : la marque, le nom, la signature.
 ///
-/// Le cercle se trace au lieu d'apparaître — un enso se dessine d'un geste, et
-/// c'est le geste qui fait la marque. Une seconde et demie, une seule fois.
+/// La marque ne s'allume pas, elle infuse — elle arrive floue et se resserre,
+/// comme de l'encre qui prend sur le papier. C'est la seule animation qui aille
+/// avec un tracé au pinceau : le faire mine de se dessiner tout seul sonnerait
+/// faux, puisque c'est une image et non un trait calculé.
 struct LaunchView: View {
     let onEnter: () -> Void
 
-    @State private var strokeDrawn = false
-    @State private var glyphShown = false
-    @State private var sunShown = false
+    @State private var inkSettled = false
     @State private var wordsShown = false
 
     var body: some View {
@@ -42,8 +41,8 @@ struct LaunchView: View {
                     Text(Theme.tagline)
                         .font(Theme.hanzi(15))
                         .foregroundStyle(Theme.inkSoft)
-                        // Une colonne, pas une ligne : c'est ainsi qu'elle est
-                        // écrite sur la planche.
+                        // Une colonne, pas une ligne : la largeur d'un seul
+                        // caractère suffit à la faire descendre.
                         .lineLimit(nil)
                         .frame(width: 20)
                     SealMark(side: 24)
@@ -53,27 +52,16 @@ struct LaunchView: View {
                 Spacer()
             }
 
-            VStack(spacing: 30) {
+            VStack(spacing: 28) {
                 Spacer()
 
                 Button(action: onEnter) {
-                    ZStack {
-                        EnsoShape(progress: strokeDrawn ? 1 : 0)
-                            .fill(Theme.ink)
-                            .frame(width: 230, height: 230)
-
-                        SunMark(diameter: 78)
-                            .offset(x: 69, y: -69)
-                            .opacity(sunShown ? 1 : 0)
-                            .scaleEffect(sunShown ? 1 : 0.85)
-
-                        Text("说")
-                            .font(Theme.hanzi(94))
-                            .foregroundStyle(Theme.ink)
-                            .opacity(glyphShown ? 1 : 0)
-                    }
-                    .frame(width: 300, height: 300)
-                    .contentShape(Rectangle())
+                    ShuoMark(size: 260)
+                        .opacity(inkSettled ? 1 : 0)
+                        .blur(radius: inkSettled ? 0 : 9)
+                        .scaleEffect(inkSettled ? 1 : 0.94)
+                        .frame(width: 300, height: 300)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Entrer dans Shuō")
@@ -102,9 +90,7 @@ struct LaunchView: View {
     }
 
     private func animate() {
-        withAnimation(.easeInOut(duration: 1.35)) { strokeDrawn = true }
-        withAnimation(.easeOut(duration: 0.5).delay(0.95)) { glyphShown = true }
-        withAnimation(.spring(response: 0.5, dampingFraction: 0.7).delay(1.3)) { sunShown = true }
-        withAnimation(.easeIn(duration: 0.6).delay(1.5)) { wordsShown = true }
+        withAnimation(.easeOut(duration: 1.1)) { inkSettled = true }
+        withAnimation(.easeIn(duration: 0.7).delay(0.8)) { wordsShown = true }
     }
 }

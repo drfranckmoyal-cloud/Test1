@@ -47,10 +47,11 @@ implémenté.
 
 ## L'identité
 
-Elle est **dessinée**, pas importée : `Shuo/Views/BrandMarks.swift` porte le
-cercle au pinceau, le disque rouge, le sceau et le logo. `tools/make_app_icon.py`
-reprend la même géométrie pour l'icône — si l'un change, changer l'autre.
-`docs/IDENTITE.md` donne la palette, les règles et ce qui manque encore.
+Le tracé est celui d'origine, pas une reconstitution. Les PNG livrés sont dans
+`identite-source/` ; `tools/preparer_marque.py` en tire l'icône et la marque
+détourée. **Ne pas retoucher les fichiers du catalogue à la main** — relancer le
+script. `docs/IDENTITE.md` explique pourquoi les fichiers d'origine ne sont pas
+utilisables tels quels, et donne la palette.
 
 ## L'architecture, en une phrase par couche
 

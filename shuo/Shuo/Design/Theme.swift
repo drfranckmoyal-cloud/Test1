@@ -64,8 +64,6 @@ enum Theme {
     static let inkSoft = adaptive(light: 0x6B6459, dark: 0x9A9286)
     static let hairline = adaptive(light: 0xE2D9C8, dark: 0x2E2B24)
     static let seal = adaptive(light: 0xCC2E26, dark: 0xDE4438)
-    /// Le bord du disque rouge, là où l'encre s'accumule.
-    static let sealDeep = adaptive(light: 0xA81F18, dark: 0xB8291F)
 
     /// Les trois statuts de maîtrise, dans leurs couleurs.
     static let red = adaptive(light: 0xCC2E26, dark: 0xE06A5A)
