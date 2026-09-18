@@ -1,0 +1,448 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name_fr": "Informations personnelles",
+      "can_do": [
+        "comprendre des questions simples sur nom, nationalité, âge, sexe, goûts, habitudes, identité, famille, amis et compétences",
+        "poser et répondre à ces questions",
+        "se présenter simplement",
+        "reconnaître ces informations dans des supports courts"
+      ]
+    },
+    {
+      "id": 2,
+      "name_fr": "Informations sur un événement",
+      "can_do": [
+        "comprendre et demander date, heure, lieu, position, participants et numéros",
+        "répondre et présenter brièvement ces informations"
+      ]
+    },
+    {
+      "id": 3,
+      "name_fr": "Informations sur des objets",
+      "can_do": [
+        "nommer des objets courants",
+        "demander/répondre sur taille, quantité, qualité, ancien/nouveau",
+        "décrire simplement un objet"
+      ]
+    },
+    {
+      "id": 4,
+      "name_fr": "Météo",
+      "can_do": [
+        "comprendre et demander chaud/froid, beau/mauvais temps, pluie/neige",
+        "décrire simplement la météo et exprimer une préférence"
+      ]
+    },
+    {
+      "id": 5,
+      "name_fr": "Environnement et lieux",
+      "can_do": [
+        "comprendre/demander des informations simples sur école, cinéma, supermarché et autres lieux",
+        "décrire taille, qualité, position et préférence"
+      ]
+    },
+    {
+      "id": 6,
+      "name_fr": "Interactions quotidiennes",
+      "can_do": [
+        "saluer, remercier, s’excuser, prendre congé",
+        "faire une demande simple, demander de l’aide, choisir, téléphoner",
+        "exprimer un besoin ou une humeur simple"
+      ]
+    },
+    {
+      "id": 7,
+      "name_fr": "Alimentation et préférences",
+      "can_do": [
+        "comprendre et demander intentions de repas, personnes, aliments, horaires et lieux",
+        "présenter ses préférences et quelques habitudes alimentaires",
+        "reconnaître des aliments courants"
+      ]
+    },
+    {
+      "id": 8,
+      "name_fr": "Déplacements",
+      "can_do": [
+        "comprendre/demander mode, heure et destination",
+        "présenter un déplacement simple",
+        "demander/confirmer un lieu",
+        "lire des informations de transport simples"
+      ]
+    },
+    {
+      "id": 9,
+      "name_fr": "Achats",
+      "can_do": [
+        "comprendre nom et prix d’un produit",
+        "demander prix/disponibilité",
+        "exprimer une intention d’achat",
+        "présenter nom et prix d’un achat"
+      ]
+    },
+    {
+      "id": 10,
+      "name_fr": "Maladie et visite",
+      "can_do": [
+        "dire qu’on est malade et vouloir consulter",
+        "comprendre des conseils simples sur manger/dormir/repos",
+        "exprimer une intention de rendre visite et réconforter"
+      ]
+    },
+    {
+      "id": 11,
+      "name_fr": "Loisirs",
+      "can_do": [
+        "comprendre/demander les loisirs et leur organisation",
+        "présenter ses goûts et activités de loisir"
+      ]
+    },
+    {
+      "id": 12,
+      "name_fr": "Études",
+      "can_do": [
+        "comprendre/demander école, matière et horaires",
+        "présenter simplement sa situation d’apprentissage",
+        "lire un emploi du temps simple"
+      ]
+    },
+    {
+      "id": 13,
+      "name_fr": "École et activités après les cours",
+      "can_do": [
+        "échanger sur école, professeur, camarades et activités après les cours",
+        "présenter ces informations simplement"
+      ]
+    },
+    {
+      "id": 14,
+      "name_fr": "Travail",
+      "can_do": [
+        "comprendre/demander métier, lieu, horaires et appréciation",
+        "présenter son travail ou celui d’un proche"
+      ]
+    },
+    {
+      "id": 15,
+      "name_fr": "Alimentation chinoise traditionnelle",
+      "can_do": [
+        "comprendre/demander des informations simples sur des aliments traditionnels chinois",
+        "exprimer ses goûts",
+        "reconnaître des items tels que baozi, jiaozi, nouilles et thé"
+      ]
+    }
+  ],
+  "topics": {
+    "first_level": [
+      "Informations de base",
+      "Vie quotidienne",
+      "Éducation",
+      "Vie professionnelle",
+      "Culture et traditions"
+    ],
+    "second_level": [
+      "Informations personnelles",
+      "Événements",
+      "Objets",
+      "Environnement",
+      "Interactions",
+      "Alimentation",
+      "Transports",
+      "Achats",
+      "Santé",
+      "Loisirs",
+      "Études",
+      "Vie scolaire",
+      "Travail",
+      "Métiers",
+      "Culture alimentaire"
+    ],
+    "third_level": [
+      "nom/nationalité/âge/sexe/goûts/habitudes",
+      "identité/famille/amis/compétences",
+      "date/heure/lieu/position/participants/numéros",
+      "noms d’objets",
+      "caractéristiques d’objets",
+      "météo",
+      "caractéristiques d’un environnement",
+      "politesse de base",
+      "interactions simples",
+      "volonté/ressenti",
+      "aliments et boissons",
+      "repas",
+      "demander son chemin",
+      "modes de transport",
+      "organisation d’un déplacement",
+      "noms de produits",
+      "prix",
+      "choix/achat",
+      "maladie/consultation/visite",
+      "activités de loisir",
+      "informations de cours",
+      "contenus d’apprentissage",
+      "niveaux d’éducation",
+      "situation de l’école",
+      "activités après les cours",
+      "informations de travail",
+      "évaluation du travail",
+      "types de métiers",
+      "cuisine chinoise",
+      "boissons traditionnelles"
+    ]
+  },
+  "grammar": [
+    {
+      "category": "morphologie",
+      "items": [
+        "préfixes 小- et 第-",
+        "suffixes -们 et -边"
+      ]
+    },
+    {
+      "category": "noms de position",
+      "items": [
+        "上",
+        "下",
+        "里",
+        "外",
+        "前",
+        "后"
+      ]
+    },
+    {
+      "category": "verbes modaux",
+      "items": [
+        "会",
+        "能",
+        "想",
+        "要",
+        "可以"
+      ]
+    },
+    {
+      "category": "verbes-objets séparables",
+      "items": [
+        "看病",
+        "睡觉",
+        "说话",
+        "上课",
+        "下课",
+        "上班",
+        "下班",
+        "生病"
+      ]
+    },
+    {
+      "category": "pronoms interrogatifs",
+      "items": [
+        "多",
+        "多少",
+        "几",
+        "哪",
+        "哪儿",
+        "哪里",
+        "哪些",
+        "什么",
+        "谁",
+        "怎么",
+        "怎么样"
+      ]
+    },
+    {
+      "category": "pronoms personnels",
+      "items": [
+        "我",
+        "你",
+        "您",
+        "他",
+        "她",
+        "我们",
+        "你们",
+        "他们",
+        "她们",
+        "它",
+        "它们",
+        "大家"
+      ]
+    },
+    {
+      "category": "démonstratifs",
+      "items": [
+        "这",
+        "那",
+        "这儿",
+        "那儿",
+        "这里",
+        "那里",
+        "这些",
+        "那些",
+        "有的",
+        "这个",
+        "那个",
+        "有些"
+      ]
+    },
+    {
+      "category": "nombres",
+      "items": [
+        "零",
+        "一",
+        "二/两",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九",
+        "十",
+        "百",
+        "半",
+        "千"
+      ]
+    },
+    {
+      "category": "classificateurs nominaux",
+      "items": [
+        "本",
+        "个",
+        "家",
+        "口",
+        "块",
+        "件",
+        "只",
+        "元",
+        "杯"
+      ]
+    },
+    {
+      "category": "classificateurs temporels",
+      "items": [
+        "日",
+        "号",
+        "岁",
+        "点",
+        "分",
+        "年",
+        "天"
+      ]
+    },
+    {
+      "category": "adverbes de degré",
+      "items": [
+        "非常",
+        "很",
+        "太",
+        "真",
+        "有（一）点儿"
+      ]
+    },
+    {
+      "category": "autres adverbes",
+      "items": [
+        "都",
+        "在",
+        "正在",
+        "再",
+        "还",
+        "也",
+        "不",
+        "没（有）",
+        "不要"
+      ]
+    },
+    {
+      "category": "prépositions/conjonctions",
+      "items": [
+        "在 (temps/lieu)",
+        "和 (objet/accompagnement)",
+        "对",
+        "和 (coordination)"
+      ]
+    },
+    {
+      "category": "particules",
+      "items": [
+        "的",
+        "了 (accompli)",
+        "了 (changement)",
+        "吧",
+        "吗",
+        "呢",
+        "喂"
+      ]
+    },
+    {
+      "category": "groupes syntaxiques",
+      "items": [
+        "coordination",
+        "déterminant-déterminé",
+        "verbe-objet",
+        "sujet-prédicat",
+        "quantité",
+        "préposition+objet",
+        "groupe locatif"
+      ]
+    },
+    {
+      "category": "fonctions dans la phrase",
+      "items": [
+        "sujet nominal/pronominal",
+        "prédicat nominal, verbal ou adjectival",
+        "objet nominal/pronominal",
+        "déterminant",
+        "adverbial de temps/lieu",
+        "complément de quantité"
+      ]
+    },
+    {
+      "category": "types de phrases",
+      "items": [
+        "déclarative",
+        "question oui/non",
+        "question spécifique",
+        "question affirmative-négative",
+        "impérative",
+        "exclamative"
+      ]
+    },
+    {
+      "category": "structures spéciales",
+      "items": [
+        "是 : équivalence/catégorie",
+        "有 : possession",
+        "lieu + 是 + nom",
+        "lieu + 有 + quantité + nom",
+        "enchaînement verbal but/moyen",
+        "double objet"
+      ]
+    },
+    {
+      "category": "phrases complexes élémentaires",
+      "items": [
+        "…,也…",
+        "…,还…"
+      ]
+    },
+    {
+      "category": "aspects",
+      "items": [
+        "了 accompli",
+        "了 changement",
+        "在/正在 + verbe",
+        "在/正在 + verbe + 呢",
+        "…呢 pour action en cours"
+      ]
+    },
+    {
+      "category": "expressions numériques",
+      "items": [
+        "argent",
+        "ordinal 第+nombre",
+        "année/mois/jour/semaine",
+        "heure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "app_name": {
+    "display": "Shuō",
+    "hanzi": "说",
+    "status": "working/provisional"
+  },
+  "platform": "iOS, initially single-user personal app; architecture extensible for later commercialization",
+  "launch_screen": {
+    "visual": "large calligraphic 说 as central tappable element",
+    "animation": "subtle ink/trace animation optional",
+    "entry": "tap character to enter"
+  },
+  "home": {
+    "primary_actions": [
+      "Continuer ma progression",
+      "Révision"
+    ],
+    "secondary_actions": [
+      "Revoir la leçon précédente",
+      "Reprendre une séance interrompue if applicable"
+    ],
+    "tutor_of_day": "avatar + Chinese name; one tutor per session",
+    "avoid": "dashboard overload"
+  },
+  "session_ui": {
+    "word_card": "large hanzi, pinyin, French meaning; elements may hide progressively later",
+    "hands_free_push_to_talk": "visible, easy switch during session",
+    "model_badge": "actual model name continuously visible with complexity color code",
+    "barge_in": "learner speech stops tutor immediately",
+    "latency_feedback": "short Mandarin transition from a prewritten library (~10 variants); discreet wait sound if useful after user testing",
+    "network_loss": "pause cleanly"
+  },
+  "tutors": {
+    "count": "3–4",
+    "default": "simple rotation",
+    "manual_lock": "yes",
+    "identity": "stable voice + Chinese name + simple recognizable vector avatar",
+    "pedagogy": "same engine/rules regardless of tutor"
+  },
+  "review_mode": {
+    "duration": "5–10 min default, extendable",
+    "pool": "all previously seen content",
+    "selection": "fragile + old + recent-to-confirm + structural + occasional strong items",
+    "can_upgrade": true,
+    "can_downgrade": true,
+    "one_miss_downgrade": false
+  },
+  "developer_mode": {
+    "show": [
+      "active model",
+      "routing mode",
+      "latency",
+      "tokens",
+      "cost/session",
+      "cumulative cost",
+      "ASR confidence if available",
+      "model-switch log",
+      "technical session log"
+    ],
+    "controls": [
+      "auto/force model",
+      "export logs"
+    ],
+    "product_learning": "journal meaningful setting changes and metrics automatically; no heavy formal A/B test workflow"
+  },
+  "cost_target": {
+    "target_eur_per_hour": 1.25,
+    "soft_range": [
+      1.0,
+      1.5
+    ],
+    "policy": "quality wins when uncertain; alerts, not hard cutoff"
+  }
+}

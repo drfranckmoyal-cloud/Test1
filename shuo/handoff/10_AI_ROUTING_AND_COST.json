@@ -1,0 +1,26 @@
+{
+  "principle": "Pedagogical engine owns progression; LLM is replaceable execution layer.",
+  "local_first": [
+    "learner state",
+    "review scheduling",
+    "mastery calculation",
+    "session recipe",
+    "logging"
+  ],
+  "light_model_tasks": [
+    "routine prompts",
+    "simple reformulation",
+    "drill transitions",
+    "known scripted explanations"
+  ],
+  "strong_model_triggers": [
+    "ambiguous learner intent",
+    "complex explanation",
+    "unexpected free conversation",
+    "multi-error diagnosis",
+    "pedagogical recovery after repeated failure"
+  ],
+  "context_budget": "structured learner summary + current recipe + short recent exchange window; never resend full history by default",
+  "fallback": "if strong model latency/cost is excessive, lighter model may take over; visible model badge updates",
+  "quality_rule": "when routing confidence is low, prefer the stronger model"
+}

@@ -1,0 +1,78 @@
+{
+  "version": "V2",
+  "principle": "Evidence-based, multi-dimensional, conservative mastery. The LLM never decides mastery alone.",
+  "per_item_fields": {
+    "item_id": "stable HSK official key or internal expression id",
+    "first_seen_at": "timestamp",
+    "last_seen_at": "timestamp",
+    "exposures": "int",
+    "listening_recognition": {
+      "score": "0–1",
+      "evidence_count": "int"
+    },
+    "meaning_recall": {
+      "score": "0–1",
+      "evidence_count": "int"
+    },
+    "guided_production": {
+      "score": "0–1",
+      "evidence_count": "int"
+    },
+    "spontaneous_production": {
+      "score": "0–1",
+      "evidence_count": "int"
+    },
+    "pronunciation": {
+      "score": "0–1",
+      "evidence_count": "int"
+    },
+    "tone": {
+      "score": "0–1",
+      "evidence_count": "int"
+    },
+    "usage": {
+      "score": "0–1",
+      "evidence_count": "int"
+    },
+    "help_level_last": "none | hint | strong_hint | model | answer",
+    "memory_strength": "0–1",
+    "next_review_at": "timestamp",
+    "status": "red | orange | green",
+    "fragility_flags": "array",
+    "error_signatures": "bounded array; aggregate patterns, not endless reminders"
+  },
+  "status_rules": {
+    "red": "new, failed, answer supplied, or pronunciation/tone clearly below threshold",
+    "orange": "understood/usable but fragile, guided, hesitant, or pronunciation not yet strong",
+    "green": "very good pronunciation/tone + spontaneous use + durable delayed recall evidence",
+    "durable_green": "5 correct productions total and >=3 delayed recalls on different sessions; 4 delayed recalls preferred when fragile",
+    "downgrade": "never from one isolated miss; repeated failures on separated review opportunities can lower memory strength/status"
+  },
+  "global_profile": {
+    "listening_by_speed": [
+      "slow",
+      "normal",
+      "fast_native"
+    ],
+    "tone_profile": [
+      "tone1",
+      "tone2",
+      "tone3",
+      "tone4",
+      "neutral",
+      "sandhi"
+    ],
+    "pronunciation_patterns": [
+      "initials",
+      "finals",
+      "aspiration",
+      "retroflexes",
+      "j_q_x",
+      "u_umlaut",
+      "rhythm"
+    ],
+    "grammar_structures": "per-structure state",
+    "active_vocab_count": "derived",
+    "passive_vocab_count": "derived"
+  }
+}

@@ -1,0 +1,811 @@
+[
+  {
+    "id": "M01",
+    "title": "Premiers échanges",
+    "goal": "Saluer, remercier, s’excuser, demander simplement, gérer une interaction courte.",
+    "official_task_ids": [
+      6
+    ],
+    "new_vocab_count": 28,
+    "new_content_sessions": 10,
+    "grammar_focus": [
+      "phrases de politesse et interjections",
+      "question oui/non avec 吗",
+      "question de reprise avec 呢",
+      "impératif poli avec 请",
+      "particule 吧 pour proposition/adoucissement"
+    ],
+    "pronunciation_focus": [
+      "tons 3+3 dans 你好",
+      "tons neutres des particules ma/ne/ba",
+      "enchaînement des tons en parole courte"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你好！",
+          "B：你好！"
+        ],
+        "fr": [
+          "Bonjour !",
+          "Bonjour !"
+        ]
+      },
+      {
+        "zh": [
+          "A：请问，你叫什么名字？",
+          "B：我叫Franck。"
+        ],
+        "fr": [
+          "Excuse-moi, comment t’appelles-tu ?",
+          "Je m’appelle Franck."
+        ]
+      },
+      {
+        "zh": [
+          "A：谢谢你。",
+          "B：不客气。"
+        ],
+        "fr": [
+          "Merci.",
+          "De rien."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M02",
+    "title": "Se présenter",
+    "goal": "Nom, identité, nationalité, langue, personnes et pronoms.",
+    "official_task_ids": [
+      1
+    ],
+    "new_vocab_count": 21,
+    "new_content_sessions": 7,
+    "grammar_focus": [
+      "phrase en 是 : identité/catégorie",
+      "pronoms personnels et suffixe 们",
+      "questions avec 谁 / 什么",
+      "déterminant avec 的"
+    ],
+    "pronunciation_focus": [
+      "sh- de 是",
+      "zh-/ch-/sh- vs z-/c-/s-",
+      "ton neutre dans 名字"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你是哪国人？",
+          "B：我是法国人。"
+        ],
+        "fr": [
+          "De quel pays es-tu ?",
+          "Je suis français."
+        ]
+      },
+      {
+        "zh": [
+          "A：她是谁？",
+          "B：她是我的朋友。"
+        ],
+        "fr": [
+          "Qui est-elle ?",
+          "C’est mon amie."
+        ]
+      },
+      {
+        "zh": [
+          "A：你会说汉语吗？",
+          "B：我会说一点儿。"
+        ],
+        "fr": [
+          "Sais-tu parler chinois ?",
+          "J’en parle un peu."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M03",
+    "title": "Famille et informations personnelles",
+    "goal": "Famille, âge, sexe, relations, goûts et capacités.",
+    "official_task_ids": [
+      1
+    ],
+    "new_vocab_count": 26,
+    "new_content_sessions": 9,
+    "grammar_focus": [
+      "possession avec 有",
+      "négation 不 / 没有",
+      "verbes modaux 会 / 能 / 可以",
+      "coordination avec 和",
+      "adverbes 都 / 也"
+    ],
+    "pronunciation_focus": [
+      "aspiration b/p, d/t, g/k",
+      "j/q/x",
+      "ü dans 女"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你家有几口人？",
+          "B：我家有四口人。"
+        ],
+        "fr": [
+          "Combien êtes-vous dans ta famille ?",
+          "Nous sommes quatre."
+        ]
+      },
+      {
+        "zh": [
+          "A：你喜欢喝茶吗？",
+          "B：喜欢。"
+        ],
+        "fr": [
+          "Aimes-tu boire du thé ?",
+          "Oui."
+        ]
+      },
+      {
+        "zh": [
+          "A：你会做饭吗？",
+          "B：会一点儿。"
+        ],
+        "fr": [
+          "Sais-tu cuisiner ?",
+          "Un peu."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M04",
+    "title": "Temps et événements",
+    "goal": "Nombres, date, heure, moments de la journée, durée et rendez-vous simples.",
+    "official_task_ids": [
+      2
+    ],
+    "new_vocab_count": 48,
+    "new_content_sessions": 16,
+    "grammar_focus": [
+      "nombres 0–10 puis dizaines/centaines/milliers",
+      "二 vs 两",
+      "classificateurs temporels",
+      "date : 年/月/日/号",
+      "heure : 点/分/半",
+      "ordinal 第+nombre",
+      "mots interrogatifs 几 / 多少"
+    ],
+    "pronunciation_focus": [
+      "sandhi de 一",
+      "distinction 二 / 两",
+      "enchaînement des nombres et dates"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：现在几点？",
+          "B：三点半。"
+        ],
+        "fr": [
+          "Quelle heure est-il ?",
+          "Trois heures et demie."
+        ]
+      },
+      {
+        "zh": [
+          "A：今天几号？",
+          "B：今天十八号。"
+        ],
+        "fr": [
+          "Quel jour du mois sommes-nous ?",
+          "Le 18."
+        ]
+      },
+      {
+        "zh": [
+          "A：你什么时候来？",
+          "B：我明天上午来。"
+        ],
+        "fr": [
+          "Quand viens-tu ?",
+          "Demain matin."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M05",
+    "title": "Objets et environnement proche",
+    "goal": "Nommer, posséder, quantifier et décrire des objets et lieux proches.",
+    "official_task_ids": [
+      3
+    ],
+    "new_vocab_count": 45,
+    "new_content_sessions": 15,
+    "grammar_focus": [
+      "démonstratifs 这/那 et séries 这个/这些",
+      "interrogatifs 哪/哪个/哪些",
+      "classificateurs 个/本/件/只/口",
+      "possession avec 的",
+      "quantité 一些/一点儿/有些",
+      "adjectif prédicatif avec 很"
+    ],
+    "pronunciation_focus": [
+      "zhè/nà : attaque rétroflexe",
+      "classificateurs et ton neutre",
+      "rythme groupe nominal"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：这是什么？",
+          "B：这是我的书。"
+        ],
+        "fr": [
+          "Qu’est-ce que c’est ?",
+          "C’est mon livre."
+        ]
+      },
+      {
+        "zh": [
+          "A：你要哪个？",
+          "B：我要那个。"
+        ],
+        "fr": [
+          "Lequel veux-tu ?",
+          "Je veux celui-là."
+        ]
+      },
+      {
+        "zh": [
+          "A：你有几本书？",
+          "B：我有三本书。"
+        ],
+        "fr": [
+          "Combien de livres as-tu ?",
+          "J’en ai trois."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M06",
+    "title": "Météo et environnement",
+    "goal": "Parler du temps, du chaud/froid, de lieux et positions.",
+    "official_task_ids": [
+      4,
+      5
+    ],
+    "new_vocab_count": 27,
+    "new_content_sessions": 9,
+    "grammar_focus": [
+      "localisation avec 在",
+      "noms de position 上/下/里/外/前/后/边",
+      "degré 很/非常/太/真/有点儿",
+      "question 怎么样",
+      "phrase adjectivale"
+    ],
+    "pronunciation_focus": [
+      "3e ton en contexte",
+      "r- de 热",
+      "x- de 雪 / 下"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：今天天气怎么样？",
+          "B：很冷。"
+        ],
+        "fr": [
+          "Quel temps fait-il aujourd’hui ?",
+          "Il fait froid."
+        ]
+      },
+      {
+        "zh": [
+          "A：书在哪里？",
+          "B：在桌子上。"
+        ],
+        "fr": [
+          "Où est le livre ?",
+          "Sur la table."
+        ]
+      },
+      {
+        "zh": [
+          "A：医院在哪儿？",
+          "B：在那边。"
+        ],
+        "fr": [
+          "Où est l’hôpital ?",
+          "Là-bas."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M07",
+    "title": "Manger et boire",
+    "goal": "Repas, aliments, boissons, préférences et restauration.",
+    "official_task_ids": [
+      7
+    ],
+    "new_vocab_count": 22,
+    "new_content_sessions": 8,
+    "grammar_focus": [
+      "verbes transitifs 吃/喝",
+      "quantité + classificateur",
+      "préférences avec 喜欢",
+      "想/要 pour désir",
+      "verbe-objet séparable 做饭"
+    ],
+    "pronunciation_focus": [
+      "ch- de 吃 / chá",
+      "j/q/x dans 饺子",
+      "tons neutres des suffixes -zi"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你想吃什么？",
+          "B：我想吃饺子。"
+        ],
+        "fr": [
+          "Que veux-tu manger ?",
+          "Je veux manger des jiaozi."
+        ]
+      },
+      {
+        "zh": [
+          "A：你喝茶吗？",
+          "B：不，我喝水。"
+        ],
+        "fr": [
+          "Tu bois du thé ?",
+          "Non, je bois de l’eau."
+        ]
+      },
+      {
+        "zh": [
+          "A：这个菜怎么样？",
+          "B：很好吃。"
+        ],
+        "fr": [
+          "Comment est ce plat ?",
+          "Très bon."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M08",
+    "title": "Se déplacer",
+    "goal": "Aller/venir, moyens de transport, destination, localisation et demande de chemin.",
+    "official_task_ids": [
+      8
+    ],
+    "new_vocab_count": 17,
+    "new_content_sessions": 6,
+    "grammar_focus": [
+      "verbes directionnels de base 来/去/回",
+      "在 + lieu / 去 + destination",
+      "enchaînement verbal pour but",
+      "坐 + moyen de transport",
+      "问路 avec 哪里/哪儿"
+    ],
+    "pronunciation_focus": [
+      "q- de 去",
+      "huǒchē / chūzūchē : groupes consonantiques perçus",
+      "rythme destination + transport"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你去哪儿？",
+          "B：我去学校。"
+        ],
+        "fr": [
+          "Où vas-tu ?",
+          "À l’école."
+        ]
+      },
+      {
+        "zh": [
+          "A：你怎么去？",
+          "B：我坐火车去。"
+        ],
+        "fr": [
+          "Comment y vas-tu ?",
+          "J’y vais en train."
+        ]
+      },
+      {
+        "zh": [
+          "A：请问，医院在哪里？",
+          "B：在那边。"
+        ],
+        "fr": [
+          "Excusez-moi, où est l’hôpital ?",
+          "Là-bas."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M09",
+    "title": "Acheter",
+    "goal": "Magasins, prix, quantité, cher/bon marché, choisir et acheter.",
+    "official_task_ids": [
+      9
+    ],
+    "new_vocab_count": 13,
+    "new_content_sessions": 5,
+    "grammar_focus": [
+      "prix avec 多少钱 / 元 / 块",
+      "买/卖",
+      "贵/便宜",
+      "给 + destinataire",
+      "多/少"
+    ],
+    "pronunciation_focus": [
+      "mǎi vs mài",
+      "qián / piányi",
+      "sandhi 不 devant ton 4"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：这个多少钱？",
+          "B：十块钱。"
+        ],
+        "fr": [
+          "Combien coûte ceci ?",
+          "Dix yuans."
+        ]
+      },
+      {
+        "zh": [
+          "A：这个太贵了。",
+          "B：那个便宜。"
+        ],
+        "fr": [
+          "C’est trop cher.",
+          "Celui-là est bon marché."
+        ]
+      },
+      {
+        "zh": [
+          "A：你买什么？",
+          "B：我买苹果。"
+        ],
+        "fr": [
+          "Qu’achètes-tu ?",
+          "Des pommes."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M10",
+    "title": "Santé",
+    "goal": "Dire qu’on est malade, consulter, besoins simples, repos.",
+    "official_task_ids": [
+      10
+    ],
+    "new_vocab_count": 10,
+    "new_content_sessions": 4,
+    "grammar_focus": [
+      "离合词 看病/睡觉/生病",
+      "不要 pour interdiction/conseil",
+      "要 pour besoin/intention",
+      "可以/能 dans le contexte santé"
+    ],
+    "pronunciation_focus": [
+      "shēngbìng / kànbìng",
+      "aspiration et finales nasales",
+      "ton neutre de 休息"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你怎么了？",
+          "B：我生病了。"
+        ],
+        "fr": [
+          "Qu’est-ce qui t’arrive ?",
+          "Je suis malade."
+        ]
+      },
+      {
+        "zh": [
+          "A：你要去医院吗？",
+          "B：要。"
+        ],
+        "fr": [
+          "Tu dois/veux aller à l’hôpital ?",
+          "Oui."
+        ]
+      },
+      {
+        "zh": [
+          "A：你想睡觉吗？",
+          "B：我想休息。"
+        ],
+        "fr": [
+          "Tu veux dormir ?",
+          "Je veux me reposer."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M11",
+    "title": "Loisirs et préférences",
+    "goal": "Activités, médias, goûts, invitations et appréciations.",
+    "official_task_ids": [
+      11
+    ],
+    "new_vocab_count": 16,
+    "new_content_sessions": 6,
+    "grammar_focus": [
+      "喜欢 + activité",
+      "觉得 + proposition/adjectif",
+      "也/还",
+      "正在 pour activité en cours",
+      "听/看 + objet"
+    ],
+    "pronunciation_focus": [
+      "xǐhuan : x- et ton neutre",
+      "tīng / kàn : finales nasales",
+      "rythme de phrase conversationnelle"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你喜欢做什么？",
+          "B：我喜欢看电影。"
+        ],
+        "fr": [
+          "Qu’aimes-tu faire ?",
+          "J’aime regarder des films."
+        ]
+      },
+      {
+        "zh": [
+          "A：你在做什么？",
+          "B：我正在听歌。"
+        ],
+        "fr": [
+          "Que fais-tu ?",
+          "J’écoute de la musique."
+        ]
+      },
+      {
+        "zh": [
+          "A：这个电影怎么样？",
+          "B：我觉得很好看。"
+        ],
+        "fr": [
+          "Comment est ce film ?",
+          "Je le trouve très bien."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M12",
+    "title": "Étudier",
+    "goal": "École, cours, apprendre, lire/écrire, professeur/élève.",
+    "official_task_ids": [
+      12
+    ],
+    "new_vocab_count": 16,
+    "new_content_sessions": 6,
+    "grammar_focus": [
+      "学习/学 + objet",
+      "在 + établissement + 学习",
+      "verbes lire/écrire",
+      "noms de rôle 老师/学生/同学",
+      "structures 是 / 有 recyclées"
+    ],
+    "pronunciation_focus": [
+      "xué / xuéxí : ü implicite après x",
+      "sh-/zh- dans 书/中文",
+      "ton neutre de 学生/先生 selon débit"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你在哪儿学习？",
+          "B：我在大学学习。"
+        ],
+        "fr": [
+          "Où étudies-tu ?",
+          "À l’université."
+        ]
+      },
+      {
+        "zh": [
+          "A：你学什么？",
+          "B：我学中文。"
+        ],
+        "fr": [
+          "Qu’étudies-tu ?",
+          "Le chinois."
+        ]
+      },
+      {
+        "zh": [
+          "A：她是谁？",
+          "B：她是我的老师。"
+        ],
+        "fr": [
+          "Qui est-elle ?",
+          "C’est ma professeure."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M13",
+    "title": "Vie scolaire et routines",
+    "goal": "Horaires, début/fin de cours, activités quotidiennes et camarades.",
+    "official_task_ids": [
+      13
+    ],
+    "new_vocab_count": 7,
+    "new_content_sessions": 3,
+    "grammar_focus": [
+      "在/正在 + verbe",
+      "了 : changement/achèvement introductif",
+      "再 : répétition future",
+      "mots de temps en position adverbiale"
+    ],
+    "pronunciation_focus": [
+      "enchaînement rapide des mots de temps",
+      "正在 zhèngzài",
+      "了 neutre"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你几点上课？",
+          "B：九点上课。"
+        ],
+        "fr": [
+          "À quelle heure as-tu cours ?",
+          "À neuf heures."
+        ]
+      },
+      {
+        "zh": [
+          "A：你在做什么？",
+          "B：我正在学习。"
+        ],
+        "fr": [
+          "Que fais-tu ?",
+          "J’étudie."
+        ]
+      },
+      {
+        "zh": [
+          "A：下课了吗？",
+          "B：下课了。"
+        ],
+        "fr": [
+          "Le cours est fini ?",
+          "Oui."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M14",
+    "title": "Travail",
+    "goal": "Métier, entreprise, horaires et routine professionnelle.",
+    "official_task_ids": [
+      14
+    ],
+    "new_vocab_count": 4,
+    "new_content_sessions": 2,
+    "grammar_focus": [
+      "上班/下班 : verbes-objets",
+      "在 + 公司 + 工作",
+      "忙 : prédicat adjectival",
+      "horaires de travail avec mots de temps"
+    ],
+    "pronunciation_focus": [
+      "gōngzuò / gōngsī",
+      "shàngbān / xiàbān",
+      "prosodie des horaires"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你在哪儿工作？",
+          "B：我在公司工作。"
+        ],
+        "fr": [
+          "Où travailles-tu ?",
+          "Dans une entreprise."
+        ]
+      },
+      {
+        "zh": [
+          "A：你几点上班？",
+          "B：八点上班。"
+        ],
+        "fr": [
+          "À quelle heure commences-tu ?",
+          "À huit heures."
+        ]
+      },
+      {
+        "zh": [
+          "A：今天忙吗？",
+          "B：很忙。"
+        ],
+        "fr": [
+          "Tu es occupé aujourd’hui ?",
+          "Très."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M15",
+    "title": "Culture alimentaire et intégration HSK1",
+    "goal": "Alimentation chinoise traditionnelle et intégration des acquis.",
+    "official_task_ids": [
+      15
+    ],
+    "new_vocab_count": 0,
+    "new_content_sessions": 6,
+    "grammar_focus": [
+      "réinvestissement global HSK1",
+      "dialogues cumulatifs",
+      "compréhension orale HSK1",
+      "transfert conversationnel"
+    ],
+    "pronunciation_focus": [
+      "révision personnalisée des tons fragiles",
+      "débit normal",
+      "compréhension de parole continue"
+    ],
+    "dialogue_bank": [
+      {
+        "zh": [
+          "A：你喜欢吃中国菜吗？",
+          "B：喜欢，我喜欢吃饺子。"
+        ],
+        "fr": [
+          "Aimes-tu la cuisine chinoise ?",
+          "Oui, j’aime les jiaozi."
+        ]
+      },
+      {
+        "zh": [
+          "A：你想喝什么？",
+          "B：我想喝茶。"
+        ],
+        "fr": [
+          "Que veux-tu boire ?",
+          "Du thé."
+        ]
+      },
+      {
+        "zh": [
+          "A：包子怎么样？",
+          "B：很好吃。"
+        ],
+        "fr": [
+          "Comment sont les baozi ?",
+          "Très bons."
+        ]
+      }
+    ]
+  }
+]

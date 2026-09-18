@@ -1,0 +1,650 @@
+{
+  "meta": {
+    "project": "Shuō / 说",
+    "version": "V2 production handoff",
+    "date": "2026-09-18",
+    "scope": "Product + pedagogy + HSK1 content + learner model + orchestrator + QA + implementation acceptance tests"
+  },
+  "product_spec": {
+    "app_name": {
+      "display": "Shuō",
+      "hanzi": "说",
+      "status": "working/provisional"
+    },
+    "platform": "iOS, initially single-user personal app; architecture extensible for later commercialization",
+    "launch_screen": {
+      "visual": "large calligraphic 说 as central tappable element",
+      "animation": "subtle ink/trace animation optional",
+      "entry": "tap character to enter"
+    },
+    "home": {
+      "primary_actions": [
+        "Continuer ma progression",
+        "Révision"
+      ],
+      "secondary_actions": [
+        "Revoir la leçon précédente",
+        "Reprendre une séance interrompue if applicable"
+      ],
+      "tutor_of_day": "avatar + Chinese name; one tutor per session",
+      "avoid": "dashboard overload"
+    },
+    "session_ui": {
+      "word_card": "large hanzi, pinyin, French meaning; elements may hide progressively later",
+      "hands_free_push_to_talk": "visible, easy switch during session",
+      "model_badge": "actual model name continuously visible with complexity color code",
+      "barge_in": "learner speech stops tutor immediately",
+      "latency_feedback": "short Mandarin transition from a prewritten library (~10 variants); discreet wait sound if useful after user testing",
+      "network_loss": "pause cleanly"
+    },
+    "tutors": {
+      "count": "3–4",
+      "default": "simple rotation",
+      "manual_lock": "yes",
+      "identity": "stable voice + Chinese name + simple recognizable vector avatar",
+      "pedagogy": "same engine/rules regardless of tutor"
+    },
+    "review_mode": {
+      "duration": "5–10 min default, extendable",
+      "pool": "all previously seen content",
+      "selection": "fragile + old + recent-to-confirm + structural + occasional strong items",
+      "can_upgrade": true,
+      "can_downgrade": true,
+      "one_miss_downgrade": false
+    },
+    "developer_mode": {
+      "show": [
+        "active model",
+        "routing mode",
+        "latency",
+        "tokens",
+        "cost/session",
+        "cumulative cost",
+        "ASR confidence if available",
+        "model-switch log",
+        "technical session log"
+      ],
+      "controls": [
+        "auto/force model",
+        "export logs"
+      ],
+      "product_learning": "journal meaningful setting changes and metrics automatically; no heavy formal A/B test workflow"
+    },
+    "cost_target": {
+      "target_eur_per_hour": 1.25,
+      "soft_range": [
+        1.0,
+        1.5
+      ],
+      "policy": "quality wins when uncertain; alerts, not hard cutoff"
+    }
+  },
+  "engine_rules": {
+    "product_name": {
+      "display": "Shuō",
+      "hanzi": "说",
+      "status": "provisional/working name"
+    },
+    "target_user": "single-user personal iOS app initially; architecture should remain extensible if commercialized later",
+    "language_variant": "Standard Mainland Mandarin / 普通话",
+    "primary_goal": "oral conversation; ~90% of learning effort on listening, speaking and pronunciation, with especially strict tones",
+    "hsk_policy": {
+      "source_of_truth": "HSK 3.0 official 2025 syllabus, Level 1",
+      "principle": "HSK progression is the pedagogical spine; Shuō adapts delivery to oral/conversational learning without replacing the HSK scope.",
+      "visual_literacy": "hanzi are shown systematically but reading/recognition is not a blocking mastery criterion in the first oral pass",
+      "future": "architecture compatible with HSK2+"
+    },
+    "new_items": {
+      "default": "1–3 new words/expressions maximum per normal session, preferably semantically/structurally related",
+      "five_minute": "no new content by default; light review/listening"
+    },
+    "session_timing": {
+      "5_min": {
+        "recall": "none mandatory",
+        "content": "light listening/drill or revision",
+        "end": "very short recap"
+      },
+      "10_min": {
+        "recall": "~3 min",
+        "content": "1–2 new items or revision",
+        "end": "~1 min recap"
+      },
+      "15_min": {
+        "recall": "~2 min (latest validated decision)",
+        "content": "1–3 new items with flexible depth + guided/semi-guided/free practice",
+        "end": "~2 min recap"
+      },
+      "20_min": {
+        "recall": "~5 min",
+        "content": "1–3 new items + deeper practice/listening",
+        "end": "~2 min recap"
+      }
+    },
+    "opening": "announce exact items, grammar structure and pronunciation/tone focus before the lesson",
+    "word_card": {
+      "show": [
+        "hanzi large",
+        "pinyin",
+        "French meaning"
+      ],
+      "progressive_hiding": "possible later; not required for oral mastery"
+    },
+    "word_template": [
+      "main meaning",
+      "short nuance/context or francophone trap only when useful",
+      "pronunciation",
+      "immediate example/use",
+      "guided production",
+      "second context",
+      "semi-guided/free reuse"
+    ],
+    "correction": {
+      "default": "let learner finish; correct globally and briefly after the attempt",
+      "drill": "stricter and faster correction",
+      "priority": [
+        "tone",
+        "intelligibility/pronunciation",
+        "important grammar",
+        "syntax/vocabulary when useful"
+      ],
+      "repeated_error": "after 3–4 recurrences, schedule a firmer micro-remediation (~1 min) at start of next session; never let it dominate the next lesson"
+    },
+    "help_commands": {
+      "aide": "start graded assistance and ask what is blocking; hint → stronger hint → model → solution",
+      "réponse": "skip assistance ladder and give the answer directly, then ask for reuse",
+      "arrête-toi": "pause/exit free conversation and return to guided mode"
+    },
+    "conversation": {
+      "progression": [
+        "guided",
+        "semi-guided",
+        "free"
+      ],
+      "free_duration": "typically 1–3 min when appropriate",
+      "safety_net": "can regress immediately to guided mode at user request or if difficulty is clearly too high",
+      "French": "always available as rescue; progressively reduced as Mandarin competence grows"
+    },
+    "listening": {
+      "speeds": [
+        "slow",
+        "normal",
+        "fast/native"
+      ],
+      "alternative_activity": "short oral dialogue/text up to ~2 minutes followed by comprehension checking, inspired by JLPT-style listening"
+    },
+    "mastery": {
+      "visible_statuses": {
+        "red": "à apprendre/non validé",
+        "orange": "en acquisition/à consolider",
+        "green": "acquis"
+      },
+      "session_statuses": [
+        "validé",
+        "à consolider",
+        "non validé"
+      ],
+      "pronunciation_requirement": "very good to near-perfect; a badly pronounced word cannot be green",
+      "durable_mastery": "5 correct productions total + at least 3 delayed recalls on different sessions (4 preferred if fragile)",
+      "decay": "internal memory strength decays over time; green can become fragile and be retested",
+      "downgrade": "do not downgrade from one isolated miss; repeated failures across review opportunities can lower status",
+      "review_pool": "draws from entire history, not only previous lesson"
+    },
+    "review_mode": {
+      "separate_mode": true,
+      "scope": "all previously seen words/structures",
+      "effects": "can raise or lower mastery status",
+      "format": "listening + active recall + pronunciation + mini-conversation; not flashcards only"
+    },
+    "absence_resume": {
+      "trigger": "after ~3 days without practice",
+      "behavior": "offer a very short automatic return test; skippable"
+    },
+    "tutors": {
+      "count": "3–4",
+      "default": "simple rotation",
+      "fixed_choice": "allowed",
+      "per_session": "one tutor",
+      "identity": "distinct stable voice + Chinese name + recognizable vector avatar"
+    },
+    "voice_ux": {
+      "modes": [
+        "hands-free",
+        "push-to-talk"
+      ],
+      "switch": "visible and easy to change during session",
+      "barge_in": "learner speech stops tutor immediately",
+      "latency": "prefer natural voice; use short Mandarin transition phrases during waits; ~10 prewritten variants",
+      "model_indicator": "show actual active model name continuously with color code; model switches signaled discreetly",
+      "offline": "pause session if network is lost"
+    },
+    "ai_architecture": {
+      "pedagogical_engine": "deterministic/structured engine decides curriculum, review, difficulty and session recipe",
+      "LLM": "executes conversation/corrections with controlled freedom; models interchangeable",
+      "context": "structured learner model + current session + short recent exchange window, not full history every turn",
+      "local_first": "progression calculations, review scheduling, scoring and logging local where possible",
+      "routing": "lighter model by default; stronger model when needed; quality wins when uncertain"
+    },
+    "cost": {
+      "target": "~€1.25/hour",
+      "acceptable_initial_range": "~€1–€1.50/hour",
+      "budget": "flexible target with alerts, not hard cutoff",
+      "optimization": "less chatter before fewer pedagogical corrections"
+    },
+    "developer_mode": [
+      "active model + color",
+      "force/auto model",
+      "latency",
+      "tokens",
+      "cost per session and cumulative",
+      "speech recognition confidence if available",
+      "model-switch log",
+      "technical session log"
+    ],
+    "product_learning": {
+      "goal": "learn from usage/corrections to improve both personal pedagogy and future product quality",
+      "logging_blocks": [
+        "pedagogy",
+        "conversation",
+        "technical",
+        "product settings"
+      ],
+      "experimentation": "no heavy formal test/hypothesis workflow; automatically journal meaningful changes and metrics",
+      "review": "brief usefulness signal; periodic check-in every 5 sessions; major adjustments require user confirmation"
+    },
+    "end_of_session": {
+      "duration": "~30–60 s / included in final ~2 min",
+      "content": [
+        "1–3 items seen and status",
+        "brief pronunciation/tone note if useful",
+        "what is solid vs what will return"
+      ],
+      "avoid": [
+        "school-like score",
+        "new content",
+        "announcing a fixed next lesson"
+      ]
+    }
+  },
+  "learner_model": {
+    "version": "V2",
+    "principle": "Evidence-based, multi-dimensional, conservative mastery. The LLM never decides mastery alone.",
+    "per_item_fields": {
+      "item_id": "stable HSK official key or internal expression id",
+      "first_seen_at": "timestamp",
+      "last_seen_at": "timestamp",
+      "exposures": "int",
+      "listening_recognition": {
+        "score": "0–1",
+        "evidence_count": "int"
+      },
+      "meaning_recall": {
+        "score": "0–1",
+        "evidence_count": "int"
+      },
+      "guided_production": {
+        "score": "0–1",
+        "evidence_count": "int"
+      },
+      "spontaneous_production": {
+        "score": "0–1",
+        "evidence_count": "int"
+      },
+      "pronunciation": {
+        "score": "0–1",
+        "evidence_count": "int"
+      },
+      "tone": {
+        "score": "0–1",
+        "evidence_count": "int"
+      },
+      "usage": {
+        "score": "0–1",
+        "evidence_count": "int"
+      },
+      "help_level_last": "none | hint | strong_hint | model | answer",
+      "memory_strength": "0–1",
+      "next_review_at": "timestamp",
+      "status": "red | orange | green",
+      "fragility_flags": "array",
+      "error_signatures": "bounded array; aggregate patterns, not endless reminders"
+    },
+    "status_rules": {
+      "red": "new, failed, answer supplied, or pronunciation/tone clearly below threshold",
+      "orange": "understood/usable but fragile, guided, hesitant, or pronunciation not yet strong",
+      "green": "very good pronunciation/tone + spontaneous use + durable delayed recall evidence",
+      "durable_green": "5 correct productions total and >=3 delayed recalls on different sessions; 4 delayed recalls preferred when fragile",
+      "downgrade": "never from one isolated miss; repeated failures on separated review opportunities can lower memory strength/status"
+    },
+    "global_profile": {
+      "listening_by_speed": [
+        "slow",
+        "normal",
+        "fast_native"
+      ],
+      "tone_profile": [
+        "tone1",
+        "tone2",
+        "tone3",
+        "tone4",
+        "neutral",
+        "sandhi"
+      ],
+      "pronunciation_patterns": [
+        "initials",
+        "finals",
+        "aspiration",
+        "retroflexes",
+        "j_q_x",
+        "u_umlaut",
+        "rhythm"
+      ],
+      "grammar_structures": "per-structure state",
+      "active_vocab_count": "derived",
+      "passive_vocab_count": "derived"
+    }
+  },
+  "session_orchestrator": {
+    "version": "V2",
+    "durations": {
+      "5": {
+        "new_items": "0 by default",
+        "purpose": "review/listening/drill",
+        "recap": "very short"
+      },
+      "10": {
+        "new_items": "1–2 max",
+        "recall": "~1–2 min",
+        "recap": "~1 min"
+      },
+      "15": {
+        "new_items": "1–3 max",
+        "recall": "~2 min",
+        "new_content": "flexible depth, no filler",
+        "practice": "guided → semi-guided → free",
+        "recap": "~2 min"
+      },
+      "20": {
+        "new_items": "1–3 max",
+        "recall": "~2–3 min",
+        "practice": "deeper listening/conversation",
+        "recap": "~2 min"
+      }
+    },
+    "new_item_policy": "Prefer related words/expressions. If recall is weak, reduce to 1 or 0 new items. Never fill time mechanically.",
+    "opening": "20–40 s: announce today's words/expressions, structure, pronunciation focus and concrete communicative goal.",
+    "per_item_cycle": [
+      "show hanzi + pinyin + French meaning",
+      "give main meaning",
+      "give nuance/context/francophone trap only if useful (10–30 s)",
+      "natural audio model",
+      "slow model only if useful",
+      "learner attempt without interruption",
+      "brief global correction after attempt",
+      "guided use",
+      "second context",
+      "semi-guided/free reuse",
+      "re-expose later in same session if useful"
+    ],
+    "blocking_logic": {
+      "normal": "wait until learner finishes",
+      "prolonged_block": "offer graded help",
+      "aide": "ask what is blocking; hint → stronger hint → model → solution",
+      "réponse": "give solution immediately, then one reuse attempt",
+      "arrête-toi": "pause/free-mode exit and return to guided mode"
+    },
+    "repeated_error": "At 3–4 recurrences, flag a firmer micro-remediation (~1 min) for the start of the next session; cap impact so it never hijacks the lesson.",
+    "conversation": "guided → semi-guided → 1–3 min free conversation when appropriate; French rescue always available.",
+    "end": "No new content. 30–60 s factual recap within final block; items + status + one useful pronunciation note + what will return."
+  },
+  "ai_routing": {
+    "principle": "Pedagogical engine owns progression; LLM is replaceable execution layer.",
+    "local_first": [
+      "learner state",
+      "review scheduling",
+      "mastery calculation",
+      "session recipe",
+      "logging"
+    ],
+    "light_model_tasks": [
+      "routine prompts",
+      "simple reformulation",
+      "drill transitions",
+      "known scripted explanations"
+    ],
+    "strong_model_triggers": [
+      "ambiguous learner intent",
+      "complex explanation",
+      "unexpected free conversation",
+      "multi-error diagnosis",
+      "pedagogical recovery after repeated failure"
+    ],
+    "context_budget": "structured learner summary + current recipe + short recent exchange window; never resend full history by default",
+    "fallback": "if strong model latency/cost is excessive, lighter model may take over; visible model badge updates",
+    "quality_rule": "when routing confidence is low, prefer the stronger model"
+  },
+  "official_course_alignment": {
+    "reference": "New HSK Course 1 / 新HSK教程1 (officially authorized HSK 3.0 textbook, FLTRP, 2026)",
+    "copyright_policy": "Shuō does not reproduce textbook text/dialogues/exercises. Only public bibliographic structure and lesson themes are used for alignment; all teaching scripts in Shuō are original.",
+    "public_metadata": {
+      "lessons": 15,
+      "vocabulary": "aligned to the 300-word new HSK1 syllabus, with slight extensions in the book",
+      "language_points": 40,
+      "recommended_total_hours": "30–36 classroom hours",
+      "approach": "learner-centered, communicative, exam-learning-use integration"
+    },
+    "lesson_theme_alignment": [
+      {
+        "lesson": 1,
+        "public_title_zh": "AI小语，你好！",
+        "theme_fr": "saluer et premiers échanges",
+        "shuo_modules": [
+          "M01"
+        ],
+        "shuo_policy": "oral-first + phonétique dès le départ"
+      },
+      {
+        "lesson": 2,
+        "public_title_zh": "我叫李文",
+        "theme_fr": "nom et présentation",
+        "shuo_modules": [
+          "M01",
+          "M02"
+        ]
+      },
+      {
+        "lesson": 3,
+        "public_title_zh": "我是中国人",
+        "theme_fr": "identité, nationalité, langue",
+        "shuo_modules": [
+          "M02"
+        ]
+      },
+      {
+        "lesson": 4,
+        "public_title_zh": "我有两个孩子",
+        "theme_fr": "famille, nombres, possession",
+        "shuo_modules": [
+          "M03",
+          "M04"
+        ]
+      },
+      {
+        "lesson": 5,
+        "public_title_zh": "今天我休息",
+        "theme_fr": "routine, aujourd’hui, repos",
+        "shuo_modules": [
+          "M04",
+          "M13"
+        ]
+      },
+      {
+        "lesson": 6,
+        "public_title_zh": "你的手机号是多少？",
+        "theme_fr": "nombres et informations de contact",
+        "shuo_modules": [
+          "M04"
+        ]
+      },
+      {
+        "lesson": 7,
+        "public_title_zh": "我晚上六点半下班",
+        "theme_fr": "heure et routine professionnelle",
+        "shuo_modules": [
+          "M04",
+          "M14"
+        ]
+      },
+      {
+        "lesson": 8,
+        "public_title_zh": "我爸爸也在医院工作",
+        "theme_fr": "famille, lieu et travail",
+        "shuo_modules": [
+          "M03",
+          "M06",
+          "M14"
+        ]
+      },
+      {
+        "lesson": 9,
+        "public_title_zh": "我明天上午在学校学习",
+        "theme_fr": "temps, lieu et étude",
+        "shuo_modules": [
+          "M04",
+          "M12",
+          "M13"
+        ]
+      },
+      {
+        "lesson": 10,
+        "public_title_zh": "这儿的苹果真便宜！",
+        "theme_fr": "objets, achats, prix",
+        "shuo_modules": [
+          "M05",
+          "M09"
+        ]
+      },
+      {
+        "lesson": 11,
+        "public_title_zh": "我读大学呢",
+        "theme_fr": "études et vie scolaire",
+        "shuo_modules": [
+          "M12",
+          "M13"
+        ]
+      },
+      {
+        "lesson": 12,
+        "public_title_zh": "昨天下雪了",
+        "theme_fr": "météo, temps passé, 了",
+        "shuo_modules": [
+          "M06",
+          "M13"
+        ]
+      },
+      {
+        "lesson": 13,
+        "public_title_zh": "请给我一杯茶",
+        "theme_fr": "boire, commander, classificateurs",
+        "shuo_modules": [
+          "M07",
+          "M09"
+        ]
+      },
+      {
+        "lesson": 14,
+        "public_title_zh": "我看了一个电影",
+        "theme_fr": "loisirs et action accomplie",
+        "shuo_modules": [
+          "M11",
+          "M13"
+        ]
+      },
+      {
+        "lesson": 15,
+        "public_title_zh": "大兴机场见！",
+        "theme_fr": "déplacement et intégration",
+        "shuo_modules": [
+          "M08",
+          "M15"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "priority": 1,
+      "name": "Syllabus for the Chinese Proficiency Test / 中文水平考试 HSK 考试大纲",
+      "issuer": "Center for Language Education and Cooperation (CLEC)",
+      "date": "published 2025-11; implemented 2026-07",
+      "url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf",
+      "use": "primary source for Level 1 tasks, topics, vocabulary, characters and grammar"
+    },
+    {
+      "priority": 1,
+      "name": "Chinese Tests Service Website – HSK 3.0",
+      "issuer": "CTI",
+      "url": "https://www.chinesetest.cn/hsk",
+      "use": "official current exam information, syllabus/sample navigation and test structure"
+    },
+    {
+      "priority": 1,
+      "name": "HSK 3.0 official worldwide launch announcement",
+      "issuer": "CTI",
+      "date": "2026-09",
+      "url": "https://old.chinesetest.cn/gonewcontent.do?flag=kdnew&id=51336883",
+      "use": "current rollout status; worldwide launch on 2026-12-13"
+    },
+    {
+      "priority": 1,
+      "name": "Chinese Proficiency Grading Standards for International Chinese Language Education / 国际中文教育中文水平等级标准",
+      "issuer": "Ministry of Education of the PRC / State Language Commission",
+      "date": "2021",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202103/t20210329_523304.html",
+      "use": "framework: three stages/nine levels, language elements, communicative ability and skills"
+    },
+    {
+      "priority": 2,
+      "name": "HSK Standard Course 1",
+      "issuer": "Beijing Language and Culture University Press",
+      "url": "https://www.blcup.com/EnPInfo/index/77",
+      "use": "historical teaching-method reference only; not the scope authority for HSK 3.0 Level 1"
+    },
+    {
+      "priority": 2,
+      "name": "HSK Standard Course 1 Teacher’s Book",
+      "issuer": "Beijing Language and Culture University Press",
+      "url": "https://www.blcup.com/EnPInfo/index/7835",
+      "use": "historical teaching-step reference; not used to override the 2025 HSK 3.0 syllabus"
+    },
+    {
+      "priority": 3,
+      "name": "Mandarin Zone – New HSK 1 vocabulary guide",
+      "url": "https://www.mandarinzone.com/hsk-1-vocabulary-list-excel-with-3-free-quiz-sheets/",
+      "use": "secondary cross-check for pinyin, vocabulary scope and beginner teaching notes; never overrides official syllabus"
+    },
+    {
+      "priority": 3,
+      "name": "CLI – New HSK 1 vocabulary",
+      "url": "https://studycli.org/zh-CN/chinese-tools/hsk-1-vocabulary/",
+      "use": "secondary cross-check only"
+    },
+    {
+      "priority": 1,
+      "name": "Ministry of Education – Chinese Proficiency Grading Standards",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202103/t20210329_523304.html",
+      "use": "top-level framework: three stages/nine levels, four language-element benchmarks, communicative dimensions"
+    },
+    {
+      "priority": 1,
+      "name": "CTI – HSK 3.0 worldwide launch announcement",
+      "url": "https://old.chinesetest.cn/gonewcontent.do?flag=kdnew&id=51336883",
+      "use": "current official rollout information"
+    },
+    {
+      "priority": 2,
+      "name": "FLTRP – New HSK Course 1 launch article",
+      "url": "https://heep.fltrp.com/contents/475469828451340288",
+      "use": "officially authorized textbook metadata: 15 lessons, 300-word alignment, 40 language points, learner-centered communicative design"
+    }
+  ]
+}

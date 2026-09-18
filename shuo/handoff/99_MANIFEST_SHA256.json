@@ -1,0 +1,70 @@
+{
+  "00_SOURCE_OF_TRUTH_V2.json": {
+    "bytes": 23683,
+    "sha256": "dbc60f9fae5bb1a96e9f0737a709134d2256ba0b4a24c0bb6851317a30ecda8a"
+  },
+  "01_HSK1_OFFICIAL_SCOPE.json": {
+    "bytes": 10211,
+    "sha256": "3ce10395b1de00c9163d19f31f2854258ba9fa3e8d3fac68e26923b757ba13c1"
+  },
+  "02_HSK1_VOCABULARY_300_QA.json": {
+    "bytes": 205058,
+    "sha256": "6acc384718f4f7be001b93f3b5869eab5d6ede6a80d9b79c923dc6b1882e50d1"
+  },
+  "03_PRONUNCIATION_BOOTCAMP.json": {
+    "bytes": 2981,
+    "sha256": "abb85145811fc9ed6c9f4e5210cd02ac7b711e4a770967392927df8e22c63b71"
+  },
+  "04_CURRICULUM_155_ENTRIES_V2.json": {
+    "bytes": 660798,
+    "sha256": "4b527e46e6f92118cca7079b84d55a8aacf10c58ffb95dea8437999f0c5e2f7f"
+  },
+  "05_MODULES_DIALOGUES.json": {
+    "bytes": 18318,
+    "sha256": "8d3cf1dd21fe879df2b6d7ba74b8ecc1e444731f2e7a387b54abb5c23c74ec9a"
+  },
+  "06_OFFICIAL_COURSE_ALIGNMENT.json": {
+    "bytes": 3582,
+    "sha256": "c0173d6f6126d6a464eedc11e221f880557fa804d8fefbadcafbcf511ae86d3e"
+  },
+  "07_LEARNER_MODEL_SCHEMA.json": {
+    "bytes": 2304,
+    "sha256": "8c4ccefd857206889156ea6683e122837c6817aaf0b0ba0189c9c33754091892"
+  },
+  "08_SESSION_ORCHESTRATOR.json": {
+    "bytes": 2092,
+    "sha256": "7ccc6b5c45c22df97b1ae4b0f11a17310d99e45c997ada148cf5b994e862f5dc"
+  },
+  "09_PRODUCT_UX_SPEC.json": {
+    "bytes": 2413,
+    "sha256": "c4cc6b7521390e48daca9dacd57d70746c2746e53272a90cd352bdc4011933ff"
+  },
+  "10_AI_ROUTING_AND_COST.json": {
+    "bytes": 906,
+    "sha256": "c413e49545889016028b9691d7d5947e1a55b0644dc646df3bc96c495f752a0b"
+  },
+  "11_ACCEPTANCE_TESTS.json": {
+    "bytes": 3052,
+    "sha256": "a69bfa1d423dc482924cd58dd9b47a12ccd359745cd5d74515fad0006de414e7"
+  },
+  "12_QA_REPORT.json": {
+    "bytes": 1183,
+    "sha256": "c7b1f873883ae18b3b1503c1adeaf431330af0957c72d29014bbe729c92fae14"
+  },
+  "13_SOURCES.json": {
+    "bytes": 3345,
+    "sha256": "1f7b6f4e198a225f48b26665c1dfc5a751f311c0d6073182e14a449d089ddb5c"
+  },
+  "CHANGELOG.md": {
+    "bytes": 676,
+    "sha256": "47a1de2b9113deed5b03f6e832f366fe63068039a73b6bc6ed6df02c987d60e5"
+  },
+  "QA_SUMMARY.md": {
+    "bytes": 901,
+    "sha256": "b4c3ff401a66c8b12365c73661a587768c88273c856d7e7c2ed8ed3038a3d50d"
+  },
+  "START_HERE_CLAUDE_CODE.md": {
+    "bytes": 2399,
+    "sha256": "8bdfdf9ed6b2973ff322fc0d65ea2d75eb848608ea4285a890c500500fa6189a"
+  }
+}

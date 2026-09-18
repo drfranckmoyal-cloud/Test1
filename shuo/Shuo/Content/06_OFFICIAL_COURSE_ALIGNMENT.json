@@ -1,0 +1,148 @@
+{
+  "reference": "New HSK Course 1 / 新HSK教程1 (officially authorized HSK 3.0 textbook, FLTRP, 2026)",
+  "copyright_policy": "Shuō does not reproduce textbook text/dialogues/exercises. Only public bibliographic structure and lesson themes are used for alignment; all teaching scripts in Shuō are original.",
+  "public_metadata": {
+    "lessons": 15,
+    "vocabulary": "aligned to the 300-word new HSK1 syllabus, with slight extensions in the book",
+    "language_points": 40,
+    "recommended_total_hours": "30–36 classroom hours",
+    "approach": "learner-centered, communicative, exam-learning-use integration"
+  },
+  "lesson_theme_alignment": [
+    {
+      "lesson": 1,
+      "public_title_zh": "AI小语，你好！",
+      "theme_fr": "saluer et premiers échanges",
+      "shuo_modules": [
+        "M01"
+      ],
+      "shuo_policy": "oral-first + phonétique dès le départ"
+    },
+    {
+      "lesson": 2,
+      "public_title_zh": "我叫李文",
+      "theme_fr": "nom et présentation",
+      "shuo_modules": [
+        "M01",
+        "M02"
+      ]
+    },
+    {
+      "lesson": 3,
+      "public_title_zh": "我是中国人",
+      "theme_fr": "identité, nationalité, langue",
+      "shuo_modules": [
+        "M02"
+      ]
+    },
+    {
+      "lesson": 4,
+      "public_title_zh": "我有两个孩子",
+      "theme_fr": "famille, nombres, possession",
+      "shuo_modules": [
+        "M03",
+        "M04"
+      ]
+    },
+    {
+      "lesson": 5,
+      "public_title_zh": "今天我休息",
+      "theme_fr": "routine, aujourd’hui, repos",
+      "shuo_modules": [
+        "M04",
+        "M13"
+      ]
+    },
+    {
+      "lesson": 6,
+      "public_title_zh": "你的手机号是多少？",
+      "theme_fr": "nombres et informations de contact",
+      "shuo_modules": [
+        "M04"
+      ]
+    },
+    {
+      "lesson": 7,
+      "public_title_zh": "我晚上六点半下班",
+      "theme_fr": "heure et routine professionnelle",
+      "shuo_modules": [
+        "M04",
+        "M14"
+      ]
+    },
+    {
+      "lesson": 8,
+      "public_title_zh": "我爸爸也在医院工作",
+      "theme_fr": "famille, lieu et travail",
+      "shuo_modules": [
+        "M03",
+        "M06",
+        "M14"
+      ]
+    },
+    {
+      "lesson": 9,
+      "public_title_zh": "我明天上午在学校学习",
+      "theme_fr": "temps, lieu et étude",
+      "shuo_modules": [
+        "M04",
+        "M12",
+        "M13"
+      ]
+    },
+    {
+      "lesson": 10,
+      "public_title_zh": "这儿的苹果真便宜！",
+      "theme_fr": "objets, achats, prix",
+      "shuo_modules": [
+        "M05",
+        "M09"
+      ]
+    },
+    {
+      "lesson": 11,
+      "public_title_zh": "我读大学呢",
+      "theme_fr": "études et vie scolaire",
+      "shuo_modules": [
+        "M12",
+        "M13"
+      ]
+    },
+    {
+      "lesson": 12,
+      "public_title_zh": "昨天下雪了",
+      "theme_fr": "météo, temps passé, 了",
+      "shuo_modules": [
+        "M06",
+        "M13"
+      ]
+    },
+    {
+      "lesson": 13,
+      "public_title_zh": "请给我一杯茶",
+      "theme_fr": "boire, commander, classificateurs",
+      "shuo_modules": [
+        "M07",
+        "M09"
+      ]
+    },
+    {
+      "lesson": 14,
+      "public_title_zh": "我看了一个电影",
+      "theme_fr": "loisirs et action accomplie",
+      "shuo_modules": [
+        "M11",
+        "M13"
+      ]
+    },
+    {
+      "lesson": 15,
+      "public_title_zh": "大兴机场见！",
+      "theme_fr": "déplacement et intégration",
+      "shuo_modules": [
+        "M08",
+        "M15"
+      ]
+    }
+  ]
+}

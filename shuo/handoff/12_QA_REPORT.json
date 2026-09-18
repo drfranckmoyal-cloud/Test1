@@ -1,0 +1,30 @@
+{
+  "status": "PASS_WITH_EDITORIAL_CAVEAT",
+  "automated_checks": {
+    "official_vocab_count": 300,
+    "unique_official_keys": 300,
+    "curriculum_new_item_count": 300,
+    "unique_curriculum_new_items": 300,
+    "missing_from_curriculum": [],
+    "duplicated_as_new_content": [],
+    "examples_missing_target_word": [],
+    "pinyin_pos_parse_flags_after_fix": [],
+    "sessions_over_3_new_items": [],
+    "v1_corrections_applied": [
+      {
+        "official_key": "不客气",
+        "issue": "V1 parsing split the multi-syllable pinyin into the POS field.",
+        "before": {
+          "pinyin": "bú",
+          "pos_official_abbrev": "kèqi 短语"
+        },
+        "after": {
+          "pinyin": "bú kèqi",
+          "pos_official_abbrev": "短语"
+        }
+      }
+    ]
+  },
+  "editorial_caveat": "The 300 Shuō example sentences and original dialogue banks are structurally checked and target-word checked, but should still receive a native-speaker editorial pass before commercial release. V0 personal testing can proceed.",
+  "copyright": "No proprietary textbook dialogues/exercises are reproduced. Public lesson titles/metadata are used only for alignment."
+}

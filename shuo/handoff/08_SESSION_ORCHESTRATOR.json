@@ -1,0 +1,53 @@
+{
+  "version": "V2",
+  "durations": {
+    "5": {
+      "new_items": "0 by default",
+      "purpose": "review/listening/drill",
+      "recap": "very short"
+    },
+    "10": {
+      "new_items": "1–2 max",
+      "recall": "~1–2 min",
+      "recap": "~1 min"
+    },
+    "15": {
+      "new_items": "1–3 max",
+      "recall": "~2 min",
+      "new_content": "flexible depth, no filler",
+      "practice": "guided → semi-guided → free",
+      "recap": "~2 min"
+    },
+    "20": {
+      "new_items": "1–3 max",
+      "recall": "~2–3 min",
+      "practice": "deeper listening/conversation",
+      "recap": "~2 min"
+    }
+  },
+  "new_item_policy": "Prefer related words/expressions. If recall is weak, reduce to 1 or 0 new items. Never fill time mechanically.",
+  "opening": "20–40 s: announce today's words/expressions, structure, pronunciation focus and concrete communicative goal.",
+  "per_item_cycle": [
+    "show hanzi + pinyin + French meaning",
+    "give main meaning",
+    "give nuance/context/francophone trap only if useful (10–30 s)",
+    "natural audio model",
+    "slow model only if useful",
+    "learner attempt without interruption",
+    "brief global correction after attempt",
+    "guided use",
+    "second context",
+    "semi-guided/free reuse",
+    "re-expose later in same session if useful"
+  ],
+  "blocking_logic": {
+    "normal": "wait until learner finishes",
+    "prolonged_block": "offer graded help",
+    "aide": "ask what is blocking; hint → stronger hint → model → solution",
+    "réponse": "give solution immediately, then one reuse attempt",
+    "arrête-toi": "pause/free-mode exit and return to guided mode"
+  },
+  "repeated_error": "At 3–4 recurrences, flag a firmer micro-remediation (~1 min) for the start of the next session; cap impact so it never hijacks the lesson.",
+  "conversation": "guided → semi-guided → 1–3 min free conversation when appropriate; French rescue always available.",
+  "end": "No new content. 30–60 s factual recap within final block; items + status + one useful pronunciation note + what will return."
+}

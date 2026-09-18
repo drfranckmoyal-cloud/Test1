@@ -1,0 +1,100 @@
+[
+  {
+    "id": "P01",
+    "title": "Pinyin : comment lire un son mandarin",
+    "goal": "Comprendre syllabe = initiale + finale + ton; reconnaître le rôle du pinyin sans en faire un objectif écrit.",
+    "content": [
+      "initiale vs finale",
+      "4 tons + ton neutre",
+      "écoute avant imitation"
+    ],
+    "validation": "identifier qu’un changement de ton peut changer le mot; reproduire 2 contours nettement distincts",
+    "sequence_no": 1
+  },
+  {
+    "id": "P02",
+    "title": "Tons 1 et 4",
+    "goal": "Produire un ton 1 stable et un ton 4 net sans les confondre.",
+    "content": [
+      "courbe ton 1",
+      "courbe ton 4",
+      "alternance 1↔4"
+    ],
+    "validation": "4/5 discriminations correctes + 3 productions acceptables",
+    "sequence_no": 2
+  },
+  {
+    "id": "P03",
+    "title": "Tons 2 et 3",
+    "goal": "Distinguer ton montant et troisième ton contextualisé.",
+    "content": [
+      "ton 2 montant",
+      "ton 3 bas/partiel en parole",
+      "éviter le 3e ton caricatural"
+    ],
+    "validation": "4/5 discriminations correctes + 3 productions acceptables",
+    "sequence_no": 3
+  },
+  {
+    "id": "P04",
+    "title": "Ton neutre et rythme",
+    "goal": "Entendre et produire une syllabe neutre courte et non accentuée.",
+    "content": [
+      "particules ma/ne/ba",
+      "suffixes fréquents -zi/-men selon mots",
+      "rythme accentué/non accentué"
+    ],
+    "validation": "ne pas sur-accentuer 3 occurrences sur 4",
+    "sequence_no": 4
+  },
+  {
+    "id": "P05",
+    "title": "Aspiration : b/p, d/t, g/k",
+    "goal": "Percevoir l’opposition aspiré/non aspiré, souvent mal interprétée par un francophone.",
+    "content": [
+      "b/p",
+      "d/t",
+      "g/k",
+      "test de souffle"
+    ],
+    "validation": "4/5 paires distinguées à l’écoute",
+    "sequence_no": 5
+  },
+  {
+    "id": "P06",
+    "title": "Séries z/c/s, zh/ch/sh, j/q/x",
+    "goal": "Installer trois zones articulatoires sans viser encore la perfection native.",
+    "content": [
+      "z/c/s",
+      "rétroflexes zh/ch/sh",
+      "palatales j/q/x"
+    ],
+    "validation": "catégoriser correctement 70–80% des syllabes d’entraînement",
+    "sequence_no": 6
+  },
+  {
+    "id": "P07",
+    "title": "ü, j/q/x + ü et r/er",
+    "goal": "Éviter les erreurs francophones fréquentes sur ü et les syllabes rétroflexes.",
+    "content": [
+      "ü",
+      "j/q/x + ü sans tréma écrit",
+      "r/er et erhua comme exposition"
+    ],
+    "validation": "produire ü distinct de u dans plusieurs essais",
+    "sequence_no": 7
+  },
+  {
+    "id": "P08",
+    "title": "Sandhi et parole continue",
+    "goal": "Comprendre que le ton lexical écrit n’est pas toujours la réalisation entendue.",
+    "content": [
+      "3+3 → 2+3",
+      "不 devant ton 4",
+      "一 selon contexte",
+      "enchaînement naturel"
+    ],
+    "validation": "reproduire correctement au moins deux phénomènes en contexte",
+    "sequence_no": 8
+  }
+]

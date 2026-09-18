@@ -1,0 +1,77 @@
+[
+  {
+    "priority": 1,
+    "name": "Syllabus for the Chinese Proficiency Test / 中文水平考试 HSK 考试大纲",
+    "issuer": "Center for Language Education and Cooperation (CLEC)",
+    "date": "published 2025-11; implemented 2026-07",
+    "url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf",
+    "use": "primary source for Level 1 tasks, topics, vocabulary, characters and grammar"
+  },
+  {
+    "priority": 1,
+    "name": "Chinese Tests Service Website – HSK 3.0",
+    "issuer": "CTI",
+    "url": "https://www.chinesetest.cn/hsk",
+    "use": "official current exam information, syllabus/sample navigation and test structure"
+  },
+  {
+    "priority": 1,
+    "name": "HSK 3.0 official worldwide launch announcement",
+    "issuer": "CTI",
+    "date": "2026-09",
+    "url": "https://old.chinesetest.cn/gonewcontent.do?flag=kdnew&id=51336883",
+    "use": "current rollout status; worldwide launch on 2026-12-13"
+  },
+  {
+    "priority": 1,
+    "name": "Chinese Proficiency Grading Standards for International Chinese Language Education / 国际中文教育中文水平等级标准",
+    "issuer": "Ministry of Education of the PRC / State Language Commission",
+    "date": "2021",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202103/t20210329_523304.html",
+    "use": "framework: three stages/nine levels, language elements, communicative ability and skills"
+  },
+  {
+    "priority": 2,
+    "name": "HSK Standard Course 1",
+    "issuer": "Beijing Language and Culture University Press",
+    "url": "https://www.blcup.com/EnPInfo/index/77",
+    "use": "historical teaching-method reference only; not the scope authority for HSK 3.0 Level 1"
+  },
+  {
+    "priority": 2,
+    "name": "HSK Standard Course 1 Teacher’s Book",
+    "issuer": "Beijing Language and Culture University Press",
+    "url": "https://www.blcup.com/EnPInfo/index/7835",
+    "use": "historical teaching-step reference; not used to override the 2025 HSK 3.0 syllabus"
+  },
+  {
+    "priority": 3,
+    "name": "Mandarin Zone – New HSK 1 vocabulary guide",
+    "url": "https://www.mandarinzone.com/hsk-1-vocabulary-list-excel-with-3-free-quiz-sheets/",
+    "use": "secondary cross-check for pinyin, vocabulary scope and beginner teaching notes; never overrides official syllabus"
+  },
+  {
+    "priority": 3,
+    "name": "CLI – New HSK 1 vocabulary",
+    "url": "https://studycli.org/zh-CN/chinese-tools/hsk-1-vocabulary/",
+    "use": "secondary cross-check only"
+  },
+  {
+    "priority": 1,
+    "name": "Ministry of Education – Chinese Proficiency Grading Standards",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202103/t20210329_523304.html",
+    "use": "top-level framework: three stages/nine levels, four language-element benchmarks, communicative dimensions"
+  },
+  {
+    "priority": 1,
+    "name": "CTI – HSK 3.0 worldwide launch announcement",
+    "url": "https://old.chinesetest.cn/gonewcontent.do?flag=kdnew&id=51336883",
+    "use": "current official rollout information"
+  },
+  {
+    "priority": 2,
+    "name": "FLTRP – New HSK Course 1 launch article",
+    "url": "https://heep.fltrp.com/contents/475469828451340288",
+    "use": "officially authorized textbook metadata: 15 lessons, 300-word alignment, 40 language points, learner-centered communicative design"
+  }
+]

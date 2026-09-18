@@ -1,0 +1,110 @@
+[
+  {
+    "id": "A01",
+    "area": "curriculum",
+    "test": "All 300 official HSK1 vocabulary entries exist exactly once as new content.",
+    "pass_condition": "300 unique / 0 missing / 0 duplicated"
+  },
+  {
+    "id": "A02",
+    "area": "session",
+    "test": "A 15-minute session never introduces >3 new words/expressions.",
+    "pass_condition": "hard invariant"
+  },
+  {
+    "id": "A03",
+    "area": "mastery",
+    "test": "A word understood but badly pronounced cannot become green.",
+    "pass_condition": "pronunciation/tone gate enforced"
+  },
+  {
+    "id": "A04",
+    "area": "memory",
+    "test": "Quit and relaunch after several sessions.",
+    "pass_condition": "progress, statuses and due reviews restored"
+  },
+  {
+    "id": "A05",
+    "area": "review",
+    "test": "Fail a previously green item once.",
+    "pass_condition": "no immediate downgrade; fragility increases"
+  },
+  {
+    "id": "A06",
+    "area": "review",
+    "test": "Fail same item on separated review opportunities.",
+    "pass_condition": "status/memory can downgrade"
+  },
+  {
+    "id": "A07",
+    "area": "help",
+    "test": "Say 'aide'.",
+    "pass_condition": "graded assistance, not immediate answer"
+  },
+  {
+    "id": "A08",
+    "area": "help",
+    "test": "Say 'réponse'.",
+    "pass_condition": "immediate solution + reuse attempt"
+  },
+  {
+    "id": "A09",
+    "area": "voice",
+    "test": "Interrupt tutor while speaking.",
+    "pass_condition": "tutor stops immediately and listens"
+  },
+  {
+    "id": "A10",
+    "area": "voice",
+    "test": "Switch hands-free ↔ push-to-talk during session.",
+    "pass_condition": "immediate switch without losing state"
+  },
+  {
+    "id": "A11",
+    "area": "absence",
+    "test": "Return after ~3 days.",
+    "pass_condition": "very short optional return test is offered automatically"
+  },
+  {
+    "id": "A12",
+    "area": "cost",
+    "test": "Run session with telemetry.",
+    "pass_condition": "model, tokens, latency and estimated cost visible in dev mode"
+  },
+  {
+    "id": "A13",
+    "area": "UI",
+    "test": "Learn a new word.",
+    "pass_condition": "hanzi + pinyin + French displayed; reading not required to validate oral mastery"
+  },
+  {
+    "id": "A14",
+    "area": "correction",
+    "test": "Make an error mid-sentence.",
+    "pass_condition": "system waits for end unless prolonged block"
+  },
+  {
+    "id": "A15",
+    "area": "pedagogy",
+    "test": "Repeat same error 3–4 times.",
+    "pass_condition": "bounded micro-remediation scheduled for next session, <=~1 min"
+  },
+  {
+    "id": "A16",
+    "area": "conversation",
+    "test": "Free conversation becomes too difficult.",
+    "pass_condition": "French rescue / guided regression works without losing scenario"
+  },
+  {
+    "id": "A17",
+    "area": "end",
+    "test": "Final 2 minutes.",
+    "pass_condition": "no new content; factual recap only"
+  },
+  {
+    "id": "A18",
+    "area": "HSK",
+    "test": "Audit content metadata.",
+    "pass_condition": "official HSK scope remains distinguishable from Shuō-authored examples/scripts"
+  }
+]
